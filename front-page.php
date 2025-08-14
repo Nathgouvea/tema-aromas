@@ -165,7 +165,7 @@ get_header(); ?>
             </div>
         </section>
 
-        <!-- Featured Products Section -->
+        <!-- Featured Products Section - With Product Grid System -->
         <section class="featured-products">
             <div class="section-header">
                 <h2 class="section-title luxury-heading">
@@ -176,76 +176,77 @@ get_header(); ?>
                 </p>
             </div>
             
-            <!-- WooCommerce Featured Products -->
-            <div class="featured-products-grid">
+            <!-- WooCommerce Featured Products with Mandatory Grid System -->
+            <div class="products-grid featured-products-wrapper">
                 <?php if (class_exists('WooCommerce')) : ?>
-                    <?php echo do_shortcode('[products featured="true" limit="6" columns="3"]'); ?>
+                    <?php echo do_shortcode('[products featured="true" limit="8" columns="4"]'); ?>
                 <?php else : ?>
                     <p><?php esc_html_e('WooCommerce não está ativo. Ative o plugin para exibir os produtos.', 'tema_aromas'); ?></p>
                 <?php endif; ?>
             </div>
             
             <div class="featured-cta">
-                <a href="<?php echo esc_url(wc_get_page_permalink('shop')); ?>" class="btn-luxury btn-primary">
+                <a href="<?php echo esc_url(wc_get_page_permalink('shop')); ?>" class="btn-luxury primary">
                     <?php esc_html_e('Ver Todos os Produtos', 'tema_aromas'); ?>
                 </a>
             </div>
         </section>
 
-        <!-- Category Highlights -->
-        <section class="category-highlights">
+        <!-- Category Showcase Visual - Real Product Images -->
+        <section class="category-showcase-premium">
             <div class="section-header">
                 <h2 class="section-title luxury-heading">
-                    <?php esc_html_e('Nossas Categorias', 'tema_aromas'); ?>
+                    <?php esc_html_e('Nossos Produtos Queridos', 'tema_aromas'); ?>
                 </h2>
                 <p class="section-subtitle">
-                    <?php esc_html_e('Cada categoria foi pensada para atender diferentes necessidades e momentos do seu dia.', 'tema_aromas'); ?>
+                    <?php esc_html_e('Descubra nossa linha completa de produtos para harmonizar seu ambiente', 'tema_aromas'); ?>
                 </p>
             </div>
             
-            <div class="category-grid">
-                <div class="category-card featured animate-fade-in-up">
-                    <div class="category-icon">
-                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <circle cx="12" cy="8" r="6"/>
-                            <path d="M12 14v7"/>
-                            <path d="M8 18h8"/>
-                        </svg>
+            <div class="category-grid-visual">
+                <div class="category-card-visual velas">
+                    <div class="category-image-visual">
+                        <img 
+                            src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/all-candles.webp'); ?>" 
+                            alt="<?php esc_attr_e('Velas Aromáticas Premium', 'tema_aromas'); ?>" 
+                            loading="lazy"
+                        />
+                        <div class="category-overlay-visual"></div>
                     </div>
-                    <h3><?php esc_html_e('Aromatizadores', 'tema_aromas'); ?></h3>
-                    <p><?php esc_html_e('Difusores ultrassônicos e elétricos para uma experiência aromática contínua', 'tema_aromas'); ?></p>
-                    <a href="<?php echo esc_url(get_term_link('aromatizadores', 'product_cat')); ?>" class="btn-luxury btn-secondary">
-                        <?php esc_html_e('Explorar', 'tema_aromas'); ?>
-                    </a>
+                    <div class="category-content-visual">
+                        <h3><?php esc_html_e('Velas Aromáticas', 'tema_aromas'); ?></h3>
+                        <p><?php esc_html_e('Fragrâncias exclusivas para criar momentos especiais em seu ambiente', 'tema_aromas'); ?></p>
+                    </div>
                 </div>
                 
-                <div class="category-card animate-fade-in-up">
-                    <div class="category-icon">
-                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 2L15 8h6l-5 4 2 6-6-4-6 4 2-6-5-4h6z"/>
-                        </svg>
+                <div class="category-card-visual aromatizadores">
+                    <div class="category-image-visual">
+                        <img 
+                            src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/all-aromatizadores.webp'); ?>" 
+                            alt="<?php esc_attr_e('Aromatizadores Premium', 'tema_aromas'); ?>" 
+                            loading="lazy"
+                        />
+                        <div class="category-overlay-visual"></div>
                     </div>
-                    <h3><?php esc_html_e('Velas Aromáticas', 'tema_aromas'); ?></h3>
-                    <p><?php esc_html_e('Velas artesanais com cera natural e fragrâncias exclusivas', 'tema_aromas'); ?></p>
-                    <a href="<?php echo esc_url(get_term_link('velas-aromaticas', 'product_cat')); ?>" class="btn-luxury btn-secondary">
-                        <?php esc_html_e('Descobrir', 'tema_aromas'); ?>
-                    </a>
+                    <div class="category-content-visual">
+                        <h3><?php esc_html_e('Aromatizadores', 'tema_aromas'); ?></h3>
+                        <p><?php esc_html_e('Perfume seu espaço com nossas essências naturais duradouras', 'tema_aromas'); ?></p>
+                    </div>
                 </div>
                 
-                <div class="category-card animate-fade-in-up">
-                    <div class="category-icon">
-                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M7 18v-2a4 4 0 0 1 4-4v0a4 4 0 0 1 4 4v2"/>
-                            <circle cx="12" cy="6" r="4"/>
-                            <path d="M12 14v4"/>
-                            <path d="M8 18h8"/>
-                        </svg>
+                <div class="category-card-visual homespray">
+                    <div class="category-image-visual">
+                        <img 
+                            src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/all-homespray.webp'); ?>" 
+                            alt="<?php esc_attr_e('Home Spray Premium', 'tema_aromas'); ?>" 
+                            loading="lazy"
+                        />
+                        <div class="category-overlay-visual"></div>
                     </div>
-                    <h3><?php esc_html_e('Home Spray', 'tema_aromas'); ?></h3>
-                    <p><?php esc_html_e('Sprays aromáticos para perfumar instantaneamente qualquer ambiente', 'tema_aromas'); ?></p>
-                    <a href="<?php echo esc_url(get_term_link('home-spray', 'product_cat')); ?>" class="btn-luxury btn-secondary">
-                        <?php esc_html_e('Ver Mais', 'tema_aromas'); ?>
-                    </a>
+                    <div class="category-content-visual">
+                        <h3><?php esc_html_e('Home Spray', 'tema_aromas'); ?></h3>
+                        <p><?php esc_html_e('Fragrâncias refrescantes para uma atmosfera instantaneamente agradável', 'tema_aromas'); ?></p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -311,7 +312,7 @@ get_header(); ?>
             </div>
         </section>
 
-        <!-- Product Carousel -->
+        <!-- Product Carousel - With Product Grid System -->
         <section class="product-carousel">
             <div class="section-header">
                 <h2 class="section-title luxury-heading">
@@ -322,11 +323,9 @@ get_header(); ?>
                 </p>
             </div>
             
-            <div class="carousel-container">
+            <div class="products-grid recent-products-wrapper">
                 <?php if (class_exists('WooCommerce')) : ?>
-                    <div class="product-carousel-wrapper">
-                        <?php echo do_shortcode('[recent_products limit="8" columns="4"]'); ?>
-                    </div>
+                    <?php echo do_shortcode('[recent_products limit="8" columns="4"]'); ?>
                 <?php else : ?>
                     <p><?php esc_html_e('WooCommerce não está ativo. Ative o plugin para exibir os produtos.', 'tema_aromas'); ?></p>
                 <?php endif; ?>

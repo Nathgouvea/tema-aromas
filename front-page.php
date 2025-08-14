@@ -14,8 +14,8 @@ get_header(); ?>
 <div class="luxury-container">
     <main id="main" class="site-main homepage">
 
-        <!-- Hero Section Redesigned with Real Background -->
-        <section class="hero-luxury">
+        <!-- Hero Section - Matching Screenshot Design -->
+        <section class="hero-luxury-screenshot">
             <div class="hero-background">
                 <img 
                     src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Foto-tela-inicial-.webp'); ?>" 
@@ -23,26 +23,20 @@ get_header(); ?>
                     class="hero-image" 
                     loading="eager"
                 />
-                <div class="hero-overlay"></div>
+                <div class="hero-overlay-left"></div>
             </div>
 
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title">
-                        <?php esc_html_e('Desperte Seus Sentidos com', 'tema_aromas'); ?>
-                        <span class="highlight-luxury"><?php esc_html_e('Aromas Exclusivos', 'tema_aromas'); ?></span>
+            <div class="hero-content-left">
+                <div class="hero-text-left">
+                    <h1 class="hero-title-handwritten">
+                        <?php esc_html_e('Ilumine seus sentidos', 'tema_aromas'); ?>
                     </h1>
-                    <p class="hero-subtitle">
-                        <?php esc_html_e('Transforme seu ambiente com nossa coleção premium de aromatizadores, velas e sprays artesanais', 'tema_aromas'); ?>
+                    <p class="hero-subtitle-elegant">
+                        <?php esc_html_e('Velas e aromas criados para o seu ritual de bem-estar.', 'tema_aromas'); ?>
                     </p>
-                    <div class="hero-ctas">
-                        <a href="<?php echo esc_url(wc_get_page_permalink('shop')); ?>" class="btn-luxury primary">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="9" cy="21" r="1"></circle>
-                                <circle cx="20" cy="21" r="1"></circle>
-                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                            </svg>
-                            <span><?php esc_html_e('Explorar Produtos', 'tema_aromas'); ?></span>
+                    <div class="hero-ctas-left">
+                        <a href="<?php echo esc_url(wc_get_page_permalink('shop')); ?>" class="btn-comprar-agora">
+                            <?php esc_html_e('Comprar Agora', 'tema_aromas'); ?>
                         </a>
                         <a href="<?php 
                             $sobre_page = get_page_by_path('sobre-os-aromas');
@@ -51,63 +45,68 @@ get_header(); ?>
                             } else {
                                 echo esc_url(home_url('/sobre-os-aromas/'));
                             }
-                        ?>" class="btn-luxury secondary">
-                            <?php esc_html_e('Conhecer Aromas', 'tema_aromas'); ?>
+                        ?>" class="btn-ver-colecoes">
+                            <?php esc_html_e('Ver Coleções', 'tema_aromas'); ?>
                         </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Trust Indicators Premium -->
-        <section class="trust-indicators-premium">
-            <div class="trust-grid">
-                <div class="trust-item">
-                    <div class="trust-icon payment">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <!-- Trust Indicators - Horizontal Layout Matching Screenshot -->
+        <section class="trust-indicators-horizontal">
+            <div class="trust-grid-horizontal">
+                <div class="trust-item-horizontal">
+                    <div class="trust-icon-horizontal payment">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/>
                             <line x1="1" y1="10" x2="23" y2="10"/>
                         </svg>
                     </div>
-                    <h3><?php esc_html_e('Pagamento Facilitado', 'tema_aromas'); ?></h3>
-                    <p><?php esc_html_e('Cartão, Pix e Boleto Bancário', 'tema_aromas'); ?></p>
+                    <div class="trust-content-horizontal">
+                        <h3><?php esc_html_e('Pagamento facilitado', 'tema_aromas'); ?></h3>
+                        <p><?php esc_html_e('Cartão, Pix e Boleto Bancário', 'tema_aromas'); ?></p>
+                    </div>
                 </div>
 
-                <div class="trust-item">
-                    <div class="trust-icon shipping">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <div class="trust-item-horizontal">
+                    <div class="trust-icon-horizontal shipping">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <rect x="1" y="3" width="15" height="13"/>
                             <polygon points="16,3 21,8 21,16 16,16"/>
                             <circle cx="5.5" cy="18.5" r="2.5"/>
                             <circle cx="18.5" cy="18.5" r="2.5"/>
                         </svg>
                     </div>
-                    <h3><?php esc_html_e('Envio para todo Brasil', 'tema_aromas'); ?></h3>
-                    <p><?php esc_html_e('Rastreamento disponível', 'tema_aromas'); ?></p>
+                    <div class="trust-content-horizontal">
+                        <h3><?php esc_html_e('Envio para todo Brasil', 'tema_aromas'); ?></h3>
+                        <p><?php esc_html_e('Rastreamento disponível', 'tema_aromas'); ?></p>
+                    </div>
                 </div>
 
-                <div class="trust-item">
-                    <div class="trust-icon security">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <div class="trust-item-horizontal">
+                    <div class="trust-icon-horizontal security">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
                             <path d="M9 12l2 2 4-4"/>
                         </svg>
                     </div>
-                    <h3><?php esc_html_e('Compra Segura', 'tema_aromas'); ?></h3>
-                    <p><?php esc_html_e('Seus dados protegidos', 'tema_aromas'); ?></p>
+                    <div class="trust-content-horizontal">
+                        <h3><?php esc_html_e('Compra Segura', 'tema_aromas'); ?></h3>
+                        <p><?php esc_html_e('Seus dados protegidos', 'tema_aromas'); ?></p>
+                    </div>
                 </div>
 
-                <div class="trust-item contact-highlight">
-                    <div class="trust-icon whatsapp">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <div class="trust-item-horizontal whatsapp-highlight">
+                    <div class="trust-icon-horizontal whatsapp">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
                         </svg>
                     </div>
-                    <h3><?php esc_html_e('Ficou em dúvida?', 'tema_aromas'); ?></h3>
-                    <p><?php esc_html_e('Chama no WhatsApp', 'tema_aromas'); ?></p>
-                    <a href="https://wa.me/5516991626921" class="btn-whatsapp" target="_blank" rel="noopener">
-                        <?php esc_html_e('(16) 99162-6921', 'tema_aromas'); ?>
-                    </a>
+                    <div class="trust-content-horizontal">
+                        <h3><?php esc_html_e('Ficou em dúvida?', 'tema_aromas'); ?></h3>
+                        <p><?php esc_html_e('Chama no WhatsApp', 'tema_aromas'); ?></p>
+                    </div>
                 </div>
             </div>
         </section>

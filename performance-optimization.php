@@ -42,7 +42,15 @@ function tema_aromas_defer_css($html, $handle) {
     
     if (in_array($handle, $defer_handles)) {
         $html = str_replace('rel="stylesheet"', 'rel="preload" as="style" onload="this.onload=null;this.rel=\'stylesheet\'"', $html);
-        $html .= '<noscript><link rel="stylesheet" href="' . esc_url(wp_style_src($handle)) . '"></noscript>';
+        // Get the stylesheet URL using wp_styles global
+        global $wp_styles;
+        if (isset($wp_styles->registered[$handle])) {
+            $src = $wp_styles->registered[$handle]->src;
+            if (!preg_match('|^(https?:)?//|', $src) && !($wp_styles->content_url && 0 === strpos($src, $wp_styles->content_url))) {
+                $src = $wp_styles->base_url . $src;
+            }
+            $html .= '<noscript><link rel="stylesheet" href="' . esc_url($src) . '"></noscript>';
+        }
     }
     
     return $html;

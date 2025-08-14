@@ -9,6 +9,7 @@
 This guide provides comprehensive instructions for customizing the Tema Aromas theme while maintaining code quality, performance, and update compatibility.
 
 **Customization Philosophy:**
+
 - 🔧 **Child Theme Recommended** - Preserve customizations during updates
 - 📱 **Mobile-First Approach** - All customizations should be responsive
 - ♿ **Accessibility First** - Maintain WCAG 2.1 AA compliance
@@ -19,6 +20,7 @@ This guide provides comprehensive instructions for customizing the Tema Aromas t
 ## 🏗️ **Architecture Overview**
 
 ### **Theme Structure**
+
 ```
 tema-aromas/
 ├── 📁 assets/
@@ -33,6 +35,7 @@ tema-aromas/
 ```
 
 ### **CSS Architecture**
+
 ```css
 /* Load Order */
 1. base.css           /* Foundation styles */
@@ -51,11 +54,13 @@ tema-aromas/
 ### **Create Child Theme**
 
 **1. Create Child Theme Folder:**
+
 ```bash
 /wp-content/themes/tema-aromas-child/
 ```
 
 **2. Create style.css:**
+
 ```css
 /*
 Theme Name: Tema Aromas Child
@@ -68,6 +73,7 @@ Version: 1.0.0
 ```
 
 **3. Create functions.php:**
+
 ```php
 <?php
 /**
@@ -77,12 +83,12 @@ Version: 1.0.0
 // Enqueue parent theme styles
 function tema_aromas_child_enqueue_styles() {
     // Parent theme styles
-    wp_enqueue_style('tema-aromas-parent', 
+    wp_enqueue_style('tema-aromas-parent',
         get_template_directory_uri() . '/style.css'
     );
-    
+
     // Child theme styles
-    wp_enqueue_style('tema-aromas-child', 
+    wp_enqueue_style('tema-aromas-child',
         get_stylesheet_directory_uri() . '/style.css',
         array('tema-aromas-parent'),
         wp_get_theme()->get('Version')
@@ -101,26 +107,28 @@ add_action('wp_enqueue_scripts', 'tema_aromas_child_enqueue_styles');
 ### **Color Scheme Modification**
 
 **Method 1: CSS Custom Properties (Recommended)**
+
 ```css
 /* In child theme style.css */
 :root {
-    /* Primary Colors */
-    --cor-primaria: #your-primary-color;
-    --cor-accent: #your-accent-color;
-    --cor-gold: #your-gold-color;
-    
-    /* Background Colors */
-    --cor-fundo: #your-background;
-    --cor-texto: #your-text-color;
-    
-    /* Utility Colors */
-    --cor-success: #your-success-color;
-    --cor-warning: #your-warning-color;
-    --cor-error: #your-error-color;
+  /* Primary Colors */
+  --cor-primaria: #your-primary-color;
+  --cor-accent: #your-accent-color;
+  --cor-gold: #your-gold-color;
+
+  /* Background Colors */
+  --cor-fundo: #your-background;
+  --cor-texto: #your-text-color;
+
+  /* Utility Colors */
+  --cor-success: #your-success-color;
+  --cor-warning: #your-warning-color;
+  --cor-error: #your-error-color;
 }
 ```
 
 **Method 2: WordPress Customizer**
+
 ```php
 // In child theme functions.php
 function tema_aromas_child_customize_register($wp_customize) {
@@ -129,13 +137,13 @@ function tema_aromas_child_customize_register($wp_customize) {
         'title' => 'Cores do Tema',
         'priority' => 30,
     ));
-    
+
     // Primary color control
     $wp_customize->add_setting('primary_color', array(
         'default' => '#6b4fc4',
         'sanitize_callback' => 'sanitize_hex_color',
     ));
-    
+
     $wp_customize->add_control(new WP_Customize_Color_Control(
         $wp_customize,
         'primary_color',
@@ -151,48 +159,62 @@ add_action('customize_register', 'tema_aromas_child_customize_register');
 ### **Typography Customization**
 
 **Font Family Changes:**
+
 ```css
 /* Google Fonts Alternative */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 :root {
-    --font-primary: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-heading: 'Poppins', Georgia, serif;
+  --font-primary: "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: "Poppins", Georgia, serif;
 }
 
 body {
-    font-family: var(--font-primary);
+  font-family: var(--font-primary);
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-heading);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
 }
 ```
 
 **Font Size Adjustments:**
+
 ```css
 /* Responsive font scaling */
 :root {
-    --font-scale: 1.2; /* Increase for larger text */
+  --font-scale: 1.2; /* Increase for larger text */
 }
 
-h1 { font-size: calc(2rem * var(--font-scale)); }
-h2 { font-size: calc(1.5rem * var(--font-scale)); }
-h3 { font-size: calc(1.25rem * var(--font-scale)); }
+h1 {
+  font-size: calc(2rem * var(--font-scale));
+}
+h2 {
+  font-size: calc(1.5rem * var(--font-scale));
+}
+h3 {
+  font-size: calc(1.25rem * var(--font-scale));
+}
 ```
 
 ### **Spacing Customization**
 
 **Modify Spacing Scale:**
+
 ```css
 :root {
-    /* Custom spacing values */
-    --espacamento-xs: 0.75rem;   /* Increased from 0.5rem */
-    --espacamento-sm: 1.25rem;   /* Increased from 1rem */
-    --espacamento-md: 2rem;      /* Increased from 1.5rem */
-    --espacamento-lg: 2.5rem;    /* Increased from 2rem */
-    --espacamento-xl: 4rem;      /* Increased from 3rem */
-    --espacamento-xxl: 5rem;     /* Increased from 4rem */
+  /* Custom spacing values */
+  --espacamento-xs: 0.75rem; /* Increased from 0.5rem */
+  --espacamento-sm: 1.25rem; /* Increased from 1rem */
+  --espacamento-md: 2rem; /* Increased from 1.5rem */
+  --espacamento-lg: 2.5rem; /* Increased from 2rem */
+  --espacamento-xl: 4rem; /* Increased from 3rem */
+  --espacamento-xxl: 5rem; /* Increased from 4rem */
 }
 ```
 
@@ -203,12 +225,14 @@ h3 { font-size: calc(1.25rem * var(--font-scale)); }
 ### **Create Custom Page Templates**
 
 **1. Copy Template to Child Theme:**
+
 ```bash
 # Copy from parent to child theme
 cp /tema-aromas/page.php /tema-aromas-child/page-custom.php
 ```
 
 **2. Modify Template Header:**
+
 ```php
 <?php
 /**
@@ -236,6 +260,7 @@ get_header(); ?>
 ### **Homepage Customization**
 
 **Override Homepage Sections:**
+
 ```php
 // In child theme functions.php
 function tema_aromas_child_homepage_hero() {
@@ -260,6 +285,7 @@ add_action('tema_aromas_homepage_hero', 'tema_aromas_child_homepage_hero');
 ### **WooCommerce Template Overrides**
 
 **1. Copy WooCommerce Templates:**
+
 ```bash
 # Copy to child theme
 /tema-aromas-child/woocommerce/single-product.php
@@ -267,6 +293,7 @@ add_action('tema_aromas_homepage_hero', 'tema_aromas_child_homepage_hero');
 ```
 
 **2. Customize Product Display:**
+
 ```php
 // Custom product card layout
 function tema_aromas_child_product_card() {
@@ -295,6 +322,7 @@ function tema_aromas_child_product_card() {
 ### **Custom Post Types**
 
 **Add Blog Post Type:**
+
 ```php
 // In child theme functions.php
 function tema_aromas_child_register_blog_post_type() {
@@ -315,6 +343,7 @@ add_action('init', 'tema_aromas_child_register_blog_post_type');
 ### **Custom Fields**
 
 **Add Product Features:**
+
 ```php
 // Add custom fields to products
 function tema_aromas_child_add_product_fields() {
@@ -323,14 +352,14 @@ function tema_aromas_child_add_product_fields() {
         'label' => 'Notas de Fragrância',
         'description' => 'Descreva as notas da fragrância',
     ));
-    
+
     woocommerce_wp_text_input(array(
         'id' => '_usage_instructions',
         'label' => 'Instruções de Uso',
         'description' => 'Como usar o produto',
     ));
 }
-add_action('woocommerce_product_options_general_product_data', 
+add_action('woocommerce_product_options_general_product_data',
     'tema_aromas_child_add_product_fields');
 
 // Save custom fields
@@ -339,19 +368,20 @@ function tema_aromas_child_save_product_fields($post_id) {
     if (!empty($fragrance_notes)) {
         update_post_meta($post_id, '_fragrance_notes', $fragrance_notes);
     }
-    
+
     $usage_instructions = $_POST['_usage_instructions'];
     if (!empty($usage_instructions)) {
         update_post_meta($post_id, '_usage_instructions', $usage_instructions);
     }
 }
-add_action('woocommerce_process_product_meta', 
+add_action('woocommerce_process_product_meta',
     'tema_aromas_child_save_product_fields');
 ```
 
 ### **Custom Widgets**
 
 **Instagram Feed Widget:**
+
 ```php
 class Tema_Aromas_Instagram_Widget extends WP_Widget {
     public function __construct() {
@@ -361,19 +391,19 @@ class Tema_Aromas_Instagram_Widget extends WP_Widget {
             array('description' => 'Exibe feed do Instagram')
         );
     }
-    
+
     public function widget($args, $instance) {
         echo $args['before_widget'];
         echo $args['before_title'] . 'Siga-nos no Instagram' . $args['after_title'];
-        
+
         // Instagram feed code here
         echo '<div class="instagram-feed">';
         echo '<!-- Instagram posts -->';
         echo '</div>';
-        
+
         echo $args['after_widget'];
     }
-    
+
     public function form($instance) {
         $username = !empty($instance['username']) ? $instance['username'] : '';
         ?>
@@ -381,10 +411,10 @@ class Tema_Aromas_Instagram_Widget extends WP_Widget {
             <label for="<?php echo $this->get_field_id('username'); ?>">
                 Nome de usuário:
             </label>
-            <input class="widefat" 
+            <input class="widefat"
                    id="<?php echo $this->get_field_id('username'); ?>"
                    name="<?php echo $this->get_field_name('username'); ?>"
-                   type="text" 
+                   type="text"
                    value="<?php echo esc_attr($username); ?>">
         </p>
         <?php
@@ -405,39 +435,41 @@ add_action('widgets_init', 'tema_aromas_child_register_widgets');
 ### **Mobile-Specific Styles**
 
 **Enhanced Mobile Navigation:**
+
 ```css
 /* Mobile menu customization */
 @media (max-width: 767px) {
-    .mobile-menu {
-        background: linear-gradient(135deg, var(--cor-primaria), var(--cor-accent));
-        padding: var(--espacamento-lg);
-    }
-    
-    .mobile-menu-item {
-        padding: var(--espacamento-sm);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        color: white;
-    }
-    
-    .mobile-menu-item:hover {
-        background: rgba(255, 255, 255, 0.1);
-    }
+  .mobile-menu {
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-accent));
+    padding: var(--espacamento-lg);
+  }
+
+  .mobile-menu-item {
+    padding: var(--espacamento-sm);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+  }
+
+  .mobile-menu-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
 }
 ```
 
 **Touch-Friendly Elements:**
+
 ```css
 /* Increase touch targets */
 @media (max-width: 767px) {
-    .btn-luxury {
-        min-height: 48px; /* Minimum touch target */
-        padding: var(--espacamento-md) var(--espacamento-lg);
-    }
-    
-    .product-card {
-        margin-bottom: var(--espacamento-lg);
-        padding: var(--espacamento-md);
-    }
+  .btn-luxury {
+    min-height: 48px; /* Minimum touch target */
+    padding: var(--espacamento-md) var(--espacamento-lg);
+  }
+
+  .product-card {
+    margin-bottom: var(--espacamento-lg);
+    padding: var(--espacamento-md);
+  }
 }
 ```
 
@@ -448,6 +480,7 @@ add_action('widgets_init', 'tema_aromas_child_register_widgets');
 ### **Custom Checkout Fields**
 
 **Add Delivery Instructions:**
+
 ```php
 // Add custom checkout field
 function tema_aromas_child_checkout_fields($fields) {
@@ -460,7 +493,7 @@ function tema_aromas_child_checkout_fields($fields) {
         'type' => 'textarea',
         'priority' => 120,
     );
-    
+
     return $fields;
 }
 add_filter('woocommerce_checkout_fields', 'tema_aromas_child_checkout_fields');
@@ -468,55 +501,57 @@ add_filter('woocommerce_checkout_fields', 'tema_aromas_child_checkout_fields');
 // Save field data
 function tema_aromas_child_save_checkout_field($order_id) {
     if (!empty($_POST['delivery_instructions'])) {
-        update_post_meta($order_id, 'delivery_instructions', 
+        update_post_meta($order_id, 'delivery_instructions',
             sanitize_textarea_field($_POST['delivery_instructions']));
     }
 }
-add_action('woocommerce_checkout_update_order_meta', 
+add_action('woocommerce_checkout_update_order_meta',
     'tema_aromas_child_save_checkout_field');
 ```
 
 ### **Custom Product Badges**
 
 **Add "Novo" Badge:**
+
 ```php
 // Add new product badge
 function tema_aromas_child_new_product_badge() {
     global $product;
-    
+
     $created = strtotime($product->get_date_created());
     $thirty_days_ago = strtotime('-30 days');
-    
+
     if ($created > $thirty_days_ago) {
         echo '<span class="product-badge badge-new">Novo</span>';
     }
 }
-add_action('woocommerce_before_single_product_summary', 
+add_action('woocommerce_before_single_product_summary',
     'tema_aromas_child_new_product_badge', 15);
 ```
 
 **Badge Styles:**
+
 ```css
 .product-badge {
-    position: absolute;
-    top: var(--espacamento-sm);
-    right: var(--espacamento-sm);
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    z-index: 10;
+  position: absolute;
+  top: var(--espacamento-sm);
+  right: var(--espacamento-sm);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  z-index: 10;
 }
 
 .badge-new {
-    background: var(--cor-success);
-    color: white;
+  background: var(--cor-success);
+  color: white;
 }
 
 .badge-sale {
-    background: var(--cor-error);
-    color: white;
+  background: var(--cor-error);
+  color: white;
 }
 ```
 
@@ -527,6 +562,7 @@ add_action('woocommerce_before_single_product_summary',
 ### **Custom CSS Optimization**
 
 **Critical CSS for Custom Styles:**
+
 ```php
 // Add custom critical CSS
 function tema_aromas_child_critical_css() {
@@ -550,22 +586,23 @@ add_action('wp_head', 'tema_aromas_child_critical_css', 2);
 ### **Conditional Asset Loading**
 
 **Load Scripts Only When Needed:**
+
 ```php
 // Conditional script loading
 function tema_aromas_child_conditional_scripts() {
     // Load Instagram widget script only on pages with widget
     if (is_active_widget(false, false, 'tema_aromas_instagram')) {
-        wp_enqueue_script('instagram-feed', 
+        wp_enqueue_script('instagram-feed',
             get_stylesheet_directory_uri() . '/js/instagram-feed.js',
             array('jquery'),
             '1.0.0',
             true
         );
     }
-    
+
     // Load custom product scripts only on product pages
     if (is_product()) {
-        wp_enqueue_script('custom-product', 
+        wp_enqueue_script('custom-product',
             get_stylesheet_directory_uri() . '/js/custom-product.js',
             array('jquery'),
             '1.0.0',
@@ -583,6 +620,7 @@ add_action('wp_enqueue_scripts', 'tema_aromas_child_conditional_scripts');
 ### **Custom Schema Markup**
 
 **Add FAQ Schema:**
+
 ```php
 function tema_aromas_child_faq_schema() {
     if (is_page('sobre-os-aromas')) {
@@ -601,9 +639,9 @@ function tema_aromas_child_faq_schema() {
                 // More FAQ items
             )
         );
-        
-        echo '<script type="application/ld+json">' . 
-             json_encode($faq_schema, JSON_UNESCAPED_UNICODE) . 
+
+        echo '<script type="application/ld+json">' .
+             json_encode($faq_schema, JSON_UNESCAPED_UNICODE) .
              '</script>';
     }
 }
@@ -613,6 +651,7 @@ add_action('wp_head', 'tema_aromas_child_faq_schema');
 ### **Custom Meta Tags**
 
 **Add Custom Meta for Specific Pages:**
+
 ```php
 function tema_aromas_child_custom_meta() {
     if (is_page('categorias')) {
@@ -653,7 +692,7 @@ function tema_aromas_child_login_styles() {
             height: 100px;
             background-size: contain;
         }
-        
+
         .login form {
             border-radius: 8px;
             box-shadow: var(--sombra-luxo);
@@ -671,6 +710,7 @@ add_action('login_head', 'tema_aromas_child_login_styles');
 ### **Development Workflow**
 
 **1. Local Testing:**
+
 ```bash
 # Test on local environment first
 - Check responsive design
@@ -680,6 +720,7 @@ add_action('login_head', 'tema_aromas_child_login_styles');
 ```
 
 **2. Staging Deployment:**
+
 ```bash
 # Deploy to staging site
 - Full functionality testing
@@ -689,6 +730,7 @@ add_action('login_head', 'tema_aromas_child_login_styles');
 ```
 
 **3. Production Deployment:**
+
 ```bash
 # Deploy to live site
 - Backup current site
@@ -700,6 +742,7 @@ add_action('login_head', 'tema_aromas_child_login_styles');
 ### **Debug Mode**
 
 **Enable WordPress Debug:**
+
 ```php
 // In wp-config.php
 define('WP_DEBUG', true);
@@ -708,6 +751,7 @@ define('WP_DEBUG_DISPLAY', false);
 ```
 
 **Custom Debug Function:**
+
 ```php
 // In child theme functions.php
 function tema_aromas_child_debug($data, $label = 'Debug') {
@@ -727,6 +771,7 @@ tema_aromas_child_debug($custom_data, 'Custom Data Check');
 ### **Code Documentation**
 
 **PHP Functions:**
+
 ```php
 /**
  * Custom function description
@@ -742,6 +787,7 @@ function tema_aromas_child_custom_function($parameter) {
 ```
 
 **CSS Comments:**
+
 ```css
 /* ==========================================================================
    Custom Component Name
@@ -754,28 +800,33 @@ function tema_aromas_child_custom_function($parameter) {
  * 2. Another specific reason
  */
 .custom-component {
-    property: value; /* 1 */
-    property: value; /* 2 */
+  property: value; /* 1 */
+  property: value; /* 2 */
 }
 ```
 
 ### **Change Log**
 
 **Maintain a changelog in child theme:**
+
 ```markdown
 # Changelog
 
 ## [1.1.0] - 2024-03-15
+
 ### Added
+
 - Custom Instagram widget
 - Enhanced mobile navigation
 - FAQ schema markup
 
 ### Changed
+
 - Updated color scheme
 - Modified font sizes
 
 ### Fixed
+
 - Mobile menu overlap issue
 - Contact form validation
 ```
@@ -785,6 +836,7 @@ function tema_aromas_child_custom_function($parameter) {
 ## 🎉 **Best Practices Summary**
 
 ### **Do's:**
+
 - ✅ Use child themes for customizations
 - ✅ Follow WordPress coding standards
 - ✅ Test on multiple devices and browsers
@@ -794,6 +846,7 @@ function tema_aromas_child_custom_function($parameter) {
 - ✅ Optimize for performance
 
 ### **Don'ts:**
+
 - ❌ Modify parent theme files directly
 - ❌ Use !important unless absolutely necessary
 - ❌ Ignore mobile responsiveness
@@ -807,11 +860,13 @@ function tema_aromas_child_custom_function($parameter) {
 ## 📞 **Support & Resources**
 
 ### **Documentation:**
+
 - [WordPress Developer Handbook](https://developer.wordpress.org/)
 - [WooCommerce Developer Resources](https://woocommerce.github.io/code-reference/)
 - [CSS Custom Properties Guide](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
 
 ### **Tools:**
+
 - **Code Validation:** W3C Markup Validator
 - **Accessibility:** WAVE Web Accessibility Evaluator
 - **Performance:** Google PageSpeed Insights
@@ -821,4 +876,4 @@ function tema_aromas_child_custom_function($parameter) {
 
 **🎨 Happy Customizing!**
 
-*This guide ensures your customizations maintain the luxury, performance, and accessibility standards of Tema Aromas while providing the flexibility to make it uniquely yours.* ✨
+_This guide ensures your customizations maintain the luxury, performance, and accessibility standards of Tema Aromas while providing the flexibility to make it uniquely yours._ ✨

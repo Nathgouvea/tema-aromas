@@ -98,19 +98,19 @@ tema-aromas/
 
 ```css
 /* Primary Colors */
---cor-primaria: #6b4fc4;    /* Luxury Purple */
---cor-accent: #8b5fd6;      /* Light Purple */
---cor-gold: #d4af37;        /* Premium Gold */
+--cor-primaria: #6b4fc4; /* Luxury Purple */
+--cor-accent: #8b5fd6; /* Light Purple */
+--cor-gold: #d4af37; /* Premium Gold */
 
 /* Base Colors */
---cor-texto: #000000;       /* Elegant Black */
---cor-fundo: #ffffff;       /* Premium White */
---cor-borda: #e6e6e6;       /* Subtle Gray */
+--cor-texto: #000000; /* Elegant Black */
+--cor-fundo: #ffffff; /* Premium White */
+--cor-borda: #e6e6e6; /* Subtle Gray */
 
 /* Utility Colors */
---cor-success: #28a745;     /* Success Green */
---cor-warning: #ffc107;     /* Warning Amber */
---cor-error: #dc3545;       /* Error Red */
+--cor-success: #28a745; /* Success Green */
+--cor-warning: #ffc107; /* Warning Amber */
+--cor-error: #dc3545; /* Error Red */
 ```
 
 ### **Typography**
@@ -123,12 +123,12 @@ tema-aromas/
 ### **Spacing System**
 
 ```css
---espacamento-xs: 0.5rem;   /* 8px */
---espacamento-sm: 1rem;     /* 16px */
---espacamento-md: 1.5rem;   /* 24px */
---espacamento-lg: 2rem;     /* 32px */
---espacamento-xl: 3rem;     /* 48px */
---espacamento-xxl: 4rem;    /* 64px */
+--espacamento-xs: 0.5rem; /* 8px */
+--espacamento-sm: 1rem; /* 16px */
+--espacamento-md: 1.5rem; /* 24px */
+--espacamento-lg: 2rem; /* 32px */
+--espacamento-xl: 3rem; /* 48px */
+--espacamento-xxl: 4rem; /* 64px */
 ```
 
 ---
@@ -180,9 +180,15 @@ The theme creates 6 main categories:
 /* Mobile First Approach */
 /* Base: 320px+ (Mobile) */
 
-@media (min-width: 768px) { /* Tablet */ }
-@media (min-width: 1024px) { /* Desktop */ }
-@media (min-width: 1200px) { /* Large Desktop */ }
+@media (min-width: 768px) {
+  /* Tablet */
+}
+@media (min-width: 1024px) {
+  /* Desktop */
+}
+@media (min-width: 1200px) {
+  /* Large Desktop */
+}
 ```
 
 ### **Navigation**
@@ -213,7 +219,7 @@ The theme creates 6 main categories:
 
 <!-- Forms -->
 <label for="email">E-mail</label>
-<input id="email" type="email" required aria-describedby="email-help">
+<input id="email" type="email" required aria-describedby="email-help" />
 
 <!-- Status Messages -->
 <div role="alert" aria-live="polite">Produto adicionado ao carrinho</div>
@@ -226,7 +232,7 @@ The theme creates 6 main categories:
 ### **Core Web Vitals Optimization**
 
 - **LCP (Largest Contentful Paint):** < 2.5s
-- **FID (First Input Delay):** < 100ms  
+- **FID (First Input Delay):** < 100ms
 - **CLS (Cumulative Layout Shift):** < 0.1
 
 ### **Optimization Features**
@@ -255,7 +261,7 @@ The theme creates 6 main categories:
 // Static Assets: 1 year cache
 Cache-Control: public, max-age=31536000
 
-// HTML Pages: 1 hour cache  
+// HTML Pages: 1 hour cache
 Cache-Control: public, max-age=3600
 ```
 
@@ -267,14 +273,14 @@ Cache-Control: public, max-age=3600
 
 ```html
 <!-- Open Graph for Social Media -->
-<meta property="og:title" content="Page Title">
-<meta property="og:description" content="Page Description">
-<meta property="og:image" content="Featured Image">
-<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Page Title" />
+<meta property="og:description" content="Page Description" />
+<meta property="og:image" content="Featured Image" />
+<meta property="og:locale" content="pt_BR" />
 
 <!-- Twitter Cards -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Page Title">
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Page Title" />
 ```
 
 ### **Structured Data (JSON-LD)**
@@ -312,7 +318,7 @@ Cache-Control: public, max-age=3600
 
 ```php
 X-Content-Type-Options: nosniff
-X-Frame-Options: SAMEORIGIN  
+X-Frame-Options: SAMEORIGIN
 X-XSS-Protection: 1; mode=block
 Referrer-Policy: strict-origin-when-cross-origin
 ```
@@ -334,16 +340,19 @@ Referrer-Policy: strict-origin-when-cross-origin
 Access via **Appearance > Customize**:
 
 1. **Site Identity**
+
    - Logo upload and configuration
    - Site title and tagline
    - Favicon setup
 
 2. **Colors**
+
    - Primary color adjustment
    - Accent color modification
    - Background customization
 
 3. **Typography**
+
    - Font family selection
    - Font size adjustments
    - Line height modifications
@@ -359,9 +368,9 @@ Override default styles by modifying CSS custom properties:
 
 ```css
 :root {
-  --cor-primaria: #your-color;     /* Primary color */
-  --cor-accent: #your-accent;      /* Accent color */
-  --espacamento-lg: 3rem;          /* Spacing adjustment */
+  --cor-primaria: #your-color; /* Primary color */
+  --cor-accent: #your-accent; /* Accent color */
+  --espacamento-lg: 3rem; /* Spacing adjustment */
 }
 ```
 
@@ -386,14 +395,14 @@ add_action('wp_enqueue_scripts', 'child_theme_styles');
 
 ### **Supported Browsers**
 
-| Browser | Version |
-|---------|---------|
-| Chrome | 90+ |
-| Firefox | 88+ |
-| Safari | 14+ |
-| Edge | 90+ |
-| iOS Safari | 14+ |
-| Android Chrome | 90+ |
+| Browser        | Version |
+| -------------- | ------- |
+| Chrome         | 90+     |
+| Firefox        | 88+     |
+| Safari         | 14+     |
+| Edge           | 90+     |
+| iOS Safari     | 14+     |
+| Android Chrome | 90+     |
 
 ### **Graceful Degradation**
 
@@ -408,7 +417,7 @@ add_action('wp_enqueue_scripts', 'child_theme_styles');
 ### **Lighthouse Scores (Target)**
 
 - **Performance:** 90+ 🟢
-- **Accessibility:** 95+ 🟢  
+- **Accessibility:** 95+ 🟢
 - **Best Practices:** 95+ 🟢
 - **SEO:** 100 🟢
 
@@ -467,6 +476,7 @@ A: Enable caching plugin (WP Rocket, W3 Total Cache). Optimize images and consid
 ### **Version 1.0.0** - Initial Release
 
 #### ✅ **Added**
+
 - Complete theme implementation
 - WooCommerce integration
 - Brazilian localization
@@ -477,6 +487,7 @@ A: Enable caching plugin (WP Rocket, W3 Total Cache). Optimize images and consid
 - Luxury visual design
 
 #### 🔧 **Technical**
+
 - WordPress 6.0+ compatibility
 - WooCommerce 7.0+ support
 - PHP 8.0+ optimization
@@ -510,4 +521,4 @@ the Free Software Foundation; either version 2 of the License, or
 
 **Made with ❤️ for the aromatherapy community in Brazil** 🇧🇷
 
-*Transform your aromatherapy business with a theme that reflects the luxury and tranquility of your products.*
+_Transform your aromatherapy business with a theme that reflects the luxury and tranquility of your products._

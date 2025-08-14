@@ -37,11 +37,13 @@ Before installing the theme, ensure you have:
 ### **1.2 Configure WordPress Settings**
 
 **General Settings:**
+
 - **Site Language:** Portuguese (Brazil)
 - **Timezone:** São Paulo (UTC-3)
 - **Date Format:** d/m/Y (Brazilian standard)
 
 **Permalink Settings:**
+
 - **Structure:** `/%postname%/` (SEO friendly)
 
 ---
@@ -51,6 +53,7 @@ Before installing the theme, ensure you have:
 ### **2.1 Upload Theme Files**
 
 **Method 1: WordPress Admin (Recommended)**
+
 1. Download `tema-aromas.zip`
 2. Go to **Appearance > Themes > Add New**
 3. Click **Upload Theme**
@@ -58,6 +61,7 @@ Before installing the theme, ensure you have:
 5. Click **Activate**
 
 **Method 2: FTP Upload**
+
 1. Extract `tema-aromas.zip`
 2. Upload `tema-aromas` folder to `/wp-content/themes/`
 3. Go to **Appearance > Themes**
@@ -85,16 +89,17 @@ Complete the WooCommerce setup:
 
 1. **Store Location:** Brazil
 2. **Currency:** Brazilian Real (R$)
-3. **Payment Methods:** 
+3. **Payment Methods:**
    - Bank Transfer
    - Mercado Pago (install plugin)
-4. **Shipping:** 
+4. **Shipping:**
    - Melhor Envio integration
    - Manual shipping zones
 
 ### **3.2 Essential WooCommerce Settings**
 
 **General Settings:**
+
 ```
 Store Address: [Your Address]
 City: [Your City]
@@ -106,6 +111,7 @@ Thousand Separator: . (period)
 ```
 
 **Product Settings:**
+
 ```
 Shop Page: /loja/
 Default Product Sorting: Popularity
@@ -114,6 +120,7 @@ Enable Product Reviews: Yes
 ```
 
 **Tax Settings:**
+
 ```
 Enable Taxes: Yes
 Prices Include Tax: Yes (Brazilian law)
@@ -123,6 +130,7 @@ Display Prices: Including tax
 ### **3.3 Shipping Configuration**
 
 **Brazilian Shipping Zones:**
+
 1. **São Paulo (State):** Free shipping above R$ 200
 2. **Southeast Region:** R$ 15 shipping fee
 3. **Rest of Brazil:** R$ 25 shipping fee
@@ -142,6 +150,7 @@ Display Prices: Including tax
 ### **4.2 Menu Configuration**
 
 **Primary Menu Setup:**
+
 1. Go to **Appearance > Menus**
 2. Create new menu: "Menu Principal"
 3. Add these items in order:
@@ -164,15 +173,18 @@ Display Prices: Including tax
 The theme uses `front-page.php` with sections:
 
 **Hero Section:**
+
 - Edit via **Pages > Homepage**
 - Update hero title and subtitle
 - Set call-to-action buttons
 
 **Featured Products:**
+
 - Managed via WooCommerce shortcodes
 - Mark products as "Featured" in WooCommerce
 
 **Category Highlights:**
+
 - Automatically displays 6 main categories
 - Add category images via **Products > Categories**
 
@@ -186,7 +198,7 @@ The theme uses `front-page.php` with sections:
 2. Add content sections:
    ```
    - Introduction to Aromatherapy
-   - Your Brand Story  
+   - Your Brand Story
    - Product Benefits
    - FAQ Section (uses accordion)
    ```
@@ -208,14 +220,17 @@ The theme uses `front-page.php` with sections:
 Create and link these essential pages:
 
 **Privacy Policy:**
+
 - Template: WooCommerce privacy policy generator
 - Link in footer menu
 
 **Terms & Conditions:**
+
 - Include shipping, returns, and warranty info
 - Link in checkout process
 
 **Returns & Exchanges:**
+
 - 7-day return policy (Brazilian law)
 - Exchange procedures
 
@@ -228,6 +243,7 @@ Create and link these essential pages:
 Set up the 6 main categories with:
 
 **For each category:**
+
 1. **Category Name:** Portuguese names
 2. **Description:** SEO-friendly descriptions
 3. **Category Image:** 400x400px minimum
@@ -238,6 +254,7 @@ Set up the 6 main categories with:
 Add sample products for each category:
 
 **Product Information:**
+
 ```
 Title: [Product Name in Portuguese]
 Description: Detailed product benefits
@@ -251,6 +268,7 @@ Tags: Aromatherapy-related keywords
 ### **6.3 Product Attributes**
 
 Create useful attributes:
+
 ```
 Fragrance: Lavanda, Eucalipto, Citrus, etc.
 Size: 250ml, 500ml, 1L
@@ -265,11 +283,13 @@ Occasion: Relaxamento, Energia, Sono, etc.
 ### **7.1 Mobile Testing**
 
 Test on these devices:
+
 - [ ] iPhone (Safari)
 - [ ] Android (Chrome)
 - [ ] Tablet (iPad/Android)
 
 **Key Areas to Test:**
+
 - Navigation menu (hamburger)
 - Product pages
 - Checkout process
@@ -278,12 +298,14 @@ Test on these devices:
 ### **7.2 Performance Optimization**
 
 **Enable Caching:**
+
 1. Install WP Rocket or W3 Total Cache
 2. Configure basic caching settings
 3. Enable GZIP compression
 4. Optimize images
 
 **Image Optimization:**
+
 - Use WebP format when possible
 - Compress images before upload
 - Use appropriate image sizes
@@ -295,11 +317,13 @@ Test on these devices:
 ### **8.1 Install SEO Plugin**
 
 **Yoast SEO Setup:**
+
 1. Install and activate Yoast SEO
 2. Run the configuration wizard
 3. Set focus keywords for main pages
 
 **Key SEO Settings:**
+
 ```
 Business Type: LocalBusiness
 Organization Name: [Your Business Name]
@@ -310,12 +334,14 @@ Social Profiles: Add all social media links
 ### **8.2 Essential Meta Information**
 
 **Homepage:**
+
 ```
 Title: [Business Name] - Aromaterapia Premium no Brasil
 Description: Descubra nossa coleção premium de aromatizadores, velas aromáticas e home sprays. Aromaterapia de qualidade para transformar seu ambiente.
 ```
 
 **Product Pages:**
+
 ```
 Title: [Product Name] - [Category] | [Business Name]
 Description: [Product benefits and key features in Portuguese]
@@ -328,6 +354,7 @@ Description: [Product benefits and key features in Portuguese]
 ### **9.1 Security Plugin Configuration**
 
 **Wordfence Security:**
+
 1. Install and activate Wordfence
 2. Run security scan
 3. Enable firewall protection
@@ -356,6 +383,7 @@ Description: [Product benefits and key features in Portuguese]
 4. Test with sandbox mode first
 
 **Payment Methods to Enable:**
+
 - PIX (Instant payment)
 - Credit Card
 - Bank Transfer
@@ -364,6 +392,7 @@ Description: [Product benefits and key features in Portuguese]
 ### **10.2 Payment Testing**
 
 **Test Scenarios:**
+
 - [ ] Successful payment
 - [ ] Failed payment
 - [ ] Refund process
@@ -394,24 +423,28 @@ Description: [Product benefits and key features in Portuguese]
 ### **12.1 Complete Site Testing**
 
 **Homepage:**
+
 - [ ] Hero section displays correctly
 - [ ] Featured products load
 - [ ] Category links work
 - [ ] Newsletter signup functions
 
 **Product Pages:**
+
 - [ ] Images load properly
 - [ ] Add to cart works
 - [ ] Price displays correctly (R$ format)
 - [ ] Related products show
 
 **Checkout Process:**
+
 - [ ] Cart updates correctly
 - [ ] Brazilian address fields work
 - [ ] CEP validation functions
 - [ ] Payment methods available
 
 **Contact & Forms:**
+
 - [ ] Contact form sends emails
 - [ ] Phone number formatting
 - [ ] Google Maps displays
@@ -419,12 +452,14 @@ Description: [Product benefits and key features in Portuguese]
 ### **12.2 Performance Testing**
 
 **Tools to Use:**
+
 - Google PageSpeed Insights
 - GTmetrix
 - Pingdom
 - WebPageTest
 
 **Target Scores:**
+
 - Performance: 90+
 - Accessibility: 95+
 - Best Practices: 95+
@@ -448,11 +483,13 @@ Description: [Product benefits and key features in Portuguese]
 ### **13.2 Launch Day**
 
 1. **Switch to Production:**
+
    - Disable maintenance mode
    - Switch payment methods to live mode
    - Enable caching
 
 2. **Monitor:**
+
    - Check for any errors
    - Monitor site performance
    - Test key user flows
@@ -469,6 +506,7 @@ Description: [Product benefits and key features in Portuguese]
 ### **Common Issues**
 
 **Products Not Displaying:**
+
 ```
 Solution: Check WooCommerce settings
 Ensure shop page is set correctly
@@ -476,6 +514,7 @@ Verify product categories are assigned
 ```
 
 **Slow Loading:**
+
 ```
 Solution: Enable caching plugin
 Optimize images
@@ -484,6 +523,7 @@ Disable unnecessary plugins
 ```
 
 **Contact Form Not Working:**
+
 ```
 Solution: Test email functionality
 Install SMTP plugin
@@ -492,6 +532,7 @@ Verify form configuration
 ```
 
 **Payment Issues:**
+
 ```
 Solution: Check API credentials
 Test in sandbox mode
@@ -504,11 +545,13 @@ Check payment gateway logs
 ## 📞 **Support Resources**
 
 ### **Documentation Links**
+
 - [WordPress Codex](https://codex.wordpress.org/)
 - [WooCommerce Documentation](https://woocommerce.com/documentation/)
 - [Mercado Pago Developers](https://www.mercadopago.com.br/developers/)
 
 ### **Brazilian Specific Resources**
+
 - [E-commerce Brasil](https://www.ecommercebrasil.com.br/)
 - [ABCOMM](https://abcomm.org/)
 - [Código de Defesa do Consumidor](http://www.planalto.gov.br/ccivil_03/leis/l8078.htm)
@@ -517,9 +560,10 @@ Check payment gateway logs
 
 ## 🎉 **Success!**
 
-Your Tema Aromas website is now ready to launch! 
+Your Tema Aromas website is now ready to launch!
 
 **Next Steps:**
+
 1. Add your products
 2. Start marketing campaigns
 3. Monitor analytics
@@ -528,4 +572,4 @@ Your Tema Aromas website is now ready to launch!
 
 **Made with ❤️ for Brazilian aromatherapy businesses** 🇧🇷
 
-*Transform your aromatherapy business with a website that reflects the luxury and tranquility of your products.*
+_Transform your aromatherapy business with a website that reflects the luxury and tranquility of your products._

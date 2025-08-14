@@ -1,6 +1,6 @@
 # Zen Secrets - UX/UI Design Project Plan
 
-## Redesign para E-commerce de Aromaterapia Premium
+## Redesign para Loja Online Premium de Produtos Aromáticos
 
 ---
 
@@ -8,7 +8,7 @@
 
 ### Situação Atual
 
-O website da Zen Secrets possui uma estrutura técnica sólida baseada em WordPress/WooCommerce, mas apresenta problemas significativos de design e experiência do usuário que afetam as conversões e a percepção de marca premium.
+A loja online Zen Secrets possui uma estrutura técnica sólida baseada em WordPress/WooCommerce, mas apresenta problemas significativos de design e experiência do usuário que afetam as conversões e a percepção de marca premium. Como uma loja especializada em produtos aromáticos naturais focados no bem-estar, é essencial transmitir luxo e confiança.
 
 ### Objetivos do Projeto
 
@@ -17,6 +17,10 @@ O website da Zen Secrets possui uma estrutura técnica sólida baseada em WordPr
 3. **Fortalecer** a identidade de marca premium
 4. **Melhorar** indicadores de confiança e credibilidade
 5. **Implementar** design responsivo de alta qualidade
+
+### Modelo de Negócio
+
+**Zen Secrets é uma loja online premium** que vende produtos físicos de aromaterapia focados no bem-estar. Nossa missão é proporcionar uma experiência de compra luxuosa e confiável para clientes que buscam produtos aromáticos naturais de alta qualidade.
 
 ### Produtos Principais
 
@@ -906,9 +910,11 @@ Para garantir uma experiência premium e consistente, **TODAS** as páginas deve
 ### Complete Product Images Library
 
 **Hero Section:**
+
 - Hero Background: `/assets/img/Foto-tela-inicial-.webp`
 
 **Category Collection Images:**
+
 - Aromatizadores: `/assets/img/all-aromatizadores.webp`
 - Home Spray: `/assets/img/all-homespray.webp`
 - Velas Aromáticas: `/assets/img/all-candles.webp`
@@ -918,16 +924,19 @@ Para garantir uma experiência premium e consistente, **TODAS** as páginas deve
 **Individual Product Images by Category:**
 
 #### Aromatizadores:
+
 - Aromatizador Chá Branco: `/assets/img/Aromatizador chá Branco .webp`
 - Aromatizador Flor de Figo: `/assets/img/Aromatizador-F-Figo-.webp`
 - Aromatizador Flor de Figo (alt): `/assets/img/aromatizador-flordefigo.webp`
 
 #### Home Spray:
+
 - Home Spray Marinho: `/assets/img/Home-spray-marinho-2.webp`
 - Home Spray Chá Branco: `/assets/img/homespray-chabranco.webp`
 - Home Spray Flor de Figo: `/assets/img/homespray-flordefigo.webp`
 
 #### Velas Aromáticas:
+
 - Vela Bamboo: `/assets/img/Vela bamboo .webp`
 - Vela Flor de Figo: `/assets/img/Vela F Figo .webp`
 - Vela Chá Branco: `/assets/img/Vela-chá-Branco-.webp`
@@ -937,24 +946,29 @@ Para garantir uma experiência premium e consistente, **TODAS** as páginas deve
 - Vela Palo Santo (alt): `/assets/img/vela-palosanto.webp`
 
 #### Kits Especiais:
+
 - Kit Chá Branco: `/assets/img/Kit chá Branco .webp`
 - Kit Flor de Figo: `/assets/img/Kit F Figo .webp`
 - Kit Marinho: `/assets/img/Kit marinho .webp`
 
 #### Lembrancinhas:
+
 - Lembrancinha: `/assets/img/Lembrancinha.webp`
 - Lembrancinhas Variadas: `/assets/img/lembrancinhas-11.webp`
 - Lembrancinhas Collection: `/assets/img/lembrancinhas.webp`
 
 #### Aromas Individuais:
+
 - Marinho: `/assets/img/marinho.webp`
 
 **Brand Assets:**
+
 - Logo Zen: `/assets/img/logo-zen.svg`
 - Logo PNG: `/assets/img/logo.png`
 - Logo SVG: `/assets/img/logo.svg`
 
 **Payment & Delivery:**
+
 - Visa: `/assets/img/visa.png`
 - Mastercard: `/assets/img/mastercard.png`
 - American Express: `/assets/img/amex.png`
@@ -965,6 +979,7 @@ Para garantir uma experiência premium e consistente, **TODAS** as páginas deve
 ### Product Images Usage Guide
 
 **For Homepage Category Showcase:**
+
 ```html
 <!-- Use collection images for category cards -->
 <img src="/assets/img/all-aromatizadores.webp" alt="Aromatizadores Premium" />
@@ -973,14 +988,19 @@ Para garantir uma experiência premium e consistente, **TODAS** as páginas deve
 ```
 
 **For Product Carousels:**
+
 ```html
 <!-- Use individual product images for variety -->
-<img src="/assets/img/Aromatizador chá Branco .webp" alt="Aromatizador Chá Branco" />
+<img
+  src="/assets/img/Aromatizador chá Branco .webp"
+  alt="Aromatizador Chá Branco"
+/>
 <img src="/assets/img/Home-spray-marinho-2.webp" alt="Home Spray Marinho" />
 <img src="/assets/img/Vela bamboo .webp" alt="Vela Aromática Bamboo" />
 ```
 
 **For Aroma Showcase (5 Available Aromas):**
+
 1. **Chá Branco**: Available in Aromatizadores, Home Spray, Velas, and Kits
 2. **Flor de Figo**: Available in Aromatizadores, Home Spray, Velas, and Kits
 3. **Bamboo**: Available in Velas
@@ -1114,14 +1134,16 @@ Para garantir uma experiência premium e consistente, **TODAS** as páginas deve
 
 ## 💡 Considerações Finais
 
-Este plano de design foca em transformar a Zen Secrets em uma experiência digital premium que reflita a qualidade e sofisticação dos produtos oferecidos. As mudanças propostas são baseadas em:
+Este plano de design foca em transformar a Zen Secrets em uma **loja online premium** que reflita a qualidade e sofisticação dos produtos oferecidos. Como uma e-commerce especializada em aromaterapia, é fundamental criar uma experiência de compra que inspire confiança e transmita o valor premium dos produtos naturais.
 
-1. **Best practices de UX/UI** para e-commerce
-2. **Pesquisa de mercado** no segmento de luxo
-3. **Princípios de psicologia** do consumidor
-4. **Otimização para conversão** baseada em dados
+As mudanças propostas são baseadas em:
 
-O resultado esperado é um website que não apenas venda produtos, mas crie uma experiência sensorial digital que conecte emocionalmente com os clientes e reflita o valor premium da marca Zen Secrets.
+1. **Best practices de UX/UI** para e-commerce e conversão
+2. **Pesquisa de mercado** no segmento de luxo e bem-estar
+3. **Princípios de psicologia** do consumidor online
+4. **Otimização para conversão** baseada em dados de vendas
+
+O resultado esperado é uma **loja online** que não apenas apresente produtos, mas crie uma experiência sensorial digital que conecte emocionalmente com os clientes, inspire confiança na compra online, e reflita o valor premium da marca Zen Secrets como especialista em produtos aromáticos naturais.
 
 ---
 

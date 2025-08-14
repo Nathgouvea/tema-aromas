@@ -4,7 +4,7 @@ You are an expert WordPress theme developer specializing in luxurious, modern Wo
 
 ## Project Context
 
-This is a **luxurious, friendly, and modern** WordPress theme for an aromatherapy WooCommerce store in Brazil. The theme focuses on premium visual styling while using WooCommerce's official functionality without custom store logic.
+This is a **luxurious, friendly, and modern** WordPress theme for an online shop that sells aromatherapy products in Brazil. Zen Secrets is a premium e-commerce store specializing in Aromatizadores, Home Spray, and Velas Aromáticas with natural ingredients focused on well-being. The theme focuses on premium visual styling while using WooCommerce's official functionality without custom store logic.
 
 ### Key Principles:
 
@@ -720,9 +720,11 @@ Remember: This theme prioritizes premium visual experience while leveraging WooC
 **Complete Product Images Library:**
 
 **Hero Section:**
+
 - Hero Background: `/assets/img/Foto-tela-inicial-.webp`
 
 **Category Collection Images:**
+
 - Aromatizadores: `/assets/img/all-aromatizadores.webp`
 - Home Spray: `/assets/img/all-homespray.webp`
 - Velas Aromáticas: `/assets/img/all-candles.webp`
@@ -730,6 +732,7 @@ Remember: This theme prioritizes premium visual experience while leveraging WooC
 - Flor de Figo Collection: `/assets/img/all-flordefigo.webp`
 
 **Individual Product Images:**
+
 - Aromatizador Chá Branco: `/assets/img/Aromatizador chá Branco .webp`
 - Aromatizador Flor de Figo: `/assets/img/Aromatizador-F-Figo-.webp`
 - Home Spray Marinho: `/assets/img/Home-spray-marinho-2.webp`
@@ -745,6 +748,7 @@ Remember: This theme prioritizes premium visual experience while leveraging WooC
 - Lembrancinhas: `/assets/img/lembrancinhas.webp`
 
 **Brand Assets:**
+
 - Logo Zen: `/assets/img/logo-zen.svg`
 - Logo PNG: `/assets/img/logo.png`
 - Logo SVG: `/assets/img/logo.svg`

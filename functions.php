@@ -285,3 +285,13 @@ if (class_exists('WooCommerce') && file_exists(get_template_directory() . '/inc/
 if (file_exists(get_template_directory() . '/inc/woocommerce-setup.php')) {
     require_once get_template_directory() . '/inc/woocommerce-setup.php';
 }
+
+// SEO and Meta optimization
+if (file_exists(get_template_directory() . '/functions-seo.php')) {
+    require_once get_template_directory() . '/functions-seo.php';
+}
+
+// Performance optimization
+if (file_exists(get_template_directory() . '/performance-optimization.php')) {
+    require_once get_template_directory() . '/performance-optimization.php';
+}

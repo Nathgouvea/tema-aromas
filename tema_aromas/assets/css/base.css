@@ -1,0 +1,452 @@
+/*!
+ * Tema Aromas - Base CSS
+ * Premium typography, layout, and luxury utilities
+ * Version: 1.0.0
+ */
+
+/* ==========================================================================
+   Luxury Typography System
+   ========================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap");
+
+/* Typography improvements */
+.luxury-heading {
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  background: var(--gradiente-luxo);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.elegant-text {
+  font-family: var(--fonte-principal);
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--cor-texto);
+}
+
+.luxury-subtitle {
+  font-family: var(--fonte-principal);
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--cor-accent);
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   Layout System - Luxury Grid
+   ========================================================================== */
+
+.luxury-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--espacamento-sm);
+}
+
+@media (min-width: 768px) {
+  .luxury-container {
+    padding: 0 var(--espacamento-lg);
+  }
+}
+
+@media (min-width: 1024px) {
+  .luxury-container {
+    padding: 0 var(--espacamento-xl);
+  }
+}
+
+/* Luxury Grid System */
+.luxury-grid {
+  display: grid;
+  gap: var(--espacamento-lg);
+}
+
+.luxury-grid-2 {
+  grid-template-columns: 1fr;
+}
+
+.luxury-grid-3 {
+  grid-template-columns: 1fr;
+}
+
+.luxury-grid-4 {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .luxury-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .luxury-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .luxury-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .luxury-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .luxury-grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Flexbox utilities */
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================================
+   Luxury Card Components
+   ========================================================================== */
+
+.luxury-card {
+  background: var(--cor-fundo);
+  border-radius: 12px;
+  padding: var(--espacamento-lg);
+  box-shadow: var(--sombra-luxo);
+  transition: var(--transicao-suave);
+  border: 1px solid var(--cor-borda);
+  position: relative;
+  overflow: hidden;
+}
+
+.luxury-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradiente-luxo);
+  transform: scaleX(0);
+  transition: var(--transicao-suave);
+  transform-origin: left;
+}
+
+.luxury-card:hover::before {
+  transform: scaleX(1);
+}
+
+.luxury-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(107, 79, 196, 0.15);
+}
+
+.luxury-card-header {
+  margin-bottom: var(--espacamento-md);
+}
+
+.luxury-card-title {
+  font-family: var(--fonte-titulo);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--cor-texto);
+  margin: 0 0 var(--espacamento-xs) 0;
+}
+
+.luxury-card-subtitle {
+  color: var(--cor-accent);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.luxury-card-content {
+  color: var(--cor-texto);
+  line-height: 1.6;
+}
+
+.luxury-card-footer {
+  margin-top: var(--espacamento-lg);
+  padding-top: var(--espacamento-md);
+  border-top: 1px solid var(--cor-borda);
+}
+
+/* ==========================================================================
+   Luxury Forms
+   ========================================================================== */
+
+.luxury-form {
+  max-width: 600px;
+}
+
+.luxury-form-group {
+  margin-bottom: var(--espacamento-md);
+}
+
+.luxury-form-label {
+  display: block;
+  font-weight: 600;
+  color: var(--cor-texto);
+  margin-bottom: var(--espacamento-xs);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.luxury-form-input,
+.luxury-form-textarea,
+.luxury-form-select {
+  width: 100%;
+  padding: var(--espacamento-sm) var(--espacamento-md);
+  border: 2px solid var(--cor-borda);
+  border-radius: 8px;
+  font-family: var(--fonte-principal);
+  font-size: 1rem;
+  transition: var(--transicao-rapida);
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+
+.luxury-form-input:focus,
+.luxury-form-textarea:focus,
+.luxury-form-select:focus {
+  outline: none;
+  border-color: var(--cor-primaria);
+  box-shadow: 0 0 0 3px rgba(107, 79, 196, 0.1);
+}
+
+.luxury-form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.luxury-form-error {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: var(--espacamento-xs);
+}
+
+.luxury-form-success {
+  color: #28a745;
+  font-size: 0.875rem;
+  margin-top: var(--espacamento-xs);
+}
+
+/* ==========================================================================
+   Luxury Buttons Extended
+   ========================================================================== */
+
+.btn-luxury-outline {
+  background: transparent;
+  color: var(--cor-primaria);
+  border: 2px solid var(--cor-primaria);
+  box-shadow: var(--sombra-sutil);
+}
+
+.btn-luxury-outline:hover {
+  background: var(--cor-primaria);
+  color: var(--cor-fundo);
+  transform: translateY(-2px);
+}
+
+.btn-luxury-gold {
+  background: linear-gradient(135deg, var(--cor-gold) 0%, #ffd700 100%);
+  color: var(--cor-texto);
+  box-shadow: 0 8px 32px rgba(212, 175, 55, 0.3);
+}
+
+.btn-luxury-gold:hover {
+  color: var(--cor-texto);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(212, 175, 55, 0.4);
+}
+
+.btn-luxury-large {
+  padding: var(--espacamento-md) var(--espacamento-xl);
+  font-size: 1.125rem;
+}
+
+.btn-luxury-small {
+  padding: var(--espacamento-xs) var(--espacamento-md);
+  font-size: 0.875rem;
+}
+
+/* ==========================================================================
+   Luxury Animations
+   ========================================================================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft 0.6s ease-out;
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight 0.6s ease-out;
+}
+
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+
+/* ==========================================================================
+   Luxury Badges and Tags
+   ========================================================================== */
+
+.luxury-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--espacamento-xs) var(--espacamento-sm);
+  background: var(--gradiente-luxo);
+  color: var(--cor-fundo);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 20px;
+  box-shadow: var(--sombra-sutil);
+}
+
+.luxury-badge-gold {
+  background: linear-gradient(135deg, var(--cor-gold) 0%, #ffd700 100%);
+  color: var(--cor-texto);
+}
+
+.luxury-badge-outline {
+  background: transparent;
+  color: var(--cor-primaria);
+  border: 1px solid var(--cor-primaria);
+}
+
+/* ==========================================================================
+   Responsive Utilities
+   ========================================================================== */
+
+.hidden {
+  display: none !important;
+}
+
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Mobile utilities */
+@media (max-width: 767px) {
+  .hidden-mobile {
+    display: none !important;
+  }
+}
+
+/* Tablet utilities */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hidden-tablet {
+    display: none !important;
+  }
+}
+
+/* Desktop utilities */
+@media (min-width: 1024px) {
+  .hidden-desktop {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+
+@media print {
+  .luxury-card {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+
+  .btn-luxury,
+  .btn-luxury-outline,
+  .btn-luxury-gold {
+    background: none !important;
+    color: #000 !important;
+    border: 1px solid #000 !important;
+  }
+
+  .animate-fade-in-up,
+  .animate-fade-in-left,
+  .animate-fade-in-right,
+  .animate-pulse {
+    animation: none !important;
+  }
+}

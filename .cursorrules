@@ -1,0 +1,400 @@
+# Cursor Rules - Tema Aromas WordPress Theme
+
+You are an expert WordPress theme developer specializing in luxurious, modern WooCommerce themes. Follow these rules when working on the Tema Aromas project.
+
+## Project Context
+
+This is a **luxurious, friendly, and modern** WordPress theme for an aromatherapy WooCommerce store in Brazil. The theme focuses on premium visual styling while using WooCommerce's official functionality without custom store logic.
+
+### Key Principles:
+
+- **NO custom WooCommerce logic** - Always use official shortcodes and pages
+- **Luxury design aesthetic** - Premium, elegant, sophisticated visual elements
+- **Brazilian market focus** - pt_BR localization, BRL currency, Brazilian payment methods
+- **Accessibility first** - WCAG 2.1 AA compliance mandatory
+- **Performance optimization** - Lighthouse scores >90 required
+
+## Design Guidelines
+
+### Color Palette
+
+```css
+--cor-primaria: #6b4fc4; /* Primary purple */
+--cor-texto: #000000; /* Elegant black */
+--cor-fundo: #ffffff; /* Premium white */
+--cor-borda: #e6e6e6; /* Subtle gray */
+--cor-accent: #8b5fd6; /* Light purple for hover */
+--cor-gold: #d4af37; /* Gold for premium elements */
+--sombra-luxo: 0 8px 32px rgba(107, 79, 196, 0.12); /* Sophisticated shadow */
+```
+
+### Typography
+
+- Use Google Fonts premium selection for luxury feel
+- Maintain elegant hierarchy (H1 unique per page)
+- Generous spacing for sophisticated layout
+- Readable contrast ratios (4.5:1 minimum)
+
+### Visual Elements
+
+- **Subtle animations**: Micro-interactions, smooth transitions
+- **Elegant shadows**: Soft, sophisticated depth
+- **Premium spacing**: Generous whitespace, refined layouts
+- **Luxury touches**: Gold accents, refined borders, elegant hover states
+
+## WordPress Development Standards
+
+### File Structure
+
+```
+/tema_aromas/
+├── style.css (theme headers)
+├── functions.php (theme setup)
+├── theme.json (design tokens)
+├── screenshot.png (1200x900px)
+├── /assets/
+│   ├── /css/ (base.css, woocommerce.css, emails.css, utilities.css)
+│   ├── /js/ (main.js, accessibility.js, menu_dropdown.js, minicart.js)
+│   └── /img/ (logos, placeholders)
+├── /templates/ (all PHP templates)
+├── /page-templates/ (custom page templates)
+└── /woocommerce/ (optional WooCommerce overrides)
+```
+
+### Functions.php Requirements
+
+ALWAYS include these in functions.php:
+
+```php
+// Theme setup
+add_theme_support('title-tag');
+add_theme_support('post-thumbnails');
+add_theme_support('html5');
+add_theme_support('woocommerce');
+
+// Menus
+register_nav_menus([
+    'header' => 'Menu Principal',
+    'footer' => 'Menu Rodapé'
+]);
+
+// Localization
+load_theme_textdomain('tema_aromas', get_template_directory() . '/languages');
+
+// Asset enqueuing with versioning
+wp_enqueue_style('tema-aromas-style', get_stylesheet_uri(), [], wp_get_theme()->get('Version'));
+```
+
+### Navigation Structure
+
+**Main Menu Items (exact order):**
+
+1. INÍCIO (homepage link)
+2. COMPRAR (dropdown with 6 categories):
+   - AROMATIZADORES
+   - HOME SPRAY
+   - VELAS AROMÁTICAS
+   - KITS ESPECIAIS
+   - LEMBRANCINHAS
+   - ACESSÓRIOS
+3. SOBRE OS AROMAS (about page)
+4. FALE CONOSCO (contact page)
+
+**Header Icons (right side):**
+
+- Search (expandable)
+- My Account (WooCommerce)
+- Cart with counter (WooCommerce)
+
+## WooCommerce Integration Rules
+
+### CRITICAL: Use Official Shortcodes Only
+
+**NEVER create custom store logic. ALWAYS use these shortcodes:**
+
+```php
+// Required pages with shortcodes
+[woocommerce_cart]           // Cart page
+[woocommerce_checkout]       // Checkout page
+[woocommerce_my_account]     // My Account page
+[woocommerce_order_tracking] // Order tracking page
+
+// Optional shortcodes for content
+[products limit="8" columns="4"]
+[product_categories number="6" columns="3"]
+[products featured="true" limit="3"]
+[recent_products limit="4"]
+[woocommerce_product_search]
+```
+
+### WooCommerce Template Guidelines
+
+- Use minimal overrides - prefer CSS styling
+- Only override templates for visual adjustments
+- Never modify core WooCommerce functionality
+- Maintain compatibility with WooCommerce updates
+
+### Mini Cart Implementation
+
+- Use WooCommerce native blocks when available
+- Fallback to official widgets if blocks unavailable
+- Add minimal JavaScript only for accessibility and UX
+- Style with CSS to match luxury design
+
+## Page Development Guidelines
+
+### Static Pages (Custom Content)
+
+**These pages should have custom, hardcoded content:**
+
+1. **front-page.php**: Hero, trust indicators, featured products, carousels
+2. **page-categorias.php**: Grid of 6 category cards linking to WooCommerce
+3. **page-sobre-aromas.php**: About content, FAQ accordion
+4. **page-fale-conosco.php**: Contact form (wp_mail + nonce)
+5. **Legal pages**: Privacy, Terms, Returns, Shipping, FAQ
+
+### WooCommerce Pages (Use Shortcodes)
+
+**These pages MUST use WooCommerce shortcodes only:**
+
+- Shop page (configured in WooCommerce settings)
+- Cart, Checkout, My Account, Order Tracking
+- Single product pages (style with CSS only)
+- Category/archive pages (minimal template overrides)
+
+## CSS Development Standards
+
+### File Organization
+
+- **base.css**: Typography, layout, luxury utilities
+- **woocommerce.css**: WooCommerce-specific styling
+- **utilities.css**: Helper classes, animations
+- **emails.css**: Email template styles (if needed)
+
+### CSS Patterns
+
+```css
+/* Use CSS custom properties */
+.luxury-button {
+  background: var(--cor-primaria);
+  box-shadow: var(--sombra-luxo);
+  transition: all 0.3s ease;
+}
+
+/* Mobile-first responsive design */
+.hero-section {
+  padding: 2rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .hero-section {
+    padding: 4rem 2rem;
+  }
+}
+
+/* Elegant hover states */
+.nav-link:hover {
+  color: var(--cor-accent);
+  transform: translateY(-2px);
+  transition: all 0.2s ease;
+}
+```
+
+### Luxury Design Elements
+
+- Subtle gradients: `linear-gradient(135deg, #6B4FC4 0%, #8B5FD6 100%)`
+- Elegant shadows: `box-shadow: 0 8px 32px rgba(107, 79, 196, 0.12)`
+- Smooth animations: `transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1)`
+- Premium spacing: Use consistent 8px grid system
+
+## JavaScript Guidelines
+
+### Minimal JavaScript Philosophy
+
+**Only use JavaScript for:**
+
+- Menu dropdown accessibility
+- Focus management
+- Mini cart interactions
+- Smooth scroll/animations
+
+**NEVER use JavaScript for:**
+
+- WooCommerce store logic
+- Payment processing
+- Cart functionality
+- Checkout processes
+
+### JavaScript Files
+
+```javascript
+// main.js - General interactions
+// accessibility.js - Focus management, skip links
+// menu_dropdown.js - Dropdown behavior
+// minicart.js - Mini cart open/close
+```
+
+### Performance Rules
+
+- Defer non-critical scripts
+- Use native JavaScript when possible
+- Minimize jQuery dependencies
+- Optimize for Core Web Vitals
+
+## Brazilian Localization Requirements
+
+### Language and Currency
+
+```php
+// Set Brazilian Portuguese
+add_filter('locale', function() { return 'pt_BR'; });
+
+// Currency formatting
+add_filter('woocommerce_currency_symbol', function($symbol, $currency) {
+    if ($currency === 'BRL') return 'R$';
+    return $symbol;
+}, 10, 2);
+```
+
+### Content Guidelines
+
+- Use friendly, luxury-appropriate Portuguese
+- Format prices: R$ 99,90 (comma for decimals)
+- CEP format: 12345-678
+- Phone format: (11) 99999-9999
+
+## Accessibility Requirements
+
+### WCAG 2.1 AA Compliance
+
+```html
+<!-- Proper heading hierarchy -->
+<h1>Único H1 por página</h1>
+<h2>Seções principais</h2>
+<h3>Subseções</h3>
+
+<!-- ARIA labels for navigation -->
+<nav aria-label="Menu principal">
+  <button aria-expanded="false" aria-haspopup="true">COMPRAR</button>
+
+  <!-- Skip links -->
+  <a href="#main" class="skip-link">Pular para o conteúdo</a>
+</nav>
+```
+
+### Focus Management
+
+- Visible focus indicators
+- Logical tab order
+- Keyboard navigation for all interactive elements
+- Screen reader compatibility
+
+## Performance Optimization
+
+### Critical Performance Rules
+
+- Lighthouse Performance Score: 90+
+- Lighthouse Accessibility Score: 90+
+- First Contentful Paint: <2s
+- Largest Contentful Paint: <2.5s
+
+### Image Optimization
+
+```html
+<!-- Use srcset and lazy loading -->
+<img
+  src="image.jpg"
+  srcset="image-320.jpg 320w, image-768.jpg 768w"
+  loading="lazy"
+  alt="Descriptive alt text"
+/>
+```
+
+### CSS/JS Optimization
+
+- Minify CSS and JavaScript
+- Use critical CSS for above-the-fold content
+- Defer non-essential scripts
+- Optimize Google Fonts loading
+
+## Code Quality Standards
+
+### PHP Standards
+
+- Follow WordPress Coding Standards
+- Use proper sanitization and validation
+- Implement security best practices (nonces, wp_mail)
+- Comment complex functions
+
+### CSS Standards
+
+- Use BEM methodology when helpful
+- Maintain consistent naming conventions
+- Group related properties
+- Use meaningful class names
+
+### Documentation
+
+- Comment complex CSS/JS
+- Document custom functions
+- Maintain README with setup instructions
+- Create QA checklist for testing
+
+## Testing Requirements
+
+### Before Every Commit
+
+- Test on latest WordPress and WooCommerce
+- Verify all WooCommerce shortcodes work
+- Check accessibility with keyboard navigation
+- Test responsive design on mobile/tablet
+- Validate HTML markup
+
+### Browser Testing
+
+- Chrome, Firefox, Safari, Edge
+- iOS Safari, Android Chrome
+- Test payment flows with sandbox accounts
+
+## Error Handling
+
+### Common Pitfalls to Avoid
+
+- ❌ Creating custom cart/checkout logic
+- ❌ Modifying WooCommerce core functionality
+- ❌ Using outdated WordPress functions
+- ❌ Ignoring accessibility requirements
+- ❌ Heavy JavaScript for simple interactions
+
+### Best Practices
+
+- ✅ Use WooCommerce hooks and filters
+- ✅ Implement graceful degradation
+- ✅ Provide fallbacks for JavaScript
+- ✅ Test with plugins disabled
+- ✅ Follow WordPress security guidelines
+
+## File Naming Conventions
+
+- **PHP files**: lowercase with hyphens (page-sobre-aromas.php)
+- **CSS classes**: kebab-case (.hero-section)
+- **JavaScript**: camelCase (menuDropdown.js)
+- **Images**: descriptive names (categoria-aromatizadores.jpg)
+
+## Integration Guidelines
+
+### Mercado Pago & Melhor Envio
+
+- Style plugin elements with CSS only
+- Don't modify plugin functionality
+- Ensure consistent luxury branding
+- Test with plugin updates
+
+### Third-Party Compatibility
+
+- Test with common WordPress plugins
+- Avoid conflicting CSS selectors
+- Use specific theme prefixes
+- Document known conflicts
+
+Remember: This theme prioritizes premium visual experience while leveraging WooCommerce's robust functionality. Always choose the official WooCommerce solution over custom implementation.

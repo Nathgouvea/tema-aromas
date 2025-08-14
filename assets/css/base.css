@@ -1,0 +1,1079 @@
+/*!
+ * Tema Aromas - Base CSS
+ * Premium typography, layout, and luxury utilities
+ * Version: 1.0.0
+ */
+
+/* ==========================================================================
+   Luxury Typography System
+   ========================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap");
+
+/* Typography improvements */
+.luxury-heading {
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  background: var(--gradiente-luxo);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.elegant-text {
+  font-family: var(--fonte-principal);
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--cor-texto);
+}
+
+.luxury-subtitle {
+  font-family: var(--fonte-principal);
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--cor-accent);
+  letter-spacing: 0.025em;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   Layout System - Luxury Grid
+   ========================================================================== */
+
+.luxury-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--espacamento-sm);
+}
+
+@media (min-width: 768px) {
+  .luxury-container {
+    padding: 0 var(--espacamento-lg);
+  }
+}
+
+@media (min-width: 1024px) {
+  .luxury-container {
+    padding: 0 var(--espacamento-xl);
+  }
+}
+
+/* Luxury Grid System */
+.luxury-grid {
+  display: grid;
+  gap: var(--espacamento-lg);
+}
+
+.luxury-grid-2 {
+  grid-template-columns: 1fr;
+}
+
+.luxury-grid-3 {
+  grid-template-columns: 1fr;
+}
+
+.luxury-grid-4 {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .luxury-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .luxury-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .luxury-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .luxury-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .luxury-grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Flexbox utilities */
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================================
+   Luxury Card Components
+   ========================================================================== */
+
+.luxury-card {
+  background: var(--cor-fundo);
+  border-radius: 12px;
+  padding: var(--espacamento-lg);
+  box-shadow: var(--sombra-luxo);
+  transition: var(--transicao-suave);
+  border: 1px solid var(--cor-borda);
+  position: relative;
+  overflow: hidden;
+}
+
+.luxury-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradiente-luxo);
+  transform: scaleX(0);
+  transition: var(--transicao-suave);
+  transform-origin: left;
+}
+
+.luxury-card:hover::before {
+  transform: scaleX(1);
+}
+
+.luxury-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(107, 79, 196, 0.15);
+}
+
+.luxury-card-header {
+  margin-bottom: var(--espacamento-md);
+}
+
+.luxury-card-title {
+  font-family: var(--fonte-titulo);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--cor-texto);
+  margin: 0 0 var(--espacamento-xs) 0;
+}
+
+.luxury-card-subtitle {
+  color: var(--cor-accent);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.luxury-card-content {
+  color: var(--cor-texto);
+  line-height: 1.6;
+}
+
+.luxury-card-footer {
+  margin-top: var(--espacamento-lg);
+  padding-top: var(--espacamento-md);
+  border-top: 1px solid var(--cor-borda);
+}
+
+/* ==========================================================================
+   Luxury Forms
+   ========================================================================== */
+
+.luxury-form {
+  max-width: 600px;
+}
+
+.luxury-form-group {
+  margin-bottom: var(--espacamento-md);
+}
+
+.luxury-form-label {
+  display: block;
+  font-weight: 600;
+  color: var(--cor-texto);
+  margin-bottom: var(--espacamento-xs);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+}
+
+.luxury-form-input,
+.luxury-form-textarea,
+.luxury-form-select {
+  width: 100%;
+  padding: var(--espacamento-sm) var(--espacamento-md);
+  border: 2px solid var(--cor-borda);
+  border-radius: 8px;
+  font-family: var(--fonte-principal);
+  font-size: 1rem;
+  transition: var(--transicao-rapida);
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+
+.luxury-form-input:focus,
+.luxury-form-textarea:focus,
+.luxury-form-select:focus {
+  outline: none;
+  border-color: var(--cor-primaria);
+  box-shadow: 0 0 0 3px rgba(107, 79, 196, 0.1);
+}
+
+.luxury-form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.luxury-form-error {
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: var(--espacamento-xs);
+}
+
+.luxury-form-success {
+  color: #28a745;
+  font-size: 0.875rem;
+  margin-top: var(--espacamento-xs);
+}
+
+/* ==========================================================================
+   Luxury Buttons Extended
+   ========================================================================== */
+
+.btn-luxury-outline {
+  background: transparent;
+  color: var(--cor-primaria);
+  border: 2px solid var(--cor-primaria);
+  box-shadow: var(--sombra-sutil);
+}
+
+.btn-luxury-outline:hover {
+  background: var(--cor-primaria);
+  color: var(--cor-fundo);
+  transform: translateY(-2px);
+}
+
+.btn-luxury-gold {
+  background: linear-gradient(135deg, var(--cor-gold) 0%, #ffd700 100%);
+  color: var(--cor-texto);
+  box-shadow: 0 8px 32px rgba(212, 175, 55, 0.3);
+}
+
+.btn-luxury-gold:hover {
+  color: var(--cor-texto);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(212, 175, 55, 0.4);
+}
+
+.btn-luxury-large {
+  padding: var(--espacamento-md) var(--espacamento-xl);
+  font-size: 1.125rem;
+}
+
+.btn-luxury-small {
+  padding: var(--espacamento-xs) var(--espacamento-md);
+  font-size: 0.875rem;
+}
+
+/* ==========================================================================
+   Luxury Animations
+   ========================================================================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft 0.6s ease-out;
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight 0.6s ease-out;
+}
+
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+
+/* ==========================================================================
+   Luxury Badges and Tags
+   ========================================================================== */
+
+.luxury-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--espacamento-xs) var(--espacamento-sm);
+  background: var(--gradiente-luxo);
+  color: var(--cor-fundo);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 20px;
+  box-shadow: var(--sombra-sutil);
+}
+
+.luxury-badge-gold {
+  background: linear-gradient(135deg, var(--cor-gold) 0%, #ffd700 100%);
+  color: var(--cor-texto);
+}
+
+.luxury-badge-outline {
+  background: transparent;
+  color: var(--cor-primaria);
+  border: 1px solid var(--cor-primaria);
+}
+
+/* ==========================================================================
+   Responsive Utilities
+   ========================================================================== */
+
+.hidden {
+  display: none !important;
+}
+
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Mobile utilities */
+@media (max-width: 767px) {
+  .hidden-mobile {
+    display: none !important;
+  }
+}
+
+/* Tablet utilities */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hidden-tablet {
+    display: none !important;
+  }
+}
+
+/* Desktop utilities */
+@media (min-width: 1024px) {
+  .hidden-desktop {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+
+@media print {
+  .luxury-card {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+
+  .btn-luxury,
+  .btn-luxury-outline,
+  .btn-luxury-gold {
+    background: none !important;
+    color: #000 !important;
+    border: 1px solid #000 !important;
+  }
+
+  .animate-fade-in-up,
+  .animate-fade-in-left,
+  .animate-fade-in-right,
+  .animate-pulse {
+    animation: none !important;
+  }
+}
+
+/* ==========================================================================
+   Homepage Luxury Styles
+   ========================================================================== */
+
+/* Hero Section */
+.hero-section {
+  padding: var(--espacamento-xxl) 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espacamento-xxl);
+  align-items: center;
+  min-height: 70vh;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: var(--espacamento-lg);
+  color: var(--cor-texto);
+}
+
+.hero-highlight {
+  color: var(--cor-primaria);
+  display: block;
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: var(--espacamento-xl);
+}
+
+.hero-cta {
+  display: flex;
+  gap: var(--espacamento-lg);
+  flex-wrap: wrap;
+}
+
+.hero-primary-btn,
+.hero-secondary-btn {
+  padding: var(--espacamento-md) var(--espacamento-xl);
+  font-size: 1.1rem;
+  min-width: 180px;
+}
+
+.hero-image-wrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--sombra-luxo);
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(107, 79, 196, 0.1),
+    rgba(139, 95, 214, 0.1)
+  );
+}
+
+/* Trust Section */
+.trust-section {
+  padding: var(--espacamento-xl) 0;
+  background: var(--cor-fundo);
+}
+
+.trust-indicators {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--espacamento-xl);
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: var(--espacamento-lg);
+  padding: var(--espacamento-lg);
+  background: var(--cor-fundo);
+  border-radius: 12px;
+  box-shadow: var(--sombra-sutil);
+  transition: var(--transicao-suave);
+}
+
+.trust-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra-luxo);
+}
+
+.trust-icon {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  background: var(--gradiente-luxo);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cor-fundo);
+}
+
+.trust-title {
+  font-weight: 600;
+  margin-bottom: var(--espacamento-xs);
+  color: var(--cor-texto);
+}
+
+.trust-description {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+}
+
+/* About Aromas Section */
+.about-aromas-section {
+  padding: var(--espacamento-xxl) 0;
+  background: #fafbfc;
+}
+
+.about-aromas-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espacamento-xxl);
+  align-items: center;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: var(--espacamento-lg);
+  color: var(--cor-texto);
+}
+
+.section-subtitle {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: var(--espacamento-xl);
+}
+
+.about-features {
+  margin-bottom: var(--espacamento-xl);
+}
+
+.feature-item {
+  display: flex;
+  gap: var(--espacamento-lg);
+  margin-bottom: var(--espacamento-lg);
+  align-items: flex-start;
+}
+
+.feature-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background: rgba(107, 79, 196, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cor-primaria);
+}
+
+.feature-content h4 {
+  font-weight: 600;
+  margin-bottom: var(--espacamento-xs);
+  color: var(--cor-texto);
+}
+
+.feature-content p {
+  color: #666;
+  margin: 0;
+}
+
+/* Featured Products Section */
+.featured-products-section {
+  padding: var(--espacamento-xxl) 0;
+  background: var(--cor-fundo);
+}
+
+.section-header {
+  margin-bottom: var(--espacamento-xxl);
+}
+
+.featured-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--espacamento-xl);
+  margin-bottom: var(--espacamento-xxl);
+}
+
+.featured-category-card {
+  background: var(--cor-fundo);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--sombra-sutil);
+  transition: var(--transicao-suave);
+}
+
+.featured-category-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--sombra-luxo);
+}
+
+.category-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.category-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transicao-suave);
+}
+
+.featured-category-card:hover .category-image img {
+  transform: scale(1.05);
+}
+
+.category-content {
+  padding: var(--espacamento-lg);
+  text-align: center;
+}
+
+.category-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: var(--espacamento-sm);
+  color: var(--cor-texto);
+}
+
+.category-description {
+  color: #666;
+  margin-bottom: var(--espacamento-lg);
+  line-height: 1.5;
+}
+
+/* Lembrancinhas Section */
+.lembrancinhas-section {
+  padding: var(--espacamento-xxl) 0;
+  background: #fafbfc;
+}
+
+.lembrancinhas-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espacamento-xxl);
+  align-items: center;
+}
+
+.lembrancinhas-features {
+  margin-bottom: var(--espacamento-xl);
+}
+
+.lembrancinha-item {
+  display: flex;
+  align-items: center;
+  gap: var(--espacamento-sm);
+  margin-bottom: var(--espacamento-sm);
+  color: #666;
+}
+
+.item-icon {
+  color: var(--cor-primaria);
+  flex-shrink: 0;
+}
+
+.lembrancinhas-cta {
+  display: flex;
+  gap: var(--espacamento-lg);
+  flex-wrap: wrap;
+}
+
+/* Product Carousel Section */
+.product-carousel-section {
+  padding: var(--espacamento-xxl) 0;
+  background: var(--cor-fundo);
+}
+
+.carousel-cta {
+  margin-top: var(--espacamento-xl);
+}
+
+/* Animation Classes */
+.animate-fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.animate-fade-in-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: fadeInLeft 0.8s ease forwards;
+}
+
+.animate-fade-in-right {
+  opacity: 0;
+  transform: translateX(30px);
+  animation: fadeInRight 0.8s ease forwards;
+}
+
+.animation-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animation-delay-400 {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Homepage Responsive Design */
+@media (max-width: 768px) {
+  .hero-content,
+  .about-aromas-content,
+  .lembrancinhas-content {
+    grid-template-columns: 1fr;
+    gap: var(--espacamento-xl);
+  }
+
+  .hero-cta {
+    justify-content: center;
+  }
+
+  .trust-indicators {
+    grid-template-columns: 1fr;
+    gap: var(--espacamento-lg);
+  }
+
+  .trust-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .featured-categories {
+    grid-template-columns: 1fr;
+    gap: var(--espacamento-lg);
+  }
+
+  .lembrancinhas-cta {
+    justify-content: center;
+  }
+}
+
+/* ==========================================================================
+   Categories Page Luxury Styles
+   ========================================================================== */
+
+/* Page Header */
+.page-header-section {
+  padding: var(--espacamento-xxl) 0 var(--espacamento-xl);
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  text-align: center;
+}
+
+.page-header-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.page-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: var(--espacamento-lg);
+  color: var(--cor-texto);
+}
+
+.page-subtitle {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 0;
+}
+
+/* Categories Grid */
+.categories-grid-section {
+  padding: var(--espacamento-xxl) 0;
+  background: var(--cor-fundo);
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--espacamento-xl);
+}
+
+.category-card {
+  background: var(--cor-fundo);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--sombra-sutil);
+  transition: var(--transicao-suave);
+  border: 1px solid var(--cor-borda);
+  position: relative;
+}
+
+.luxury-card-hover:hover {
+  transform: translateY(-12px);
+  box-shadow: var(--sombra-luxo);
+  border-color: var(--cor-accent);
+}
+
+.category-card-inner {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.category-image {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+}
+
+.category-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transicao-suave);
+}
+
+.category-card:hover .category-image img {
+  transform: scale(1.1);
+}
+
+.category-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(107, 79, 196, 0.8) 0%,
+    rgba(139, 95, 214, 0.6) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: var(--transicao-suave);
+}
+
+.category-card:hover .category-overlay {
+  opacity: 1;
+}
+
+.category-icon {
+  color: var(--cor-fundo);
+  transform: scale(0.8);
+  transition: var(--transicao-suave);
+}
+
+.category-card:hover .category-icon {
+  transform: scale(1);
+}
+
+.category-content {
+  padding: var(--espacamento-xl);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.category-title {
+  font-family: var(--fonte-titulo);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: var(--espacamento-sm);
+  color: var(--cor-texto);
+}
+
+.category-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: var(--espacamento-lg);
+  flex-grow: 1;
+}
+
+.category-features {
+  display: flex;
+  gap: var(--espacamento-xs);
+  margin-bottom: var(--espacamento-lg);
+  flex-wrap: wrap;
+}
+
+.feature-tag {
+  background: rgba(107, 79, 196, 0.1);
+  color: var(--cor-primaria);
+  padding: var(--espacamento-xs) var(--espacamento-sm);
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.category-cta {
+  margin-top: auto;
+}
+
+.category-cta .btn-luxury {
+  width: 100%;
+  justify-content: center;
+  padding: var(--espacamento-md) var(--espacamento-lg);
+  font-weight: 600;
+}
+
+/* Categories CTA Section */
+.categories-cta-section {
+  padding: var(--espacamento-xxl) 0;
+  background: #fafbfc;
+}
+
+.cta-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-title {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  margin-bottom: var(--espacamento-lg);
+  color: var(--cor-texto);
+}
+
+.cta-description {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: var(--espacamento-xl);
+}
+
+.cta-buttons {
+  display: flex;
+  gap: var(--espacamento-lg);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-buttons .btn-luxury,
+.cta-buttons .btn-luxury-outline {
+  min-width: 180px;
+  padding: var(--espacamento-md) var(--espacamento-xl);
+}
+
+/* Categories Page Responsive */
+@media (max-width: 768px) {
+  .categories-grid {
+    grid-template-columns: 1fr;
+    gap: var(--espacamento-lg);
+  }
+
+  .category-card {
+    margin: 0 var(--espacamento-sm);
+  }
+
+  .category-image {
+    height: 200px;
+  }
+
+  .category-content {
+    padding: var(--espacamento-lg);
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-buttons .btn-luxury,
+  .cta-buttons .btn-luxury-outline {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-features {
+    justify-content: center;
+  }
+
+  .feature-tag {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+  }
+}

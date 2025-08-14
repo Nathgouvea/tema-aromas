@@ -1,0 +1,607 @@
+/*!
+ * Tema Aromas - Footer CSS
+ * Premium footer styling with luxury elements
+ * Version: 1.0.0
+ */
+
+/* ==========================================================================
+   Footer Structure
+   ========================================================================== */
+
+.site-footer {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  color: #ffffff;
+  padding-top: var(--espacamento-xxl);
+  margin-top: var(--espacamento-xxl);
+  position: relative;
+  overflow: hidden;
+}
+
+.site-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradiente-luxo);
+}
+
+.site-footer::after {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: -10%;
+  width: 120%;
+  height: 100px;
+  background: var(--cor-fundo);
+  transform: rotate(-1deg);
+  z-index: -1;
+}
+
+/* ==========================================================================
+   Footer Content Layout
+   ========================================================================== */
+
+.footer-content {
+  margin-bottom: var(--espacamento-xl);
+}
+
+.footer-sections {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espacamento-xl);
+}
+
+@media (min-width: 768px) {
+  .footer-sections {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-sections {
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: var(--espacamento-xxl);
+  }
+}
+
+.footer-section {
+  position: relative;
+}
+
+/* ==========================================================================
+   Footer Branding & About
+   ========================================================================== */
+
+.footer-about {
+  max-width: 400px;
+}
+
+.footer-logo img {
+  max-height: 60px;
+  margin-bottom: var(--espacamento-md);
+  filter: brightness(0) invert(1);
+}
+
+.footer-site-title {
+  margin: 0 0 var(--espacamento-md) 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  background: var(--gradiente-luxo);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.footer-description {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin-bottom: var(--espacamento-lg);
+}
+
+/* ==========================================================================
+   Social Links
+   ========================================================================== */
+
+.social-links {
+  display: flex;
+  gap: var(--espacamento-sm);
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: #ffffff;
+  text-decoration: none;
+  transition: var(--transicao-suave);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.social-link:hover {
+  background: var(--gradiente-luxo);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(107, 79, 196, 0.3);
+}
+
+.social-link:focus {
+  outline: 3px solid var(--cor-accent);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Footer Titles
+   ========================================================================== */
+
+.footer-title {
+  color: #ffffff;
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: var(--espacamento-md);
+  position: relative;
+  padding-bottom: var(--espacamento-xs);
+}
+
+.footer-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: var(--gradiente-luxo);
+  border-radius: 1px;
+}
+
+/* ==========================================================================
+   Footer Menus
+   ========================================================================== */
+
+.footer-menu,
+.footer-categories-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-menu li,
+.footer-categories-list li {
+  margin-bottom: var(--espacamento-xs);
+}
+
+.footer-menu a,
+.footer-categories-list a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: var(--transicao-rapida);
+  position: relative;
+}
+
+.footer-menu a:hover,
+.footer-categories-list a:hover {
+  color: var(--cor-accent);
+  padding-left: var(--espacamento-xs);
+}
+
+.footer-menu a:focus,
+.footer-categories-list a:focus {
+  outline: 2px solid var(--cor-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ==========================================================================
+   Contact Information
+   ========================================================================== */
+
+.contact-info {
+  margin-bottom: var(--espacamento-lg);
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: var(--espacamento-sm);
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: var(--espacamento-sm);
+  font-size: 0.875rem;
+}
+
+.contact-item svg {
+  color: var(--cor-accent);
+  flex-shrink: 0;
+}
+
+.contact-item a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transicao-rapida);
+}
+
+.contact-item a:hover {
+  color: var(--cor-accent);
+}
+
+/* ==========================================================================
+   Newsletter Signup
+   ========================================================================== */
+
+.newsletter-signup {
+  background: rgba(255, 255, 255, 0.05);
+  padding: var(--espacamento-lg);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.newsletter-title {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 var(--espacamento-xs) 0;
+}
+
+.newsletter-description {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: var(--espacamento-md);
+}
+
+.newsletter-form {
+  max-width: none;
+}
+
+.newsletter-input-group {
+  display: flex;
+  gap: var(--espacamento-xs);
+}
+
+.newsletter-email {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border-radius: 8px;
+  padding: var(--espacamento-sm);
+  font-size: 0.875rem;
+}
+
+.newsletter-email::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.newsletter-email:focus {
+  border-color: var(--cor-accent);
+  background: rgba(255, 255, 255, 0.15);
+  outline: none;
+}
+
+.newsletter-submit {
+  display: flex;
+  align-items: center;
+  gap: var(--espacamento-xs);
+  padding: var(--espacamento-sm) var(--espacamento-md);
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+
+.newsletter-submit svg {
+  transition: var(--transicao-rapida);
+}
+
+.newsletter-submit:hover svg {
+  transform: translateX(2px);
+}
+
+@media (max-width: 767px) {
+  .newsletter-input-group {
+    flex-direction: column;
+  }
+
+  .newsletter-submit {
+    justify-content: center;
+  }
+}
+
+/* ==========================================================================
+   Payment Methods & Trust Seals
+   ========================================================================== */
+
+.footer-payments {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--espacamento-lg) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: var(--espacamento-lg);
+  flex-wrap: wrap;
+  gap: var(--espacamento-lg);
+}
+
+.payment-title {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin: 0 0 var(--espacamento-sm) 0;
+}
+
+.payment-icons {
+  display: flex;
+  gap: var(--espacamento-sm);
+  flex-wrap: wrap;
+}
+
+.payment-icon {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: var(--espacamento-xs);
+  transition: var(--transicao-rapida);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.payment-icon:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.trust-seals {
+  display: flex;
+  gap: var(--espacamento-lg);
+  flex-wrap: wrap;
+}
+
+.trust-seal {
+  display: flex;
+  align-items: center;
+  gap: var(--espacamento-xs);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
+}
+
+.trust-seal svg {
+  color: var(--cor-gold);
+  flex-shrink: 0;
+}
+
+@media (max-width: 767px) {
+  .footer-payments {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .trust-seals {
+    gap: var(--espacamento-md);
+  }
+}
+
+/* ==========================================================================
+   Legal Navigation
+   ========================================================================== */
+
+.footer-legal {
+  padding: var(--espacamento-lg) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.legal-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: var(--espacamento-lg);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.legal-menu a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: var(--transicao-rapida);
+}
+
+.legal-menu a:hover {
+  color: var(--cor-accent);
+}
+
+.legal-menu a:focus {
+  outline: 2px solid var(--cor-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+@media (max-width: 767px) {
+  .legal-menu {
+    flex-direction: column;
+    gap: var(--espacamento-sm);
+    align-items: center;
+  }
+}
+
+/* ==========================================================================
+   Copyright
+   ========================================================================== */
+
+.footer-copyright {
+  padding: var(--espacamento-lg) 0;
+  text-align: center;
+}
+
+.copyright-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.footer-text {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
+  margin: 0 0 var(--espacamento-sm) 0;
+}
+
+.developer-credit {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.75rem;
+  margin: 0;
+  font-style: italic;
+}
+
+.heart {
+  color: var(--cor-accent);
+  font-style: normal;
+  animation: heartbeat 2s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* ==========================================================================
+   Scroll to Top Button
+   ========================================================================== */
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--gradiente-luxo);
+  color: #ffffff;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transicao-suave);
+  box-shadow: var(--sombra-luxo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 12px 40px rgba(107, 79, 196, 0.3);
+}
+
+.scroll-to-top:focus {
+  outline: 3px solid var(--cor-accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 767px) {
+  .scroll-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+@media (max-width: 767px) {
+  .site-footer {
+    padding-top: var(--espacamento-xl);
+    margin-top: var(--espacamento-xl);
+  }
+
+  .footer-sections {
+    gap: var(--espacamento-lg);
+  }
+
+  .footer-about {
+    max-width: none;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .footer-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .footer-title {
+    text-align: center;
+  }
+
+  .footer-menu,
+  .footer-categories-list {
+    text-align: center;
+  }
+
+  .contact-info {
+    text-align: center;
+  }
+
+  .contact-item {
+    justify-content: center;
+  }
+}
+
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+
+@media print {
+  .site-footer {
+    background: none !important;
+    color: #000 !important;
+    padding-top: var(--espacamento-lg) !important;
+    margin-top: var(--espacamento-lg) !important;
+    border-top: 1px solid #ccc;
+  }
+
+  .site-footer::before,
+  .site-footer::after {
+    display: none !important;
+  }
+
+  .footer-payments,
+  .newsletter-signup,
+  .social-links,
+  .scroll-to-top {
+    display: none !important;
+  }
+
+  .footer-text,
+  .footer-menu a,
+  .footer-categories-list a,
+  .contact-item {
+    color: #000 !important;
+  }
+
+  .footer-title {
+    color: #000 !important;
+  }
+}

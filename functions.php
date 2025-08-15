@@ -183,6 +183,17 @@ function tema_aromas_scripts() {
         true
     );
 
+    // Aromas Page JavaScript (for accordion and pills functionality)
+    if (is_page_template('page-sobre-aromas.php') || is_page('sobre-os-aromas')) {
+        wp_enqueue_script(
+            'tema-aromas-aromas',
+            get_template_directory_uri() . '/assets/js/aromas.js',
+            [],
+            $theme_version,
+            true
+        );
+    }
+
     // Homepage JavaScript (for front page)
     if (is_front_page()) {
         wp_enqueue_script(

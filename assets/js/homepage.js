@@ -12,7 +12,6 @@
    */
   function initHomepage() {
     initScrollAnimations();
-    initNewsletterForm();
     initCounters();
     initParallaxEffect();
 
@@ -53,61 +52,6 @@
     });
 
     console.log("✨ Scroll animations initialized");
-  }
-
-  /**
-   * Initialize newsletter form functionality
-   */
-  function initNewsletterForm() {
-    const newsletterForm = document.querySelector(".newsletter-signup");
-
-    if (!newsletterForm) return;
-
-    newsletterForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const emailInput = this.querySelector('input[name="newsletter_email"]');
-      const submitButton = this.querySelector('button[type="submit"]');
-      const originalButtonText = submitButton.innerHTML;
-
-      if (!emailInput || !emailInput.value.trim()) {
-        showNotification("Por favor, insira um e-mail válido.", "error");
-        return;
-      }
-
-      // Simulate form submission
-      submitButton.innerHTML = `
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="12" cy="12" r="10"/>
-          <polyline points="8,12 12,16 16,12"/>
-        </svg>
-        Cadastrando...
-      `;
-      submitButton.disabled = true;
-
-      // Simulate API call
-      setTimeout(() => {
-        submitButton.innerHTML = `
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="20,6 9,17 4,12"/>
-          </svg>
-          Cadastrado!
-        `;
-
-        emailInput.value = "";
-        showNotification(
-          "Obrigado! Você receberá nossas novidades em breve.",
-          "success"
-        );
-
-        setTimeout(() => {
-          submitButton.innerHTML = originalButtonText;
-          submitButton.disabled = false;
-        }, 3000);
-      }, 2000);
-    });
-
-    console.log("📧 Newsletter form initialized");
   }
 
   /**

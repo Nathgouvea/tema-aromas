@@ -63,39 +63,12 @@
                         </ul>
                     </div>
 
-                    <!-- Footer Section 4 - Contact & Newsletter -->
+                    <!-- Footer Section 4 - Contact -->
                     <div class="footer-section footer-contact">
                         <h4 class="footer-title"><?php esc_html_e('Contato', 'tema_aromas'); ?></h4>
                         
                         <!-- Contact Information -->
                         <?php tema_aromas_contact_info(); ?>
-
-                        <!-- Newsletter Signup -->
-                        <div class="newsletter-signup">
-                            <h5 class="newsletter-title">
-                                <?php echo esc_html(get_theme_mod('newsletter_title', __('Receba Novidades', 'tema_aromas'))); ?>
-                            </h5>
-                            <p class="newsletter-description">
-                                <?php echo esc_html(get_theme_mod('newsletter_text', __('Cadastre-se para receber ofertas exclusivas e novidades sobre nossos produtos aromáticos.', 'tema_aromas'))); ?>
-                            </p>
-                            
-                            <form class="newsletter-form luxury-form" action="#" method="post">
-                                <div class="newsletter-input-group">
-                                    <input type="email" 
-                                           class="newsletter-email luxury-form-input" 
-                                           placeholder="<?php esc_attr_e('Seu e-mail', 'tema_aromas'); ?>" 
-                                           required>
-                                    <button type="submit" class="newsletter-submit btn-luxury">
-                                        <?php esc_html_e('Cadastrar', 'tema_aromas'); ?>
-                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                                            <polyline points="12,5 19,12 12,19"></polyline>
-                                        </svg>
-                                    </button>
-                                </div>
-                                <?php wp_nonce_field('newsletter_signup', 'newsletter_nonce'); ?>
-                            </form>
-                        </div>
                     </div>
                 </div>
             </div>

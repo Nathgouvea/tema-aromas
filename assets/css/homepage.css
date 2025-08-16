@@ -847,80 +847,6 @@
 }
 
 /* ==========================================================================
-   Newsletter CTA
-   ========================================================================== */
-
-.newsletter-cta {
-  padding: var(--espacamento-xxl) 0;
-  background: var(--gradiente-luxo);
-  color: var(--cor-fundo);
-  text-align: center;
-}
-
-.newsletter-content {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 0 var(--espacamento-md);
-}
-
-.newsletter-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: var(--espacamento-md);
-  color: var(--cor-fundo);
-}
-
-.newsletter-subtitle {
-  font-size: 1.2rem;
-  opacity: 0.9;
-  line-height: 1.6;
-  margin-bottom: var(--espacamento-xl);
-}
-
-.newsletter-form {
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.newsletter-group {
-  display: flex;
-  gap: var(--espacamento-sm);
-  margin-bottom: var(--espacamento-sm);
-}
-
-.newsletter-group input {
-  flex: 1;
-  background: rgba(255, 255, 255, 0.2);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  color: var(--cor-fundo);
-}
-
-.newsletter-group input::placeholder {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.newsletter-group input:focus {
-  background: rgba(255, 255, 255, 0.3);
-  border-color: rgba(255, 255, 255, 0.6);
-}
-
-.newsletter-group button {
-  background: var(--cor-fundo);
-  color: var(--cor-primaria);
-  border: none;
-}
-
-.newsletter-group button:hover {
-  background: rgba(255, 255, 255, 0.9);
-  transform: translateY(-2px);
-}
-
-.newsletter-privacy {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.9rem;
-}
-
-/* ==========================================================================
    Responsive Design
    ========================================================================== */
 
@@ -962,10 +888,6 @@
   .lembrancinhas-text {
     text-align: left;
   }
-
-  .newsletter-group {
-    flex-direction: row;
-  }
 }
 
 @media (min-width: 1024px) {
@@ -989,14 +911,6 @@
 @media (max-width: 767px) {
   .hero-title {
     font-size: 2.5rem;
-  }
-
-  .newsletter-title {
-    font-size: 2rem;
-  }
-
-  .newsletter-group {
-    flex-direction: column;
   }
 
   .hero-cta,

@@ -175,7 +175,7 @@
 - [x] **Add featured products section** using WooCommerce shortcodes
 - [x] **Create "Lembrancinhas" block** with gift animations and CTAs
 - [x] **Add product carousel** using WooCommerce recent products
-- [x] **Newsletter signup section** with notification system
+
 - [x] **Category highlights** with premium card design
 - [x] **Responsive design** with mobile-first approach
 - [x] **Interactive animations** and scroll effects

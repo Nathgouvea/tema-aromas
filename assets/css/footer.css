@@ -231,89 +231,6 @@
 }
 
 /* ==========================================================================
-   Newsletter Signup
-   ========================================================================== */
-
-.newsletter-signup {
-  background: rgba(255, 255, 255, 0.05);
-  padding: var(--espacamento-lg);
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-.newsletter-title {
-  color: #ffffff;
-  font-size: 1rem;
-  font-weight: 600;
-  margin: 0 0 var(--espacamento-xs) 0;
-}
-
-.newsletter-description {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.875rem;
-  line-height: 1.5;
-  margin-bottom: var(--espacamento-md);
-}
-
-.newsletter-form {
-  max-width: none;
-}
-
-.newsletter-input-group {
-  display: flex;
-  gap: var(--espacamento-xs);
-}
-
-.newsletter-email {
-  flex: 1;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #ffffff;
-  border-radius: 8px;
-  padding: var(--espacamento-sm);
-  font-size: 0.875rem;
-}
-
-.newsletter-email::placeholder {
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.newsletter-email:focus {
-  border-color: var(--cor-accent);
-  background: rgba(255, 255, 255, 0.15);
-  outline: none;
-}
-
-.newsletter-submit {
-  display: flex;
-  align-items: center;
-  gap: var(--espacamento-xs);
-  padding: var(--espacamento-sm) var(--espacamento-md);
-  font-size: 0.875rem;
-  white-space: nowrap;
-}
-
-.newsletter-submit svg {
-  transition: var(--transicao-rapida);
-}
-
-.newsletter-submit:hover svg {
-  transform: translateX(2px);
-}
-
-@media (max-width: 767px) {
-  .newsletter-input-group {
-    flex-direction: column;
-  }
-
-  .newsletter-submit {
-    justify-content: center;
-  }
-}
-
-/* ==========================================================================
    Payment Methods & Trust Seals
    ========================================================================== */
 
@@ -588,7 +505,6 @@
   }
 
   .footer-payments,
-  .newsletter-signup,
   .social-links,
   .scroll-to-top {
     display: none !important;

@@ -67,7 +67,7 @@ Itens do menu principal em desktop e mobile:
 ## Cabeçalho e rodapé
 
 • **Cabeçalho luxuoso e sticky** com busca expansível elegante, tipografia sofisticada e micro-animações suaves. Busca pode usar bloco de busca de produto ou shortcode, sem lógica custom complexa
-• **Rodapé premium** com menus úteis estilizados, selos de pagamento Mercado Pago com visual elegante, newsletter com design moderno, links legais e redes sociais com ícones sofisticados
+• **Rodapé premium** com menus úteis estilizados, selos de pagamento Mercado Pago com visual elegante, contact com design moderno, links legais e redes sociais com ícones sofisticados
 
 ## Páginas e shortcodes da loja
 

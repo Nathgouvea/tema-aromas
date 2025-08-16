@@ -333,36 +333,7 @@ get_header(); ?>
             </div>
         </section>
 
-        <!-- Newsletter CTA -->
-        <section class="newsletter-cta">
-            <div class="newsletter-content">
-                <div class="newsletter-text">
-                    <h2 class="newsletter-title">
-                        <?php esc_html_e('Receba Novidades e Ofertas Exclusivas', 'tema_aromas'); ?>
-                    </h2>
-                    <p class="newsletter-subtitle">
-                        <?php esc_html_e('Cadastre-se em nossa newsletter e seja o primeiro a saber sobre lançamentos, promoções especiais e dicas de aromaterapia.', 'tema_aromas'); ?>
-                    </p>
-                </div>
-                <div class="newsletter-form">
-                    <form class="newsletter-signup" method="post" action="">
-                        <div class="form-group newsletter-group">
-                            <input type="email" name="newsletter_email" placeholder="<?php esc_attr_e('Seu melhor e-mail', 'tema_aromas'); ?>" required class="luxury-form-input">
-                            <button type="submit" class="btn-luxury btn-primary">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <line x1="22" y1="2" x2="11" y2="13"></line>
-                                    <polygon points="22,2 15,22 11,13 2,9 22,2"></polygon>
-                                </svg>
-                                <?php esc_html_e('Cadastrar', 'tema_aromas'); ?>
-                            </button>
-                        </div>
-                        <small class="newsletter-privacy">
-                            <?php esc_html_e('Seus dados estão seguros conosco. Não enviamos spam.', 'tema_aromas'); ?>
-                        </small>
-                    </form>
-                </div>
-            </div>
-        </section>
+
 
     </main>
 </div>

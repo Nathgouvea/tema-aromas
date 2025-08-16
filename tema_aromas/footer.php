@@ -63,29 +63,29 @@
                         </ul>
                     </div>
 
-                    <!-- Footer Section 4 - Contact & Newsletter -->
+                    <!-- Footer Section 4 - Contact -->
                     <div class="footer-section footer-contact">
                         <h4 class="footer-title"><?php esc_html_e('Contato', 'tema_aromas'); ?></h4>
                         
                         <!-- Contact Information -->
                         <?php tema_aromas_contact_info(); ?>
 
-                        <!-- Newsletter Signup -->
-                        <div class="newsletter-signup">
-                            <h5 class="newsletter-title">
-                                <?php echo esc_html(get_theme_mod('newsletter_title', __('Receba Novidades', 'tema_aromas'))); ?>
+                        <!-- Contact Signup -->
+                        <div class="contact-signup">
+                            <h5 class="contact-title">
+                                <?php echo esc_html(get_theme_mod('contact_title', __('Receba Novidades', 'tema_aromas'))); ?>
                             </h5>
-                            <p class="newsletter-description">
-                                <?php echo esc_html(get_theme_mod('newsletter_text', __('Cadastre-se para receber ofertas exclusivas e novidades sobre nossos produtos aromáticos.', 'tema_aromas'))); ?>
+                            <p class="contact-description">
+                                <?php echo esc_html(get_theme_mod('contact_text', __('Cadastre-se para receber ofertas exclusivas e novidades sobre nossos produtos aromáticos.', 'tema_aromas'))); ?>
                             </p>
                             
-                            <form class="newsletter-form luxury-form" action="#" method="post">
-                                <div class="newsletter-input-group">
+                            <form class="contact-form luxury-form" action="#" method="post">
+                                <div class="contact-input-group">
                                     <input type="email" 
-                                           class="newsletter-email luxury-form-input" 
+                                           class="contact-email luxury-form-input" 
                                            placeholder="<?php esc_attr_e('Seu e-mail', 'tema_aromas'); ?>" 
                                            required>
-                                    <button type="submit" class="newsletter-submit btn-luxury">
+                                    <button type="submit" class="contact-submit btn-luxury">
                                         <?php esc_html_e('Cadastrar', 'tema_aromas'); ?>
                                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                             <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -93,7 +93,7 @@
                                         </svg>
                                     </button>
                                 </div>
-                                <?php wp_nonce_field('newsletter_signup', 'newsletter_nonce'); ?>
+                                <?php wp_nonce_field('contact_signup', 'contact_nonce'); ?>
                             </form>
                         </div>
                     </div>

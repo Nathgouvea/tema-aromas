@@ -165,28 +165,7 @@ function tema_aromas_customize_register($wp_customize) {
         'type'    => 'textarea',
     ]);
 
-    // Newsletter Section
-    $wp_customize->add_setting('newsletter_title', [
-        'default'           => __('Receba Novidades', 'tema_aromas'),
-        'sanitize_callback' => 'sanitize_text_field',
-    ]);
 
-    $wp_customize->add_control('newsletter_title', [
-        'label'   => __('Título da Newsletter', 'tema_aromas'),
-        'section' => 'tema_aromas_footer',
-        'type'    => 'text',
-    ]);
-
-    $wp_customize->add_setting('newsletter_text', [
-        'default'           => __('Cadastre-se para receber ofertas exclusivas e novidades sobre nossos produtos aromáticos.', 'tema_aromas'),
-        'sanitize_callback' => 'sanitize_textarea_field',
-    ]);
-
-    $wp_customize->add_control('newsletter_text', [
-        'label'   => __('Texto da Newsletter', 'tema_aromas'),
-        'section' => 'tema_aromas_footer',
-        'type'    => 'textarea',
-    ]);
 }
 add_action('customize_register', 'tema_aromas_customize_register');
 

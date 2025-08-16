@@ -427,7 +427,6 @@ Description: [Product benefits and key features in Portuguese]
 - [ ] Hero section displays correctly
 - [ ] Featured products load
 - [ ] Category links work
-- [ ] Newsletter signup functions
 
 **Product Pages:**
 

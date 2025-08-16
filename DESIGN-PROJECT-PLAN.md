@@ -408,40 +408,64 @@ h3 {
 - Hover states sofisticados
 - Parallax sutil
 
-### Product Grid System Specifications
+### Product Grid System Specifications - COMPACT VERSION ✅
 
 ```css
-/* Responsive Product Grid */
-.products-grid {
+/* Responsive Product Grid - COMPACT DESIGN */
+.products-grid,
+.woocommerce ul.products {
   display: grid;
-  gap: var(--espacamento-lg);
+  gap: var(--espacamento-md);
   padding: var(--espacamento-md);
 }
 
-/* Mobile: 2 products per row */
+/* Mobile: 2 products per row - COMPACT */
 @media (max-width: 767px) {
-  .products-grid {
+  .products-grid,
+  .woocommerce ul.products {
     grid-template-columns: repeat(2, 1fr);
+    gap: var(--espacamento-sm);
+  }
+}
+
+/* Tablet: 3 products per row - COMPACT */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .products-grid,
+  .woocommerce ul.products {
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--espacamento-md);
   }
 }
 
-/* Tablet: 3 products per row */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .products-grid {
-    grid-template-columns: repeat(3, 1fr);
+/* Desktop: 4 products per row - COMPACT */
+@media (min-width: 1024px) {
+  .products-grid,
+  .woocommerce ul.products {
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--espacamento-lg);
   }
 }
 
-/* Desktop: 4 products per row */
-@media (min-width: 1024px) {
-  .products-grid {
+/* Large Desktop: 4 products per row with more spacing */
+@media (min-width: 1200px) {
+  .products-grid,
+  .woocommerce ul.products {
     grid-template-columns: repeat(4, 1fr);
     gap: var(--espacamento-xl);
   }
 }
 ```
+
+### Product Card Improvements ✅
+
+**Compact Design Features:**
+
+- **Smaller Cards**: Max-width 280px for better grid fit
+- **Compact Images**: Fixed height 200px (150px on mobile)
+- **Reduced Padding**: More content, less empty space
+- **Optimized Typography**: Smaller fonts with better hierarchy
+- **Full-width Buttons**: Better call-to-action prominence
+- **Text Truncation**: Ellipsis for long product names
 
 ---
 
@@ -455,14 +479,14 @@ Para garantir uma experiência premium e consistente, **TODAS** as páginas deve
 
 - ✅ **Hero section** com Foto-tela-inicial-.webp
 - ✅ **Trust indicators** customizados
-- ✅ **Product grid** 4-3-2 responsivo
+- ✅ **Product grid** 4-3-2 responsivo COMPACT
 - ✅ **Category showcase** visual premium
 
 #### 🛍️ **WooCommerce Shop Pages**
 
-- **Shop Page** (archive-product.php)
+- **Shop Page** (archive-product.php) ✅ UPDATED
   - Header consistente com filtros elegantes
-  - Product grid 4-3-2 com cards premium
+  - Product grid 4-3-2 COMPACT com cards premium
   - Pagination luxuosa
   - Sidebar com filtros estilizados
 
@@ -472,7 +496,7 @@ Para garantir uma experiência premium e consistente, **TODAS** as páginas deve
 - **Typography consistency** nos títulos e descrições
 - **Buttons** seguindo design system (.btn-luxury)
 - **Trust badges** próximo ao botão comprar
-- **Related products** em grid 4-3-2
+- **Related products** em grid 4-3-2 COMPACT
 
 #### 🛒 **Cart Page** (page-carrinho.php)
 

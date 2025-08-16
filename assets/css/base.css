@@ -63,10 +63,10 @@
    MANDATORY: Responsive Product Grid System (4-3-2)
    ========================================================================== */
 
-/* CRITICAL: Use this grid system for ALL product displays */
+/* CRITICAL: Use this grid system for ALL product displays - COMPACT VERSION */
 .products-grid {
   display: grid;
-  gap: var(--espacamento-lg);
+  gap: var(--espacamento-md);
   padding: var(--espacamento-md);
 }
 
@@ -74,7 +74,7 @@
 @media (max-width: 767px) {
   .products-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--espacamento-md);
+    gap: var(--espacamento-sm);
   }
 }
 
@@ -82,12 +82,20 @@
 @media (min-width: 768px) and (max-width: 1023px) {
   .products-grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: var(--espacamento-md);
+  }
+}
+
+/* Desktop: 4 products per row - COMPACT */
+@media (min-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--espacamento-lg);
   }
 }
 
-/* Desktop: 4 products per row */
-@media (min-width: 1024px) {
+/* Large Desktop: 4 products per row with more spacing */
+@media (min-width: 1200px) {
   .products-grid {
     grid-template-columns: repeat(4, 1fr);
     gap: var(--espacamento-xl);
@@ -264,35 +272,19 @@
    ========================================================================== */
 
 .product-card-luxury {
-  background: var(--cor-fundo);
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: var(--sombra-sutil);
-  border: 1px solid var(--cor-borda);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: transparent;
+  border-radius: 0;
+  overflow: visible;
+  box-shadow: none;
+  border: none;
+  transition: all 0.3s ease;
   position: relative;
+  max-width: 280px;
+  margin: 0 auto;
 }
 
 .product-card-luxury:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--sombra-luxo);
-  border-color: var(--cor-primaria);
-}
-
-.product-card-luxury::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: var(--gradiente-luxo);
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-}
-
-.product-card-luxury:hover::before {
-  transform: scaleX(1);
+  transform: translateY(-2px);
 }
 
 /* ==========================================================================

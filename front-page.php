@@ -179,7 +179,7 @@ get_header(); ?>
             <!-- WooCommerce Featured Products -->
             <div class="featured-products-grid">
                 <?php if (class_exists('WooCommerce')) : ?>
-                    <?php echo do_shortcode('[products featured="true" limit="6" columns="3"]'); ?>
+                    <?php echo do_shortcode('[products featured="true" limit="8" columns="4"]'); ?>
                 <?php else : ?>
                     <p><?php esc_html_e('WooCommerce não está ativo. Ative o plugin para exibir os produtos.', 'tema_aromas'); ?></p>
                 <?php endif; ?>

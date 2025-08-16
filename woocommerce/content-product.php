@@ -63,14 +63,7 @@ if (empty($product) || !$product->is_visible()) {
                 <?php do_action('woocommerce_after_shop_loop_item_title'); ?>
             </div>
 
-            <div class="product-excerpt">
-                <?php
-                $excerpt = $product->get_short_description();
-                if ($excerpt) {
-                    echo '<p class="product-short-description">' . wp_trim_words($excerpt, 15) . '</p>';
-                }
-                ?>
-            </div>
+
         </div>
 
         <div class="product-actions">

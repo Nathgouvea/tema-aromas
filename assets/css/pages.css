@@ -243,7 +243,7 @@
 
 .faq-item {
   border: 1px solid var(--cor-borda);
-  border-radius: 12px;
+  border-radius: 100px;
   margin-bottom: var(--espacamento-md);
   overflow: hidden;
   transition: var(--transicao-suave);
@@ -426,7 +426,7 @@
   align-items: flex-start;
   gap: var(--espacamento-md);
   padding: var(--espacamento-md);
-  border-radius: 12px;
+  border-radius: 100px;
   transition: all 0.3s ease;
   border: 2px solid transparent;
 }
@@ -563,7 +563,7 @@
   padding: var(--espacamento-sm) var(--espacamento-md) var(--espacamento-sm)
     3rem;
   border: 2px solid #e1e5e9;
-  border-radius: 12px;
+  border-radius: 100px;
   font-size: 1rem;
   font-family: inherit;
   color: #333;
@@ -603,7 +603,7 @@ select.modern-form-input {
   color: white;
   border: none;
   padding: var(--espacamento-md) var(--espacamento-xl);
-  border-radius: 12px;
+  border-radius: 100px;
   font-size: 1rem;
   font-weight: 600;
   display: inline-flex;
@@ -647,7 +647,7 @@ select.modern-form-input {
 .contact-error {
   margin-bottom: var(--espacamento-lg);
   padding: var(--espacamento-md);
-  border-radius: 12px;
+  border-radius: 100px;
   font-weight: 500;
 }
 
@@ -757,7 +757,7 @@ select.modern-form-input {
 .fragrance-pill {
   background: white;
   border: 2px solid var(--cor-borda);
-  border-radius: 25px;
+  border-radius: 100px;
   padding: var(--espacamento-sm) var(--espacamento-lg);
   font-size: 1rem;
   font-weight: 500;
@@ -865,7 +865,7 @@ select.modern-form-input {
 }
 
 .fragrance-image {
-  border-radius: 12px;
+  border-radius: 100px;
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
@@ -897,7 +897,7 @@ select.modern-form-input {
 .note-column {
   background: #f8f9fa;
   padding: var(--espacamento-md);
-  border-radius: 12px;
+  border-radius: 100px;
   border: 1px solid var(--cor-borda);
 }
 
@@ -921,7 +921,7 @@ select.modern-form-input {
 .fragrance-description {
   background: #f8f9fa;
   padding: var(--espacamento-lg);
-  border-radius: 12px;
+  border-radius: 100px;
   border: 1px solid var(--cor-borda);
 }
 
@@ -1064,7 +1064,7 @@ select.modern-form-input {
 .luxury-form-input {
   padding: var(--espacamento-md);
   border: 2px solid var(--cor-borda);
-  border-radius: 12px;
+  border-radius: 100px;
   font-family: inherit;
   font-size: 1rem;
   color: var(--cor-texto);
@@ -1092,7 +1092,7 @@ textarea.luxury-form-input {
   background: #d4edda;
   color: #155724;
   padding: var(--espacamento-md);
-  border-radius: 8px;
+  border-radius: 100px;
   margin-bottom: var(--espacamento-lg);
   border: 1px solid #c3e6cb;
 }
@@ -1101,7 +1101,7 @@ textarea.luxury-form-input {
   background: #f8d7da;
   color: #721c24;
   padding: var(--espacamento-md);
-  border-radius: 8px;
+  border-radius: 100px;
   margin-bottom: var(--espacamento-lg);
   border: 1px solid #f5c6cb;
 }

@@ -248,7 +248,7 @@
   background: var(--cor-primaria);
   color: var(--cor-fundo);
   border: none;
-  border-radius: 6px;
+  border-radius: 100px;
   padding: var(--espacamento-xs) var(--espacamento-md);
   font-weight: 500;
   font-size: 0.875rem;
@@ -490,7 +490,7 @@
   width: 100%;
   padding: var(--espacamento-sm);
   border: 1px solid var(--cor-borda);
-  border-radius: 8px;
+  border-radius: 100px;
   font-size: 1rem;
   transition: var(--transicao-rapida);
 }
@@ -512,7 +512,7 @@
 .woocommerce-error {
   padding: var(--espacamento-md);
   margin-bottom: var(--espacamento-md);
-  border-radius: 8px;
+  border-radius: 100px;
   border-left: 4px solid;
 }
 
@@ -565,7 +565,7 @@
   padding: var(--espacamento-xs) var(--espacamento-sm);
   background: var(--cor-fundo);
   border: 1px solid var(--cor-borda);
-  border-radius: 8px;
+  border-radius: 100px;
   color: var(--cor-texto);
   text-decoration: none;
   font-weight: 600;
@@ -704,7 +704,7 @@
   flex-shrink: 0;
   width: 60px;
   height: 60px;
-  border-radius: 8px;
+  border-radius: 100px;
   overflow: hidden;
 }
 
@@ -795,7 +795,7 @@
   background: var(--gradiente-luxo);
   color: var(--cor-fundo) !important;
   border: none;
-  border-radius: 8px;
+  border-radius: 100px;
   padding: var(--espacamento-sm) var(--espacamento-lg);
   font-weight: 600;
   text-decoration: none;
@@ -820,7 +820,7 @@
   background: transparent;
   color: var(--cor-primaria) !important;
   border: 2px solid var(--cor-primaria);
-  border-radius: 8px;
+  border-radius: 100px;
   padding: var(--espacamento-sm) var(--espacamento-lg);
   font-weight: 600;
   text-decoration: none;

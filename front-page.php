@@ -291,59 +291,42 @@ get_header(); ?>
         <!-- Lembrancinhas Block -->
         <section class="lembrancinhas-block">
             <div class="lembrancinhas-content">
-                <div class="lembrancinhas-visual">
-                    <div class="gift-illustration">
-                        <div class="gift-box">
-                            <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                <polyline points="20,12 20,19 4,19 4,12"/>
-                                <rect x="2" y="7" width="20" height="5"/>
-                                <line x1="12" y1="22" x2="12" y2="7"/>
-                                <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
-                                <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
-                            </svg>
-                        </div>
-                        <div class="sparkles">
-                            <span class="sparkle sparkle-1">✨</span>
-                            <span class="sparkle sparkle-2">💫</span>
-                            <span class="sparkle sparkle-3">⭐</span>
-                        </div>
-                    </div>
-                </div>
                 <div class="lembrancinhas-text">
                     <h2 class="section-title luxury-heading">
-                        <?php esc_html_e('Lembrancinhas Especiais', 'tema_aromas'); ?>
+                        <?php esc_html_e('Encomende com a gente sua lembrancinha', 'tema_aromas'); ?>
                     </h2>
                     <p class="section-subtitle">
-                        <?php esc_html_e('Crie momentos únicos e inesquecíveis com nossas lembrancinhas personalizadas. Perfeitas para casamentos, batizados, aniversários e eventos corporativos.', 'tema_aromas'); ?>
+                        <?php esc_html_e('Torne seu evento ainda mais especial com nossas lembrancinhas personalizadas. Criamos produtos únicos que vão marcar o seu momento e encantar seus convidados.', 'tema_aromas'); ?>
                     </p>
                     <div class="lembrancinhas-features">
                         <div class="feature-item">
                             <span class="feature-icon">🎁</span>
-                            <span><?php esc_html_e('Personalização Exclusiva', 'tema_aromas'); ?></span>
+                            <span><?php esc_html_e('Produtos personalizados para seu evento', 'tema_aromas'); ?></span>
                         </div>
                         <div class="feature-item">
                             <span class="feature-icon">💝</span>
-                            <span><?php esc_html_e('Embalagens Premium', 'tema_aromas'); ?></span>
+                            <span><?php esc_html_e('Embalagens especiais', 'tema_aromas'); ?></span>
                         </div>
                         <div class="feature-item">
                             <span class="feature-icon">🌟</span>
-                            <span><?php esc_html_e('Fragrâncias Especiais', 'tema_aromas'); ?></span>
+                            <span><?php esc_html_e('Fragrâncias exclusivas', 'tema_aromas'); ?></span>
+                        </div>
+                        <div class="feature-item">
+                            <span class="feature-icon">💜</span>
+                            <span><?php esc_html_e('Atendimento personalizado', 'tema_aromas'); ?></span>
                         </div>
                     </div>
                     <div class="lembrancinhas-cta">
                         <a href="<?php echo esc_url(get_term_link('lembrancinhas', 'product_cat')); ?>" class="btn-luxury btn-primary">
-                            <?php esc_html_e('Ver Lembrancinhas', 'tema_aromas'); ?>
+                            <?php esc_html_e('Fale via nosso pelo WhatsApp!', 'tema_aromas'); ?>
                         </a>
-                        <a href="<?php 
-                            $contato_page = get_page_by_path('fale-conosco');
-                            if ($contato_page) {
-                                echo esc_url(get_permalink($contato_page));
-                            } else {
-                                echo esc_url(home_url('/fale-conosco/'));
-                            }
-                        ?>" class="btn-luxury btn-secondary">
-                            <?php esc_html_e('Solicitar Orçamento', 'tema_aromas'); ?>
-                        </a>
+                    </div>
+                </div>
+                <div class="lembrancinhas-visual">
+                    <div class="lembrancinhas-image">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/Lembrancinha.webp" 
+                             alt="<?php esc_attr_e('Lembrancinhas Zen Secrets', 'tema_aromas'); ?>" 
+                             loading="lazy">
                     </div>
                 </div>
             </div>

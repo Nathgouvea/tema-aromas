@@ -30,15 +30,16 @@
 .header-content {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: var(--espacamento-sm) 0;
-  min-height: 80px;
+  justify-content: center;
+  gap: var(--espacamento-lg);
+  padding: 8px 0;
+  min-height: 35px;
 }
 
 @media (min-width: 1024px) {
   .header-content {
-    min-height: 100px;
-    padding: var(--espacamento-md) 0;
+    min-height: 45px;
+    padding: 10px 0;
   }
 }
 
@@ -653,8 +654,8 @@
 
 @media (max-width: 767px) {
   .header-content {
-    padding: var(--espacamento-sm) 0;
-    min-height: 70px;
+    padding: 6px 0;
+    min-height: 30px;
   }
 
   .site-logo img {

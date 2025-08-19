@@ -607,7 +607,12 @@
 }
 
 .featured-products-grid {
-  margin: var(--espacamento-xl) 0;
+  margin: var(--espacamento-xl) auto;
+  max-width: 1400px;
+}
+
+.featured-products-grid .woocommerce ul.products {
+  padding: 0 var(--espacamento-md);
 }
 
 .featured-cta {
@@ -902,7 +907,12 @@
 }
 
 .product-carousel-wrapper {
-  margin: var(--espacamento-xl) 0;
+  margin: var(--espacamento-xl) auto;
+  max-width: 1400px;
+}
+
+.product-carousel-wrapper .woocommerce ul.products {
+  padding: 0 var(--espacamento-md);
 }
 
 /* ==========================================================================

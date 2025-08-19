@@ -302,7 +302,7 @@ img {
 
   a,
   a:visited {
-    text-decoration: underline;
+    text-decoration: none;
   }
 
   a[href]::after {

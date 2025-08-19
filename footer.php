@@ -8,15 +8,11 @@
                     <!-- Footer Section 1 -->
                     <div class="footer-section footer-about">
                         <div class="footer-branding">
-                            <?php if (has_custom_logo()) : ?>
-                                <div class="footer-logo">
-                                    <?php the_custom_logo(); ?>
-                                </div>
-                            <?php else : ?>
-                                <h3 class="footer-site-title luxury-heading">
-                                    <?php bloginfo('name'); ?>
-                                </h3>
-                            <?php endif; ?>
+                            <div class="footer-logo">
+                                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/logo-zen.svg'); ?>" 
+                                     alt="<?php echo esc_attr(get_bloginfo('name')); ?>" 
+                                     class="footer-logo-img">
+                            </div>
                             
                             <p class="footer-description">
                                 <?php 
@@ -78,41 +74,29 @@
                 <div class="payment-methods">
                     <h5 class="payment-title"><?php esc_html_e('Formas de Pagamento', 'tema_aromas'); ?></h5>
                     <div class="payment-icons">
-                        <!-- Mercado Pago -->
-                        <div class="payment-icon" title="Mercado Pago">
-                            <svg width="40" height="24" viewBox="0 0 40 24" fill="none">
-                                <rect width="40" height="24" rx="4" fill="#00B1EA"/>
-                                <text x="20" y="16" font-family="Arial, sans-serif" font-size="8" font-weight="bold" text-anchor="middle" fill="white">MP</text>
-                            </svg>
-                        </div>
-                        
-                        <!-- Credit Cards -->
-                        <div class="payment-icon" title="Cartões de Crédito">
-                            <svg width="40" height="24" viewBox="0 0 40 24" fill="none">
-                                <rect width="40" height="24" rx="4" fill="#1A1F71"/>
-                                <rect x="4" y="8" width="32" height="2" fill="white"/>
-                                <rect x="4" y="14" width="12" height="2" fill="white"/>
-                            </svg>
-                        </div>
-                        
                         <!-- PIX -->
                         <div class="payment-icon" title="PIX">
-                            <svg width="40" height="24" viewBox="0 0 40 24" fill="none">
-                                <rect width="40" height="24" rx="4" fill="#32BCAD"/>
-                                <text x="20" y="16" font-family="Arial, sans-serif" font-size="8" font-weight="bold" text-anchor="middle" fill="white">PIX</text>
-                            </svg>
+                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/pix.png'); ?>" alt="PIX" width="60" height="auto">
                         </div>
                         
-                        <!-- Boleto -->
-                        <div class="payment-icon" title="Boleto Bancário">
-                            <svg width="40" height="24" viewBox="0 0 40 24" fill="none">
-                                <rect width="40" height="24" rx="4" fill="#FF6900"/>
-                                <rect x="4" y="6" width="32" height="1" fill="white"/>
-                                <rect x="4" y="9" width="32" height="1" fill="white"/>
-                                <rect x="4" y="12" width="32" height="1" fill="white"/>
-                                <rect x="4" y="15" width="32" height="1" fill="white"/>
-                                <rect x="4" y="18" width="32" height="1" fill="white"/>
-                            </svg>
+                        <!-- Visa -->
+                        <div class="payment-icon" title="Visa">
+                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/visa.png'); ?>" alt="Visa" width="60" height="auto">
+                        </div>
+                        
+                        <!-- Mastercard -->
+                        <div class="payment-icon" title="Mastercard">
+                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/mastercard.png'); ?>" alt="Mastercard" width="60" height="auto">
+                        </div>
+                        
+                        <!-- American Express -->
+                        <div class="payment-icon" title="American Express">
+                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/amex.png'); ?>" alt="American Express" width="60" height="auto">
+                        </div>
+                        
+                        <!-- Elo -->
+                        <div class="payment-icon" title="Elo">
+                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/elo.png'); ?>" alt="Elo" width="60" height="auto">
                         </div>
                     </div>
                 </div>

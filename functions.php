@@ -26,6 +26,10 @@ function tema_aromas_setup() {
 
     // Enable support for Post Thumbnails on posts and pages
     add_theme_support('post-thumbnails');
+    
+    // Add custom image sizes for better quality product cards
+    add_image_size('product-card', 600, 750, true); // 4:5 aspect ratio
+    add_image_size('product-card-2x', 1200, 1500, true); // Retina version
 
     // Add theme support for selective refresh for widgets
     add_theme_support('customize-selective-refresh-widgets');

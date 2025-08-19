@@ -78,10 +78,12 @@
   max-width: 400px;
 }
 
-.footer-logo img {
-  max-height: 60px;
+.footer-logo img,
+.footer-logo-img {
+  max-height: 50px;
+  width: auto;
   margin-bottom: var(--espacamento-md);
-  filter: brightness(0) invert(1);
+  display: block;
 }
 
 .footer-site-title {
@@ -218,10 +220,12 @@
 .contact-item svg {
   color: var(--cor-accent);
   flex-shrink: 0;
+  width: 18px;
+  height: 18px;
 }
 
 .contact-item a {
-  color: inherit;
+  color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
   transition: var(--transicao-rapida);
 }
@@ -260,17 +264,29 @@
 }
 
 .payment-icon {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 6px;
-  padding: var(--espacamento-xs);
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  padding: 8px 12px;
   transition: var(--transicao-rapida);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.payment-icon img {
+  display: block;
+  height: 24px;
+  width: auto;
+  max-width: 60px;
+  object-fit: contain;
 }
 
 .payment-icon:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 1);
   transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .trust-seals {

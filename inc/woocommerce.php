@@ -26,8 +26,8 @@ function tema_aromas_woocommerce_setup() {
     add_theme_support(
         'woocommerce',
         [
-            'thumbnail_image_width' => 300,
-            'single_image_width'    => 600,
+            'thumbnail_image_width' => 600,
+            'single_image_width'    => 1200,
             'product_grid'          => [
                 'default_rows'    => 3,
                 'min_rows'        => 1,
@@ -247,6 +247,32 @@ function tema_aromas_woocommerce_breadcrumbs() {
     ];
 }
 add_filter('woocommerce_breadcrumb_defaults', 'tema_aromas_woocommerce_breadcrumbs');
+
+/**
+ * Use custom image size for product thumbnails in loops
+ */
+function tema_aromas_custom_product_thumbnail_size($size) {
+    if (is_shop() || is_product_category() || is_product_tag()) {
+        return 'product-card';
+    }
+    return $size;
+}
+add_filter('single_product_archive_thumbnail_size', 'tema_aromas_custom_product_thumbnail_size');
+
+/**
+ * Add srcset for better image quality on retina displays
+ */
+function tema_aromas_product_image_attributes($attr, $attachment, $size) {
+    if (is_shop() || is_product_category() || is_product_tag()) {
+        $srcset = wp_get_attachment_image_srcset($attachment->ID, 'product-card-2x');
+        if ($srcset) {
+            $attr['srcset'] = $srcset;
+            $attr['sizes'] = '(max-width: 767px) 50vw, (max-width: 1023px) 33vw, 25vw';
+        }
+    }
+    return $attr;
+}
+add_filter('wp_get_attachment_image_attributes', 'tema_aromas_product_image_attributes', 10, 3);
 
 /**
  * Change number of products displayed per page

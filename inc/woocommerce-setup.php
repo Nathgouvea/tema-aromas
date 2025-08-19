@@ -107,10 +107,12 @@ function tema_aromas_configure_woocommerce_settings() {
     // Enable customer registration on checkout
     update_option('woocommerce_enable_signup_and_login_from_checkout', 'yes');
 
-    // Configure image sizes for luxury design
-    update_option('woocommerce_thumbnail_image_width', '300');
-    update_option('woocommerce_single_image_width', '600');
-    update_option('woocommerce_thumbnail_cropping', '1:1');
+    // Configure image sizes for luxury design - Higher quality
+    update_option('woocommerce_thumbnail_image_width', '600');
+    update_option('woocommerce_single_image_width', '1200');
+    update_option('woocommerce_thumbnail_cropping', 'custom');
+    update_option('woocommerce_thumbnail_cropping_custom_width', '4');
+    update_option('woocommerce_thumbnail_cropping_custom_height', '5');
 
     // Log configuration
     error_log("Tema Aromas: WooCommerce settings configured for Brazilian market");

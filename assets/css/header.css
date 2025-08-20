@@ -20,29 +20,31 @@
   box-shadow: var(--sombra-sutil);
 }
 
-/* Standardized header - consistent across all pages */
-.site-header {
-  background: var(--cor-fundo);
-  border-bottom: 1px solid var(--cor-borda);
-  box-shadow: var(--sombra-sutil);
+/* Standardized header - transparent to show hero background */
+.site-header,
+header#masthead.site-header.luxury-header,
+header.site-header,
+#masthead.site-header {
+  background-color: transparent !important;
+  background-image: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  position: relative;
+  min-height: 80px;
 }
 
-/* Scrolled state - solid white background with premium blur */
-.site-header.scrolled {
-  background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+/* Fallback for browsers without backdrop-filter support */
+@supports not (backdrop-filter: blur(10px)) {
+  .site-header {
+    background-image: none;
+  }
 }
 
-/* Scrolled state - enhanced solid background with premium blur */
+/* Scrolled state - keep transparent */
 .site-header.scrolled {
-  background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  background-image: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
 }
 
 .header-content {
@@ -98,12 +100,14 @@
   transition: var(--transicao-suave);
 }
 
-/* Logo and text always use luxury gradient */
+/* Logo and text with better contrast for background image */
 .site-title a {
-  background: var(--gradiente-luxo);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: white !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  background-clip: unset;
 }
 
 .site-title a:hover {
@@ -186,9 +190,10 @@
   transform: scale(1.1);
 }
 
-/* Menu links always use consistent styling */
+/* Menu links with better contrast for background image */
 .menu-link {
-  color: var(--cor-texto);
+  color: white !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 .menu-link:hover {
@@ -368,9 +373,10 @@
   transition: var(--transicao-rapida);
 }
 
-/* Header icons always use consistent styling */
+/* Header icons with better contrast for background image */
 .header-icon {
-  color: var(--cor-texto);
+  color: white !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
 }
 
 /* Cart Counter */
@@ -520,6 +526,36 @@
 .search-close:hover {
   background: rgba(107, 79, 196, 0.1);
   color: var(--cor-primaria);
+}
+
+/* Body state when search is open */
+body.search-open {
+  overflow: hidden;
+}
+
+body.search-open .site-header {
+  z-index: 1001;
+}
+
+/* Enhanced search form animations */
+.header-search {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.header-search.show {
+  animation: searchSlideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes searchSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ==========================================================================
@@ -759,6 +795,13 @@
   .mini-cart-drawer {
     width: 100%;
     max-width: 100%;
+  }
+
+  /* Mobile header background adjustments */
+  .site-header {
+    background-attachment: scroll !important;
+    background-size: cover !important;
+    background-position: center center !important;
   }
 }
 

@@ -174,8 +174,7 @@
                     <!-- Search Toggle -->
                     <button class="header-icon search-toggle" aria-label="<?php esc_attr_e('Abrir busca', 'tema_aromas'); ?>" aria-expanded="false" aria-controls="search-form">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <path d="21 21l-4.35-4.35"></path>
+                            <path d="M21 21l-6.35-6.35M11 6a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"/>
                         </svg>
                         <span class="sr-only"><?php esc_html_e('Buscar', 'tema_aromas'); ?></span>
                     </button>
@@ -225,8 +224,7 @@
                             <input type="hidden" name="post_type" value="product" />
                             <button type="submit" class="search-submit btn-luxury" aria-label="<?php esc_attr_e('Buscar', 'tema_aromas'); ?>">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                                    <circle cx="11" cy="11" r="8"></circle>
-                                    <path d="21 21l-4.35-4.35"></path>
+                                    <path d="M21 21l-6.35-6.35M11 6a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"/>
                                 </svg>
                                 <?php esc_html_e('Buscar', 'tema_aromas'); ?>
                             </button>

@@ -187,6 +187,15 @@ function tema_aromas_scripts() {
         );
     }
 
+    // Search Functionality JavaScript
+    wp_enqueue_script(
+        'tema-aromas-search',
+        get_template_directory_uri() . '/assets/js/search.js',
+        [],
+        $theme_version,
+        true
+    );
+
     // Pages JavaScript (for static content pages)
     wp_enqueue_script(
         'tema-aromas-pages',

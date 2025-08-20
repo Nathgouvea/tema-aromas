@@ -10,10 +10,10 @@
 
 A loja online Zen Secrets possui uma estrutura técnica sólida baseada em WordPress/WooCommerce, mas apresenta problemas significativos de design e experiência do usuário que afetam as conversões e a percepção de marca premium. Como uma loja especializada em produtos aromáticos naturais focados no bem-estar, é essencial transmitir luxo e confiança.
 
-### ✅ Última Atualização: Botões Padronizados
+### ✅ Última Atualização: Botões Padronizados e Hover Effects Unificados
 
 **Data**: $(date)
-**Mudança**: Todos os botões do website foram atualizados para usar padding consistente de `10px 24px`
+**Mudança**: Todos os botões do website foram atualizados para usar padding consistente de `10px 24px` e hover effects idênticos ao botão CTA principal da hero section
 **Arquivos Modificados**:
 
 - `assets/css/base.css` - Botões principais (.btn-luxury, .btn-whatsapp)
@@ -22,6 +22,13 @@ A loja online Zen Secrets possui uma estrutura técnica sólida baseada em WordP
 - `assets/css/pages.css` - Botões de formulário (.btn-send-modern)
 - `assets/css/critical.css` - Botões críticos (.btn-luxury)
 - `style.css` - Botões globais (.btn-luxury)
+
+**Hover Effects Padronizados**:
+
+- Transform: `translateY(-3px)` (movimento para cima)
+- Box-shadow: `0 12px 48px rgba(107, 79, 196, 0.4)` (sombra premium)
+- Transition: `all 0.3s cubic-bezier(0.4, 0, 0.2, 1)` (transição suave)
+- Shine effect: Animação de brilho deslizante com pseudo-elemento ::before
 
 ### Objetivos do Projeto
 

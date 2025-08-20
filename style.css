@@ -166,15 +166,35 @@ p {
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
-  transition: var(--transicao-suave);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: var(--sombra-luxo);
   position: relative;
   overflow: hidden;
 }
 
+.btn-luxury::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.btn-luxury:hover::before {
+  left: 100%;
+}
+
 .btn-luxury:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(107, 79, 196, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 48px rgba(107, 79, 196, 0.4);
   color: var(--cor-fundo);
 }
 

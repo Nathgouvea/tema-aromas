@@ -163,14 +163,37 @@
   font-weight: 600;
   font-size: 1.1rem;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-ver-colecoes::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.btn-ver-colecoes:hover::before {
+  left: 100%;
 }
 
 .btn-ver-colecoes:hover {
   background: var(--cor-fundo);
   color: var(--cor-primaria);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 48px rgba(255, 255, 255, 0.4);
 }
 
 /* ==========================================================================
@@ -2069,11 +2092,33 @@ section:nth-child(even) {
   color: var(--cor-fundo);
   padding: 10px 24px;
   box-shadow: var(--sombra-luxo);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-luxury.btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.btn-luxury.btn-primary:hover::before {
+  left: 100%;
 }
 
 .btn-luxury.btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: var(--sombra-intensa);
+  box-shadow: 0 12px 48px rgba(107, 79, 196, 0.4);
 }
 
 .btn-luxury.btn-secondary {
@@ -2081,12 +2126,35 @@ section:nth-child(even) {
   color: var(--cor-primaria);
   border: 2px solid var(--cor-primaria);
   padding: 10px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-luxury.btn-secondary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.btn-luxury.btn-secondary:hover::before {
+  left: 100%;
 }
 
 .btn-luxury.btn-secondary:hover {
   background: var(--cor-primaria);
   color: var(--cor-fundo);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 48px rgba(107, 79, 196, 0.4);
 }
 
 /* ==========================================================================

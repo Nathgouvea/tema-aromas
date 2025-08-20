@@ -610,13 +610,35 @@ select.modern-form-input {
   align-items: center;
   gap: var(--espacamento-sm);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: var(--sombra-luxo);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-send-modern::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.btn-send-modern:hover::before {
+  left: 100%;
 }
 
 .btn-send-modern:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 32px rgba(107, 79, 196, 0.4);
+  box-shadow: 0 12px 48px rgba(107, 79, 196, 0.4);
 }
 
 .btn-send-modern:active {

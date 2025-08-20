@@ -33,7 +33,6 @@ a:where(:not(.wp-element-button)):visited {
   text-decoration: none;
 }
 
-
 /* Typography improvements */
 .luxury-heading {
   font-family: var(--fonte-titulo);
@@ -210,11 +209,33 @@ a:where(:not(.wp-element-button)):visited {
   justify-content: center;
   text-decoration: none;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-luxury.primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.btn-luxury.primary:hover::before {
+  left: 100%;
 }
 
 .btn-luxury.primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 48px rgba(107, 79, 196, 0.25);
+  box-shadow: 0 12px 48px rgba(107, 79, 196, 0.4);
   color: var(--cor-fundo);
 }
 
@@ -226,18 +247,41 @@ a:where(:not(.wp-element-button)):visited {
   padding: 10px 24px;
   border-radius: 100px;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-luxury.secondary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.btn-luxury.secondary:hover::before {
+  left: 100%;
 }
 
 .btn-luxury.secondary:hover {
   background: var(--cor-primaria);
   color: var(--cor-fundo);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 48px rgba(107, 79, 196, 0.4);
 }
 
 /* WhatsApp Button - Special CTA */
@@ -251,15 +295,37 @@ a:where(:not(.wp-element-button)):visited {
   display: inline-flex;
   align-items: center;
   gap: var(--espacamento-sm);
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-whatsapp::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.btn-whatsapp:hover::before {
+  left: 100%;
 }
 
 .btn-whatsapp:hover {
   background: #128c7e;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 48px rgba(37, 211, 102, 0.4);
   color: white;
 }
 

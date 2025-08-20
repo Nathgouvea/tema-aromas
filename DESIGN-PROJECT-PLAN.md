@@ -176,6 +176,82 @@ A loja online Zen Secrets possui uma estrutura técnica sólida baseada em WordP
 </section>
 ```
 
+#### Especificações Técnicas CSS
+
+```css
+.hero-luxury-screenshot {
+  position: relative;
+  min-height: 70vh; /* Desktop: 70vh */
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom; /* Alinhamento do centro inferior */
+}
+
+/* Overlay Principal - Gradiente Horizontal Elegante */
+.hero-overlay-left {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.85) 0%,
+    rgba(255, 255, 255, 0.7) 25%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0.1) 75%,
+    transparent 100%
+  );
+}
+
+/* Overlay Alternativo - Gradiente Diagonal Sofisticado */
+.hero-overlay-sophisticated {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0.6) 30%,
+    rgba(255, 255, 255, 0.2) 60%,
+    rgba(255, 255, 255, 0.05) 85%,
+    transparent 100%
+  );
+}
+
+/* Overlay Alternativo - Luxo com Toque Roxo */
+.hero-overlay-luxury {
+  background: linear-gradient(
+    90deg,
+    rgba(107, 79, 196, 0.1) 0%,
+    rgba(255, 255, 255, 0.8) 20%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0.2) 80%,
+    transparent 100%
+  );
+}
+
+/* Responsivo Mobile */
+@media (max-width: 768px) {
+  .hero-luxury-screenshot {
+    min-height: 60vh; /* Mobile: 60vh */
+  }
+  
+  .hero-overlay-left {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(255, 255, 255, 0.7) 40%,
+      rgba(255, 255, 255, 0.3) 70%,
+      transparent 100%
+    );
+  }
+}
+```
+```
+
 ### Fase 2: Trust Indicators Enhancement
 
 **Prioridade: ALTA | Tempo: 1-2 dias**

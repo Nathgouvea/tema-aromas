@@ -124,16 +124,18 @@ A loja online Zen Secrets possui uma estrutura técnica sólida baseada em WordP
 #### Solução Proposta
 
 1. **Imagem principal**: `/assets/img/Foto-tela-inicial-.webp` como hero background
-2. **Overlay elegante** com gradiente sutil
-3. **Tipografia impactante** com hierarchy clara
-4. **CTAs prominentes** com design luxury
-5. **Elementos flutuantes** com produtos reais
+2. **Altura otimizada**: 70vh para desktop, 60vh para mobile
+3. **Posicionamento da imagem**: Alinhada do centro inferior (center bottom)
+4. **Overlay elegante** com gradiente sutil
+5. **Tipografia impactante** com hierarchy clara
+6. **CTAs prominentes** com design luxury
+7. **Elementos flutuantes** com produtos reais
 
 #### Implementação
 
 ```html
 <!-- Hero Section Redesigned -->
-<section class="hero-luxury">
+<section class="hero-luxury-screenshot">
   <div class="hero-background">
     <img
       src="/assets/img/Foto-tela-inicial-.webp"
@@ -141,7 +143,7 @@ A loja online Zen Secrets possui uma estrutura técnica sólida baseada em WordP
       class="hero-image"
       loading="eager"
     />
-    <div class="hero-overlay"></div>
+    <div class="hero-overlay-left"></div>
   </div>
 
   <div class="hero-content">

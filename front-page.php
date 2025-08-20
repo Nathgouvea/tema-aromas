@@ -245,12 +245,10 @@ get_header(); ?>
                 <!-- Velas Aromáticas -->
                 <div class="produto-card velas-card animate-fade-in-up">
                     <div class="produto-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/all-candles.webp" 
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/all-candles.webp" 
                              alt="<?php esc_attr_e('Velas Aromáticas Zen Secrets', 'tema_aromas'); ?>" 
-                             loading="lazy"
-                             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                             loading="lazy">
                         <div class="produto-overlay"></div>
-                        <div class="produto-fallback" style="display: none; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: #6b4fc4; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: bold;">Velas Aromáticas</div>
                     </div>
                     <div class="produto-content">
                         <h3 class="produto-title"><?php esc_html_e('Velas Aromáticas', 'tema_aromas'); ?></h3>
@@ -263,7 +261,7 @@ get_header(); ?>
                 <!-- Aromatizadores -->
                 <div class="produto-card aromatizadores-card animate-fade-in-up">
                     <div class="produto-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/all-aromatizadores.webp" 
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/all-aromatizadores.webp" 
                              alt="<?php esc_attr_e('Aromatizadores Zen Secrets', 'tema_aromas'); ?>" 
                              loading="lazy">
                         <div class="produto-overlay"></div>
@@ -279,7 +277,7 @@ get_header(); ?>
                 <!-- Home Spray -->
                 <div class="produto-card homespray-card animate-fade-in-up">
                     <div class="produto-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/all-homespray.webp" 
+                        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/all-homespray.webp" 
                              alt="<?php esc_attr_e('Home Spray Zen Secrets', 'tema_aromas'); ?>" 
                              loading="lazy">
                         <div class="produto-overlay"></div>

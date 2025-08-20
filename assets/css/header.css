@@ -478,8 +478,9 @@ header.site-header,
   border: none;
   background: transparent;
   padding: var(--espacamento-sm);
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--cor-texto);
+  min-height: 40px;
 }
 
 .search-field:focus {
@@ -503,6 +504,8 @@ header.site-header,
   font-weight: 600;
   cursor: pointer;
   transition: var(--transicao-suave);
+  min-height: 40px;
+  font-size: 0.9rem;
 }
 
 .search-submit:hover {
@@ -512,21 +515,26 @@ header.site-header,
 
 .search-close {
   position: absolute;
-  top: var(--espacamento-sm);
-  right: var(--espacamento-sm);
-  width: 32px;
-  height: 32px;
+  top: -8px;
+  right: -8px;
+  width: 24px;
+  height: 24px;
   border: none;
-  background: transparent;
+  background: var(--cor-primaria);
   border-radius: 50%;
-  color: var(--cor-texto);
+  color: var(--cor-fundo);
   cursor: pointer;
   transition: var(--transicao-rapida);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .search-close:hover {
-  background: rgba(107, 79, 196, 0.1);
-  color: var(--cor-primaria);
+  background: var(--cor-accent);
+  transform: scale(1.1);
 }
 
 /* Body state when search is open */
@@ -538,24 +546,50 @@ body.search-open .site-header {
   z-index: 1001;
 }
 
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .header-search {
+    left: 20px;
+    right: 20px;
+    transform: translateX(0) translateY(-10px);
+    min-width: auto;
+    max-width: none;
+  }
+  
+  .header-search.show {
+    animation: searchSlideDownMobile 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  @keyframes searchSlideDownMobile {
+    from {
+      opacity: 0;
+      transform: translateX(0) translateY(-15px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0) translateY(0) scale(1);
+    }
+  }
+}
+
 /* Enhanced search form animations */
 .header-search {
   backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.98);
 }
 
 .header-search.show {
-  animation: searchSlideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: searchSlideDown 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes searchSlideDown {
   from {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateX(-50%) translateY(-15px) scale(0.95);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(-50%) translateY(0) scale(1);
   }
 }
 

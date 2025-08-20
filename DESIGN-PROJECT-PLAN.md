@@ -197,14 +197,13 @@ A loja online Zen Secrets possui uma estrutura técnica sólida baseada em WordP
   object-position: center bottom; /* Alinhamento do centro inferior */
 }
 
-/* Overlay Principal - Gradiente Horizontal Elegante */
+/* Overlay Principal - Gradiente Sutil e Elegante */
 .hero-overlay-left {
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0.85) 0%,
-    rgba(255, 255, 255, 0.7) 25%,
-    rgba(255, 255, 255, 0.4) 50%,
-    rgba(255, 255, 255, 0.1) 75%,
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0.08) 30%,
+    rgba(0, 0, 0, 0.03) 60%,
     transparent 100%
   );
 }
@@ -213,10 +212,9 @@ A loja online Zen Secrets possui uma estrutura técnica sólida baseada em WordP
 .hero-overlay-sophisticated {
   background: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.9) 0%,
-    rgba(255, 255, 255, 0.6) 30%,
-    rgba(255, 255, 255, 0.2) 60%,
-    rgba(255, 255, 255, 0.05) 85%,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.1) 30%,
+    rgba(0, 0, 0, 0.05) 60%,
     transparent 100%
   );
 }
@@ -225,10 +223,9 @@ A loja online Zen Secrets possui uma estrutura técnica sólida baseada em WordP
 .hero-overlay-luxury {
   background: linear-gradient(
     90deg,
-    rgba(107, 79, 196, 0.1) 0%,
-    rgba(255, 255, 255, 0.8) 20%,
-    rgba(255, 255, 255, 0.6) 50%,
-    rgba(255, 255, 255, 0.2) 80%,
+    rgba(107, 79, 196, 0.15) 0%,
+    rgba(0, 0, 0, 0.1) 30%,
+    rgba(0, 0, 0, 0.05) 60%,
     transparent 100%
   );
 }
@@ -242,9 +239,9 @@ A loja online Zen Secrets possui uma estrutura técnica sólida baseada em WordP
   .hero-overlay-left {
     background: linear-gradient(
       90deg,
-      rgba(255, 255, 255, 0.9) 0%,
-      rgba(255, 255, 255, 0.7) 40%,
-      rgba(255, 255, 255, 0.3) 70%,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.1) 40%,
+      rgba(0, 0, 0, 0.05) 70%,
       transparent 100%
     );
   }

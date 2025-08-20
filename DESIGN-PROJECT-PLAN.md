@@ -46,4 +46,3 @@ A loja online Zen Secrets possui uma estrutura técnica sólida baseada em WordP
 - ✅ Estados ARIA para acessibilidade
 - ✅ Design premium compacto e elegante
 - ✅ Responsivo em todos os dispositivos
-

@@ -15,7 +15,7 @@
 <a class="skip-link sr-only" href="#main"><?php esc_html_e('Pular para o conteúdo', 'tema_aromas'); ?></a>
 
 <div id="page" class="site">
-    <header id="masthead" class="site-header luxury-header">
+    <header id="masthead" class="site-header luxury-header transparent-header">
         <div class="container">
             <div class="header-content">
                 <!-- Logo / Site Title -->

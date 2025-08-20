@@ -167,6 +167,15 @@ function tema_aromas_scripts() {
         true
     );
 
+    // Header Scroll Effect JavaScript
+    wp_enqueue_script(
+        'tema-aromas-header-scroll',
+        get_template_directory_uri() . '/assets/js/header-scroll.js',
+        [],
+        $theme_version,
+        true
+    );
+
     // Mini Cart JavaScript
     if (class_exists('WooCommerce')) {
         wp_enqueue_script(

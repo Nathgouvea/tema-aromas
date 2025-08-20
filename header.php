@@ -226,7 +226,6 @@
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                     <path d="M21 21l-6.35-6.35M11 6a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"/>
                                 </svg>
-                                <?php esc_html_e('Buscar', 'tema_aromas'); ?>
                             </button>
                         </form>
                     <?php else : ?>

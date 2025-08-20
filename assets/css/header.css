@@ -555,11 +555,11 @@ body.search-open .site-header {
     min-width: auto;
     max-width: none;
   }
-  
+
   .header-search.show {
     animation: searchSlideDownMobile 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  
+
   @keyframes searchSlideDownMobile {
     from {
       opacity: 0;

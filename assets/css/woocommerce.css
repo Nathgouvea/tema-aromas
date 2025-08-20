@@ -101,7 +101,7 @@
     padding: 0;
     margin: 0;
   }
-  
+
   .product-card-inner {
     padding: 0;
   }
@@ -144,7 +144,7 @@
     font-size: 1rem;
     margin-bottom: 8px;
   }
-  
+
   .woocommerce ul.products li.product .button {
     font-size: 0;
     padding: 10px 16px;
@@ -152,16 +152,16 @@
     border-radius: 100px;
     margin: 0 auto;
   }
-  
+
   .woocommerce ul.products li.product .button.add_to_cart_button::before {
     font-size: 0.9rem;
   }
-  
+
   .woocommerce ul.products li.product .button.add_to_cart_button::after {
     font-size: 0.75rem;
-    content: 'COMPRAR AGORA';
+    content: "COMPRAR AGORA";
   }
-  
+
   .woocommerce span.onsale {
     font-size: 0.7rem;
     padding: 4px 8px;
@@ -174,14 +174,14 @@
     grid-template-columns: repeat(3, 1fr);
     gap: var(--espacamento-md);
   }
-  
+
   .product-image-wrapper {
     aspect-ratio: 4/5;
     border-radius: 12px;
     width: 100%;
     padding: 0;
   }
-  
+
   .woocommerce ul.products li.product img {
     width: 100%;
     height: 100%;
@@ -206,11 +206,11 @@
     max-width: 1400px;
     margin: 0 auto;
   }
-  
+
   .product-image-wrapper {
     aspect-ratio: 4/5;
   }
-  
+
   .woocommerce ul.products li.product img {
     width: 100%;
     height: 100%;
@@ -440,7 +440,7 @@
 }
 
 .woocommerce ul.products li.product .button.add_to_cart_button::before {
-  content: '';
+  content: "";
   display: inline-block;
   width: 16px;
   height: 16px;
@@ -453,7 +453,7 @@
 }
 
 .woocommerce ul.products li.product .button.add_to_cart_button::after {
-  content: 'COMPRAR AGORA';
+  content: "COMPRAR AGORA";
   font-size: 0.85rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -624,7 +624,10 @@
 }
 
 /* Short Description */
-.woocommerce div.product div.summary .woocommerce-product-details__short-description {
+.woocommerce
+  div.product
+  div.summary
+  .woocommerce-product-details__short-description {
   font-size: 1rem;
   line-height: 1.8;
   color: #666;
@@ -696,7 +699,7 @@
   color: white;
   border: none;
   border-radius: 100px;
-  padding: 14px 40px;
+  padding: 10px 24px;
   font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -839,22 +842,28 @@ section.related.products > h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   z-index: 10;
   transition: all 0.3s ease;
   text-indent: -9999px;
 }
 
-.woocommerce div.product div.images .woocommerce-product-gallery__trigger:before {
+.woocommerce
+  div.product
+  div.images
+  .woocommerce-product-gallery__trigger:before {
   content: "🔍";
   text-indent: 0;
   position: absolute;
   font-size: 18px;
 }
 
-.woocommerce div.product div.images .woocommerce-product-gallery__trigger:hover {
+.woocommerce
+  div.product
+  div.images
+  .woocommerce-product-gallery__trigger:hover {
   transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Sale Badge on Single Product */
@@ -1169,38 +1178,38 @@ section:has(> h2:contains("Best Quality Plants")) {
   .woocommerce div.product .product_title {
     font-size: 1.8rem;
   }
-  
+
   .woocommerce div.product p.price,
   .woocommerce div.product span.price {
     font-size: 1.5rem;
   }
-  
+
   .woocommerce div.product form.cart .single_add_to_cart_button {
     width: 100%;
     justify-content: center;
     padding: 16px 32px;
   }
-  
+
   .woocommerce div.product form.cart div.quantity {
     width: 100%;
     margin-right: 0;
     margin-bottom: 12px;
   }
-  
+
   .woocommerce div.product form.cart .quantity .qty {
     width: 100%;
   }
-  
+
   .woocommerce div.product .woocommerce-tabs ul.tabs {
     gap: 16px;
     overflow-x: auto;
   }
-  
+
   .woocommerce div.product .woocommerce-tabs ul.tabs li a {
     font-size: 0.85rem;
     white-space: nowrap;
   }
-  
+
   .related.products > h2 {
     font-size: 1.5rem;
   }
@@ -1212,32 +1221,32 @@ section:has(> h2:contains("Best Quality Plants")) {
     gap: 10px;
     padding: 10px;
   }
-  
+
   .product-image-wrapper {
     aspect-ratio: 4/5;
   }
-  
+
   .woocommerce ul.products li.product img {
     width: 100%;
     height: 100%;
     object-fit: contain;
   }
-  
+
   .woocommerce ul.products li.product h2,
   .woocommerce ul.products li.product .woocommerce-loop-product__title {
     font-size: 0.85rem;
     min-height: 2.2em;
   }
-  
+
   .woocommerce ul.products li.product .price {
     font-size: 0.95rem;
   }
-  
+
   .product-content {
     padding: 8px;
     min-height: 80px;
   }
-  
+
   .product-actions {
     padding: 0;
   }

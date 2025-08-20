@@ -157,7 +157,7 @@ p {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: var(--espacamento-sm) var(--espacamento-lg);
+  padding: 10px 24px;
   background: var(--gradiente-luxo);
   color: var(--cor-fundo);
   text-decoration: none;

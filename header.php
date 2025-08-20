@@ -65,11 +65,24 @@
                             <ul id="primary-menu" class="primary-menu luxury-menu">
                                 <li class="menu-item">
                                     <a href="<?php echo esc_url(home_url('/')); ?>" class="menu-link">
+                                        <span class="menu-icon-home">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                                <polyline points="9,22 9,12 15,12 15,22"></polyline>
+                                            </svg>
+                                        </span>
                                         <?php esc_html_e('INÍCIO', 'tema_aromas'); ?>
                                     </a>
                                 </li>
                                 <li class="menu-item menu-item-has-children dropdown">
                                     <a href="#" class="menu-link dropdown-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="comprar-dropdown">
+                                        <span class="menu-icon-shop">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                                <line x1="3" y1="6" x2="21" y2="6"></line>
+                                                <path d="M16 10a4 4 0 0 1-8 0"></path>
+                                            </svg>
+                                        </span>
                                         <?php esc_html_e('COMPRAR', 'tema_aromas'); ?>
                                         <svg class="dropdown-icon" width="12" height="8" viewBox="0 0 12 8" fill="none">
                                             <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -78,31 +91,37 @@
                                     <ul id="comprar-dropdown" class="sub-menu dropdown-menu">
                                         <li class="menu-item">
                                             <a href="<?php echo esc_url(get_term_link('aromatizadores', 'product_cat')); ?>" class="menu-link">
+                                                <span class="category-icon">🌸</span>
                                                 <?php esc_html_e('AROMATIZADORES', 'tema_aromas'); ?>
                                             </a>
                                         </li>
                                         <li class="menu-item">
                                             <a href="<?php echo esc_url(get_term_link('home-spray', 'product_cat')); ?>" class="menu-link">
+                                                <span class="category-icon">💨</span>
                                                 <?php esc_html_e('HOME SPRAY', 'tema_aromas'); ?>
                                             </a>
                                         </li>
                                         <li class="menu-item">
                                             <a href="<?php echo esc_url(get_term_link('velas-aromaticas', 'product_cat')); ?>" class="menu-link">
+                                                <span class="category-icon">🕯️</span>
                                                 <?php esc_html_e('VELAS AROMÁTICAS', 'tema_aromas'); ?>
                                             </a>
                                         </li>
                                         <li class="menu-item">
                                             <a href="<?php echo esc_url(get_term_link('kits-especiais', 'product_cat')); ?>" class="menu-link">
+                                                <span class="category-icon">🎁</span>
                                                 <?php esc_html_e('KITS ESPECIAIS', 'tema_aromas'); ?>
                                             </a>
                                         </li>
                                         <li class="menu-item">
                                             <a href="<?php echo esc_url(get_term_link('lembrancinhas', 'product_cat')); ?>" class="menu-link">
+                                                <span class="category-icon">💝</span>
                                                 <?php esc_html_e('LEMBRANCINHAS', 'tema_aromas'); ?>
                                             </a>
                                         </li>
                                         <li class="menu-item">
                                             <a href="<?php echo esc_url(get_term_link('acessorios', 'product_cat')); ?>" class="menu-link">
+                                                <span class="category-icon">✨</span>
                                                 <?php esc_html_e('ACESSÓRIOS', 'tema_aromas'); ?>
                                             </a>
                                         </li>
@@ -117,6 +136,13 @@
                                             echo esc_url(home_url('/sobre-os-aromas/'));
                                         }
                                     ?>" class="menu-link">
+                                        <span class="menu-icon-about">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <circle cx="12" cy="12" r="10"></circle>
+                                                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                            </svg>
+                                        </span>
                                         <?php esc_html_e('SOBRE OS AROMAS', 'tema_aromas'); ?>
                                     </a>
                                 </li>
@@ -129,6 +155,12 @@
                                             echo esc_url(home_url('/fale-conosco/'));
                                         }
                                     ?>" class="menu-link">
+                                        <span class="menu-icon-contact">
+                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                                <polyline points="22,6 12,13 2,6"></polyline>
+                                            </svg>
+                                        </span>
                                         <?php esc_html_e('FALE CONOSCO', 'tema_aromas'); ?>
                                     </a>
                                 </li>

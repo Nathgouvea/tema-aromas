@@ -149,7 +149,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: var(--espacamento-xs);
-  padding: var(--espacamento-md) var(--espacamento-xl);
+  padding: 10px 24px;
   border: none;
   border-radius: 12px;
   font-family: inherit;

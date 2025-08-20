@@ -199,7 +199,7 @@ a:where(:not(.wp-element-button)):visited {
   background: var(--gradiente-luxo);
   color: var(--cor-fundo);
   border: none;
-  padding: var(--espacamento-md) var(--espacamento-xl);
+  padding: 10px 24px;
   border-radius: 100px;
   font-weight: 600;
   font-size: 1.1rem;
@@ -223,7 +223,7 @@ a:where(:not(.wp-element-button)):visited {
   background: transparent;
   color: var(--cor-primaria);
   border: 2px solid var(--cor-primaria);
-  padding: var(--espacamento-md) var(--espacamento-xl);
+  padding: 10px 24px;
   border-radius: 100px;
   font-weight: 600;
   transition: all 0.3s ease;
@@ -245,7 +245,7 @@ a:where(:not(.wp-element-button)):visited {
   background: #25d366;
   color: white;
   border: none;
-  padding: var(--espacamento-md) var(--espacamento-lg);
+  padding: 10px 24px;
   border-radius: 100px;
   font-weight: 600;
   display: inline-flex;
@@ -496,7 +496,7 @@ a:where(:not(.wp-element-button)):visited {
 }
 
 .btn-luxury-large {
-  padding: var(--espacamento-md) var(--espacamento-xl);
+  padding: 10px 24px;
   font-size: 1.125rem;
 }
 

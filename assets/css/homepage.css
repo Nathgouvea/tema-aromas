@@ -621,100 +621,130 @@
 }
 
 /* ==========================================================================
-   Category Highlights
+   Nossos Produtos Queridos
    ========================================================================== */
 
-.category-highlights {
+.produtos-queridos-section {
   padding: var(--espacamento-xxl) 0;
-  background: rgba(107, 79, 196, 0.02);
+  background: #fafafa;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
 }
 
-.category-grid {
+.produtos-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: var(--espacamento-xl);
-  max-width: 1200px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--espacamento-lg);
+  max-width: 1400px;
   margin: var(--espacamento-xl) auto 0;
   padding: 0 var(--espacamento-md);
 }
 
-.category-card {
+.produto-card {
   background: var(--cor-fundo);
-  padding: var(--espacamento-xl);
-  border-radius: 20px;
+  border-radius: 16px;
+  overflow: hidden;
   box-shadow: var(--sombra-sutil);
   border: 1px solid var(--cor-borda);
-  text-align: center;
   transition: var(--transicao-suave);
   position: relative;
-  overflow: hidden;
+  height: 400px;
 }
 
-.category-card::before {
-  content: "";
+.produto-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--sombra-luxo);
+}
+
+.produto-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #f0f0f0;
+}
+
+.produto-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: 0.6s;
+  display: block;
+  min-height: 200px;
+  position: relative;
+  z-index: 1;
+}
+
+.produto-card:hover .produto-image img {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+.produto-overlay {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 4px;
-  background: var(--gradiente-luxo);
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
 }
 
-.category-card:hover::before {
-  transform: scaleX(1);
+.produto-card:hover .produto-overlay {
+  opacity: 0.7;
 }
 
-.category-card:hover {
-  transform: translateY(-12px);
-  box-shadow: var(--sombra-luxo);
-  border-color: var(--cor-primaria);
+.produto-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: var(--espacamento-lg);
+  text-align: center;
+  z-index: 2;
+  width: 100%;
 }
 
-.category-card.featured {
-  background: var(--gradiente-luxo);
-  color: var(--cor-fundo);
-  border: none;
+.produto-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: var(--espacamento-sm);
+  text-align: center;
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.category-card.featured h3,
-.category-card.featured p {
-  color: var(--cor-fundo);
+.produto-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: white;
+  text-align: center;
+  margin: 0;
+  opacity: 0.95;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-.category-icon {
-  width: 100px;
-  height: 100px;
-  background: rgba(107, 79, 196, 0.1);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto var(--espacamento-lg);
-  color: var(--cor-primaria);
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .produtos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--espacamento-lg);
+  }
 }
 
-.category-card.featured .category-icon {
-  background: rgba(255, 255, 255, 0.2);
-  color: var(--cor-fundo);
-}
+@media (max-width: 768px) {
+  .produtos-grid {
+    grid-template-columns: 1fr;
+    gap: var(--espacamento-lg);
+  }
 
-.category-card h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--cor-primaria);
-  margin-bottom: var(--espacamento-md);
-}
-
-.category-card p {
-  color: var(--cor-texto);
-  opacity: 0.8;
-  line-height: 1.6;
-  margin-bottom: var(--espacamento-lg);
+  .produto-card {
+    height: 350px;
+  }
 }
 
 /* ==========================================================================

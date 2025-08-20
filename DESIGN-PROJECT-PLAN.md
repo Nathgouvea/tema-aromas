@@ -223,69 +223,93 @@ Implementar logo após o hero com os indicadores solicitados:
 </section>
 ```
 
-### Fase 3: Category Showcase Visual
+### Fase 3: Category Showcase Visual ✅ COMPLETED
 
-**Prioridade: ALTA | Tempo: 2-3 dias**
+**Prioridade: ALTA | Tempo: 2-3 dias | Status: ✅ IMPLEMENTADO**
 
-#### Showcase das 3 Categorias Principais
+#### Showcase das 3 Categorias Principais ✅ IMPLEMENTADO
 
-Criar seção visual impactante com as imagens fornecidas:
+Seção visual impactante implementada com as imagens fornecidas:
 
 ```html
-<section class="category-showcase-premium">
+<!-- Nossos Produtos Queridos -->
+<section class="produtos-queridos-section">
   <div class="section-header">
-    <h2>Nossas Especialidades</h2>
-    <p>Descubra nossa linha completa de produtos aromáticos</p>
+    <h2 class="section-title luxury-heading">Nossos Produtos Queridos</h2>
+    <p class="section-subtitle">
+      Descubra nossa linha completa de produtos para harmonizar seu ambiente
+    </p>
   </div>
 
-  <div class="category-grid-visual">
-    <div class="category-card featured-large">
-      <div class="category-image">
-        <img
-          src="/assets/img/all-aromatizadores.webp"
-          alt="Aromatizadores Premium"
-        />
-      </div>
-      <div class="category-content">
-        <h3>Aromatizadores</h3>
-        <p>Difusores ultrassônicos para uma experiência contínua</p>
-        <a href="/categoria/aromatizadores" class="btn-category">
-          Explorar Aromatizadores
-        </a>
-      </div>
-    </div>
-
-    <div class="category-card">
-      <div class="category-image">
-        <img src="/assets/img/all-homespray.webp" alt="Home Spray Premium" />
-      </div>
-      <div class="category-content">
-        <h3>Home Spray</h3>
-        <p>Perfume instantâneo para qualquer ambiente</p>
-        <a href="/categoria/home-spray" class="btn-category">
-          Ver Home Sprays
-        </a>
-      </div>
-    </div>
-
-    <div class="category-card">
-      <div class="category-image">
+  <div class="produtos-grid">
+    <!-- Velas Aromáticas -->
+    <div class="produto-card velas-card animate-fade-in-up">
+      <div class="produto-image">
         <img
           src="/assets/img/all-candles.webp"
-          alt="Velas Aromáticas Premium"
+          alt="Velas Aromáticas Zen Secrets"
+          loading="lazy"
         />
+        <div class="produto-overlay"></div>
       </div>
-      <div class="category-content">
-        <h3>Velas Aromáticas</h3>
-        <p>Velas artesanais com cera natural</p>
-        <a href="/categoria/velas-aromaticas" class="btn-category">
-          Descobrir Velas
-        </a>
+      <div class="produto-content">
+        <h3 class="produto-title">Velas Aromáticas</h3>
+        <p class="produto-description">
+          Fragrâncias exclusivas para criar momentos especiais em seu ambiente
+        </p>
+      </div>
+    </div>
+
+    <!-- Aromatizadores -->
+    <div class="produto-card aromatizadores-card animate-fade-in-up">
+      <div class="produto-image">
+        <img
+          src="/assets/img/all-aromatizadores.webp"
+          alt="Aromatizadores Zen Secrets"
+          loading="lazy"
+        />
+        <div class="produto-overlay"></div>
+      </div>
+      <div class="produto-content">
+        <h3 class="produto-title">Aromatizadores</h3>
+        <p class="produto-description">
+          Perfume seu espaço com nossas essências naturais duradouras
+        </p>
+      </div>
+    </div>
+
+    <!-- Home Spray -->
+    <div class="produto-card homespray-card animate-fade-in-up">
+      <div class="produto-image">
+        <img
+          src="/assets/img/all-homespray.webp"
+          alt="Home Spray Zen Secrets"
+          loading="lazy"
+        />
+        <div class="produto-overlay"></div>
+      </div>
+      <div class="produto-content">
+        <h3 class="produto-title">Home Spray</h3>
+        <p class="produto-description">
+          Fragrâncias refrescantes para uma atmosfera instantaneamente agradável
+        </p>
       </div>
     </div>
   </div>
 </section>
 ```
+
+**Características Implementadas:**
+
+- ✅ **Título atualizado**: "Nossos Produtos Queridos"
+- ✅ **Subtítulo atualizado**: "Descubra nossa linha completa de produtos para harmonizar seu ambiente"
+- ✅ **Design exato do screenshot**: Cards com imagens em grayscale, overlay preto, texto branco centralizado
+- ✅ **Imagens corretas**: all-candles.webp, all-aromatizadores.webp, all-homespray.webp
+- ✅ **Layout responsivo**: Grid 3 colunas (desktop) → 2 colunas (tablet) → 1 coluna (mobile)
+- ✅ **Efeitos hover**: Transição grayscale → colorido, overlay dinâmico
+- ✅ **Tipografia premium**: Títulos e descrições em branco com text-shadow para legibilidade
+- ✅ **Posicionamento correto**: Texto centralizado sobre a imagem com overlay preto semi-transparente
+- ✅ **Filtro grayscale**: Imagens começam em preto e branco com transição suave de 0.6s
 
 ### Fase 4: Footer Premium Enhancement
 
@@ -480,7 +504,7 @@ Para garantir uma experiência premium e consistente, **TODAS** as páginas deve
 - ✅ **Hero section** com Foto-tela-inicial-.webp
 - ✅ **Trust indicators** customizados
 - ✅ **Product grid** 4-3-2 responsivo COMPACT
-- ✅ **Category showcase** visual premium
+- ✅ **Category showcase** visual premium ✅ **ATUALIZADO PARA "Nossos Produtos Queridos"**
 
 #### 🛍️ **WooCommerce Shop Pages**
 

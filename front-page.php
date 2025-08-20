@@ -230,60 +230,66 @@ get_header(); ?>
             </div>
         </section>
 
-        <!-- Category Highlights -->
-        <section class="category-highlights">
+        <!-- Nossos Produtos Queridos -->
+        <section class="produtos-queridos-section">
             <div class="section-header">
                 <h2 class="section-title luxury-heading">
-                    <?php esc_html_e('Nossas Categorias', 'tema_aromas'); ?>
+                    <?php esc_html_e('Nossos Produtos Queridos', 'tema_aromas'); ?>
                 </h2>
                 <p class="section-subtitle">
-                    <?php esc_html_e('Cada categoria foi pensada para atender diferentes necessidades e momentos do seu dia.', 'tema_aromas'); ?>
+                    <?php esc_html_e('Descubra nossa linha completa de produtos para harmonizar seu ambiente', 'tema_aromas'); ?>
                 </p>
             </div>
             
-            <div class="category-grid">
-                <div class="category-card featured animate-fade-in-up">
-                    <div class="category-icon">
-                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <circle cx="12" cy="8" r="6"/>
-                            <path d="M12 14v7"/>
-                            <path d="M8 18h8"/>
-                        </svg>
+            <div class="produtos-grid">
+                <!-- Velas Aromáticas -->
+                <div class="produto-card velas-card animate-fade-in-up">
+                    <div class="produto-image">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/all-candles.webp" 
+                             alt="<?php esc_attr_e('Velas Aromáticas Zen Secrets', 'tema_aromas'); ?>" 
+                             loading="lazy"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div class="produto-overlay"></div>
+                        <div class="produto-fallback" style="display: none; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: #6b4fc4; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; font-weight: bold;">Velas Aromáticas</div>
                     </div>
-                    <h3><?php esc_html_e('Aromatizadores', 'tema_aromas'); ?></h3>
-                    <p><?php esc_html_e('Difusores ultrassônicos e elétricos para uma experiência aromática contínua', 'tema_aromas'); ?></p>
-                    <a href="<?php echo esc_url(get_term_link('aromatizadores', 'product_cat')); ?>" class="btn-luxury btn-secondary">
-                        <?php esc_html_e('Explorar', 'tema_aromas'); ?>
-                    </a>
+                    <div class="produto-content">
+                        <h3 class="produto-title"><?php esc_html_e('Velas Aromáticas', 'tema_aromas'); ?></h3>
+                        <p class="produto-description">
+                            <?php esc_html_e('Fragrâncias exclusivas para criar momentos especiais em seu ambiente', 'tema_aromas'); ?>
+                        </p>
+                    </div>
                 </div>
                 
-                <div class="category-card animate-fade-in-up">
-                    <div class="category-icon">
-                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M12 2L15 8h6l-5 4 2 6-6-4-6 4 2-6-5-4h6z"/>
-                        </svg>
+                <!-- Aromatizadores -->
+                <div class="produto-card aromatizadores-card animate-fade-in-up">
+                    <div class="produto-image">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/all-aromatizadores.webp" 
+                             alt="<?php esc_attr_e('Aromatizadores Zen Secrets', 'tema_aromas'); ?>" 
+                             loading="lazy">
+                        <div class="produto-overlay"></div>
                     </div>
-                    <h3><?php esc_html_e('Velas Aromáticas', 'tema_aromas'); ?></h3>
-                    <p><?php esc_html_e('Velas artesanais com cera natural e fragrâncias exclusivas', 'tema_aromas'); ?></p>
-                    <a href="<?php echo esc_url(get_term_link('velas-aromaticas', 'product_cat')); ?>" class="btn-luxury btn-secondary">
-                        <?php esc_html_e('Descobrir', 'tema_aromas'); ?>
-                    </a>
+                    <div class="produto-content">
+                        <h3 class="produto-title"><?php esc_html_e('Aromatizadores', 'tema_aromas'); ?></h3>
+                        <p class="produto-description">
+                            <?php esc_html_e('Perfume seu espaço com nossas essências naturais duradouras', 'tema_aromas'); ?>
+                        </p>
+                    </div>
                 </div>
                 
-                <div class="category-card animate-fade-in-up">
-                    <div class="category-icon">
-                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                            <path d="M7 18v-2a4 4 0 0 1 4-4v0a4 4 0 0 1 4 4v2"/>
-                            <circle cx="12" cy="6" r="4"/>
-                            <path d="M12 14v4"/>
-                            <path d="M8 18h8"/>
-                        </svg>
+                <!-- Home Spray -->
+                <div class="produto-card homespray-card animate-fade-in-up">
+                    <div class="produto-image">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/all-homespray.webp" 
+                             alt="<?php esc_attr_e('Home Spray Zen Secrets', 'tema_aromas'); ?>" 
+                             loading="lazy">
+                        <div class="produto-overlay"></div>
                     </div>
-                    <h3><?php esc_html_e('Home Spray', 'tema_aromas'); ?></h3>
-                    <p><?php esc_html_e('Sprays aromáticos para perfumar instantaneamente qualquer ambiente', 'tema_aromas'); ?></p>
-                    <a href="<?php echo esc_url(get_term_link('home-spray', 'product_cat')); ?>" class="btn-luxury btn-secondary">
-                        <?php esc_html_e('Ver Mais', 'tema_aromas'); ?>
-                    </a>
+                    <div class="produto-content">
+                        <h3 class="produto-title"><?php esc_html_e('Home Spray', 'tema_aromas'); ?></h3>
+                        <p class="produto-description">
+                            <?php esc_html_e('Fragrâncias refrescantes para uma atmosfera instantaneamente agradável', 'tema_aromas'); ?>
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>

@@ -24,6 +24,7 @@ a:where(:not(.wp-element-button)):visited {
   text-decoration: none;
 }
 
+
 /* Typography improvements */
 .luxury-heading {
   font-family: var(--fonte-titulo);

@@ -29,9 +29,19 @@ function tema_aromas_add_og_meta() {
         $url = get_permalink();
     } elseif (is_product()) {
         global $product;
+        // Ensure we have a valid product object
+        if (!is_object($product)) {
+            $product = wc_get_product(get_the_ID());
+        }
         $title = get_the_title() . ' - ' . get_bloginfo('name');
-        $description = wp_trim_words($product->get_short_description() ?: $product->get_description(), 30);
-        $image = wp_get_attachment_image_url($product->get_image_id(), 'large');
+        $description = '';
+        if ($product && is_object($product)) {
+            $description = wp_trim_words($product->get_short_description() ?: $product->get_description(), 30);
+            $image = wp_get_attachment_image_url($product->get_image_id(), 'large');
+        } else {
+            $description = get_the_excerpt() ?: wp_trim_words(get_the_content(), 30);
+            $image = has_post_thumbnail() ? get_the_post_thumbnail_url(get_the_ID(), 'large') : get_template_directory_uri() . '/screenshot.png';
+        }
         $url = get_permalink();
     } else {
         $title = wp_get_document_title();
@@ -113,20 +123,26 @@ function tema_aromas_add_schema_markup() {
     } elseif (is_product()) {
         global $product;
         
-        $schema = [
-            '@context' => 'https://schema.org',
-            '@type' => 'Product',
-            'name' => get_the_title(),
-            'description' => wp_strip_all_tags($product->get_short_description() ?: $product->get_description()),
-            'image' => wp_get_attachment_image_url($product->get_image_id(), 'large'),
-            'url' => get_permalink(),
-            'brand' => [
-                '@type' => 'Brand',
-                'name' => get_bloginfo('name')
-            ],
-            'offers' => [
-                '@type' => 'Offer',
-                'price' => $product->get_price(),
+        // Ensure we have a valid product object
+        if (!is_object($product)) {
+            $product = wc_get_product(get_the_ID());
+        }
+        
+        if ($product && is_object($product)) {
+            $schema = [
+                '@context' => 'https://schema.org',
+                '@type' => 'Product',
+                'name' => get_the_title(),
+                'description' => wp_strip_all_tags($product->get_short_description() ?: $product->get_description()),
+                'image' => wp_get_attachment_image_url($product->get_image_id(), 'large'),
+                'url' => get_permalink(),
+                'brand' => [
+                    '@type' => 'Brand',
+                    'name' => get_bloginfo('name')
+                ],
+                'offers' => [
+                    '@type' => 'Offer',
+                    'price' => $product->get_price(),
                 'priceCurrency' => 'BRL',
                 'availability' => $product->is_in_stock() ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
                 'url' => get_permalink(),
@@ -168,6 +184,7 @@ function tema_aromas_add_schema_markup() {
         }
         
         echo '<script type="application/ld+json">' . wp_json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . '</script>' . "\n";
+        }
     }
 }
 add_action('wp_head', 'tema_aromas_add_schema_markup', 2);

@@ -10,25 +10,25 @@
 
 A loja online Zen Secrets possui uma estrutura técnica sólida baseada em WordPress/WooCommerce, mas apresenta problemas significativos de design e experiência do usuário que afetam as conversões e a percepção de marca premium. Como uma loja especializada em produtos aromáticos naturais focados no bem-estar, é essencial transmitir luxo e confiança.
 
-### ✅ Última Atualização: Botões Padronizados e Hover Effects Unificados
+### ✅ Última Atualização: Header Padronizado e Alinhamento Unificado
 
 **Data**: $(date)
-**Mudança**: Todos os botões do website foram atualizados para usar padding consistente de `10px 24px` e hover effects idênticos ao botão CTA principal da hero section
+**Mudança**: Header do website foi completamente padronizado para ter alinhamento e comportamento consistentes em todas as páginas, removendo a funcionalidade de header transparente
 **Arquivos Modificados**:
 
-- `assets/css/base.css` - Botões principais (.btn-luxury, .btn-whatsapp)
-- `assets/css/homepage.css` - Botões da homepage (.btn-comprar-agora, .btn-ver-colecoes)
-- `assets/css/woocommerce.css` - Botões WooCommerce (add to cart)
-- `assets/css/pages.css` - Botões de formulário (.btn-send-modern)
-- `assets/css/critical.css` - Botões críticos (.btn-luxury)
-- `style.css` - Botões globais (.btn-luxury)
+- `header.php` - Removida classe `transparent-header`
+- `assets/js/header-scroll.js` - Simplificada lógica de scroll, removida detecção de hero
+- `assets/css/header.css` - Removidos estilos de header transparente, padronizado comportamento
 
-**Hover Effects Padronizados**:
+**Mudanças Implementadas**:
 
-- Transform: `translateY(-3px)` (movimento para cima)
-- Box-shadow: `0 12px 48px rgba(107, 79, 196, 0.4)` (sombra premium)
-- Transition: `all 0.3s cubic-bezier(0.4, 0, 0.2, 1)` (transição suave)
-- Shine effect: Animação de brilho deslizante com pseudo-elemento ::before
+- Header agora é sempre sólido com fundo branco
+- Comportamento de scroll consistente em todas as páginas
+- Texto e ícones sempre usam cores padrão (não mais brancos)
+- Transição suave para estado "scrolled" com blur premium
+- Alinhamento e espaçamento uniformes em todo o site
+- **CORRIGIDO**: Alinhamento do navbar agora é consistente entre homepage e outras páginas
+- **CORRIGIDO**: Logo, menu e botões WooCommerce agora têm espaçamento adequado em todas as páginas
 
 ### Objetivos do Projeto
 

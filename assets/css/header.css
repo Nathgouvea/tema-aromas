@@ -20,17 +20,11 @@
   box-shadow: var(--sombra-sutil);
 }
 
-/* Transparent header state - on homepage hero */
-.site-header.transparent-header {
-  background: transparent;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: none;
-}
-
-/* Full width container for transparent header */
-.site-header.transparent-header .container {
-  max-width: 100%;
-  padding: 0 var(--espacamento-lg);
+/* Standardized header - consistent across all pages */
+.site-header {
+  background: var(--cor-fundo);
+  border-bottom: 1px solid var(--cor-borda);
+  box-shadow: var(--sombra-sutil);
 }
 
 /* Scrolled state - solid white background with premium blur */
@@ -42,16 +36,19 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-/* Remove transparency when scrolled */
-.site-header.transparent-header.scrolled {
+/* Scrolled state - enhanced solid background with premium blur */
+.site-header.scrolled {
   background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .header-content {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: var(--espacamento-lg);
+  justify-content: space-between;
   padding: 8px 0;
   min-height: 35px;
 }
@@ -70,6 +67,7 @@
 .site-branding {
   flex-shrink: 0;
   z-index: 1001;
+  min-width: 200px;
 }
 
 .site-logo img {
@@ -100,16 +98,12 @@
   transition: var(--transicao-suave);
 }
 
-/* White logo/text when header is transparent */
-.transparent-header:not(.scrolled) .site-title a {
-  background: white;
+/* Logo and text always use luxury gradient */
+.site-title a {
+  background: var(--gradiente-luxo);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-}
-
-.transparent-header:not(.scrolled) .site-logo img {
-  filter: brightness(0) invert(1);
 }
 
 .site-title a:hover {
@@ -132,11 +126,14 @@
 .main-navigation {
   display: none;
   position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
 @media (min-width: 1024px) {
   .main-navigation {
-    display: block;
+    display: flex;
   }
 }
 
@@ -189,17 +186,9 @@
   transform: scale(1.1);
 }
 
-/* White menu links when header is transparent */
-.transparent-header:not(.scrolled) .menu-link {
-  color: rgba(255, 255, 255, 0.95);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-}
-
-.transparent-header:not(.scrolled) .menu-icon-home,
-.transparent-header:not(.scrolled) .menu-icon-shop,
-.transparent-header:not(.scrolled) .menu-icon-about,
-.transparent-header:not(.scrolled) .menu-icon-contact {
-  color: rgba(255, 255, 255, 0.9);
+/* Menu links always use consistent styling */
+.menu-link {
+  color: var(--cor-texto);
 }
 
 .menu-link:hover {
@@ -208,10 +197,10 @@
   border-bottom-color: var(--cor-primaria);
 }
 
-.transparent-header:not(.scrolled) .menu-link:hover {
-  color: white;
-  border-bottom-color: white;
-  opacity: 1;
+/* Menu hover effects are consistent */
+.menu-link:hover {
+  color: var(--cor-primaria);
+  border-bottom-color: var(--cor-primaria);
 }
 
 .menu-link:focus {
@@ -343,6 +332,9 @@
   align-items: center;
   gap: var(--espacamento-sm);
   z-index: 1001;
+  flex-shrink: 0;
+  min-width: 200px;
+  justify-content: flex-end;
 }
 
 .header-icon {
@@ -376,14 +368,9 @@
   transition: var(--transicao-rapida);
 }
 
-/* White header icons when header is transparent */
-.transparent-header:not(.scrolled) .header-icon {
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.transparent-header:not(.scrolled) .header-icon:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: white;
+/* Header icons always use consistent styling */
+.header-icon {
+  color: var(--cor-texto);
 }
 
 /* Cart Counter */

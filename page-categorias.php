@@ -3,10 +3,10 @@
  * Template Name: Categorias
  * 
  * Page template for displaying the 6 aromatherapy product categories
- * Beautiful grid layout with luxury styling
+ * Sophisticated and minimalistic grid layout with luxury styling
  * 
  * @package TemaAromas
- * @version 1.0.0
+ * @version 1.1.0
  */
 
 get_header(); ?>
@@ -37,7 +37,7 @@ get_header(); ?>
                 <article class="category-card luxury-card-hover" data-category="aromatizadores">
                     <div class="category-card-inner">
                         <div class="category-image">
-                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/categoria-aromatizadores.jpg'); ?>" 
+                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/all-aromatizadores.webp'); ?>" 
                                  alt="<?php esc_attr_e('Aromatizadores elétricos premium', 'tema_aromas'); ?>" 
                                  loading="lazy"
                                  width="400" 
@@ -62,7 +62,7 @@ get_header(); ?>
                                 <span class="feature-tag"><?php esc_html_e('LED', 'tema_aromas'); ?></span>
                             </div>
                             <div class="category-cta">
-                                <a href="<?php echo esc_url(get_term_link('aromatizadores', 'product_cat')); ?>" class="btn-luxury">
+                                <a href="<?php echo esc_url(get_term_link('aromatizadores', 'product_cat')); ?>" class="btn-luxury primary">
                                     <?php esc_html_e('Ver Produtos', 'tema_aromas'); ?>
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                         <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -78,7 +78,7 @@ get_header(); ?>
                 <article class="category-card luxury-card-hover" data-category="home-spray">
                     <div class="category-card-inner">
                         <div class="category-image">
-                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/categoria-home-spray.jpg'); ?>" 
+                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/all-homespray.webp'); ?>" 
                                  alt="<?php esc_attr_e('Home spray aromático instantâneo', 'tema_aromas'); ?>" 
                                  loading="lazy"
                                  width="400" 
@@ -104,7 +104,7 @@ get_header(); ?>
                                 <span class="feature-tag"><?php esc_html_e('Natural', 'tema_aromas'); ?></span>
                             </div>
                             <div class="category-cta">
-                                <a href="<?php echo esc_url(get_term_link('home-spray', 'product_cat')); ?>" class="btn-luxury">
+                                <a href="<?php echo esc_url(get_term_link('home-spray', 'product_cat')); ?>" class="btn-luxury primary">
                                     <?php esc_html_e('Ver Produtos', 'tema_aromas'); ?>
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                         <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -120,7 +120,7 @@ get_header(); ?>
                 <article class="category-card luxury-card-hover" data-category="velas-aromaticas">
                     <div class="category-card-inner">
                         <div class="category-image">
-                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/categoria-velas.jpg'); ?>" 
+                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/all-candles.webp'); ?>" 
                                  alt="<?php esc_attr_e('Velas aromáticas artesanais', 'tema_aromas'); ?>" 
                                  loading="lazy"
                                  width="400" 
@@ -144,7 +144,7 @@ get_header(); ?>
                                 <span class="feature-tag"><?php esc_html_e('Longa Duração', 'tema_aromas'); ?></span>
                             </div>
                             <div class="category-cta">
-                                <a href="<?php echo esc_url(get_term_link('velas-aromaticas', 'product_cat')); ?>" class="btn-luxury">
+                                <a href="<?php echo esc_url(get_term_link('velas-aromaticas', 'product_cat')); ?>" class="btn-luxury primary">
                                     <?php esc_html_e('Ver Produtos', 'tema_aromas'); ?>
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                         <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -160,7 +160,7 @@ get_header(); ?>
                 <article class="category-card luxury-card-hover" data-category="kits-especiais">
                     <div class="category-card-inner">
                         <div class="category-image">
-                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/categoria-kits.jpg'); ?>" 
+                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Kit chá Branco .webp'); ?>" 
                                  alt="<?php esc_attr_e('Kits especiais de aromaterapia', 'tema_aromas'); ?>" 
                                  loading="lazy"
                                  width="400" 
@@ -187,7 +187,7 @@ get_header(); ?>
                                 <span class="feature-tag"><?php esc_html_e('Premium', 'tema_aromas'); ?></span>
                             </div>
                             <div class="category-cta">
-                                <a href="<?php echo esc_url(get_term_link('kits-especiais', 'product_cat')); ?>" class="btn-luxury">
+                                <a href="<?php echo esc_url(get_term_link('kits-especiais', 'product_cat')); ?>" class="btn-luxury primary">
                                     <?php esc_html_e('Ver Produtos', 'tema_aromas'); ?>
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                         <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -203,7 +203,7 @@ get_header(); ?>
                 <article class="category-card luxury-card-hover" data-category="lembrancinhas">
                     <div class="category-card-inner">
                         <div class="category-image">
-                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/categoria-lembrancinhas.jpg'); ?>" 
+                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/lembrancinhas.webp'); ?>" 
                                  alt="<?php esc_attr_e('Lembrancinhas aromáticas para eventos', 'tema_aromas'); ?>" 
                                  loading="lazy"
                                  width="400" 
@@ -227,7 +227,7 @@ get_header(); ?>
                                 <span class="feature-tag"><?php esc_html_e('Especial', 'tema_aromas'); ?></span>
                             </div>
                             <div class="category-cta">
-                                <a href="<?php echo esc_url(get_term_link('lembrancinhas', 'product_cat')); ?>" class="btn-luxury">
+                                <a href="<?php echo esc_url(get_term_link('lembrancinhas', 'product_cat')); ?>" class="btn-luxury primary">
                                     <?php esc_html_e('Ver Produtos', 'tema_aromas'); ?>
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                         <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -243,7 +243,7 @@ get_header(); ?>
                 <article class="category-card luxury-card-hover" data-category="acessorios">
                     <div class="category-card-inner">
                         <div class="category-image">
-                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/categoria-acessorios.jpg'); ?>" 
+                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/all-chabranco.webp'); ?>" 
                                  alt="<?php esc_attr_e('Acessórios para aromaterapia', 'tema_aromas'); ?>" 
                                  loading="lazy"
                                  width="400" 
@@ -268,7 +268,7 @@ get_header(); ?>
                                 <span class="feature-tag"><?php esc_html_e('Durável', 'tema_aromas'); ?></span>
                             </div>
                             <div class="category-cta">
-                                <a href="<?php echo esc_url(get_term_link('acessorios', 'product_cat')); ?>" class="btn-luxury">
+                                <a href="<?php echo esc_url(get_term_link('acessorios', 'product_cat')); ?>" class="btn-luxury primary">
                                     <?php esc_html_e('Ver Produtos', 'tema_aromas'); ?>
                                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                         <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -295,13 +295,13 @@ get_header(); ?>
                     <?php esc_html_e('Nossa equipe especializada está pronta para ajudar você a encontrar o aroma perfeito para cada momento e ambiente.', 'tema_aromas'); ?>
                 </p>
                 <div class="cta-buttons">
-                    <a href="<?php echo esc_url(get_permalink(get_page_by_path('fale-conosco'))); ?>" class="btn-luxury">
+                    <a href="<?php echo esc_url(get_permalink(get_page_by_path('fale-conosco'))); ?>" class="btn-luxury primary">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                         </svg>
                         <?php esc_html_e('Fale Conosco', 'tema_aromas'); ?>
                     </a>
-                    <a href="<?php echo esc_url(wc_get_page_permalink('shop')); ?>" class="btn-luxury-outline">
+                    <a href="<?php echo esc_url(wc_get_page_permalink('shop')); ?>" class="btn-luxury secondary">
                         <?php esc_html_e('Ver Toda Loja', 'tema_aromas'); ?>
                     </a>
                 </div>

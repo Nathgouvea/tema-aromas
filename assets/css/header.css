@@ -431,17 +431,19 @@ header.site-header,
 .header-search {
   position: absolute;
   top: 100%;
-  left: 0;
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
   background: var(--cor-fundo);
-  border-bottom: 1px solid var(--cor-borda);
-  padding: var(--espacamento-lg) 0;
+  border: 1px solid var(--cor-borda);
+  border-radius: 16px;
+  padding: var(--espacamento-sm);
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-10px);
   transition: var(--transicao-suave);
   z-index: 999;
   box-shadow: var(--sombra-luxo);
+  min-width: 320px;
+  max-width: 400px;
 }
 
 .header-search.show {
@@ -452,18 +454,17 @@ header.site-header,
 
 .search-form-container {
   position: relative;
-  max-width: 600px;
-  margin: 0 auto;
+  width: 100%;
 }
 
 .woocommerce-product-search {
   display: flex;
   align-items: center;
-  gap: var(--espacamento-sm);
+  gap: var(--espacamento-xs);
   background: var(--cor-fundo);
-  border: 2px solid var(--cor-borda);
-  border-radius: 12px;
-  padding: var(--espacamento-xs);
+  border: none;
+  border-radius: 0;
+  padding: 0;
   transition: var(--transicao-rapida);
 }
 

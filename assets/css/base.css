@@ -12,7 +12,7 @@
 
 /* Compensate for fixed header */
 body {
-  padding-top: 100px; /* Adjust based on header height */
+  padding-top: 0; /* No padding needed */
 }
 
 body.home {

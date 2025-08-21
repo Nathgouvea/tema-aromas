@@ -876,6 +876,8 @@ select.modern-form-input {
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  position: relative;
+  background: white;
 }
 
 .fragrance-image img {
@@ -883,6 +885,7 @@ select.modern-form-input {
   height: 300px;
   object-fit: cover;
   transition: transform 0.3s ease;
+  display: block;
 }
 
 .fragrance-image:hover img {
@@ -966,8 +969,8 @@ select.modern-form-input {
 
 @media (min-width: 1024px) {
   .aromas-hero-modern {
-    height: 60vh;
-    min-height: 500px;
+    height: 45vh;
+    min-height: 400px;
   }
 
   .fragrance-pills-container {

@@ -1611,8 +1611,6 @@
 .trust-item-horizontal {
   display: flex;
   align-items: center;
-  gap: var(--espacamento-lg);
-  padding: var(--espacamento-xl);
   background: var(--cor-fundo);
   border-radius: 20px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);

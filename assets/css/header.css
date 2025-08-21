@@ -788,6 +788,19 @@ body.mobile-menu-open {
     border-bottom: none;
     display: block;
     width: 100%;
+    color: var(--cor-texto) !important;
+  }
+  
+  .menu-link svg,
+  .menu-icon-home svg,
+  .menu-icon-shop svg,
+  .menu-icon-about svg,
+  .menu-icon-contact svg {
+    color: var(--cor-texto) !important;
+  }
+  
+  .dropdown-icon {
+    stroke: var(--cor-texto) !important;
   }
 
   .dropdown-menu {
@@ -814,6 +827,12 @@ body.mobile-menu-open {
   .dropdown-menu .menu-link {
     padding: var(--espacamento-sm);
     font-size: 0.875rem;
+    color: var(--cor-texto) !important;
+  }
+  
+  /* Mobile dropdown toggle button color */
+  .mobile-dropdown-toggle svg {
+    stroke: var(--cor-texto) !important;
   }
 }
 

@@ -21,7 +21,12 @@
       const scrollPosition = window.scrollY;
       const scrollThreshold = 50; // Standard scroll threshold
 
-      console.log("Scroll position:", scrollPosition, "Threshold:", scrollThreshold);
+      console.log(
+        "Scroll position:",
+        scrollPosition,
+        "Threshold:",
+        scrollThreshold
+      );
 
       if (scrollPosition > scrollThreshold) {
         header.classList.add("scrolled");
@@ -49,10 +54,10 @@
 
     // Listen for scroll events
     window.addEventListener("scroll", requestTick);
-    
+
     // Also listen for wheel events to ensure we catch all scroll
     window.addEventListener("wheel", requestTick);
-    
+
     // Listen for touch events on mobile
     window.addEventListener("touchmove", requestTick);
   });

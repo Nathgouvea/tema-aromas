@@ -693,26 +693,7 @@ body.search-open .site-header {
   transform: rotate(-45deg) translate(7px, -6px);
 }
 
-/* Mobile dropdown toggle button */
-.mobile-dropdown-toggle {
-  background: transparent;
-  border: none;
-  padding: 8px;
-  cursor: pointer;
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
-}
-
-.mobile-dropdown-toggle svg {
-  transition: transform 0.3s ease;
-}
-
-.submenu-open .mobile-dropdown-toggle svg {
-  transform: rotate(180deg);
-}
+/* Removed mobile dropdown toggle button - using the menu link itself */
 
 /* Body scroll lock when menu is open */
 body.mobile-menu-open {
@@ -802,6 +783,12 @@ body.mobile-menu-open {
   
   .dropdown-icon {
     stroke: var(--cor-texto) !important;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Rotate dropdown arrow when submenu is open */
+  .submenu-open > a .dropdown-icon {
+    transform: rotate(180deg);
   }
 
   .dropdown-menu {
@@ -832,10 +819,6 @@ body.mobile-menu-open {
     text-shadow: none !important;
   }
   
-  /* Mobile dropdown toggle button color */
-  .mobile-dropdown-toggle svg {
-    stroke: var(--cor-texto) !important;
-  }
   
   /* Remove text shadow from site title on mobile */
   .site-title a {

@@ -145,37 +145,21 @@
     const dropdownToggles = document.querySelectorAll('.menu-item-has-children > a');
     
     dropdownToggles.forEach(toggle => {
-      // Remove existing click handlers
-      const newToggle = toggle.cloneNode(true);
-      toggle.parentNode.replaceChild(newToggle, toggle);
-      
-      // Add mobile-specific dropdown button
-      const dropdownButton = document.createElement('button');
-      dropdownButton.className = 'mobile-dropdown-toggle';
-      dropdownButton.setAttribute('aria-label', 'Abrir submenu');
-      dropdownButton.innerHTML = '<svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-      
-      // Insert button after the link
-      if (!newToggle.parentNode.querySelector('.mobile-dropdown-toggle')) {
-        newToggle.parentNode.insertBefore(dropdownButton, newToggle.nextSibling);
-      }
-      
-      // Handle dropdown button click
-      dropdownButton.addEventListener('click', function(e) {
+      // Make the menu link itself handle the dropdown on mobile
+      toggle.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
         toggleSubMenu(this);
       });
       
-      dropdownButton.addEventListener('touchstart', function(e) {
+      toggle.addEventListener('touchstart', function(e) {
         e.stopPropagation();
-        toggleSubMenu(this);
       }, { passive: true });
     });
   }
 
-  function toggleSubMenu(button) {
-    const parentItem = button.closest('.menu-item-has-children');
+  function toggleSubMenu(link) {
+    const parentItem = link.closest('.menu-item-has-children');
     const subMenu = parentItem.querySelector('.sub-menu');
     
     if (!subMenu) return;
@@ -187,9 +171,9 @@
     siblings.forEach(sibling => {
       if (sibling !== parentItem && sibling.classList.contains('submenu-open')) {
         sibling.classList.remove('submenu-open');
-        const siblingButton = sibling.querySelector('.mobile-dropdown-toggle');
-        if (siblingButton) {
-          siblingButton.setAttribute('aria-expanded', 'false');
+        const siblingLink = sibling.querySelector('.menu-item-has-children > a');
+        if (siblingLink) {
+          siblingLink.setAttribute('aria-expanded', 'false');
         }
       }
     });
@@ -197,12 +181,12 @@
     if (isOpen) {
       // Close submenu
       parentItem.classList.remove('submenu-open');
-      button.setAttribute('aria-expanded', 'false');
+      link.setAttribute('aria-expanded', 'false');
       subMenu.style.maxHeight = '0';
     } else {
       // Open submenu
       parentItem.classList.add('submenu-open');
-      button.setAttribute('aria-expanded', 'true');
+      link.setAttribute('aria-expanded', 'true');
       subMenu.style.maxHeight = subMenu.scrollHeight + 'px';
     }
   }
@@ -211,9 +195,9 @@
     const openSubMenus = document.querySelectorAll('.submenu-open');
     openSubMenus.forEach(item => {
       item.classList.remove('submenu-open');
-      const button = item.querySelector('.mobile-dropdown-toggle');
-      if (button) {
-        button.setAttribute('aria-expanded', 'false');
+      const link = item.querySelector('.menu-item-has-children > a');
+      if (link) {
+        link.setAttribute('aria-expanded', 'false');
       }
       const subMenu = item.querySelector('.sub-menu');
       if (subMenu) {

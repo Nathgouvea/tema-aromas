@@ -678,16 +678,45 @@ body.search-open .site-header {
   transition: var(--transicao-rapida);
 }
 
+.menu-toggle.is-active .menu-icon span:nth-child(1),
 .menu-toggle[aria-expanded="true"] .menu-icon span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
 
+.menu-toggle.is-active .menu-icon span:nth-child(2),
 .menu-toggle[aria-expanded="true"] .menu-icon span:nth-child(2) {
   opacity: 0;
 }
 
+.menu-toggle.is-active .menu-icon span:nth-child(3),
 .menu-toggle[aria-expanded="true"] .menu-icon span:nth-child(3) {
   transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Mobile dropdown toggle button */
+.mobile-dropdown-toggle {
+  background: transparent;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.mobile-dropdown-toggle svg {
+  transition: transform 0.3s ease;
+}
+
+.submenu-open .mobile-dropdown-toggle svg {
+  transform: rotate(180deg);
+}
+
+/* Body scroll lock when menu is open */
+body.mobile-menu-open {
+  overflow: hidden;
 }
 
 /* Mobile Menu Overlay */
@@ -706,39 +735,48 @@ body.search-open .site-header {
   -webkit-backdrop-filter: blur(4px);
 }
 
-.mobile-menu-overlay.show {
+.mobile-menu-overlay.show,
+.mobile-menu-overlay.is-visible {
   opacity: 1;
   visibility: visible;
 }
 
 /* Mobile Menu Panel */
 @media (max-width: 1023px) {
-  .main-navigation {
+  .primary-menu-container {
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     width: 320px;
+    max-width: 85vw;
     height: 100vh;
     background: var(--cor-fundo);
     box-shadow: var(--sombra-luxo);
     z-index: 999;
-    transform: translateX(-100%);
+    transform: translateX(100%);
     transition: var(--transicao-suave);
     overflow-y: auto;
     padding: var(--espacamento-xl) var(--espacamento-lg);
   }
 
-  .main-navigation.show {
+  .primary-menu-container.is-open {
     transform: translateX(0);
+  }
+
+  .main-navigation {
+    position: static;
   }
 
   .primary-menu {
     flex-direction: column;
     gap: 0;
+    margin: 0;
+    padding: 0;
   }
 
   .menu-item {
     border-bottom: 1px solid var(--cor-borda);
+    position: relative;
   }
 
   .menu-item:last-child {
@@ -746,8 +784,10 @@ body.search-open .site-header {
   }
 
   .menu-link {
-    padding: var(--espacamento-md) 0;
+    padding: var(--espacamento-md) 40px var(--espacamento-md) 0;
     border-bottom: none;
+    display: block;
+    width: 100%;
   }
 
   .dropdown-menu {

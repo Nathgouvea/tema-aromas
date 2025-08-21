@@ -157,6 +157,15 @@ function tema_aromas_scripts() {
         $theme_version,
         true
     );
+    
+    // Mobile Menu JavaScript
+    wp_enqueue_script(
+        'tema-aromas-mobile-menu',
+        get_template_directory_uri() . '/assets/js/mobile-menu.js',
+        [],
+        $theme_version,
+        true
+    );
 
     // Accessibility JavaScript
     wp_enqueue_script(

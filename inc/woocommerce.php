@@ -303,3 +303,190 @@ function tema_aromas_woocommerce_post_class($classes, $product) {
     return $classes;
 }
 add_filter('woocommerce_post_class', 'tema_aromas_woocommerce_post_class', 10, 2);
+
+/**
+ * WooCommerce Email Customization
+ * ==========================================================================
+ */
+
+/**
+ * Enqueue custom email styles
+ */
+function tema_aromas_woocommerce_email_styles() {
+    wp_enqueue_style(
+        'tema-aromas-woocommerce-emails',
+        get_template_directory_uri() . '/assets/css/emails.css',
+        [],
+        wp_get_theme()->get('Version')
+    );
+}
+add_action('woocommerce_email_enqueue_styles', 'tema_aromas_woocommerce_email_styles');
+
+/**
+ * Customize WooCommerce email header
+ */
+function tema_aromas_woocommerce_email_header($email_heading, $email) {
+    ?>
+    <div class="email-header">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-zen.svg" alt="<?php echo get_bloginfo('name'); ?>" class="email-logo">
+        <h1><?php echo esc_html($email_heading); ?></h1>
+        <p><?php echo esc_html__('Obrigado por escolher Zen Secrets!', 'tema_aromas'); ?></p>
+    </div>
+    <?php
+}
+add_action('woocommerce_email_header', 'tema_aromas_woocommerce_email_header', 10, 2);
+
+/**
+ * Customize WooCommerce email footer
+ */
+function tema_aromas_woocommerce_email_footer() {
+    ?>
+    <div class="email-footer">
+        <div class="trust-indicators">
+            <h3><?php echo esc_html__('Por que escolher Zen Secrets?', 'tema_aromas'); ?></h3>
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <div class="trust-icon">🚚</div>
+                    <h4><?php echo esc_html__('Envio Seguro', 'tema_aromas'); ?></h4>
+                    <p><?php echo esc_html__('Para todo Brasil', 'tema_aromas'); ?></p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">💳</div>
+                    <h4><?php echo esc_html__('Pagamento Seguro', 'tema_aromas'); ?></h4>
+                    <p><?php echo esc_html__('Cartão, Pix e Boleto', 'tema_aromas'); ?></p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">🌿</div>
+                    <h4><?php echo esc_html__('100% Natural', 'tema_aromas'); ?></h4>
+                    <p><?php echo esc_html__('Ingredientes naturais', 'tema_aromas'); ?></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="whatsapp-contact">
+            <h3><?php echo esc_html__('Ficou em dúvida?', 'tema_aromas'); ?></h3>
+            <p><?php echo esc_html__('Entre em contato conosco via WhatsApp', 'tema_aromas'); ?></p>
+            <a href="https://wa.me/5516991626921" class="whatsapp-button">
+                (16) 99162-6921
+            </a>
+        </div>
+        
+        <div class="social-links">
+            <a href="https://www.instagram.com/secretszen" title="Instagram">📱 Instagram</a>
+            <a href="mailto:secretszen888@gmail.com" title="Email">✉️ Email</a>
+        </div>
+        
+        <div class="payment-methods">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/visa.png" alt="Visa">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/mastercard.png" alt="Mastercard">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/amex.png" alt="American Express">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/elo.png" alt="Elo">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/pix.png" alt="PIX">
+        </div>
+        
+        <p>&copy; <?php echo date('Y'); ?> <?php echo get_bloginfo('name'); ?>. <?php echo esc_html__('Todos os direitos reservados.', 'tema_aromas'); ?></p>
+    </div>
+    <?php
+}
+add_action('woocommerce_email_footer', 'tema_aromas_woocommerce_email_footer');
+
+/**
+ * Customize order status labels in emails
+ */
+function tema_aromas_woocommerce_order_status_labels($status) {
+    $status_labels = [
+        'pending'    => __('Aguardando Pagamento', 'tema_aromas'),
+        'processing' => __('Processando', 'tema_aromas'),
+        'on-hold'    => __('Em Espera', 'tema_aromas'),
+        'completed'  => __('Concluído', 'tema_aromas'),
+        'cancelled'  => __('Cancelado', 'tema_aromas'),
+        'refunded'   => __('Reembolsado', 'tema_aromas'),
+        'failed'     => __('Falhou', 'tema_aromas'),
+    ];
+    
+    return isset($status_labels[$status]) ? $status_labels[$status] : $status;
+}
+add_filter('woocommerce_order_status_label', 'tema_aromas_woocommerce_order_status_labels');
+
+/**
+ * Add custom email content before order details
+ */
+function tema_aromas_woocommerce_email_before_order_details($order, $sent_to_admin, $plain_text, $email) {
+    if (!$sent_to_admin) {
+        ?>
+        <div class="email-section">
+            <h2 class="email-section-title"><?php echo esc_html__('Seu Pedido foi Recebido!', 'tema_aromas'); ?></h2>
+            <p><?php echo esc_html__('Olá! Recebemos seu pedido e estamos muito felizes que você tenha escolhido Zen Secrets para cuidar do seu bem-estar.', 'tema_aromas'); ?></p>
+            <p><?php echo esc_html__('Abaixo você encontra todos os detalhes do seu pedido:', 'tema_aromas'); ?></p>
+        </div>
+        <?php
+    }
+}
+add_action('woocommerce_email_before_order_table', 'tema_aromas_woocommerce_email_before_order_details', 10, 4);
+
+/**
+ * Add custom email content after order details
+ */
+function tema_aromas_woocommerce_email_after_order_details($order, $sent_to_admin, $plain_text, $email) {
+    if (!$sent_to_admin) {
+        ?>
+        <div class="email-section">
+            <h2 class="email-section-title"><?php echo esc_html__('Próximos Passos', 'tema_aromas'); ?></h2>
+            <p><?php echo esc_html__('Assim que seu pagamento for confirmado, começaremos a preparar seu pedido com muito carinho.', 'tema_aromas'); ?></p>
+            <p><?php echo esc_html__('Você receberá atualizações sobre o status do seu pedido por email.', 'tema_aromas'); ?></p>
+        </div>
+        
+        <div class="email-actions">
+            <a href="<?php echo esc_url(wc_get_account_endpoint_url('orders')); ?>" class="email-button">
+                <?php echo esc_html__('Ver Meus Pedidos', 'tema_aromas'); ?>
+            </a>
+            <a href="<?php echo esc_url(home_url()); ?>" class="email-button secondary">
+                <?php echo esc_html__('Continuar Comprando', 'tema_aromas'); ?>
+            </a>
+        </div>
+        <?php
+    }
+}
+add_action('woocommerce_email_after_order_table', 'tema_aromas_woocommerce_email_after_order_details', 10, 4);
+
+/**
+ * Customize email subject lines
+ */
+function tema_aromas_woocommerce_email_subject($subject, $email) {
+    $subject = str_replace('Your order', 'Seu pedido', $subject);
+    $subject = str_replace('has been received', 'foi recebido', $subject);
+    $subject = str_replace('is now complete', 'foi concluído', $subject);
+    $subject = str_replace('has been cancelled', 'foi cancelado', $subject);
+    
+    return $subject;
+}
+add_filter('woocommerce_email_subject', 'tema_aromas_woocommerce_email_subject', 10, 2);
+
+/**
+ * Add tracking information to completed order emails
+ */
+function tema_aromas_woocommerce_completed_order_email($order, $sent_to_admin, $plain_text, $email) {
+    if (!$sent_to_admin && $order->get_meta('_tracking_number')) {
+        $tracking_number = $order->get_meta('_tracking_number');
+        $tracking_url = $order->get_meta('_tracking_url');
+        
+        ?>
+        <div class="email-section">
+            <h2 class="email-section-title"><?php echo esc_html__('Informações de Rastreamento', 'tema_aromas'); ?></h2>
+            <p><?php echo esc_html__('Seu pedido foi enviado! Use as informações abaixo para acompanhar a entrega:', 'tema_aromas'); ?></p>
+            
+            <div class="order-details">
+                <p><strong><?php echo esc_html__('Número de Rastreamento:', 'tema_aromas'); ?></strong> <?php echo esc_html($tracking_number); ?></p>
+                <?php if ($tracking_url) : ?>
+                    <p><strong><?php echo esc_html__('Rastrear Envio:', 'tema_aromas'); ?></strong> 
+                        <a href="<?php echo esc_url($tracking_url); ?>" class="email-button">
+                            <?php echo esc_html__('Rastrear Agora', 'tema_aromas'); ?>
+                        </a>
+                    </p>
+                <?php endif; ?>
+            </div>
+        </div>
+        <?php
+    }
+}
+add_action('woocommerce_email_order_details', 'tema_aromas_woocommerce_completed_order_email', 20, 4);

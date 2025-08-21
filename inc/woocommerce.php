@@ -402,6 +402,8 @@ function tema_aromas_woocommerce_order_status_labels($status) {
         'cancelled'  => __('Cancelado', 'tema_aromas'),
         'refunded'   => __('Reembolsado', 'tema_aromas'),
         'failed'     => __('Falhou', 'tema_aromas'),
+        'pos-completed' => __('Pedido POS Concluído', 'tema_aromas'),
+        'pos-refunded'  => __('Pedido POS Reembolsado', 'tema_aromas'),
     ];
     
     return isset($status_labels[$status]) ? $status_labels[$status] : $status;
@@ -457,6 +459,10 @@ function tema_aromas_woocommerce_email_subject($subject, $email) {
     $subject = str_replace('has been received', 'foi recebido', $subject);
     $subject = str_replace('is now complete', 'foi concluído', $subject);
     $subject = str_replace('has been cancelled', 'foi cancelado', $subject);
+    
+    // POS email translations
+    $subject = str_replace('POS completed order', 'Pedido POS Concluído', $subject);
+    $subject = str_replace('POS refunded order', 'Pedido POS Reembolsado', $subject);
     
     return $subject;
 }

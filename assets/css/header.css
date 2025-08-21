@@ -789,6 +789,7 @@ body.mobile-menu-open {
     display: block;
     width: 100%;
     color: var(--cor-texto) !important;
+    text-shadow: none !important;
   }
   
   .menu-link svg,
@@ -828,11 +829,17 @@ body.mobile-menu-open {
     padding: var(--espacamento-sm);
     font-size: 0.875rem;
     color: var(--cor-texto) !important;
+    text-shadow: none !important;
   }
   
   /* Mobile dropdown toggle button color */
   .mobile-dropdown-toggle svg {
     stroke: var(--cor-texto) !important;
+  }
+  
+  /* Remove text shadow from site title on mobile */
+  .site-title a {
+    text-shadow: none !important;
   }
 }
 

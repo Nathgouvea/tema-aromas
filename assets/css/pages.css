@@ -678,8 +678,8 @@ select.modern-form-input {
 /* Hero Section for Aromas Page */
 .aromas-hero-modern {
   position: relative;
-  height: 50vh;
-  min-height: 400px;
+  height: 40vh;
+  min-height: 350px;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   display: flex;
@@ -1248,6 +1248,13 @@ textarea.luxury-form-input {
 
   .contact-grid {
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .aromas-hero-modern {
+    height: 45vh;
+    min-height: 400px;
   }
 }
 

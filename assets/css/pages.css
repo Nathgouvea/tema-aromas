@@ -1,7 +1,7 @@
 /*!
  * Tema Aromas - Static Pages CSS
  * Luxury styling for content pages (About, Contact, etc.)
- * Version: 1.1.0
+ * Version: 1.0.0
  */
 
 /* ==========================================================================
@@ -99,283 +99,510 @@
   bottom: 0;
   left: 0;
   right: 0;
-  height: 100px;
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(107, 79, 196, 0.03) 100%
-  );
+  z-index: 1;
+}
+
+.aroma-wave {
+  width: 100%;
+  height: 200px;
 }
 
 /* ==========================================================================
-   Categories Page - Sophisticated & Minimalistic Design
+   Content Grids
    ========================================================================== */
 
-/* Page Header Section */
-.page-header-section {
-  background: linear-gradient(
-    135deg,
-    rgba(107, 79, 196, 0.03) 0%,
-    rgba(139, 95, 214, 0.03) 100%
-  );
-  padding: var(--espacamento-xxl) 0;
-  position: relative;
-  overflow: hidden;
-}
-
-.page-header-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%236b4fc4" opacity="0.03"/><circle cx="75" cy="75" r="1" fill="%238b5fd6" opacity="0.03"/><circle cx="50" cy="10" r="0.5" fill="%236b4fc4" opacity="0.02"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-  opacity: 0.6;
-}
-
-.page-header-content {
-  position: relative;
-  z-index: 2;
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.page-title.luxury-heading {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 800;
-  background: var(--gradiente-luxo);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  margin-bottom: var(--espacamento-lg);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-}
-
-.page-subtitle {
-  font-size: 1.25rem;
-  line-height: 1.7;
-  color: var(--cor-texto);
-  opacity: 0.8;
-  max-width: 65ch;
-  margin: 0 auto;
-  font-weight: 400;
-}
-
-/* Categories Grid Section */
-.categories-grid-section {
-  padding: var(--espacamento-xxl) 0;
-  background: var(--cor-fundo);
-  position: relative;
-}
-
-.categories-grid-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(107, 79, 196, 0.1) 50%,
-    transparent 100%
-  );
-}
-
-.categories-grid {
+.content-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-  gap: var(--espacamento-xxl);
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 var(--espacamento-lg);
+  grid-template-columns: 1fr;
+  gap: var(--espacamento-xl);
+  align-items: start;
 }
 
-/* Sophisticated Category Cards */
-.category-card {
+.content-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--cor-texto);
+}
+
+.content-text p {
+  margin-bottom: var(--espacamento-lg);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--espacamento-lg);
+}
+
+.benefit-card {
   background: var(--cor-fundo);
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(107, 79, 196, 0.08);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(107, 79, 196, 0.08);
-  position: relative;
-  height: 100%;
+  padding: var(--espacamento-lg);
+  border-radius: 16px;
+  box-shadow: var(--sombra-sutil);
+  border: 1px solid var(--cor-borda);
+  text-align: center;
+  transition: var(--transicao-suave);
 }
 
-.category-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--gradiente-luxo);
-  transform: scaleX(0);
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 2;
-}
-
-.luxury-card-hover:hover {
+.benefit-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 60px rgba(107, 79, 196, 0.15);
-  border-color: rgba(107, 79, 196, 0.2);
+  box-shadow: var(--sombra-luxo);
+  border-color: var(--cor-primaria);
 }
 
-.luxury-card-hover:hover::before {
-  transform: scaleX(1);
-}
-
-.category-card-inner {
-  position: relative;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Refined Image Section */
-.category-image {
-  position: relative;
-  height: 280px;
-  overflow: hidden;
-  background: linear-gradient(
-    135deg,
-    rgba(107, 79, 196, 0.02) 0%,
-    rgba(139, 95, 214, 0.02) 100%
-  );
-}
-
-.category-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  filter: brightness(0.95) contrast(1.05);
-}
-
-.category-card:hover .category-image img {
-  transform: scale(1.05);
-  filter: brightness(1) contrast(1.1);
-}
-
-/* Sophisticated Overlay */
-.category-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(107, 79, 196, 0.85) 0%,
-    rgba(139, 95, 214, 0.75) 100%
-  );
+.benefit-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--gradiente-luxo);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  backdrop-filter: blur(2px);
-}
-
-.category-card:hover .category-overlay {
-  opacity: 1;
-}
-
-.category-icon {
+  margin: 0 auto var(--espacamento-md);
   color: var(--cor-fundo);
-  transform: scale(0.7) rotate(-5deg);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
 }
 
-.category-card:hover .category-icon {
-  transform: scale(1) rotate(0deg);
+.benefit-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--cor-primaria);
+  margin-bottom: var(--espacamento-sm);
 }
 
-/* Refined Content Section */
-.category-content {
-  padding: var(--espacamento-xxl);
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
+.benefit-card p {
+  color: var(--cor-texto);
+  opacity: 0.8;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   Product Highlights
+   ========================================================================== */
+
+.produtos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--espacamento-xl);
+}
+
+.produto-highlight {
+  background: var(--cor-fundo);
+  padding: var(--espacamento-xl);
+  border-radius: 20px;
+  box-shadow: var(--sombra-sutil);
+  border: 1px solid var(--cor-borda);
+  text-align: center;
+  transition: var(--transicao-suave);
+}
+
+.produto-highlight:hover {
+  transform: translateY(-12px);
+  box-shadow: var(--sombra-luxo);
+  border-color: var(--cor-accent);
+}
+
+.produto-icon {
+  width: 100px;
+  height: 100px;
   background: linear-gradient(
-    180deg,
-    var(--cor-fundo) 0%,
-    rgba(255, 255, 255, 0.8) 100%
+    135deg,
+    rgba(107, 79, 196, 0.1) 0%,
+    rgba(139, 95, 214, 0.1) 100%
+  );
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--espacamento-lg);
+  color: var(--cor-primaria);
+}
+
+.produto-highlight h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--cor-primaria);
+  margin-bottom: var(--espacamento-md);
+}
+
+.produto-highlight p {
+  color: var(--cor-texto);
+  opacity: 0.8;
+  line-height: 1.6;
+  margin-bottom: var(--espacamento-lg);
+}
+
+/* ==========================================================================
+   FAQ Section
+   ========================================================================== */
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border: 1px solid var(--cor-borda);
+  border-radius: 100px;
+  margin-bottom: var(--espacamento-md);
+  overflow: hidden;
+  transition: var(--transicao-suave);
+}
+
+.faq-item:hover {
+  border-color: var(--cor-primaria);
+  box-shadow: var(--sombra-sutil);
+}
+
+.faq-question {
+  width: 100%;
+  padding: var(--espacamento-lg);
+  background: var(--cor-fundo);
+  border: none;
+  text-align: left;
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--cor-primaria);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: var(--transicao-rapida);
+}
+
+.faq-question:hover {
+  background: rgba(107, 79, 196, 0.05);
+}
+
+.faq-question[aria-expanded="true"] {
+  background: rgba(107, 79, 196, 0.1);
+}
+
+.faq-question[aria-expanded="true"] .faq-icon {
+  transform: rotate(180deg);
+}
+
+.faq-icon {
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  color: var(--cor-primaria);
+}
+
+.faq-answer {
+  padding: 0 var(--espacamento-lg) var(--espacamento-lg);
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
+  display: none;
+}
+
+.faq-answer[aria-hidden="false"] {
+  display: block;
+  animation: fadeInUp 0.3s ease;
+}
+
+/* ==========================================================================
+   Modern Contact Page Design (Matching Screenshot)
+   ========================================================================== */
+
+/* Hero Section with Product Background */
+.contact-hero-modern {
+  position: relative;
+  height: 40vh;
+  min-height: 350px;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.contact-hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.hero-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.4) 100%
   );
 }
 
-.category-title {
-  font-family: var(--fonte-titulo, inherit);
-  font-size: 1.75rem;
+.contact-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  padding: 0 var(--espacamento-lg);
+}
+
+.contact-hero-title {
+  font-size: clamp(3rem, 8vw, 5rem);
   font-weight: 700;
   margin-bottom: var(--espacamento-md);
-  color: var(--cor-texto);
-  line-height: 1.2;
-  letter-spacing: -0.01em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: "Dancing Script", cursive;
+  letter-spacing: 2px;
+  color: white;
 }
 
-.category-description {
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: var(--cor-texto);
-  opacity: 0.75;
-  margin-bottom: var(--espacamento-xl);
-  flex-grow: 1;
-  font-weight: 400;
+.contact-hero-subtitle {
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  line-height: 1.5;
+  opacity: 0.95;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  font-weight: 300;
 }
 
-/* Minimalistic Feature Tags */
-.category-features {
-  display: flex;
-  gap: var(--espacamento-sm);
-  margin-bottom: var(--espacamento-xl);
-  flex-wrap: wrap;
-  justify-content: flex-start;
+/* Two Column Layout */
+.contact-main-section {
+  padding: var(--espacamento-md) 0;
+  background: #f8f9fa;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
 }
 
-.feature-tag {
-  background: rgba(107, 79, 196, 0.06);
-  color: var(--cor-primaria);
-  padding: var(--espacamento-xs) var(--espacamento-md);
+.contact-two-columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espacamento-md);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--espacamento-md);
+}
+
+/* Left Column - Contact Info */
+.contact-info-column {
+  background: white;
+  padding: var(--espacamento-md);
   border-radius: 16px;
-  font-size: 0.8rem;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  height: fit-content;
+}
+
+.contact-methods-title h2 {
+  font-size: 1.75rem;
+  color: var(--cor-primaria);
+  margin-bottom: var(--espacamento-xs);
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-  border: 1px solid rgba(107, 79, 196, 0.1);
+}
+
+.contact-methods-title p {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: var(--espacamento-md);
+  line-height: 1.5;
+}
+
+.contact-methods-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacamento-sm);
+}
+
+.contact-method-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--espacamento-md);
+  padding: var(--espacamento-sm);
+  border-radius: 100px;
+  border: 2px solid transparent;
+}
+
+.contact-method-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Removed hover effects for cleaner, less busy appearance */
+
+.contact-method-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.email-icon {
+  background: linear-gradient(135deg, #6b4fc4 0%, #8b5fd6 100%);
+  color: white;
+}
+
+.whatsapp-icon {
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: white;
+}
+
+.instagram-icon {
+  background: linear-gradient(135deg, #e4405f 0%, #fd5949 50%, #fccc63 100%);
+  color: white;
+}
+
+.contact-method-content h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--cor-primaria);
+  margin-bottom: var(--espacamento-xs);
+}
+
+.contact-method-content p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: var(--espacamento-xs);
+}
+
+.contact-method-content small {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.4;
+}
+
+/* Right Column - Contact Form */
+.contact-form-column {
+  background: white;
+  padding: var(--espacamento-md);
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  height: fit-content;
+}
+
+.contact-form-title h2 {
+  font-size: 1.75rem;
+  color: var(--cor-primaria);
+  margin-bottom: var(--espacamento-xs);
+  font-weight: 600;
+}
+
+.contact-form-title p {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: var(--espacamento-md);
+  line-height: 1.5;
+}
+
+/* Modern Form Styling */
+.contact-form-modern {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacamento-lg);
+}
+
+.form-row-modern {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espacamento-lg);
+}
+
+.form-group-modern {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacamento-sm);
+}
+
+.form-group-modern label {
+  font-weight: 600;
+  color: var(--cor-primaria);
+  font-size: 1rem;
+}
+
+.input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-with-icon svg {
+  position: absolute;
+  left: var(--espacamento-md);
+  color: #999;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.modern-form-input {
+  width: 100%;
+  padding: var(--espacamento-sm) var(--espacamento-md) var(--espacamento-sm)
+    3rem;
+  border: 2px solid #e1e5e9;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-family: inherit;
+  color: #333;
+  background: #fff;
   transition: all 0.3s ease;
 }
 
-.feature-tag:hover {
-  background: rgba(107, 79, 196, 0.1);
-  border-color: rgba(107, 79, 196, 0.2);
-  transform: translateY(-1px);
+.modern-form-input:focus {
+  outline: none;
+  border-color: var(--cor-primaria);
+  box-shadow: 0 0 0 4px rgba(107, 79, 196, 0.1);
 }
 
-/* Refined CTA Section */
-.category-cta {
-  margin-top: auto;
+.modern-form-input::placeholder {
+  color: #999;
+  opacity: 0.8;
 }
 
-.category-cta .btn-luxury.primary {
-  width: 100%;
-  justify-content: center;
-  padding: var(--espacamento-md) var(--espacamento-xl);
-  font-weight: 600;
+textarea.modern-form-input {
+  padding: var(--espacamento-sm);
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+select.modern-form-input {
+  padding: var(--espacamento-sm);
+  cursor: pointer;
+}
+
+.form-actions-modern {
+  margin-top: var(--espacamento-lg);
+}
+
+.btn-send-modern {
+  background: var(--gradiente-luxo);
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 100px;
   font-size: 1rem;
-  border-radius: 16px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espacamento-sm);
+  cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--sombra-luxo);
   position: relative;
   overflow: hidden;
 }
 
-.category-cta .btn-luxury.primary::before {
+.btn-send-modern::before {
   content: "";
   position: absolute;
   top: 0;
@@ -388,198 +615,694 @@
     rgba(255, 255, 255, 0.2),
     transparent
   );
-  transition: left 0.5s ease;
+  transition: left 0.5s;
 }
 
-.category-cta .btn-luxury.primary:hover::before {
+.btn-send-modern:hover::before {
   left: 100%;
 }
 
-/* Categories CTA Section */
-.categories-cta-section {
-  padding: var(--espacamento-xxl) 0;
-  background: linear-gradient(
-    135deg,
-    rgba(107, 79, 196, 0.02) 0%,
-    rgba(139, 95, 214, 0.02) 100%
-  );
-  position: relative;
+.btn-send-modern:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 48px rgba(107, 79, 196, 0.4);
 }
 
-.categories-cta-section::before {
-  content: "";
+.btn-send-modern:active {
+  transform: translateY(-1px);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .form-row-modern {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contact-two-columns {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--espacamento-xl);
+  }
+
+  .contact-hero-modern {
+    height: 45vh;
+    min-height: 400px;
+  }
+}
+
+/* Success/Error Messages */
+.contact-success,
+.contact-error {
+  margin-bottom: var(--espacamento-lg);
+  padding: var(--espacamento-md);
+  border-radius: 100px;
+  font-weight: 500;
+}
+
+.contact-success {
+  background: #d1f2df;
+  color: #0a5622;
+  border: 1px solid #9dd6b8;
+}
+
+.contact-error {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* ==========================================================================
+   Aromas Page Design (Nossos Aromas)
+   ========================================================================== */
+
+/* Hero Section for Aromas Page */
+.aromas-hero-modern {
+  position: relative;
+  height: 50vh;
+  min-height: 400px;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.aromas-hero-background {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 1px;
+  bottom: 0;
+  z-index: 1;
+}
+
+.aromas-hero-background .hero-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.aromas-hero-background .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(107, 79, 196, 0.1) 50%,
-    transparent 100%
+    135deg,
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.3) 100%
   );
 }
 
-.cta-content {
-  max-width: 700px;
-  margin: 0 auto;
-  text-align: center;
+.aromas-hero-content {
   position: relative;
   z-index: 2;
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  padding: 0 var(--espacamento-lg);
 }
 
-.cta-title.luxury-heading {
-  font-size: clamp(2rem, 4vw, 2.5rem);
-  margin-bottom: var(--espacamento-lg);
-  color: var(--cor-texto);
+.aromas-hero-title {
+  font-size: clamp(3rem, 8vw, 5rem);
   font-weight: 700;
-  line-height: 1.2;
+  margin-bottom: var(--espacamento-md);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: "Dancing Script", cursive;
+  letter-spacing: 2px;
+  color: white;
 }
 
-.cta-description {
-  font-size: 1.125rem;
-  line-height: 1.7;
-  color: var(--cor-texto);
-  opacity: 0.75;
-  margin-bottom: var(--espacamento-xl);
-  font-weight: 400;
+.aromas-hero-subtitle {
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  line-height: 1.5;
+  opacity: 0.95;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  font-weight: 300;
 }
 
-.cta-buttons {
+/* Fragrance Pills Section */
+.fragrance-pills-section {
+  padding: var(--espacamento-xl) 0;
+  background: #f8f9fa;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+.fragrance-pills-container {
   display: flex;
-  gap: var(--espacamento-lg);
   justify-content: center;
+  gap: var(--espacamento-md);
   flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--espacamento-lg);
 }
 
-.cta-buttons .btn-luxury.primary,
-.cta-buttons .btn-luxury.secondary {
-  min-width: 200px;
-  padding: var(--espacamento-md) var(--espacamento-xl);
+.fragrance-pill {
+  background: white;
+  border: 2px solid var(--cor-borda);
+  border-radius: 100px;
+  padding: var(--espacamento-sm) var(--espacamento-lg);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--cor-texto);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.fragrance-pill:hover {
+  border-color: var(--cor-primaria);
+  color: var(--cor-primaria);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.fragrance-pill.active {
+  background: var(--cor-primaria);
+  border-color: var(--cor-primaria);
+  color: white;
+  box-shadow: 0 2px 8px rgba(107, 79, 196, 0.2);
+}
+
+/* Fragrance Accordion Section */
+.fragrance-accordion-section {
+  padding: var(--espacamento-xl) 0;
+  background: white;
+}
+
+.fragrance-accordion-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--espacamento-lg);
+}
+
+.fragrance-accordion-item {
+  border: 1px solid var(--cor-borda);
   border-radius: 16px;
+  margin-bottom: var(--espacamento-lg);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.fragrance-accordion-item:hover {
+  border-color: var(--cor-borda);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.fragrance-accordion-item.active {
+  border-color: var(--cor-primaria);
+  box-shadow: 0 6px 16px rgba(107, 79, 196, 0.08);
+}
+
+.fragrance-accordion-header {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: var(--espacamento-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.fragrance-accordion-header:hover {
+  background: #f8f9fa;
+}
+
+.fragrance-accordion-header h2 {
+  font-size: 1.5rem;
   font-weight: 600;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--cor-primaria);
+  margin: 0;
+  text-align: left;
 }
 
-/* Responsive Design - Sophisticated Grid */
-@media (max-width: 1200px) {
-  .categories-grid {
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: var(--espacamento-xl);
-    padding: 0 var(--espacamento-md);
+.accordion-icon {
+  transition: transform 0.3s ease;
+  color: var(--cor-primaria);
+  flex-shrink: 0;
+}
+
+.fragrance-accordion-item.active .accordion-icon {
+  transform: rotate(180deg);
+}
+
+.fragrance-accordion-content {
+  padding: 0 var(--espacamento-lg) var(--espacamento-lg);
+  display: none;
+}
+
+.fragrance-accordion-item.active .fragrance-accordion-content {
+  display: block;
+  animation: fadeInUp 0.3s ease;
+}
+
+/* Fragrance Content Grid */
+.fragrance-content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espacamento-xl);
+  align-items: start;
+}
+
+.fragrance-image {
+  border-radius: 100px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.fragrance-image img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.fragrance-image:hover img {
+  transform: scale(1.05);
+}
+
+.fragrance-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacamento-lg);
+}
+
+/* Fragrance Notes */
+.fragrance-notes {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espacamento-md);
+}
+
+.note-column {
+  background: #f8f9fa;
+  padding: var(--espacamento-md);
+  border-radius: 100px;
+  border: 1px solid var(--cor-borda);
+}
+
+.note-column h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #666;
+  margin-bottom: var(--espacamento-xs);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.note-column p {
+  font-size: 1rem;
+  color: var(--cor-texto);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Fragrance Description */
+.fragrance-description {
+  background: #f8f9fa;
+  padding: var(--espacamento-lg);
+  border-radius: 100px;
+  border: 1px solid var(--cor-borda);
+}
+
+.fragrance-description h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--cor-primaria);
+  margin-bottom: var(--espacamento-sm);
+}
+
+.fragrance-description p {
+  font-size: 1rem;
+  color: var(--cor-texto);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive Design for Aromas Page */
+@media (min-width: 768px) {
+  .fragrance-content-grid {
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--espacamento-xxl);
+  }
+
+  .fragrance-notes {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--espacamento-lg);
+  }
+
+  .fragrance-image img {
+    height: 400px;
   }
 }
 
-@media (max-width: 768px) {
-  .categories-grid {
-    grid-template-columns: 1fr;
-    gap: var(--espacamento-xl);
-    padding: 0 var(--espacamento-md);
+@media (min-width: 1024px) {
+  .aromas-hero-modern {
+    height: 60vh;
+    min-height: 500px;
   }
 
-  .category-card {
-    margin: 0;
-  }
-
-  .category-image {
-    height: 240px;
-  }
-
-  .category-content {
-    padding: var(--espacamento-xl);
-  }
-
-  .page-header-section {
-    padding: var(--espacamento-xl) 0;
-  }
-
-  .page-title.luxury-heading {
-    font-size: clamp(2rem, 6vw, 3rem);
-  }
-
-  .cta-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .cta-buttons .btn-luxury.primary,
-  .cta-buttons .btn-luxury.secondary {
-    width: 100%;
-    max-width: 320px;
-  }
-}
-
-@media (max-width: 480px) {
-  .category-features {
-    justify-content: center;
-  }
-
-  .feature-tag {
-    font-size: 0.75rem;
-    padding: var(--espacamento-xs) var(--espacamento-sm);
-    letter-spacing: 0.6px;
-  }
-
-  .category-content {
-    padding: var(--espacamento-lg);
-  }
-
-  .page-header-content {
-    padding: 0 var(--espacamento-md);
+  .fragrance-pills-container {
+    gap: var(--espacamento-lg);
   }
 }
 
 /* ==========================================================================
-   Animation Enhancements
+   Original Contact Section Styles (Keep for other pages)
    ========================================================================== */
 
-.animate-fade-in-up {
-  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-  opacity: 0;
-  transform: translateY(30px);
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--espacamento-lg);
+  margin-bottom: var(--espacamento-xl);
 }
 
+.contact-card {
+  background: var(--cor-fundo);
+  padding: var(--espacamento-xl);
+  border-radius: 16px;
+  box-shadow: var(--sombra-sutil);
+  border: 1px solid var(--cor-borda);
+  text-align: center;
+  transition: var(--transicao-suave);
+}
+
+.contact-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--sombra-luxo);
+  border-color: var(--cor-primaria);
+}
+
+.contact-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--gradiente-luxo);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--espacamento-md);
+  color: var(--cor-fundo);
+}
+
+.contact-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--cor-primaria);
+  margin-bottom: var(--espacamento-sm);
+}
+
+.contact-card p {
+  color: var(--cor-texto);
+  font-weight: 500;
+  margin-bottom: var(--espacamento-xs);
+}
+
+.contact-card small {
+  color: var(--cor-texto);
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   Contact Form
+   ========================================================================== */
+
+.contact-form-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-form {
+  background: var(--cor-fundo);
+  padding: var(--espacamento-xl);
+  border-radius: 20px;
+  box-shadow: var(--sombra-sutil);
+  border: 1px solid var(--cor-borda);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espacamento-lg);
+  margin-bottom: var(--espacamento-lg);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--cor-primaria);
+  margin-bottom: var(--espacamento-xs);
+  font-size: 1rem;
+}
+
+.luxury-form-input {
+  padding: var(--espacamento-md);
+  border: 2px solid var(--cor-borda);
+  border-radius: 100px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--cor-texto);
+  background: var(--cor-fundo);
+  transition: var(--transicao-rapida);
+}
+
+.luxury-form-input:focus {
+  outline: none;
+  border-color: var(--cor-primaria);
+  box-shadow: 0 0 0 4px rgba(107, 79, 196, 0.1);
+}
+
+textarea.luxury-form-input {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-actions {
+  text-align: center;
+  margin-top: var(--espacamento-xl);
+}
+
+.contact-success {
+  background: #d4edda;
+  color: #155724;
+  padding: var(--espacamento-md);
+  border-radius: 100px;
+  margin-bottom: var(--espacamento-lg);
+  border: 1px solid #c3e6cb;
+}
+
+.contact-error {
+  background: #f8d7da;
+  color: #721c24;
+  padding: var(--espacamento-md);
+  border-radius: 100px;
+  margin-bottom: var(--espacamento-lg);
+  border: 1px solid #f5c6cb;
+}
+
+.contact-error ul {
+  margin: 0;
+  padding-left: var(--espacamento-md);
+}
+
+/* ==========================================================================
+   Business Hours
+   ========================================================================== */
+
+.hours-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--espacamento-lg);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hours-card {
+  background: var(--cor-fundo);
+  padding: var(--espacamento-xl);
+  border-radius: 16px;
+  box-shadow: var(--sombra-sutil);
+  border: 1px solid var(--cor-borda);
+}
+
+.hours-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--cor-primaria);
+  margin-bottom: var(--espacamento-md);
+  text-align: center;
+}
+
+.hours-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hours-card li {
+  padding: var(--espacamento-sm) 0;
+  border-bottom: 1px solid var(--cor-borda);
+  color: var(--cor-texto);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hours-card li:last-child {
+  border-bottom: none;
+}
+
+/* ==========================================================================
+   Call to Action
+   ========================================================================== */
+
+.cta-section {
+  background: #f8f9fa;
+  color: var(--cor-texto);
+  text-align: center;
+  border-top: 1px solid var(--cor-borda);
+}
+
+.cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: var(--espacamento-md);
+  color: var(--cor-primaria);
+}
+
+.cta-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  line-height: 1.6;
+  margin-bottom: var(--espacamento-xl);
+}
+
+.cta-buttons {
+  display: flex;
+  gap: var(--espacamento-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid var(--cor-fundo);
+  color: var(--cor-fundo);
+}
+
+.btn-secondary:hover {
+  background: var(--cor-fundo);
+  color: var(--cor-primaria);
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+@media (min-width: 768px) {
+  .content-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--espacamento-xxl);
+  }
+
+  .form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-title {
+    font-size: 4rem;
+  }
+
+  .section-title {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .benefits-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .produtos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .contact-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+
 @keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-/* Stagger animation for category cards */
-.categories-grid .category-card:nth-child(1) { animation-delay: 0.1s; }
-.categories-grid .category-card:nth-child(2) { animation-delay: 0.2s; }
-.categories-grid .category-card:nth-child(3) { animation-delay: 0.3s; }
-.categories-grid .category-card:nth-child(4) { animation-delay: 0.4s; }
-.categories-grid .category-card:nth-child(5) { animation-delay: 0.5s; }
-.categories-grid .category-card:nth-child(6) { animation-delay: 0.6s; }
-
-/* ==========================================================================
-   Luxury Button System Integration
-   ========================================================================== */
-
-.btn-luxury.primary {
-  background: var(--gradiente-luxo);
-  color: var(--cor-fundo);
-  border: none;
-  box-shadow: 0 8px 32px rgba(107, 79, 196, 0.2);
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
 }
 
-.btn-luxury.primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 48px rgba(107, 79, 196, 0.3);
+/* Animation delays for staggered effects */
+.benefit-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.benefit-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.benefit-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.benefit-card:nth-child(4) {
+  animation-delay: 0.4s;
 }
 
-.btn-luxury.secondary {
-  background: transparent;
-  color: var(--cor-primaria);
-  border: 2px solid var(--cor-primaria);
+.produto-highlight:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.produto-highlight:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.produto-highlight:nth-child(3) {
+  animation-delay: 0.3s;
 }
 
-.btn-luxury.secondary:hover {
-  background: var(--cor-primaria);
-  color: var(--cor-fundo);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(107, 79, 196, 0.2);
+.contact-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.contact-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.contact-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.contact-card:nth-child(4) {
+  animation-delay: 0.4s;
 }

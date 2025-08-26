@@ -2283,7 +2283,6 @@ img[loading="lazy"].loaded {
   padding: var(--espacamento-lg) !important;
   z-index: 2 !important;
   margin-top: auto !important;
-  backdrop-filter: blur(2px) !important;
 }
 
 .produtos-queridos-section .produto-card:hover .produto-content {

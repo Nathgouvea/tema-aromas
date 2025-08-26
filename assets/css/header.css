@@ -89,7 +89,6 @@ header.site-header.scrolled,
 /* Debug: Force white background for scrolled state */
 .site-header.scrolled {
   background-color: #ffffff !important;
-  border: 3px solid red !important; /* Temporary debug border */
 }
 
 /* Homepage scrolled state - ensure white background */
@@ -377,6 +376,11 @@ header.site-header.scrolled,
   filter: drop-shadow(0 -2px 4px rgba(0, 0, 0, 0.1));
 }
 
+/* Ensure dropdown arrow color matches background */
+.site-header.scrolled .dropdown-menu::before {
+  border-bottom-color: var(--cor-fundo);
+}
+
 /* Ensure dropdown menu items have proper text color */
 .dropdown-menu .menu-link {
   color: var(--cor-texto) !important;
@@ -387,6 +391,11 @@ header.site-header.scrolled,
 .homepage .dropdown-menu .menu-link {
   color: var(--cor-texto) !important;
   text-shadow: none !important;
+}
+
+/* Ensure dropdown menu always has white background */
+.dropdown-menu {
+  background: var(--cor-fundo) !important;
 }
 
 .dropdown-menu.show {
@@ -427,9 +436,18 @@ header.site-header.scrolled,
 
 .dropdown-menu .menu-link:hover {
   background: var(--gradiente-luxo);
-  color: var(--cor-fundo);
+  color: var(--cor-fundo) !important;
   transform: translateX(4px);
   box-shadow: var(--sombra-sutil);
+}
+
+/* Ensure dropdown text is always black on all states */
+.dropdown-menu .menu-link,
+.dropdown-menu .menu-link:hover,
+.dropdown-menu .menu-link:focus,
+.dropdown-menu .menu-link:active {
+  color: var(--cor-texto) !important;
+  text-shadow: none !important;
 }
 
 /* ==========================================================================

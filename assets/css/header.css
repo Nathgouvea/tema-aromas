@@ -39,8 +39,12 @@ header.site-header,
 }
 
 /* Non-homepage pages - white background with black text */
-body:not(.homepage) .site-header {
+body:not(.homepage) .site-header,
+body:not(.homepage) header#masthead.site-header.luxury-header,
+body:not(.homepage) header.site-header,
+body:not(.homepage) #masthead.site-header {
   background-color: var(--cor-fundo) !important;
+  background-image: none !important;
   border-bottom: 1px solid var(--cor-borda) !important;
   box-shadow: var(--sombra-luxo) !important;
   transition: all 0.3s ease;
@@ -71,19 +75,38 @@ body {
 }
 
 /* Scrolled state - white background with black text */
-.site-header.scrolled {
-  background: var(--cor-fundo) !important;
+.site-header.scrolled,
+header#masthead.site-header.luxury-header.scrolled,
+header.site-header.scrolled,
+#masthead.site-header.scrolled {
+  background-color: var(--cor-fundo) !important;
+  background-image: none !important;
   border-bottom: 1px solid var(--cor-borda) !important;
   box-shadow: var(--sombra-luxo) !important;
   transition: all 0.3s ease;
 }
 
+/* Debug: Force white background for scrolled state */
+.site-header.scrolled {
+  background-color: #ffffff !important;
+  border: 3px solid red !important; /* Temporary debug border */
+}
+
 /* Homepage scrolled state - ensure white background */
-.homepage.homepage-scrolled .site-header {
-  background: var(--cor-fundo) !important;
+.homepage.homepage-scrolled .site-header,
+.homepage.homepage-scrolled header#masthead.site-header.luxury-header,
+.homepage.homepage-scrolled header.site-header,
+.homepage.homepage-scrolled #masthead.site-header {
+  background-color: var(--cor-fundo) !important;
+  background-image: none !important;
   border-bottom: 1px solid var(--cor-borda) !important;
   box-shadow: var(--sombra-luxo) !important;
   transition: all 0.3s ease;
+}
+
+/* Debug: Force white background for homepage scrolled state */
+.homepage.homepage-scrolled .site-header {
+  background-color: #ffffff !important;
 }
 
 .header-content {

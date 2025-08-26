@@ -2304,3 +2304,16 @@ img[loading="lazy"].loaded {
   margin: 0 !important;
   opacity: 0.95 !important;
 }
+
+/* Force image visibility - override any existing hidden styles */
+.produtos-queridos-section .produto-image,
+.produtos-queridos-section .produto-image img {
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
+}
+
+/* Ensure the overlay doesn't completely hide the image */
+.produtos-queridos-section .produto-overlay {
+  display: none !important;
+}

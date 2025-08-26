@@ -21,14 +21,7 @@ get_header(); ?>
                 <p class="page-subtitle"><?php esc_html_e('Gerencie suas informações pessoais, pedidos e preferências', 'tema_aromas'); ?></p>
             </div>
 
-            <?php if (!is_user_logged_in()) : ?>
-                <div class="account-welcome luxury-card">
-                    <h2 class="welcome-title"><?php esc_html_e('Bem-vindo à sua conta', 'tema_aromas'); ?></h2>
-                    <p class="welcome-text">
-                        <?php esc_html_e('Acesse sua conta para acompanhar pedidos, gerenciar informações pessoais e descobrir ofertas exclusivas.', 'tema_aromas'); ?>
-                    </p>
-                </div>
-            <?php endif; ?>
+
 
             <div class="page-content">
                 <?php

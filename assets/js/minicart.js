@@ -119,6 +119,15 @@
         closeCart();
       }
     });
+
+    // Handle mini cart close button
+    document.addEventListener("click", function (e) {
+      if (e.target.closest(".mini-cart-close")) {
+        e.preventDefault();
+        e.stopPropagation();
+        closeCart();
+      }
+    });
   }
 
   /**

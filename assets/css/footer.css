@@ -15,6 +15,10 @@
   margin-top: var(--espacamento-xxl);
   position: relative;
   overflow: hidden;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
 }
 
 .site-footer::before {
@@ -43,8 +47,17 @@
    Footer Content Layout
    ========================================================================== */
 
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--espacamento-md);
+  width: 100%;
+}
+
 .footer-content {
   margin-bottom: var(--espacamento-xl);
+  width: 100%;
+  max-width: 100%;
 }
 
 .footer-sections {

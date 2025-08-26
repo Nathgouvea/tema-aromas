@@ -1,7 +1,7 @@
     </main><!-- #main -->
 
     <footer id="colophon" class="site-footer luxury-footer">
-        <div class="container">
+        <div class="footer-container">
             <!-- Footer Content -->
             <div class="footer-content">
                 <div class="footer-sections">

@@ -29,8 +29,21 @@ header.site-header,
   background-image: none !important;
   border-bottom: none !important;
   box-shadow: none !important;
-  position: relative;
-  min-height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  min-height: 100px;
+  transition: all 0.3s ease;
+}
+
+/* Non-homepage pages - white background with black text */
+body:not(.homepage) .site-header {
+  background-color: var(--cor-fundo) !important;
+  border-bottom: 1px solid var(--cor-borda) !important;
+  box-shadow: var(--sombra-luxo) !important;
+  transition: all 0.3s ease;
 }
 
 /* Fallback for browsers without backdrop-filter support */
@@ -40,11 +53,37 @@ header.site-header,
   }
 }
 
+/* Add padding to body to account for fixed header */
+body {
+  padding-top: 100px;
+}
+
+/* Ensure homepage hero section doesn't have extra padding */
+.homepage .hero-luxury-screenshot {
+  margin-top: -100px; /* Compensate for body padding */
+  padding-top: 100px; /* Account for fixed header */
+}
+
+@media (min-width: 1024px) {
+  body {
+    padding-top: 100px;
+  }
+}
+
 /* Scrolled state - white background with black text */
 .site-header.scrolled {
   background: var(--cor-fundo) !important;
   border-bottom: 1px solid var(--cor-borda) !important;
   box-shadow: var(--sombra-luxo) !important;
+  transition: all 0.3s ease;
+}
+
+/* Homepage scrolled state - ensure white background */
+.homepage.homepage-scrolled .site-header {
+  background: var(--cor-fundo) !important;
+  border-bottom: 1px solid var(--cor-borda) !important;
+  box-shadow: var(--sombra-luxo) !important;
+  transition: all 0.3s ease;
 }
 
 .header-content {
@@ -100,15 +139,21 @@ header.site-header,
   transition: var(--transicao-suave);
 }
 
-/* Logo and text with better contrast for background image */
+/* Logo and text - default black, white only on homepage hero */
 .site-title a {
-  color: white !important;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  color: var(--cor-texto) !important;
+  text-shadow: none;
   background: none;
   -webkit-background-clip: unset;
   -webkit-text-fill-color: unset;
   background-clip: unset;
   transition: all 0.3s ease;
+}
+
+/* Homepage hero state - white text */
+.homepage:not(.homepage-scrolled) .site-header .site-title a {
+  color: white !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 /* Scrolled state - black text */
@@ -197,11 +242,17 @@ header.site-header,
   transform: scale(1.1);
 }
 
-/* Menu links with better contrast for background image */
+/* Menu links - default black, white only on homepage hero */
 .menu-link {
+  color: var(--cor-texto) !important;
+  text-shadow: none;
+  transition: all 0.3s ease;
+}
+
+/* Homepage hero state - white text */
+.homepage:not(.homepage-scrolled) .site-header .menu-link {
   color: white !important;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
-  transition: all 0.3s ease;
 }
 
 /* Scrolled state - black text */
@@ -282,8 +333,6 @@ header.site-header,
   transform: translateY(-10px);
   transition: var(--transicao-suave);
   z-index: 1000;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
 }
 
 /* Scrolled state - ensure dropdown text is black */
@@ -308,7 +357,13 @@ header.site-header,
 /* Ensure dropdown menu items have proper text color */
 .dropdown-menu .menu-link {
   color: var(--cor-texto) !important;
-  text-shadow: none;
+  text-shadow: none !important;
+}
+
+/* Override any homepage white text for dropdowns */
+.homepage .dropdown-menu .menu-link {
+  color: var(--cor-texto) !important;
+  text-shadow: none !important;
 }
 
 .dropdown-menu.show {
@@ -399,11 +454,17 @@ header.site-header,
   transition: var(--transicao-rapida);
 }
 
-/* Header icons with better contrast for background image */
+/* Header icons - default black, white only on homepage hero */
 .header-icon {
+  color: var(--cor-texto) !important;
+  text-shadow: none;
+  transition: all 0.3s ease;
+}
+
+/* Homepage hero state - white icons */
+.homepage:not(.homepage-scrolled) .site-header .header-icon {
   color: white !important;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
-  transition: all 0.3s ease;
 }
 
 /* Scrolled state - black icons */
@@ -429,6 +490,12 @@ header.site-header,
   justify-content: center;
   line-height: 1;
   animation: pulse 0.6s ease-in-out;
+}
+
+/* Ensure cart count is always visible */
+.homepage:not(.homepage-scrolled) .site-header .cart-count {
+  background: var(--gradiente-luxo);
+  color: var(--cor-fundo);
 }
 
 @keyframes pulse {
@@ -473,7 +540,7 @@ header.site-header,
   opacity: 0;
   visibility: hidden;
   transition: var(--transicao-suave);
-  z-index: 999;
+  z-index: 1001;
   box-shadow: var(--sombra-luxo);
   min-width: 320px;
   max-width: 400px;
@@ -605,6 +672,12 @@ body.search-open .site-header {
       transform: translateX(0) translateY(0) scale(1);
     }
   }
+
+  /* Ensure mobile search form has proper contrast */
+  .header-search .search-field,
+  .header-search .search-submit {
+    color: var(--cor-texto) !important;
+  }
 }
 
 /* Enhanced search form animations */
@@ -644,6 +717,12 @@ body.search-open .site-header {
   font-weight: 600;
   cursor: pointer;
   transition: var(--transicao-rapida);
+}
+
+/* Homepage hero state - white text for mobile toggle */
+.homepage:not(.homepage-scrolled) .site-header .menu-toggle {
+  color: white !important;
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 @media (min-width: 1024px) {
@@ -708,7 +787,7 @@ body.mobile-menu-open {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 998;
+  z-index: 1000;
   opacity: 0;
   visibility: hidden;
   transition: var(--transicao-suave);
@@ -733,7 +812,7 @@ body.mobile-menu-open {
     height: 100vh;
     background: var(--cor-fundo);
     box-shadow: var(--sombra-luxo);
-    z-index: 999;
+    z-index: 1001;
     transform: translateX(100%);
     transition: var(--transicao-suave);
     overflow-y: auto;
@@ -772,7 +851,7 @@ body.mobile-menu-open {
     color: var(--cor-texto) !important;
     text-shadow: none !important;
   }
-  
+
   .menu-link svg,
   .menu-icon-home svg,
   .menu-icon-shop svg,
@@ -780,12 +859,19 @@ body.mobile-menu-open {
   .menu-icon-contact svg {
     color: var(--cor-texto) !important;
   }
-  
+
+  /* Ensure mobile menu always has black text */
+  .mobile-menu-overlay.show + .site-header .menu-link,
+  .primary-menu-container.is-open .menu-link {
+    color: var(--cor-texto) !important;
+    text-shadow: none !important;
+  }
+
   .dropdown-icon {
     stroke: var(--cor-texto) !important;
     transition: transform 0.3s ease;
   }
-  
+
   /* Rotate dropdown arrow when submenu is open */
   .submenu-open > a .dropdown-icon {
     transform: rotate(180deg);
@@ -818,8 +904,7 @@ body.mobile-menu-open {
     color: var(--cor-texto) !important;
     text-shadow: none !important;
   }
-  
-  
+
   /* Remove text shadow from site title on mobile */
   .site-title a {
     text-shadow: none !important;

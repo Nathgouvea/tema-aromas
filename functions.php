@@ -301,6 +301,19 @@ add_filter('woocommerce_currency_symbol', function($symbol, $currency) {
     return $symbol;
 }, 10, 2);
 
+/**
+ * Add custom body classes
+ */
+function tema_aromas_body_classes($classes) {
+    // Add homepage class for navbar color management
+    if (is_front_page()) {
+        $classes[] = 'homepage';
+    }
+    
+    return $classes;
+}
+add_filter('body_class', 'tema_aromas_body_classes');
+
 
 
 

@@ -8,6 +8,7 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     const header = document.getElementById("masthead");
+    const body = document.body;
 
     if (!header) return;
 
@@ -15,16 +16,23 @@
     function updateHeaderState() {
       const scrollPosition = window.scrollY;
       const scrollThreshold = 50; // Standard scroll threshold
+      const isHomepage = body.classList.contains("homepage");
 
       if (scrollPosition > scrollThreshold) {
         header.classList.add("scrolled");
       } else {
         header.classList.remove("scrolled");
       }
-    }
 
-    // Header is now standardized across all pages
-    // No transparent header functionality needed
+      // Update body class for homepage scroll state
+      if (isHomepage) {
+        if (scrollPosition > scrollThreshold) {
+          body.classList.add("homepage-scrolled");
+        } else {
+          body.classList.remove("homepage-scrolled");
+        }
+      }
+    }
 
     // Initial check
     updateHeaderState();

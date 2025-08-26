@@ -1,8 +1,35 @@
 /*!
  * Tema Aromas - Homepage CSS
- * Luxury homepage styling with premium sections
+ * Premium homepage styling with luxury design system
  * Version: 1.0.0
  */
+
+/* ==========================================================================
+   CSS Variables - Required for Homepage Components
+   ========================================================================== */
+
+:root {
+  /* Colors */
+  --cor-primaria: #6b4fc4;
+  --cor-texto: #000000;
+  --cor-fundo: #ffffff;
+  --cor-borda: #e6e6e6;
+  --cor-accent: #8b5fd6;
+
+  /* Shadows */
+  --sombra-sutil: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --sombra-luxo: 0 8px 32px rgba(107, 79, 196, 0.15);
+
+  /* Gradients */
+  --gradiente-luxo: linear-gradient(135deg, #6b4fc4 0%, #8b5fd6 100%);
+
+  /* Fonts */
+  --fonte-principal: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --fonte-titulo: "Playfair Display", Georgia, serif;
+
+  /* Transitions */
+  --transicao-suave: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
 /* ==========================================================================
    Homepage Layout
@@ -28,8 +55,8 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-  margin-top: -100px; /* Pull up to go behind header */
-  padding-top: 100px; /* Add padding to compensate */
+  margin-top: 0; /* No negative margin needed with fixed header */
+  padding-top: 80px; /* Account for fixed header height */
   background: linear-gradient(
     135deg,
     rgba(0, 0, 0, 0.1) 0%,
@@ -78,6 +105,7 @@
   max-width: 600px;
   margin-left: 10%;
   padding: var(--espacamento-xxl) 0;
+  margin-top: 0; /* Ensure content starts at proper position */
 }
 
 /* Premium Typography */
@@ -2198,4 +2226,51 @@ img[loading="lazy"] {
 
 img[loading="lazy"].loaded {
   opacity: 1;
+}
+
+/* ==========================================================================
+   PRODUTOS QUERIDOS SECTION ALIGNMENT FIXES
+   ========================================================================== */
+
+/* Fix the card layout to use flexbox */
+.produtos-queridos-section .produto-card {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+/* Fix the content positioning and centering */
+.produtos-queridos-section .produto-content {
+  position: relative !important;
+  top: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  right: auto !important;
+  transform: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  background: var(--cor-fundo) !important;
+  height: auto !important;
+  flex: 1 !important;
+  padding: var(--espacamento-lg) !important;
+}
+
+/* Ensure the image doesn't take full height */
+.produtos-queridos-section .produto-image {
+  height: 200px !important;
+  flex-shrink: 0 !important;
+}
+
+/* Fix text color and alignment */
+.produtos-queridos-section .produto-title {
+  color: var(--cor-primaria) !important;
+  text-shadow: none !important;
+  margin-bottom: var(--espacamento-sm) !important;
+}
+
+.produtos-queridos-section .produto-description {
+  color: var(--cor-texto) !important;
+  text-shadow: none !important;
+  margin: 0 !important;
 }

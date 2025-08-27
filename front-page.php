@@ -29,7 +29,7 @@ get_header(); ?>
             <div class="hero-content-left">
                 <div class="hero-text-left">
                     <h1 class="hero-title-handwritten">
-                        <?php esc_html_e('Ilumine seus sentidos', 'tema_aromas'); ?>
+                        <?php esc_html_e('Aromas que transformam ambientes', 'tema_aromas'); ?>
                     </h1>
                     <p class="hero-subtitle-elegant">
                         <?php esc_html_e('Velas e aromas criados para o seu ritual de bem-estar.', 'tema_aromas'); ?>

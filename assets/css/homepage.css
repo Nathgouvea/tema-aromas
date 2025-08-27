@@ -26,6 +26,8 @@
   /* Fonts */
   --fonte-principal: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   --fonte-titulo: "Playfair Display", Georgia, serif;
+  --fonte-menu: "Quicksand", sans-serif;
+  --fonte-hero: "Simonetta", serif;
 
   /* Transitions */
   --transicao-suave: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -110,9 +112,9 @@
 
 /* Premium Typography */
 .hero-title-handwritten {
-  font-family: "Dancing Script", cursive;
+  font-family: var(--fonte-hero, "Simonetta"), serif;
   font-size: clamp(3rem, 6vw, 5rem);
-  font-weight: 600;
+  font-weight: 900;
   color: var(--cor-fundo);
   margin-bottom: var(--espacamento-lg);
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);

@@ -10,6 +10,43 @@
 
 A loja online Zen Secrets possui uma estrutura técnica sólida baseada em WordPress/WooCommerce, mas apresenta problemas significativos de design e experiência do usuário que afetam as conversões e a percepção de marca premium. Como uma loja especializada em produtos aromáticos naturais focados no bem-estar, é essencial transmitir luxo e confiança.
 
+### ✅ Última Atualização: Dynamic Logo System Implemented
+
+**Data**: $(date)
+**Mudança**: Sistema de logo dinâmico implementado no header - logo branco para fundos escuros, logo preto para fundos claros
+**Arquivos Modificados**:
+
+- `header.php` - **MAJOR**: Sistema de logo dinâmico implementado com JavaScript inteligente
+- `assets/css/header.css` - **UPDATED**: CSS para transições suaves entre logos
+- `footer.php` - **UPDATED**: Logo atualizado para usar logo-nome-branca.png
+
+**Funcionalidades Implementadas**:
+
+- **NOVO**: Logo branco (`logo-nome-branca.png`) para fundos escuros/transparentes
+- **NOVO**: Logo preto (`logo-nome-preta.png`) para fundos claros
+- **NOVO**: Detecção automática de estado da página (homepage vs outras páginas)
+- **NOVO**: Detecção de scroll para mudança automática de logo
+- **NOVO**: Transições suaves entre logos com efeitos de escala e opacidade
+- **NOVO**: Sistema de observação de mudanças de classe do header
+- **NOVO**: Footer atualizado para usar logo branco consistentemente
+
+**Lógica de Logo**:
+
+- ✅ **Homepage Hero**: Logo branco (transparente/fundo escuro)
+- ✅ **Homepage Scrolled**: Logo preto (fundo branco)
+- ✅ **Páginas Internas**: Logo preto (fundo branco)
+- ✅ **Transições**: Suaves com efeitos de escala e opacidade
+- ✅ **Performance**: Otimizado com debounce e MutationObserver
+
+**Mudanças Técnicas**:
+
+- ✅ Header agora usa sistema de logo dinâmico em vez de custom logo WordPress
+- ✅ JavaScript inteligente detecta estado da página e scroll
+- ✅ CSS com transições suaves para mudanças de logo
+- ✅ Sistema de observação para mudanças dinâmicas de classe
+- ✅ Footer atualizado para usar logo branco consistentemente
+- ✅ Logos agora seguem o sistema de design luxury do tema
+
 ### ✅ Última Atualização: Footer Width Consistency Fixed
 
 **Data**: $(date)

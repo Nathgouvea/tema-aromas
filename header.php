@@ -6,6 +6,78 @@
     <link rel="profile" href="https://gmpg.org/xfn/11">
     
     <?php wp_head(); ?>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        function updateLogo() {
+            const header = document.querySelector('.site-header');
+            const logoWhite = document.getElementById('logo-white');
+            const logoBlack = document.getElementById('logo-black');
+            
+            if (!header || !logoWhite || !logoBlack) return;
+            
+            // Check if we're on homepage and not scrolled
+            const isHomepage = document.body.classList.contains('homepage');
+            const isScrolled = header.classList.contains('scrolled') || window.scrollY > 50;
+            
+            // Determine which logo to show
+            let shouldShowWhiteLogo = false;
+            
+            if (isHomepage && !isScrolled) {
+                // Homepage hero - white logo on transparent/dark background
+                shouldShowWhiteLogo = true;
+            } else {
+                // All other cases - black logo on white background
+                shouldShowWhiteLogo = false;
+            }
+            
+            // Update logo visibility with smooth transition
+            if (shouldShowWhiteLogo) {
+                logoWhite.style.display = 'block';
+                logoBlack.style.display = 'none';
+                // Add small delay for smooth transition
+                setTimeout(() => {
+                    logoWhite.style.opacity = '1';
+                    logoWhite.style.transform = 'scale(1)';
+                }, 50);
+            } else {
+                logoWhite.style.display = 'none';
+                logoBlack.style.display = 'block';
+                // Add small delay for smooth transition
+                setTimeout(() => {
+                    logoBlack.style.opacity = '1';
+                    logoBlack.style.transform = 'scale(1)';
+                }, 50);
+            }
+        }
+        
+        // Initial logo update
+        updateLogo();
+        
+        // Update logo on scroll
+        let scrollTimeout;
+        window.addEventListener('scroll', function() {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(updateLogo, 10);
+        });
+        
+        // Update logo on window resize
+        window.addEventListener('resize', updateLogo);
+        
+        // Update logo when header classes change (for dynamic header states)
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                    updateLogo();
+                }
+            });
+        });
+        
+        const header = document.querySelector('.site-header');
+        if (header) {
+            observer.observe(header, { attributes: true });
+        }
+    });
+    </script>
 </head>
 
 <body <?php body_class(); ?>>
@@ -20,22 +92,19 @@
             <div class="header-content">
                 <!-- Logo / Site Title -->
                 <div class="site-branding">
-                    <?php if (has_custom_logo()) : ?>
-                        <div class="site-logo">
-                            <?php the_custom_logo(); ?>
-                        </div>
-                    <?php else : ?>
-                        <div class="site-title-wrapper">
-                            <h1 class="site-title">
-                                <a href="<?php echo esc_url(home_url('/')); ?>" rel="home" class="luxury-heading">
-                                    <?php bloginfo('name'); ?>
-                                </a>
-                            </h1>
-                            <?php if (get_bloginfo('description')) : ?>
-                                <p class="site-description"><?php bloginfo('description'); ?></p>
-                            <?php endif; ?>
-                        </div>
-                    <?php endif; ?>
+                    <div class="site-logo">
+                        <a href="<?php echo esc_url(home_url('/')); ?>" rel="home" class="dynamic-logo-link">
+                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/logo-nome-branca.png'); ?>" 
+                                 alt="<?php echo esc_attr(get_bloginfo('name')); ?>" 
+                                 class="site-logo-img logo-white"
+                                 id="logo-white">
+                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/logo-nome-preta.png'); ?>" 
+                                 alt="<?php echo esc_attr(get_bloginfo('name')); ?>" 
+                                 class="site-logo-img logo-black"
+                                 id="logo-black"
+                                 style="display: none;">
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Main Navigation -->

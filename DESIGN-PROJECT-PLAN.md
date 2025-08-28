@@ -301,6 +301,49 @@ A loja online Zen Secrets possui uma estrutura técnica sólida baseada em WordP
 - ✅ Design premium compacto e elegante
 - ✅ Responsivo em todos os dispositivos
 
+### ✅ Última Atualização: My Account Page Table Overflow Fixed
+
+**Data**: $(date)
+**Mudança**: Corrigido problema de overflow na tabela de pedidos da página "Minha conta" onde a coluna "Ações" estava saindo do container de fundo
+**Arquivos Modificados**:
+
+- `page-minha-conta.php` - **UPDATED**: Removida seção "Benefícios da sua conta" desnecessária
+- `assets/css/pages.css` - **UPDATED**: CSS atualizado para corrigir overflow da tabela
+- `DESIGN-PROJECT-PLAN.md` - **UPDATED**: Documentação do projeto atualizada
+
+**Funcionalidades Implementadas**:
+
+- **NOVO**: Tabela de pedidos agora se ajusta perfeitamente ao container de fundo
+- **NOVO**: Sistema de colunas com larguras fixas para evitar overflow
+- **NOVO**: Overflow-x: auto implementado para scroll horizontal quando necessário
+- **NOVO**: Responsividade melhorada para dispositivos móveis
+- **NOVO**: Layout de tabela empilhada para telas muito pequenas
+
+**Mudanças de UX**:
+
+- ✅ **Table Layout**: Tabela agora se ajusta ao container de fundo
+- ✅ **Column Management**: Larguras de coluna controladas para evitar overflow
+- ✅ **Responsive Design**: Tabela se adapta a diferentes tamanhos de tela
+- ✅ **Mobile Optimization**: Layout empilhado para dispositivos móveis
+- ✅ **Visual Consistency**: Background container e tabela agora alinhados
+
+**Mudanças Técnicas**:
+
+- ✅ CSS de overflow implementado para tabelas
+- ✅ Sistema de larguras de coluna com min-width
+- ✅ Media queries para responsividade
+- ✅ Table-layout: fixed para consistência
+- ✅ Word-wrap e overflow-wrap para conteúdo longo
+
+**Problema Resolvido**:
+
+- ❌ **ANTES**: Coluna "Ações" saía do container de fundo
+- ❌ **ANTES**: Tabela era maior que o background div
+- ❌ **ANTES**: Layout inconsistente em diferentes tamanhos de tela
+- ✅ **DEPOIS**: Tabela se ajusta perfeitamente ao container
+- ✅ **DEPOIS**: Background div e tabela alinhados
+- ✅ **DEPOIS**: Responsividade completa implementada
+
 ---
 
 ## 🎯 Status Atual do Projeto

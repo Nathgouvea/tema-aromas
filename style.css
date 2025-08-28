@@ -229,11 +229,7 @@ p {
   padding: 0 var(--espacamento-sm);
   */}
 
-@media (min-width: 768px) {
-  .container {
-    padding: 0 var(--espacamento-lg);
-  }
-  */}
+
 
 .sr-only {
   position: absolute;

@@ -1478,7 +1478,7 @@ textarea.luxury-form-input {
 .page-content .woocommerce .woocommerce-MyAccount-navigation a {
   color: #5a6c7d;
   text-decoration: none;
-  padding: var(--espacamento-md) var(--espacamento-lg);
+  padding: var(--espacamento-md) var(--espacamento-sm);
   border-radius: 12px;
   font-weight: 500;
   font-size: 0.95rem;
@@ -1690,6 +1690,138 @@ textarea.luxury-form-input {
 .woocommerce-orders-table .woocommerce-orders-table__row--status-on-hold {
   color: #e74c3c;
   font-weight: 600;
+}
+
+/* Table Overflow Fixes - Ensure table fits within container */
+.woocommerce-MyAccount-content .woocommerce-orders-table {
+  max-width: 100%;
+  overflow-x: auto; /* Allow horizontal scroll if needed */
+}
+
+/* Table container with proper overflow handling */
+.woocommerce-MyAccount-content .woocommerce-orders-table-wrapper {
+  overflow-x: auto;
+  border-radius: 12px;
+  margin: var(--espacamento-md) 0;
+}
+
+/* Column width management to prevent overflow */
+.woocommerce-orders-table th:nth-child(1), /* Pedido */
+.woocommerce-orders-table td:nth-child(1) {
+  width: 15%;
+  min-width: 80px;
+}
+
+.woocommerce-orders-table th:nth-child(2), /* Data */
+.woocommerce-orders-table td:nth-child(2) {
+  width: 20%;
+  min-width: 100px;
+}
+
+.woocommerce-orders-table th:nth-child(3), /* Status */
+.woocommerce-orders-table td:nth-child(3) {
+  width: 20%;
+  min-width: 100px;
+}
+
+.woocommerce-orders-table th:nth-child(4), /* Rastreio */
+.woocommerce-orders-table td:nth-child(4) {
+  width: 20%;
+  min-width: 120px;
+}
+
+.woocommerce-orders-table th:nth-child(5), /* Total */
+.woocommerce-orders-table td:nth-child(5) {
+  width: 20%;
+  min-width: 120px;
+}
+
+.woocommerce-orders-table th:nth-child(6), /* Ações */
+.woocommerce-orders-table td:nth-child(6) {
+  width: 15%;
+  min-width: 80px;
+  text-align: center;
+}
+
+/* Ensure content doesn't overflow in cells */
+.woocommerce-orders-table td {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 0; /* Allow text wrapping */
+}
+
+/* Specific styling for action buttons */
+.woocommerce-orders-table .button,
+.woocommerce-orders-table .woocommerce-button {
+  white-space: nowrap;
+  display: inline-block;
+  padding: var(--espacamento-sm) var(--espacamento-md);
+  font-size: 0.85rem;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+/* Responsive table handling */
+@media (max-width: 1024px) {
+  .woocommerce-orders-table {
+    table-layout: auto; /* Allow natural column sizing on smaller screens */
+  }
+
+  .woocommerce-MyAccount-content .woocommerce-orders-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@media (max-width: 767px) {
+  .woocommerce-orders-table {
+    font-size: 0.85rem;
+  }
+
+  .woocommerce-orders-table th,
+  .woocommerce-orders-table td {
+    padding: var(--espacamento-sm);
+  }
+
+  /* Stack table on very small screens */
+  .woocommerce-orders-table,
+  .woocommerce-orders-table thead,
+  .woocommerce-orders-table tbody,
+  .woocommerce-orders-table th,
+  .woocommerce-orders-table td,
+  .woocommerce-orders-table tr {
+    display: block;
+  }
+
+  .woocommerce-orders-table thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  .woocommerce-orders-table tr {
+    border: 1px solid #ecf0f1;
+    margin-bottom: var(--espacamento-sm);
+    border-radius: 8px;
+    padding: var(--espacamento-sm);
+  }
+
+  .woocommerce-orders-table td {
+    border: none;
+    position: relative;
+    padding-left: 50%;
+    text-align: left;
+  }
+
+  .woocommerce-orders-table td:before {
+    content: attr(data-label) ": ";
+    position: absolute;
+    left: var(--espacamento-sm);
+    width: 45%;
+    font-weight: 600;
+    color: var(--cor-primaria);
+  }
 }
 
 /* Account Details Form - Clean Form Design */

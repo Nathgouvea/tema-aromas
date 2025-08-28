@@ -10,10 +10,45 @@
 
 A loja online Zen Secrets possui uma estrutura técnica sólida baseada em WordPress/WooCommerce, mas apresenta problemas significativos de design e experiência do usuário que afetam as conversões e a percepção de marca premium. Como uma loja especializada em produtos aromáticos naturais focados no bem-estar, é essencial transmitir luxo e confiança.
 
-### ✅ Última Atualização: Hero Section Layout Updated
+### ✅ Última Atualização: WhatsApp Trust Indicator Made Fully Clickable
 
 **Data**: $(date)
-**Mudança**: Hero section atualizada para ter background de largura total com conteúdo limitado a 1200px max-width
+**Mudança**: Trust indicator "Ficou em dúvida? Chama no WhatsApp" agora é totalmente clicável em toda a área do div
+**Arquivos Modificados**:
+
+- `front-page.php` - **UPDATED**: WhatsApp trust indicator agora é um link clicável em toda a área
+- `assets/css/homepage.css` - **UPDATED**: CSS atualizado para link styling e hover effects
+- `DESIGN-PROJECT-PLAN.md` - **UPDATED**: Documentação do projeto atualizada
+
+**Funcionalidades Implementadas**:
+
+- **NOVO**: Trust indicator WhatsApp agora é um link `<a>` em vez de `<div>`
+- **NOVO**: Toda a área do trust indicator é clicável (não apenas texto)
+- **NOVO**: Link abre WhatsApp em nova aba com número (16) 99162-6921
+- **NOVO**: Hover effects melhorados com transform e shadow
+- **NOVO**: Focus states para acessibilidade
+- **NOVO**: Aria-label para screen readers
+- **NOVO**: Cursor pointer para indicar que é clicável
+
+**Mudanças de UX**:
+
+- ✅ **Clickable Area**: Toda a área do trust indicator é clicável
+- ✅ **WhatsApp Integration**: Link direto para WhatsApp com número da empresa
+- ✅ **Hover Effects**: Transform translateY(-5px) e shadow verde
+- ✅ **Accessibility**: Aria-label e focus states implementados
+- ✅ **Visual Feedback**: Cursor pointer e transições suaves
+- ✅ **New Tab**: Abre WhatsApp em nova aba para não perder o usuário
+
+**Mudanças Técnicas**:
+
+- ✅ HTML alterado de `<div>` para `<a>` com href WhatsApp
+- ✅ CSS atualizado para link styling e hover states
+- ✅ Transições suaves mantidas com cubic-bezier
+- ✅ Focus states para navegação por teclado
+- ✅ Responsividade mantida em todos os dispositivos
+
+### ✅ Última Atualização: Hero Section Layout Updated
+
 **Arquivos Modificados**:
 
 - `front-page.php` - **UPDATED**: Estrutura do hero atualizada com hero-content-container

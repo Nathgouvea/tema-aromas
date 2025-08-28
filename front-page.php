@@ -26,28 +26,30 @@ get_header(); ?>
                 <div class="hero-overlay-left"></div>
             </div>
 
-            <div class="hero-content-left">
-                <div class="hero-text-left">
-                    <h1 class="hero-title-handwritten">
-                        <?php esc_html_e('Aromas que transformam ambientes', 'tema_aromas'); ?>
-                    </h1>
-                    <p class="hero-subtitle-elegant">
-                        <?php esc_html_e('Velas e aromas criados para o seu ritual de bem-estar.', 'tema_aromas'); ?>
-                    </p>
-                    <div class="hero-ctas-left">
-                        <a href="<?php echo esc_url(wc_get_page_permalink('shop')); ?>" class="btn-comprar-agora">
-                            <?php esc_html_e('Comprar Agora', 'tema_aromas'); ?>
-                        </a>
-                        <a href="<?php 
-                            $sobre_page = get_page_by_path('sobre-os-aromas');
-                            if ($sobre_page) {
-                                echo esc_url(get_permalink($sobre_page));
-                            } else {
-                                echo esc_url(home_url('/sobre-os-aromas/'));
-                            }
-                        ?>" class="btn-ver-colecoes">
-                            <?php esc_html_e('Ver Coleções', 'tema_aromas'); ?>
-                        </a>
+            <div class="hero-content-container">
+                <div class="hero-content-left">
+                    <div class="hero-text-left">
+                        <h1 class="hero-title-handwritten">
+                            <?php esc_html_e('Aromas que transformam ambientes', 'tema_aromas'); ?>
+                        </h1>
+                        <p class="hero-subtitle-elegant">
+                            <?php esc_html_e('Velas e aromas criados para o seu ritual de bem-estar.', 'tema_aromas'); ?>
+                        </p>
+                        <div class="hero-ctas-left">
+                            <a href="<?php echo esc_url(wc_get_page_permalink('shop')); ?>" class="btn-comprar-agora">
+                                <?php esc_html_e('Comprar Agora', 'tema_aromas'); ?>
+                            </a>
+                            <a href="<?php 
+                                $sobre_page = get_page_by_path('sobre-os-aromas');
+                                if ($sobre_page) {
+                                    echo esc_url(get_permalink($sobre_page));
+                                } else {
+                                    echo esc_url(home_url('/sobre-os-aromas/'));
+                                }
+                            ?>" class="btn-ver-colecoes">
+                                <?php esc_html_e('Ver Coleções', 'tema_aromas'); ?>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

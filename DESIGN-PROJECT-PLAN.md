@@ -10,17 +10,41 @@
 
 A loja online Zen Secrets possui uma estrutura técnica sólida baseada em WordPress/WooCommerce, mas apresenta problemas significativos de design e experiência do usuário que afetam as conversões e a percepção de marca premium. Como uma loja especializada em produtos aromáticos naturais focados no bem-estar, é essencial transmitir luxo e confiança.
 
-### ✅ Última Atualização: Typography & Branding Updates Implemented
+### ✅ Última Atualização: Hero Section Layout Updated
 
 **Data**: $(date)
-**Mudança**: Atualizações de tipografia e branding implementadas - fontes Quicksand para menu, Simonetta para hero, título atualizado
+**Mudança**: Hero section atualizada para ter background de largura total com conteúdo limitado a 1200px max-width
 **Arquivos Modificados**:
 
-- `header.php` - **UPDATED**: Título da página atualizado e fontes Google adicionadas
-- `front-page.php` - **UPDATED**: Texto hero alterado para "Aromas que transformam ambientes"
-- `assets/css/header.css` - **UPDATED**: Menu agora usa fonte Quicksand
-- `assets/css/homepage.css` - **UPDATED**: Hero title agora usa fonte Simonetta
+- `front-page.php` - **UPDATED**: Estrutura do hero atualizada com hero-content-container
+- `assets/css/homepage.css` - **UPDATED**: CSS atualizado para background full-width e conteúdo 1200px max-width
 - `DESIGN-PROJECT-PLAN.md` - **UPDATED**: Documentação do projeto atualizada
+
+**Funcionalidades Implementadas**:
+
+- **NOVO**: Background image agora ocupa largura total da viewport
+- **NOVO**: Conteúdo do hero limitado a container de 1200px max-width
+- **NOVO**: Conteúdo centralizado dentro do container de 1200px
+- **NOVO**: Estrutura CSS otimizada para responsividade
+- **NOVO**: Hero section mantém design luxury com melhor layout
+
+**Mudanças de Layout**:
+
+- ✅ **Background Image**: Agora ocupa 100vw (largura total da viewport)
+- ✅ **Content Container**: Limitado a 1200px max-width com margin: 0 auto
+- ✅ **Content Positioning**: Centralizado dentro do container de 1200px
+- ✅ **Responsive Design**: Mantém responsividade em todos os dispositivos
+- ✅ **Luxury Design**: Preserva todo o sistema de design premium
+
+**Mudanças Técnicas**:
+
+- ✅ Estrutura HTML atualizada com hero-content-container
+- ✅ CSS reorganizado para separar background de conteúdo
+- ✅ Container de 1200px implementado com flexbox para centralização
+- ✅ Background image mantém largura total sem restrições
+- ✅ Sistema de z-index mantido para overlay e conteúdo
+
+### ✅ Última Atualização: Typography & Branding Updates Implemented
 
 **Funcionalidades Implementadas**:
 

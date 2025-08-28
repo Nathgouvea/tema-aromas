@@ -58,7 +58,6 @@
   align-items: center;
   overflow: hidden;
   margin-top: 0; /* No negative margin needed with fixed header */
-  padding-top: 80px; /* Account for fixed header height */
   background: linear-gradient(
     135deg,
     rgba(0, 0, 0, 0.1) 0%,
@@ -101,11 +100,23 @@
   z-index: 2;
 }
 
+.hero-content-container {
+  position: relative;
+  z-index: 3;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--espacamento-lg);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 80px; /* Account for fixed header height */
+}
+
 .hero-content-left {
   position: relative;
   z-index: 3;
-  max-width: 600px;
-  margin-left: 10%;
+  max-width: 800px;
   padding: var(--espacamento-xxl) 0;
   margin-top: 0; /* Ensure content starts at proper position */
 }
@@ -1918,10 +1929,6 @@ section:nth-child(even) {
 }
 
 @media (min-width: 1024px) {
-  .hero-content-left {
-    margin-left: 10%;
-  }
-
   .trust-grid-horizontal {
     grid-template-columns: repeat(4, 1fr);
   }

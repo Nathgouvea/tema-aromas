@@ -350,3 +350,26 @@ if (file_exists(get_template_directory() . '/functions-seo.php')) {
 if (file_exists(get_template_directory() . '/performance-optimization.php')) {
     require_once get_template_directory() . '/performance-optimization.php';
 }
+
+/**
+ * Remove Downloads menu item from WooCommerce My Account navigation
+ */
+add_filter('woocommerce_account_menu_items', function($menu_items) {
+    // Remove the Downloads menu item
+    if (isset($menu_items['downloads'])) {
+        unset($menu_items['downloads']);
+    }
+    return $menu_items;
+}, 10, 1);
+
+/**
+ * Change "Visualizar" to "Ver" in orders table for better UX
+ */
+add_filter('gettext', function($translated_text, $text, $domain) {
+    if ($domain === 'woocommerce') {
+        if ($translated_text === 'Visualizar') {
+            return 'Ver';
+        }
+    }
+    return $translated_text;
+}, 10, 3);

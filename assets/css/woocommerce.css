@@ -1028,9 +1028,8 @@ section:has(> h2:contains("Best Quality Plants")) {
 
 .woocommerce-cart .cart-collaterals {
   display: grid;
-  grid-template-columns: 1fr 400px;
+  grid-template-columns: 1fr;
   gap: var(--espacamento-lg);
-  margin-top: var(--espacamento-lg);
 }
 
 @media (max-width: 767px) {

@@ -1433,7 +1433,7 @@ textarea.luxury-form-input {
   background: #ffffff;
   border: 1px solid #ecf0f1;
   padding: var(--espacamento-lg);
-  min-width: 280px;
+  min-width: 240px;
   border-radius: 16px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   flex-shrink: 0;
@@ -1597,7 +1597,7 @@ textarea.luxury-form-input {
 /* Ensure navigation takes proper width */
 .page-content .woocommerce .woocommerce-MyAccount-navigation {
   flex-shrink: 0 !important;
-  width: 280px !important;
+  width: 240px !important;
 }
 
 @media (max-width: 767px) {
@@ -1666,21 +1666,6 @@ textarea.luxury-form-input {
   border-bottom: 1px solid #f8f9fa;
   vertical-align: middle;
   color: #5a6c7d;
-}
-
-/* Enhanced Table Spacing - Less Compressed Layout */
-.woocommerce-orders-table th {
-  padding: var(--espacamento-lg) var(--espacamento-md) !important; /* Increased padding for better spacing */
-  font-size: 0.95rem !important; /* Slightly larger font for better readability */
-}
-
-.woocommerce-orders-table td {
-  padding: var(--espacamento-lg) var(--espacamento-md) !important; /* Increased padding for better spacing */
-  font-size: 0.95rem !important; /* Slightly larger font for better readability */
-}
-
-.woocommerce-orders-table {
-  margin: var(--espacamento-lg) 0 !important; /* Increased margin for better spacing */
 }
 
 .woocommerce-orders-table tr:hover {
@@ -1773,7 +1758,7 @@ textarea.luxury-form-input {
   padding: var(--espacamento-sm) var(--espacamento-md);
   font-size: 0.85rem;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 100px;
   transition: all 0.2s ease;
 }
 
@@ -1886,7 +1871,7 @@ textarea.luxury-form-input {
   color: #ffffff;
   border: none;
   padding: var(--espacamento-md) var(--espacamento-xl);
-  border-radius: 12px;
+  border-radius: 100px;
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
@@ -1934,7 +1919,7 @@ textarea.luxury-form-input {
   background: var(--cor-primaria);
   color: #ffffff;
   padding: var(--espacamento-sm) var(--espacamento-md);
-  border-radius: 8px;
+  border-radius: 100px;
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 500;

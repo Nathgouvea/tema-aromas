@@ -1587,6 +1587,17 @@ textarea.luxury-form-input {
   gap: var(--espacamento-xl) !important;
 }
 
+/* Override for cart page - use full width */
+.page-content .woocommerce.woocommerce-cart {
+  display: block !important;
+  flex-direction: unset !important;
+  align-items: unset !important;
+  gap: 0 !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 @media (max-width: 767px) {
   .page-content .woocommerce {
     flex-direction: column !important;

@@ -1003,14 +1003,33 @@ section:has(> h2:contains("Best Quality Plants")) {
    Cart Page
    ========================================================================== */
 
+/* Override the forced flexbox layout for cart page */
+.woocommerce-cart {
+  display: block !important;
+  flex-direction: unset !important;
+  align-items: unset !important;
+  gap: 0 !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Ensure cart content uses full width */
+.woocommerce-cart .woocommerce-cart-form {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 .woocommerce-cart table.cart {
-  width: 100%;
+  width: 100% !important;
   border-collapse: collapse;
-  margin-bottom: var(--espacamento-lg);
+  margin: 0 0 var(--espacamento-lg) 0 !important;
   background: var(--cor-fundo);
   border-radius: 12px;
   overflow: hidden;
   box-shadow: var(--sombra-sutil);
+  table-layout: auto;
 }
 
 .woocommerce-cart table.cart th,
@@ -1027,14 +1046,37 @@ section:has(> h2:contains("Best Quality Plants")) {
 }
 
 .woocommerce-cart .cart-collaterals {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--espacamento-lg);
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 @media (max-width: 767px) {
   .woocommerce-cart .cart-collaterals {
-    grid-template-columns: 1fr;
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Mobile cart layout adjustments */
+  .woocommerce-cart {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  .woocommerce-cart table.cart {
+    width: 100% !important;
+    margin: 0 0 var(--espacamento-md) 0 !important;
+    font-size: 0.9rem;
+  }
+  
+  .woocommerce-cart .cart_totals {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: var(--espacamento-md) !important;
   }
 }
 
@@ -1043,6 +1085,9 @@ section:has(> h2:contains("Best Quality Plants")) {
   border-radius: 12px;
   padding: var(--espacamento-lg);
   box-shadow: var(--sombra-sutil);
+  width: 100%;
+  margin: 0;
+  float: none;
 }
 
 .woocommerce-cart .cart_totals h2 {

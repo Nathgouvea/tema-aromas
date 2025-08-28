@@ -1579,27 +1579,26 @@ textarea.luxury-form-input {
   }
 }
 
-/* Force 2-column layout for WooCommerce content */
-.page-content .woocommerce {
+/* Force 2-column layout for WooCommerce My Account pages only */
+.page-content .woocommerce:not(.woocommerce-cart):not(.woocommerce-checkout):not(.woocommerce-shop) {
   display: flex !important;
   flex-direction: row !important;
   align-items: flex-start !important;
   gap: var(--espacamento-xl) !important;
 }
 
-/* Override for cart page - use full width */
-.page-content .woocommerce.woocommerce-cart {
+/* Cart, Checkout, and Shop pages use full width by default */
+.page-content .woocommerce.woocommerce-cart,
+.page-content .woocommerce.woocommerce-checkout,
+.page-content .woocommerce.woocommerce-shop {
   display: block !important;
-  flex-direction: unset !important;
-  align-items: unset !important;
-  gap: 0 !important;
   width: 100% !important;
   margin: 0 !important;
   padding: 0 !important;
 }
 
 @media (max-width: 767px) {
-  .page-content .woocommerce {
+  .page-content .woocommerce:not(.woocommerce-cart):not(.woocommerce-checkout):not(.woocommerce-shop) {
     flex-direction: column !important;
     gap: var(--espacamento-lg) !important;
   }

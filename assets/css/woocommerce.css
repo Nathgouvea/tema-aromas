@@ -1003,19 +1003,8 @@ section:has(> h2:contains("Best Quality Plants")) {
    Cart Page
    ========================================================================== */
 
-/* Override the forced flexbox layout for cart page */
+/* Cart page uses full width layout */
 .woocommerce-cart {
-  display: block !important;
-  flex-direction: unset !important;
-  align-items: unset !important;
-  gap: 0 !important;
-  width: 100% !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* Ensure cart content uses full width */
-.woocommerce-cart .woocommerce-cart-form {
   width: 100% !important;
   margin: 0 !important;
   padding: 0 !important;

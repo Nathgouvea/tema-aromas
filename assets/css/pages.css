@@ -1668,6 +1668,21 @@ textarea.luxury-form-input {
   color: #5a6c7d;
 }
 
+/* Enhanced Table Spacing - Less Compressed Layout */
+.woocommerce-orders-table th {
+  padding: var(--espacamento-lg) var(--espacamento-md) !important; /* Increased padding for better spacing */
+  font-size: 0.95rem !important; /* Slightly larger font for better readability */
+}
+
+.woocommerce-orders-table td {
+  padding: var(--espacamento-lg) var(--espacamento-md) !important; /* Increased padding for better spacing */
+  font-size: 0.95rem !important; /* Slightly larger font for better readability */
+}
+
+.woocommerce-orders-table {
+  margin: var(--espacamento-lg) 0 !important; /* Increased margin for better spacing */
+}
+
 .woocommerce-orders-table tr:hover {
   background: #f8f9fa;
 }

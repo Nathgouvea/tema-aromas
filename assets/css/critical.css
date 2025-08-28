@@ -11,6 +11,7 @@
   --cor-fundo: #ffffff;
   --cor-borda: #e6e6e6;
   --cor-accent: #8b5fd6;
+  --cor-gold: #d4af37;
   --espacamento-xs: 0.5rem;
   --espacamento-sm: 1rem;
   --espacamento-md: 1.5rem;
@@ -20,6 +21,7 @@
   --transicao-rapida: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --transicao-suave: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --sombra-luxo: 0 8px 32px rgba(107, 79, 196, 0.12);
+  --sombra-sutil: 0 2px 8px rgba(0, 0, 0, 0.08);
   --gradiente-luxo: linear-gradient(135deg, #6b4fc4 0%, #8b5fd6 100%);
 }
 

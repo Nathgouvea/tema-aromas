@@ -1053,6 +1053,277 @@ section:has(> h2:contains("Best Quality Plants")) {
 }
 
 /* ==========================================================================
+   Cart Totals - Luxury Styling
+   ========================================================================== */
+
+/* Cart totals table styling */
+.woocommerce-cart .cart_totals table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--espacamento-lg);
+}
+
+.woocommerce-cart .cart_totals table th,
+.woocommerce-cart .cart_totals table td {
+  padding: var(--espacamento-sm) 0;
+  text-align: left;
+  border-bottom: 1px solid var(--cor-borda);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.woocommerce-cart .cart_totals table th {
+  font-weight: 600;
+  color: var(--cor-texto);
+  width: 40%;
+}
+
+.woocommerce-cart .cart_totals table td {
+  font-weight: 500;
+  color: var(--cor-primaria);
+  text-align: right;
+}
+
+/* Subtotal row */
+.woocommerce-cart .cart_totals .cart-subtotal th,
+.woocommerce-cart .cart_totals .cart-subtotal td {
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: var(--espacamento-md) 0;
+}
+
+/* Shipping row */
+.woocommerce-cart .cart_totals .shipping th,
+.woocommerce-cart .cart_totals .shipping td {
+  font-size: 1rem;
+  padding: var(--espacamento-sm) 0;
+}
+
+.woocommerce-cart .cart_totals .shipping th {
+  color: var(--cor-texto);
+  font-weight: 500;
+}
+
+.woocommerce-cart .cart_totals .shipping td {
+  color: var(--cor-primaria);
+  font-weight: 500;
+}
+
+/* Order total row */
+.woocommerce-cart .cart_totals .order-total th,
+.woocommerce-cart .cart_totals .order-total td {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--cor-primaria);
+  padding: var(--espacamento-md) 0;
+  border-bottom: 2px solid var(--cor-primaria);
+}
+
+/* Shipping address display */
+.woocommerce-cart .cart_totals .shipping-address {
+  background: rgba(107, 79, 196, 0.05);
+  border-radius: 8px;
+  padding: var(--espacamento-md);
+  margin: var(--espacamento-md) 0;
+  border-left: 3px solid var(--cor-primaria);
+}
+
+.woocommerce-cart .cart_totals .shipping-address p {
+  margin: 0;
+  color: var(--cor-texto);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.woocommerce-cart .cart_totals .shipping-address strong {
+  color: var(--cor-primaria);
+  font-weight: 600;
+}
+
+/* Change address link */
+.woocommerce-cart .cart_totals .change-address-link {
+  display: inline-block;
+  margin-top: var(--espacamento-sm);
+  color: var(--cor-accent);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: var(--transicao-rapida);
+}
+
+.woocommerce-cart .cart_totals .change-address-link:hover {
+  color: var(--cor-primaria);
+  text-decoration: underline;
+}
+
+/* Checkout button */
+.woocommerce-cart .cart_totals .wc-proceed-to-checkout {
+  margin-top: var(--espacamento-lg);
+  text-align: center;
+}
+
+/* Ensure the button container is properly styled */
+.woocommerce-cart .cart_totals .wc-proceed-to-checkout .checkout-button,
+.woocommerce-cart .cart_totals .wc-proceed-to-checkout input[type="submit"],
+.woocommerce-cart .cart_totals .wc-proceed-to-checkout button,
+.woocommerce-cart .cart_totals .wc-proceed-to-checkout a.button,
+.woocommerce-cart .cart_totals .wc-proceed-to-checkout .button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: auto !important;
+  min-width: 200px !important;
+  max-width: none !important;
+  background: var(--gradiente-luxo) !important;
+  color: var(--cor-fundo) !important;
+  border: none !important;
+  padding: 12px 32px !important;
+  border-radius: 100px !important;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif !important;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  text-align: center !important;
+  line-height: 1.2 !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: var(--sombra-luxo) !important;
+  cursor: pointer !important;
+  position: relative !important;
+  overflow: visible !important;
+  white-space: normal !important;
+  box-sizing: border-box !important;
+}
+
+/* Additional WooCommerce button overrides */
+.woocommerce-cart .cart_totals .wc-proceed-to-checkout * {
+  box-sizing: border-box !important;
+}
+
+/* Force button styling on all possible WooCommerce button elements */
+.woocommerce-cart .cart_totals .wc-proceed-to-checkout .checkout-button,
+.woocommerce-cart .cart_totals .wc-proceed-to-checkout input[type="submit"],
+.woocommerce-cart .cart_totals .wc-proceed-to-checkout button,
+.woocommerce-cart .cart_totals .wc-proceed-to-checkout a.button,
+.woocommerce-cart .cart_totals .wc-proceed-to-checkout .button,
+.woocommerce-cart .cart_totals .wc-proceed-to-checkout .woocommerce-button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: auto !important;
+  min-width: 200px !important;
+  max-width: none !important;
+  background: var(--gradiente-luxo) !important;
+  color: var(--cor-fundo) !important;
+  border: none !important;
+  padding: 12px 32px !important;
+  border-radius: 100px !important;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif !important;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  text-align: center !important;
+  line-height: 1.2 !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: var(--sombra-luxo) !important;
+  cursor: pointer !important;
+  position: relative !important;
+  overflow: visible !important;
+  white-space: normal !important;
+  box-sizing: border-box !important;
+}
+
+.woocommerce-cart
+  .cart_totals
+  .wc-proceed-to-checkout
+  .checkout-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.woocommerce-cart
+  .cart_totals
+  .wc-proceed-to-checkout
+  .checkout-button:hover::before {
+  left: 100%;
+}
+
+.woocommerce-cart .cart_totals .wc-proceed-to-checkout .checkout-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 48px rgba(107, 79, 196, 0.4);
+  color: var(--cor-fundo);
+}
+
+/* Tax display */
+.woocommerce-cart .cart_totals .tax-total {
+  background: rgba(212, 175, 55, 0.1);
+  border-radius: 8px;
+  padding: var(--espacamento-sm) var(--espacamento-md);
+  margin: var(--espacamento-sm) 0;
+  border-left: 3px solid var(--cor-gold);
+}
+
+.woocommerce-cart .cart_totals .tax-total th,
+.woocommerce-cart .cart_totals .tax-total td {
+  border: none;
+  padding: var(--espacamento-xs) 0;
+  background: transparent;
+}
+
+.woocommerce-cart .cart_totals .tax-total th {
+  color: var(--cor-texto);
+  font-weight: 500;
+}
+
+.woocommerce-cart .cart_totals .tax-total td {
+  color: var(--cor-gold);
+  font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .woocommerce-cart .cart_totals table th,
+  .woocommerce-cart .cart_totals table td {
+    font-size: 0.9rem;
+    padding: var(--espacamento-xs) 0;
+  }
+
+  .woocommerce-cart .cart_totals .order-total th,
+  .woocommerce-cart .cart_totals .order-total td {
+    font-size: 1.1rem;
+  }
+
+  .woocommerce-cart .cart_totals .shipping-address {
+    padding: var(--espacamento-sm);
+  }
+
+  /* Mobile button adjustments */
+  .woocommerce-cart .cart_totals .wc-proceed-to-checkout .checkout-button,
+  .woocommerce-cart .cart_totals .wc-proceed-to-checkout input[type="submit"],
+  .woocommerce-cart .cart_totals .wc-proceed-to-checkout button,
+  .woocommerce-cart .cart_totals .wc-proceed-to-checkout a.button,
+  .woocommerce-cart .cart_totals .wc-proceed-to-checkout .button,
+  .woocommerce-cart .cart_totals .wc-proceed-to-checkout .woocommerce-button {
+    min-width: 100% !important;
+    width: 100% !important;
+    padding: 16px 24px !important;
+    font-size: 1rem !important;
+  }
+}
+
+/* ==========================================================================
    Checkout Page
    ========================================================================== */
 

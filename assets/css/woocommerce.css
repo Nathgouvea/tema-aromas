@@ -1010,6 +1010,37 @@ section:has(> h2:contains("Best Quality Plants")) {
   padding: 0 !important;
 }
 
+/* Ensure cart form and continue shopping button are aligned */
+.woocommerce-cart .woocommerce-cart-form {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Override any internal WooCommerce cart form padding */
+.woocommerce-cart .woocommerce-cart-form__contents {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.woocommerce-cart .cart-collaterals {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Align continue shopping button with cart form */
+.continue-shopping {
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: left;
+}
+
+.continue-shopping .btn-luxury-outline {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
 .woocommerce-cart table.cart {
   width: 100% !important;
   border-collapse: collapse;
@@ -1019,6 +1050,17 @@ section:has(> h2:contains("Best Quality Plants")) {
   overflow: hidden;
   box-shadow: var(--sombra-sutil);
   table-layout: auto;
+}
+
+/* Ensure cart form area has no left padding */
+.woocommerce-cart .woocommerce-cart-form__contents {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
+.woocommerce-cart .cart-collaterals {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
 }
 
 .woocommerce-cart table.cart th,

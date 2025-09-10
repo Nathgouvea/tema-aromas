@@ -128,12 +128,24 @@ get_header(); ?>
                         <div class="faq-questions">
                             <div class="faq-item">
                                 <button class="faq-question" aria-expanded="false">
-                                    <span class="faq-question-text">Qual o prazo para trocar ou devolver?</span>
+                                    <span class="faq-question-text">Posso trocar ou devolver um produto?</span>
                                     <span class="faq-icon">+</span>
                                 </button>
                                 <div class="faq-answer">
-                                    <p>Você tem 7 dias corridos após o recebimento do produto para solicitar 
-                                    troca ou devolução. O produto deve estar em perfeito estado.</p>
+                                    <p>Para trocas e devoluções, é necessário entrar em contato conosco primeiro 
+                                    via WhatsApp (16) 99162-6921 para verificar se é possível. Cada caso é 
+                                    analisado individualmente.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <button class="faq-question" aria-expanded="false">
+                                    <span class="faq-question-text">Qual o prazo para solicitar?</span>
+                                    <span class="faq-icon">+</span>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Entre em contato conosco o mais rápido possível após o recebimento do 
+                                    produto. O prazo pode variar conforme o caso específico.</p>
                                 </div>
                             </div>
 
@@ -143,8 +155,8 @@ get_header(); ?>
                                     <span class="faq-icon">+</span>
                                 </button>
                                 <div class="faq-answer">
-                                    <p>Se for por defeito nosso ou erro no pedido, nós pagamos. Se for por 
-                                    arrependimento, o cliente paga o frete de volta.</p>
+                                    <p>Depende do motivo da devolução. Se for por defeito nosso ou erro no pedido, 
+                                    nós pagamos. Se for por arrependimento, o cliente paga o frete de volta.</p>
                                 </div>
                             </div>
 
@@ -156,17 +168,6 @@ get_header(); ?>
                                 <div class="faq-answer">
                                     <p>O reembolso é feito na mesma forma de pagamento: cartão (1-2 faturas), 
                                     PIX (até 1 dia útil), boleto (até 3 dias úteis).</p>
-                                </div>
-                            </div>
-
-                            <div class="faq-item">
-                                <button class="faq-question" aria-expanded="false">
-                                    <span class="faq-question-text">Posso trocar por outro produto?</span>
-                                    <span class="faq-icon">+</span>
-                                </button>
-                                <div class="faq-answer">
-                                    <p>Sim! Você pode trocar por outro produto do mesmo valor ou pagar a diferença 
-                                    se escolher algo mais caro.</p>
                                 </div>
                             </div>
                         </div>

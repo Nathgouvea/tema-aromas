@@ -134,8 +134,6 @@ function tema_aromas_scripts() {
     if (is_page_template([
         'page-politica-privacidade.php',
         'page-termos-condicoes.php', 
-        'page-trocas-devolucoes.php',
-        'page-envio-entrega.php',
         'page-faq.php'
     ])) {
         wp_enqueue_style(

@@ -129,8 +129,6 @@
                     <ul class="legal-menu">
                         <li><a href="<?php echo esc_url(get_permalink(get_page_by_path('politica-privacidade'))); ?>"><?php esc_html_e('Política de Privacidade', 'tema_aromas'); ?></a></li>
                         <li><a href="<?php echo esc_url(get_permalink(get_page_by_path('termos-condicoes'))); ?>"><?php esc_html_e('Termos e Condições', 'tema_aromas'); ?></a></li>
-                        <li><a href="<?php echo esc_url(get_permalink(get_page_by_path('trocas-devolucoes'))); ?>"><?php esc_html_e('Trocas e Devoluções', 'tema_aromas'); ?></a></li>
-                        <li><a href="<?php echo esc_url(get_permalink(get_page_by_path('envio-entrega'))); ?>"><?php esc_html_e('Envio e Entrega', 'tema_aromas'); ?></a></li>
                         <li><a href="<?php echo esc_url(get_permalink(get_page_by_path('faq'))); ?>"><?php esc_html_e('FAQ', 'tema_aromas'); ?></a></li>
                     </ul>
                 </nav>

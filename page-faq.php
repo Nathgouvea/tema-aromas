@@ -407,10 +407,12 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Toggle current item
             if (isExpanded) {
+                console.log('Closing FAQ item');
                 this.setAttribute('aria-expanded', 'false');
                 faqItem.classList.remove('active');
                 icon.textContent = '+';
             } else {
+                console.log('Opening FAQ item');
                 this.setAttribute('aria-expanded', 'true');
                 faqItem.classList.add('active');
                 icon.textContent = '−';

@@ -645,7 +645,7 @@
 }
 
 .faq-item.active .faq-answer {
-  display: block;
+  display: block !important;
   padding: var(--espacamento-md) var(--espacamento-lg) var(--espacamento-lg);
   animation: fadeInUp 0.3s ease;
 }

@@ -1,0 +1,939 @@
+/*!
+ * Tema Aromas - Legal Pages CSS
+ * Professional styling for legal and policy pages
+ * Version: 1.0.0
+ */
+
+/* ==========================================================================
+   Legal Pages Layout
+   ========================================================================== */
+
+.legal-content-section {
+  padding: var(--espacamento-xxl) 0;
+  background: linear-gradient(135deg, #fafbfc 0%, #f8f9fa 100%);
+  min-height: 100vh;
+}
+
+.legal-content {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.legal-intro {
+  margin-bottom: var(--espacamento-xxl);
+  text-align: center;
+  background: linear-gradient(135deg, rgba(107, 79, 196, 0.05) 0%, rgba(139, 95, 214, 0.05) 100%);
+  border-radius: 24px;
+  padding: var(--espacamento-xxl);
+  border: 2px solid rgba(107, 79, 196, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.legal-intro::before {
+  content: "💜";
+  position: absolute;
+  top: var(--espacamento-lg);
+  right: var(--espacamento-lg);
+  font-size: 3rem;
+  opacity: 0.3;
+}
+
+.legal-intro-text {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: var(--cor-texto);
+  max-width: 800px;
+  margin: 0 auto;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   Legal Sections
+   ========================================================================== */
+
+.legal-sections {
+  margin-bottom: var(--espacamento-xxl);
+  display: grid;
+  gap: var(--espacamento-xl);
+}
+
+.legal-section {
+  background: linear-gradient(135deg, rgba(107, 79, 196, 0.02) 0%, rgba(139, 95, 214, 0.02) 100%);
+  border-radius: 24px;
+  padding: var(--espacamento-xxl);
+  border-left: 4px solid var(--cor-primaria);
+  position: relative;
+  overflow: hidden;
+}
+
+.legal-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, rgba(107, 79, 196, 0.1) 0%, rgba(139, 95, 214, 0.1) 100%);
+  border-radius: 50%;
+  transform: translate(30px, -30px);
+}
+
+.legal-section-title {
+  font-family: var(--fonte-titulo);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--cor-primaria);
+  margin-bottom: var(--espacamento-lg);
+  position: relative;
+  display: inline-block;
+}
+
+.legal-section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--gradiente-luxo);
+  border-radius: 2px;
+}
+
+.legal-section-content {
+  color: var(--cor-texto);
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.legal-section-content h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--cor-primaria);
+  margin: var(--espacamento-xl) 0 var(--espacamento-md) 0;
+  position: relative;
+  padding-left: var(--espacamento-lg);
+}
+
+.legal-section-content h3::before {
+  content: "✨";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.2rem;
+}
+
+.legal-section-content h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--cor-primaria);
+  margin: var(--espacamento-lg) 0 var(--espacamento-sm) 0;
+  display: flex;
+  align-items: center;
+  gap: var(--espacamento-sm);
+}
+
+.legal-section-content ul,
+.legal-section-content ol {
+  margin: var(--espacamento-lg) 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.legal-section-content li {
+  margin-bottom: var(--espacamento-md);
+  color: var(--cor-texto);
+  padding: var(--espacamento-md);
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  border-left: 3px solid var(--cor-primaria);
+  position: relative;
+  padding-left: calc(var(--espacamento-lg) + 20px);
+  transition: var(--transicao-suave);
+}
+
+.legal-section-content li:hover {
+  background: rgba(107, 79, 196, 0.05);
+  transform: translateX(4px);
+}
+
+.legal-section-content li::before {
+  content: "🌸";
+  position: absolute;
+  left: var(--espacamento-md);
+  top: var(--espacamento-md);
+  font-size: 1.1rem;
+}
+
+.legal-section-content p {
+  margin-bottom: var(--espacamento-lg);
+  color: var(--cor-texto);
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* ==========================================================================
+   Special Elements
+   ========================================================================== */
+
+.highlight-box {
+  background: linear-gradient(
+    135deg,
+    rgba(107, 79, 196, 0.1) 0%,
+    rgba(139, 95, 214, 0.1) 100%
+  );
+  border: 1px solid var(--cor-primaria);
+  border-radius: 12px;
+  padding: var(--espacamento-lg);
+  margin: var(--espacamento-md) 0;
+  text-align: center;
+}
+
+.highlight-box h3 {
+  color: var(--cor-primaria);
+  margin-bottom: var(--espacamento-sm);
+  font-size: 1.25rem;
+}
+
+.contact-info {
+  background: rgba(107, 79, 196, 0.05);
+  border-radius: 12px;
+  padding: var(--espacamento-lg);
+  margin: var(--espacamento-md) 0;
+}
+
+.contact-info p {
+  margin-bottom: var(--espacamento-sm);
+  font-weight: 500;
+}
+
+.contact-info strong {
+  color: var(--cor-primaria);
+}
+
+/* ==========================================================================
+   Process Steps (Returns Page)
+   ========================================================================== */
+
+.process-steps {
+  margin: var(--espacamento-xl) 0;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--espacamento-lg);
+  margin-bottom: var(--espacamento-xl);
+  padding: var(--espacamento-lg);
+  background: var(--cor-fundo);
+  border-radius: 16px;
+  box-shadow: var(--sombra-sutil);
+  border: 1px solid var(--cor-borda);
+  transition: var(--transicao-suave);
+}
+
+.step:hover {
+  box-shadow: var(--sombra-luxo);
+  transform: translateY(-2px);
+}
+
+.step-number {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  background: var(--gradiente-luxo);
+  color: var(--cor-fundo);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+
+.step-content h4 {
+  color: var(--cor-primaria);
+  margin-bottom: var(--espacamento-sm);
+  font-size: 1.25rem;
+}
+
+.step-content p {
+  margin-bottom: var(--espacamento-sm);
+  color: var(--cor-texto);
+}
+
+.step-content ul {
+  margin: var(--espacamento-sm) 0;
+  padding-left: var(--espacamento-lg);
+}
+
+.step-content li {
+  margin-bottom: var(--espacamento-xs);
+  color: var(--cor-texto);
+}
+
+.return-address {
+  background: rgba(107, 79, 196, 0.05);
+  border-radius: 8px;
+  padding: var(--espacamento-md);
+  margin: var(--espacamento-sm) 0;
+  font-family: monospace;
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   Shipping Costs (Returns Page)
+   ========================================================================== */
+
+.shipping-costs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--espacamento-lg);
+  margin: var(--espacamento-lg) 0;
+}
+
+.cost-item {
+  padding: var(--espacamento-lg);
+  border-radius: 12px;
+  border: 1px solid var(--cor-borda);
+  background: var(--cor-fundo);
+}
+
+.cost-item h4 {
+  color: var(--cor-primaria);
+  margin-bottom: var(--espacamento-sm);
+  font-size: 1.125rem;
+}
+
+.cost-item p {
+  margin-bottom: var(--espacamento-sm);
+  font-weight: 500;
+}
+
+.cost-item ul {
+  margin: var(--espacamento-sm) 0;
+  padding-left: var(--espacamento-lg);
+}
+
+.cost-item li {
+  margin-bottom: var(--espacamento-xs);
+  color: var(--cor-texto);
+}
+
+/* ==========================================================================
+   Delivery Times (Shipping Page)
+   ========================================================================== */
+
+.delivery-times {
+  margin: var(--espacamento-xl) 0;
+}
+
+.delivery-region {
+  margin-bottom: var(--espacamento-xl);
+  padding: var(--espacamento-lg);
+  background: var(--cor-fundo);
+  border-radius: 16px;
+  box-shadow: var(--sombra-sutil);
+  border: 1px solid var(--cor-borda);
+}
+
+.delivery-region h3 {
+  color: var(--cor-primaria);
+  margin-bottom: var(--espacamento-md);
+  font-size: 1.25rem;
+}
+
+.delivery-region ul {
+  margin: var(--espacamento-sm) 0;
+  padding-left: var(--espacamento-lg);
+}
+
+.delivery-region li {
+  margin-bottom: var(--espacamento-xs);
+  color: var(--cor-texto);
+}
+
+.delivery-region strong {
+  color: var(--cor-primaria);
+}
+
+.delivery-note {
+  background: rgba(255, 193, 7, 0.1);
+  border: 1px solid #ffc107;
+  border-radius: 12px;
+  padding: var(--espacamento-lg);
+  margin: var(--espacamento-lg) 0;
+}
+
+.delivery-note p {
+  margin-bottom: var(--espacamento-sm);
+  font-weight: 500;
+  color: var(--cor-texto);
+}
+
+.delivery-note ul {
+  margin: var(--espacamento-sm) 0;
+  padding-left: var(--espacamento-lg);
+}
+
+.delivery-note li {
+  margin-bottom: var(--espacamento-xs);
+  color: var(--cor-texto);
+}
+
+/* ==========================================================================
+   Shipping Modes (Shipping Page)
+   ========================================================================== */
+
+.shipping-modes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--espacamento-lg);
+  margin: var(--espacamento-xl) 0;
+}
+
+.shipping-mode {
+  padding: var(--espacamento-lg);
+  background: var(--cor-fundo);
+  border-radius: 16px;
+  box-shadow: var(--sombra-sutil);
+  border: 1px solid var(--cor-borda);
+  transition: var(--transicao-suave);
+}
+
+.shipping-mode:hover {
+  box-shadow: var(--sombra-luxo);
+  transform: translateY(-2px);
+}
+
+.shipping-mode h3 {
+  color: var(--cor-primaria);
+  margin-bottom: var(--espacamento-md);
+  font-size: 1.25rem;
+}
+
+.shipping-mode ul {
+  margin: var(--espacamento-sm) 0;
+  padding-left: var(--espacamento-lg);
+}
+
+.shipping-mode li {
+  margin-bottom: var(--espacamento-xs);
+  color: var(--cor-texto);
+}
+
+.shipping-mode strong {
+  color: var(--cor-primaria);
+}
+
+/* ==========================================================================
+   Delivery Status (Shipping Page)
+   ========================================================================== */
+
+.delivery-status {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacamento-md);
+  margin: var(--espacamento-lg) 0;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: var(--espacamento-sm);
+  padding: var(--espacamento-sm) var(--espacamento-md);
+  background: rgba(107, 79, 196, 0.1);
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.status-icon {
+  font-size: 1.2rem;
+}
+
+.status-text {
+  color: var(--cor-texto);
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   Free Shipping (Shipping Page)
+   ========================================================================== */
+
+.free-shipping {
+  background: linear-gradient(
+    135deg,
+    rgba(107, 79, 196, 0.1) 0%,
+    rgba(139, 95, 214, 0.1) 100%
+  );
+  border: 2px solid var(--cor-primaria);
+  border-radius: 16px;
+  padding: var(--espacamento-xl);
+  margin: var(--espacamento-lg) 0;
+  text-align: center;
+}
+
+.free-shipping h4 {
+  color: var(--cor-primaria);
+  margin-bottom: var(--espacamento-sm);
+  font-size: 1.5rem;
+}
+
+.free-shipping p {
+  margin-bottom: var(--espacamento-sm);
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.free-shipping em {
+  color: var(--cor-accent);
+  font-style: italic;
+}
+
+/* ==========================================================================
+   Tips Grid (Returns Page)
+   ========================================================================== */
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--espacamento-lg);
+  margin: var(--espacamento-xl) 0;
+}
+
+.tip-item {
+  padding: var(--espacamento-lg);
+  background: var(--cor-fundo);
+  border-radius: 16px;
+  box-shadow: var(--sombra-sutil);
+  border: 1px solid var(--cor-borda);
+  transition: var(--transicao-suave);
+  text-align: center;
+}
+
+.tip-item:hover {
+  box-shadow: var(--sombra-luxo);
+  transform: translateY(-2px);
+}
+
+.tip-item h4 {
+  color: var(--cor-primaria);
+  margin-bottom: var(--espacamento-sm);
+  font-size: 1.125rem;
+}
+
+.tip-item p {
+  color: var(--cor-texto);
+  margin: 0;
+}
+
+/* ==========================================================================
+   Contact Methods
+   ========================================================================== */
+
+.contact-methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--espacamento-lg);
+  margin: var(--espacamento-xl) 0;
+}
+
+.contact-method {
+  padding: var(--espacamento-lg);
+  background: var(--cor-fundo);
+  border-radius: 16px;
+  box-shadow: var(--sombra-sutil);
+  border: 1px solid var(--cor-borda);
+  text-align: center;
+  transition: var(--transicao-suave);
+}
+
+.contact-method:hover {
+  box-shadow: var(--sombra-luxo);
+  transform: translateY(-2px);
+}
+
+.contact-method h4 {
+  color: var(--cor-primaria);
+  margin-bottom: var(--espacamento-sm);
+  font-size: 1.125rem;
+}
+
+.contact-method p {
+  margin-bottom: var(--espacamento-xs);
+  color: var(--cor-texto);
+}
+
+.contact-method strong {
+  color: var(--cor-primaria);
+  font-weight: 600;
+}
+
+.response-time {
+  background: rgba(107, 79, 196, 0.05);
+  border-radius: 12px;
+  padding: var(--espacamento-lg);
+  margin: var(--espacamento-lg) 0;
+}
+
+.response-time h4 {
+  color: var(--cor-primaria);
+  margin-bottom: var(--espacamento-md);
+  font-size: 1.125rem;
+}
+
+.response-time ul {
+  margin: var(--espacamento-sm) 0;
+  padding-left: var(--espacamento-lg);
+}
+
+.response-time li {
+  margin-bottom: var(--espacamento-xs);
+  color: var(--cor-texto);
+}
+
+.response-time strong {
+  color: var(--cor-primaria);
+}
+
+/* ==========================================================================
+   FAQ Page Styles
+   ========================================================================== */
+
+.faq-content-section {
+  padding: var(--espacamento-xxl) 0;
+  background: var(--cor-fundo);
+}
+
+.faq-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 var(--espacamento-md);
+}
+
+.faq-intro {
+  margin-bottom: var(--espacamento-xxl);
+  text-align: center;
+}
+
+.faq-intro-text {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--cor-texto);
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.faq-categories {
+  margin-bottom: var(--espacamento-xxl);
+}
+
+.faq-category {
+  margin-bottom: var(--espacamento-xl);
+}
+
+.faq-category-title {
+  font-family: var(--fonte-titulo);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--cor-primaria);
+  margin-bottom: var(--espacamento-lg);
+  padding: var(--espacamento-md) var(--espacamento-lg);
+  background: linear-gradient(
+    135deg,
+    rgba(107, 79, 196, 0.1) 0%,
+    rgba(139, 95, 214, 0.1) 100%
+  );
+  border-radius: 12px;
+  border: 1px solid var(--cor-borda);
+}
+
+.faq-questions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacamento-sm);
+}
+
+.faq-item {
+  background: var(--cor-fundo);
+  border-radius: 12px;
+  box-shadow: var(--sombra-sutil);
+  border: 1px solid var(--cor-borda);
+  overflow: hidden;
+  transition: var(--transicao-suave);
+}
+
+.faq-item:hover {
+  box-shadow: var(--sombra-luxo);
+}
+
+.faq-item.active {
+  box-shadow: var(--sombra-luxo);
+  border-color: var(--cor-primaria);
+}
+
+.faq-question {
+  width: 100%;
+  padding: var(--espacamento-lg);
+  background: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: var(--transicao-rapida);
+  font-family: var(--fonte-principal);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--cor-texto);
+}
+
+.faq-question:hover {
+  background: rgba(107, 79, 196, 0.05);
+}
+
+.faq-question-text {
+  flex: 1;
+  margin-right: var(--espacamento-md);
+}
+
+.faq-icon {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--cor-primaria);
+  transition: var(--transicao-rapida);
+  min-width: 24px;
+  text-align: center;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  padding: 0 var(--espacamento-lg) var(--espacamento-lg);
+  color: var(--cor-texto);
+  line-height: 1.7;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px;
+  padding: 0 var(--espacamento-lg) var(--espacamento-lg);
+}
+
+.faq-answer p {
+  margin-bottom: var(--espacamento-sm);
+}
+
+.faq-answer ul {
+  margin: var(--espacamento-sm) 0;
+  padding-left: var(--espacamento-lg);
+}
+
+.faq-answer li {
+  margin-bottom: var(--espacamento-xs);
+}
+
+.faq-contact-cta {
+  text-align: center;
+  padding: var(--espacamento-xxl);
+  background: linear-gradient(
+    135deg,
+    rgba(107, 79, 196, 0.05) 0%,
+    rgba(139, 95, 214, 0.05) 100%
+  );
+  border-radius: 20px;
+  border: 1px solid var(--cor-borda);
+  margin-top: var(--espacamento-xxl);
+}
+
+.faq-contact-cta h3 {
+  font-family: var(--fonte-titulo);
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--cor-primaria);
+  margin-bottom: var(--espacamento-md);
+}
+
+.faq-contact-cta p {
+  font-size: 1.125rem;
+  color: var(--cor-texto);
+  margin-bottom: var(--espacamento-xl);
+}
+
+.faq-contact-buttons {
+  display: flex;
+  gap: var(--espacamento-lg);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.faq-contact-buttons .btn-whatsapp,
+.faq-contact-buttons .btn-luxury {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espacamento-sm);
+  padding: var(--espacamento-md) var(--espacamento-xl);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 100px;
+  transition: var(--transicao-suave);
+  min-width: 160px;
+  justify-content: center;
+}
+
+.faq-contact-buttons .btn-whatsapp {
+  background: #25d366;
+  color: white;
+  border: none;
+}
+
+.faq-contact-buttons .btn-whatsapp:hover {
+  background: #128c7e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
+}
+
+.faq-contact-buttons .btn-luxury.secondary {
+  background: transparent;
+  color: var(--cor-primaria);
+  border: 2px solid var(--cor-primaria);
+}
+
+.faq-contact-buttons .btn-luxury.secondary:hover {
+  background: var(--cor-primaria);
+  color: var(--cor-fundo);
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-luxo);
+}
+
+/* ==========================================================================
+   Legal Footer
+   ========================================================================== */
+
+.legal-footer {
+  margin-top: var(--espacamento-xxl);
+  padding-top: var(--espacamento-xl);
+  border-top: 1px solid var(--cor-borda);
+  text-align: center;
+}
+
+.last-updated {
+  font-size: 0.9rem;
+  color: var(--cor-accent);
+  margin-bottom: var(--espacamento-sm);
+  font-weight: 500;
+}
+
+.legal-note {
+  font-size: 0.875rem;
+  color: var(--cor-texto);
+  opacity: 0.8;
+  font-style: italic;
+  margin: 0;
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .legal-content,
+  .faq-content {
+    padding: 0 var(--espacamento-md);
+  }
+
+  .legal-section {
+    padding: var(--espacamento-lg);
+    border-radius: 16px;
+  }
+
+  .legal-section-title {
+    font-size: 1.5rem;
+  }
+
+  .legal-intro {
+    padding: var(--espacamento-lg);
+    border-radius: 16px;
+  }
+
+  .legal-intro-text {
+    font-size: 1.1rem;
+  }
+
+  .legal-section-content li {
+    padding: var(--espacamento-sm);
+    padding-left: calc(var(--espacamento-md) + 20px);
+  }
+
+  .legal-section-content h3 {
+    font-size: 1.2rem;
+    padding-left: var(--espacamento-md);
+  }
+
+  .legal-section-content h3::before {
+    left: 0;
+  }
+
+  .process-steps .step {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .shipping-costs,
+  .shipping-modes,
+  .contact-methods,
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .delivery-status {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .faq-contact-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .faq-contact-buttons .btn-whatsapp,
+  .faq-contact-buttons .btn-luxury {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .legal-section-content ul,
+  .legal-section-content ol {
+    padding-left: var(--espacamento-md);
+  }
+
+  .step {
+    padding: var(--espacamento-md);
+  }
+
+  .step-number {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+
+  .faq-question {
+    padding: var(--espacamento-md);
+    font-size: 0.9rem;
+  }
+
+  .faq-answer {
+    padding: 0 var(--espacamento-md) var(--espacamento-md);
+  }
+}

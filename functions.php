@@ -130,6 +130,22 @@ function tema_aromas_scripts() {
         $theme_version
     );
 
+    // Legal Pages CSS (for policy and legal pages)
+    if (is_page_template([
+        'page-politica-privacidade.php',
+        'page-termos-condicoes.php', 
+        'page-trocas-devolucoes.php',
+        'page-envio-entrega.php',
+        'page-faq.php'
+    ])) {
+        wp_enqueue_style(
+            'tema-aromas-legal-pages',
+            get_template_directory_uri() . '/assets/css/legal-pages.css',
+            ['tema-aromas-base'],
+            $theme_version
+        );
+    }
+
     // Homepage CSS (for front page)
     if (is_front_page()) {
         wp_enqueue_style(

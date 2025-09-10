@@ -377,8 +377,8 @@
    * Initialize automatic copyright year update
    */
   function initCopyrightYear() {
-    const copyrightYearElement = document.getElementById('copyright-year');
-    
+    const copyrightYearElement = document.getElementById("copyright-year");
+
     if (copyrightYearElement) {
       const currentYear = new Date().getFullYear();
       copyrightYearElement.textContent = currentYear;

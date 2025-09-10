@@ -329,7 +329,7 @@ get_header(); ?>
                                 </button>
                                 <div class="faq-answer">
                                     <p>WhatsApp: (16) 99162-6921 | E-mail: secretszen888@gmail.com | 
-                                    Instagram: @secretszen</p>
+                                    Instagram: @secretszen | Formulário de contato na página "Fale Conosco"</p>
                                 </div>
                             </div>
 
@@ -339,7 +339,7 @@ get_header(); ?>
                                     <span class="faq-icon">+</span>
                                 </button>
                                 <div class="faq-answer">
-                                    <p>Segunda a sexta, das 9h às 18h. WhatsApp responde até 2 horas, 
+                                    <p>Segunda a sexta, das 9h às 18h. WhatsApp responde até 6 horas, 
                                     e-mail até 24 horas.</p>
                                 </div>
                             </div>
@@ -371,8 +371,11 @@ get_header(); ?>
 
                 <div class="faq-contact-cta">
                     <h3>Ainda tem dúvidas?</h3>
-                    <p>Entre em contato conosco que teremos prazer em ajudar!</p>
+                    <p>Entre em contato conosco que teremos prazer em ajudar! Use o formulário de contato, envie um e-mail ou chame no WhatsApp.</p>
                     <div class="faq-contact-buttons">
+                        <a href="<?php echo esc_url(get_permalink(get_page_by_path('fale-conosco'))); ?>" class="btn-luxury primary">
+                            <span>📝</span> Formulário
+                        </a>
                         <a href="https://wa.me/5516991626921" class="btn-whatsapp" target="_blank">
                             <span>💬</span> WhatsApp
                         </a>

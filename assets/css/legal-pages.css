@@ -640,12 +640,14 @@
   padding: 0 var(--espacamento-lg) var(--espacamento-lg);
   color: var(--cor-texto);
   line-height: 1.7;
-  display: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
 }
 
-.faq-answer[aria-hidden="false"] {
-  display: block;
-  animation: fadeInUp 0.3s ease;
+.faq-item.active .faq-answer {
+  max-height: 500px;
+  padding: var(--espacamento-md) var(--espacamento-lg) var(--espacamento-lg);
 }
 
 .faq-answer p {

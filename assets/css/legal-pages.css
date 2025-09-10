@@ -640,14 +640,26 @@
   padding: 0 var(--espacamento-lg) var(--espacamento-lg);
   color: var(--cor-texto);
   line-height: 1.7;
-  display: none;
+  display: none !important;
   transition: opacity 0.3s ease;
 }
 
 .faq-item.active .faq-answer {
-  display: block;
+  display: block !important;
   padding: var(--espacamento-md) var(--espacamento-lg) var(--espacamento-lg);
   animation: fadeInUp 0.3s ease;
+}
+
+/* FAQ Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .faq-answer p {

@@ -392,6 +392,8 @@ document.addEventListener('DOMContentLoaded', function() {
             const icon = this.querySelector('.faq-icon');
             const isExpanded = this.getAttribute('aria-expanded') === 'true';
             
+            console.log('FAQ clicked, isExpanded:', isExpanded);
+            
             // Close all other FAQ items
             faqQuestions.forEach(otherQuestion => {
                 if (otherQuestion !== this) {
@@ -406,10 +408,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.setAttribute('aria-expanded', 'false');
                 faqItem.classList.remove('active');
                 icon.textContent = '+';
+                console.log('FAQ closed');
             } else {
                 this.setAttribute('aria-expanded', 'true');
                 faqItem.classList.add('active');
                 icon.textContent = '−';
+                console.log('FAQ opened');
             }
         });
     });

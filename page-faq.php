@@ -49,16 +49,6 @@ get_header(); ?>
                                 </div>
                             </div>
 
-                            <div class="faq-item">
-                                <button class="faq-question" aria-expanded="false">
-                                    <span class="faq-question-text">Qual o valor mínimo para frete grátis?</span>
-                                    <span class="faq-icon">+</span>
-                                </button>
-                                <div class="faq-answer">
-                                    <p>O frete é grátis para pedidos acima de R$ 150 em todo o Brasil 
-                                    (exceto algumas regiões especiais).</p>
-                                </div>
-                            </div>
 
                             <div class="faq-item">
                                 <button class="faq-question" aria-expanded="false">

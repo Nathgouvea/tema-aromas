@@ -643,11 +643,13 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease, padding 0.3s ease;
+  display: block !important; /* Override pages.css display: none */
 }
 
 .faq-item.active .faq-answer {
-  max-height: 500px;
+  max-height: none !important;
   padding: var(--espacamento-md) var(--espacamento-lg) var(--espacamento-lg);
+  display: block !important;
 }
 
 .faq-answer p {

@@ -1579,16 +1579,67 @@ textarea.luxury-form-input {
   }
 }
 
-/* Force 2-column layout for WooCommerce content */
-.page-content .woocommerce {
+/* Force 2-column layout for WooCommerce My Account pages only */
+.page-content .woocommerce:not(.woocommerce-cart):not(.woocommerce-checkout):not(.woocommerce-shop) {
   display: flex !important;
   flex-direction: row !important;
   align-items: flex-start !important;
   gap: var(--espacamento-xl) !important;
 }
 
+/* Cart, Checkout, and Shop pages use full width by default */
+.page-content .woocommerce.woocommerce-cart,
+.page-content .woocommerce.woocommerce-checkout,
+.page-content .woocommerce.woocommerce-shop {
+  display: block !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Additional override for cart page - ensure no flexbox layout */
+.page-content .woocommerce:has(table.cart),
+.page-content .woocommerce:has(.woocommerce-cart-form) {
+  display: block !important;
+  flex-direction: unset !important;
+  align-items: unset !important;
+  gap: 0 !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Fallback for browsers that don't support :has() - target cart page by content */
+.page-content .woocommerce table.cart {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Force cart page to use full width and no gaps */
+.page-content .woocommerce:where(:has(table.cart), :has(.woocommerce-cart-form)) {
+  display: block !important;
+  gap: 0 !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Direct override for cart page - most reliable approach */
+.page-content .woocommerce {
+  gap: 0 !important;
+}
+
+/* Specific override for cart page content */
+.page-content .woocommerce table.cart,
+.page-content .woocommerce .woocommerce-cart-form,
+.page-content .woocommerce .cart-collaterals {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
 @media (max-width: 767px) {
-  .page-content .woocommerce {
+  .page-content .woocommerce:not(.woocommerce-cart):not(.woocommerce-checkout):not(.woocommerce-shop) {
     flex-direction: column !important;
     gap: var(--espacamento-lg) !important;
   }

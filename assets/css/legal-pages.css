@@ -23,10 +23,7 @@
 .legal-intro {
   margin-bottom: var(--espacamento-xl);
   text-align: center;
-  background: rgba(107, 79, 196, 0.03);
-  border-radius: 8px;
-  padding: var(--espacamento-xl);
-  border: 1px solid rgba(107, 79, 196, 0.1);
+  padding: var(--espacamento-xl) 0;
 }
 
 .legal-intro-text {
@@ -46,12 +43,10 @@
 }
 
 .legal-section {
-  background: var(--cor-fundo);
-  border-radius: 8px;
-  padding: var(--espacamento-xl);
+  padding: var(--espacamento-xl) 0;
   border-left: 3px solid var(--cor-primaria);
   margin-bottom: var(--espacamento-lg);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding-left: var(--espacamento-lg);
 }
 
 .legal-section-title {

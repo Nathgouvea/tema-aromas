@@ -21,12 +21,6 @@ get_header(); ?>
         <section class="faq-content-section">
             <div class="luxury-container">
                 <div class="faq-content">
-                <div class="faq-intro">
-                    <p class="faq-intro-text">
-                        Aqui você encontra as respostas para as perguntas mais comuns sobre nossos produtos, 
-                        pedidos, entregas e muito mais. Se não encontrar sua dúvida, entre em contato conosco!
-                    </p>
-                </div>
 
                 <div class="faq-categories">
                     <div class="faq-category">

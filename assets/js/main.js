@@ -35,6 +35,7 @@
     initFormEnhancements();
     initScrollToTop();
     initHeaderScroll();
+    initCopyrightYear();
 
     // Dispatch theme ready event
     document.dispatchEvent(new CustomEvent("themeReady"));
@@ -369,6 +370,19 @@
           });
         }, 0);
       });
+    }
+  }
+
+  /**
+   * Initialize automatic copyright year update
+   */
+  function initCopyrightYear() {
+    const copyrightYearElement = document.getElementById('copyright-year');
+    
+    if (copyrightYearElement) {
+      const currentYear = new Date().getFullYear();
+      copyrightYearElement.textContent = currentYear;
+      console.log(`📅 Copyright year updated to: ${currentYear}`);
     }
   }
 

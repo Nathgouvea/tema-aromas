@@ -138,7 +138,7 @@
             <div class="footer-copyright">
                 <div class="copyright-content">
                     <p class="footer-text">
-                        <?php echo wp_kses_post(get_theme_mod('footer_text', __('© 2024 Tema Aromas. Todos os direitos reservados.', 'tema_aromas'))); ?>
+                        <?php echo wp_kses_post(get_theme_mod('footer_text', __('© <span id="copyright-year">2025</span> Tema Aromas. Todos os direitos reservados.', 'tema_aromas'))); ?>
                     </p>
                     
                     <p class="developer-credit">

@@ -84,7 +84,7 @@ get_header(); ?>
                                     <span class="faq-icon">+</span>
                                 </button>
                                 <div class="faq-answer">
-                                    <p>Após o envio, você receberá um e-mail e WhatsApp com o código de rastreamento. 
+                                    <p>Após o envio, você receberá um e-mail com o código de rastreamento. 
                                     Você pode acompanhar no site da transportadora ou pelo app Melhor Envio.</p>
                                 </div>
                             </div>

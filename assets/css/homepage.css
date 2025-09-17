@@ -837,20 +837,7 @@
   min-width: 250px;
   margin: 0;
   padding: 0;
-  background: var(--cor-fundo);
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: var(--sombra-sutil);
-  border: 1px solid var(--cor-borda);
-  transition: var(--transicao-suave);
-  position: relative;
   max-width: 280px;
-}
-
-.featured-slider .woocommerce ul.products li.product:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--sombra-luxo);
-  border-color: var(--cor-primaria);
 }
 
 /* Slider Navigation */

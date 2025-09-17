@@ -255,10 +255,10 @@ function tema_aromas_scripts() {
             true
         );
 
-        // Featured Products Slideshow JavaScript
+        // Featured Products Slider JavaScript
         wp_enqueue_script(
-            'tema-aromas-featured-slideshow',
-            get_template_directory_uri() . '/assets/js/featured-slideshow.js',
+            'tema-aromas-featured-slider',
+            get_template_directory_uri() . '/assets/js/featured-products-slider.js',
             [],
             $theme_version,
             true

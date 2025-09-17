@@ -1972,6 +1972,183 @@ section:nth-child(even) {
   background: linear-gradient(135deg, #fafbfc 0%, #ffffff 100%);
 }
 
+/* Aromas Carousel Container */
+.aromas-carousel-container {
+  position: relative;
+  margin: var(--espacamento-xl) 0;
+  padding: 0 var(--espacamento-lg);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.aromas-carousel-wrapper {
+  overflow: hidden;
+  border-radius: 20px;
+  position: relative;
+}
+
+.aromas-carousel {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  gap: var(--espacamento-lg);
+}
+
+.aroma-card {
+  flex: 0 0 calc(33.333% - var(--espacamento-lg));
+  min-width: 280px;
+  background: var(--cor-fundo);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--sombra-sutil);
+  border: 1px solid var(--cor-borda);
+  transition: var(--transicao-suave);
+  position: relative;
+}
+
+.aroma-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--sombra-luxo);
+  border-color: var(--cor-primaria);
+}
+
+/* Carousel Navigation */
+.carousel-navigation {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.carousel-btn {
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--sombra-sutil);
+  pointer-events: all;
+  color: var(--cor-primaria);
+}
+
+.carousel-btn:hover {
+  background: var(--cor-primaria);
+  color: var(--cor-fundo);
+  transform: scale(1.1);
+  box-shadow: var(--sombra-luxo);
+}
+
+.carousel-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.carousel-btn:disabled:hover {
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--cor-primaria);
+  transform: none;
+}
+
+/* Carousel Dots */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: var(--espacamento-sm);
+  margin-top: var(--espacamento-lg);
+}
+
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--cor-borda);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+  background: var(--cor-primaria);
+  transform: scale(1.2);
+}
+
+.carousel-dot:hover {
+  background: var(--cor-accent);
+  transform: scale(1.1);
+}
+
+/* Responsive Design for Carousel */
+@media (max-width: 1024px) {
+  .aroma-card {
+    flex: 0 0 calc(50% - var(--espacamento-md));
+  }
+
+  .carousel-navigation {
+    padding: 0 var(--espacamento-md);
+  }
+
+  .carousel-btn {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 768px) {
+  .aromas-carousel-container {
+    padding: 0 var(--espacamento-md);
+  }
+
+  .aroma-card {
+    flex: 0 0 calc(100% - var(--espacamento-sm));
+    min-width: 250px;
+  }
+
+  .carousel-navigation {
+    padding: 0 var(--espacamento-sm);
+  }
+
+  .carousel-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .carousel-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .aromas-carousel-container {
+    padding: 0 var(--espacamento-sm);
+  }
+
+  .carousel-navigation {
+    padding: 0;
+  }
+
+  .carousel-btn {
+    width: 35px;
+    height: 35px;
+  }
+
+  .carousel-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Legacy grid fallback - keep for compatibility */
 .aromas-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));

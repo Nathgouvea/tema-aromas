@@ -373,6 +373,7 @@
   opacity: 0.95;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   font-weight: 300;
+  color: white;
 }
 
 /* Two Column Layout */
@@ -742,6 +743,7 @@ select.modern-form-input {
   opacity: 0.95;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   font-weight: 300;
+  color: white;
 }
 
 /* Fragrance Pills Section */
@@ -1206,6 +1208,12 @@ textarea.luxury-form-input {
   flex-wrap: wrap;
 }
 
+.cta-buttons .btn-luxury {
+  padding: 10px 24px;
+  font-size: 1rem;
+  min-height: 44px;
+}
+
 .btn-secondary {
   background: transparent;
   border: 2px solid var(--cor-fundo);
@@ -1580,7 +1588,10 @@ textarea.luxury-form-input {
 }
 
 /* Force 2-column layout for WooCommerce My Account pages only */
-.page-content .woocommerce:not(.woocommerce-cart):not(.woocommerce-checkout):not(.woocommerce-shop) {
+.page-content
+  .woocommerce:not(.woocommerce-cart):not(.woocommerce-checkout):not(
+    .woocommerce-shop
+  ) {
   display: flex !important;
   flex-direction: row !important;
   align-items: flex-start !important;
@@ -1616,7 +1627,8 @@ textarea.luxury-form-input {
 }
 
 /* Force cart page to use full width and no gaps */
-.page-content .woocommerce:where(:has(table.cart), :has(.woocommerce-cart-form)) {
+.page-content
+  .woocommerce:where(:has(table.cart), :has(.woocommerce-cart-form)) {
   display: block !important;
   gap: 0 !important;
   width: 100% !important;
@@ -1639,7 +1651,10 @@ textarea.luxury-form-input {
   padding-right: 0 !important;
 }
 @media (max-width: 767px) {
-  .page-content .woocommerce:not(.woocommerce-cart):not(.woocommerce-checkout):not(.woocommerce-shop) {
+  .page-content
+    .woocommerce:not(.woocommerce-cart):not(.woocommerce-checkout):not(
+      .woocommerce-shop
+    ) {
     flex-direction: column !important;
     gap: var(--espacamento-lg) !important;
   }

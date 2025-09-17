@@ -37,7 +37,7 @@ class AromasCarousel {
     if (width <= 480) return 1;
     if (width <= 768) return 1;
     if (width <= 1024) return 2;
-    return 3;
+    return 5; // Show all 5 aromas on desktop
   }
 
   createDots() {
@@ -200,5 +200,3 @@ if (typeof jQuery !== "undefined") {
     new AromasCarousel();
   });
 }
-
-

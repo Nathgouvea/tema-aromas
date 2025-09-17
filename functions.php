@@ -78,6 +78,11 @@ add_action('after_setup_theme', 'tema_aromas_setup');
  */
 function tema_aromas_scripts() {
     $theme_version = wp_get_theme()->get('Version');
+    
+    // Add cache-busting for development
+    if (defined('WP_DEBUG') && WP_DEBUG) {
+        $theme_version = $theme_version . '.' . time();
+    }
 
     // Main stylesheet
     wp_enqueue_style('tema-aromas-style', get_stylesheet_uri(), [], $theme_version);
@@ -260,6 +265,19 @@ function tema_aromas_scripts() {
     }
 }
 add_action('wp_enqueue_scripts', 'tema_aromas_scripts');
+
+/**
+ * Disable caching during development
+ */
+function tema_aromas_disable_dev_caching() {
+    if (defined('WP_DEBUG') && WP_DEBUG) {
+        // Disable browser caching for development
+        header('Cache-Control: no-cache, no-store, must-revalidate');
+        header('Pragma: no-cache');
+        header('Expires: 0');
+    }
+}
+add_action('send_headers', 'tema_aromas_disable_dev_caching');
 
 /**
  * Register widget area.

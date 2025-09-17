@@ -261,9 +261,14 @@ function tema_aromas_optimize_woocommerce_assets() {
 add_action('wp_enqueue_scripts', 'tema_aromas_optimize_woocommerce_assets', 99);
 
 /**
- * Cache optimization
+ * Cache optimization - DISABLED FOR DEVELOPMENT
+ * Uncomment and modify for production use
  */
 function tema_aromas_set_cache_headers() {
+    // DISABLED: Remove aggressive caching during development
+    // Only enable in production with proper cache invalidation
+    
+    /*
     if (!is_admin() && !is_user_logged_in()) {
         // Set cache headers for static assets
         $request_uri = $_SERVER['REQUEST_URI'];
@@ -275,8 +280,9 @@ function tema_aromas_set_cache_headers() {
             header('Cache-Control: public, max-age=3600'); // 1 hour for HTML
         }
     }
+    */
 }
-add_action('send_headers', 'tema_aromas_set_cache_headers');
+// add_action('send_headers', 'tema_aromas_set_cache_headers'); // DISABLED
 
 /**
  * Optimize fonts loading

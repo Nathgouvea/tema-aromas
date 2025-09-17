@@ -114,108 +114,106 @@ get_header(); ?>
         </section>
 
         <!-- Aromas Showcase Section -->
-        <section class="aromas-showcase">
-            <div class="section-header">
-                <h2 class="section-title luxury-heading">
-                    <?php esc_html_e('Aromas que transformam ambientes', 'tema_aromas'); ?>
-                </h2>
-                <p class="section-subtitle">
-                    <?php esc_html_e('Na Zen Secrets, acreditamos no poder dos aromas para criar experiências únicas e memoráveis. Cada produto é cuidadosamente elaborado para trazer harmonia e bem-estar ao seu espaço. Nossas fragrâncias exclusivas são desenvolvidas por especialistas, combinando ingredientes naturais de alta qualidade para proporcionar momentos de verdadeiro relaxamento e conexão com seus sentidos.', 'tema_aromas'); ?>
-                </p>
+        <section class="aromas-luxury-showcase">
+            <!-- Elegant Header -->
+            <div class="aromas-luxury-header">
+                <div class="aromas-luxury-content">
+                    <h2 class="aromas-luxury-title">
+                        <span class="title-line-1"><?php esc_html_e('Aromas que', 'tema_aromas'); ?></span>
+                        <span class="title-line-2"><?php esc_html_e('transformam', 'tema_aromas'); ?></span>
+                        <span class="title-line-3"><?php esc_html_e('ambientes', 'tema_aromas'); ?></span>
+                    </h2>
+                    <div class="aromas-luxury-divider"></div>
+                    <p class="aromas-luxury-description">
+                        <?php esc_html_e('Na Zen Secrets, acreditamos no poder dos aromas para criar experiências únicas e memoráveis. Cada produto é cuidadosamente elaborado para trazer harmonia e bem-estar ao seu espaço. Nossas fragrâncias exclusivas são desenvolvidas por especialistas, combinando ingredientes naturais de alta qualidade para proporcionar momentos de verdadeiro relaxamento e conexão com seus sentidos.', 'tema_aromas'); ?>
+                    </p>
+                </div>
             </div>
 
-            <!-- Aromas Carousel Container -->
-            <div class="aromas-carousel-container">
-                <div class="aromas-carousel-wrapper">
-                    <div class="aromas-carousel" id="aromasCarousel">
-                        <!-- Chá Branco -->
-                        <div class="aroma-card">
-                            <div class="aroma-image">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/all-chabranco.webp" 
-                                     alt="<?php esc_attr_e('Chá Branco - Aromas Zen Secrets', 'tema_aromas'); ?>" 
-                                     loading="lazy">
-                            </div>
-                            <div class="aroma-content">
-                                <h3 class="aroma-title"><?php esc_html_e('Chá Branco', 'tema_aromas'); ?></h3>
-                                <p class="aroma-description"><?php esc_html_e('Pureza e serenidade em cada respiração', 'tema_aromas'); ?></p>
-                            </div>
+            <!-- Luxury Aromas Grid -->
+            <div class="aromas-luxury-grid">
+                <!-- Chá Branco -->
+                <div class="aroma-luxury-card">
+                    <div class="aroma-luxury-image">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/all-chabranco.webp" 
+                             alt="<?php esc_attr_e('Chá Branco - Aromas Zen Secrets', 'tema_aromas'); ?>" 
+                             loading="lazy">
+                        <div class="aroma-luxury-overlay">
+                            <div class="aroma-luxury-icon">🌸</div>
                         </div>
-
-                        <!-- Flor de Figo -->
-                        <div class="aroma-card">
-                            <div class="aroma-image">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/all-flordefigo.webp" 
-                                     alt="<?php esc_attr_e('Flor de Figo - Aromas Zen Secrets', 'tema_aromas'); ?>" 
-                                     loading="lazy">
-                            </div>
-                            <div class="aroma-content">
-                                <h3 class="aroma-title"><?php esc_html_e('Flor de Figo', 'tema_aromas'); ?></h3>
-                                <p class="aroma-description"><?php esc_html_e('Doçura natural e sofisticação', 'tema_aromas'); ?></p>
-                            </div>
-                        </div>
-
-                        <!-- Bamboo -->
-                        <div class="aroma-card">
-                            <div class="aroma-image">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/Vela bamboo .webp" 
-                                     alt="<?php esc_attr_e('Bamboo - Aromas Zen Secrets', 'tema_aromas'); ?>" 
-                                     loading="lazy">
-                            </div>
-                            <div class="aroma-content">
-                                <h3 class="aroma-title"><?php esc_html_e('Bamboo', 'tema_aromas'); ?></h3>
-                                <p class="aroma-description"><?php esc_html_e('Frescor natural e equilíbrio zen', 'tema_aromas'); ?></p>
-                            </div>
-                        </div>
-
-                        <!-- Marinho -->
-                        <div class="aroma-card">
-                            <div class="aroma-image">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/marinho.webp" 
-                                     alt="<?php esc_attr_e('Marinho - Aromas Zen Secrets', 'tema_aromas'); ?>" 
-                                     loading="lazy">
-                            </div>
-                            <div class="aroma-content">
-                                <h3 class="aroma-title"><?php esc_html_e('Marinho', 'tema_aromas'); ?></h3>
-                                <p class="aroma-description"><?php esc_html_e('Brisa oceânica e tranquilidade', 'tema_aromas'); ?></p>
-                            </div>
-                        </div>
-
-                        <!-- Palo Santo -->
-                        <div class="aroma-card">
-                            <div class="aroma-image">
-                                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/vela-palosanto.webp" 
-                                     alt="<?php esc_attr_e('Palo Santo - Aromas Zen Secrets', 'tema_aromas'); ?>" 
-                                     loading="lazy">
-                            </div>
-                            <div class="aroma-content">
-                                <h3 class="aroma-title"><?php esc_html_e('Palo Santo', 'tema_aromas'); ?></h3>
-                                <p class="aroma-description"><?php esc_html_e('Madeira sagrada e energia positiva', 'tema_aromas'); ?></p>
-                            </div>
-                        </div>
+                    </div>
+                    <div class="aroma-luxury-content">
+                        <h3 class="aroma-luxury-name"><?php esc_html_e('Chá Branco', 'tema_aromas'); ?></h3>
+                        <p class="aroma-luxury-sensation"><?php esc_html_e('Pureza e serenidade em cada respiração', 'tema_aromas'); ?></p>
                     </div>
                 </div>
 
-                <!-- Navigation Buttons -->
-                <div class="carousel-navigation">
-                    <button class="carousel-btn carousel-prev" id="aromasPrev" aria-label="<?php esc_attr_e('Aromas anteriores', 'tema_aromas'); ?>">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="15,18 9,12 15,6"></polyline>
-                        </svg>
-                    </button>
-                    <button class="carousel-btn carousel-next" id="aromasNext" aria-label="<?php esc_attr_e('Próximos aromas', 'tema_aromas'); ?>">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="9,18 15,12 9,6"></polyline>
-                        </svg>
-                    </button>
+                <!-- Flor de Figo -->
+                <div class="aroma-luxury-card">
+                    <div class="aroma-luxury-image">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/all-flordefigo.webp" 
+                             alt="<?php esc_attr_e('Flor de Figo - Aromas Zen Secrets', 'tema_aromas'); ?>" 
+                             loading="lazy">
+                        <div class="aroma-luxury-overlay">
+                            <div class="aroma-luxury-icon">🌿</div>
+                        </div>
+                    </div>
+                    <div class="aroma-luxury-content">
+                        <h3 class="aroma-luxury-name"><?php esc_html_e('Flor de Figo', 'tema_aromas'); ?></h3>
+                        <p class="aroma-luxury-sensation"><?php esc_html_e('Doçura natural e sofisticação', 'tema_aromas'); ?></p>
+                    </div>
                 </div>
 
-                <!-- Dots Indicator -->
-                <div class="carousel-dots" id="aromasDots">
-                    <!-- Dots will be generated by JavaScript -->
+                <!-- Bamboo -->
+                <div class="aroma-luxury-card">
+                    <div class="aroma-luxury-image">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/Vela bamboo .webp" 
+                             alt="<?php esc_attr_e('Bamboo - Aromas Zen Secrets', 'tema_aromas'); ?>" 
+                             loading="lazy">
+                        <div class="aroma-luxury-overlay">
+                            <div class="aroma-luxury-icon">🎋</div>
+                        </div>
+                    </div>
+                    <div class="aroma-luxury-content">
+                        <h3 class="aroma-luxury-name"><?php esc_html_e('Bamboo', 'tema_aromas'); ?></h3>
+                        <p class="aroma-luxury-sensation"><?php esc_html_e('Frescor natural e equilíbrio zen', 'tema_aromas'); ?></p>
+                    </div>
+                </div>
+
+                <!-- Marinho -->
+                <div class="aroma-luxury-card">
+                    <div class="aroma-luxury-image">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/marinho.webp" 
+                             alt="<?php esc_attr_e('Marinho - Aromas Zen Secrets', 'tema_aromas'); ?>" 
+                             loading="lazy">
+                        <div class="aroma-luxury-overlay">
+                            <div class="aroma-luxury-icon">🌊</div>
+                        </div>
+                    </div>
+                    <div class="aroma-luxury-content">
+                        <h3 class="aroma-luxury-name"><?php esc_html_e('Marinho', 'tema_aromas'); ?></h3>
+                        <p class="aroma-luxury-sensation"><?php esc_html_e('Brisa oceânica e tranquilidade', 'tema_aromas'); ?></p>
+                    </div>
+                </div>
+
+                <!-- Palo Santo -->
+                <div class="aroma-luxury-card">
+                    <div class="aroma-luxury-image">
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/vela-palosanto.webp" 
+                             alt="<?php esc_attr_e('Palo Santo - Aromas Zen Secrets', 'tema_aromas'); ?>" 
+                             loading="lazy">
+                        <div class="aroma-luxury-overlay">
+                            <div class="aroma-luxury-icon">🕯️</div>
+                        </div>
+                    </div>
+                    <div class="aroma-luxury-content">
+                        <h3 class="aroma-luxury-name"><?php esc_html_e('Palo Santo', 'tema_aromas'); ?></h3>
+                        <p class="aroma-luxury-sensation"><?php esc_html_e('Madeira sagrada e energia positiva', 'tema_aromas'); ?></p>
+                    </div>
                 </div>
             </div>
 
-            <div class="aromas-cta">
+            <div class="aromas-luxury-cta">
                 <a href="<?php 
                     $sobre_page = get_page_by_path('sobre-os-aromas');
                     if ($sobre_page) {

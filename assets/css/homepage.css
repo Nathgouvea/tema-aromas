@@ -802,7 +802,7 @@
 
 .featured-slider-container {
   position: relative;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: var(--espacamento-xl) auto;
   padding: 0 var(--espacamento-lg);
 }

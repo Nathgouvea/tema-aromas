@@ -819,13 +819,13 @@
 .featured-slider {
   display: flex;
   transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  gap: var(--espacamento-lg);
-  padding: var(--espacamento-lg);
+  gap: var(--espacamento-md);
+  padding: var(--espacamento-md);
 }
 
 .featured-slider .woocommerce ul.products {
   display: flex;
-  gap: var(--espacamento-lg);
+  gap: var(--espacamento-md);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -833,17 +833,18 @@
 }
 
 .featured-slider .woocommerce ul.products li.product {
-  flex: 0 0 calc(25% - var(--espacamento-lg));
-  min-width: 280px;
+  flex: 0 0 calc(25% - var(--espacamento-md));
+  min-width: 250px;
   margin: 0;
   padding: 0;
   background: var(--cor-fundo);
-  border-radius: 20px;
+  border-radius: 16px;
   overflow: hidden;
   box-shadow: var(--sombra-sutil);
   border: 1px solid var(--cor-borda);
   transition: var(--transicao-suave);
   position: relative;
+  max-width: 280px;
 }
 
 .featured-slider .woocommerce ul.products li.product:hover {
@@ -1475,7 +1476,8 @@
 
   .featured-slider .woocommerce ul.products li.product {
     flex: 0 0 calc(50% - var(--espacamento-sm));
-    min-width: 200px;
+    min-width: 180px;
+    max-width: 220px;
   }
 
   .slider-navigation {
@@ -1758,7 +1760,8 @@
   /* Featured Products Slider Tablet */
   .featured-slider .woocommerce ul.products li.product {
     flex: 0 0 calc(33.333% - var(--espacamento-md));
-    min-width: 220px;
+    min-width: 200px;
+    max-width: 250px;
   }
 
   .slider-navigation {
@@ -1796,7 +1799,8 @@
 
   .featured-slider .woocommerce ul.products li.product {
     flex: 0 0 calc(100% - var(--espacamento-xs));
-    min-width: 180px;
+    min-width: 160px;
+    max-width: 200px;
   }
 
   .slider-navigation {

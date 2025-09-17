@@ -10,55 +10,58 @@
 
 A loja online Zen Secrets possui uma estrutura técnica sólida baseada em WordPress/WooCommerce, mas apresenta problemas significativos de design e experiência do usuário que afetam as conversões e a percepção de marca premium. Como uma loja especializada em produtos aromáticos naturais focados no bem-estar, é essencial transmitir luxo e confiança.
 
-### ✅ Última Atualização: Lembrancinhas Section Text Alignment Fixed
+### ✅ Última Atualização: WooCommerce Templates Fixed - Product Pages Now Displaying
 
 **Data**: $(date)
-**Mudança**: Seção "Encomende com a gente sua lembrancinha" agora tem título e texto alinhados à esquerda conforme solicitado
+**Mudança**: Problema de páginas de produtos não exibindo foi resolvido - templates WooCommerce criados e CSS carregado corretamente
 
 **Arquivos Modificados**:
 
-- `assets/css/homepage.css` - **UPDATED**: Adicionado text-align: left para título e subtítulo da seção lembrancinhas
+- `archive-product.php` - **NEW**: Template WooCommerce para páginas de arquivo de produtos criado
+- `shop.php` - **NEW**: Template WooCommerce para página da loja criado
+- `functions.php` - **UPDATED**: CSS do WooCommerce agora carregado corretamente
+- `template-debug.php` - **NEW**: Ferramenta de diagnóstico para debug de templates
 - `DESIGN-PROJECT-PLAN.md` - **UPDATED**: Documentação do projeto atualizada
 
 **Funcionalidades Implementadas**:
 
-- **NOVO**: Título "Encomende com a gente sua lembrancinha" agora alinhado à esquerda
-- **NOVO**: Subtítulo "Torne seu evento ainda mais especial..." agora alinhado à esquerda
-- **NOVO**: Override do text-align: center padrão da classe .section-title
-- **NOVO**: Consistência visual com o design luxury do tema
+- **NOVO**: Template archive-product.php criado para páginas de produtos WooCommerce
+- **NOVO**: Template shop.php criado para página principal da loja
+- **NOVO**: CSS do WooCommerce agora carregado automaticamente em páginas WooCommerce
+- **NOVO**: Sistema de trust indicators integrado nas páginas de produtos
+- **NOVO**: Ferramenta de diagnóstico para debug de templates WordPress
+- **NOVO**: Breadcrumbs e navegação estruturada em páginas de produtos
+- **NOVO**: Call-to-action sections com links para contato e categorias
 
 **Mudanças de Design**:
 
-- ✅ **Title Alignment**: Título da seção lembrancinhas alinhado à esquerda
-- ✅ **Subtitle Alignment**: Subtítulo da seção lembrancinhas alinhado à esquerda
-- ✅ **Visual Consistency**: Mantém consistência com outros elementos da seção
-- ✅ **Luxury Design**: Preserva o sistema de design premium do tema
+- ✅ **WooCommerce Integration**: Páginas de produtos agora exibem corretamente
+- ✅ **Shop Page**: Página da loja com trust indicators e call-to-actions
+- ✅ **Product Archives**: Categorias de produtos com breadcrumbs e navegação
+- ✅ **Luxury Styling**: CSS do WooCommerce carregado com design premium
+- ✅ **Trust Indicators**: Seção de confiança com WhatsApp, pagamentos e entrega
+- ✅ **Responsive Design**: Templates funcionam em mobile, tablet e desktop
 
 **Mudanças Técnicas**:
 
-- ✅ CSS específico para .lembrancinhas-text .section-title com text-align: left
-- ✅ CSS específico para .lembrancinhas-text .section-subtitle com text-align: left
-- ✅ Override do text-align: center padrão da classe base .section-title
-- ✅ Mantém todas as outras propriedades de estilo (font-size, color, margin, etc.)
+- ✅ Template archive-product.php criado seguindo WordPress template hierarchy
+- ✅ Template shop.php criado para página principal da loja WooCommerce
+- ✅ CSS do WooCommerce carregado condicionalmente em functions.php
+- ✅ Hook woocommerce_before_shop_loop e woocommerce_after_shop_loop implementados
+- ✅ Breadcrumbs integrados com tema_aromas_breadcrumbs()
+- ✅ Trust indicators section integrada nas páginas de produtos
+- ✅ Ferramenta de diagnóstico template-debug.php para troubleshooting
 
-**Seletores CSS Atualizados**:
+**Templates Criados**:
 
-```css
-.lembrancinhas-text .section-title {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 400;
-  color: #333;
-  margin-bottom: var(--espacamento-md);
-  line-height: 1.2;
-  text-align: left; /* NOVO */
-}
+```php
+// archive-product.php - Template para páginas de produtos WooCommerce
+// shop.php - Template para página principal da loja
+// template-debug.php - Ferramenta de diagnóstico
 
-.lembrancinhas-text .section-subtitle {
-  font-size: 1.1rem;
-  color: #666;
-  line-height: 1.6;
-  margin-bottom: var(--espacamento-xl);
-  text-align: left; /* NOVO */
+// functions.php - CSS do WooCommerce carregado condicionalmente
+if (class_exists('WooCommerce') && (is_woocommerce() || is_cart() || is_checkout() || is_account_page())) {
+    wp_enqueue_style('tema-aromas-woocommerce', get_template_directory_uri() . '/assets/css/woocommerce.css');
 }
 ```
 

@@ -135,6 +135,16 @@ function tema_aromas_scripts() {
         $theme_version
     );
 
+    // WooCommerce CSS (for WooCommerce pages)
+    if (class_exists('WooCommerce') && (is_woocommerce() || is_cart() || is_checkout() || is_account_page())) {
+        wp_enqueue_style(
+            'tema-aromas-woocommerce',
+            get_template_directory_uri() . '/assets/css/woocommerce.css',
+            ['tema-aromas-base'],
+            $theme_version
+        );
+    }
+
     // Legal Pages CSS (for policy and legal pages)
     if (is_page_template([
         'page-politica-privacidade.php',

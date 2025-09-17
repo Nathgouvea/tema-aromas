@@ -238,13 +238,97 @@ get_header(); ?>
                 </p>
             </div>
             
-            <!-- WooCommerce Featured Products -->
-            <div class="featured-products-grid">
+            <!-- Featured Products Slideshow -->
+            <div class="featured-products-slideshow">
+                <div class="slideshow-container">
+                    <div class="slideshow-wrapper">
+                        <div class="slideshow-track" id="featured-slideshow-track">
                 <?php if (class_exists('WooCommerce')) : ?>
-                    <?php echo do_shortcode('[products featured="true" limit="8" columns="4"]'); ?>
+                                <?php 
+                                $featured_products = wc_get_featured_product_ids();
+                                if (!empty($featured_products)) {
+                                    $args = array(
+                                        'post_type' => 'product',
+                                        'post__in' => $featured_products,
+                                        'posts_per_page' => 8,
+                                        'meta_query' => array(
+                                            array(
+                                                'key' => '_visibility',
+                                                'value' => array('catalog', 'visible'),
+                                                'compare' => 'IN'
+                                            )
+                                        )
+                                    );
+                                    $products = new WP_Query($args);
+                                    
+                                    if ($products->have_posts()) :
+                                        while ($products->have_posts()) : $products->the_post();
+                                            global $product;
+                                ?>
+                                            <div class="slideshow-slide">
+                                                <div class="product-card-slideshow">
+                                                    <div class="product-image-slideshow">
+                                                        <?php if (has_post_thumbnail()) : ?>
+                                                            <a href="<?php the_permalink(); ?>">
+                                                                <?php the_post_thumbnail('product-card', array('alt' => get_the_title())); ?>
+                                                            </a>
+                                                        <?php endif; ?>
+                                                    </div>
+                                                    <div class="product-content-slideshow">
+                                                        <h3 class="product-title-slideshow">
+                                                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                                        </h3>
+                                                        <div class="product-price-slideshow">
+                                                            <?php echo $product->get_price_html(); ?>
+                                                        </div>
+                                                        <div class="product-rating-slideshow">
+                                                            <?php woocommerce_template_loop_rating(); ?>
+                                                        </div>
+                                                        <div class="product-actions-slideshow">
+                                                            <a href="<?php the_permalink(); ?>" class="btn-luxury btn-primary btn-sm">
+                                                                <?php esc_html_e('Ver Produto', 'tema_aromas'); ?>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                <?php 
+                                        endwhile;
+                                        wp_reset_postdata();
+                                    else :
+                                ?>
+                                        <p><?php esc_html_e('Nenhum produto em destaque encontrado.', 'tema_aromas'); ?></p>
+                                <?php 
+                                    endif;
+                                } else {
+                                    echo do_shortcode('[products featured="true" limit="8" columns="4"]');
+                                }
+                                ?>
                 <?php else : ?>
                     <p><?php esc_html_e('WooCommerce não está ativo. Ative o plugin para exibir os produtos.', 'tema_aromas'); ?></p>
                 <?php endif; ?>
+                        </div>
+                    </div>
+                    
+                    <!-- Slideshow Navigation -->
+                    <div class="slideshow-navigation">
+                        <button class="slideshow-btn slideshow-prev" aria-label="<?php esc_attr_e('Produto anterior', 'tema_aromas'); ?>">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="15,18 9,12 15,6"></polyline>
+                            </svg>
+                        </button>
+                        <button class="slideshow-btn slideshow-next" aria-label="<?php esc_attr_e('Próximo produto', 'tema_aromas'); ?>">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="9,18 15,12 9,6"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <!-- Slideshow Dots -->
+                    <div class="slideshow-dots" id="featured-slideshow-dots">
+                        <!-- Dots will be generated by JavaScript -->
+                    </div>
+                </div>
             </div>
             
             <div class="featured-cta">

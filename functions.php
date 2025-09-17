@@ -241,6 +241,15 @@ function tema_aromas_scripts() {
 
     // Homepage JavaScript (for front page)
     if (is_front_page()) {
+        // Aromas Carousel JavaScript (homepage aromas slider)
+        wp_enqueue_script(
+            'tema-aromas-aromas-carousel',
+            get_template_directory_uri() . '/assets/js/aromas-carousel.js',
+            [],
+            $theme_version,
+            true
+        );
+
         wp_enqueue_script(
             'tema-aromas-homepage',
             get_template_directory_uri() . '/assets/js/homepage.js',

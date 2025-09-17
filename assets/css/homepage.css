@@ -1066,6 +1066,7 @@
   color: #333;
   margin-bottom: var(--espacamento-md);
   line-height: 1.2;
+  text-align: left;
 }
 
 .lembrancinhas-text .section-subtitle {
@@ -1073,6 +1074,7 @@
   color: #666;
   line-height: 1.6;
   margin-bottom: var(--espacamento-xl);
+  text-align: left;
 }
 
 .lembrancinhas-features {

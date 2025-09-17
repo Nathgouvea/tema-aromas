@@ -10,7 +10,59 @@
 
 A loja online Zen Secrets possui uma estrutura técnica sólida baseada em WordPress/WooCommerce, mas apresenta problemas significativos de design e experiência do usuário que afetam as conversões e a percepção de marca premium. Como uma loja especializada em produtos aromáticos naturais focados no bem-estar, é essencial transmitir luxo e confiança.
 
-### ✅ Última Atualização: Cart Totals Luxury Styling Implemented
+### ✅ Última Atualização: Lembrancinhas Section Text Alignment Fixed
+
+**Data**: $(date)
+**Mudança**: Seção "Encomende com a gente sua lembrancinha" agora tem título e texto alinhados à esquerda conforme solicitado
+
+**Arquivos Modificados**:
+
+- `assets/css/homepage.css` - **UPDATED**: Adicionado text-align: left para título e subtítulo da seção lembrancinhas
+- `DESIGN-PROJECT-PLAN.md` - **UPDATED**: Documentação do projeto atualizada
+
+**Funcionalidades Implementadas**:
+
+- **NOVO**: Título "Encomende com a gente sua lembrancinha" agora alinhado à esquerda
+- **NOVO**: Subtítulo "Torne seu evento ainda mais especial..." agora alinhado à esquerda
+- **NOVO**: Override do text-align: center padrão da classe .section-title
+- **NOVO**: Consistência visual com o design luxury do tema
+
+**Mudanças de Design**:
+
+- ✅ **Title Alignment**: Título da seção lembrancinhas alinhado à esquerda
+- ✅ **Subtitle Alignment**: Subtítulo da seção lembrancinhas alinhado à esquerda
+- ✅ **Visual Consistency**: Mantém consistência com outros elementos da seção
+- ✅ **Luxury Design**: Preserva o sistema de design premium do tema
+
+**Mudanças Técnicas**:
+
+- ✅ CSS específico para .lembrancinhas-text .section-title com text-align: left
+- ✅ CSS específico para .lembrancinhas-text .section-subtitle com text-align: left
+- ✅ Override do text-align: center padrão da classe base .section-title
+- ✅ Mantém todas as outras propriedades de estilo (font-size, color, margin, etc.)
+
+**Seletores CSS Atualizados**:
+
+```css
+.lembrancinhas-text .section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  color: #333;
+  margin-bottom: var(--espacamento-md);
+  line-height: 1.2;
+  text-align: left; /* NOVO */
+}
+
+.lembrancinhas-text .section-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: var(--espacamento-xl);
+  text-align: left; /* NOVO */
+}
+```
+
+### ✅ Atualização Anterior: Cart Totals Luxury Styling Implemented
 
 **Data**: $(date)
 **Mudança**: Cart totals section "Total no carrinho" agora possui styling luxury completo e consistente com o tema

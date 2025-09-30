@@ -16,7 +16,6 @@ get_header(); ?>
     <div class="container">
         <?php while (have_posts()) : the_post(); ?>
             <div class="page-header luxury-section">
-                <?php tema_aromas_breadcrumbs(); ?>
                 <h1 class="page-title luxury-heading"><?php the_title(); ?></h1>
                 <p class="page-subtitle"><?php esc_html_e('Gerencie suas informações pessoais, pedidos e preferências', 'tema_aromas'); ?></p>
             </div>

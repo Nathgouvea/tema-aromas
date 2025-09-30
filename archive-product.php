@@ -105,6 +105,33 @@ get_header(); ?>
 
                 <?php else : ?>
 
+                    <!-- Empty Category Message -->
+                    <div class="no-products-found luxury-card text-center">
+                        <div class="no-products-content">
+                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="no-products-icon">
+                                <path d="M9 12l2 2 4-4"></path>
+                                <path d="M21 12c.552 0 1-.448 1-1V5c0-.552-.448-1-1-1H3c-.552 0-1 .448-1 1v6c0 .552.448 1 1 1h18z"></path>
+                                <path d="M3 12v6c0 .552.448 1 1 1h16c.552 0 1-.448 1-1v-6H3z"></path>
+                            </svg>
+                            <h3 class="no-products-title"><?php esc_html_e('Nenhum produto encontrado', 'tema_aromas'); ?></h3>
+                            <p class="no-products-message">
+                                <?php if (is_product_category()) : ?>
+                                    <?php printf(esc_html__('Esta categoria ainda não possui produtos. Em breve teremos produtos incríveis em %s!', 'tema_aromas'), single_cat_title('', false)); ?>
+                                <?php else : ?>
+                                    <?php esc_html_e('Ainda não temos produtos disponíveis nesta seção. Em breve teremos novidades incríveis!', 'tema_aromas'); ?>
+                                <?php endif; ?>
+                            </p>
+                            <div class="no-products-actions">
+                                <a href="<?php echo esc_url(wc_get_page_permalink('shop')); ?>" class="btn-luxury">
+                                    <?php esc_html_e('Ver Todos os Produtos', 'tema_aromas'); ?>
+                                </a>
+                                <a href="<?php echo esc_url(get_permalink(get_page_by_path('fale-conosco'))); ?>" class="btn-luxury-outline">
+                                    <?php esc_html_e('Fale Conosco', 'tema_aromas'); ?>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
                     <?php
                     /**
                      * Hook: woocommerce_no_products_found.

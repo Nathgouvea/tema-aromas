@@ -345,6 +345,79 @@ function tema_aromas_widgets_init() {
 add_action('widgets_init', 'tema_aromas_widgets_init');
 
 /**
+ * Create WooCommerce product categories on theme activation
+ */
+function tema_aromas_create_product_categories() {
+    if (!class_exists('WooCommerce')) {
+        return;
+    }
+
+    $categories = [
+        'aromatizadores' => [
+            'name' => 'Aromatizadores',
+            'description' => 'Difusores elétricos elegantes que espalham fragrâncias uniformemente por todo o ambiente com tecnologia ultrassônica.'
+        ],
+        'home-spray' => [
+            'name' => 'Home Spray',
+            'description' => 'Sprays aromáticos de ação instantânea para perfumar qualquer ambiente rapidamente. Ideais para momentos especiais.'
+        ],
+        'velas-aromaticas' => [
+            'name' => 'Velas Aromáticas',
+            'description' => 'Velas artesanais de cera natural que combinam a magia da luz com fragrâncias encantadoras para momentos únicos.'
+        ],
+        'kits-especiais' => [
+            'name' => 'Kits Especiais',
+            'description' => 'Conjuntos cuidadosamente montados com produtos complementares. Economia garantida e experiência completa.'
+        ],
+        'lembrancinhas' => [
+            'name' => 'Lembrancinhas',
+            'description' => 'Pequenos presentes aromáticos para casamentos, aniversários e eventos especiais. Memórias olfativas inesquecíveis.'
+        ],
+        'acessorios' => [
+            'name' => 'Acessórios',
+            'description' => 'Complementos essenciais para sua experiência aromática: varetas, recipientes, suportes e muito mais.'
+        ]
+    ];
+
+    foreach ($categories as $slug => $category_data) {
+        // Check if category already exists
+        if (!get_term_by('slug', $slug, 'product_cat')) {
+            wp_insert_term(
+                $category_data['name'],
+                'product_cat',
+                [
+                    'slug' => $slug,
+                    'description' => $category_data['description']
+                ]
+            );
+        }
+    }
+}
+add_action('after_switch_theme', 'tema_aromas_create_product_categories');
+
+/**
+ * Manual trigger to create categories (can be called via URL)
+ */
+function tema_aromas_manual_create_categories() {
+    if (isset($_GET['create_categories']) && $_GET['create_categories'] === 'yes') {
+        tema_aromas_create_product_categories();
+        echo '<div style="background: #4CAF50; color: white; padding: 20px; margin: 20px; border-radius: 5px;">';
+        echo '<h3>✅ Categorias WooCommerce criadas com sucesso!</h3>';
+        echo '<p>As categorias de produtos foram criadas. Agora você pode:</p>';
+        echo '<ul>';
+        echo '<li>Acessar o painel WordPress → Produtos → Categorias</li>';
+        echo '<li>Adicionar produtos às categorias</li>';
+        echo '<li>Testar a navegação do menu</li>';
+        echo '</ul>';
+        echo '<p><strong>Importante:</strong> Remova este parâmetro da URL após usar.</p>';
+        echo '</div>';
+        echo '<script>setTimeout(function(){ window.location.href = "' . home_url() . '"; }, 5000);</script>';
+        exit;
+    }
+}
+add_action('init', 'tema_aromas_manual_create_categories');
+
+/**
  * Set Brazilian Portuguese locale
  */
 add_filter('locale', function($locale) {

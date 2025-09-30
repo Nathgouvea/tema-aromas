@@ -119,62 +119,6 @@ function tema_aromas_configure_woocommerce_settings() {
 }
 
 /**
- * Create sample product categories for aromatherapy store
- */
-function tema_aromas_create_product_categories() {
-    if (!class_exists('WooCommerce')) {
-        return;
-    }
-
-    $categories = [
-        'aromatizadores' => [
-            'name' => 'Aromatizadores',
-            'description' => 'Difusores e aromatizadores elétricos para ambientes'
-        ],
-        'home-spray' => [
-            'name' => 'Home Spray',
-            'description' => 'Sprays aromáticos para perfumar ambientes instantaneamente'
-        ],
-        'velas-aromaticas' => [
-            'name' => 'Velas Aromáticas',
-            'description' => 'Velas perfumadas para criar atmosfera aconchegante'
-        ],
-        'kits-especiais' => [
-            'name' => 'Kits Especiais',
-            'description' => 'Conjuntos de produtos com desconto especial'
-        ],
-        'lembrancinhas' => [
-            'name' => 'Lembrancinhas',
-            'description' => 'Pequenos presentes aromáticos para ocasiões especiais'
-        ],
-        'acessorios' => [
-            'name' => 'Acessórios',
-            'description' => 'Acessórios e complementos para aromaterapia'
-        ]
-    ];
-
-    foreach ($categories as $slug => $category_data) {
-        // Check if category already exists
-        $existing_category = get_term_by('slug', $slug, 'product_cat');
-        
-        if (!$existing_category) {
-            $term = wp_insert_term(
-                $category_data['name'],
-                'product_cat',
-                [
-                    'description' => $category_data['description'],
-                    'slug' => $slug
-                ]
-            );
-
-            if (!is_wp_error($term)) {
-                error_log("Tema Aromas: Created product category '{$category_data['name']}'");
-            }
-        }
-    }
-}
-
-/**
  * Theme activation hook
  */
 function tema_aromas_theme_activation() {

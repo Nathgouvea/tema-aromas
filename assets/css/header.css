@@ -249,7 +249,6 @@ header.site-header.scrolled,
    ========================================================================== */
 
 .main-navigation {
-  display: none;
   position: relative;
   flex: 1;
   display: flex;

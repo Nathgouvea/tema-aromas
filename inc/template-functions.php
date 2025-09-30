@@ -29,6 +29,20 @@ function tema_aromas_site_logo() {
 }
 
 /**
+ * Get WooCommerce category URL with fallback
+ */
+function tema_aromas_get_category_url($category_slug) {
+    if (class_exists('WooCommerce')) {
+        $term_link = get_term_link($category_slug, 'product_cat');
+        if (!is_wp_error($term_link)) {
+            return $term_link;
+        }
+    }
+    // Fallback to shop page if category doesn't exist
+    return class_exists('WooCommerce') ? wc_get_page_permalink('shop') : home_url('/shop/');
+}
+
+/**
  * Display the main navigation menu
  */
 function tema_aromas_main_navigation() {
@@ -48,20 +62,20 @@ function tema_aromas_main_navigation() {
             <ul class="main-nav-menu luxury-menu">
                 <li><a href="<?php echo esc_url(home_url('/')); ?>"><?php esc_html_e('INÍCIO', 'tema_aromas'); ?></a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+                    <a href="<?php echo esc_url(class_exists('WooCommerce') ? wc_get_page_permalink('shop') : home_url('/shop/')); ?>" class="dropdown-toggle" aria-expanded="false" aria-haspopup="true">
                         <?php esc_html_e('COMPRAR', 'tema_aromas'); ?>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#"><?php esc_html_e('AROMATIZADORES', 'tema_aromas'); ?></a></li>
-                        <li><a href="#"><?php esc_html_e('HOME SPRAY', 'tema_aromas'); ?></a></li>
-                        <li><a href="#"><?php esc_html_e('VELAS AROMÁTICAS', 'tema_aromas'); ?></a></li>
-                        <li><a href="#"><?php esc_html_e('KITS ESPECIAIS', 'tema_aromas'); ?></a></li>
-                        <li><a href="#"><?php esc_html_e('LEMBRANCINHAS', 'tema_aromas'); ?></a></li>
-                        <li><a href="#"><?php esc_html_e('ACESSÓRIOS', 'tema_aromas'); ?></a></li>
+                        <li><a href="<?php echo esc_url(tema_aromas_get_category_url('aromatizadores')); ?>"><?php esc_html_e('AROMATIZADORES', 'tema_aromas'); ?></a></li>
+                        <li><a href="<?php echo esc_url(tema_aromas_get_category_url('home-spray')); ?>"><?php esc_html_e('HOME SPRAY', 'tema_aromas'); ?></a></li>
+                        <li><a href="<?php echo esc_url(tema_aromas_get_category_url('velas-aromaticas')); ?>"><?php esc_html_e('VELAS AROMÁTICAS', 'tema_aromas'); ?></a></li>
+                        <li><a href="<?php echo esc_url(tema_aromas_get_category_url('kits-especiais')); ?>"><?php esc_html_e('KITS ESPECIAIS', 'tema_aromas'); ?></a></li>
+                        <li><a href="<?php echo esc_url(tema_aromas_get_category_url('lembrancinhas')); ?>"><?php esc_html_e('LEMBRANCINHAS', 'tema_aromas'); ?></a></li>
+                        <li><a href="<?php echo esc_url(tema_aromas_get_category_url('acessorios')); ?>"><?php esc_html_e('ACESSÓRIOS', 'tema_aromas'); ?></a></li>
                     </ul>
                 </li>
-                <li><a href="#"><?php esc_html_e('SOBRE OS AROMAS', 'tema_aromas'); ?></a></li>
-                <li><a href="#"><?php esc_html_e('FALE CONOSCO', 'tema_aromas'); ?></a></li>
+                <li><a href="<?php echo esc_url(get_permalink(get_page_by_path('sobre-os-aromas'))); ?>"><?php esc_html_e('SOBRE OS AROMAS', 'tema_aromas'); ?></a></li>
+                <li><a href="<?php echo esc_url(get_permalink(get_page_by_path('fale-conosco'))); ?>"><?php esc_html_e('FALE CONOSCO', 'tema_aromas'); ?></a></li>
             </ul>
         </nav>
         <?php

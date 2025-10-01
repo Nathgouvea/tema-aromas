@@ -109,6 +109,7 @@
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: center; /* Center the content horizontally */
   min-height: 100vh;
   padding-top: 80px; /* Account for fixed header height */
 }
@@ -119,6 +120,8 @@
   max-width: 800px;
   padding: var(--espacamento-xxl) 0;
   margin-top: 0; /* Ensure content starts at proper position */
+  text-align: center; /* Center the text content */
+  width: 100%; /* Ensure full width for centering */
 }
 
 /* Premium Typography */
@@ -138,7 +141,9 @@
   color: rgba(255, 255, 255, 0.95);
   margin-bottom: var(--espacamento-xl);
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  max-width: 500px;
+  max-width: 600px; /* Increased for better centering */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Sophisticated CTA Buttons */
@@ -146,6 +151,7 @@
   display: flex;
   gap: var(--espacamento-lg);
   flex-wrap: wrap;
+  justify-content: center; /* Center the buttons */
 }
 
 .btn-comprar-agora {
@@ -2141,20 +2147,20 @@ section:nth-child(even) {
 }
 
 /* ==========================================================================
-   Luxury Aromas Showcase - Complete Redesign
+   Friendly Aromas Showcase - Complete Redesign
    ========================================================================== */
 
-.aromas-luxury-showcase {
+.aromas-friendly-showcase {
   background: linear-gradient(135deg, #fefefe 0%, #f8f9fa 50%, #ffffff 100%);
   position: relative;
   overflow: hidden;
-  padding: 120px 0;
+  padding: 80px 0;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
 }
 
-.aromas-luxury-showcase::before {
+.aromas-friendly-showcase::before {
   content: "";
   position: absolute;
   top: 0;
@@ -2163,107 +2169,193 @@ section:nth-child(even) {
   bottom: 0;
   background: radial-gradient(
       circle at 20% 20%,
-      rgba(107, 79, 196, 0.02) 0%,
+      rgba(107, 79, 196, 0.03) 0%,
       transparent 50%
     ),
     radial-gradient(
       circle at 80% 80%,
-      rgba(139, 95, 214, 0.015) 0%,
+      rgba(139, 95, 214, 0.02) 0%,
       transparent 50%
     ),
     radial-gradient(
       circle at 40% 60%,
-      rgba(212, 175, 55, 0.01) 0%,
+      rgba(212, 175, 55, 0.015) 0%,
       transparent 50%
     );
   pointer-events: none;
 }
 
-.aromas-luxury-showcase::after {
+.aromas-friendly-showcase::after {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 1px;
+  height: 2px;
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(107, 79, 196, 0.1) 50%,
+    rgba(107, 79, 196, 0.1) 25%,
+    rgba(139, 95, 214, 0.1) 50%,
+    rgba(107, 79, 196, 0.1) 75%,
     transparent 100%
   );
 }
 
-/* Luxury Header */
-.aromas-luxury-header {
+/* Friendly Header */
+.aromas-friendly-header {
   position: relative;
   z-index: 2;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 
-.aromas-luxury-content {
+.aromas-header-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--espacamento-lg);
-  text-align: center;
 }
 
-.aromas-luxury-title {
+.aromas-header-text {
+  text-align: left;
+}
+
+.aromas-subtitle {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--cor-primaria);
+  margin-bottom: 16px;
+  opacity: 0.8;
+  letter-spacing: 0.5px;
+}
+
+.aromas-main-title {
   font-family: "Playfair Display", serif;
-  font-size: clamp(3rem, 6vw, 5rem);
+  font-size: clamp(2.5rem, 5vw, 4rem);
   font-weight: 700;
   line-height: 1.1;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
   color: var(--cor-primaria);
   position: relative;
 }
 
-.aromas-luxury-title .title-line-1,
-.aromas-luxury-title .title-line-2,
-.aromas-luxury-title .title-line-3 {
-  display: block;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 0.8s ease forwards;
+.aromas-title-decoration {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
 }
 
-.aromas-luxury-title .title-line-2 {
-  animation-delay: 0.2s;
-}
-
-.aromas-luxury-title .title-line-3 {
-  animation-delay: 0.4s;
-}
-
-.aromas-luxury-divider {
-  width: 80px;
-  height: 3px;
+.decoration-line {
+  flex: 1;
+  height: 2px;
   background: linear-gradient(90deg, var(--cor-primaria), var(--cor-accent));
-  margin: 0 auto 40px;
-  border-radius: 2px;
-  opacity: 0;
-  transform: scaleX(0);
-  animation: expandDivider 1s ease 0.6s forwards;
+  border-radius: 1px;
 }
 
-.aromas-luxury-description {
-  font-size: 1.2rem;
+.decoration-icon {
+  font-size: 1.5rem;
+  animation: gentle-bounce 3s ease-in-out infinite;
+}
+
+.aromas-description {
+  font-size: 1.1rem;
   line-height: 1.7;
   color: var(--cor-texto);
   opacity: 0.8;
-  max-width: 600px;
-  margin: 0 auto;
-  font-weight: 400;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.8s ease 0.8s forwards;
+  margin-bottom: 32px;
+  max-width: 500px;
 }
 
-/* Luxury Aromas Grid */
-.aromas-luxury-grid {
+/* Hero Image Visual */
+.aromas-header-visual {
+  position: relative;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aromas-hero-image {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  height: 280px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(107, 79, 196, 0.15);
+  transition: all 0.3s ease;
+}
+
+.aromas-hero-image:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 48px rgba(107, 79, 196, 0.2);
+}
+
+.aromas-hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.aromas-hero-image:hover img {
+  transform: scale(1.05);
+}
+
+.aromas-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(107, 79, 196, 0.1) 0%,
+    rgba(139, 95, 214, 0.05) 50%,
+    transparent 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.aromas-hero-image:hover .aromas-image-overlay {
+  opacity: 1;
+}
+
+.overlay-text {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 8px 16px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.overlay-icon {
+  font-size: 1.2rem;
+}
+
+.overlay-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--cor-primaria);
+}
+
+/* Interactive Aromas Grid */
+.aromas-interactive-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 40px;
+  gap: 24px;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--espacamento-lg);
@@ -2271,19 +2363,19 @@ section:nth-child(even) {
   z-index: 2;
 }
 
-.aroma-luxury-card {
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 24px;
+.aroma-interactive-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 8px 32px rgba(107, 79, 196, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 4px 20px rgba(107, 79, 196, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);
   cursor: pointer;
 }
 
-.aroma-luxury-card::before {
+.aroma-interactive-card::before {
   content: "";
   position: absolute;
   top: 0;
@@ -2296,92 +2388,105 @@ section:nth-child(even) {
     transparent 50%
   );
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.3s ease;
   z-index: 1;
 }
 
-.aroma-luxury-card:hover::before {
+.aroma-interactive-card:hover::before {
   opacity: 1;
 }
 
-.aroma-luxury-card:hover {
-  transform: translateY(-12px) scale(1.02);
-  box-shadow: 0 20px 60px rgba(107, 79, 196, 0.15),
-    0 8px 24px rgba(0, 0, 0, 0.08);
+.aroma-interactive-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(107, 79, 196, 0.15);
   border-color: rgba(107, 79, 196, 0.2);
 }
 
-.aroma-luxury-image {
+.aroma-card-inner {
   position: relative;
-  height: 200px;
-  overflow: hidden;
-}
-
-.aroma-luxury-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.aroma-luxury-card:hover .aroma-luxury-image img {
-  transform: scale(1.1);
-}
-
-.aroma-luxury-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.1) 0%, transparent 50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.4s ease;
   z-index: 2;
 }
 
-.aroma-luxury-card:hover .aroma-luxury-overlay {
-  opacity: 1;
+.aroma-image-container {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
 }
 
-.aroma-luxury-icon {
-  font-size: 2.5rem;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
-  transform: scale(0.8);
-  transition: transform 0.3s ease;
+.aroma-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
 }
 
-.aroma-luxury-card:hover .aroma-luxury-icon {
-  transform: scale(1);
+.aroma-interactive-card:hover .aroma-image-container img {
+  transform: scale(1.05);
 }
 
-.aroma-luxury-content {
-  padding: 32px 24px;
+.aroma-image-overlay {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 3;
+}
+
+.aroma-feeling-badge {
+  background: rgba(107, 79, 196, 0.9);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.aroma-content {
+  padding: 20px;
   text-align: center;
   position: relative;
   z-index: 2;
 }
 
-.aroma-luxury-name {
-  font-size: 1.3rem;
+.aroma-icon {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  opacity: 0.8;
+}
+
+.aroma-name {
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--cor-primaria);
   margin-bottom: 8px;
-  letter-spacing: -0.02em;
   font-family: "Playfair Display", serif;
 }
 
-.aroma-luxury-sensation {
-  font-size: 0.95rem;
+.aroma-sensation {
+  font-size: 0.9rem;
   color: var(--cor-texto);
   opacity: 0.7;
-  margin: 0;
+  margin-bottom: 16px;
   line-height: 1.4;
   font-style: italic;
-  font-weight: 400;
+}
+
+.aroma-features {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.feature-tag {
+  background: rgba(107, 79, 196, 0.1);
+  color: var(--cor-primaria);
+  padding: 4px 8px;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid rgba(107, 79, 196, 0.2);
 }
 
 /* Animations */
@@ -2426,35 +2531,69 @@ section:nth-child(even) {
   transform: translateY(30px);
 }
 
-/* Luxury CTA */
-.aromas-luxury-cta {
+/* Friendly CTA */
+.aromas-friendly-cta {
   text-align: center;
-  margin-top: 80px;
+  margin-top: 60px;
   position: relative;
   z-index: 2;
 }
 
-.aromas-luxury-cta .btn-luxury {
+.cta-content {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 var(--espacamento-lg);
+}
+
+.cta-title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 600;
+  color: var(--cor-primaria);
+  margin-bottom: 16px;
+  font-family: "Playfair Display", serif;
+}
+
+.cta-subtitle {
+  font-size: 1rem;
+  color: var(--cor-texto);
+  opacity: 0.8;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-aromas-primary,
+.btn-aromas-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-aromas-primary {
   background: linear-gradient(
     135deg,
     var(--cor-primaria) 0%,
     var(--cor-accent) 100%
   );
-  color: var(--cor-fundo);
-  border: none;
-  padding: 18px 40px;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 1.1rem;
-  text-decoration: none;
-  display: inline-block;
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  box-shadow: 0 8px 32px rgba(107, 79, 196, 0.2);
-  position: relative;
-  overflow: hidden;
+  color: white;
+  box-shadow: 0 4px 16px rgba(107, 79, 196, 0.3);
 }
 
-.aromas-luxury-cta .btn-luxury::before {
+.btn-aromas-primary::before {
   content: "";
   position: absolute;
   top: 0;
@@ -2470,13 +2609,30 @@ section:nth-child(even) {
   transition: left 0.5s ease;
 }
 
-.aromas-luxury-cta .btn-luxury:hover::before {
+.btn-aromas-primary:hover::before {
   left: 100%;
 }
 
-.aromas-luxury-cta .btn-luxury:hover {
+.btn-aromas-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 48px rgba(107, 79, 196, 0.3);
+  box-shadow: 0 8px 24px rgba(107, 79, 196, 0.4);
+}
+
+.btn-aromas-secondary {
+  background: transparent;
+  color: var(--cor-primaria);
+  border: 2px solid var(--cor-primaria);
+}
+
+.btn-aromas-secondary:hover {
+  background: var(--cor-primaria);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(107, 79, 196, 0.3);
+}
+
+.btn-icon {
+  font-size: 1.1rem;
 }
 
 /* Aromas Carousel Container */
@@ -2594,94 +2750,135 @@ section:nth-child(even) {
   transform: scale(1.1);
 }
 
-/* Luxury Layout Responsive Design */
+/* Friendly Layout Responsive Design */
 @media (max-width: 1200px) {
-  .aromas-luxury-grid {
+  .aromas-interactive-grid {
     grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
+    gap: 20px;
   }
 }
 
 @media (max-width: 1024px) {
-  .aromas-luxury-showcase {
-    padding: 80px 0;
-  }
-
-  .aromas-luxury-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    padding: 0 var(--espacamento-md);
-  }
-
-  .aroma-luxury-image {
-    height: 160px;
-  }
-
-  .aroma-luxury-content {
-    padding: 24px 20px;
-  }
-
-  .aroma-luxury-name {
-    font-size: 1.1rem;
-  }
-
-  .aroma-luxury-sensation {
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .aromas-luxury-showcase {
+  .aromas-friendly-showcase {
     padding: 60px 0;
   }
 
-  .aromas-luxury-header {
-    margin-bottom: 60px;
+  .aromas-header-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
   }
 
-  .aromas-luxury-title {
-    font-size: clamp(2.5rem, 8vw, 3.5rem);
+  .aromas-header-text {
+    text-align: center;
   }
 
-  .aromas-luxury-description {
-    font-size: 1.1rem;
+  .aromas-header-visual {
+    height: 200px;
   }
 
-  .aromas-luxury-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    padding: 0 var(--espacamento-sm);
+  .aromas-hero-image {
+    max-width: 300px;
+    height: 200px;
   }
 
-  .aroma-luxury-image {
-    height: 140px;
+  .aromas-interactive-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    padding: 0 var(--espacamento-md);
   }
 
-  .aroma-luxury-content {
-    padding: 20px 16px;
+  .aroma-image-container {
+    height: 150px;
   }
 
-  .aroma-luxury-name {
+  .aroma-content {
+    padding: 16px;
+  }
+
+  .aroma-name {
     font-size: 1rem;
   }
 
-  .aroma-luxury-sensation {
+  .aroma-sensation {
     font-size: 0.85rem;
   }
 }
 
+@media (max-width: 768px) {
+  .aromas-friendly-showcase {
+    padding: 50px 0;
+  }
+
+  .aromas-friendly-header {
+    margin-bottom: 40px;
+  }
+
+  .aromas-header-content {
+    gap: 30px;
+    padding: 0 var(--espacamento-md);
+  }
+
+  .aromas-main-title {
+    font-size: clamp(2rem, 6vw, 2.8rem);
+  }
+
+  .aromas-description {
+    font-size: 1rem;
+  }
+
+  .aromas-interactive-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    padding: 0 var(--espacamento-sm);
+  }
+
+  .aroma-image-container {
+    height: 140px;
+  }
+
+  .aroma-content {
+    padding: 14px;
+  }
+
+  .aroma-name {
+    font-size: 0.95rem;
+  }
+
+  .aroma-sensation {
+    font-size: 0.8rem;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-aromas-primary,
+  .btn-aromas-secondary {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+}
+
 @media (max-width: 480px) {
-  .aromas-luxury-grid {
+  .aromas-interactive-grid {
     grid-template-columns: 1fr;
     gap: 16px;
   }
 
-  .aroma-luxury-image {
-    height: 180px;
+  .aroma-image-container {
+    height: 160px;
   }
 
-  .aroma-luxury-content {
-    padding: 24px 20px;
+  .aroma-content {
+    padding: 16px;
+  }
+
+  .aromas-hero-image {
+    max-width: 250px;
+    height: 180px;
   }
 }
 
@@ -3181,4 +3378,37 @@ img[loading="lazy"].loaded {
 /* Ensure the overlay doesn't completely hide the image */
 .produtos-queridos-section .produto-overlay {
   display: none !important;
+}
+
+/* Category Icons - Clean SVG Icons */
+.produtos-queridos-section .produto-category-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  z-index: 3;
+}
+
+.produtos-queridos-section .produto-category-icon svg {
+  color: var(--cor-primaria);
+  transition: all 0.3s ease;
+}
+
+.produtos-queridos-section .produto-card:hover .produto-category-icon {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.produtos-queridos-section .produto-card:hover .produto-category-icon svg {
+  color: var(--cor-accent);
 }

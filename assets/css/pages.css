@@ -767,7 +767,7 @@ select.modern-form-input {
 .fragrance-pill {
   background: white;
   border: 2px solid var(--cor-borda);
-  border-radius: 25px;
+  border-radius: 100px;
   padding: var(--espacamento-sm) var(--espacamento-lg);
   font-size: 1rem;
   font-weight: 500;

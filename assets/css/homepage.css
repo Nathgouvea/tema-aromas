@@ -176,7 +176,7 @@
   color: var(--cor-fundo);
   border: none;
   padding: 10px 24px;
-  border-radius: 50px;
+  border-radius: 100px;
   font-weight: 600;
   font-size: 1.1rem;
   text-decoration: none;
@@ -219,7 +219,7 @@
   color: var(--cor-fundo);
   border: 2px solid var(--cor-fundo);
   padding: 10px 24px;
-  border-radius: 50px;
+  border-radius: 100px;
   font-weight: 600;
   font-size: 1.1rem;
   text-decoration: none;
@@ -2587,8 +2587,8 @@ section:nth-child(even) {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 14px 28px;
-  border-radius: 25px;
+  padding: 10px 24px;
+  border-radius: 100px;
   font-weight: 600;
   font-size: 1rem;
   text-decoration: none;

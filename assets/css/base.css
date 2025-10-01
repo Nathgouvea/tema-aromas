@@ -5,6 +5,76 @@
  */
 
 /* ==========================================================================
+   MANDATORY: Global Button Consistency Rule
+   ALL BUTTONS MUST FOLLOW THESE STANDARDS
+   ========================================================================== */
+
+/* Universal Button Rule - Overrides ALL button styles */
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+.button,
+.btn,
+a.button,
+a.btn,
+[class*="btn-"],
+[class*="button"] {
+  padding: 10px 24px !important;
+  border-radius: 100px !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  cursor: pointer !important;
+  border: none !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* Ensure WooCommerce buttons follow the rule */
+.woocommerce button,
+.woocommerce input[type="button"],
+.woocommerce input[type="submit"],
+.woocommerce .button,
+.woocommerce .btn,
+.woocommerce a.button,
+.woocommerce a.btn,
+.woocommerce [class*="btn-"],
+.woocommerce [class*="button"] {
+  padding: 10px 24px !important;
+  border-radius: 100px !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+}
+
+/* Email template buttons */
+.email-button,
+.whatsapp-button,
+.woocommerce-button {
+  padding: 10px 24px !important;
+  border-radius: 100px !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+}
+
+/* Form buttons */
+form button,
+form input[type="submit"],
+form input[type="button"],
+form .button,
+form .btn {
+  padding: 10px 24px !important;
+  border-radius: 100px !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+}
+
+/* ==========================================================================
    Luxury Typography System
    ========================================================================== */
 

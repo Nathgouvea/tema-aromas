@@ -943,6 +943,63 @@
 }
 
 /* ==========================================================================
+   Novidades Products Slider
+   ========================================================================== */
+
+.novidades-products-slider {
+  padding: var(--espacamento-xxl) 0;
+  background: var(--cor-fundo);
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+}
+
+.novidades-slider-container {
+  position: relative;
+  max-width: 1200px;
+  margin: var(--espacamento-xl) auto;
+  padding: 0 var(--espacamento-lg);
+}
+
+.novidades-slider-wrapper {
+  overflow: hidden;
+  border-radius: 20px;
+  position: relative;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(230, 230, 230, 0.3);
+}
+
+.novidades-slider {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  gap: var(--espacamento-md);
+  padding: var(--espacamento-md);
+}
+
+.novidades-slider .woocommerce ul.products {
+  display: flex;
+  gap: var(--espacamento-md);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+}
+
+.novidades-slider .woocommerce ul.products li.product {
+  flex: 0 0 calc(25% - var(--espacamento-md));
+  min-width: 250px;
+  margin: 0;
+  padding: 0;
+  max-width: 280px;
+}
+
+.novidades-cta {
+  text-align: center;
+  margin-top: var(--espacamento-xl);
+}
+
+/* ==========================================================================
    Nossos Produtos Queridos
    ========================================================================== */
 

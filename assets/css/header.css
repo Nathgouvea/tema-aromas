@@ -600,7 +600,7 @@ header.site-header.scrolled,
 }
 
 .cart-updated {
-  animation: cartBounce 0.6s ease-in-out;
+  animation: cartBounce 1.5s ease-in-out; /* Increased from 0.6s to 1.5s for more user-friendly experience */
 }
 
 @keyframes cartBounce {
@@ -608,8 +608,11 @@ header.site-header.scrolled,
   100% {
     transform: scale(1);
   }
-  50% {
-    transform: scale(1.1);
+  30% {
+    transform: scale(1.05); /* Reduced from 1.1 to 1.05 for gentler animation */
+  }
+  60% {
+    transform: scale(1.05); /* Added intermediate step for smoother animation */
   }
 }
 

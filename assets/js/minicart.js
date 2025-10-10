@@ -262,9 +262,9 @@
     // Show notification
     showCartNotification("Produto adicionado ao carrinho!", "success");
 
-    // Auto-open cart (optional)
+    // Auto-open cart (optional) - with longer delay for better UX
     if (shouldAutoOpenCart()) {
-      setTimeout(openCart, 500);
+      setTimeout(openCart, 1000); // Increased from 500ms to 1000ms for less aggressive behavior
     }
   }
 
@@ -279,11 +279,11 @@
     );
 
     cartCounts.forEach((count) => {
-      // Add pulse animation
+      // Add pulse animation with longer duration for better UX
       count.classList.add("animate-pulse");
       setTimeout(() => {
         count.classList.remove("animate-pulse");
-      }, 1000);
+      }, 2000); // Increased from 1000ms to 2000ms for more user-friendly experience
     });
   }
 
@@ -299,7 +299,7 @@
       cartToggle.classList.add("cart-updated");
       setTimeout(() => {
         cartToggle.classList.remove("cart-updated");
-      }, 600);
+      }, 1500); // Increased from 600ms to 1500ms for more user-friendly experience
     }
   }
 
@@ -320,7 +320,7 @@
             box-shadow: var(--sombra-luxo);
             z-index: 10000;
             transform: translateX(100%);
-            transition: transform 0.3s ease;
+            transition: transform 0.5s ease; /* Slower, more user-friendly transition */
             max-width: 300px;
         `;
 

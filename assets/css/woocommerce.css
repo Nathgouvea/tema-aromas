@@ -204,11 +204,15 @@
   }
 
   .woocommerce ul.products li.product .button {
-    font-size: 0;
     padding: 10px 16px;
     width: auto;
     border-radius: 100px;
     margin: 0 auto;
+  }
+
+  .woocommerce ul.products li.product .button.add_to_cart_button {
+    font-size: 0 !important;
+    color: transparent !important;
   }
 
   /* Bag icon removed for mobile as well */
@@ -216,6 +220,8 @@
   .woocommerce ul.products li.product .button.add_to_cart_button::after {
     font-size: 0.75rem;
     content: "COMPRAR AGORA";
+    color: var(--cor-fundo);
+    display: inline-block;
   }
 
   .woocommerce span.onsale {
@@ -477,13 +483,13 @@
   width: auto;
   margin: 0 auto;
   position: relative;
-  overflow: hidden;
   white-space: nowrap;
 }
 
-/* Button with SVG icon */
+/* Button with SVG icon - Hide original text and show custom text */
 .woocommerce ul.products li.product .button.add_to_cart_button {
-  font-size: 0;
+  font-size: 0 !important;
+  color: transparent !important;
 }
 
 /* Bag icon removed for cleaner button design */
@@ -494,6 +500,8 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  color: var(--cor-fundo);
+  display: inline-block;
 }
 
 .woocommerce ul.products li.product .button::before {

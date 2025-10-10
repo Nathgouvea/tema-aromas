@@ -375,15 +375,8 @@ header.site-header.scrolled,
   position: relative;
 }
 
-/* Desktop hover behavior */
-@media (min-width: 1024px) {
-  .dropdown:hover .dropdown-menu,
-  .menu-item-has-children:hover .dropdown-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
-}
+/* Desktop hover behavior - REMOVED: Now handled by JavaScript for consistency */
+/* JavaScript in menu_dropdown.js handles all dropdown interactions */
 
 .dropdown-menu {
   position: absolute;

@@ -3339,6 +3339,7 @@ img {
   transition: opacity 0.3s ease;
 }
 
+/* Removed opacity: 0 that was hiding lazy-loaded images
 img[loading="lazy"] {
   opacity: 0;
 }
@@ -3346,6 +3347,7 @@ img[loading="lazy"] {
 img[loading="lazy"].loaded {
   opacity: 1;
 }
+*/
 
 /* ==========================================================================
    PRODUTOS QUERIDOS SECTION ALIGNMENT FIXES

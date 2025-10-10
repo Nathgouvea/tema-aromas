@@ -30,7 +30,7 @@
 
     // Initialize components
     initSmoothScrolling();
-    initLazyLoading();
+    // initLazyLoading(); // Disabled - was causing images not to load on first visit
     initAnimationObserver();
     initFormEnhancements();
     initScrollToTop();
@@ -70,8 +70,15 @@
 
   /**
    * Lazy loading for images with intersection observer
+   * DISABLED: This function was causing images not to load on first visit
+   * The native browser loading="lazy" attribute handles this better
    */
   function initLazyLoading() {
+    // Disabled - was setting opacity to 0 and not properly showing images on first load
+    // Native browser lazy loading with loading="lazy" attribute works better
+    return;
+    
+    /* Original code kept for reference:
     const lazyImages = document.querySelectorAll('img[loading="lazy"]');
 
     if ("IntersectionObserver" in window) {
@@ -95,6 +102,7 @@
 
       lazyImages.forEach((img) => imageObserver.observe(img));
     }
+    */
   }
 
   /**

@@ -276,19 +276,10 @@ function tema_aromas_scripts() {
             true
         );
 
-        // Featured Products Slider JavaScript
+        // Product Sliders JavaScript (featured & novidades sliders)
         wp_enqueue_script(
-            'tema-aromas-featured-slider',
-            get_template_directory_uri() . '/assets/js/featured-products-slider.js',
-            [],
-            $theme_version,
-            true
-        );
-
-        // Novidades Products Slider JavaScript
-        wp_enqueue_script(
-            'tema-aromas-novidades-slider',
-            get_template_directory_uri() . '/assets/js/novidades-slider.js',
+            'tema-aromas-product-sliders',
+            get_template_directory_uri() . '/assets/js/product-sliders.js',
             [],
             $theme_version,
             true

@@ -1,7 +1,6 @@
 /**
- * Novidades Products Slider
- *
- * Handles the novidades products slider functionality on homepage
+ * Product Sliders - Unified Slider System
+ * Handles all product slider functionality (featured, novidades, etc.)
  *
  * @package TemaAromas
  * @version 1.0.0
@@ -10,15 +9,21 @@
 (function () {
   "use strict";
 
-  class NovidadesProductsSlider {
-    constructor() {
-      this.slider = document.getElementById("novidades-products-slider");
-      this.prevBtn = document.getElementById("novidades-slider-prev");
-      this.nextBtn = document.getElementById("novidades-slider-next");
-      this.dotsContainer = document.getElementById("novidades-slider-dots");
+  /**
+   * Generic Product Slider Class
+   * Can be used for any product slider on the page
+   */
+  class ProductSlider {
+    constructor(config) {
+      this.slider = document.getElementById(config.sliderId);
+      this.prevBtn = document.getElementById(config.prevBtnId);
+      this.nextBtn = document.getElementById(config.nextBtnId);
+      this.dotsContainer = document.getElementById(config.dotsId);
+      this.productSelector =
+        config.productSelector || ".woocommerce ul.products li.product";
 
       if (!this.slider || !this.prevBtn || !this.nextBtn) {
-        return; // Exit if elements don't exist
+        return; // Exit if required elements don't exist
       }
 
       this.currentSlide = 0;
@@ -38,9 +43,7 @@
 
     setupSlider() {
       // Get all product items
-      const products = this.slider.querySelectorAll(
-        ".woocommerce ul.products li.product"
-      );
+      const products = this.slider.querySelectorAll(this.productSelector);
       this.totalSlides = products.length;
 
       if (this.totalSlides === 0) {
@@ -50,16 +53,16 @@
       // Calculate how many slides we can show
       this.slidesPerView = this.getSlidesPerView();
       this.maxSlides = Math.max(0, this.totalSlides - this.slidesPerView);
-
-      // Set initial transform
-      this.updateSlider();
     }
 
     getSlidesPerView() {
       const width = window.innerWidth;
-      if (width < 768) {
-        return 2; // Mobile: 2 products per view
-      } else if (width < 1024) {
+
+      if (width <= 480) {
+        return 1; // Mobile portrait: 1 product per view
+      } else if (width <= 768) {
+        return 2; // Mobile landscape: 2 products per view
+      } else if (width <= 1024) {
         return 3; // Tablet: 3 products per view
       } else {
         return 4; // Desktop: 4 products per view
@@ -68,6 +71,9 @@
 
     createDots() {
       if (!this.dotsContainer || this.maxSlides <= 0) {
+        if (this.dotsContainer) {
+          this.dotsContainer.innerHTML = "";
+        }
         return;
       }
 
@@ -76,9 +82,13 @@
       for (let i = 0; i <= this.maxSlides; i++) {
         const dot = document.createElement("button");
         dot.className = "slider-dot";
-        if (i === 0) dot.classList.add("active");
-        dot.setAttribute("aria-label", `Ir para slide ${i + 1}`);
+        dot.setAttribute("aria-label", `Ir para o slide ${i + 1}`);
         dot.addEventListener("click", () => this.goToSlide(i));
+
+        if (i === 0) {
+          dot.classList.add("active");
+        }
+
         this.dotsContainer.appendChild(dot);
       }
     }
@@ -102,9 +112,13 @@
       // Touch/swipe support
       this.addTouchSupport();
 
-      // Window resize
+      // Resize handler
+      let resizeTimeout;
       window.addEventListener("resize", () => {
-        this.handleResize();
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+          this.handleResize();
+        }, 250);
       });
     }
 
@@ -127,7 +141,7 @@
         const diffX = startX - currentX;
         const diffY = startY - currentY;
 
-        // Only prevent default if horizontal swipe is more significant
+        // Only handle horizontal swipes
         if (Math.abs(diffX) > Math.abs(diffY)) {
           e.preventDefault();
         }
@@ -142,9 +156,9 @@
 
         if (Math.abs(diffX) > threshold) {
           if (diffX > 0) {
-            this.nextSlide(); // Swipe left - next slide
+            this.nextSlide(); // Swipe left = next slide
           } else {
-            this.prevSlide(); // Swipe right - previous slide
+            this.prevSlide(); // Swipe right = previous slide
           }
         }
 
@@ -154,6 +168,7 @@
 
     handleResize() {
       const newSlidesPerView = this.getSlidesPerView();
+
       if (newSlidesPerView !== this.slidesPerView) {
         this.slidesPerView = newSlidesPerView;
         this.maxSlides = Math.max(0, this.totalSlides - this.slidesPerView);
@@ -172,8 +187,6 @@
       if (this.currentSlide > 0) {
         this.currentSlide--;
         this.updateSlider();
-        this.updateDots();
-        this.updateButtons();
       }
     }
 
@@ -181,8 +194,6 @@
       if (this.currentSlide < this.maxSlides) {
         this.currentSlide++;
         this.updateSlider();
-        this.updateDots();
-        this.updateButtons();
       }
     }
 
@@ -190,17 +201,27 @@
       if (slideIndex >= 0 && slideIndex <= this.maxSlides) {
         this.currentSlide = slideIndex;
         this.updateSlider();
-        this.updateDots();
-        this.updateButtons();
       }
     }
 
     updateSlider() {
-      if (!this.slider) return;
+      if (this.maxSlides < 0) {
+        return;
+      }
 
+      // Calculate transform
       const slideWidth = 100 / this.slidesPerView;
       const translateX = -(this.currentSlide * slideWidth);
+
+      // Apply transform to slider
       this.slider.style.transform = `translateX(${translateX}%)`;
+
+      // Update navigation buttons
+      this.prevBtn.disabled = this.currentSlide === 0;
+      this.nextBtn.disabled = this.currentSlide === this.maxSlides;
+
+      // Update dots
+      this.updateDots();
     }
 
     updateDots() {
@@ -212,94 +233,39 @@
       });
     }
 
-    updateButtons() {
-      if (!this.prevBtn || !this.nextBtn) return;
-
-      this.prevBtn.disabled = this.currentSlide === 0;
-      this.nextBtn.disabled = this.currentSlide === this.maxSlides;
-    }
-
     // Public method to refresh slider (useful for dynamic content)
     refresh() {
       this.setupSlider();
       this.createDots();
       this.updateSlider();
-      this.updateDots();
-      this.updateButtons();
     }
   }
 
-  // Initialize when DOM is ready
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", () => {
-      new NovidadesProductsSlider();
+  /**
+   * Initialize all sliders when DOM is ready
+   */
+  function initializeSliders() {
+    // Featured Products Slider
+    new ProductSlider({
+      sliderId: "featured-products-slider",
+      prevBtnId: "featured-slider-prev",
+      nextBtnId: "featured-slider-next",
+      dotsId: "featured-slider-dots",
     });
+
+    // Novidades Products Slider
+    new ProductSlider({
+      sliderId: "novidades-products-slider",
+      prevBtnId: "novidades-slider-prev",
+      nextBtnId: "novidades-slider-next",
+      dotsId: "novidades-slider-dots",
+    });
+  }
+
+  // Initialize sliders when DOM is ready
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initializeSliders);
   } else {
-    new NovidadesProductsSlider();
+    initializeSliders();
   }
-
-  // Auto-play functionality (optional)
-  class NovidadesSliderAutoPlay {
-    constructor(sliderInstance) {
-      this.slider = sliderInstance;
-      this.interval = null;
-      this.autoPlayDelay = 5000; // 5 seconds
-      this.isPaused = false;
-
-      this.init();
-    }
-
-    init() {
-      if (!this.slider) return;
-
-      this.startAutoPlay();
-      this.addPauseOnHover();
-    }
-
-    startAutoPlay() {
-      this.interval = setInterval(() => {
-        if (
-          !this.isPaused &&
-          this.slider.currentSlide < this.slider.maxSlides
-        ) {
-          this.slider.nextSlide();
-        } else if (
-          !this.isPaused &&
-          this.slider.currentSlide >= this.slider.maxSlides
-        ) {
-          this.slider.goToSlide(0); // Loop back to start
-        }
-      }, this.autoPlayDelay);
-    }
-
-    stopAutoPlay() {
-      if (this.interval) {
-        clearInterval(this.interval);
-        this.interval = null;
-      }
-    }
-
-    addPauseOnHover() {
-      const sliderElement = document.getElementById(
-        "novidades-products-slider"
-      );
-      if (!sliderElement) return;
-
-      sliderElement.addEventListener("mouseenter", () => {
-        this.isPaused = true;
-      });
-
-      sliderElement.addEventListener("mouseleave", () => {
-        this.isPaused = false;
-      });
-    }
-  }
-
-  // Initialize auto-play if enabled
-  document.addEventListener("DOMContentLoaded", () => {
-    const sliderInstance = new NovidadesProductsSlider();
-    if (sliderInstance.slider) {
-      new NovidadesSliderAutoPlay(sliderInstance);
-    }
-  });
 })();

@@ -393,7 +393,7 @@ header.site-header.scrolled,
   opacity: 0;
   visibility: hidden;
   transform: translateY(-10px);
-  transition: var(--transicao-suave);
+  transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
   z-index: 1000;
 }
 
@@ -449,7 +449,7 @@ header.site-header.scrolled,
 }
 
 .dropdown-menu .menu-link {
-  display: flex;
+  display: flex !important;
   align-items: center;
   gap: var(--espacamento-sm);
   padding: var(--espacamento-sm) var(--espacamento-md);
@@ -460,14 +460,18 @@ header.site-header.scrolled,
   font-size: 0.875rem;
   text-transform: none;
   letter-spacing: normal;
-  transition: var(--transicao-rapida);
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 /* Category Icons in Dropdown */
 .category-icon {
   font-size: 1.2rem;
-  opacity: 0.8;
-  transition: var(--transicao-rapida);
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: inline-block !important;
+  transition: transform 0.2s ease;
 }
 
 .dropdown-menu .menu-link:hover .category-icon {
@@ -476,10 +480,12 @@ header.site-header.scrolled,
 }
 
 .dropdown-menu .menu-link:hover {
-  background: var(--gradiente-luxo);
+  background: var(--gradiente-luxo) !important;
   color: var(--cor-fundo) !important;
   transform: translateX(4px);
   box-shadow: var(--sombra-sutil);
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 /* Ensure dropdown text is always black on all states */
@@ -489,6 +495,31 @@ header.site-header.scrolled,
 .dropdown-menu .menu-link:active {
   color: var(--cor-texto) !important;
   text-shadow: none !important;
+}
+
+/* Force dropdown menu to always be visible when .show class is present */
+.dropdown-menu.show {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+  display: block !important;
+  pointer-events: auto !important;
+  background: #ffffff !important;
+  z-index: 9999 !important;
+}
+
+/* Ensure dropdown menu items are always visible and clickable */
+.dropdown-menu.show .menu-item {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.dropdown-menu.show .menu-link {
+  display: flex !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  color: var(--cor-texto) !important;
 }
 
 /* ==========================================================================

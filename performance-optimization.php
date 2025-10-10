@@ -189,12 +189,16 @@ function tema_aromas_remove_unnecessary_features() {
         wp_dequeue_style('wc-blocks-style');
     }
     
-    // Remove unnecessary jQuery migrate
+    // jQuery Migrate removal - DISABLED for WooCommerce compatibility
+    // Many WooCommerce extensions require jQuery Migrate
+    // Commenting out to prevent compatibility issues with payment gateways and shipping plugins
+    /*
     if (!is_admin()) {
         wp_deregister_script('jquery');
         wp_register_script('jquery', includes_url('/js/jquery/jquery.min.js'), false, NULL);
         wp_enqueue_script('jquery');
     }
+    */
 }
 add_action('init', 'tema_aromas_remove_unnecessary_features');
 
@@ -251,7 +255,8 @@ add_action('wp_footer', 'tema_aromas_add_performance_monitoring');
 function tema_aromas_optimize_woocommerce_assets() {
     if (!is_woocommerce() && !is_cart() && !is_checkout() && !is_account_page()) {
         // Dequeue WooCommerce scripts and styles on non-shop pages
-        wp_dequeue_script('wc-cart-fragments');
+        // FIXED: Commented out wc-cart-fragments to fix mini-cart counter
+        // wp_dequeue_script('wc-cart-fragments'); // This breaks mini-cart updates
         wp_dequeue_script('woocommerce');
         wp_dequeue_style('woocommerce-general');
         wp_dequeue_style('woocommerce-layout');

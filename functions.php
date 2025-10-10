@@ -12,6 +12,17 @@ if (!defined('ABSPATH')) {
 }
 
 /**
+ * Contact Information Constants
+ * Centralized contact info for easy maintenance
+ */
+define('TEMA_AROMAS_WHATSAPP', '5516991626921');
+define('TEMA_AROMAS_WHATSAPP_URL', 'https://wa.me/5516991626921');
+define('TEMA_AROMAS_WHATSAPP_DISPLAY', '(16) 99162-6921');
+define('TEMA_AROMAS_INSTAGRAM', '@secretszen');
+define('TEMA_AROMAS_INSTAGRAM_URL', 'https://www.instagram.com/secretszen');
+define('TEMA_AROMAS_EMAIL', 'secretszen888@gmail.com');
+
+/**
  * Theme Setup
  */
 function tema_aromas_setup() {
@@ -405,10 +416,22 @@ function tema_aromas_create_product_categories() {
 add_action('after_switch_theme', 'tema_aromas_create_product_categories');
 
 /**
- * Manual trigger to create categories (can be called via URL)
+ * Manual trigger to create categories (secured with authentication)
  */
 function tema_aromas_manual_create_categories() {
+    // SECURITY FIX: Only allow admins to create categories
     if (isset($_GET['create_categories']) && $_GET['create_categories'] === 'yes') {
+        // Check if user has admin capabilities
+        if (!current_user_can('manage_options')) {
+            wp_die('Você não tem permissão para acessar esta funcionalidade.');
+        }
+        
+        // Verify nonce for additional security (optional but recommended)
+        // To use this, add ?create_categories=yes&_wpnonce=[nonce_value] to URL
+        if (isset($_GET['_wpnonce']) && !wp_verify_nonce($_GET['_wpnonce'], 'create_categories')) {
+            wp_die('Token de segurança inválido.');
+        }
+        
         tema_aromas_create_product_categories();
         echo '<div style="background: #4CAF50; color: white; padding: 20px; margin: 20px; border-radius: 5px;">';
         echo '<h3>✅ Categorias WooCommerce criadas com sucesso!</h3>';

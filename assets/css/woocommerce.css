@@ -1824,55 +1824,5 @@ section:has(> h2:contains("Best Quality Plants")) {
 }
 
 /* ==========================================================================
-   Luxury Button Enhancements
+   Luxury Button Enhancements - Now centralized in buttons.css
    ========================================================================== */
-
-.btn-luxury {
-  background: var(--gradiente-luxo);
-  color: var(--cor-fundo) !important;
-  border: none;
-  border-radius: 100px;
-  padding: var(--espacamento-sm) var(--espacamento-lg);
-  font-weight: 600;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: var(--transicao-suave);
-  box-shadow: var(--sombra-sutil);
-  cursor: pointer;
-  font-size: 0.95rem;
-  min-height: 44px;
-  gap: var(--espacamento-xs);
-}
-
-.btn-luxury:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--sombra-luxo);
-  color: var(--cor-fundo) !important;
-}
-
-.btn-luxury-outline {
-  background: transparent;
-  color: var(--cor-primaria) !important;
-  border: 2px solid var(--cor-primaria);
-  border-radius: 100px;
-  padding: var(--espacamento-sm) var(--espacamento-lg);
-  font-weight: 600;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: var(--transicao-suave);
-  cursor: pointer;
-  font-size: 0.95rem;
-  min-height: 44px;
-  gap: var(--espacamento-xs);
-}
-
-.btn-luxury-outline:hover {
-  background: var(--cor-primaria);
-  color: var(--cor-fundo) !important;
-  transform: translateY(-2px);
-  box-shadow: var(--sombra-sutil);
-}

@@ -167,94 +167,19 @@
   justify-content: center; /* Center the buttons */
 }
 
-.btn-comprar-agora {
-  background: linear-gradient(
-    135deg,
-    var(--cor-primaria) 0%,
-    var(--cor-accent) 100%
-  );
-  color: var(--cor-fundo);
-  border: none;
-  padding: 10px 24px;
-  border-radius: 100px;
-  font-weight: 600;
-  font-size: 1.1rem;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: var(--espacamento-sm);
-  box-shadow: 0 8px 32px rgba(107, 79, 196, 0.3);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
-}
+/* Button styles now centralized in buttons.css */
 
-.btn-comprar-agora::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
-  transition: left 0.5s;
-}
-
-.btn-comprar-agora:hover::before {
-  left: 100%;
-}
-
-.btn-comprar-agora:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 48px rgba(107, 79, 196, 0.4);
-}
-
+/* Special styling for btn-ver-colecoes on hero (white/light background variant) */
 .btn-ver-colecoes {
   background: rgba(255, 255, 255, 0.1);
   color: var(--cor-fundo);
   border: 2px solid var(--cor-fundo);
-  padding: 10px 24px;
-  border-radius: 100px;
-  font-weight: 600;
-  font-size: 1.1rem;
-  text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   backdrop-filter: blur(10px);
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-}
-
-.btn-ver-colecoes::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
-  transition: left 0.5s;
-}
-
-.btn-ver-colecoes:hover::before {
-  left: 100%;
 }
 
 .btn-ver-colecoes:hover {
   background: var(--cor-fundo);
   color: var(--cor-primaria);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 48px rgba(255, 255, 255, 0.4);
 }
 
 /* ==========================================================================
@@ -2624,68 +2549,7 @@ section:nth-child(even) {
   flex-wrap: wrap;
 }
 
-.btn-aromas-primary,
-.btn-aromas-secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 14px 28px;
-  border-radius: 100px;
-  font-weight: 600;
-  font-size: 1rem;
-  text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-aromas-primary {
-  background: linear-gradient(
-    135deg,
-    var(--cor-primaria) 0%,
-    var(--cor-accent) 100%
-  );
-  color: white;
-  box-shadow: 0 4px 16px rgba(107, 79, 196, 0.3);
-}
-
-.btn-aromas-primary::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
-  transition: left 0.5s ease;
-}
-
-.btn-aromas-primary:hover::before {
-  left: 100%;
-}
-
-.btn-aromas-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(107, 79, 196, 0.4);
-}
-
-.btn-aromas-secondary {
-  background: transparent;
-  color: var(--cor-primaria);
-  border: 2px solid var(--cor-primaria);
-}
-
-.btn-aromas-secondary:hover {
-  background: var(--cor-primaria);
-  color: white;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(107, 79, 196, 0.3);
-}
+/* Button styles now centralized in buttons.css */
 
 .btn-icon {
   font-size: 1.1rem;
@@ -3211,96 +3075,8 @@ section:nth-child(even) {
 }
 
 /* ==========================================================================
-   Luxury Button System
+   Luxury Button System - Now centralized in buttons.css
    ========================================================================== */
-
-.btn-luxury {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--espacamento-sm);
-  text-decoration: none;
-  font-weight: 600;
-  border-radius: 12px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
-  border: none;
-  font-size: 1rem;
-}
-
-.btn-luxury.btn-primary {
-  background: linear-gradient(
-    135deg,
-    var(--cor-primaria) 0%,
-    var(--cor-accent) 100%
-  );
-  color: var(--cor-fundo);
-  padding: 10px 24px;
-  box-shadow: var(--sombra-luxo);
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-luxury.btn-primary::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
-  transition: left 0.5s;
-}
-
-.btn-luxury.btn-primary:hover::before {
-  left: 100%;
-}
-
-.btn-luxury.btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 48px rgba(107, 79, 196, 0.4);
-}
-
-.btn-luxury.btn-secondary {
-  background: transparent;
-  color: var(--cor-primaria);
-  border: 2px solid var(--cor-primaria);
-  padding: 10px 24px;
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-luxury.btn-secondary::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
-  transition: left 0.5s;
-}
-
-.btn-luxury.btn-secondary:hover::before {
-  left: 100%;
-}
-
-.btn-luxury.btn-secondary:hover {
-  background: var(--cor-primaria);
-  color: var(--cor-fundo);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 48px rgba(107, 79, 196, 0.4);
-}
 
 /* ==========================================================================
    Final Polish & Animations

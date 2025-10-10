@@ -114,6 +114,14 @@ function tema_aromas_scripts() {
         $theme_version
     );
 
+    // Buttons CSS (unified button system)
+    wp_enqueue_style(
+        'tema-aromas-buttons',
+        get_template_directory_uri() . '/assets/css/buttons.css',
+        ['tema-aromas-base'],
+        $theme_version
+    );
+
     // Utilities CSS
     wp_enqueue_style(
         'tema-aromas-utilities',

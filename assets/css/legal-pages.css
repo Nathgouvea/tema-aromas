@@ -700,44 +700,11 @@
   flex-wrap: wrap;
 }
 
+/* Button styles now centralized in buttons.css */
+
 .faq-contact-buttons .btn-whatsapp,
 .faq-contact-buttons .btn-luxury {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--espacamento-sm);
-  padding: var(--espacamento-md) var(--espacamento-xl);
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  border-radius: 100px;
-  transition: var(--transicao-suave);
   min-width: 160px;
-  justify-content: center;
-}
-
-.faq-contact-buttons .btn-whatsapp {
-  background: #25d366;
-  color: white;
-  border: none;
-}
-
-.faq-contact-buttons .btn-whatsapp:hover {
-  background: #128c7e;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
-}
-
-.faq-contact-buttons .btn-luxury.secondary {
-  background: transparent;
-  color: var(--cor-primaria);
-  border: 2px solid var(--cor-primaria);
-}
-
-.faq-contact-buttons .btn-luxury.secondary:hover {
-  background: var(--cor-primaria);
-  color: var(--cor-fundo);
-  transform: translateY(-2px);
-  box-shadow: var(--sombra-luxo);
 }
 
 /* ==========================================================================

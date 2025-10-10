@@ -585,52 +585,7 @@ select.modern-form-input {
   margin-top: var(--espacamento-lg);
 }
 
-.btn-send-modern {
-  background: var(--gradiente-luxo);
-  color: white;
-  border: none;
-  padding: 10px 24px;
-  border-radius: 100px;
-  font-size: 1rem;
-  font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  gap: var(--espacamento-sm);
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: var(--sombra-luxo);
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-send-modern::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
-  transition: left 0.5s;
-}
-
-.btn-send-modern:hover::before {
-  left: 100%;
-}
-
-.btn-send-modern:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 48px rgba(107, 79, 196, 0.4);
-}
-
-.btn-send-modern:active {
-  transform: translateY(-1px);
-}
+/* Button styles now centralized in buttons.css */
 
 /* Responsive Design */
 @media (min-width: 768px) {
@@ -764,32 +719,7 @@ select.modern-form-input {
   padding: 0 var(--espacamento-lg);
 }
 
-.fragrance-pill {
-  background: white;
-  border: 2px solid var(--cor-borda);
-  border-radius: 100px;
-  padding: var(--espacamento-sm) var(--espacamento-lg);
-  font-size: 1rem;
-  font-weight: 500;
-  color: var(--cor-texto);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-}
-
-.fragrance-pill:hover {
-  border-color: var(--cor-primaria);
-  color: var(--cor-primaria);
-  transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.fragrance-pill.active {
-  background: var(--cor-primaria);
-  border-color: var(--cor-primaria);
-  color: white;
-  box-shadow: 0 2px 8px rgba(107, 79, 196, 0.2);
-}
+/* Fragrance pill styles now centralized in buttons.css */
 
 /* Fragrance Accordion Section */
 .fragrance-accordion-section {
@@ -1214,16 +1144,7 @@ textarea.luxury-form-input {
   min-height: 44px;
 }
 
-.btn-secondary {
-  background: transparent;
-  border: 2px solid var(--cor-fundo);
-  color: var(--cor-fundo);
-}
-
-.btn-secondary:hover {
-  background: var(--cor-fundo);
-  color: var(--cor-primaria);
-}
+/* Secondary button styles now centralized in buttons.css */
 
 /* ==========================================================================
    Responsive Design

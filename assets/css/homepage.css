@@ -162,6 +162,7 @@
 /* Sophisticated CTA Buttons */
 .hero-ctas-left {
   display: flex;
+  align-items: center; /* Vertically align buttons */
   gap: var(--espacamento-lg);
   flex-wrap: wrap;
   justify-content: center; /* Center the buttons */

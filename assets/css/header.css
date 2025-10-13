@@ -451,13 +451,16 @@ header.site-header.scrolled,
   height: 0;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
-  border-bottom: 8px solid var(--cor-fundo);
+  border-bottom: 8px solid #ffffff;
   filter: drop-shadow(0 -2px 4px rgba(0, 0, 0, 0.1));
 }
 
-/* Ensure dropdown arrow color matches background */
+/* Ensure dropdown arrow color matches white background on ALL states */
+.site-header .dropdown-menu::before,
+.homepage .site-header .dropdown-menu::before,
+.homepage:not(.homepage-scrolled) .site-header .dropdown-menu::before,
 .site-header.scrolled .dropdown-menu::before {
-  border-bottom-color: var(--cor-fundo);
+  border-bottom-color: #ffffff !important;
 }
 
 /* Ensure dropdown menu items have proper text color */
@@ -472,9 +475,13 @@ header.site-header.scrolled,
   text-shadow: none !important;
 }
 
-/* Ensure dropdown menu always has white background */
-.dropdown-menu {
-  background: var(--cor-fundo) !important;
+/* Ensure dropdown menu always has white background - FORCE on all states */
+.dropdown-menu,
+.site-header .dropdown-menu,
+.homepage .site-header .dropdown-menu,
+.homepage:not(.homepage-scrolled) .site-header .dropdown-menu {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
 }
 
 .dropdown-menu.show {
@@ -527,13 +534,19 @@ header.site-header.scrolled,
   visibility: visible !important;
 }
 
-/* Ensure dropdown text is always black on all states */
+/* Ensure dropdown text is always black on all states - FORCE OVERRIDE */
 .dropdown-menu .menu-link,
 .dropdown-menu .menu-link:hover,
 .dropdown-menu .menu-link:focus,
-.dropdown-menu .menu-link:active {
+.dropdown-menu .menu-link:active,
+.site-header .dropdown-menu .menu-link,
+.homepage .site-header .dropdown-menu .menu-link,
+.homepage:not(.homepage-scrolled) .site-header .dropdown-menu .menu-link,
+.dropdown-menu.show .menu-link {
+  color: #1a1a1a !important;
   color: var(--cor-texto) !important;
   text-shadow: none !important;
+  background: transparent;
 }
 
 /* Force dropdown menu to always be visible when .show class is present */

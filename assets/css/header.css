@@ -985,7 +985,8 @@ body.mobile-menu-open {
     width: 320px;
     max-width: 85vw;
     height: 100vh;
-    background: var(--cor-fundo);
+    background: #ffffff !important;
+    background-color: #ffffff !important;
     box-shadow: var(--sombra-luxo);
     z-index: 1001;
     transform: translateX(100%);
@@ -1023,7 +1024,7 @@ body.mobile-menu-open {
     border-bottom: none;
     display: block;
     width: 100%;
-    color: var(--cor-texto) !important;
+    color: #1a1a1a !important;
     text-shadow: none !important;
   }
 
@@ -1032,14 +1033,18 @@ body.mobile-menu-open {
   .menu-icon-shop svg,
   .menu-icon-about svg,
   .menu-icon-contact svg {
-    color: var(--cor-texto) !important;
+    color: #1a1a1a !important;
   }
 
-  /* Ensure mobile menu always has black text */
-  .mobile-menu-overlay.show + .site-header .menu-link,
-  .primary-menu-container.is-open .menu-link {
-    color: var(--cor-texto) !important;
+  /* Ensure mobile menu always has black text - FORCE OVERRIDE */
+  .primary-menu-container .menu-link,
+  .primary-menu-container.is-open .menu-link,
+  .homepage .primary-menu-container .menu-link,
+  .homepage:not(.homepage-scrolled) .primary-menu-container .menu-link,
+  .mobile-menu-overlay.show + .site-header .menu-link {
+    color: #1a1a1a !important;
     text-shadow: none !important;
+    background: transparent;
   }
 
   .dropdown-icon {
@@ -1076,7 +1081,14 @@ body.mobile-menu-open {
   .dropdown-menu .menu-link {
     padding: var(--espacamento-sm);
     font-size: 0.875rem;
-    color: var(--cor-texto) !important;
+    color: #1a1a1a !important;
+    text-shadow: none !important;
+  }
+
+  /* Force black text on mobile submenu items */
+  .primary-menu-container .dropdown-menu .menu-link,
+  .homepage .primary-menu-container .dropdown-menu .menu-link {
+    color: #1a1a1a !important;
     text-shadow: none !important;
   }
 

@@ -143,16 +143,22 @@
 
   function initMobileSubMenus() {
     const dropdownToggles = document.querySelectorAll('.menu-item-has-children > a');
-    
+
+    console.log('📋 Found dropdown toggles:', dropdownToggles.length);
+
     dropdownToggles.forEach(toggle => {
+      console.log('Setting up dropdown for:', toggle.textContent.trim());
+
       // Make the menu link itself handle the dropdown on mobile
       toggle.addEventListener('click', function(e) {
+        console.log('🖱️ Click on:', this.textContent.trim());
         e.preventDefault();
         e.stopPropagation();
         toggleSubMenu(this);
       });
-      
+
       toggle.addEventListener('touchstart', function(e) {
+        console.log('👆 Touch on:', this.textContent.trim());
         e.stopPropagation();
       }, { passive: true });
     });

@@ -206,6 +206,7 @@
   justify-content: center;
   gap: var(--espacamento-sm);
   padding: 10px 24px;
+  min-height: 48px;
   font-weight: 600;
   font-size: 1.1rem;
   text-decoration: none;
@@ -283,7 +284,8 @@
   align-items: center;
   justify-content: center;
   gap: var(--espacamento-sm);
-  padding: 10px 24px;
+  padding: 8px 22px;
+  min-height: 48px;
   font-weight: 600;
   font-size: 1.1rem;
   text-decoration: none;

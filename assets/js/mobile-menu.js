@@ -160,16 +160,24 @@
 
   function toggleSubMenu(link) {
     const parentItem = link.closest('.menu-item-has-children');
-    const subMenu = parentItem.querySelector('.sub-menu');
-    
-    if (!subMenu) return;
-    
-    const isOpen = parentItem.classList.contains('submenu-open');
-    
+    const subMenu = parentItem.querySelector('.dropdown-menu, .sub-menu');
+
+    if (!subMenu) {
+      console.log('No submenu found for:', link);
+      return;
+    }
+
+    const isOpen = subMenu.classList.contains('show') || parentItem.classList.contains('submenu-open');
+
     // Close other open submenus at the same level
     const siblings = Array.from(parentItem.parentNode.children);
     siblings.forEach(sibling => {
-      if (sibling !== parentItem && sibling.classList.contains('submenu-open')) {
+      if (sibling !== parentItem) {
+        const siblingMenu = sibling.querySelector('.dropdown-menu, .sub-menu');
+        if (siblingMenu) {
+          siblingMenu.classList.remove('show');
+          siblingMenu.style.maxHeight = '0';
+        }
         sibling.classList.remove('submenu-open');
         const siblingLink = sibling.querySelector('.menu-item-has-children > a');
         if (siblingLink) {
@@ -177,15 +185,17 @@
         }
       }
     });
-    
+
     if (isOpen) {
       // Close submenu
       parentItem.classList.remove('submenu-open');
+      subMenu.classList.remove('show');
       link.setAttribute('aria-expanded', 'false');
       subMenu.style.maxHeight = '0';
     } else {
       // Open submenu
       parentItem.classList.add('submenu-open');
+      subMenu.classList.add('show');
       link.setAttribute('aria-expanded', 'true');
       subMenu.style.maxHeight = subMenu.scrollHeight + 'px';
     }
@@ -199,8 +209,9 @@
       if (link) {
         link.setAttribute('aria-expanded', 'false');
       }
-      const subMenu = item.querySelector('.sub-menu');
+      const subMenu = item.querySelector('.dropdown-menu, .sub-menu');
       if (subMenu) {
+        subMenu.classList.remove('show');
         subMenu.style.maxHeight = '0';
       }
     });

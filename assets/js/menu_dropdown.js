@@ -45,6 +45,11 @@
    * Setup individual dropdown with unified event handling
    */
   function setupDropdown(toggle) {
+    // Skip on mobile/tablet - mobile-menu.js handles dropdowns < 1024px
+    if (!isDesktop()) {
+      return;
+    }
+
     const dropdownId =
       toggle.getAttribute("aria-controls") || toggle.dataset.dropdownTarget;
     let dropdown = dropdownId ? document.getElementById(dropdownId) : null;

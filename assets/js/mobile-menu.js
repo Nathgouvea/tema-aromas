@@ -44,7 +44,8 @@
     }
 
     // Handle sub-menu dropdowns in mobile
-    initMobileSubMenus();
+    // NOTE: Dropdowns are initialized when menu opens (see toggleMenu function)
+    // This avoids timing issues and ensures elements are in DOM
 
     // Close menu on escape key
     document.addEventListener('keydown', function(e) {
@@ -99,7 +100,14 @@
           firstMenuItem.focus();
         }
       }, 300);
-      
+
+      // Reinitialize dropdowns after menu animation completes
+      // This ensures dropdown elements are in DOM and can receive events
+      setTimeout(() => {
+        initMobileSubMenus();
+        console.log('🔄 Dropdowns reinitialized after menu open');
+      }, 350);
+
       // Announce to screen readers
       announceToScreenReader('Menu aberto');
     } else {
@@ -147,6 +155,11 @@
     console.log('📋 Found dropdown toggles:', dropdownToggles.length);
 
     dropdownToggles.forEach(toggle => {
+      // Skip if already initialized to prevent duplicate event listeners
+      if (toggle.dataset.dropdownInitialized === 'true') {
+        return;
+      }
+
       console.log('Setting up dropdown for:', toggle.textContent.trim());
 
       // Make the menu link itself handle the dropdown on mobile
@@ -161,6 +174,9 @@
         console.log('👆 Touch on:', this.textContent.trim());
         e.stopPropagation();
       }, { passive: true });
+
+      // Mark as initialized
+      toggle.dataset.dropdownInitialized = 'true';
     });
   }
 

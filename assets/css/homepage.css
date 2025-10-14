@@ -2221,7 +2221,7 @@ section:nth-child(even) {
 
 .aromas-main-title {
   font-family: "Playfair Display", serif;
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: 24px;
@@ -2694,6 +2694,11 @@ section:nth-child(even) {
     text-align: center;
   }
 
+  .aromas-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .aromas-header-visual {
     height: 200px;
   }
@@ -2741,7 +2746,7 @@ section:nth-child(even) {
   }
 
   .aromas-main-title {
-    font-size: clamp(2rem, 6vw, 2.8rem);
+    font-size: clamp(1.6rem, 5vw, 2.2rem);
   }
 
   .aromas-description {

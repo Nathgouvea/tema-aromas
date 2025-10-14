@@ -121,7 +121,7 @@ get_header(); ?>
                     <div class="aromas-header-text">
                         <div class="aromas-subtitle">✨ <?php esc_html_e('Nossos Aromas Especiais', 'tema_aromas'); ?> ✨</div>
                         <h2 class="aromas-main-title">
-                            <?php esc_html_e('Aromas que transformam ambientes', 'tema_aromas'); ?>
+                            <?php esc_html_e('Mais que fragrâncias, criamos experiências sensoriais', 'tema_aromas'); ?>
                         </h2>
                         <div class="aromas-title-decoration">
                             <div class="decoration-line"></div>
@@ -129,7 +129,7 @@ get_header(); ?>
                             <div class="decoration-line"></div>
                         </div>
                         <p class="aromas-description">
-                            <?php esc_html_e('Na Zen Secrets, acreditamos no poder dos aromas para criar experiências únicas e memoráveis. Cada produto é cuidadosamente elaborado para trazer harmonia e bem-estar ao seu espaço.', 'tema_aromas'); ?>
+                            <?php esc_html_e('Nossos aromas são desenvolvidos cuidadosamente com ingredientes 100% premium, trazendo o melhor da alta perfumaria para transformar ambientes em experiências sensoriais únicas. Cada produto é criado para promover conexão, presença e relaxamento, despertando emoções e trazendo equilíbrio para sua rotina.', 'tema_aromas'); ?>
                         </p>
                     </div>
                     <div class="aromas-header-visual">
@@ -154,8 +154,8 @@ get_header(); ?>
                 <div class="aroma-interactive-card" data-aroma="chabranco">
                     <div class="aroma-card-inner">
                         <div class="aroma-image-container">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/all-chabranco.webp" 
-                                 alt="<?php esc_attr_e('Chá Branco - Aromas Zen Secrets', 'tema_aromas'); ?>" 
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/aroma-chá-branco.webp"
+                                 alt="<?php esc_attr_e('Chá Branco - Aromas Zen Secrets', 'tema_aromas'); ?>"
                                  loading="lazy">
                             <div class="aroma-image-overlay">
                                 <div class="aroma-feeling-badge">Pureza</div>
@@ -177,8 +177,8 @@ get_header(); ?>
                 <div class="aroma-interactive-card" data-aroma="flordefigo">
                     <div class="aroma-card-inner">
                         <div class="aroma-image-container">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/all-flordefigo.webp" 
-                                 alt="<?php esc_attr_e('Flor de Figo - Aromas Zen Secrets', 'tema_aromas'); ?>" 
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/aroma-flor-de-figo.webp"
+                                 alt="<?php esc_attr_e('Flor de Figo - Aromas Zen Secrets', 'tema_aromas'); ?>"
                                  loading="lazy">
                             <div class="aroma-image-overlay">
                                 <div class="aroma-feeling-badge">Doçura</div>
@@ -200,8 +200,8 @@ get_header(); ?>
                 <div class="aroma-interactive-card" data-aroma="bamboo">
                     <div class="aroma-card-inner">
                         <div class="aroma-image-container">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/vela-bamboo.jpg" 
-                                 alt="<?php esc_attr_e('Bamboo - Aromas Zen Secrets', 'tema_aromas'); ?>" 
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/aroma-bamboo.webp"
+                                 alt="<?php esc_attr_e('Bamboo - Aromas Zen Secrets', 'tema_aromas'); ?>"
                                  loading="lazy">
                             <div class="aroma-image-overlay">
                                 <div class="aroma-feeling-badge">Equilíbrio</div>
@@ -223,8 +223,8 @@ get_header(); ?>
                 <div class="aroma-interactive-card" data-aroma="marinho">
                     <div class="aroma-card-inner">
                         <div class="aroma-image-container">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/marinho.webp" 
-                                 alt="<?php esc_attr_e('Marinho - Aromas Zen Secrets', 'tema_aromas'); ?>" 
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/aroma-marinho.webp"
+                                 alt="<?php esc_attr_e('Marinho - Aromas Zen Secrets', 'tema_aromas'); ?>"
                                  loading="lazy">
                             <div class="aroma-image-overlay">
                                 <div class="aroma-feeling-badge">Tranquilidade</div>
@@ -246,8 +246,8 @@ get_header(); ?>
                 <div class="aroma-interactive-card" data-aroma="palosanto">
                     <div class="aroma-card-inner">
                         <div class="aroma-image-container">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/Vela-palo-santo.webp" 
-                                 alt="<?php esc_attr_e('Palo Santo - Aromas Zen Secrets', 'tema_aromas'); ?>" 
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/aroma-palo-santo.webp"
+                                 alt="<?php esc_attr_e('Palo Santo - Aromas Zen Secrets', 'tema_aromas'); ?>"
                                  loading="lazy">
                             <div class="aroma-image-overlay">
                                 <div class="aroma-feeling-badge">Energia</div>

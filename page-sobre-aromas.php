@@ -54,7 +54,7 @@ get_header(); ?>
                         <div id="flor-de-figo-content" class="fragrance-accordion-content" aria-hidden="false">
                             <div class="fragrance-content-grid">
                                 <div class="fragrance-image">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/Kit-F-Figo.webp" 
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/aroma-flor-de-figo.webp"
                                          alt="Flor de Figo Collection" loading="lazy" decoding="async">
                                 </div>
                                 <div class="fragrance-details">
@@ -92,7 +92,7 @@ get_header(); ?>
                         <div id="cha-branco-content" class="fragrance-accordion-content" aria-hidden="true">
                             <div class="fragrance-content-grid">
                                 <div class="fragrance-image">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/Kit chá Branco .webp" 
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/aroma-chá-branco.webp"
                                          alt="Chá Branco Collection" loading="lazy">
                                 </div>
                                 <div class="fragrance-details">
@@ -130,7 +130,7 @@ get_header(); ?>
                         <div id="bamboo-content" class="fragrance-accordion-content" aria-hidden="true">
                             <div class="fragrance-content-grid">
                                 <div class="fragrance-image">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/vela-bamboo.jpg" 
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/aroma-bamboo.webp"
                                          alt="Bamboo Collection" loading="lazy">
                                 </div>
                                 <div class="fragrance-details">
@@ -168,7 +168,7 @@ get_header(); ?>
                         <div id="marinho-content" class="fragrance-accordion-content" aria-hidden="true">
                             <div class="fragrance-content-grid">
                                 <div class="fragrance-image">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/Kit marinho .webp" 
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/aroma-marinho.webp"
                                          alt="Marinho Collection" loading="lazy">
                                 </div>
                                 <div class="fragrance-details">
@@ -206,7 +206,7 @@ get_header(); ?>
                         <div id="palo-santo-content" class="fragrance-accordion-content" aria-hidden="true">
                             <div class="fragrance-content-grid">
                                 <div class="fragrance-image">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/Vela-palo-santo.webp" 
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/aroma-palo-santo.webp"
                                          alt="Palo Santo Collection" loading="lazy">
                                 </div>
                                 <div class="fragrance-details">

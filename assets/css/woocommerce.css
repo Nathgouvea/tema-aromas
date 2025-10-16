@@ -19,6 +19,17 @@
   padding: var(--espacamento-xl) 0;
 }
 
+/* Reduce white space on archive pages */
+.woocommerce .page-header-section {
+  padding: var(--espacamento-lg) 0 var(--espacamento-md);
+}
+
+@media (max-width: 767px) {
+  .woocommerce .page-header-section {
+    padding: var(--espacamento-md) 0;
+  }
+}
+
 /* Empty Category Message */
 .no-products-found {
   background: var(--cor-fundo);

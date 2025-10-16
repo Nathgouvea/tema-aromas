@@ -14,7 +14,6 @@ get_header(); ?>
         <!-- Page Header -->
         <section class="page-header-section luxury-section">
             <div class="container">
-                <?php tema_aromas_breadcrumbs(); ?>
                 <div class="page-header-content text-center animate-fade-in-up">
                     <?php if (is_shop()) : ?>
                         <h1 class="page-title luxury-heading">

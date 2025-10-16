@@ -51,7 +51,7 @@ get_header(); ?>
             <div class="container">
                 
                 <?php if (woocommerce_product_loop()) : ?>
-                    
+
                     <?php
                     /**
                      * Hook: woocommerce_before_shop_loop.
@@ -62,20 +62,6 @@ get_header(); ?>
                      */
                     do_action('woocommerce_before_shop_loop');
                     ?>
-
-                    <div class="woocommerce-products-header">
-                        <?php if (woocommerce_products_will_display()) : ?>
-                            <div class="woocommerce-result-count">
-                                <?php woocommerce_result_count(); ?>
-                            </div>
-                        <?php endif; ?>
-                        
-                        <?php if (woocommerce_products_will_display()) : ?>
-                            <div class="woocommerce-ordering">
-                                <?php woocommerce_catalog_ordering(); ?>
-                            </div>
-                        <?php endif; ?>
-                    </div>
 
                     <?php woocommerce_product_loop_start(); ?>
 

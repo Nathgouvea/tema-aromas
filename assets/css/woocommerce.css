@@ -129,6 +129,64 @@
    Premium Product Card Design System
    ========================================================================== */
 
+/* ==========================================================================
+   Shop/Archive Filters & Ordering
+   ========================================================================== */
+
+/* Result Count & Ordering Container */
+.woocommerce-result-count {
+  font-size: 0.95rem;
+  color: var(--cor-texto);
+  font-weight: 500;
+  margin-bottom: var(--espacamento-md);
+}
+
+/* Ordering Dropdown */
+.woocommerce-ordering {
+  margin-bottom: var(--espacamento-lg);
+}
+
+.woocommerce-ordering select,
+.orderby {
+  width: 100%;
+  max-width: 300px;
+  padding: 12px 40px 12px 16px;
+  border: 2px solid var(--cor-borda);
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: var(--cor-texto);
+  background: var(--cor-fundo);
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%236B4FC4" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.woocommerce-ordering select:hover,
+.orderby:hover {
+  border-color: var(--cor-primaria);
+  box-shadow: 0 2px 8px rgba(107, 79, 196, 0.1);
+}
+
+.woocommerce-ordering select:focus,
+.orderby:focus {
+  border-color: var(--cor-primaria);
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(107, 79, 196, 0.1);
+}
+
+@media (max-width: 767px) {
+  .woocommerce-ordering select,
+  .orderby {
+    max-width: 100%;
+  }
+}
+
 /* Product Grid */
 .woocommerce ul.products {
   display: grid;

@@ -21,12 +21,12 @@
 
 /* Reduce white space on archive pages */
 .woocommerce .page-header-section {
-  padding: var(--espacamento-lg) 0 var(--espacamento-md);
+  padding: var(--espacamento-sm) 0 var(--espacamento-xs);
 }
 
 @media (max-width: 767px) {
   .woocommerce .page-header-section {
-    padding: var(--espacamento-md) 0;
+    padding: var(--espacamento-sm) 0;
   }
 }
 

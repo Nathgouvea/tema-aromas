@@ -26,6 +26,16 @@
   display: none !important;
 }
 
+/* Remove any top borders on single product pages */
+.single-product #main,
+.single-product .site-main,
+.single-product main,
+.single-product .content-area,
+.single-product .woocommerce,
+body.single-product {
+  border-top: none !important;
+}
+
 /* Optimal spacing for archive pages */
 .woocommerce .page-header-section {
   padding: var(--espacamento-md) 0 var(--espacamento-sm) !important;
@@ -657,6 +667,8 @@
   margin: 40px auto 40px;
   max-width: 100%;
   padding: 0 20px;
+  border-top: none !important;
+  padding-top: 60px;
 }
 
 /* Ensure tabs and related products are outside the grid */

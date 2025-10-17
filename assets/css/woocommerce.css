@@ -19,6 +19,13 @@
   padding: var(--espacamento-xl) 0;
 }
 
+/* Hide sidebar on single product pages */
+.single-product .sidebar,
+.single-product #secondary,
+.single-product aside.widget-area {
+  display: none !important;
+}
+
 /* Optimal spacing for archive pages */
 .woocommerce .page-header-section {
   padding: var(--espacamento-md) 0 var(--espacamento-sm) !important;

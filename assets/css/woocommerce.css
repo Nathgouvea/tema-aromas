@@ -727,6 +727,7 @@
   transition: opacity 0.3s ease;
   cursor: pointer;
   flex-shrink: 0;
+  list-style: none !important;
 }
 
 .woocommerce div.product div.images .flex-control-thumbs li:hover,

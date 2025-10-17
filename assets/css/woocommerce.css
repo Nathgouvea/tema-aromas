@@ -36,6 +36,17 @@ body.single-product {
   border-top: none !important;
 }
 
+/* Remove luxury-card hover effect on single product pages */
+.single-product .luxury-card::before,
+.single-product .luxury-card:hover::before {
+  display: none !important;
+}
+
+.single-product .luxury-card:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
 /* Optimal spacing for archive pages */
 .woocommerce .page-header-section {
   padding: var(--espacamento-md) 0 var(--espacamento-sm) !important;

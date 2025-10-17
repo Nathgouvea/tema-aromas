@@ -19,14 +19,31 @@
   padding: var(--espacamento-xl) 0;
 }
 
-/* Reduce white space on archive pages */
+/* Optimal spacing for archive pages */
 .woocommerce .page-header-section {
-  padding: var(--espacamento-sm) 0 var(--espacamento-xs);
+  padding: var(--espacamento-md) 0 var(--espacamento-sm) !important;
+  margin-top: 0 !important;
+}
+
+/* Category Subtitle Styling */
+.category-subtitle {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+  max-width: 800px;
+  margin: var(--espacamento-md) auto 0;
+  font-weight: 400;
 }
 
 @media (max-width: 767px) {
   .woocommerce .page-header-section {
-    padding: var(--espacamento-sm) 0;
+    padding: var(--espacamento-sm) 0 !important;
+  }
+
+  .category-subtitle {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    padding: 0 var(--espacamento-sm);
   }
 }
 

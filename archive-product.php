@@ -26,7 +26,24 @@ get_header(); ?>
                         <h1 class="page-title luxury-heading">
                             <?php woocommerce_page_title(); ?>
                         </h1>
-                        <?php if (category_description()) : ?>
+                        <?php
+                        // Custom category descriptions
+                        $category = get_queried_object();
+                        $category_descriptions = array(
+                            'aromatizadores' => 'Com alta projeção e longa duração, nossos aromatizadores transformam o seu ambiente, criando uma atmosfera envolvente e sofisticada. Escolha o aroma que mais combina com você e eleve sua experiência de bem-estar.',
+                            'home-spray' => 'Com apenas algumas borrifadas, nossos Home Sprays perfumam instantaneamente o seu ambiente. Além disso, podem ser aplicados em tecidos, garantindo uma fixação prolongada da fragrância. Práticos e versáteis, eles transformam o ambiente em segundos.',
+                            'velas-aromaticas' => 'Nossas velas aromáticas são produzidas com ingredientes 100% naturais. Com cera de coco e pavio de madeira, livres de parafinas, nossas velas foram cuidadosamente desenvolvidas para uma queima limpa e perfeita. Muito além de perfumar, elas criam uma atmosfera única, transformando qualquer instante em um momento de relaxamento, aconchego e conexão.',
+                            'kits-especiais' => 'Nossos kits oferecem o melhor custo-benefício e são a escolha perfeita para você vivenciar a experiência completa de nossas fragrâncias. Além disso, tornam-se presentes memoráveis para qualquer ocasião.',
+                            'lembrancinhas' => 'Lembrancinhas personalizadas para eventos ou brindes corporativos que encantam. Descubra nossas opções e surpreenda seus clientes ou convidados.',
+                            'acessorios' => 'Nossos acessórios foram selecionados para complementar sua experiência com aromas. Cada peça é pensada para harmonizar com nossos produtos, tornando o uso mais prático, elegante e prazeroso.'
+                        );
+
+                        if (isset($category_descriptions[$category->slug])) :
+                        ?>
+                            <p class="page-subtitle category-subtitle">
+                                <?php echo esc_html($category_descriptions[$category->slug]); ?>
+                            </p>
+                        <?php elseif (category_description()) : ?>
                             <div class="category-description luxury-text">
                                 <?php echo category_description(); ?>
                             </div>

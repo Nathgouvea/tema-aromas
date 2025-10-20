@@ -681,10 +681,11 @@ body.single-product {
   padding: 0 20px;
   border-top: none !important;
   padding-top: 60px;
+  align-items: start;
+  grid-auto-rows: auto;
 }
 
-/* Ensure tabs and related products are outside the grid */
-.woocommerce div.product > .woocommerce-tabs,
+/* Ensure related products are outside the grid - tabs stay in left column */
 .woocommerce div.product > .related.products,
 .woocommerce div.product > section.related.products {
   grid-column: 1 / -1;
@@ -772,6 +773,10 @@ body.single-product {
 /* Product Summary - Elegant Typography */
 .woocommerce div.product div.summary {
   padding: 0;
+  padding-right: 20px;
+  min-height: auto;
+  height: auto;
+  max-width: 90%;
 }
 
 /* Brand/Category above title */
@@ -995,60 +1000,76 @@ body.single-product {
   color: var(--cor-primaria);
 }
 
-/* Product Tabs - Clean Design */
+/* Hide category and tags from product meta */
+.woocommerce div.product .product_meta .posted_in,
+.woocommerce div.product .product_meta .tagged_as {
+  display: none !important;
+}
+
+/* Product Tabs - Accordion Style Inside Summary Div */
 .woocommerce div.product .woocommerce-tabs {
-  margin-top: 60px;
-  border-top: none;
+  margin-top: 32px;
+  border-top: 1px solid #e0e0e0;
   padding-top: 0;
-  grid-column: 1 / -1;
-  clear: both;
+  width: 100%;
+  overflow: visible;
 }
 
+/* Hide traditional tabs navigation */
 .woocommerce div.product .woocommerce-tabs ul.tabs {
-  display: flex;
-  list-style: none;
-  margin: 0 0 32px 0;
-  padding: 0;
-  border-bottom: 1px solid #f0f0f0;
-  gap: 32px;
+  display: none !important;
 }
 
-.woocommerce div.product .woocommerce-tabs ul.tabs li {
-  margin: 0;
-}
-
-.woocommerce div.product .woocommerce-tabs ul.tabs li a {
-  display: block;
-  padding: 12px 0;
-  color: #999;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.95rem;
-  border-bottom: 2px solid transparent;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.woocommerce div.product .woocommerce-tabs ul.tabs li.active a,
-.woocommerce div.product .woocommerce-tabs ul.tabs li a:hover {
-  color: var(--cor-primaria);
-  border-bottom-color: var(--cor-primaria);
-}
-
-/* Tab Content */
+/* Show all panels as accordion */
 .woocommerce div.product .woocommerce-tabs .panel {
   padding: 0;
-  font-size: 1rem;
-  line-height: 1.8;
-  color: #666;
+  margin-bottom: 0;
+  border-bottom: 1px solid #e0e0e0;
+  display: block !important;
 }
 
+/* Accordion Header */
 .woocommerce div.product .woocommerce-tabs .panel h2 {
-  font-size: 1.5rem;
-  margin-bottom: 16px;
-  font-weight: 500;
-  color: #333;
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #000000;
+  margin: 0;
+  padding: 20px 30px 20px 0;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+/* Accordion Arrow Icon */
+.woocommerce div.product .woocommerce-tabs .panel h2::after {
+  content: '\25BC';
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  font-size: 0.75rem;
+  transition: transform 0.3s ease;
+  color: #000000;
+}
+
+.woocommerce div.product .woocommerce-tabs .panel.active h2::after {
+  transform: translateY(-50%) rotate(0deg);
+}
+
+/* Accordion Content */
+.woocommerce div.product .woocommerce-tabs .panel > *:not(h2) {
+  display: none;
+  font-size: 0.875rem;
+  line-height: 1.8;
+  color: #666666;
+  padding: 0 20px 20px 0;
+}
+
+.woocommerce div.product .woocommerce-tabs .panel.active > *:not(h2) {
+  display: block;
 }
 
 /* Related Products Section - Full Width Below Product */
@@ -1057,30 +1078,37 @@ section.related.products,
 .up-sells.upsells.products {
   clear: both;
   display: block !important;
-  width: 100vw !important;
-  margin-left: calc(-50vw + 50%) !important;
-  margin-right: calc(-50vw + 50%) !important;
   margin-top: 80px !important;
-  padding: 60px 20px 40px !important;
+  padding: 60px 0 40px !important;
   border-top: 1px solid #f0f0f0;
   grid-column: 1 / -1 !important;
 }
 
 .related.products > h2,
 section.related.products > h2 {
-  text-align: center;
+  text-align: left;
   font-family: var(--fonte-titulo);
   font-size: 2rem;
   font-weight: 400;
   margin-bottom: 40px;
   color: #000;
   letter-spacing: -0.02em;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
 }
 
-.related.products ul.products {
+.related.products ul.products,
+.related.products ul.products.columns-3,
+.related.products ul.products.columns-4 {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 20px;
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(240px, 280px)) !important;
+  gap: 24px;
+  justify-content: center;
 }
 
 /* Zoom and Lightbox Styling */
@@ -2783,6 +2811,11 @@ section:has(> h2:contains("Best Quality Plants")) {
 
 .woocommerce-breadcrumb a:hover {
   color: var(--cor-primaria);
+}
+
+/* Hide breadcrumbs on single product pages */
+.single-product .woocommerce-breadcrumb {
+  display: none !important;
 }
 
 /* ==========================================================================

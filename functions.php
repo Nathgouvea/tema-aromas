@@ -242,6 +242,17 @@ function tema_aromas_scripts() {
             $theme_version,
             true
         );
+
+        // Product Accordion JavaScript (single product page)
+        if (is_product()) {
+            wp_enqueue_script(
+                'tema-aromas-product-accordion',
+                get_template_directory_uri() . '/assets/js/product-accordion.js',
+                [],
+                $theme_version,
+                true
+            );
+        }
     }
 
     // Search Functionality JavaScript
@@ -537,3 +548,26 @@ add_filter('gettext', function($translated_text, $text, $domain) {
     }
     return $translated_text;
 }, 10, 3);
+
+/**
+ * Move product tabs inside summary div for accordion layout
+ */
+function tema_aromas_move_product_tabs() {
+    // Remove tabs from default position (priority 10)
+    remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10);
+
+    // Add tabs inside summary div (after meta - priority 40)
+    add_action('woocommerce_single_product_summary', 'woocommerce_output_product_data_tabs', 45);
+
+    // Remove product meta (category and tags) from single product page
+    remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
+}
+add_action('after_setup_theme', 'tema_aromas_move_product_tabs');
+
+/**
+ * Set related products to display 4 columns
+ */
+add_filter('woocommerce_output_related_products_args', function($args) {
+    $args['columns'] = 4;
+    return $args;
+});

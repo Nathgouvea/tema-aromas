@@ -20,6 +20,33 @@ get_header(); ?>
                 <h1 class="page-title luxury-heading"><?php the_title(); ?></h1>
             </div>
 
+            <!-- Checkout Progress Indicator -->
+            <div class="checkout-progress">
+                <div class="progress-step completed">
+                    <div class="step-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 11l3 3L22 4"></path>
+                            <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path>
+                        </svg>
+                    </div>
+                    <span class="step-label"><?php esc_html_e('Carrinho', 'tema_aromas'); ?></span>
+                </div>
+                <div class="progress-line completed"></div>
+                <div class="progress-step active">
+                    <div class="step-icon">
+                        <span class="step-number">2</span>
+                    </div>
+                    <span class="step-label"><?php esc_html_e('Checkout', 'tema_aromas'); ?></span>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step">
+                    <div class="step-icon">
+                        <span class="step-number">3</span>
+                    </div>
+                    <span class="step-label"><?php esc_html_e('Concluído', 'tema_aromas'); ?></span>
+                </div>
+            </div>
+
             <div class="checkout-security-notice luxury-card">
                 <div class="security-icons">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="security-icon">

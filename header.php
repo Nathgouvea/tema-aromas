@@ -96,7 +96,7 @@
     <header id="masthead" class="site-header luxury-header">
         <div class="container">
             <div class="header-content">
-                <!-- Hamburger Menu Button (Left) -->
+                <!-- Hamburger Menu Button (Left on desktop, Right on mobile/tablet) -->
                 <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" aria-label="<?php esc_attr_e('Alternar menu', 'tema_aromas'); ?>">
                     <span class="menu-icon">
                         <span></span>
@@ -105,7 +105,7 @@
                     <span class="menu-text"><?php esc_html_e('MENU', 'tema_aromas'); ?></span>
                 </button>
 
-                <!-- Logo / Site Title (Center) -->
+                <!-- Logo / Site Title (Left on mobile, Center on desktop) -->
                 <div class="site-branding">
                     <div class="site-logo">
                         <a href="<?php echo esc_url(home_url('/')); ?>" rel="home" class="dynamic-logo-link">

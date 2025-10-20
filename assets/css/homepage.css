@@ -1739,7 +1739,7 @@
 
   /* Featured Products Slider Tablet */
   .featured-slider .woocommerce ul.products li.product {
-    flex: 0 0 calc(33.333% - var(--espacamento-md));
+    flex: 0 0 calc(25% - var(--espacamento-md));
     min-width: 200px;
     max-width: 250px;
   }

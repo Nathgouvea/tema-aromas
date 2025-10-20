@@ -63,7 +63,7 @@
       } else if (width <= 768) {
         return 2; // Mobile landscape: 2 products per view
       } else if (width <= 1024) {
-        return 3; // Tablet: 3 products per view
+        return 4; // Tablet: 4 products per view
       } else {
         return 4; // Desktop: 4 products per view
       }

@@ -393,7 +393,42 @@
 .footer-text {
   color: rgba(255, 255, 255, 0.8);
   font-size: 0.875rem;
-  margin: 0 0 var(--espacamento-sm) 0;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.footer-divider {
+  margin: 0 var(--espacamento-xs);
+  opacity: 0.5;
+}
+
+.heart-spin {
+  color: #ff6b6b;
+  font-style: normal;
+  display: inline-block;
+  margin: 0 4px;
+  animation: spin 3s linear infinite;
+}
+
+.developer-link {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.developer-link:hover {
+  color: var(--cor-primaria);
+  text-decoration: underline;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .developer-credit {

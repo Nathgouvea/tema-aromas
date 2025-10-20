@@ -620,7 +620,7 @@ body.admin-bar .mobile-menu-overlay {
   display: flex;
   gap: 24px;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   padding-bottom: 20px;
 }
 
@@ -1043,9 +1043,9 @@ body.search-open .site-header {
   transform: scale(1.05);
 }
 
-/* Hide menu text - icon only for clean UX */
+/* Show menu text alongside icon */
 .menu-toggle .menu-text {
-  display: none;
+  display: inline-block;
 }
 
 .menu-toggle:focus {
@@ -1056,14 +1056,15 @@ body.search-open .site-header {
 .menu-icon {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
   width: 24px;
-  height: 18px;
+  height: 14px;
+  justify-content: center;
 }
 
 .menu-icon span {
   display: block;
-  height: 2.5px;
+  height: 2px;
   background: currentColor;
   border-radius: 2px;
   transition: var(--transicao-rapida);
@@ -1071,17 +1072,12 @@ body.search-open .site-header {
 
 .menu-toggle.is-active .menu-icon span:nth-child(1),
 .menu-toggle[aria-expanded="true"] .menu-icon span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
+  transform: rotate(45deg) translate(4px, 4px);
 }
 
 .menu-toggle.is-active .menu-icon span:nth-child(2),
 .menu-toggle[aria-expanded="true"] .menu-icon span:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-toggle.is-active .menu-icon span:nth-child(3),
-.menu-toggle[aria-expanded="true"] .menu-icon span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -6px);
+  transform: rotate(-45deg) translate(4px, -4px);
 }
 
 /* Removed mobile dropdown toggle button - using the menu link itself */

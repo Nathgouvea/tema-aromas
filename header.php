@@ -96,16 +96,26 @@
     <header id="masthead" class="site-header luxury-header">
         <div class="container">
             <div class="header-content">
-                <!-- Logo / Site Title -->
+                <!-- Hamburger Menu Button (Left) -->
+                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" aria-label="<?php esc_attr_e('Alternar menu', 'tema_aromas'); ?>">
+                    <span class="menu-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                    <span class="menu-text"><?php esc_html_e('MENU', 'tema_aromas'); ?></span>
+                </button>
+
+                <!-- Logo / Site Title (Center) -->
                 <div class="site-branding">
                     <div class="site-logo">
                         <a href="<?php echo esc_url(home_url('/')); ?>" rel="home" class="dynamic-logo-link">
-                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/logo-nome-branca.png'); ?>" 
-                                 alt="<?php echo esc_attr(get_bloginfo('name')); ?>" 
+                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/logo-nome-branca.png'); ?>"
+                                 alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
                                  class="site-logo-img logo-white"
                                  id="logo-white">
-                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/logo-nome-preta.png'); ?>" 
-                                 alt="<?php echo esc_attr(get_bloginfo('name')); ?>" 
+                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/logo-nome-preta.png'); ?>"
+                                 alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
                                  class="site-logo-img logo-black"
                                  id="logo-black"
                                  style="display: none;">
@@ -113,30 +123,145 @@
                     </div>
                 </div>
 
-                <!-- Main Navigation -->
-                <nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e('Menu principal', 'tema_aromas'); ?>">
-                    <button class="menu-toggle hidden-desktop" aria-controls="primary-menu" aria-expanded="false" aria-label="<?php esc_attr_e('Alternar menu', 'tema_aromas'); ?>">
-                        <span class="menu-icon">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </span>
-                        <span class="menu-text"><?php esc_html_e('Menu', 'tema_aromas'); ?></span>
+                <!-- Header Icons (Right) -->
+                <div class="header-icons">
+                    <!-- Search Toggle -->
+                    <button class="header-icon search-toggle" aria-label="<?php esc_attr_e('Abrir busca', 'tema_aromas'); ?>" aria-expanded="false" aria-controls="search-form">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M21 21l-6.35-6.35M11 6a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"/>
+                        </svg>
+                        <span class="sr-only"><?php esc_html_e('Buscar', 'tema_aromas'); ?></span>
                     </button>
 
-                    <?php if (has_nav_menu('header')) : ?>
-                        <?php wp_nav_menu([
-                            'theme_location' => 'header',
-                            'menu_id' => 'primary-menu',
-                            'menu_class' => 'primary-menu luxury-menu',
-                            'container' => 'div',
-                            'container_class' => 'primary-menu-container',
-                            'depth' => 2,
-                            'walker' => new Tema_Aromas_Walker_Nav_Menu(),
-                        ]); ?>
+                    <!-- My Account Icon -->
+                    <?php if (class_exists('WooCommerce')) : ?>
+                        <a href="<?php echo esc_url(wc_get_page_permalink('myaccount')); ?>" class="header-icon account-icon" aria-label="<?php esc_attr_e('Minha conta', 'tema_aromas'); ?>">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            <span class="sr-only"><?php esc_html_e('Minha Conta', 'tema_aromas'); ?></span>
+                        </a>
+
+                        <!-- Cart Icon with Counter -->
+                        <button class="header-icon cart-toggle" aria-label="<?php esc_attr_e('Abrir carrinho', 'tema_aromas'); ?>" aria-expanded="false" data-cart-toggle>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            <?php $cart_count = WC()->cart->get_cart_contents_count(); ?>
+                            <span class="cart-count" <?php echo $cart_count > 0 ? '' : 'style="display: none;"'; ?>>
+                                <?php echo esc_html($cart_count); ?>
+                            </span>
+                            <span class="sr-only"><?php esc_html_e('Carrinho', 'tema_aromas'); ?></span>
+                        </button>
+                    <?php endif; ?>
+                </div>
+            </div>
+
+            <!-- Expandable Search Form -->
+            <div id="search-form" class="header-search" aria-hidden="true">
+                <div class="search-form-container">
+                    <?php if (class_exists('WooCommerce')) : ?>
+                        <!-- WooCommerce Product Search -->
+                        <form role="search" method="get" class="woocommerce-product-search luxury-form" action="<?php echo esc_url(home_url('/')); ?>">
+                            <label for="woocommerce-product-search-field" class="sr-only">
+                                <?php esc_html_e('Buscar produtos', 'tema_aromas'); ?>
+                            </label>
+                            <input type="search"
+                                   id="woocommerce-product-search-field"
+                                   class="search-field luxury-form-input"
+                                   placeholder="<?php esc_attr_e('Buscar produtos...', 'tema_aromas'); ?>"
+                                   value="<?php echo get_search_query(); ?>"
+                                   name="s" />
+                            <input type="hidden" name="post_type" value="product" />
+                            <button type="submit" class="search-submit btn-luxury" aria-label="<?php esc_attr_e('Buscar', 'tema_aromas'); ?>">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <path d="M21 21l-6.35-6.35M11 6a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"/>
+                                </svg>
+                            </button>
+                        </form>
                     <?php else : ?>
+                        <!-- Standard WordPress Search -->
+                        <?php get_search_form(); ?>
+                    <?php endif; ?>
+
+                    <button class="search-close" aria-label="<?php esc_attr_e('Fechar busca', 'tema_aromas'); ?>">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" aria-hidden="true"></div>
+
+        <!-- Slide-in Navigation Menu -->
+        <nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e('Menu principal', 'tema_aromas'); ?>">
+            <?php if (has_nav_menu('header')) : ?>
+                <div class="primary-menu-container">
+                    <!-- Close button inside menu -->
+                    <button class="menu-close-button" aria-label="<?php esc_attr_e('Fechar menu', 'tema_aromas'); ?>">
+                        <span class="close-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </span>
+                        <span class="close-text"><?php esc_html_e('MENU', 'tema_aromas'); ?></span>
+                    </button>
+
+                    <?php wp_nav_menu([
+                        'theme_location' => 'header',
+                        'menu_id' => 'primary-menu',
+                        'menu_class' => 'primary-menu luxury-menu',
+                        'container' => false,
+                        'depth' => 2,
+                        'walker' => new Tema_Aromas_Walker_Nav_Menu(),
+                    ]); ?>
+
+                    <!-- Menu Footer with Social Icons -->
+                    <div class="menu-footer">
+                        <!-- Social Icons - Simple outline style -->
+                        <div class="menu-social-icons">
+                            <a href="https://www.facebook.com/zensecretsaromas" target="_blank" rel="noopener noreferrer" class="menu-social-icon" aria-label="Facebook">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                                </svg>
+                            </a>
+                            <a href="https://www.instagram.com/zensecretsaromas" target="_blank" rel="noopener noreferrer" class="menu-social-icon" aria-label="Instagram">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                </svg>
+                            </a>
+                            <a href="https://www.tiktok.com/@zensecretsaromas" target="_blank" rel="noopener noreferrer" class="menu-social-icon" aria-label="TikTok">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            <?php else : ?>
                         <!-- Default menu structure if no menu is assigned -->
                         <div class="primary-menu-container">
+                            <!-- Close button inside menu -->
+                            <button class="menu-close-button" aria-label="<?php esc_attr_e('Fechar menu', 'tema_aromas'); ?>">
+                                <span class="close-icon">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                                    </svg>
+                                </span>
+                                <span class="close-text"><?php esc_html_e('MENU', 'tema_aromas'); ?></span>
+                            </button>
+
                             <ul id="primary-menu" class="primary-menu luxury-menu">
                                 <li class="menu-item">
                                     <a href="<?php echo esc_url(home_url('/')); ?>" class="menu-link">
@@ -240,86 +365,71 @@
                                     </a>
                                 </li>
                             </ul>
+
+                            <!-- Menu Footer with Action Buttons and Social Icons -->
+                            <div class="menu-footer">
+                                <!-- Action Buttons: Search, Account, Cart -->
+                                <div class="menu-action-buttons">
+                                    <button class="menu-action-btn search-toggle" aria-label="<?php esc_attr_e('Abrir busca', 'tema_aromas'); ?>" aria-expanded="false">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <circle cx="11" cy="11" r="8"></circle>
+                                            <path d="m21 21-4.35-4.35"></path>
+                                        </svg>
+                                        <span><?php esc_html_e('Buscar', 'tema_aromas'); ?></span>
+                                    </button>
+
+                                    <?php if (class_exists('WooCommerce')) : ?>
+                                        <a href="<?php echo esc_url(wc_get_page_permalink('myaccount')); ?>" class="menu-action-btn" aria-label="<?php esc_attr_e('Minha conta', 'tema_aromas'); ?>">
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                                <circle cx="12" cy="7" r="4"></circle>
+                                            </svg>
+                                            <span><?php esc_html_e('Minha Conta', 'tema_aromas'); ?></span>
+                                        </a>
+
+                                        <button class="menu-action-btn cart-toggle" aria-label="<?php esc_attr_e('Abrir carrinho', 'tema_aromas'); ?>" data-cart-toggle>
+                                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                                <circle cx="9" cy="21" r="1"></circle>
+                                                <circle cx="20" cy="21" r="1"></circle>
+                                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                                            </svg>
+                                            <span><?php esc_html_e('Carrinho', 'tema_aromas'); ?></span>
+                                            <?php $cart_count = WC()->cart->get_cart_contents_count(); ?>
+                                            <?php if ($cart_count > 0) : ?>
+                                                <span class="menu-cart-count"><?php echo esc_html($cart_count); ?></span>
+                                            <?php endif; ?>
+                                        </button>
+                                    <?php endif; ?>
+                                </div>
+
+                                <!-- Social Icons - Simple outline style -->
+                                <div class="menu-social-icons">
+                                    <a href="https://www.facebook.com/zensecretsaromas" target="_blank" rel="noopener noreferrer" class="menu-social-icon" aria-label="Facebook">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                                        </svg>
+                                    </a>
+                                    <a href="https://www.instagram.com/zensecretsaromas" target="_blank" rel="noopener noreferrer" class="menu-social-icon" aria-label="Instagram">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                        </svg>
+                                    </a>
+                                    <a href="https://www.tiktok.com/@zensecretsaromas" target="_blank" rel="noopener noreferrer" class="menu-social-icon" aria-label="TikTok">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     <?php endif; ?>
                 </nav>
-
-                <!-- Header Icons -->
-                <div class="header-icons">
-                    <!-- Search Toggle -->
-                    <button class="header-icon search-toggle" aria-label="<?php esc_attr_e('Abrir busca', 'tema_aromas'); ?>" aria-expanded="false" aria-controls="search-form">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                            <path d="M21 21l-6.35-6.35M11 6a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"/>
-                        </svg>
-                        <span class="sr-only"><?php esc_html_e('Buscar', 'tema_aromas'); ?></span>
-                    </button>
-
-                    <!-- My Account Icon -->
-                    <?php if (class_exists('WooCommerce')) : ?>
-                        <a href="<?php echo esc_url(wc_get_page_permalink('myaccount')); ?>" class="header-icon account-icon" aria-label="<?php esc_attr_e('Minha conta', 'tema_aromas'); ?>">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                <circle cx="12" cy="7" r="4"></circle>
-                            </svg>
-                            <span class="sr-only"><?php esc_html_e('Minha Conta', 'tema_aromas'); ?></span>
-                        </a>
-
-                        <!-- Cart Icon with Counter -->
-                        <button class="header-icon cart-toggle" aria-label="<?php esc_attr_e('Abrir carrinho', 'tema_aromas'); ?>" aria-expanded="false" data-cart-toggle>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                                <circle cx="9" cy="21" r="1"></circle>
-                                <circle cx="20" cy="21" r="1"></circle>
-                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                            </svg>
-                            <?php $cart_count = WC()->cart->get_cart_contents_count(); ?>
-                            <span class="cart-count" <?php echo $cart_count > 0 ? '' : 'style="display: none;"'; ?>>
-                                <?php echo esc_html($cart_count); ?>
-                            </span>
-                            <span class="sr-only"><?php esc_html_e('Carrinho', 'tema_aromas'); ?></span>
-                        </button>
-                    <?php endif; ?>
-                </div>
-            </div>
-
-            <!-- Expandable Search Form -->
-            <div id="search-form" class="header-search" aria-hidden="true">
-                <div class="search-form-container">
-                    <?php if (class_exists('WooCommerce')) : ?>
-                        <!-- WooCommerce Product Search -->
-                        <form role="search" method="get" class="woocommerce-product-search luxury-form" action="<?php echo esc_url(home_url('/')); ?>">
-                            <label for="woocommerce-product-search-field" class="sr-only">
-                                <?php esc_html_e('Buscar produtos', 'tema_aromas'); ?>
-                            </label>
-                            <input type="search" 
-                                   id="woocommerce-product-search-field" 
-                                   class="search-field luxury-form-input" 
-                                   placeholder="<?php esc_attr_e('Buscar produtos...', 'tema_aromas'); ?>" 
-                                   value="<?php echo get_search_query(); ?>" 
-                                   name="s" />
-                            <input type="hidden" name="post_type" value="product" />
-                            <button type="submit" class="search-submit btn-luxury" aria-label="<?php esc_attr_e('Buscar', 'tema_aromas'); ?>">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                                    <path d="M21 21l-6.35-6.35M11 6a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"/>
-                                </svg>
-                            </button>
-                        </form>
-                    <?php else : ?>
-                        <!-- Standard WordPress Search -->
-                        <?php get_search_form(); ?>
-                    <?php endif; ?>
-                    
-                    <button class="search-close" aria-label="<?php esc_attr_e('Fechar busca', 'tema_aromas'); ?>">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                            <line x1="18" y1="6" x2="6" y2="18"></line>
-                            <line x1="6" y1="6" x2="18" y2="18"></line>
-                        </svg>
-                    </button>
-                </div>
-            </div>
         </div>
 
         <!-- Mobile Menu Overlay -->
-        <div class="mobile-menu-overlay hidden-desktop" aria-hidden="true"></div>
+        <div class="mobile-menu-overlay" aria-hidden="true"></div>
     </header>
 
     <!-- Mini Cart Drawer (WooCommerce) -->

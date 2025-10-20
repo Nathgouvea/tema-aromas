@@ -743,13 +743,14 @@ select.modern-form-input {
 }
 
 .fragrance-accordion-item:hover {
-  border-color: var(--cor-borda);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-color: #cccccc;
+  box-shadow: var(--sombra-sutil);
 }
 
 .fragrance-accordion-item.active {
   border-color: var(--cor-primaria);
-  box-shadow: 0 6px 16px rgba(107, 79, 196, 0.08);
+  box-shadow: var(--sombra-sutil);
+  border-left: 4px solid var(--cor-primaria);
 }
 
 .fragrance-accordion-header {
@@ -845,11 +846,11 @@ select.modern-form-input {
 }
 
 .note-column h4 {
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: #666;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #888;
   margin-bottom: var(--espacamento-xs);
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
 }
 
@@ -871,7 +872,7 @@ select.modern-form-input {
 .fragrance-description h4 {
   font-size: 1.25rem;
   font-weight: 600;
-  color: var(--cor-primaria);
+  color: var(--cor-texto);
   margin-bottom: var(--espacamento-sm);
 }
 
@@ -1121,14 +1122,15 @@ textarea.luxury-form-input {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: var(--espacamento-md);
-  color: var(--cor-primaria);
+  color: var(--cor-texto);
 }
 
 .cta-subtitle {
   font-size: 1.2rem;
-  opacity: 0.9;
+  opacity: 0.8;
   line-height: 1.6;
   margin-bottom: var(--espacamento-xl);
+  color: var(--cor-texto);
 }
 
 .cta-buttons {

@@ -352,7 +352,7 @@ header.site-header.scrolled,
   transform: translateX(-100%);
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.4s;
   overflow-y: auto;
-  padding: 80px 60px 60px 60px;
+  padding: 80px 40px 60px 40px;
   display: flex;
   flex-direction: column;
   visibility: hidden;
@@ -370,7 +370,7 @@ header.site-header.scrolled,
 .menu-close-button {
   position: absolute;
   top: 40px;
-  left: 60px;
+  left: 40px;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -480,6 +480,7 @@ body.admin-bar .mobile-menu-overlay {
   padding: 0;
   gap: var(--espacamento-sm);
   flex: 1;
+  align-items: flex-start;
 }
 
 .menu-item {
@@ -494,6 +495,7 @@ body.admin-bar .mobile-menu-overlay {
 .menu-link {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: var(--espacamento-sm);
   padding: 18px 0;
   font-family: var(--fonte-menu, "Quicksand"), sans-serif;
@@ -506,6 +508,7 @@ body.admin-bar .mobile-menu-overlay {
   transition: color 0.2s ease;
   width: 100%;
   line-height: 1.2;
+  text-align: left;
 }
 
 /* Menu Icons Styling - Hide all icons for clean look */
@@ -647,7 +650,7 @@ body.admin-bar .mobile-menu-overlay {
   display: flex;
   gap: 24px;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   padding-bottom: 20px;
 }
 
@@ -1093,8 +1096,7 @@ body.search-open .site-header {
 }
 
 .menu-toggle:focus {
-  outline: 2px solid var(--cor-primaria);
-  outline-offset: 4px;
+  outline: none;
 }
 
 /* Homepage hero state - white text for menu toggle */
@@ -1114,11 +1116,6 @@ body.search-open .site-header {
 /* Show menu text alongside icon */
 .menu-toggle .menu-text {
   display: inline-block;
-}
-
-.menu-toggle:focus {
-  outline: 3px solid var(--cor-accent);
-  outline-offset: 2px;
 }
 
 .menu-icon {

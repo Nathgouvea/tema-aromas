@@ -514,12 +514,13 @@ body.single-product {
 .woocommerce ul.products li.product h2,
 .woocommerce ul.products li.product .woocommerce-loop-product__title {
   font-family: var(--fonte-titulo);
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: #333;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #666666;
   margin: 0 0 8px;
-  line-height: 1.3;
-  letter-spacing: 0;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -530,23 +531,23 @@ body.single-product {
 
 .woocommerce ul.products li.product h2 a,
 .woocommerce ul.products li.product .woocommerce-loop-product__title a {
-  color: var(--cor-texto);
+  color: #666666;
   text-decoration: none !important; /* Force no underline */
   transition: var(--transicao-rapida);
 }
 
 .woocommerce ul.products li.product h2 a:hover,
 .woocommerce ul.products li.product .woocommerce-loop-product__title a:hover {
-  color: var(--cor-primaria);
+  color: #000000;
   text-decoration: none !important; /* Maintain no underline on hover */
 }
 
 /* Product Prices - Clear Hierarchy */
 .woocommerce ul.products li.product .price {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #222;
-  margin-bottom: 12px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #000000;
+  margin: 4px 0 12px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -559,8 +560,8 @@ body.single-product {
 }
 
 .woocommerce ul.products li.product .price .woocommerce-Price-currencySymbol {
-  font-size: 0.85em;
-  margin-right: 2px;
+  font-size: 1em;
+  margin-right: 0;
 }
 
 .woocommerce ul.products li.product .price del {
@@ -573,8 +574,8 @@ body.single-product {
 
 .woocommerce ul.products li.product .price ins {
   text-decoration: none !important;
-  color: var(--cor-primaria);
-  font-weight: 700;
+  color: #000000;
+  font-weight: 400;
 }
 
 /* Add to Cart Buttons - Pill Design */

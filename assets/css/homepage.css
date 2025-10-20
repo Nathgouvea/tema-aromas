@@ -1805,14 +1805,14 @@
 /* Premium Trust Indicators */
 .trust-indicators-horizontal {
   background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-  padding: var(--espacamento-xxl) 0;
+  padding: var(--espacamento-lg) 0;
   border-bottom: 1px solid rgba(230, 230, 230, 0.5);
 }
 
 .trust-grid-horizontal {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--espacamento-xl);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--espacamento-md);
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--espacamento-lg);
@@ -1822,12 +1822,13 @@
   display: flex;
   align-items: center;
   background: var(--cor-fundo);
-  border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   border: 1px solid rgba(230, 230, 230, 0.3);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  padding: var(--espacamento-sm) var(--espacamento-md);
 }
 
 .trust-item-horizontal::before {
@@ -1847,47 +1848,47 @@
 }
 
 .trust-item-horizontal:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-  border-color: rgba(107, 79, 196, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-color: rgba(107, 79, 196, 0.15);
 }
 
 .trust-icon-horizontal {
   flex-shrink: 0;
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: linear-gradient(
     135deg,
-    var(--cor-primaria) 0%,
-    var(--cor-accent) 100%
+    rgba(107, 79, 196, 0.1) 0%,
+    rgba(115, 82, 199, 0.1) 100%
   );
-  border-radius: 16px;
-  color: var(--cor-fundo);
-  box-shadow: 0 4px 16px rgba(107, 79, 196, 0.3);
+  border-radius: 10px;
+  color: var(--cor-primaria);
+  box-shadow: none;
 }
 
 .trust-content-horizontal h3 {
-  font-size: 1.2rem;
+  font-size: 0.95rem;
   font-weight: 600;
   color: var(--cor-texto);
-  margin-bottom: var(--espacamento-xs);
+  margin-bottom: 2px;
 }
 
 .trust-content-horizontal p {
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   color: var(--cor-texto);
-  opacity: 0.8;
-  line-height: 1.5;
+  opacity: 0.7;
+  line-height: 1.4;
 }
 
 /* WhatsApp Highlight Special */
 .trust-item-horizontal.whatsapp-highlight {
-  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
-  color: var(--cor-fundo);
-  border-color: #25d366;
+  background: rgba(37, 211, 102, 0.08);
+  color: var(--cor-texto);
+  border-color: rgba(37, 211, 102, 0.2);
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -1897,28 +1898,29 @@
 }
 
 .trust-item-horizontal.whatsapp-highlight:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(37, 211, 102, 0.3);
-  border-color: #25d366;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.15);
+  border-color: rgba(37, 211, 102, 0.3);
+  background: rgba(37, 211, 102, 0.12);
 }
 
 .trust-item-horizontal.whatsapp-highlight:focus {
-  outline: 3px solid rgba(37, 211, 102, 0.3);
+  outline: 2px solid rgba(37, 211, 102, 0.3);
   outline-offset: 2px;
 }
 
 .trust-item-horizontal.whatsapp-highlight .trust-content-horizontal h3,
 .trust-item-horizontal.whatsapp-highlight .trust-content-horizontal p {
-  color: var(--cor-fundo);
+  color: var(--cor-texto);
 }
 
 .trust-item-horizontal.whatsapp-highlight .trust-icon-horizontal {
-  background: rgba(255, 255, 255, 0.2);
-  color: var(--cor-fundo);
+  background: rgba(37, 211, 102, 0.1);
+  color: #25d366;
 }
 
 .trust-item-horizontal.whatsapp-highlight:hover .trust-icon-horizontal {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(37, 211, 102, 0.15);
   transform: scale(1.05);
 }
 

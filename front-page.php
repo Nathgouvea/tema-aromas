@@ -254,11 +254,9 @@ get_header(); ?>
                                 echo esc_url(home_url('/sobre-os-aromas/'));
                             }
                         ?>" class="btn-aromas-primary">
-                            <span class="btn-icon">🌸</span>
                             <?php esc_html_e('Conheça Todos os Aromas', 'tema_aromas'); ?>
                         </a>
                         <a href="<?php echo esc_url(wc_get_page_permalink('shop')); ?>" class="btn-aromas-secondary">
-                            <span class="btn-icon">🛍️</span>
                             <?php esc_html_e('Ver Produtos', 'tema_aromas'); ?>
                         </a>
                     </div>

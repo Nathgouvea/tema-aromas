@@ -143,7 +143,7 @@
                         <?php esc_html_e('Desenvolvido com', 'tema_aromas'); ?>
                         <span class="heart-spin" aria-label="amor">❤️</span>
                         <?php esc_html_e('por', 'tema_aromas'); ?>
-                        <a href="https://pickypixels.studio" target="_blank" rel="noopener noreferrer" class="developer-link">Picky Pixel Studio</a>
+                        <a href="https://pickypixels.studio" target="_blank" rel="noopener noreferrer" class="developer-link">Picky Pixels Studio</a>
                     </p>
                 </div>
             </div>

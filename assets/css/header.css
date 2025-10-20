@@ -1140,10 +1140,13 @@ body.mobile-menu-open {
 }
 
 .mini-cart-title {
-  margin: 0;
-  font-size: 1.25rem;
+  font-family: var(--fonte-titulo);
+  font-size: 1.5rem;
   font-weight: 600;
   color: var(--cor-texto);
+  margin: 0;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
 }
 
 .mini-cart-close {

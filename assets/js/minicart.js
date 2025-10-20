@@ -23,6 +23,7 @@
     initCartToggle();
     initCartEvents();
     initCartUpdates();
+    initQuantityControls();
 
     console.log("🛒 Mini cart inicializado");
   }
@@ -467,6 +468,116 @@
     }
 
     return true;
+  }
+
+  /**
+   * Initialize quantity controls (+ and - buttons)
+   */
+  function initQuantityControls() {
+    // Handle quantity increase
+    document.addEventListener("click", function (e) {
+      const plusBtn = e.target.closest(".quantity-plus");
+      if (plusBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const cartItemKey = plusBtn.dataset.cartItemKey;
+        const input = document.querySelector(`.quantity-input[data-cart-item-key="${cartItemKey}"]`);
+
+        if (input) {
+          const currentQty = parseInt(input.value) || 0;
+          const newQty = currentQty + 1;
+          input.value = newQty;
+          updateMiniCartQuantity(cartItemKey, newQty);
+        }
+      }
+    });
+
+    // Handle quantity decrease
+    document.addEventListener("click", function (e) {
+      const minusBtn = e.target.closest(".quantity-minus");
+      if (minusBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const cartItemKey = minusBtn.dataset.cartItemKey;
+        const input = document.querySelector(`.quantity-input[data-cart-item-key="${cartItemKey}"]`);
+
+        if (input) {
+          const currentQty = parseInt(input.value) || 0;
+          const newQty = Math.max(1, currentQty - 1); // Minimum 1
+          input.value = newQty;
+          updateMiniCartQuantity(cartItemKey, newQty);
+        }
+      }
+    });
+
+    // Re-initialize after WooCommerce updates the cart
+    jQuery(document.body).on("wc_fragments_refreshed", function () {
+      console.log("🔄 Cart fragments refreshed - quantity controls reinitialized");
+    });
+  }
+
+  /**
+   * Update mini cart quantity via AJAX
+   */
+  function updateMiniCartQuantity(cartItemKey, quantity) {
+    if (typeof jQuery === "undefined" || typeof wc_add_to_cart_params === "undefined") {
+      console.error("jQuery or WooCommerce not loaded");
+      return;
+    }
+
+    // Show loading state
+    const input = document.querySelector(`.quantity-input[data-cart-item-key="${cartItemKey}"]`);
+    if (input) {
+      input.style.opacity = "0.6";
+      input.disabled = true;
+    }
+
+    // Use WooCommerce cart hash update
+    jQuery.ajax({
+      type: "POST",
+      url: wc_add_to_cart_params.wc_ajax_url.toString().replace("%%endpoint%%", "update_cart_item_qty"),
+      data: {
+        cart_item_key: cartItemKey,
+        qty: quantity
+      },
+      success: function (response) {
+        if (response && response.fragments) {
+          // Update cart fragments (WooCommerce standard method)
+          jQuery.each(response.fragments, function (key, value) {
+            jQuery(key).replaceWith(value);
+          });
+
+          // Trigger event for other scripts
+          jQuery(document.body).trigger("wc_fragment_refresh");
+          jQuery(document.body).trigger("updated_cart_totals");
+
+          // Re-initialize quantity controls after update
+          setTimeout(function() {
+            initQuantityControls();
+          }, 100);
+
+          // Show success feedback
+          showCartNotification("Quantidade atualizada", "success");
+        }
+      },
+      error: function () {
+        showCartNotification("Erro ao atualizar quantidade", "error");
+        // Restore input state
+        if (input) {
+          input.style.opacity = "1";
+          input.disabled = false;
+        }
+      },
+      complete: function () {
+        // Restore input state
+        if (input) {
+          input.style.opacity = "1";
+          input.disabled = false;
+        }
+      }
+    });
   }
 
   /**

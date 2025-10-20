@@ -496,3 +496,38 @@ function tema_aromas_woocommerce_completed_order_email($order, $sent_to_admin, $
     }
 }
 add_action('woocommerce_email_order_details', 'tema_aromas_woocommerce_completed_order_email', 20, 4);
+
+/**
+ * AJAX handler for updating cart item quantity in mini cart
+ *
+ * @return void
+ */
+function tema_aromas_update_cart_item_qty() {
+    // Check if cart item key and quantity are provided
+    if (!isset($_POST['cart_item_key']) || !isset($_POST['qty'])) {
+        wp_send_json_error('Missing required parameters');
+        return;
+    }
+
+    $cart_item_key = sanitize_text_field($_POST['cart_item_key']);
+    $quantity = absint($_POST['qty']);
+
+    // Validate cart item key exists
+    if (!WC()->cart->get_cart_item($cart_item_key)) {
+        wp_send_json_error('Invalid cart item');
+        return;
+    }
+
+    // Update quantity
+    $updated = WC()->cart->set_quantity($cart_item_key, $quantity, true);
+
+    if ($updated) {
+        // Get updated cart fragments
+        WC_AJAX::get_refreshed_fragments();
+    } else {
+        wp_send_json_error('Failed to update quantity');
+    }
+}
+add_action('wc_ajax_update_cart_item_qty', 'tema_aromas_update_cart_item_qty');
+add_action('wp_ajax_update_cart_item_qty', 'tema_aromas_update_cart_item_qty');
+add_action('wp_ajax_nopriv_update_cart_item_qty', 'tema_aromas_update_cart_item_qty');

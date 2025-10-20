@@ -162,13 +162,8 @@ get_header(); ?>
                             </div>
                         </div>
                         <div class="aroma-content">
-                            <div class="aroma-icon">🌸</div>
                             <h3 class="aroma-name"><?php esc_html_e('Chá Branco', 'tema_aromas'); ?></h3>
                             <p class="aroma-sensation"><?php esc_html_e('Pureza e serenidade em cada respiração', 'tema_aromas'); ?></p>
-                            <div class="aroma-features">
-                                <span class="feature-tag">Relaxante</span>
-                                <span class="feature-tag">Suave</span>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -185,13 +180,8 @@ get_header(); ?>
                             </div>
                         </div>
                         <div class="aroma-content">
-                            <div class="aroma-icon">🌿</div>
                             <h3 class="aroma-name"><?php esc_html_e('Flor de Figo', 'tema_aromas'); ?></h3>
                             <p class="aroma-sensation"><?php esc_html_e('Doçura natural e sofisticação', 'tema_aromas'); ?></p>
-                            <div class="aroma-features">
-                                <span class="feature-tag">Aconchegante</span>
-                                <span class="feature-tag">Elegante</span>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -208,13 +198,8 @@ get_header(); ?>
                             </div>
                         </div>
                         <div class="aroma-content">
-                            <div class="aroma-icon">🎋</div>
                             <h3 class="aroma-name"><?php esc_html_e('Bamboo', 'tema_aromas'); ?></h3>
                             <p class="aroma-sensation"><?php esc_html_e('Frescor natural e equilíbrio zen', 'tema_aromas'); ?></p>
-                            <div class="aroma-features">
-                                <span class="feature-tag">Refrescante</span>
-                                <span class="feature-tag">Zen</span>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -231,13 +216,8 @@ get_header(); ?>
                             </div>
                         </div>
                         <div class="aroma-content">
-                            <div class="aroma-icon">🌊</div>
                             <h3 class="aroma-name"><?php esc_html_e('Marinho', 'tema_aromas'); ?></h3>
                             <p class="aroma-sensation"><?php esc_html_e('Brisa oceânica e tranquilidade', 'tema_aromas'); ?></p>
-                            <div class="aroma-features">
-                                <span class="feature-tag">Calmante</span>
-                                <span class="feature-tag">Marinho</span>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -254,13 +234,8 @@ get_header(); ?>
                             </div>
                         </div>
                         <div class="aroma-content">
-                            <div class="aroma-icon">🕯️</div>
                             <h3 class="aroma-name"><?php esc_html_e('Palo Santo', 'tema_aromas'); ?></h3>
                             <p class="aroma-sensation"><?php esc_html_e('Madeira sagrada e energia positiva', 'tema_aromas'); ?></p>
-                            <div class="aroma-features">
-                                <span class="feature-tag">Sagrado</span>
-                                <span class="feature-tag">Energizante</span>
-                            </div>
                         </div>
                     </div>
                 </div>

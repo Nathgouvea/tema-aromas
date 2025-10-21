@@ -1997,7 +1997,6 @@ section:nth-child(even) {
 .produto-card:hover {
   transform: translateY(-12px);
   box-shadow: 0 20px 60px rgba(107, 79, 196, 0.2);
-  border-color: var(--cor-primaria);
 }
 
 .produto-image {
@@ -3222,35 +3221,7 @@ img[loading="lazy"].loaded {
   display: none !important;
 }
 
-/* Category Icons - Clean SVG Icons */
+/* Category Icons - Hidden */
 .produtos-queridos-section .produto-category-icon {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
-  z-index: 3;
-}
-
-.produtos-queridos-section .produto-category-icon svg {
-  color: var(--cor-primaria);
-  transition: all 0.3s ease;
-}
-
-.produtos-queridos-section .produto-card:hover .produto-category-icon {
-  transform: scale(1.1);
-  background: rgba(255, 255, 255, 1);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
-
-.produtos-queridos-section .produto-card:hover .produto-category-icon svg {
-  color: var(--cor-accent);
+  display: none;
 }

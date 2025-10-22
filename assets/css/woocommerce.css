@@ -3290,17 +3290,19 @@ section:has(> h2:contains("Best Quality Plants")) {
 
 /* My Account Container */
 .woocommerce-account .woocommerce {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
+  padding: 0 var(--espacamento-md);
 }
 
-/* Account Navigation */
+/* Account Navigation - Modern Horizontal Tab Design */
 .woocommerce-MyAccount-navigation {
   background: white;
   border-radius: 16px;
-  padding: var(--espacamento-lg);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  padding: var(--espacamento-md);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   margin-bottom: var(--espacamento-xl);
+  border-bottom: 2px solid #f0f0f0;
 }
 
 .woocommerce-MyAccount-navigation ul {
@@ -3308,8 +3310,11 @@ section:has(> h2:contains("Best Quality Plants")) {
   margin: 0;
   padding: 0;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: var(--espacamento-xs);
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 .woocommerce-MyAccount-navigation ul li {
@@ -3320,28 +3325,157 @@ section:has(> h2:contains("Best Quality Plants")) {
 .woocommerce-MyAccount-navigation ul li a {
   display: flex;
   align-items: center;
-  padding: var(--espacamento-md);
-  border-radius: 12px;
+  gap: var(--espacamento-xs);
+  padding: var(--espacamento-md) var(--espacamento-lg);
+  border-radius: 12px 12px 0 0;
   text-decoration: none;
   color: #4a5568;
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 0.95rem;
   transition: all 0.3s ease;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
+  border-bottom: 3px solid transparent;
+  position: relative;
+  white-space: nowrap;
+}
+
+/* Add SVG icons using CSS pseudo-elements - Default gray color */
+.woocommerce-MyAccount-navigation-link--orders a::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234a5568' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z'/%3E%3Cpolyline points='3.27 6.96 12 12.01 20.73 6.96'/%3E%3Cline x1='12' y1='22.08' x2='12' y2='12'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-shrink: 0;
+  transition: background-image 0.3s ease;
+}
+
+.woocommerce-MyAccount-navigation-link--edit-address a::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234a5568' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z'/%3E%3Ccircle cx='12' cy='10' r='3'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-shrink: 0;
+  transition: background-image 0.3s ease;
+}
+
+.woocommerce-MyAccount-navigation-link--edit-account a::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234a5568' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='12' cy='7' r='4'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-shrink: 0;
+  transition: background-image 0.3s ease;
+}
+
+.woocommerce-MyAccount-navigation-link--customer-logout a::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234a5568' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4'/%3E%3Cpolyline points='16 17 21 12 16 7'/%3E%3Cline x1='21' y1='12' x2='9' y2='12'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-shrink: 0;
+  transition: background-image 0.3s ease;
+}
+
+/* Hover state - Change icons to purple */
+.woocommerce-MyAccount-navigation ul li:hover.woocommerce-MyAccount-navigation-link--orders a::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B4FC4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z'/%3E%3Cpolyline points='3.27 6.96 12 12.01 20.73 6.96'/%3E%3Cline x1='12' y1='22.08' x2='12' y2='12'/%3E%3C/svg%3E");
+}
+
+.woocommerce-MyAccount-navigation ul li:hover.woocommerce-MyAccount-navigation-link--edit-address a::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B4FC4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z'/%3E%3Ccircle cx='12' cy='10' r='3'/%3E%3C/svg%3E");
+}
+
+.woocommerce-MyAccount-navigation ul li:hover.woocommerce-MyAccount-navigation-link--edit-account a::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B4FC4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='12' cy='7' r='4'/%3E%3C/svg%3E");
+}
+
+.woocommerce-MyAccount-navigation ul li:hover.woocommerce-MyAccount-navigation-link--customer-logout a::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B4FC4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4'/%3E%3Cpolyline points='16 17 21 12 16 7'/%3E%3Cline x1='21' y1='12' x2='9' y2='12'/%3E%3C/svg%3E");
+}
+
+/* Active state - Purple icons */
+.woocommerce-MyAccount-navigation ul li.is-active.woocommerce-MyAccount-navigation-link--orders a::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B4FC4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z'/%3E%3Cpolyline points='3.27 6.96 12 12.01 20.73 6.96'/%3E%3Cline x1='12' y1='22.08' x2='12' y2='12'/%3E%3C/svg%3E");
+}
+
+.woocommerce-MyAccount-navigation ul li.is-active.woocommerce-MyAccount-navigation-link--edit-address a::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B4FC4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z'/%3E%3Ccircle cx='12' cy='10' r='3'/%3E%3C/svg%3E");
+}
+
+.woocommerce-MyAccount-navigation ul li.is-active.woocommerce-MyAccount-navigation-link--edit-account a::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B4FC4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='12' cy='7' r='4'/%3E%3C/svg%3E");
+}
+
+.woocommerce-MyAccount-navigation ul li.is-active.woocommerce-MyAccount-navigation-link--customer-logout a::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236B4FC4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4'/%3E%3Cpolyline points='16 17 21 12 16 7'/%3E%3Cline x1='21' y1='12' x2='9' y2='12'/%3E%3C/svg%3E");
 }
 
 .woocommerce-MyAccount-navigation ul li a:hover {
   background: rgba(107, 79, 196, 0.05);
   color: var(--cor-primaria);
-  border-color: rgba(107, 79, 196, 0.1);
-  transform: translateX(4px);
+  border-bottom-color: rgba(107, 79, 196, 0.3);
 }
 
 .woocommerce-MyAccount-navigation ul li.is-active a {
-  background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-secundaria) 100%);
-  color: white;
+  color: var(--cor-primaria);
   font-weight: 600;
-  box-shadow: 0 4px 12px rgba(107, 79, 196, 0.25);
+  border-bottom-color: var(--cor-primaria);
+  background: rgba(107, 79, 196, 0.08);
+}
+
+/* Mobile Navigation - Scrollable Horizontal */
+@media (max-width: 768px) {
+  .woocommerce-MyAccount-navigation {
+    padding: var(--espacamento-sm);
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+  }
+
+  .woocommerce-MyAccount-navigation::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+
+  .woocommerce-MyAccount-navigation ul {
+    flex-wrap: nowrap;
+    gap: var(--espacamento-xs);
+  }
+
+  .woocommerce-MyAccount-navigation ul li {
+    flex-shrink: 0;
+  }
+
+  .woocommerce-MyAccount-navigation ul li a {
+    padding: var(--espacamento-sm) var(--espacamento-md);
+    font-size: 0.85rem;
+  }
+
+  /* Show only icons on very small screens */
+  @media (max-width: 480px) {
+    .woocommerce-MyAccount-navigation ul li a {
+      padding: var(--espacamento-sm);
+      font-size: 0;
+      gap: 0;
+    }
+
+    .woocommerce-MyAccount-navigation ul li a::before {
+      width: 20px;
+      height: 20px;
+    }
+  }
 }
 
 /* Account Content */
@@ -3437,41 +3571,122 @@ section:has(> h2:contains("Best Quality Plants")) {
   box-shadow: 0 6px 16px rgba(107, 79, 196, 0.35);
 }
 
-/* Orders Table */
+/* Orders Table - Card-Based Design for Better Responsiveness */
 .woocommerce-MyAccount-content table.my_account_orders {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   margin-top: var(--espacamento-lg);
 }
 
-.woocommerce-MyAccount-content table.my_account_orders thead {
-  background: linear-gradient(135deg, rgba(107, 79, 196, 0.08) 0%, rgba(139, 95, 214, 0.08) 100%);
+/* Hide table on mobile, show cards instead */
+@media (max-width: 1024px) {
+  .woocommerce-MyAccount-content table.my_account_orders thead {
+    display: none;
+  }
+
+  .woocommerce-MyAccount-content table.my_account_orders,
+  .woocommerce-MyAccount-content table.my_account_orders tbody,
+  .woocommerce-MyAccount-content table.my_account_orders tr,
+  .woocommerce-MyAccount-content table.my_account_orders td {
+    display: block;
+    width: 100%;
+  }
+
+  .woocommerce-MyAccount-content table.my_account_orders tr {
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    padding: var(--espacamento-lg);
+    margin-bottom: var(--espacamento-lg);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+  }
+
+  .woocommerce-MyAccount-content table.my_account_orders tr:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    border-color: var(--cor-primaria);
+  }
+
+  .woocommerce-MyAccount-content table.my_account_orders td {
+    padding: var(--espacamento-sm) 0;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--espacamento-md);
+  }
+
+  .woocommerce-MyAccount-content table.my_account_orders td:before {
+    content: attr(data-title);
+    font-weight: 700;
+    color: var(--cor-primaria);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
+    min-width: 100px;
+  }
+
+  .woocommerce-MyAccount-content table.my_account_orders td:last-child {
+    justify-content: flex-end;
+    padding-top: var(--espacamento-md);
+    margin-top: var(--espacamento-md);
+    border-top: 1px solid #e2e8f0;
+  }
+
+  .woocommerce-MyAccount-content table.my_account_orders td:last-child:before {
+    display: none;
+  }
+
+  .woocommerce-MyAccount-content table.my_account_orders .button {
+    width: 100%;
+    text-align: center;
+    padding: var(--espacamento-md);
+    font-size: 0.95rem;
+  }
 }
 
-.woocommerce-MyAccount-content table.my_account_orders th {
-  padding: var(--espacamento-md);
-  text-align: left;
-  font-weight: 700;
-  color: var(--cor-primaria);
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
+/* Desktop Table View */
+@media (min-width: 1025px) {
+  .woocommerce-MyAccount-content table.my_account_orders {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  }
 
-.woocommerce-MyAccount-content table.my_account_orders td {
-  padding: var(--espacamento-md);
-  border-bottom: 1px solid #e2e8f0;
-  color: #4a5568;
-}
+  .woocommerce-MyAccount-content table.my_account_orders thead {
+    background: linear-gradient(135deg, rgba(107, 79, 196, 0.08) 0%, rgba(139, 95, 214, 0.08) 100%);
+  }
 
-.woocommerce-MyAccount-content table.my_account_orders tr:hover {
-  background: rgba(107, 79, 196, 0.02);
-}
+  .woocommerce-MyAccount-content table.my_account_orders th {
+    padding: var(--espacamento-md) var(--espacamento-lg);
+    text-align: left;
+    font-weight: 700;
+    color: var(--cor-primaria);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
 
-.woocommerce-MyAccount-content table.my_account_orders .button {
-  padding: var(--espacamento-sm) var(--espacamento-md);
-  font-size: 0.9rem;
-  white-space: nowrap;
+  .woocommerce-MyAccount-content table.my_account_orders td {
+    padding: var(--espacamento-lg);
+    border-bottom: 1px solid #e2e8f0;
+    color: #4a5568;
+    vertical-align: middle;
+  }
+
+  .woocommerce-MyAccount-content table.my_account_orders tr:hover {
+    background: rgba(107, 79, 196, 0.02);
+  }
+
+  .woocommerce-MyAccount-content table.my_account_orders .button {
+    padding: var(--espacamento-sm) var(--espacamento-md);
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
 }
 
 /* Order Status Badges */
@@ -3555,69 +3770,34 @@ section:has(> h2:contains("Best Quality Plants")) {
   gap: var(--espacamento-md);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .woocommerce-MyAccount-navigation {
-    margin-bottom: var(--espacamento-lg);
-  }
+/* Responsive Design - Full Width Layout (No Sidebar) */
+.woocommerce-account .woocommerce {
+  display: block !important;
+}
 
+.woocommerce-account .woocommerce-MyAccount-navigation {
+  width: 100%;
+  float: none;
+  margin-bottom: var(--espacamento-lg);
+}
+
+.woocommerce-account .woocommerce-MyAccount-content {
+  width: 100%;
+  float: none;
+  margin-left: 0 !important;
+}
+
+@media (max-width: 768px) {
   .woocommerce-MyAccount-content {
-    padding: var(--espacamento-lg);
-    margin-left: 0 !important;
+    padding: var(--espacamento-md);
   }
 
   .woocommerce-MyAccount-content h2 {
     font-size: 1.5rem;
   }
 
-  .woocommerce-MyAccount-content table.my_account_orders {
-    font-size: 0.9rem;
-  }
-
-  .woocommerce-MyAccount-content table.my_account_orders th,
-  .woocommerce-MyAccount-content table.my_account_orders td {
-    padding: var(--espacamento-sm);
-  }
-
   .woocommerce-MyAccount-content .woocommerce-Addresses {
     grid-template-columns: 1fr;
-  }
-}
-
-/* Tablet adjustments (iPad, etc.) */
-@media (min-width: 769px) and (max-width: 1023px) {
-  .woocommerce-account .woocommerce-MyAccount-navigation {
-    width: 100%;
-    float: none;
-    margin-bottom: var(--espacamento-xl);
-  }
-
-  .woocommerce-account .woocommerce-MyAccount-content {
-    width: 100%;
-    margin-left: 0 !important;
-    float: none;
-  }
-}
-
-/* Two Column Layout for Larger Screens */
-@media (min-width: 1024px) {
-  /* Remove flex from the main container */
-  .woocommerce-account .woocommerce {
-    display: block !important;
-  }
-
-  /* Create two-column layout with float */
-  .woocommerce-account .woocommerce-MyAccount-navigation {
-    width: 280px;
-    float: left;
-    position: sticky;
-    top: 100px;
-    margin-bottom: var(--espacamento-xl);
-    margin-right: var(--espacamento-xl);
-  }
-
-  .woocommerce-account .woocommerce-MyAccount-content {
-    overflow: hidden;
   }
 }
 

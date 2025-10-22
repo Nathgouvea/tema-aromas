@@ -498,6 +498,16 @@ function tema_aromas_woocommerce_completed_order_email($order, $sent_to_admin, $
 add_action('woocommerce_email_order_details', 'tema_aromas_woocommerce_completed_order_email', 20, 4);
 
 /**
+ * Remove Dashboard tab from My Account navigation
+ * Dashboard doesn't provide useful information, so we remove it
+ */
+function tema_aromas_remove_my_account_dashboard($items) {
+    unset($items['dashboard']);
+    return $items;
+}
+add_filter('woocommerce_account_menu_items', 'tema_aromas_remove_my_account_dashboard');
+
+/**
  * AJAX handler for updating cart item quantity in mini cart
  *
  * @return void

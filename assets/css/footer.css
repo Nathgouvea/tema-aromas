@@ -258,7 +258,6 @@
   padding: var(--espacamento-lg) 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  margin-bottom: var(--espacamento-lg);
   flex-wrap: wrap;
   gap: var(--espacamento-lg);
 }

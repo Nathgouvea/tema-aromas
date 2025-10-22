@@ -1358,18 +1358,21 @@ textarea.luxury-form-input {
   overflow: visible;
   box-shadow: none;
   border: none;
-  margin-bottom: var(--espacamento-lg);
   display: flex;
   flex-direction: column;
   gap: var(--espacamento-lg);
 }
 
 @media (min-width: 768px) {
-  .woocommerce-account,
   .page-content .woocommerce {
     flex-direction: row;
     align-items: flex-start;
     gap: var(--espacamento-xl);
+  }
+
+  /* Account page uses different layout - see woocommerce.css */
+  .woocommerce-account {
+    display: block !important;
   }
 }
 

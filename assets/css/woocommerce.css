@@ -3292,7 +3292,6 @@ section:has(> h2:contains("Best Quality Plants")) {
 .woocommerce-account .woocommerce {
   max-width: 1200px;
   margin: 0 auto;
-  padding: var(--espacamento-xxl) var(--espacamento-lg);
 }
 
 /* Account Navigation */
@@ -3558,12 +3557,13 @@ section:has(> h2:contains("Best Quality Plants")) {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .woocommerce-account .woocommerce {
-    padding: var(--espacamento-lg) var(--espacamento-md);
+  .woocommerce-MyAccount-navigation {
+    margin-bottom: var(--espacamento-lg);
   }
 
   .woocommerce-MyAccount-content {
     padding: var(--espacamento-lg);
+    margin-left: 0 !important;
   }
 
   .woocommerce-MyAccount-content h2 {
@@ -3581,6 +3581,21 @@ section:has(> h2:contains("Best Quality Plants")) {
 
   .woocommerce-MyAccount-content .woocommerce-Addresses {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Tablet adjustments (iPad, etc.) */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .woocommerce-account .woocommerce-MyAccount-navigation {
+    width: 100%;
+    float: none;
+    margin-bottom: var(--espacamento-xl);
+  }
+
+  .woocommerce-account .woocommerce-MyAccount-content {
+    width: 100%;
+    margin-left: 0 !important;
+    float: none;
   }
 }
 
@@ -3602,7 +3617,7 @@ section:has(> h2:contains("Best Quality Plants")) {
   }
 
   .woocommerce-account .woocommerce-MyAccount-content {
-    margin-left: calc(280px + var(--espacamento-xl));
+    overflow: hidden;
   }
 }
 

@@ -129,7 +129,7 @@ do_action('woocommerce_before_mini_cart'); ?>
         </div>
 
         <p class="mini-cart-tax-notice">
-            <?php esc_html_e('Tax included and shipping calculated at checkout', 'tema_aromas'); ?>
+            <?php esc_html_e('Impostos incluídos e frete calculado no checkout', 'tema_aromas'); ?>
         </p>
 
         <?php do_action('woocommerce_widget_shopping_cart_before_buttons'); ?>

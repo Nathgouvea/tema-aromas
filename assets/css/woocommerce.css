@@ -3238,16 +3238,20 @@ section:has(> h2:contains("Best Quality Plants")) {
   display: inline-block;
 }
 
-.btn-view-cart {
-  background: #ffffff;
-  color: var(--cor-texto);
-  border: 2px solid #e0e0e0;
+.btn-view-cart,
+.mini-cart-footer .btn-view-cart,
+.mini-cart-footer a.btn-view-cart {
+  background: #ffffff !important;
+  color: var(--cor-texto) !important;
+  border: 2px solid #e0e0e0 !important;
 }
 
-.btn-view-cart:hover {
-  border-color: var(--cor-primaria);
-  background: rgba(107, 79, 196, 0.05);
-  color: var(--cor-primaria);
+.btn-view-cart:hover,
+.mini-cart-footer .btn-view-cart:hover,
+.mini-cart-footer a.btn-view-cart:hover {
+  border-color: var(--cor-primaria) !important;
+  background: rgba(107, 79, 196, 0.05) !important;
+  color: var(--cor-primaria) !important;
 }
 
 .btn-checkout {

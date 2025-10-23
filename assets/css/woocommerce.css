@@ -3478,49 +3478,127 @@ section:has(> h2:contains("Best Quality Plants")) {
   }
 }
 
-/* Account Content */
+/* Account Content - Compact */
 .woocommerce-MyAccount-content {
   background: white;
   border-radius: 16px;
-  padding: var(--espacamento-xl);
+  padding: var(--espacamento-lg);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
-/* Account Page Titles */
+/* Account Page Titles - Compact */
 .woocommerce-MyAccount-content h2,
 .woocommerce-MyAccount-content h3 {
   color: var(--cor-primaria);
   font-weight: 700;
-  margin-bottom: var(--espacamento-lg);
+  margin-bottom: var(--espacamento-md);
   letter-spacing: -0.02em;
 }
 
 .woocommerce-MyAccount-content h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   border-bottom: 2px solid rgba(107, 79, 196, 0.1);
-  padding-bottom: var(--espacamento-md);
+  padding-bottom: var(--espacamento-sm);
+  margin-bottom: var(--espacamento-lg);
 }
 
 .woocommerce-MyAccount-content h3 {
-  font-size: 1.5rem;
-  margin-top: var(--espacamento-xl);
+  font-size: 1.25rem;
+  margin-top: var(--espacamento-lg);
+  margin-bottom: var(--espacamento-sm);
 }
 
-/* Forms */
+/* Forms - Compact Two-Column Layout */
 .woocommerce-MyAccount-content form {
-  max-width: 600px;
+  max-width: 100%;
+}
+
+/* Create grid layout for form fields */
+.woocommerce-MyAccount-content .woocommerce-EditAccountForm .woocommerce-form-row {
+  margin-bottom: var(--espacamento-md);
+}
+
+/* Two-column grid layout for form */
+@media (min-width: 768px) {
+  .woocommerce-MyAccount-content .woocommerce-EditAccountForm {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: var(--espacamento-lg);
+    row-gap: var(--espacamento-lg);
+  }
+
+  /* Hide the clear divs that break the grid */
+  .woocommerce-MyAccount-content .woocommerce-EditAccountForm .clear {
+    display: none;
+  }
+
+  /* Row 1: Nome (col 1) + Sobrenome (col 2) */
+  .woocommerce-MyAccount-content .woocommerce-EditAccountForm .woocommerce-form-row--first {
+    grid-column: 1;
+    grid-row: 1;
+    min-width: 0;
+    width: auto !important;
+    float: none !important;
+  }
+
+  .woocommerce-MyAccount-content .woocommerce-EditAccountForm .woocommerce-form-row--last {
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
+    width: auto !important;
+    float: none !important;
+  }
+
+  /* Force inputs in first/last name to fill their containers */
+  .woocommerce-MyAccount-content .woocommerce-EditAccountForm .woocommerce-form-row--first input,
+  .woocommerce-MyAccount-content .woocommerce-EditAccountForm .woocommerce-form-row--last input {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  /* Row 2: Nome de exibição (col 1) + Email (col 2) */
+  .woocommerce-MyAccount-content .woocommerce-EditAccountForm > .woocommerce-form-row--wide:nth-child(4) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .woocommerce-MyAccount-content .woocommerce-EditAccountForm > .woocommerce-form-row--wide:nth-child(6) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  /* Password fieldset - full width on row 3 */
+  .woocommerce-MyAccount-content .woocommerce-EditAccountForm fieldset {
+    grid-column: 1 / -1;
+  }
+
+  /* Submit button - full width */
+  .woocommerce-MyAccount-content .woocommerce-EditAccountForm > p:last-of-type {
+    grid-column: 1 / -1;
+  }
 }
 
 .woocommerce-MyAccount-content .woocommerce-form-row {
-  margin-bottom: var(--espacamento-lg);
+  margin-bottom: 0;
 }
 
 .woocommerce-MyAccount-content label {
   display: block;
   font-weight: 600;
   color: #2d3748;
-  margin-bottom: var(--espacamento-xs);
-  font-size: 0.95rem;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+}
+
+/* Helper text styling */
+.woocommerce-MyAccount-content .woocommerce-form-row em,
+.woocommerce-MyAccount-content .woocommerce-form-row span em {
+  display: block;
+  font-size: 0.8rem;
+  color: #718096;
+  font-style: italic;
+  margin-top: 6px;
+  line-height: 1.4;
 }
 
 .woocommerce-MyAccount-content input[type="text"],
@@ -3530,12 +3608,48 @@ section:has(> h2:contains("Best Quality Plants")) {
 .woocommerce-MyAccount-content select,
 .woocommerce-MyAccount-content textarea {
   width: 100%;
-  padding: var(--espacamento-md);
+  padding: 10px 14px;
   border: 2px solid #e2e8f0;
-  border-radius: 12px;
-  font-size: 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  line-height: 1.5;
   transition: all 0.3s ease;
   background: #f7fafc;
+  color: #2d3748;
+  height: 42px;
+  box-sizing: border-box;
+}
+
+.woocommerce-MyAccount-content textarea {
+  height: auto;
+  min-height: 100px;
+}
+
+/* Placeholder styling - consistent across all browsers */
+.woocommerce-MyAccount-content input::placeholder,
+.woocommerce-MyAccount-content textarea::placeholder {
+  color: #a0aec0;
+  opacity: 1;
+  font-size: 0.95rem;
+}
+
+.woocommerce-MyAccount-content input::-webkit-input-placeholder,
+.woocommerce-MyAccount-content textarea::-webkit-input-placeholder {
+  color: #a0aec0;
+  opacity: 1;
+}
+
+.woocommerce-MyAccount-content input::-moz-placeholder,
+.woocommerce-MyAccount-content textarea::-moz-placeholder {
+  color: #a0aec0;
+  opacity: 1;
+}
+
+.woocommerce-MyAccount-content input:-ms-input-placeholder,
+.woocommerce-MyAccount-content textarea:-ms-input-placeholder {
+  color: #a0aec0;
+  opacity: 1;
 }
 
 .woocommerce-MyAccount-content input[type="text"]:focus,
@@ -3550,25 +3664,101 @@ section:has(> h2:contains("Best Quality Plants")) {
   box-shadow: 0 0 0 3px rgba(107, 79, 196, 0.1);
 }
 
-/* Buttons */
+/* Password Change Section (Fieldset) */
+.woocommerce-MyAccount-content fieldset {
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: var(--espacamento-lg);
+  margin-top: var(--espacamento-lg);
+  background: #f8f9fa;
+}
+
+.woocommerce-MyAccount-content fieldset legend {
+  font-weight: 700;
+  color: var(--cor-primaria);
+  font-size: 1.1rem;
+  padding: 0 var(--espacamento-sm);
+  margin-bottom: var(--espacamento-md);
+}
+
+/* Buttons - Compact */
 .woocommerce-MyAccount-content button,
 .woocommerce-MyAccount-content .button {
-  background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-secundaria) 100%);
-  color: white;
-  padding: var(--espacamento-md) var(--espacamento-xl);
-  border: none;
-  border-radius: 12px;
-  font-weight: 600;
-  font-size: 1rem;
+  background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-secundaria) 100%) !important;
+  color: white !important;
+  padding: var(--espacamento-md) var(--espacamento-xl) !important;
+  border: none !important;
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(107, 79, 196, 0.25);
+  box-shadow: 0 4px 12px rgba(107, 79, 196, 0.25) !important;
 }
 
 .woocommerce-MyAccount-content button:hover,
 .woocommerce-MyAccount-content .button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(107, 79, 196, 0.35);
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(107, 79, 196, 0.35) !important;
+}
+
+/* Password Toggle Button - Make it visible and match input height */
+.woocommerce-MyAccount-content .show-password-input,
+.woocommerce-MyAccount-content button.show-password-input {
+  background: white !important;
+  border: 2px solid #cbd5e0 !important;
+  color: #4a5568 !important;
+  padding: 0 !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+  width: 42px !important;
+  height: 42px !important;
+  min-height: 42px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 42px !important;
+  opacity: 1 !important;
+  position: relative !important;
+  flex-shrink: 0 !important;
+}
+
+.woocommerce-MyAccount-content form .show-password-input::before,
+.woocommerce-MyAccount-content form button.show-password-input::before {
+  content: "" !important;
+  opacity: 1 !important;
+  display: block !important;
+  width: 20px !important;
+  height: 20px !important;
+  background-image: url('data:image/svg+xml,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M17.3%203.3C16.9%202.9%2016.2%202.9%2015.7%203.3L13.3%205.7C12.2437%205.3079%2011.1267%205.1048%2010%205.1C6.2%205.2%202.8%207.2%201%2010.5C1.2%2010.9%201.5%2011.3%201.8%2011.7C2.6%2012.8%203.6%2013.7%204.7%2014.4L3%2016.1C2.6%2016.5%202.5%2017.2%203%2017.7C3.4%2018.1%204.1%2018.2%204.6%2017.7L17.3%204.9C17.7%204.4%2017.7%203.7%2017.3%203.3ZM6.7%2012.3L5.4%2013.6C4.2%2012.9%203.1%2011.9%202.3%2010.7C3.5%209%205.1%207.8%207%207.2C5.7%208.6%205.6%2010.8%206.7%2012.3ZM10.1%209C9.6%208.5%209.7%207.7%2010.2%207.2C10.7%206.8%2011.4%206.8%2011.9%207.2L10.1%209ZM18.3%209.5C17.8%208.8%2017.2%208.1%2016.5%207.6L15.5%208.6C16.3%209.2%2017%209.9%2017.6%2010.8C15.9%2013.4%2013%2015%209.9%2015H9.1L8.1%2016C8.8%2015.9%209.4%2016%2010%2016C13.3%2016%2016.4%2014.4%2018.3%2011.7C18.6%2011.3%2018.8%2010.9%2019.1%2010.5C18.8%2010.2%2018.6%209.8%2018.3%209.5ZM14%2010L10%2014C12.2%2014%2014%2012.2%2014%2010Z%22%20fill%3D%22%234a5568%22/%3E%3C/svg%3E') !important;
+  background-size: 20px 20px !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  filter: none !important;
+}
+
+.woocommerce-MyAccount-content form .show-password-input.display-password::before,
+.woocommerce-MyAccount-content form button.show-password-input.display-password::before {
+  background-image: url('data:image/svg+xml,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M18.3%209.49999C15%204.89999%208.50002%203.79999%203.90002%207.19999C2.70002%208.09999%201.70002%209.29999%200.900024%2010.6C1.10002%2011%201.40002%2011.4%201.70002%2011.8C5.00002%2016.4%2011.3%2017.4%2015.9%2014.2C16.8%2013.5%2017.6%2012.8%2018.3%2011.8C18.6%2011.4%2018.8%2011%2019.1%2010.6C18.8%2010.2%2018.6%209.79999%2018.3%209.49999ZM10.1%207.19999C10.6%206.69999%2011.4%206.69999%2011.9%207.19999C12.4%207.69999%2012.4%208.49999%2011.9%208.99999C11.4%209.49999%2010.6%209.49999%2010.1%208.99999C9.60003%208.49999%209.60003%207.69999%2010.1%207.19999ZM10%2014.9C6.90002%2014.9%204.00002%2013.3%202.30002%2010.7C3.50002%208.99999%205.10002%207.79999%207.00002%207.19999C6.30002%207.99999%206.00002%208.89999%206.00002%209.89999C6.00002%2012.1%207.70002%2014%2010%2014C12.2%2014%2014.1%2012.3%2014.1%209.99999V9.89999C14.1%208.89999%2013.7%207.89999%2013%207.19999C14.9%207.79999%2016.5%208.99999%2017.7%2010.7C16%2013.3%2013.1%2014.9%2010%2014.9Z%22%20fill%3D%22%234a5568%22/%3E%3C/svg%3E') !important;
+}
+
+.woocommerce-MyAccount-content .show-password-input:hover,
+.woocommerce-MyAccount-content button.show-password-input:hover {
+  background: #f7fafc !important;
+  border-color: var(--cor-primaria) !important;
+  color: var(--cor-primaria) !important;
+  transform: none !important;
+  box-shadow: 0 2px 4px rgba(107, 79, 196, 0.15) !important;
+}
+
+.woocommerce-MyAccount-content form .show-password-input:hover::before,
+.woocommerce-MyAccount-content form button.show-password-input:hover::before {
+  background-image: url('data:image/svg+xml,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M17.3%203.3C16.9%202.9%2016.2%202.9%2015.7%203.3L13.3%205.7C12.2437%205.3079%2011.1267%205.1048%2010%205.1C6.2%205.2%202.8%207.2%201%2010.5C1.2%2010.9%201.5%2011.3%201.8%2011.7C2.6%2012.8%203.6%2013.7%204.7%2014.4L3%2016.1C2.6%2016.5%202.5%2017.2%203%2017.7C3.4%2018.1%204.1%2018.2%204.6%2017.7L17.3%204.9C17.7%204.4%2017.7%203.7%2017.3%203.3ZM6.7%2012.3L5.4%2013.6C4.2%2012.9%203.1%2011.9%202.3%2010.7C3.5%209%205.1%207.8%207%207.2C5.7%208.6%205.6%2010.8%206.7%2012.3ZM10.1%209C9.6%208.5%209.7%207.7%2010.2%207.2C10.7%206.8%2011.4%206.8%2011.9%207.2L10.1%209ZM18.3%209.5C17.8%208.8%2017.2%208.1%2016.5%207.6L15.5%208.6C16.3%209.2%2017%209.9%2017.6%2010.8C15.9%2013.4%2013%2015%209.9%2015H9.1L8.1%2016C8.8%2015.9%209.4%2016%2010%2016C13.3%2016%2016.4%2014.4%2018.3%2011.7C18.6%2011.3%2018.8%2010.9%2019.1%2010.5C18.8%2010.2%2018.6%209.8%2018.3%209.5ZM14%2010L10%2014C12.2%2014%2014%2012.2%2014%2010Z%22%20fill%3D%22%236B4FC4%22/%3E%3C/svg%3E') !important;
+}
+
+.woocommerce-MyAccount-content form .show-password-input.display-password:hover::before,
+.woocommerce-MyAccount-content form button.show-password-input.display-password:hover::before {
+  background-image: url('data:image/svg+xml,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22none%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M18.3%209.49999C15%204.89999%208.50002%203.79999%203.90002%207.19999C2.70002%208.09999%201.70002%209.29999%200.900024%2010.6C1.10002%2011%201.40002%2011.4%201.70002%2011.8C5.00002%2016.4%2011.3%2017.4%2015.9%2014.2C16.8%2013.5%2017.6%2012.8%2018.3%2011.8C18.6%2011.4%2018.8%2011%2019.1%2010.6C18.8%2010.2%2018.6%209.79999%2018.3%209.49999ZM10.1%207.19999C10.6%206.69999%2011.4%206.69999%2011.9%207.19999C12.4%207.69999%2012.4%208.49999%2011.9%208.99999C11.4%209.49999%2010.6%209.49999%2010.1%208.99999C9.60003%208.49999%209.60003%207.69999%2010.1%207.19999ZM10%2014.9C6.90002%2014.9%204.00002%2013.3%202.30002%2010.7C3.50002%208.99999%205.10002%207.79999%207.00002%207.19999C6.30002%207.99999%206.00002%208.89999%206.00002%209.89999C6.00002%2012.1%207.70002%2014%2010%2014C12.2%2014%2014.1%2012.3%2014.1%209.99999V9.89999C14.1%208.89999%2013.7%207.89999%2013%207.19999C14.9%207.79999%2016.5%208.99999%2017.7%2010.7C16%2013.3%2013.1%2014.9%2010%2014.9Z%22%20fill%3D%22%236B4FC4%22/%3E%3C/svg%3E') !important;
 }
 
 /* Orders Table - Card-Based Design for Better Responsiveness */

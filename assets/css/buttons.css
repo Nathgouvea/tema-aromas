@@ -448,7 +448,7 @@
 }
 
 .woocommerce .button::before,
-.woocommerce button.button::before,
+.woocommerce button.button:not(.show-password-input)::before,
 .woocommerce input.button::before,
 .woocommerce #respond input#submit::before,
 .woocommerce a.button::before {
@@ -477,7 +477,7 @@
 }
 
 .woocommerce .button:hover::before,
-.woocommerce button.button:hover::before,
+.woocommerce button.button:not(.show-password-input):hover::before,
 .woocommerce input.button:hover::before,
 .woocommerce #respond input#submit:hover::before,
 .woocommerce a.button:hover::before {

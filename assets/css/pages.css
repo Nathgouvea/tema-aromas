@@ -1316,8 +1316,12 @@ textarea.luxury-form-input {
   font-size: 1.1rem;
   color: #7f8c8d;
   line-height: 1.6;
-  margin: 0;
+  margin: 0 auto !important;
   font-weight: 400;
+  text-align: center !important;
+  max-width: 600px;
+  display: block !important;
+  width: 100%;
 }
 
 .page-minha-conta .breadcrumbs {

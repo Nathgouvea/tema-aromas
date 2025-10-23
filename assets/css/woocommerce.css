@@ -1326,6 +1326,27 @@ section:has(> h2:contains("Best Quality Plants")) {
   text-align: center;
 }
 
+/* Cart Page Quantity Selector - Improved visibility with buttons */
+.woocommerce-cart .quantity {
+  display: inline-flex !important;
+  align-items: center;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 8px !important;
+  overflow: visible !important;
+  background: white;
+}
+
+.woocommerce-cart .quantity input.qty {
+  width: 55px !important;
+  border: none !important;
+  text-align: center !important;
+  font-size: 0.95rem !important;
+  font-weight: 500 !important;
+  padding: 8px 4px !important;
+  background: transparent !important;
+  color: var(--cor-texto) !important;
+}
+
 .woocommerce-cart .cart-collaterals {
   display: grid;
   grid-template-columns: 1fr;
@@ -2828,9 +2849,19 @@ section:has(> h2:contains("Best Quality Plants")) {
   color: var(--cor-primaria);
 }
 
-/* Hide breadcrumbs on single product pages */
-.single-product .woocommerce-breadcrumb {
+/* Hide breadcrumbs on single product pages and cart page */
+.single-product .woocommerce-breadcrumb,
+.woocommerce-cart .woocommerce-breadcrumb,
+.woocommerce-cart .luxury-breadcrumb,
+body.woocommerce-cart .woocommerce-breadcrumb,
+body.woocommerce-cart nav.woocommerce-breadcrumb,
+body.woocommerce-cart nav.luxury-breadcrumb {
   display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 /* ==========================================================================

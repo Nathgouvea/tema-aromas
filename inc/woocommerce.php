@@ -249,6 +249,16 @@ function tema_aromas_woocommerce_breadcrumbs() {
 add_filter('woocommerce_breadcrumb_defaults', 'tema_aromas_woocommerce_breadcrumbs');
 
 /**
+ * Remove breadcrumbs from cart page
+ */
+function tema_aromas_remove_cart_breadcrumbs() {
+    if (is_cart()) {
+        remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
+    }
+}
+add_action('template_redirect', 'tema_aromas_remove_cart_breadcrumbs');
+
+/**
  * Use custom image size for product thumbnails in loops
  */
 function tema_aromas_custom_product_thumbnail_size($size) {

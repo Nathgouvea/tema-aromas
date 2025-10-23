@@ -159,7 +159,7 @@ function tema_aromas_scripts() {
         wp_enqueue_style(
             'tema-aromas-woocommerce',
             get_template_directory_uri() . '/assets/css/woocommerce.css',
-            ['tema-aromas-base'],
+            ['tema-aromas-base', 'tema-aromas-pages'],
             $theme_version
         );
     }

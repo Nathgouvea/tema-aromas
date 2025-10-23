@@ -17,7 +17,7 @@ get_header(); ?>
         <?php while (have_posts()) : the_post(); ?>
             <div class="page-header luxury-section">
                 <h1 class="page-title luxury-heading"><?php the_title(); ?></h1>
-                <p class="page-subtitle"><?php esc_html_e('Gerencie suas informações pessoais, pedidos e preferências', 'tema_aromas'); ?></p>
+                <p class="page-subtitle" style="text-align: center !important; display: block !important;"><?php esc_html_e('Gerencie suas informações pessoais, pedidos e preferências', 'tema_aromas'); ?></p>
             </div>
 
             <div class="page-content">

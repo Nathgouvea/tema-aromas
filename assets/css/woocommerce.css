@@ -3295,6 +3295,181 @@ section:has(> h2:contains("Best Quality Plants")) {
   padding: 0 var(--espacamento-md);
 }
 
+/* ============================================
+   Login Form (Logged Out State) - Centered Card Design
+   ============================================ */
+
+/* Center the subtitle */
+.page-minha-conta .page-subtitle {
+  display: block;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Login Form Container - Centered Card */
+.woocommerce-account:not(.logged-in) .woocommerce,
+.woocommerce-form-login-toggle + .woocommerce-form-login {
+  max-width: 650px;
+  margin: var(--espacamento-xl) auto;
+}
+
+.woocommerce form.login,
+.woocommerce form.woocommerce-form-login {
+  background: white;
+  border-radius: 16px;
+  padding: var(--espacamento-xl);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+/* Login Form Title - Hidden - Multiple selectors for maximum coverage */
+form.login h2,
+form.woocommerce-form-login h2,
+.woocommerce form.login h2,
+.woocommerce form.woocommerce-form-login h2,
+.woocommerce-account form.login h2,
+.woocommerce-account form.woocommerce-form-login h2,
+.page-minha-conta form.login h2,
+.page-minha-conta form.woocommerce-form-login h2,
+body.woocommerce-account form h2:first-child,
+.woocommerce div.woocommerce h2:first-of-type {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 0 !important;
+  font-size: 0 !important;
+}
+
+/* Form Rows - Reduced Spacing */
+.woocommerce form.login .form-row,
+.woocommerce form.woocommerce-form-login .form-row {
+  margin-bottom: var(--espacamento-md);
+}
+
+/* Labels - Compact Style */
+.woocommerce form.login label,
+.woocommerce form.woocommerce-form-login label {
+  display: block;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+}
+
+.woocommerce form.login label .required,
+.woocommerce form.woocommerce-form-login label .required {
+  color: var(--cor-primaria);
+  font-weight: 700;
+}
+
+/* Input Fields - Match Account Page Style */
+.woocommerce form.login input[type="text"],
+.woocommerce form.login input[type="password"],
+.woocommerce form.woocommerce-form-login input[type="text"],
+.woocommerce form.woocommerce-form-login input[type="password"] {
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  line-height: 1.5;
+  transition: all 0.3s ease;
+  background: #f7fafc;
+  color: #2d3748;
+  height: 42px;
+  box-sizing: border-box;
+}
+
+.woocommerce form.login input[type="text"]:focus,
+.woocommerce form.login input[type="password"]:focus,
+.woocommerce form.woocommerce-form-login input[type="text"]:focus,
+.woocommerce form.woocommerce-form-login input[type="password"]:focus {
+  outline: none;
+  border-color: var(--cor-primaria);
+  background: white;
+  box-shadow: 0 0 0 3px rgba(107, 79, 196, 0.1);
+}
+
+/* Remember Me Checkbox - Compact */
+.woocommerce form.login .woocommerce-form-login__rememberme,
+.woocommerce form.woocommerce-form-login .woocommerce-form-login__rememberme {
+  margin: var(--espacamento-md) 0;
+}
+
+.woocommerce form.login .woocommerce-form-login__rememberme label,
+.woocommerce form.woocommerce-form-login .woocommerce-form-login__rememberme label {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: #4a5568;
+  margin-bottom: 0;
+}
+
+.woocommerce form.login input[type="checkbox"],
+.woocommerce form.woocommerce-form-login input[type="checkbox"] {
+  margin-right: 8px;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* Login Button */
+.woocommerce form.login button[type="submit"],
+.woocommerce form.woocommerce-form-login button[type="submit"],
+.woocommerce form.login .button,
+.woocommerce form.woocommerce-form-login .button {
+  width: 100%;
+  margin-top: var(--espacamento-md);
+  padding: 12px 24px !important;
+  height: auto !important;
+  font-size: 1rem !important;
+}
+
+/* Lost Password Link */
+.woocommerce form.login .lost_password,
+.woocommerce form.woocommerce-form-login .lost_password {
+  text-align: center;
+  margin-top: var(--espacamento-md);
+}
+
+.woocommerce form.login .lost_password a,
+.woocommerce form.woocommerce-form-login .lost_password a {
+  color: var(--cor-primaria);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.woocommerce form.login .lost_password a:hover,
+.woocommerce form.woocommerce-form-login .lost_password a:hover {
+  color: var(--cor-accent);
+  text-decoration: underline;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .woocommerce form.login,
+  .woocommerce form.woocommerce-form-login {
+    padding: var(--espacamento-lg);
+    margin: var(--espacamento-lg) var(--espacamento-md);
+  }
+
+  .woocommerce form.login h2,
+  .woocommerce form.woocommerce-form-login h2 {
+    font-size: 1.5rem;
+  }
+}
+
 /* Account Navigation - Modern Horizontal Tab Design */
 .woocommerce-MyAccount-navigation {
   background: white;

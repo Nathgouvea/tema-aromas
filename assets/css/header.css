@@ -1252,7 +1252,7 @@ body.mobile-menu-open .site-header .cart-count {
   position: fixed;
   top: 0;
   right: 0;
-  width: 400px;
+  width: 500px;
   max-width: 90vw;
   height: 100vh;
   background: var(--cor-fundo);

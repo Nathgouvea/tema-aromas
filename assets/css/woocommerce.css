@@ -1311,6 +1311,21 @@ section:has(> h2:contains("Best Quality Plants")) {
   color: var(--cor-texto);
 }
 
+/* Cart Product Images - Make them smaller */
+.woocommerce-cart table.cart img,
+.woocommerce-cart table.cart .product-thumbnail img {
+  max-width: 100px !important;
+  width: 100px !important;
+  height: auto !important;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.woocommerce-cart table.cart .product-thumbnail {
+  width: 100px;
+  text-align: center;
+}
+
 .woocommerce-cart .cart-collaterals {
   display: grid;
   grid-template-columns: 1fr;
@@ -2929,8 +2944,8 @@ section:has(> h2:contains("Best Quality Plants")) {
 .mini-cart-drawer {
   position: fixed;
   top: 0;
-  right: -400px;
-  width: 400px;
+  right: -500px;
+  width: 500px;
   height: 100vh;
   background: var(--cor-fundo);
   box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);

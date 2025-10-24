@@ -1392,24 +1392,31 @@ section:has(> h2:contains("Best Quality Plants")) {
 
 /* Cart Actions Row - Coupon and Update Cart Button */
 .woocommerce-cart table.cart td.actions {
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-  gap: var(--espacamento-md);
-  flex-wrap: nowrap !important;
+  text-align: left !important;
   padding: var(--espacamento-md) !important;
 }
 
+.woocommerce-cart table.cart td.actions::after {
+  content: "" !important;
+  display: table !important;
+  clear: both !important;
+}
+
 .woocommerce-cart table.cart td.actions .coupon {
-  display: flex;
-  align-items: center;
-  gap: var(--espacamento-sm);
-  flex: 0 1 auto;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: var(--espacamento-sm) !important;
+  margin-right: var(--espacamento-md) !important;
 }
 
 .woocommerce-cart table.cart td.actions button[name="update_cart"] {
-  flex-shrink: 0;
-  margin-left: auto;
+  float: right !important;
+  display: inline-block !important;
+}
+
+/* Hide hidden inputs completely */
+.woocommerce-cart table.cart td.actions input[type="hidden"] {
+  display: none !important;
 }
 
 .woocommerce-cart .cart-collaterals {

@@ -60,23 +60,23 @@ get_header(); ?>
                                 <div class="fragrance-details">
                                     <div class="fragrance-notes">
                                         <div class="note-column">
-                                            <h4>NOTAS DE TOPO</h4>
-                                            <p>Bergamota, Limão Siciliano</p>
-                            </div>
+                                            <h4>FAMILIA OLFATIVA</h4>
+                                            <p>Frutado Adocicado</p>
+                                        </div>
                                         <div class="note-column">
-                                            <h4>NOTAS DE CORAÇÃO</h4>
-                                            <p>Flor de Figo, Jasmim, Lírio</p>
-                        </div>
+                                            <h4>NOTAS</h4>
+                                            <p>Cassis, Toranja, Baunilha e Caramelo</p>
+                                        </div>
                                         <div class="note-column">
-                                            <h4>NOTAS DE FUNDO</h4>
-                                            <p>Âmbar, Almíscar, Madeira</p>
-                            </div>
-                        </div>
+                                            <h4>PROJEÇÃO NO AMBIENTE</h4>
+                                            <p>Forte</p>
+                                        </div>
+                                    </div>
                                     <div class="fragrance-description">
                                         <h4>Características</h4>
-                                        <p>Uma fragrância sofisticada que combina a doçura da flor de figo com notas cítricas e florais. Perfeita para criar um ambiente elegante e acolhedor.</p>
-                            </div>
-                        </div>
+                                        <p>Sofisticado, marcante e acolhedor. Um floral frutado envolvente, que combina a doçura do figo com um toque de elegância.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                 </div>
@@ -98,21 +98,21 @@ get_header(); ?>
                                 <div class="fragrance-details">
                                     <div class="fragrance-notes">
                                         <div class="note-column">
-                                            <h4>NOTAS DE TOPO</h4>
-                                            <p>Limão, Bergamota, Folhas Verdes</p>
+                                            <h4>FAMILIA OLFATIVA</h4>
+                                            <p>Floral Cítrico</p>
                                         </div>
                                         <div class="note-column">
-                                            <h4>NOTAS DE CORAÇÃO</h4>
-                                            <p>Chá Branco, Jasmim, Muguet</p>
+                                            <h4>NOTAS</h4>
+                                            <p>Lima, Laranja, Chá Branco e Jasmin</p>
                                         </div>
                                         <div class="note-column">
-                                            <h4>NOTAS DE FUNDO</h4>
-                                            <p>Almíscar, Cedro, Âmbar</p>
+                                            <h4>PROJEÇÃO NO AMBIENTE</h4>
+                                            <p>Suave</p>
                                         </div>
                                     </div>
                                     <div class="fragrance-description">
                                         <h4>Características</h4>
-                                        <p>Uma fragrância delicada e purificante que traz a serenidade do chá branco. Ideal para momentos de relaxamento e contemplação.</p>
+                                        <p>Leve, refrescante e delicado. Um aroma que traz clareza, paz e serenidade, ideal para criar uma atmosfera de leveza e de relaxamento.</p>
                                     </div>
                                 </div>
                             </div>
@@ -136,21 +136,17 @@ get_header(); ?>
                                 <div class="fragrance-details">
                                     <div class="fragrance-notes">
                                         <div class="note-column">
-                                            <h4>NOTAS DE TOPO</h4>
-                                            <p>Folhas de Bambu, Cítricos Verdes</p>
+                                            <h4>FAMILIA OLFATIVA</h4>
+                                            <p>Bamboo</p>
                                         </div>
                                         <div class="note-column">
-                                            <h4>NOTAS DE CORAÇÃO</h4>
-                                            <p>Lírio do Vale, Folhas Verdes</p>
-                                        </div>
-                                        <div class="note-column">
-                                            <h4>NOTAS DE FUNDO</h4>
-                                            <p>Madeira de Bambu, Almíscar</p>
+                                            <h4>LIMPEZA ENERGÉTICA</h4>
+                                            <p>Verde, Natural e Reconfortante</p>
                                         </div>
                                     </div>
                                     <div class="fragrance-description">
                                         <h4>Características</h4>
-                                        <p>Uma fragrância fresca e natural que evoca a tranquilidade da natureza. Perfeita para purificar o ambiente e trazer sensação de paz.</p>
+                                        <p>Um aroma que remete à natureza viva, trazendo harmonia e equilíbrio para o ambiente.</p>
                                     </div>
                                 </div>
                             </div>
@@ -174,21 +170,21 @@ get_header(); ?>
                                 <div class="fragrance-details">
                                     <div class="fragrance-notes">
                                         <div class="note-column">
-                                            <h4>NOTAS DE TOPO</h4>
-                                            <p>Brisa Marinha, Sal Marinho</p>
+                                            <h4>FAMILIA OLFATIVA</h4>
+                                            <p>Frescor Aquático</p>
                                         </div>
                                         <div class="note-column">
-                                            <h4>NOTAS DE CORAÇÃO</h4>
-                                            <p>Algas Marinhas, Lavanda</p>
+                                            <h4>NOTAS</h4>
+                                            <p>Lima, Limão, Lavanda, Algas Marinhas</p>
                                         </div>
                                         <div class="note-column">
-                                            <h4>NOTAS DE FUNDO</h4>
-                                            <p>Driftwood, Almíscar Aquático</p>
+                                            <h4>PROJEÇÃO NO AMBIENTE</h4>
+                                            <p>Forte</p>
                                         </div>
                                     </div>
                                     <div class="fragrance-description">
                                         <h4>Características</h4>
-                                        <p>Uma fragrância refrescante que traz a essência do oceano para seu ambiente. Ideal para criar uma atmosfera revigorante e energizante.</p>
+                                        <p>Refrescante como a brisa do mar. Uma combinação que traz notas aquáticas e refrescantes, ideal para quem busca frescor com personalidade.</p>
                                     </div>
                                 </div>
                             </div>
@@ -212,21 +208,13 @@ get_header(); ?>
                                 <div class="fragrance-details">
                                     <div class="fragrance-notes">
                                         <div class="note-column">
-                                            <h4>NOTAS DE TOPO</h4>
-                                            <p>Palo Santo, Cítricos</p>
-                                        </div>
-                                        <div class="note-column">
-                                            <h4>NOTAS DE CORAÇÃO</h4>
-                                            <p>Madeira Sagrada, Especiarias</p>
-                                        </div>
-                                        <div class="note-column">
-                                            <h4>NOTAS DE FUNDO</h4>
-                                            <p>Resinas, Sândalo, Incenso</p>
+                                            <h4>FAMILIA OLFATIVA</h4>
+                                            <p>Amadeirado</p>
                                         </div>
                                     </div>
                                     <div class="fragrance-description">
                                         <h4>Características</h4>
-                                        <p>Uma fragrância mística e purificadora que conecta com a espiritualidade. Tradicionalmente usada para limpeza energética e meditação.</p>
+                                        <p>O Palo Santo é uma madeira utilizada como incenso natural. Perfeito para meditação, alinhamento e purificação.</p>
                                     </div>
                                 </div>
                             </div>

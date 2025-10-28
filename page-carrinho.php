@@ -19,6 +19,30 @@ get_header(); ?>
                 <h1 class="page-title luxury-heading"><?php the_title(); ?></h1>
             </div>
 
+            <!-- Checkout Progress Indicator -->
+            <div class="checkout-progress">
+                <div class="progress-step active">
+                    <div class="step-icon">
+                        <span class="step-number">1</span>
+                    </div>
+                    <span class="step-label"><?php esc_html_e('Carrinho', 'tema_aromas'); ?></span>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step">
+                    <div class="step-icon">
+                        <span class="step-number">2</span>
+                    </div>
+                    <span class="step-label"><?php esc_html_e('Checkout', 'tema_aromas'); ?></span>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step">
+                    <div class="step-icon">
+                        <span class="step-number">3</span>
+                    </div>
+                    <span class="step-label"><?php esc_html_e('Concluído', 'tema_aromas'); ?></span>
+                </div>
+            </div>
+
             <div class="page-content">
                 <?php
                 // Use official WooCommerce cart shortcode

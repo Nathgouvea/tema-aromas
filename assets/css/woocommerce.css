@@ -1860,10 +1860,8 @@ section:has(> h2:contains("Best Quality Plants")) {
 .woocommerce-checkout {
   max-width: 1200px;
   margin: 0 auto;
-  padding: var(--espacamento-xl);
-  background: var(--cor-fundo);
-  border-radius: 100px;
-  box-shadow: var(--sombra-sutil);
+  padding: 0;
+  background: transparent;
 }
 
 /* Checkout 2-Column Layout */
@@ -1913,11 +1911,10 @@ section:has(> h2:contains("Best Quality Plants")) {
 /* Enhanced Order Summary Sidebar */
 .woocommerce-checkout #order_review,
 .woocommerce-checkout .woocommerce-checkout-review-order {
-  background: var(--cor-fundo);
-  border-radius: 16px;
-  padding: var(--espacamento-xl);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  border: 1px solid var(--cor-borda);
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: var(--espacamento-lg);
+  border: 1px solid #e0e0e0;
   position: sticky;
   top: var(--espacamento-lg);
   max-height: calc(100vh - var(--espacamento-xxl));
@@ -1926,11 +1923,11 @@ section:has(> h2:contains("Best Quality Plants")) {
 
 .woocommerce-checkout .woocommerce-checkout-review-order h3 {
   font-family: var(--fonte-titulo);
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: var(--cor-texto);
-  margin-bottom: var(--espacamento-lg);
+  margin-bottom: var(--espacamento-md);
   padding-bottom: var(--espacamento-sm);
-  border-bottom: 2px solid var(--cor-primaria);
+  border-bottom: 1px solid #ddd;
   font-weight: 600;
 }
 
@@ -1941,7 +1938,7 @@ section:has(> h2:contains("Best Quality Plants")) {
 }
 
 .woocommerce-checkout-review-order-table thead {
-  border-bottom: 2px solid var(--cor-borda);
+  border-bottom: 1px solid #ddd;
 }
 
 .woocommerce-checkout-review-order-table thead th {
@@ -1985,7 +1982,7 @@ section:has(> h2:contains("Best Quality Plants")) {
 
 /* Order Totals Section */
 .woocommerce-checkout-review-order-table tfoot {
-  border-top: 2px solid var(--cor-borda);
+  border-top: 1px solid #ddd;
 }
 
 .woocommerce-checkout-review-order-table tfoot th,
@@ -2022,19 +2019,18 @@ section:has(> h2:contains("Best Quality Plants")) {
 /* Order Total Row */
 .woocommerce-checkout-review-order-table .order-total th,
 .woocommerce-checkout-review-order-table .order-total td {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: var(--cor-primaria);
-  padding: var(--espacamento-md) 0;
-  border-top: 2px solid var(--cor-primaria);
+  padding: var(--espacamento-sm) 0;
+  border-top: 1px solid var(--cor-primaria);
 }
 
 /* Payment Methods Section */
 .woocommerce-checkout #payment {
   background: transparent;
-  border-radius: 12px;
   padding: 0;
-  margin-top: var(--espacamento-lg);
+  margin-top: var(--espacamento-md);
 }
 
 .woocommerce-checkout #payment ul.payment_methods {
@@ -2047,20 +2043,19 @@ section:has(> h2:contains("Best Quality Plants")) {
 .woocommerce-checkout #payment ul.payment_methods li {
   margin-bottom: var(--espacamento-sm);
   background: white;
-  border: 2px solid var(--cor-borda);
-  border-radius: 12px;
-  padding: var(--espacamento-md);
-  transition: all 0.3s ease;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: var(--espacamento-sm);
+  transition: border-color 0.2s ease;
 }
 
 .woocommerce-checkout #payment ul.payment_methods li:hover {
   border-color: var(--cor-primaria);
-  box-shadow: 0 2px 8px rgba(107, 79, 196, 0.1);
 }
 
 .woocommerce-checkout #payment ul.payment_methods li.payment_method_selected {
   border-color: var(--cor-primaria);
-  background: rgba(107, 79, 196, 0.05);
+  background: #f9f9f9;
 }
 
 .woocommerce-checkout #payment ul.payment_methods li label {
@@ -2079,46 +2074,19 @@ section:has(> h2:contains("Best Quality Plants")) {
 /* Place Order Button */
 .woocommerce-checkout #payment #place_order {
   width: 100%;
-  background: var(--gradiente-luxo);
+  background: var(--cor-primaria);
   color: white;
   border: none;
-  border-radius: 100px;
-  padding: 16px 32px;
-  font-size: 1.1rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  border-radius: 6px;
+  padding: 14px 24px;
+  font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 16px rgba(107, 79, 196, 0.3);
-  position: relative;
-  overflow: hidden;
-}
-
-.woocommerce-checkout #payment #place_order::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
-  transition: left 0.5s;
-}
-
-.woocommerce-checkout #payment #place_order:hover::before {
-  left: 100%;
+  transition: background-color 0.2s ease;
 }
 
 .woocommerce-checkout #payment #place_order:hover {
   background: var(--cor-accent);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(107, 79, 196, 0.4);
 }
 
 /* Terms and Conditions */
@@ -2158,18 +2126,17 @@ section:has(> h2:contains("Best Quality Plants")) {
 
 .woocommerce-checkout #shipping_method li {
   background: white;
-  border: 2px solid var(--cor-borda);
-  border-radius: 12px;
-  padding: var(--espacamento-md);
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: var(--espacamento-sm);
   margin-bottom: var(--espacamento-sm);
-  transition: all 0.3s ease;
+  transition: border-color 0.2s ease;
   cursor: pointer;
   position: relative;
 }
 
 .woocommerce-checkout #shipping_method li:hover {
   border-color: var(--cor-primaria);
-  box-shadow: 0 2px 8px rgba(107, 79, 196, 0.1);
 }
 
 .woocommerce-checkout #shipping_method li input[type="radio"] {
@@ -2210,7 +2177,7 @@ section:has(> h2:contains("Best Quality Plants")) {
 
 .woocommerce-checkout #shipping_method li:has(input[type="radio"]:checked) {
   border-color: var(--cor-primaria);
-  background: rgba(107, 79, 196, 0.05);
+  background: #f9f9f9;
 }
 
 /* Shipping calculator in cart */
@@ -2630,21 +2597,21 @@ section:has(> h2:contains("Best Quality Plants")) {
 .woocommerce form .form-row textarea,
 .woocommerce form .form-row select {
   width: 100%;
-  padding: 14px 18px;
-  border: 2px solid var(--cor-borda);
-  border-radius: 12px;
-  font-size: 1rem;
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.95rem;
   font-family: inherit;
   color: var(--cor-texto);
   background: var(--cor-fundo);
-  transition: all 0.3s ease;
+  transition: border-color 0.2s ease;
   -webkit-appearance: none;
   appearance: none;
 }
 
 /* Textarea specific styling */
 .woocommerce form .form-row textarea {
-  border-radius: 12px;
+  border-radius: 6px;
   min-height: 100px;
   resize: vertical;
   line-height: 1.6;
@@ -2666,7 +2633,6 @@ section:has(> h2:contains("Best Quality Plants")) {
 .woocommerce form .form-row select:focus {
   border-color: var(--cor-primaria);
   outline: none;
-  box-shadow: 0 0 0 4px rgba(107, 79, 196, 0.1);
   background: white;
 }
 

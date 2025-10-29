@@ -2677,7 +2677,7 @@ section:has(> h2:contains("Best Quality Plants")) {
   font-family: var(--fonte-titulo);
   font-size: 1.5rem;
   color: var(--cor-texto);
-  margin-bottom: var(--espacamento-lg);
+  margin-bottom: var(--espacamento-md);
   padding-bottom: var(--espacamento-sm);
   border-bottom: 2px solid var(--cor-borda);
 }

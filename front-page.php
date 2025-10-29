@@ -431,9 +431,11 @@ get_header(); ?>
                 </div>
                 <div class="lembrancinhas-visual">
                     <div class="lembrancinhas-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/Lembrancinha.webp" 
-                             alt="<?php esc_attr_e('Lembrancinhas Zen Secrets', 'tema_aromas'); ?>" 
-                             loading="lazy">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Lembrancinha.webp'); ?>"
+                             alt="<?php esc_attr_e('Lembrancinhas Zen Secrets', 'tema_aromas'); ?>"
+                             width="500"
+                             height="500"
+                             loading="eager">
                     </div>
                 </div>
             </div>

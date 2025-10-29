@@ -2570,6 +2570,11 @@ section:has(> h2:contains("Best Quality Plants")) {
   position: relative;
 }
 
+/* Reduce form row spacing specifically on checkout page */
+.woocommerce-checkout form .form-row {
+  margin-bottom: var(--espacamento-sm);
+}
+
 /* Label Styling with Required Indicator */
 .woocommerce form .form-row label {
   display: block;
@@ -2578,6 +2583,13 @@ section:has(> h2:contains("Best Quality Plants")) {
   color: var(--cor-texto);
   font-size: 0.9rem;
   letter-spacing: 0.02em;
+}
+
+/* Reduce spacing between label and input specifically on checkout billing fields */
+.woocommerce-checkout .woocommerce-billing-fields .form-row label,
+.woocommerce-checkout .woocommerce-shipping-fields .form-row label,
+.woocommerce-checkout .woocommerce-additional-fields .form-row label {
+  margin-bottom: 4px;
 }
 
 .woocommerce form .form-row label .required {
@@ -2677,9 +2689,9 @@ section:has(> h2:contains("Best Quality Plants")) {
   font-family: var(--fonte-titulo);
   font-size: 1.5rem;
   color: var(--cor-texto);
-  margin-bottom: var(--espacamento-md);
-  padding-bottom: var(--espacamento-sm);
-  border-bottom: 2px solid var(--cor-borda);
+  margin-bottom: var(--espacamento-sm);
+  padding-bottom: 4px;
+  border-bottom: 1px solid #ddd;
 }
 
 /* Field Groups for Better Spacing */

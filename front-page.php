@@ -57,6 +57,16 @@ get_header(); ?>
 
         <!-- Trust Indicators - Horizontal Layout Matching Screenshot -->
         <section class="trust-indicators-horizontal">
+            <button class="trust-slider-arrow trust-slider-prev" aria-label="<?php esc_attr_e('Anterior', 'tema_aromas'); ?>">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <button class="trust-slider-arrow trust-slider-next" aria-label="<?php esc_attr_e('Próximo', 'tema_aromas'); ?>">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
             <div class="trust-grid-horizontal">
                 <div class="trust-item-horizontal">
                     <div class="trust-icon-horizontal payment">
@@ -110,6 +120,12 @@ get_header(); ?>
                         <p><?php esc_html_e('Chama no WhatsApp', 'tema_aromas'); ?></p>
                     </div>
                 </a>
+            </div>
+            <div class="trust-slider-dots">
+                <button class="trust-slider-dot active" aria-label="<?php esc_attr_e('Ir para slide 1', 'tema_aromas'); ?>" data-slide="0"></button>
+                <button class="trust-slider-dot" aria-label="<?php esc_attr_e('Ir para slide 2', 'tema_aromas'); ?>" data-slide="1"></button>
+                <button class="trust-slider-dot" aria-label="<?php esc_attr_e('Ir para slide 3', 'tema_aromas'); ?>" data-slide="2"></button>
+                <button class="trust-slider-dot" aria-label="<?php esc_attr_e('Ir para slide 4', 'tema_aromas'); ?>" data-slide="3"></button>
             </div>
         </section>
 

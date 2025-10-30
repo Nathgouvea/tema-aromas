@@ -14,6 +14,7 @@
     initScrollAnimations();
     initCounters();
     initParallaxEffect();
+    initTrustIndicatorSlider();
 
     console.log("🏠 Homepage functionality initialized");
   }
@@ -124,6 +125,88 @@
     });
 
     console.log("🌊 Parallax effect initialized");
+  }
+
+  /**
+   * Initialize trust indicator slider for mobile
+   */
+  function initTrustIndicatorSlider() {
+    // Only run on mobile devices (max-width: 768px)
+    if (window.innerWidth > 768) return;
+
+    const slider = document.querySelector(".trust-grid-horizontal");
+    const dots = document.querySelectorAll(".trust-slider-dot");
+    const items = document.querySelectorAll(".trust-item-horizontal");
+    const prevBtn = document.querySelector(".trust-slider-prev");
+    const nextBtn = document.querySelector(".trust-slider-next");
+
+    if (!slider || !dots.length || !items.length) return;
+
+    let currentIndex = 0;
+
+    // Update active dot and arrow states
+    function updateActiveDot() {
+      const scrollLeft = slider.scrollLeft;
+      const itemWidth = items[0].offsetWidth;
+      currentIndex = Math.round(scrollLeft / itemWidth);
+
+      // Update dots
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === currentIndex);
+      });
+
+      // Update arrow states
+      if (prevBtn && nextBtn) {
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex === items.length - 1;
+      }
+    }
+
+    // Scroll to specific slide
+    function scrollToSlide(index) {
+      if (index < 0 || index >= items.length) return;
+
+      const itemWidth = items[0].offsetWidth;
+      const gap = 16; // gap between items
+      const scrollPosition = index * (itemWidth + gap);
+
+      slider.scrollTo({
+        left: scrollPosition,
+        behavior: "smooth",
+      });
+    }
+
+    // Add click handlers to dots
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => {
+        scrollToSlide(index);
+      });
+    });
+
+    // Add click handlers to arrows
+    if (prevBtn) {
+      prevBtn.addEventListener("click", () => {
+        scrollToSlide(currentIndex - 1);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener("click", () => {
+        scrollToSlide(currentIndex + 1);
+      });
+    }
+
+    // Update active dot on scroll
+    let scrollTimeout;
+    slider.addEventListener("scroll", () => {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(updateActiveDot, 100);
+    });
+
+    // Initialize active dot and arrow states
+    updateActiveDot();
+
+    console.log("📱 Trust indicator slider initialized");
   }
 
   /**

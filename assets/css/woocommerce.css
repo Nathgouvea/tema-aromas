@@ -2573,6 +2573,18 @@ section:has(> h2:contains("Best Quality Plants")) {
 /* Reduce form row spacing specifically on checkout page */
 .woocommerce-checkout form .form-row {
   margin-bottom: var(--espacamento-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Override flex for side-by-side fields that use floats */
+.woocommerce-checkout form .form-row-first,
+.woocommerce-checkout form .form-row-last,
+.woocommerce-checkout #billing_persontype_field,
+.woocommerce-checkout #billing_cpf_field,
+.woocommerce-checkout #billing_city_field,
+.woocommerce-checkout #billing_state_field {
+  display: block;
 }
 
 /* Label Styling with Required Indicator */
@@ -2590,6 +2602,60 @@ section:has(> h2:contains("Best Quality Plants")) {
 .woocommerce-checkout .woocommerce-shipping-fields .form-row label,
 .woocommerce-checkout .woocommerce-additional-fields .form-row label {
   margin-bottom: 4px;
+}
+
+/* Hide country field since it's always Brazil */
+.woocommerce-checkout #billing_country_field,
+.woocommerce-checkout #shipping_country_field {
+  display: none !important;
+}
+
+/* Make Tipo de Pessoa and CPF fields align side-by-side like Nome/Sobrenome */
+.woocommerce-checkout #billing_persontype_field {
+  width: 48% !important;
+  float: left !important;
+  clear: both !important;
+  display: block !important;
+  margin-right: 4% !important;
+}
+
+.woocommerce-checkout #billing_cpf_field {
+  width: 48% !important;
+  float: left !important;
+  clear: none !important;
+  display: block !important;
+  margin-right: 0 !important;
+}
+
+/* Add clearfix after CPF field to prevent float issues */
+.woocommerce-checkout #billing_cpf_field::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Make City and State fields align side-by-side */
+.woocommerce-checkout #billing_city_field {
+  width: 48% !important;
+  float: left !important;
+  clear: both !important;
+  display: block !important;
+  margin-right: 4% !important;
+}
+
+.woocommerce-checkout #billing_state_field {
+  width: 48% !important;
+  float: left !important;
+  clear: none !important;
+  display: block !important;
+  margin-right: 0 !important;
+}
+
+/* Add clearfix after State field to prevent float issues */
+.woocommerce-checkout #billing_state_field::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .woocommerce form .form-row label .required {

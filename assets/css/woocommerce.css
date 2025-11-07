@@ -455,10 +455,6 @@ body.single-product {
   border: 1px solid var(--cor-borda);
 }
 
-.luxury-section {
-  margin: var(--espacamento-xxl) 0;
-}
-
 /* ==========================================================================
    Premium Product Card Design System
    ========================================================================== */
@@ -788,48 +784,48 @@ body.single-product {
   filter: none;
 }
 
-/* Product Titles - Clean Typography */
+/* Product Titles - Apple Typography */
 .woocommerce ul.products li.product h2,
 .woocommerce ul.products li.product .woocommerce-loop-product__title {
   font-family: var(--fonte-titulo);
-  font-size: 0.75rem;
-  font-weight: 400;
-  color: #666666;
-  margin: 0 0 8px;
-  line-height: 1.5;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--cor-texto);
+  margin: 0 0 var(--espacamento-xs);
+  line-height: 1.3;
+  letter-spacing: 0;
+  text-transform: none;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
-  transition: color 0.3s ease;
+  transition: opacity 0.2s ease;
 }
 
 .woocommerce ul.products li.product h2 a,
 .woocommerce ul.products li.product .woocommerce-loop-product__title a {
-  color: #666666;
-  text-decoration: none !important; /* Force no underline */
-  transition: var(--transicao-rapida);
+  color: var(--cor-texto);
+  text-decoration: none !important;
+  transition: opacity 0.2s ease;
 }
 
 .woocommerce ul.products li.product h2 a:hover,
 .woocommerce ul.products li.product .woocommerce-loop-product__title a:hover {
-  color: #000000;
-  text-decoration: none !important; /* Maintain no underline on hover */
+  opacity: 0.7;
+  text-decoration: none !important;
 }
 
-/* Product Prices - Clear Hierarchy */
+/* Product Prices - Apple Style */
 .woocommerce ul.products li.product .price {
-  font-size: 0.875rem;
-  font-weight: 400;
-  color: #000000;
-  margin: 4px 0 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--cor-texto);
+  margin: 4px 0 var(--espacamento-sm);
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: var(--espacamento-xs);
   text-decoration: none !important;
 }
 
@@ -843,31 +839,31 @@ body.single-product {
 }
 
 .woocommerce ul.products li.product .price del {
-  opacity: 0.6;
+  opacity: 0.5;
   font-weight: 400;
   font-size: 0.85em;
   text-decoration: line-through !important;
-  color: #999;
+  color: var(--cor-texto);
 }
 
 .woocommerce ul.products li.product .price ins {
   text-decoration: none !important;
-  color: #000000;
-  font-weight: 400;
+  color: var(--cor-texto);
+  font-weight: 600;
 }
 
-/* Add to Cart Buttons - Pill Design */
+/* Add to Cart Buttons - Apple Style */
 .woocommerce ul.products li.product .button {
   background: var(--cor-primaria);
-  color: var(--cor-fundo);
+  color: white;
   border: none;
   border-radius: 100px;
-  padding: 10px 24px;
+  padding: 10px 20px;
   font-weight: 600;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 0.8rem;
+  text-transform: none;
+  letter-spacing: 0;
+  transition: opacity 0.2s ease;
   cursor: pointer;
   text-decoration: none !important;
   display: inline-flex;
@@ -878,6 +874,7 @@ body.single-product {
   margin: 0 auto;
   position: relative;
   white-space: nowrap;
+  box-shadow: none;
 }
 
 /* Button with SVG icon - Hide original text and show custom text */
@@ -886,43 +883,107 @@ body.single-product {
   color: transparent !important;
 }
 
-/* Bag icon removed for cleaner button design */
-
 .woocommerce ul.products li.product .button.add_to_cart_button::after {
-  content: "COMPRAR AGORA";
-  font-size: 0.85rem;
+  content: "Comprar agora";
+  font-size: 0.8rem;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--cor-fundo);
+  text-transform: none;
+  letter-spacing: 0;
+  color: white;
   display: inline-block;
 }
 
-.woocommerce ul.products li.product .button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
-  transition: left 0.5s;
-}
-
-.woocommerce ul.products li.product .button:hover::before {
-  left: 100%;
-}
-
 .woocommerce ul.products li.product .button:hover {
-  background: var(--cor-accent);
+  opacity: 0.85;
   text-decoration: none !important;
-  transform: translateY(-3px);
-  box-shadow: 0 12px 48px rgba(107, 79, 196, 0.4);
+}
+
+/* Remove WooCommerce default button ::before (if exists) */
+.woocommerce ul.products li.product .button::before {
+  display: none !important;
+}
+
+/* Button Loading State - Simple Apple style (text only, no icons) */
+.woocommerce ul.products li.product .button.loading {
+  opacity: 0.7;
+  cursor: not-allowed;
+  pointer-events: none;
+  min-width: 140px;
+  padding: 10px 20px !important;
+  animation: none !important;
+  transform: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: auto !important;
+  line-height: normal !important;
+  box-sizing: border-box !important;
+}
+
+.woocommerce ul.products li.product .button.loading::after {
+  content: "Adicionando..." !important;
+  animation: none !important;
+  transform: none !important;
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+  color: white !important;
+  display: inline-block !important;
+  line-height: normal !important;
+}
+
+/* AGGRESSIVE: Hide ALL WooCommerce loading overlays and icons */
+.blockUI.blockOverlay,
+.blockUI.blockMsg,
+.blockUI,
+.woocommerce .blockUI.blockOverlay,
+.woocommerce .blockUI.blockMsg,
+.woocommerce .blockUI,
+.woocommerce-page .blockUI.blockOverlay,
+.woocommerce-page .blockUI.blockMsg,
+.woocommerce-page .blockUI,
+body .blockUI.blockOverlay,
+body .blockUI.blockMsg,
+body .blockUI,
+.product .blockUI.blockOverlay,
+.product .blockUI.blockMsg,
+.product .blockUI {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  background: transparent !important;
+  z-index: -9999 !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Hide WooCommerce default loader icon everywhere */
+.woocommerce .loader,
+.woocommerce .blockUI.blockMsg::before,
+.woocommerce-page .loader,
+.blockUI .blockUI::before,
+body.woocommerce .loader,
+body.woocommerce-page .loader,
+.loader,
+.woocommerce .blockUI::before,
+.woocommerce-page .blockUI::before,
+body .loader::before,
+.ajax-loading,
+.woocommerce .ajax-loading,
+.loading::before,
+li.product .loader,
+li.product .blockUI,
+li.product .blockUI::before,
+ul.products .loader,
+ul.products .blockUI,
+ul.products .blockUI::before {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  content: none !important;
+  background: none !important;
+  width: 0 !important;
+  height: 0 !important;
 }
 
 /* Sale Badge - Premium Subtle Design */

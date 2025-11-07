@@ -1,13 +1,14 @@
 /*!
  * Tema Aromas - Aromas Page JavaScript
- * Accordion and Pills Functionality
- * Version: 1.0.0
+ * Apple-Style Accordion and Tab Navigation
+ * Version: 2.0.0
  */
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Fragrance Pills Functionality
+  // Select fragrance pills (tabs) and accordion items
   const fragrancePills = document.querySelectorAll(".fragrance-pill");
   const accordionItems = document.querySelectorAll(".fragrance-accordion-item");
+  const pillsSection = document.querySelector(".fragrance-pills-section");
 
   fragrancePills.forEach((pill) => {
     pill.addEventListener("click", function () {
@@ -131,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Smooth scroll enhancement for better UX
+  // Apple-style smooth scroll enhancement
   function smoothScrollToElement(element, offset = 100) {
     const elementPosition = element.getBoundingClientRect().top;
     const offsetPosition = elementPosition + window.pageYOffset - offset;
@@ -142,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Enhanced pill click with better scroll behavior
+  // Enhanced pill click with Apple-style scroll behavior
   fragrancePills.forEach((pill) => {
     pill.addEventListener("click", function () {
       setTimeout(() => {
@@ -153,5 +154,70 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }, 100);
     });
+
+    // Arrow key navigation for tabs (Apple-style)
+    pill.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+        e.preventDefault();
+        const currentIndex = Array.from(fragrancePills).indexOf(this);
+        let nextIndex;
+
+        if (e.key === "ArrowRight") {
+          nextIndex = (currentIndex + 1) % fragrancePills.length;
+        } else {
+          nextIndex =
+            (currentIndex - 1 + fragrancePills.length) % fragrancePills.length;
+        }
+
+        fragrancePills[nextIndex].focus();
+        fragrancePills[nextIndex].click();
+      }
+    });
+  });
+
+  // Sticky navigation scroll effect (Apple-style)
+  if (pillsSection) {
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener("scroll", () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > 100) {
+        pillsSection.style.boxShadow = "0 1px 4px rgba(0, 0, 0, 0.1)";
+      } else {
+        pillsSection.style.boxShadow = "none";
+      }
+
+      lastScrollY = currentScrollY;
+    });
+  }
+
+  // Preload images for smooth transitions
+  accordionItems.forEach((item) => {
+    const img = item.querySelector(".fragrance-image img");
+    if (img && img.dataset.src) {
+      const tempImg = new Image();
+      tempImg.src = img.dataset.src;
+    }
+  });
+
+  // Intersection Observer for scroll animations (Apple-style)
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px",
+  };
+
+  const accordionObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = "1";
+        entry.target.style.transform = "translateY(0)";
+      }
+    });
+  }, observerOptions);
+
+  // Observe accordion items
+  accordionItems.forEach((item) => {
+    accordionObserver.observe(item);
   });
 });

@@ -656,16 +656,17 @@ select.modern-form-input {
    ========================================================================== */
 
 /* Hero Section for Aromas Page */
+/* Apple-Style Aromas Hero Section with Visible Photo */
 .aromas-hero-modern {
   position: relative;
-  height: 40vh;
-  min-height: 350px;
+  min-height: 60vh;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background: #000000;
 }
 
 .aromas-hero-background {
@@ -682,6 +683,7 @@ select.modern-form-input {
   height: 100%;
   object-fit: cover;
   object-position: center;
+  opacity: 1;
 }
 
 .aromas-hero-background .hero-overlay {
@@ -692,43 +694,54 @@ select.modern-form-input {
   bottom: 0;
   background: linear-gradient(
     135deg,
-    rgba(0, 0, 0, 0.6) 0%,
-    rgba(0, 0, 0, 0.3) 100%
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.2) 100%
   );
+  backdrop-filter: blur(0px);
 }
 
 .aromas-hero-content {
   position: relative;
   z-index: 2;
   text-align: center;
-  color: white;
-  max-width: 800px;
-  padding: 0 var(--espacamento-lg);
+  max-width: 980px;
+  padding: 80px 20px;
 }
 
 .aromas-hero-title {
-  font-size: clamp(3rem, 8vw, 5rem);
-  font-weight: 700;
-  margin-bottom: var(--espacamento-md);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  font-family: "Dancing Script", cursive;
-  letter-spacing: 2px;
-  color: white;
+  font-size: clamp(48px, 7vw, 80px);
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.015em;
+  line-height: 1.05;
+  color: #ffffff;
 }
 
 .aromas-hero-subtitle {
-  font-size: clamp(1.1rem, 3vw, 1.4rem);
-  line-height: 1.5;
-  opacity: 0.95;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  font-weight: 300;
-  color: white;
+  font-size: clamp(19px, 2.5vw, 28px);
+  line-height: 1.4;
+  opacity: 1;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.95);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.01em;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 /* Fragrance Pills Section */
+/* Apple-Style Fragrance Pills Navigation */
 .fragrance-pills-section {
-  padding: var(--espacamento-xl) 0;
-  background: #f8f9fa;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
 }
@@ -736,202 +749,406 @@ select.modern-form-input {
 .fragrance-pills-container {
   display: flex;
   justify-content: center;
-  gap: var(--espacamento-md);
-  flex-wrap: wrap;
-  max-width: 1200px;
+  gap: 8px;
+  flex-wrap: nowrap;
+  max-width: 980px;
   margin: 0 auto;
-  padding: 0 var(--espacamento-lg);
+  padding: 12px 20px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-/* Fragrance pill styles now centralized in buttons.css */
+.fragrance-pills-container::-webkit-scrollbar {
+  display: none;
+}
 
-/* Fragrance Accordion Section */
+/* Apple-Style Fragrance Pills (Tabs) */
+.fragrance-pill {
+  background: transparent;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #6b4fc4;
+  cursor: pointer;
+  border-radius: 980px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.fragrance-pill:hover {
+  background: rgba(107, 79, 196, 0.08);
+  color: #5a3fb0;
+}
+
+.fragrance-pill.active {
+  background: linear-gradient(135deg, #6b4fc4 0%, #8b6fd9 100%);
+  color: #ffffff;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(107, 79, 196, 0.25);
+}
+
+.fragrance-pill:focus {
+  outline: 2px solid #6b4fc4;
+  outline-offset: 2px;
+}
+
+/* Apple-Style Fragrance Accordion Section */
 .fragrance-accordion-section {
-  padding: var(--espacamento-xl) 0;
-  background: white;
+  padding: 60px 0 80px;
+  background: #ffffff;
 }
 
 .fragrance-accordion-container {
-  max-width: 1200px;
+  max-width: 980px;
   margin: 0 auto;
-  padding: 0 var(--espacamento-lg);
+  padding: 0 20px;
 }
 
 .fragrance-accordion-item {
-  border: 1px solid var(--cor-borda);
-  border-radius: 16px;
-  margin-bottom: var(--espacamento-lg);
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 0;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   background: white;
 }
 
+.fragrance-accordion-item:last-child {
+  border-bottom: none;
+}
+
 .fragrance-accordion-item:hover {
-  border-color: #cccccc;
-  box-shadow: var(--sombra-sutil);
+  background: rgba(0, 0, 0, 0.01);
 }
 
 .fragrance-accordion-item.active {
-  border-color: var(--cor-primaria);
-  box-shadow: var(--sombra-sutil);
-  border-left: 4px solid var(--cor-primaria);
+  background: #ffffff;
 }
 
 .fragrance-accordion-header {
   width: 100%;
   background: none;
   border: none;
-  padding: var(--espacamento-lg);
+  padding: 24px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .fragrance-accordion-header:hover {
-  background: #f8f9fa;
+  opacity: 0.7;
 }
 
 .fragrance-accordion-header h2 {
-  font-size: 1.5rem;
+  font-size: clamp(24px, 3vw, 32px);
   font-weight: 600;
-  color: var(--cor-primaria);
+  color: #1d1d1f;
   margin: 0;
   text-align: left;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.015em;
 }
 
 .accordion-icon {
-  transition: transform 0.3s ease;
-  color: var(--cor-primaria);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #a8a8b3;
   flex-shrink: 0;
+  stroke-width: 1.5;
 }
 
 .fragrance-accordion-item.active .accordion-icon {
   transform: rotate(180deg);
+  color: #6b4fc4;
 }
 
 .fragrance-accordion-content {
-  padding: 0 var(--espacamento-lg) var(--espacamento-lg);
-  display: none;
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              padding 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
 }
 
 .fragrance-accordion-item.active .fragrance-accordion-content {
-  display: block;
-  animation: fadeInUp 0.3s ease;
+  max-height: 2000px;
+  padding-bottom: 40px;
+  opacity: 1;
 }
 
-/* Fragrance Content Grid */
+/* Apple-Style Fragrance Content Grid */
 .fragrance-content-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--espacamento-xl);
+  gap: 40px;
   align-items: start;
 }
 
 .fragrance-image {
-  border-radius: 20px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: none;
   position: relative;
-  background: white;
+  background: #f5f5f7;
 }
 
 .fragrance-image img {
   width: 100%;
-  height: 300px;
+  height: auto;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   display: block;
 }
 
+.fragrance-accordion-item.active .fragrance-image img {
+  animation: fadeInScale 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .fragrance-image:hover img {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 .fragrance-details {
   display: flex;
   flex-direction: column;
-  gap: var(--espacamento-lg);
+  gap: 32px;
 }
 
-/* Fragrance Notes */
+/* Apple-Style Fragrance Notes */
 .fragrance-notes {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--espacamento-md);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .note-column {
-  background: #f8f9fa;
-  padding: var(--espacamento-md);
-  border-radius: 16px;
-  border: 1px solid var(--cor-borda);
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 20px;
+}
+
+.note-column:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
 }
 
 .note-column h4 {
-  font-size: 0.85rem;
+  font-size: 12px;
   font-weight: 600;
-  color: #888;
-  margin-bottom: var(--espacamento-xs);
-  letter-spacing: 0.5px;
+  color: #86868b;
+  margin-bottom: 8px;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .note-column p {
-  font-size: 1rem;
-  color: var(--cor-texto);
+  font-size: 17px;
+  color: #1d1d1f;
   margin: 0;
   line-height: 1.5;
+  font-weight: 400;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.01em;
 }
 
-/* Fragrance Description */
+/* Apple-Style Fragrance Description */
 .fragrance-description {
-  background: #f8f9fa;
-  padding: var(--espacamento-lg);
-  border-radius: 16px;
-  border: 1px solid var(--cor-borda);
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding-top: 32px;
 }
 
 .fragrance-description h4 {
-  font-size: 1.25rem;
+  font-size: 12px;
   font-weight: 600;
-  color: var(--cor-texto);
-  margin-bottom: var(--espacamento-sm);
+  color: #86868b;
+  margin-bottom: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .fragrance-description p {
-  font-size: 1rem;
-  color: var(--cor-texto);
-  line-height: 1.6;
+  font-size: 17px;
+  color: #1d1d1f;
+  line-height: 1.5;
   margin: 0;
+  font-weight: 400;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.01em;
 }
 
-/* Responsive Design for Aromas Page */
-@media (min-width: 768px) {
+/* Responsive Design for Apple-Style Aromas Page */
+@media (min-width: 734px) {
+  .fragrance-pills-container {
+    gap: 12px;
+    padding: 16px 40px;
+  }
+
+  .fragrance-pill {
+    padding: 10px 20px;
+    font-size: 15px;
+  }
+
   .fragrance-content-grid {
-    grid-template-columns: 1fr 1.5fr;
-    gap: var(--espacamento-xxl);
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
   }
 
-  .fragrance-notes {
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--espacamento-lg);
+  .fragrance-accordion-header {
+    padding: 32px 0;
   }
 
-  .fragrance-image img {
-    height: 400px;
+  .fragrance-accordion-content {
+    padding: 0;
+  }
+
+  .fragrance-accordion-item.active .fragrance-accordion-content {
+    padding-bottom: 48px;
   }
 }
 
-@media (min-width: 1024px) {
-  .aromas-hero-modern {
-    height: 45vh;
-    min-height: 400px;
+@media (min-width: 1068px) {
+  .fragrance-accordion-section {
+    padding: 80px 0 100px;
   }
 
   .fragrance-pills-container {
-    gap: var(--espacamento-lg);
+    padding: 16px 60px;
+  }
+
+  .aromas-hero-modern {
+    min-height: 70vh;
+  }
+
+  .aromas-hero-content {
+    padding: 100px 40px;
+  }
+
+  .cta-section {
+    padding: 120px 40px;
+  }
+}
+
+/* Dark Mode Support for Apple Design */
+@media (prefers-color-scheme: dark) {
+  .aromas-hero-modern {
+    background: #000000;
+  }
+
+  .aromas-hero-background .hero-overlay {
+    background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.3) 100%
+    );
+  }
+
+  .aromas-hero-title {
+    color: #ffffff;
+  }
+
+  .aromas-hero-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .fragrance-pills-section {
+    background: rgba(29, 29, 31, 0.8);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .fragrance-pill {
+    color: #8b6fd9;
+  }
+
+  .fragrance-pill:hover {
+    background: rgba(139, 111, 217, 0.15);
+    color: #a088e3;
+  }
+
+  .fragrance-pill.active {
+    background: linear-gradient(135deg, #6b4fc4 0%, #8b6fd9 100%);
+    color: #ffffff;
+  }
+
+  .fragrance-accordion-section {
+    background: #000000;
+  }
+
+  .fragrance-accordion-item {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+    background: #000000;
+  }
+
+  .fragrance-accordion-header h2 {
+    color: #f5f5f7;
+  }
+
+  .accordion-icon {
+    color: #a1a1a6;
+  }
+
+  .fragrance-accordion-item.active .accordion-icon {
+    color: #8b6fd9;
+  }
+
+  .fragrance-image {
+    background: #1d1d1f;
+  }
+
+  .note-column {
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .note-column h4,
+  .fragrance-description h4 {
+    color: #a1a1a6;
+  }
+
+  .note-column p,
+  .fragrance-description p {
+    color: #f5f5f7;
+  }
+
+  .fragrance-description {
+    border-top-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .cta-section {
+    background: linear-gradient(180deg, #000000 0%, #1d1d1f 100%);
+  }
+
+  .cta-title {
+    color: #f5f5f7;
+  }
+
+  .cta-subtitle {
+    color: #a1a1a6;
   }
 }
 
@@ -1130,44 +1347,84 @@ textarea.luxury-form-input {
    Call to Action
    ========================================================================== */
 
+/* Apple-Style CTA Section */
 .cta-section {
-  background: #f8f9fa;
+  background: linear-gradient(180deg, #ffffff 0%, #f5f5f7 100%);
   color: var(--cor-texto);
   text-align: center;
-  border-top: 1px solid var(--cor-borda);
+  border-top: none;
+  padding: 100px 20px;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
 }
 
 .cta-content {
-  max-width: 800px;
+  max-width: 980px;
   margin: 0 auto;
 }
 
 .cta-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: var(--espacamento-md);
-  color: var(--cor-texto);
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #1d1d1f;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
 }
 
 .cta-subtitle {
-  font-size: 1.2rem;
-  opacity: 0.8;
-  line-height: 1.6;
-  margin-bottom: var(--espacamento-xl);
-  color: var(--cor-texto);
+  font-size: clamp(17px, 2vw, 21px);
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 40px;
+  color: #6e6e73;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.01em;
 }
 
 .cta-buttons {
   display: flex;
-  gap: var(--espacamento-md);
+  gap: 16px;
   justify-content: center;
   flex-wrap: wrap;
 }
 
+/* Apple-Style CTA Buttons */
 .cta-buttons .btn-luxury {
-  padding: 10px 24px;
-  font-size: 1rem;
-  min-height: 44px;
+  padding: 12px 24px;
+  font-size: 17px;
+  min-height: auto;
+  border-radius: 980px;
+  font-weight: 400;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.01em;
+  min-width: 180px;
+}
+
+.cta-buttons .btn-luxury.btn-primary {
+  background: linear-gradient(135deg, #6b4fc4 0%, #8b6fd9 100%);
+  border: none;
+  box-shadow: 0 4px 12px rgba(107, 79, 196, 0.3);
+}
+
+.cta-buttons .btn-luxury.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(107, 79, 196, 0.4);
+}
+
+.cta-buttons .btn-luxury.btn-secondary {
+  background: transparent;
+  border: 1px solid #6b4fc4;
+  color: #6b4fc4;
+}
+
+.cta-buttons .btn-luxury.btn-secondary:hover {
+  background: #6b4fc4;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(107, 79, 196, 0.2);
 }
 
 /* Secondary button styles now centralized in buttons.css */

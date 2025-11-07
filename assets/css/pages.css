@@ -849,7 +849,7 @@ select.modern-form-input {
   justify-content: center;
   gap: 8px;
   flex-wrap: nowrap;
-  max-width: 980px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 12px 20px;
   overflow-x: auto;
@@ -901,7 +901,7 @@ select.modern-form-input {
 }
 
 .fragrance-accordion-container {
-  max-width: 980px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
@@ -1564,10 +1564,22 @@ textarea.luxury-form-input {
   }
 }
 
-@media (min-width: 1024px) {
-  .aromas-hero-modern {
-    height: 45vh;
-    min-height: 400px;
+/* Extra large screens optimization */
+@media (min-width: 1920px) {
+  .aromas-hero-modern,
+  .contact-hero-modern {
+    min-height: 65vh;
+    max-height: 800px;
+  }
+
+  .aromas-hero-content,
+  .contact-hero-content {
+    padding: 120px 60px;
+  }
+
+  .fragrance-accordion-container,
+  .contact-two-columns {
+    max-width: 1400px;
   }
 }
 

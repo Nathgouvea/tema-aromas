@@ -133,16 +133,292 @@ body.single-product {
   }
 }
 
-/* Page Headers */
-.woocommerce .page-header {
-  margin-bottom: var(--espacamento-xl);
+/* Page Headers - Apple style */
+.woocommerce .page-header,
+.luxury-container .page-header {
+  margin-bottom: var(--espacamento-lg);
   text-align: center;
 }
 
-.woocommerce .page-title {
+.woocommerce .page-title,
+.luxury-container .page-title {
   font-family: var(--fonte-titulo);
   color: var(--cor-texto);
   margin-bottom: var(--espacamento-sm);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+/* Cart page title - Apple style */
+.page-template-page-carrinho .page-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+}
+
+/* Checkout page title - Apple style */
+.page-template-page-checkout .page-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+}
+
+/* Order received page header spacing */
+.woocommerce-order .page-header,
+.woocommerce-order-received .page-header {
+  margin-top: var(--espacamento-xl);
+  padding-top: var(--espacamento-lg);
+}
+
+.woocommerce-order .page-title,
+.woocommerce-order-received .page-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+}
+
+/* ==========================================================================
+   Order Received / Thank You Page Styling - Apple Design Guidelines
+   ========================================================================== */
+
+/* Success Message - Apple style */
+.woocommerce-thankyou-order-received {
+  background: white;
+  padding: var(--espacamento-lg) var(--espacamento-xl);
+  border-radius: 12px;
+  margin-bottom: var(--espacamento-xl);
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: var(--cor-texto);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+/* Order Overview - Apple-inspired clean list design */
+.woocommerce-order-overview {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin-bottom: var(--espacamento-xl);
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.woocommerce-order-overview li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--espacamento-md) var(--espacamento-lg);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  min-height: 60px;
+}
+
+.woocommerce-order-overview li:last-child {
+  border-bottom: none;
+}
+
+.woocommerce-order-overview li strong {
+  color: var(--cor-primaria);
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: right;
+}
+
+/* Label styling */
+.woocommerce-order-overview li {
+  font-size: 1rem;
+  color: var(--cor-texto);
+}
+
+/* Order Details Section - Apple style */
+.woocommerce-order-details {
+  margin-bottom: var(--espacamento-xl);
+}
+
+.woocommerce-order-details__title {
+  font-family: var(--fonte-titulo);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--cor-texto);
+  margin-bottom: var(--espacamento-lg);
+  letter-spacing: -0.5px;
+}
+
+/* Order Details Table - Apple clean list style */
+.woocommerce-table--order-details {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  margin-bottom: var(--espacamento-xl);
+}
+
+.woocommerce-table--order-details thead {
+  background: rgba(0, 0, 0, 0.02);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.woocommerce-table--order-details thead th {
+  color: var(--cor-texto);
+  padding: var(--espacamento-md) var(--espacamento-lg);
+  font-weight: 600;
+  text-align: left;
+  font-size: 0.85rem;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.woocommerce-table--order-details tbody tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.woocommerce-table--order-details tbody tr:last-child {
+  border-bottom: none;
+}
+
+.woocommerce-table--order-details tbody td {
+  padding: var(--espacamento-md) var(--espacamento-lg);
+  color: var(--cor-texto);
+  font-size: 0.95rem;
+}
+
+.woocommerce-table--order-details tbody td a {
+  color: var(--cor-primaria);
+  text-decoration: none;
+  font-weight: 400;
+  transition: opacity 0.2s ease;
+}
+
+.woocommerce-table--order-details tbody td a:hover {
+  opacity: 0.7;
+}
+
+.woocommerce-table--order-details .product-quantity {
+  color: var(--cor-texto);
+  opacity: 0.6;
+  font-weight: 400;
+}
+
+.woocommerce-table--order-details tfoot {
+  background: rgba(0, 0, 0, 0.01);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.woocommerce-table--order-details tfoot th {
+  padding: var(--espacamento-md) var(--espacamento-lg);
+  font-weight: 400;
+  text-align: left;
+  color: var(--cor-texto);
+  font-size: 0.95rem;
+}
+
+.woocommerce-table--order-details tfoot td {
+  padding: var(--espacamento-md) var(--espacamento-lg);
+  font-weight: 400;
+  color: var(--cor-texto);
+  font-size: 0.95rem;
+}
+
+.woocommerce-table--order-details tfoot tr:last-child th,
+.woocommerce-table--order-details tfoot tr:last-child td {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--cor-texto);
+  padding-top: var(--espacamento-md);
+  padding-bottom: var(--espacamento-md);
+}
+
+/* Customer Details Section - Apple style */
+.woocommerce-customer-details {
+  margin-bottom: var(--espacamento-xl);
+}
+
+.woocommerce-columns--addresses {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--espacamento-lg);
+  margin-top: var(--espacamento-lg);
+}
+
+.woocommerce-column__title {
+  font-family: var(--fonte-titulo);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--cor-texto);
+  margin-bottom: var(--espacamento-lg);
+  letter-spacing: -0.5px;
+}
+
+.woocommerce-customer-details address {
+  background: white;
+  padding: var(--espacamento-lg);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  line-height: 1.8;
+  font-style: normal;
+  color: var(--cor-texto);
+  font-size: 0.95rem;
+}
+
+.woocommerce-customer-details--phone,
+.woocommerce-customer-details--email {
+  margin-top: var(--espacamento-md);
+  padding-top: var(--espacamento-md);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  color: var(--cor-primaria);
+  font-weight: 400;
+}
+
+/* Mobile Responsive - Apple style */
+@media (max-width: 767px) {
+  .woocommerce-thankyou-order-received {
+    padding: var(--espacamento-md);
+    font-size: 1rem;
+  }
+
+  .woocommerce-order-overview li {
+    padding: var(--espacamento-sm) var(--espacamento-md);
+    min-height: 52px;
+    font-size: 0.95rem;
+  }
+
+  .woocommerce-order-overview li strong {
+    font-size: 0.95rem;
+  }
+
+  .woocommerce-table--order-details {
+    font-size: 0.9rem;
+    border-radius: 8px;
+  }
+
+  .woocommerce-table--order-details thead th,
+  .woocommerce-table--order-details tbody td,
+  .woocommerce-table--order-details tfoot th,
+  .woocommerce-table--order-details tfoot td {
+    padding: var(--espacamento-sm) var(--espacamento-md);
+  }
+
+  .woocommerce-columns--addresses {
+    grid-template-columns: 1fr;
+    gap: var(--espacamento-md);
+  }
+
+  .woocommerce-order-details__title,
+  .woocommerce-column__title {
+    font-size: 1.3rem;
+  }
+
+  .woocommerce-customer-details address {
+    padding: var(--espacamento-md);
+    font-size: 0.9rem;
+  }
 }
 
 /* Trust Indicators */
@@ -1727,14 +2003,14 @@ section:has(> h2:contains("Best Quality Plants")) {
   display: none !important;
 }
 
-/* Checkout Progress Indicator */
+/* Checkout Progress Indicator - Apple style */
 .checkout-progress {
   display: flex;
   align-items: center;
   justify-content: center;
   max-width: 600px;
-  margin: var(--espacamento-xl) auto;
-  padding: var(--espacamento-lg);
+  margin: var(--espacamento-lg) auto;
+  padding: 0;
 }
 
 .progress-step {
@@ -1746,36 +2022,38 @@ section:has(> h2:contains("Best Quality Plants")) {
 }
 
 .step-icon {
-  width: 48px;
-  height: 48px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  background: var(--cor-fundo);
-  border: 2px solid var(--cor-borda);
+  background: white;
+  border: 2px solid rgba(0, 0, 0, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   position: relative;
   z-index: 2;
 }
 
 .step-icon svg {
-  color: var(--cor-borda);
-  transition: color 0.3s ease;
+  color: rgba(0, 0, 0, 0.3);
+  width: 16px;
+  height: 16px;
+  transition: color 0.2s ease;
 }
 
 .step-number {
-  font-weight: 600;
-  font-size: 1rem;
+  font-weight: 400;
+  font-size: 0.9rem;
   color: var(--cor-texto);
-  opacity: 0.5;
+  opacity: 0.4;
 }
 
 .step-label {
-  font-size: 0.85rem;
-  font-weight: 500;
+  font-size: 0.8rem;
+  font-weight: 400;
   color: var(--cor-texto);
-  opacity: 0.6;
+  opacity: 0.5;
   text-align: center;
   white-space: nowrap;
 }
@@ -1783,13 +2061,13 @@ section:has(> h2:contains("Best Quality Plants")) {
 .progress-line {
   flex: 1;
   height: 2px;
-  background: var(--cor-borda);
+  background: rgba(0, 0, 0, 0.1);
   margin: 0 var(--espacamento-sm);
   position: relative;
-  top: -12px;
+  top: -10px;
 }
 
-/* Completed state */
+/* Completed state - Apple style */
 .progress-step.completed .step-icon {
   background: var(--cor-primaria);
   border-color: var(--cor-primaria);
@@ -1800,19 +2078,19 @@ section:has(> h2:contains("Best Quality Plants")) {
 }
 
 .progress-step.completed .step-label {
-  opacity: 1;
-  color: var(--cor-primaria);
+  opacity: 0.8;
+  color: var(--cor-texto);
 }
 
 .progress-line.completed {
   background: var(--cor-primaria);
 }
 
-/* Active state */
+/* Active state - Apple style */
 .progress-step.active .step-icon {
   background: var(--cor-primaria);
   border-color: var(--cor-primaria);
-  box-shadow: 0 0 0 4px rgba(107, 79, 196, 0.1);
+  box-shadow: none;
 }
 
 .progress-step.active .step-number {
@@ -1822,37 +2100,48 @@ section:has(> h2:contains("Best Quality Plants")) {
 
 .progress-step.active .step-label {
   opacity: 1;
-  color: var(--cor-primaria);
-  font-weight: 600;
+  color: var(--cor-texto);
+  font-weight: 500;
 }
 
-/* Mobile responsive */
+/* Mobile responsive - Apple style */
 @media (max-width: 767px) {
   .checkout-progress {
-    padding: var(--espacamento-md);
+    padding: 0;
     max-width: 100%;
   }
 
   .step-icon {
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
   }
 
   .step-icon svg {
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
   }
 
   .step-number {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 
   .step-label {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
   }
 
   .progress-line {
     margin: 0 var(--espacamento-xs);
+  }
+
+  .woocommerce .page-title {
+    font-size: 1.75rem;
+    letter-spacing: -0.75px;
+  }
+
+  .woocommerce-order .page-title,
+  .woocommerce-order-received .page-title {
+    font-size: 2rem;
+    letter-spacing: -1px;
   }
 }
 
@@ -2105,6 +2394,12 @@ section:has(> h2:contains("Best Quality Plants")) {
   background: rgba(255, 200, 87, 0.1);
   border-left: 3px solid var(--cor-gold);
   border-radius: 8px;
+}
+
+/* Hide terms wrapper when empty */
+.woocommerce-checkout .woocommerce-terms-and-conditions-wrapper:empty,
+.woocommerce-checkout .woocommerce-terms-and-conditions-wrapper:has(.woocommerce-privacy-policy-text:empty) {
+  display: none;
 }
 
 .woocommerce-checkout .woocommerce-privacy-policy-text {
@@ -2533,12 +2828,6 @@ section:has(> h2:contains("Best Quality Plants")) {
     animation: fadeIn 0.3s ease-out;
   }
 
-  /* Mobile Progress Indicator Adjustments */
-  .checkout-progress {
-    margin: var(--espacamento-md) auto;
-    padding: var(--espacamento-sm);
-  }
-
   /* Mobile Security Notice */
   .checkout-security-notice {
     font-size: 0.85rem;
@@ -2579,11 +2868,7 @@ section:has(> h2:contains("Best Quality Plants")) {
 
 /* Override flex for side-by-side fields that use floats */
 .woocommerce-checkout form .form-row-first,
-.woocommerce-checkout form .form-row-last,
-.woocommerce-checkout #billing_persontype_field,
-.woocommerce-checkout #billing_cpf_field,
-.woocommerce-checkout #billing_city_field,
-.woocommerce-checkout #billing_state_field {
+.woocommerce-checkout form .form-row-last {
   display: block;
 }
 
@@ -2608,54 +2893,6 @@ section:has(> h2:contains("Best Quality Plants")) {
 .woocommerce-checkout #billing_country_field,
 .woocommerce-checkout #shipping_country_field {
   display: none !important;
-}
-
-/* Make Tipo de Pessoa and CPF fields align side-by-side like Nome/Sobrenome */
-.woocommerce-checkout #billing_persontype_field {
-  width: 48% !important;
-  float: left !important;
-  clear: both !important;
-  display: block !important;
-  margin-right: 4% !important;
-}
-
-.woocommerce-checkout #billing_cpf_field {
-  width: 48% !important;
-  float: left !important;
-  clear: none !important;
-  display: block !important;
-  margin-right: 0 !important;
-}
-
-/* Add clearfix after CPF field to prevent float issues */
-.woocommerce-checkout #billing_cpf_field::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Make City and State fields align side-by-side */
-.woocommerce-checkout #billing_city_field {
-  width: 48% !important;
-  float: left !important;
-  clear: both !important;
-  display: block !important;
-  margin-right: 4% !important;
-}
-
-.woocommerce-checkout #billing_state_field {
-  width: 48% !important;
-  float: left !important;
-  clear: none !important;
-  display: block !important;
-  margin-right: 0 !important;
-}
-
-/* Add clearfix after State field to prevent float issues */
-.woocommerce-checkout #billing_state_field::after {
-  content: "";
-  display: table;
-  clear: both;
 }
 
 .woocommerce form .form-row label .required {
@@ -2703,6 +2940,8 @@ section:has(> h2:contains("Best Quality Plants")) {
   background-size: 16px;
   padding-right: 40px;
   cursor: pointer;
+  min-height: 44px;
+  line-height: normal;
 }
 
 /* Focus State */
@@ -2772,6 +3011,14 @@ section:has(> h2:contains("Best Quality Plants")) {
 }
 
 .woocommerce form .form-row-wide {
+  clear: both;
+}
+
+/* Make billing number and neighborhood fields full width on checkout */
+.woocommerce-checkout #billing_number_field,
+.woocommerce-checkout #billing_neighborhood_field {
+  width: 100%;
+  float: none;
   clear: both;
 }
 

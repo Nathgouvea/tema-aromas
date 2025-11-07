@@ -18,6 +18,7 @@ get_header(); ?>
             <h1 class="page-title luxury-heading"><?php the_title(); ?></h1>
         </div>
 
+        <?php if (!is_order_received_page()) : ?>
         <!-- Checkout Progress Indicator -->
         <div class="checkout-progress">
             <div class="progress-step completed">
@@ -44,6 +45,7 @@ get_header(); ?>
                 <span class="step-label"><?php esc_html_e('Concluído', 'tema_aromas'); ?></span>
             </div>
         </div>
+        <?php endif; ?>
 
         <div class="page-content">
             <?php

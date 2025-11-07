@@ -138,6 +138,7 @@ body.single-product {
 .luxury-container .page-header {
   margin-bottom: var(--espacamento-lg);
   text-align: center;
+  padding-top: 100px;
 }
 
 .woocommerce .page-title,
@@ -155,6 +156,7 @@ body.single-product {
   font-size: 2.5rem;
   font-weight: 700;
   letter-spacing: -1.5px;
+  margin-bottom: var(--espacamento-xl);
 }
 
 /* Checkout page title - Apple style */
@@ -1516,6 +1518,10 @@ section:has(> h2:contains("Best Quality Plants")) {
    Cart Page
    ========================================================================== */
 
+/* ==========================================================================
+   Cart Page - Apple Design Guidelines
+   ========================================================================== */
+
 /* Cart page uses full width layout */
 .woocommerce-cart {
   width: 100% !important;
@@ -1541,26 +1547,52 @@ section:has(> h2:contains("Best Quality Plants")) {
   margin: 0 !important;
 }
 
-/* Align continue shopping button with cart form */
+/* Continue shopping button - Apple style */
 .continue-shopping {
   width: 100% !important;
-  margin: 0 !important;
+  margin: var(--espacamento-lg) 0 !important;
   padding: 0 !important;
   text-align: left;
 }
 
 .continue-shopping .btn-luxury-outline {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 10px 16px !important;
+  background: white !important;
+  color: var(--cor-texto) !important;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
+  border-radius: 100px !important;
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
   margin-left: 0 !important;
   margin-right: auto !important;
 }
+
+.continue-shopping .btn-luxury-outline:hover {
+  background: rgba(0, 0, 0, 0.02) !important;
+  border-color: rgba(0, 0, 0, 0.25) !important;
+}
+
+.continue-shopping .btn-luxury-outline svg {
+  width: 16px !important;
+  height: 16px !important;
+  flex-shrink: 0;
+}
+
+/* Cart Table - Apple style */
 .woocommerce-cart table.cart {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   margin-bottom: var(--espacamento-lg);
-  background: var(--cor-fundo);
+  background: white;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: var(--sombra-sutil);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   table-layout: fixed;
 }
 
@@ -1609,14 +1641,18 @@ section:has(> h2:contains("Best Quality Plants")) {
 .woocommerce-cart table.cart th,
 .woocommerce-cart table.cart td {
   padding: var(--espacamento-md);
-  border-bottom: 1px solid var(--cor-borda);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   text-align: left;
 }
 
+/* Table Header - Apple style */
 .woocommerce-cart table.cart th {
-  background: rgba(107, 79, 196, 0.05);
+  background: rgba(0, 0, 0, 0.02);
   font-weight: 600;
   color: var(--cor-texto);
+  font-size: 0.85rem;
+  text-transform: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 /* Cart Product Images - Make them smaller */
@@ -1634,15 +1670,56 @@ section:has(> h2:contains("Best Quality Plants")) {
   text-align: center;
 }
 
-/* Reduce spacing between remove button and product image */
+/* Remove button - Apple style */
 .woocommerce-cart table.cart td.product-remove {
   width: 30px !important;
   padding: 8px 4px !important;
   text-align: center;
 }
 
+.woocommerce-cart table.cart td.product-remove a.remove {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 24px !important;
+  height: 24px !important;
+  color: var(--cor-texto) !important;
+  text-decoration: none !important;
+  font-size: 1.2rem !important;
+  line-height: 1 !important;
+  opacity: 0.5 !important;
+  transition: opacity 0.2s ease !important;
+}
+
+.woocommerce-cart table.cart td.product-remove a.remove:hover {
+  opacity: 1 !important;
+  color: #e74c3c !important;
+}
+
 .woocommerce-cart table.cart td.product-thumbnail {
   padding: 8px 4px !important;
+}
+
+/* Product name - Apple style */
+.woocommerce-cart table.cart td.product-name a {
+  color: var(--cor-texto) !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.4 !important;
+  transition: color 0.2s ease !important;
+}
+
+.woocommerce-cart table.cart td.product-name a:hover {
+  color: var(--cor-primaria) !important;
+}
+
+/* Product price - Apple style */
+.woocommerce-cart table.cart td.product-price,
+.woocommerce-cart table.cart td.product-subtotal {
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  color: var(--cor-texto) !important;
 }
 
 /* Cart Page Quantity Selector - Improved visibility with buttons */
@@ -1678,16 +1755,82 @@ section:has(> h2:contains("Best Quality Plants")) {
   clear: both !important;
 }
 
+/* Coupon Section - Apple style */
 .woocommerce-cart table.cart td.actions .coupon {
   display: inline-flex !important;
   align-items: center !important;
-  gap: var(--espacamento-sm) !important;
+  gap: 8px !important;
   margin-right: var(--espacamento-md) !important;
 }
 
-.woocommerce-cart table.cart td.actions button[name="update_cart"] {
+/* Coupon input - Apple style */
+.woocommerce-cart table.cart td.actions .coupon input[type="text"],
+.woocommerce-cart table.cart td.actions .coupon input#coupon_code {
+  height: 44px !important;
+  padding: 0 16px !important;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
+  border-radius: 100px !important;
+  font-size: 0.95rem !important;
+  font-weight: 400 !important;
+  background: white !important;
+  color: var(--cor-texto) !important;
+  transition: border-color 0.2s ease !important;
+  box-shadow: none !important;
+}
+
+.woocommerce-cart table.cart td.actions .coupon input[type="text"]:focus,
+.woocommerce-cart table.cart td.actions .coupon input#coupon_code:focus {
+  outline: none !important;
+  border-color: var(--cor-primaria) !important;
+}
+
+/* Coupon button - Apple style */
+.woocommerce-cart table.cart td.actions .coupon button,
+.woocommerce-cart table.cart td.actions .coupon button[name="apply_coupon"],
+.woocommerce-cart table.cart td.actions .coupon .button {
+  height: 44px !important;
+  padding: 0 20px !important;
+  background: var(--cor-primaria) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 100px !important;
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: opacity 0.2s ease !important;
+  box-shadow: none !important;
+}
+
+.woocommerce-cart table.cart td.actions .coupon button:hover,
+.woocommerce-cart table.cart td.actions .coupon button[name="apply_coupon"]:hover,
+.woocommerce-cart table.cart td.actions .coupon .button:hover {
+  opacity: 0.85 !important;
+}
+
+/* Update cart button - Apple style */
+.woocommerce-cart table.cart td.actions button[name="update_cart"],
+.woocommerce-cart table.cart td.actions input[name="update_cart"],
+.woocommerce-cart table.cart td.actions .button[name="update_cart"] {
   float: right !important;
   display: inline-block !important;
+  height: 44px !important;
+  padding: 0 20px !important;
+  background: white !important;
+  color: var(--cor-texto) !important;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
+  border-radius: 100px !important;
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  box-shadow: none !important;
+}
+
+.woocommerce-cart table.cart td.actions button[name="update_cart"]:hover,
+.woocommerce-cart table.cart td.actions input[name="update_cart"]:hover,
+.woocommerce-cart table.cart td.actions .button[name="update_cart"]:hover {
+  background: rgba(0, 0, 0, 0.02) !important;
+  border-color: rgba(0, 0, 0, 0.25) !important;
 }
 
 /* Hide hidden inputs completely */
@@ -1699,6 +1842,7 @@ section:has(> h2:contains("Best Quality Plants")) {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--espacamento-lg);
+  margin-top: var(--espacamento-xl);
 }
 
 @media (max-width: 767px) {
@@ -1707,18 +1851,21 @@ section:has(> h2:contains("Best Quality Plants")) {
   }
 }
 
+/* Cart Totals - Apple style */
 .woocommerce-cart .cart_totals {
-  background: var(--cor-fundo);
+  background: white;
   border-radius: 12px;
   padding: var(--espacamento-lg);
-  box-shadow: var(--sombra-sutil);
+  border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .woocommerce-cart .cart_totals h2 {
   font-family: var(--fonte-titulo);
   font-size: 1.5rem;
+  font-weight: 700;
   color: var(--cor-texto);
-  margin-bottom: var(--espacamento-md);
+  margin-bottom: var(--espacamento-lg);
+  letter-spacing: -0.5px;
 }
 
 /* ==========================================================================
@@ -1732,106 +1879,107 @@ section:has(> h2:contains("Best Quality Plants")) {
   margin-bottom: var(--espacamento-lg);
 }
 
+/* Cart totals table - Apple style */
 .woocommerce-cart .cart_totals table th,
 .woocommerce-cart .cart_totals table td {
-  padding: var(--espacamento-sm) 0;
+  padding: var(--espacamento-lg) 0;
   text-align: left;
-  border-bottom: 1px solid var(--cor-borda);
-  font-size: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  font-size: 0.95rem;
   line-height: 1.5;
 }
 
 .woocommerce-cart .cart_totals table th {
-  font-weight: 600;
+  font-weight: 400;
   color: var(--cor-texto);
   width: 40%;
 }
 
 .woocommerce-cart .cart_totals table td {
-  font-weight: 500;
-  color: var(--cor-primaria);
+  font-weight: 400;
+  color: var(--cor-texto);
   text-align: right;
 }
 
 /* Subtotal row */
 .woocommerce-cart .cart_totals .cart-subtotal th,
 .woocommerce-cart .cart_totals .cart-subtotal td {
-  font-size: 1.1rem;
-  font-weight: 600;
-  padding: var(--espacamento-md) 0;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: var(--espacamento-lg) 0;
 }
 
 /* Shipping row */
 .woocommerce-cart .cart_totals .shipping th,
 .woocommerce-cart .cart_totals .shipping td {
-  font-size: 1rem;
-  padding: var(--espacamento-sm) 0;
+  font-size: 0.95rem;
+  padding: var(--espacamento-lg) 0;
 }
 
 .woocommerce-cart .cart_totals .shipping th {
   color: var(--cor-texto);
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .woocommerce-cart .cart_totals .shipping td {
-  color: var(--cor-primaria);
-  font-weight: 500;
+  color: var(--cor-texto);
+  font-weight: 400;
 }
 
-/* Order total row */
+/* Order total row - Apple style */
 .woocommerce-cart .cart_totals .order-total th,
 .woocommerce-cart .cart_totals .order-total td {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--cor-primaria);
-  padding: var(--espacamento-md) 0;
-  border-bottom: 2px solid var(--cor-primaria);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--cor-texto);
+  padding: var(--espacamento-lg) 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding-top: var(--espacamento-lg);
 }
 
-/* Shipping address display */
+/* Shipping address display - Apple style */
 .woocommerce-cart .cart_totals .shipping-address {
-  background: rgba(107, 79, 196, 0.05);
+  background: rgba(0, 0, 0, 0.02);
   border-radius: 8px;
   padding: var(--espacamento-md);
   margin: var(--espacamento-md) 0;
-  border-left: 3px solid var(--cor-primaria);
+  border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .woocommerce-cart .cart_totals .shipping-address p {
   margin: 0;
   color: var(--cor-texto);
   font-size: 0.9rem;
-  line-height: 1.4;
+  line-height: 1.6;
 }
 
 .woocommerce-cart .cart_totals .shipping-address strong {
   color: var(--cor-primaria);
-  font-weight: 600;
+  font-weight: 500;
 }
 
-/* Change address link */
+/* Change address link - Apple style */
 .woocommerce-cart .cart_totals .change-address-link {
   display: inline-block;
   margin-top: var(--espacamento-sm);
-  color: var(--cor-accent);
+  color: var(--cor-primaria);
   text-decoration: none;
   font-size: 0.9rem;
-  font-weight: 500;
-  transition: var(--transicao-rapida);
+  font-weight: 400;
+  transition: opacity 0.2s ease;
 }
 
 .woocommerce-cart .cart_totals .change-address-link:hover {
-  color: var(--cor-primaria);
-  text-decoration: underline;
+  opacity: 0.7;
 }
 
-/* Checkout button */
+/* Checkout button - Apple style */
 .woocommerce-cart .cart_totals .wc-proceed-to-checkout {
   margin-top: var(--espacamento-lg);
   text-align: center;
 }
 
-/* Ensure the button container is properly styled */
+/* Apple-style checkout button */
 .woocommerce-cart .cart_totals .wc-proceed-to-checkout .checkout-button,
 .woocommerce-cart .cart_totals .wc-proceed-to-checkout input[type="submit"],
 .woocommerce-cart .cart_totals .wc-proceed-to-checkout button,
@@ -1840,138 +1988,104 @@ section:has(> h2:contains("Best Quality Plants")) {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  width: auto !important;
-  min-width: 200px !important;
+  width: 100% !important;
   max-width: none !important;
-  background: var(--gradiente-luxo) !important;
-  color: var(--cor-fundo) !important;
+  background: var(--cor-primaria) !important;
+  color: white !important;
   border: none !important;
-  padding: 12px 32px !important;
+  padding: 16px 24px !important;
   border-radius: 100px !important;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    sans-serif !important;
-  font-size: 1.1rem !important;
+  font-family: var(--fonte-texto) !important;
+  font-size: 1rem !important;
   font-weight: 600 !important;
   text-decoration: none !important;
   text-align: center !important;
   line-height: 1.2 !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  box-shadow: var(--sombra-luxo) !important;
+  transition: opacity 0.2s ease !important;
   cursor: pointer !important;
   position: relative !important;
-  overflow: visible !important;
-  white-space: normal !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
   box-sizing: border-box !important;
+  box-shadow: none !important;
 }
 
-/* Additional WooCommerce button overrides */
-.woocommerce-cart .cart_totals .wc-proceed-to-checkout * {
-  box-sizing: border-box !important;
+/* Hover state - Apple style */
+.woocommerce-cart .cart_totals .wc-proceed-to-checkout .checkout-button:hover,
+.woocommerce-cart .cart_totals .wc-proceed-to-checkout input[type="submit"]:hover,
+.woocommerce-cart .cart_totals .wc-proceed-to-checkout button:hover,
+.woocommerce-cart .cart_totals .wc-proceed-to-checkout a.button:hover,
+.woocommerce-cart .cart_totals .wc-proceed-to-checkout .button:hover {
+  opacity: 0.85 !important;
 }
 
-/* Force button styling on all possible WooCommerce button elements */
-.woocommerce-cart .cart_totals .wc-proceed-to-checkout .checkout-button,
-.woocommerce-cart .cart_totals .wc-proceed-to-checkout input[type="submit"],
-.woocommerce-cart .cart_totals .wc-proceed-to-checkout button,
-.woocommerce-cart .cart_totals .wc-proceed-to-checkout a.button,
-.woocommerce-cart .cart_totals .wc-proceed-to-checkout .button,
-.woocommerce-cart .cart_totals .wc-proceed-to-checkout .woocommerce-button {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: auto !important;
-  min-width: 200px !important;
-  max-width: none !important;
-  background: var(--gradiente-luxo) !important;
-  color: var(--cor-fundo) !important;
-  border: none !important;
-  padding: 12px 32px !important;
-  border-radius: 100px !important;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    sans-serif !important;
-  font-size: 1.1rem !important;
-  font-weight: 600 !important;
-  text-decoration: none !important;
-  text-align: center !important;
-  line-height: 1.2 !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-  box-shadow: var(--sombra-luxo) !important;
-  cursor: pointer !important;
-  position: relative !important;
-  overflow: visible !important;
-  white-space: normal !important;
-  box-sizing: border-box !important;
-}
-
-.woocommerce-cart
-  .cart_totals
-  .wc-proceed-to-checkout
-  .checkout-button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
-  transition: left 0.5s;
-}
-
-.woocommerce-cart
-  .cart_totals
-  .wc-proceed-to-checkout
-  .checkout-button:hover::before {
-  left: 100%;
-}
-
-.woocommerce-cart .cart_totals .wc-proceed-to-checkout .checkout-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 48px rgba(107, 79, 196, 0.4);
-  color: var(--cor-fundo);
-}
-
-/* Tax display */
-.woocommerce-cart .cart_totals .tax-total {
-  background: rgba(212, 175, 55, 0.1);
-  border-radius: 8px;
-  padding: var(--espacamento-sm) var(--espacamento-md);
-  margin: var(--espacamento-sm) 0;
-  border-left: 3px solid var(--cor-gold);
-}
-
-.woocommerce-cart .cart_totals .tax-total th,
-.woocommerce-cart .cart_totals .tax-total td {
-  border: none;
-  padding: var(--espacamento-xs) 0;
-  background: transparent;
-}
-
-.woocommerce-cart .cart_totals .tax-total th {
-  color: var(--cor-texto);
-  font-weight: 500;
-}
-
-.woocommerce-cart .cart_totals .tax-total td {
-  color: var(--cor-gold);
-  font-weight: 600;
-}
-
-/* Responsive adjustments */
+/* Responsive adjustments - Apple style */
 @media (max-width: 767px) {
+  /* Cart table mobile adjustments */
+  .woocommerce-cart table.cart {
+    font-size: 0.85rem;
+  }
+
+  .woocommerce-cart table.cart th,
+  .woocommerce-cart table.cart td {
+    padding: var(--espacamento-sm);
+  }
+
+  .woocommerce-cart table.cart img,
+  .woocommerce-cart table.cart .product-thumbnail img {
+    max-width: 70px !important;
+    width: 70px !important;
+  }
+
+  .woocommerce-cart table.cart .product-thumbnail {
+    width: 70px;
+  }
+
+  /* Mobile cart actions */
+  .woocommerce-cart table.cart td.actions .coupon {
+    flex-direction: column;
+    width: 100%;
+    gap: 8px !important;
+    margin-right: 0 !important;
+    margin-bottom: var(--espacamento-sm);
+  }
+
+  .woocommerce-cart table.cart td.actions .coupon input[type="text"],
+  .woocommerce-cart table.cart td.actions .coupon input#coupon_code {
+    width: 100% !important;
+  }
+
+  .woocommerce-cart table.cart td.actions .coupon button,
+  .woocommerce-cart table.cart td.actions .coupon button[name="apply_coupon"],
+  .woocommerce-cart table.cart td.actions .coupon .button {
+    width: 100% !important;
+  }
+
+  .woocommerce-cart table.cart td.actions button[name="update_cart"],
+  .woocommerce-cart table.cart td.actions input[name="update_cart"],
+  .woocommerce-cart table.cart td.actions .button[name="update_cart"] {
+    float: none !important;
+    width: 100% !important;
+  }
+
+  /* Cart totals mobile adjustments */
+  .woocommerce-cart .cart_totals {
+    padding: var(--espacamento-md);
+  }
+
+  .woocommerce-cart .cart_totals h2 {
+    font-size: 1.3rem;
+  }
+
   .woocommerce-cart .cart_totals table th,
   .woocommerce-cart .cart_totals table td {
     font-size: 0.9rem;
-    padding: var(--espacamento-xs) 0;
+    padding: var(--espacamento-sm) 0;
   }
 
   .woocommerce-cart .cart_totals .order-total th,
   .woocommerce-cart .cart_totals .order-total td {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .woocommerce-cart .cart_totals .shipping-address {
@@ -1983,12 +2097,16 @@ section:has(> h2:contains("Best Quality Plants")) {
   .woocommerce-cart .cart_totals .wc-proceed-to-checkout input[type="submit"],
   .woocommerce-cart .cart_totals .wc-proceed-to-checkout button,
   .woocommerce-cart .cart_totals .wc-proceed-to-checkout a.button,
-  .woocommerce-cart .cart_totals .wc-proceed-to-checkout .button,
-  .woocommerce-cart .cart_totals .wc-proceed-to-checkout .woocommerce-button {
-    min-width: 100% !important;
+  .woocommerce-cart .cart_totals .wc-proceed-to-checkout .button {
     width: 100% !important;
-    padding: 16px 24px !important;
-    font-size: 1rem !important;
+    padding: 14px 20px !important;
+    font-size: 0.95rem !important;
+  }
+
+  /* Continue shopping button mobile */
+  .continue-shopping .btn-luxury-outline {
+    width: 100%;
+    justify-content: center !important;
   }
 }
 
@@ -2009,7 +2127,7 @@ section:has(> h2:contains("Best Quality Plants")) {
   align-items: center;
   justify-content: center;
   max-width: 600px;
-  margin: var(--espacamento-lg) auto;
+  margin: var(--espacamento-lg) auto var(--espacamento-xl);
   padding: 0;
 }
 

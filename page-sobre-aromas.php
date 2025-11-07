@@ -13,18 +13,15 @@ get_header(); ?>
     <main id="main" class="site-main">
         <article id="page-sobre-aromas" class="page-content luxury-page">
             
-            <!-- Hero Section with Product Background -->
-            <section class="aromas-hero-modern">
-                <div class="aromas-hero-background">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/Foto-tela-inicial-.webp" 
-                         alt="Nossos Aromas Zen Secrets" class="hero-bg-image">
-                    <div class="hero-overlay"></div>
-                </div>
-                <div class="aromas-hero-content">
-                    <h1 class="aromas-hero-title">Nossos Aromas</h1>
-                    <p class="aromas-hero-subtitle">
-                        Descubra nossa coleção exclusiva de fragrâncias naturais, cada uma criada para despertar sensações únicas
-                    </p>
+            <!-- Simple Page Header -->
+            <section class="page-header-section luxury-section">
+                <div class="container">
+                    <div class="page-header-content text-center animate-fade-in-up">
+                        <h1 class="page-title luxury-heading">Nossos Aromas</h1>
+                        <p class="page-subtitle">
+                            Descubra nossa coleção exclusiva de fragrâncias naturais, cada uma criada para despertar sensações únicas
+                        </p>
+                    </div>
                 </div>
             </section>
 

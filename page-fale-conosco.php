@@ -13,18 +13,15 @@ get_header(); ?>
     <main id="main" class="site-main">
         <article id="page-fale-conosco" class="page-content luxury-page">
             
-            <!-- Hero Section with Product Background -->
-            <section class="contact-hero-modern">
-                <div class="contact-hero-background">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/Foto-tela-inicial-.webp" 
-                         alt="Produtos Zen Secrets" class="hero-bg-image">
-                    <div class="hero-overlay"></div>
-                </div>
-                <div class="contact-hero-content">
-                    <h1 class="contact-hero-title">Fale Conosco</h1>
-                    <p class="contact-hero-subtitle">
-                        Estamos aqui para ajudar você a encontrar o aroma perfeito para seu ambiente
-                    </p>
+            <!-- Simple Page Header -->
+            <section class="page-header-section luxury-section">
+                <div class="container">
+                    <div class="page-header-content text-center animate-fade-in-up">
+                        <h1 class="page-title luxury-heading">Fale Conosco</h1>
+                        <p class="page-subtitle">
+                            Estamos aqui para ajudar você a encontrar o aroma perfeito para seu ambiente
+                        </p>
+                    </div>
                 </div>
             </section>
 

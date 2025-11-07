@@ -303,20 +303,20 @@
 }
 
 /* ==========================================================================
-   Modern Contact Page Design (Matching Screenshot)
+   Apple-Style Contact Page Design
    ========================================================================== */
 
-/* Hero Section with Product Background */
+/* Apple-Style Hero Section */
 .contact-hero-modern {
   position: relative;
-  height: 40vh;
-  min-height: 350px;
+  min-height: 60vh;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background: #000000;
 }
 
 .contact-hero-background {
@@ -333,6 +333,7 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+  opacity: 1;
 }
 
 .hero-overlay {
@@ -343,8 +344,8 @@
   bottom: 0;
   background: linear-gradient(
     135deg,
-    rgba(0, 0, 0, 0.7) 0%,
-    rgba(0, 0, 0, 0.4) 100%
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.2) 100%
   );
 }
 
@@ -352,34 +353,38 @@
   position: relative;
   z-index: 2;
   text-align: center;
-  color: white;
-  max-width: 800px;
-  padding: 0 var(--espacamento-lg);
+  max-width: 980px;
+  padding: 80px 20px;
 }
 
 .contact-hero-title {
-  font-size: clamp(3rem, 8vw, 5rem);
-  font-weight: 700;
-  margin-bottom: var(--espacamento-md);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  font-family: "Dancing Script", cursive;
-  letter-spacing: 2px;
-  color: white;
+  font-size: clamp(48px, 7vw, 80px);
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.015em;
+  line-height: 1.05;
+  color: #ffffff;
 }
 
 .contact-hero-subtitle {
-  font-size: clamp(1.2rem, 3vw, 1.6rem);
-  line-height: 1.5;
-  opacity: 0.95;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-  font-weight: 300;
-  color: white;
+  font-size: clamp(19px, 2.5vw, 28px);
+  line-height: 1.4;
+  opacity: 1;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.95);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.01em;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-/* Two Column Layout */
+/* Apple-Style Two Column Layout */
 .contact-main-section {
-  padding: var(--espacamento-md) 0;
-  background: #f8f9fa;
+  padding: 40px 0 80px;
+  background: #ffffff;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
 }
@@ -387,76 +392,81 @@
 .contact-two-columns {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--espacamento-md);
-  max-width: 1200px;
+  gap: 60px;
+  max-width: 980px;
   margin: 0 auto;
-  padding: 0 var(--espacamento-md);
+  padding: 0 20px;
 }
 
 /* Left Column - Contact Info */
 .contact-info-column {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(249, 250, 251, 0.95) 100%);
-  padding: var(--espacamento-xl);
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(107, 79, 196, 0.08);
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
   height: fit-content;
-  border: 1px solid rgba(107, 79, 196, 0.08);
+  border: none;
 }
 
 .contact-methods-title h2 {
-  font-size: 2rem;
-  color: var(--cor-primaria);
-  margin-bottom: var(--espacamento-xs);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.2;
+  font-size: clamp(32px, 4vw, 48px);
+  color: #333333;
+  margin-bottom: 12px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .contact-methods-title p {
-  color: #718096;
-  font-size: 1.05rem;
-  margin-bottom: var(--espacamento-xl);
-  line-height: 1.6;
+  color: #6e6e73;
+  font-size: clamp(17px, 2vw, 21px);
+  margin-bottom: 40px;
+  line-height: 1.5;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.01em;
 }
 
+/* Apple-Style Contact Methods List */
 .contact-methods-list {
   display: flex;
   flex-direction: column;
-  gap: var(--espacamento-md);
+  gap: 20px;
 }
 
 .contact-method-item {
   display: flex;
-  align-items: flex-start;
-  gap: var(--espacamento-lg);
-  padding: var(--espacamento-lg);
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  padding: 32px 24px;
   border-radius: 16px;
-  border: 1px solid rgba(107, 79, 196, 0.1);
-  background: white;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  border: none;
+  background: #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-method-link {
   text-decoration: none;
   color: inherit;
+  display: block;
 }
 
 .contact-method-link:hover .contact-method-item {
   transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(107, 79, 196, 0.15);
-  border-color: rgba(107, 79, 196, 0.25);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .contact-method-link:hover .contact-method-icon {
-  transform: scale(1.1);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
 }
 
 .contact-method-icon {
-  width: 64px;
-  height: 64px;
-  border-radius: 16px;
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -466,7 +476,7 @@
 }
 
 .email-icon {
-  background: linear-gradient(135deg, #6b4fc4 0%, #8b5fd6 100%);
+  background: linear-gradient(135deg, #6b4fc4 0%, #8b6fd9 100%);
   color: white;
 }
 
@@ -481,78 +491,85 @@
 }
 
 .contact-method-content h3 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--cor-primaria);
-  margin-bottom: var(--espacamento-xs);
-  letter-spacing: -0.02em;
+  font-size: 20px;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .contact-method-content p {
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: #2d3748;
-  margin-bottom: var(--espacamento-xs);
+  font-size: 17px;
+  font-weight: 500;
+  color: #555555;
+  margin-bottom: 6px;
   letter-spacing: -0.01em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .contact-method-content small {
-  font-size: 0.95rem;
-  color: #718096;
+  font-size: 14px;
+  color: #888888;
   line-height: 1.5;
   display: block;
-  margin-top: 4px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-/* Right Column - Contact Form */
+/* Apple-Style Right Column - Contact Form */
 .contact-form-column {
-  background: white;
-  padding: var(--espacamento-xl);
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(107, 79, 196, 0.08);
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
   height: fit-content;
-  border: 1px solid rgba(107, 79, 196, 0.08);
+  border: none;
 }
 
 .contact-form-title h2 {
-  font-size: 2rem;
-  color: var(--cor-primaria);
-  margin-bottom: var(--espacamento-xs);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 1.2;
+  font-size: clamp(32px, 4vw, 48px);
+  color: #333333;
+  margin-bottom: 12px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .contact-form-title p {
-  color: #718096;
-  font-size: 1.05rem;
-  margin-bottom: var(--espacamento-xl);
-  line-height: 1.6;
+  color: #6e6e73;
+  font-size: clamp(17px, 2vw, 21px);
+  margin-bottom: 40px;
+  line-height: 1.5;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.01em;
 }
 
-/* Modern Form Styling */
+/* Apple-Style Form Styling */
 .contact-form-modern {
   display: flex;
   flex-direction: column;
-  gap: var(--espacamento-lg);
+  gap: 20px;
 }
 
 .form-row-modern {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--espacamento-lg);
+  gap: 20px;
 }
 
 .form-group-modern {
   display: flex;
   flex-direction: column;
-  gap: var(--espacamento-sm);
+  gap: 8px;
 }
 
 .form-group-modern label {
   font-weight: 600;
-  color: var(--cor-primaria);
-  font-size: 1rem;
+  color: #333333;
+  font-size: 15px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.01em;
 }
 
 .input-with-icon {
@@ -563,80 +580,96 @@
 
 .input-with-icon svg {
   position: absolute;
-  left: var(--espacamento-md);
-  color: #999;
+  left: 16px;
+  color: #86868b;
   z-index: 2;
   pointer-events: none;
 }
 
 .modern-form-input {
   width: 100%;
-  padding: var(--espacamento-sm) var(--espacamento-md) var(--espacamento-sm)
-    3rem;
-  border: 2px solid #e1e5e9;
+  padding: 14px 16px 14px 48px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 12px;
-  font-size: 1rem;
-  font-family: inherit;
-  color: #333;
-  background: #fff;
-  transition: all 0.3s ease;
+  font-size: 17px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #333333;
+  background: #ffffff;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: -0.01em;
 }
 
 .modern-form-input:focus {
   outline: none;
-  border-color: var(--cor-primaria);
+  border-color: #6b4fc4;
   box-shadow: 0 0 0 4px rgba(107, 79, 196, 0.1);
 }
 
 .modern-form-input::placeholder {
-  color: #999;
-  opacity: 0.8;
+  color: #86868b;
+  opacity: 1;
 }
 
 textarea.modern-form-input {
-  padding: var(--espacamento-sm);
+  padding: 14px 16px;
   resize: vertical;
-  min-height: 120px;
-  font-family: inherit;
+  min-height: 140px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
 }
 
 select.modern-form-input {
-  padding: var(--espacamento-sm);
+  padding: 14px 16px;
   cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%2386868b' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
 }
 
 .form-actions-modern {
-  margin-top: var(--espacamento-lg);
+  margin-top: 12px;
 }
 
 /* Button styles now centralized in buttons.css */
 
-/* Responsive Design */
-@media (min-width: 768px) {
+/* Apple-Style Responsive Design */
+@media (min-width: 734px) {
   .form-row-modern {
     grid-template-columns: 1fr 1fr;
   }
+
+  .contact-hero-content {
+    padding: 100px 40px;
+  }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1068px) {
   .contact-two-columns {
     grid-template-columns: 1fr 1fr;
-    gap: var(--espacamento-xl);
+    gap: 80px;
   }
 
   .contact-hero-modern {
-    height: 45vh;
-    min-height: 400px;
+    min-height: 70vh;
+  }
+
+  .contact-main-section {
+    padding: 100px 0;
   }
 }
 
-/* Success/Error Messages */
+/* Apple-Style Success/Error Messages */
 .contact-success,
 .contact-error {
-  margin-bottom: var(--espacamento-lg);
-  padding: var(--espacamento-md);
-  border-radius: 100px;
-  font-weight: 500;
+  margin-bottom: 24px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  font-weight: 400;
+  font-size: 15px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.01em;
 }
 
 .contact-success {
@@ -649,6 +682,71 @@ select.modern-form-input {
   background: #f8d7da;
   color: #721c24;
   border: 1px solid #f5c6cb;
+}
+
+/* Dark Mode Support for Contact Page */
+@media (prefers-color-scheme: dark) {
+  .contact-hero-modern {
+    background: #000000;
+  }
+
+  .contact-hero-title {
+    color: #ffffff;
+  }
+
+  .contact-hero-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .contact-main-section {
+    background: #000000;
+  }
+
+  .contact-methods-title h2,
+  .contact-form-title h2 {
+    color: #f5f5f7;
+  }
+
+  .contact-methods-title p,
+  .contact-form-title p {
+    color: #a1a1a6;
+  }
+
+  .contact-method-item {
+    background: #1d1d1f;
+  }
+
+  .contact-method-link:hover .contact-method-item {
+    background: #2d2d2f;
+  }
+
+  .contact-method-content h3,
+  .contact-method-content p {
+    color: #f5f5f7;
+  }
+
+  .contact-method-content small {
+    color: #a1a1a6;
+  }
+
+  .form-group-modern label {
+    color: #f5f5f7;
+  }
+
+  .modern-form-input {
+    background: #1d1d1f;
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #f5f5f7;
+  }
+
+  .modern-form-input::placeholder {
+    color: #a1a1a6;
+  }
+
+  .modern-form-input:focus {
+    background: #2d2d2f;
+    border-color: #0071e3;
+  }
 }
 
 /* ==========================================================================
@@ -744,6 +842,7 @@ select.modern-form-input {
   z-index: 100;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
+  margin-top: 60px;
 }
 
 .fragrance-pills-container {
@@ -848,7 +947,7 @@ select.modern-form-input {
 .fragrance-accordion-header h2 {
   font-size: clamp(24px, 3vw, 32px);
   font-weight: 600;
-  color: #1d1d1f;
+  color: #333333;
   margin: 0;
   text-align: left;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -965,7 +1064,7 @@ select.modern-form-input {
 
 .note-column p {
   font-size: 17px;
-  color: #1d1d1f;
+  color: #555555;
   margin: 0;
   line-height: 1.5;
   font-weight: 400;
@@ -995,7 +1094,7 @@ select.modern-form-input {
 
 .fragrance-description p {
   font-size: 17px;
-  color: #1d1d1f;
+  color: #555555;
   line-height: 1.5;
   margin: 0;
   font-weight: 400;

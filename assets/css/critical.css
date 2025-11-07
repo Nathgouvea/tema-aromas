@@ -170,6 +170,27 @@ body {
   }
 }
 
+/* Extra Large Desktop Optimization */
+@media (min-width: 1920px) {
+  .homepage-hero {
+    min-height: 70vh;
+    max-height: 900px;
+  }
+
+  .hero-content {
+    max-width: 1400px;
+    padding: 0 var(--espacamento-xxl);
+  }
+
+  .hero-title {
+    font-size: 5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+}
+
 /* Font loading optimization */
 @font-face {
   font-family: "Inter";

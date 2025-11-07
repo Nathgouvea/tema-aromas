@@ -669,6 +669,27 @@ body.single-product {
   }
 }
 
+/* Extra Large Desktop (iMac 5K and ultra-wide) */
+@media (min-width: 1920px) {
+  .woocommerce ul.products {
+    grid-template-columns: repeat(4, minmax(280px, 320px));
+    gap: var(--espacamento-xl);
+    max-width: 1600px;
+    padding: 40px;
+  }
+
+  .woocommerce div.product {
+    max-width: 1600px;
+    padding: 0 var(--espacamento-xxl);
+    padding-top: 120px;
+  }
+
+  .woocommerce .page-header-section {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+}
+
 /* Product Card - Ultra Minimal Design */
 .woocommerce ul.products li.product,
 .luxury-product-card {

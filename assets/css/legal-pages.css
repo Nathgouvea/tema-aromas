@@ -4,10 +4,6 @@
  * Version: 1.0.0
  */
 
-/* ==========================================================================
-   Legal Pages Layout
-   ========================================================================== */
-
 .legal-content-section {
   padding: var(--espacamento-xxl) 0;
   background: var(--cor-fundo);

@@ -88,7 +88,6 @@ function tema_aromas_main_navigation() {
 function tema_aromas_header_icons() {
     ?>
     <div class="header-icons">
-        <!-- Search Icon -->
         <button class="header-icon search-toggle" aria-label="<?php esc_attr_e('Abrir busca', 'tema_aromas'); ?>" aria-expanded="false">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <circle cx="11" cy="11" r="8"></circle>
@@ -96,7 +95,6 @@ function tema_aromas_header_icons() {
             </svg>
         </button>
 
-        <!-- My Account Icon -->
         <?php if (class_exists('WooCommerce')) : ?>
             <a href="<?php echo esc_url(wc_get_page_permalink('myaccount')); ?>" class="header-icon account-icon" aria-label="<?php esc_attr_e('Minha conta', 'tema_aromas'); ?>">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -105,7 +103,6 @@ function tema_aromas_header_icons() {
                 </svg>
             </a>
 
-            <!-- Cart Icon -->
             <button class="header-icon cart-toggle" aria-label="<?php esc_attr_e('Abrir carrinho', 'tema_aromas'); ?>" aria-expanded="false">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="9" cy="21" r="1"></circle>

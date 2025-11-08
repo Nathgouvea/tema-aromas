@@ -65,7 +65,6 @@
       return;
     }
 
-    // Set initial ARIA states
     toggle.setAttribute("aria-expanded", "false");
     toggle.setAttribute("aria-haspopup", "true");
 
@@ -78,12 +77,10 @@
       return;
     }
 
-    // Desktop: Use hover for better UX
     if (isDesktop()) {
       setupDesktopBehavior(toggle, dropdown, dropdownContainer);
     }
 
-    // All devices: Click/tap support
     setupClickBehavior(toggle, dropdown);
 
     // Keyboard navigation
@@ -219,15 +216,12 @@
       }
     }
 
-    // Update ARIA
     toggle.setAttribute("aria-expanded", "true");
     toggle.classList.add("active");
 
-    // Show dropdown with CSS class
     dropdown.classList.add("show");
     dropdown.setAttribute("aria-hidden", "false");
 
-    // Track active dropdown
     activeDropdown = dropdown;
   }
 
@@ -235,15 +229,12 @@
    * Close dropdown
    */
   function closeDropdown(toggle, dropdown) {
-    // Update ARIA
     toggle.setAttribute("aria-expanded", "false");
     toggle.classList.remove("active");
 
-    // Hide dropdown
     dropdown.classList.remove("show");
     dropdown.setAttribute("aria-hidden", "true");
 
-    // Clear active dropdown
     if (activeDropdown === dropdown) {
       activeDropdown = null;
     }

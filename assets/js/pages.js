@@ -19,11 +19,9 @@
 
       if (!question || !answer) return;
 
-      // Set initial ARIA states
       question.setAttribute("aria-expanded", "false");
       answer.setAttribute("aria-hidden", "true");
 
-      // Add click event
       question.addEventListener("click", function () {
         const isExpanded = question.getAttribute("aria-expanded") === "true";
 
@@ -147,7 +145,6 @@
     let isValid = true;
     const value = field.value.trim();
 
-    // Remove existing error message
     const existingError = field.parentNode.querySelector(".error-message");
     if (existingError) {
       existingError.remove();
@@ -155,7 +152,6 @@
 
     field.classList.remove("error");
 
-    // Check required fields
     if (field.hasAttribute("required") && !value) {
       showFieldError(field, "Este campo é obrigatório");
       isValid = false;

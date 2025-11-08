@@ -169,26 +169,20 @@
       return;
     }
 
-    // Set states
     isCartOpen = true;
 
-    // Update ARIA states
     if (cartToggle) {
       cartToggle.setAttribute("aria-expanded", "true");
     }
 
-    // Show overlay
     cartOverlay.style.visibility = "visible";
     cartOverlay.style.opacity = "1";
 
-    // Show cart drawer
     cartDrawer.classList.add("open");
     cartDrawer.style.transform = "translateX(0)";
 
-    // Prevent body scroll
     document.body.style.overflow = "hidden";
 
-    // Focus management
     const firstFocusable = cartDrawer.querySelector(
       'button, a, input, [tabindex]:not([tabindex="-1"])'
     );
@@ -196,10 +190,7 @@
       firstFocusable.focus();
     }
 
-    // Announce to screen readers
     announceToScreenReader("Carrinho de compras aberto");
-
-    // Dispatch custom event
     document.dispatchEvent(new CustomEvent("cartOpened"));
   }
 
@@ -216,23 +207,18 @@
 
     if (!cartDrawer) return;
 
-    // Set states
     isCartOpen = false;
 
-    // Update ARIA states
     if (cartToggle) {
       cartToggle.setAttribute("aria-expanded", "false");
     }
 
-    // Hide overlay
     cartOverlay.style.opacity = "0";
     cartOverlay.style.visibility = "hidden";
 
-    // Hide cart drawer
     cartDrawer.classList.remove("open");
     cartDrawer.style.transform = "translateX(100%)";
 
-    // Restore body scroll
     document.body.style.overflow = "";
 
     // Return focus to toggle

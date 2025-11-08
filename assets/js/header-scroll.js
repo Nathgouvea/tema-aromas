@@ -49,7 +49,6 @@
       }
     }
 
-    // Listen for scroll events
     window.addEventListener("scroll", requestTick);
   });
 })();

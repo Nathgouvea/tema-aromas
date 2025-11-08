@@ -46,7 +46,6 @@
             block: "start",
           });
 
-          // Remove tabindex after focus
           targetElement.addEventListener(
             "blur",
             function () {

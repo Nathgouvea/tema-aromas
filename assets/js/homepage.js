@@ -138,25 +138,21 @@
 
     let currentIndex = 0;
 
-    // Update active dot and arrow states
     function updateActiveDot() {
       const scrollLeft = slider.scrollLeft;
       const itemWidth = items[0].offsetWidth;
       currentIndex = Math.round(scrollLeft / itemWidth);
 
-      // Update dots
       dots.forEach((dot, index) => {
         dot.classList.toggle("active", index === currentIndex);
       });
 
-      // Update arrow states
       if (prevBtn && nextBtn) {
         prevBtn.disabled = currentIndex === 0;
         nextBtn.disabled = currentIndex === items.length - 1;
       }
     }
 
-    // Scroll to specific slide
     function scrollToSlide(index) {
       if (index < 0 || index >= items.length) return;
 
@@ -170,14 +166,12 @@
       });
     }
 
-    // Add click handlers to dots
     dots.forEach((dot, index) => {
       dot.addEventListener("click", () => {
         scrollToSlide(index);
       });
     });
 
-    // Add click handlers to arrows
     if (prevBtn) {
       prevBtn.addEventListener("click", () => {
         scrollToSlide(currentIndex - 1);
@@ -190,14 +184,12 @@
       });
     }
 
-    // Update active dot on scroll
     let scrollTimeout;
     slider.addEventListener("scroll", () => {
       clearTimeout(scrollTimeout);
       scrollTimeout = setTimeout(updateActiveDot, 100);
     });
 
-    // Initialize active dot and arrow states
     updateActiveDot();
   }
 
@@ -217,7 +209,6 @@
       </div>
     `;
 
-    // Add styles if not already added
     if (!document.querySelector("#notification-styles")) {
       const styles = document.createElement("style");
       styles.id = "notification-styles";

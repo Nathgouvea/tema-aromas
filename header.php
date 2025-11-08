@@ -83,14 +83,12 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<!-- Skip Link for Accessibility -->
 <a class="skip-link sr-only" href="#main"><?php esc_html_e('Pular para o conteúdo', 'tema_aromas'); ?></a>
 
 <div id="page" class="site">
     <header id="masthead" class="site-header luxury-header">
         <div class="container">
             <div class="header-content">
-                <!-- Hamburger Menu Button (Left on desktop, Right on mobile/tablet) -->
                 <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" aria-label="<?php esc_attr_e('Alternar menu', 'tema_aromas'); ?>">
                     <span class="menu-icon">
                         <span></span>
@@ -99,7 +97,6 @@
                     <span class="menu-text"><?php esc_html_e('MENU', 'tema_aromas'); ?></span>
                 </button>
 
-                <!-- Logo / Site Title (Left on mobile, Center on desktop) -->
                 <div class="site-branding">
                     <div class="site-logo">
                         <a href="<?php echo esc_url(home_url('/')); ?>" rel="home" class="dynamic-logo-link">
@@ -116,9 +113,7 @@
                     </div>
                 </div>
 
-                <!-- Header Icons (Right) -->
                 <div class="header-icons">
-                    <!-- Search Toggle -->
                     <button class="header-icon search-toggle" aria-label="<?php esc_attr_e('Abrir busca', 'tema_aromas'); ?>" aria-expanded="false" aria-controls="search-form">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                             <path d="M21 21l-6.35-6.35M11 6a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"/>
@@ -126,7 +121,6 @@
                         <span class="sr-only"><?php esc_html_e('Buscar', 'tema_aromas'); ?></span>
                     </button>
 
-                    <!-- My Account Icon -->
                     <?php if (class_exists('WooCommerce')) : ?>
                         <a href="<?php echo esc_url(wc_get_page_permalink('myaccount')); ?>" class="header-icon account-icon" aria-label="<?php esc_attr_e('Minha conta', 'tema_aromas'); ?>">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -136,7 +130,6 @@
                             <span class="sr-only"><?php esc_html_e('Minha Conta', 'tema_aromas'); ?></span>
                         </a>
 
-                        <!-- Cart Icon with Counter -->
                         <button class="header-icon cart-toggle" aria-label="<?php esc_attr_e('Abrir carrinho', 'tema_aromas'); ?>" aria-expanded="false" data-cart-toggle>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                 <circle cx="9" cy="21" r="1"></circle>
@@ -153,11 +146,9 @@
                 </div>
             </div>
 
-            <!-- Expandable Search Form -->
             <div id="search-form" class="header-search" aria-hidden="true">
                 <div class="search-form-container">
                     <?php if (class_exists('WooCommerce')) : ?>
-                        <!-- WooCommerce Product Search -->
                         <form role="search" method="get" class="woocommerce-product-search luxury-form" action="<?php echo esc_url(home_url('/')); ?>">
                             <label for="woocommerce-product-search-field" class="sr-only">
                                 <?php esc_html_e('Buscar produtos', 'tema_aromas'); ?>
@@ -176,7 +167,6 @@
                             </button>
                         </form>
                     <?php else : ?>
-                        <!-- Standard WordPress Search -->
                         <?php get_search_form(); ?>
                     <?php endif; ?>
 
@@ -190,14 +180,11 @@
             </div>
         </div>
 
-        <!-- Mobile Menu Overlay -->
         <div class="mobile-menu-overlay" aria-hidden="true"></div>
 
-        <!-- Slide-in Navigation Menu -->
         <nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e('Menu principal', 'tema_aromas'); ?>">
             <?php if (has_nav_menu('header')) : ?>
                 <div class="primary-menu-container">
-                    <!-- Close button inside menu -->
                     <button class="menu-close-button" aria-label="<?php esc_attr_e('Fechar menu', 'tema_aromas'); ?>">
                         <span class="close-icon">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -217,9 +204,7 @@
                         'walker' => new Tema_Aromas_Walker_Nav_Menu(),
                     ]); ?>
 
-                    <!-- Menu Footer with Social Icons -->
                     <div class="menu-footer">
-                        <!-- Social Icons - Simple outline style -->
                         <div class="menu-social-icons">
                             <a href="https://instagram.com/secretszen" target="_blank" rel="noopener noreferrer" class="menu-social-icon" aria-label="Instagram">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -243,9 +228,7 @@
                     </div>
                 </div>
             <?php else : ?>
-                        <!-- Default menu structure if no menu is assigned -->
                         <div class="primary-menu-container">
-                            <!-- Close button inside menu -->
                             <button class="menu-close-button" aria-label="<?php esc_attr_e('Fechar menu', 'tema_aromas'); ?>">
                                 <span class="close-icon">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -360,9 +343,7 @@
                                 </li>
                             </ul>
 
-                            <!-- Menu Footer with Action Buttons and Social Icons -->
                             <div class="menu-footer">
-                                <!-- Action Buttons: Search, Account, Cart -->
                                 <div class="menu-action-buttons">
                                     <button class="menu-action-btn search-toggle" aria-label="<?php esc_attr_e('Abrir busca', 'tema_aromas'); ?>" aria-expanded="false">
                                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -396,7 +377,6 @@
                                     <?php endif; ?>
                                 </div>
 
-                                <!-- Social Icons - Simple outline style -->
                                 <div class="menu-social-icons">
                                     <a href="https://instagram.com/secretszen" target="_blank" rel="noopener noreferrer" class="menu-social-icon" aria-label="Instagram">
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -423,11 +403,9 @@
                 </nav>
         </div>
 
-        <!-- Mobile Menu Overlay -->
         <div class="mobile-menu-overlay" aria-hidden="true"></div>
     </header>
 
-    <!-- Mini Cart Drawer (WooCommerce) -->
     <?php if (class_exists('WooCommerce')) : ?>
         <div id="mini-cart-drawer" class="mini-cart-drawer" aria-hidden="true">
             <div class="mini-cart-header">

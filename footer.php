@@ -1,11 +1,9 @@
-    </main><!-- #main -->
+    </main>
 
     <footer id="colophon" class="site-footer luxury-footer">
         <div class="footer-container">
-            <!-- Footer Content -->
             <div class="footer-content">
                 <div class="footer-sections">
-                    <!-- Footer Section 1 -->
                     <div class="footer-section footer-about">
                         <div class="footer-branding">
                             <div class="footer-logo">
@@ -22,11 +20,9 @@
                             </p>
                         </div>
 
-                        <!-- Social Links -->
                         <?php tema_aromas_social_links(); ?>
                     </div>
 
-                    <!-- Footer Section 2 - Navigation -->
                     <div class="footer-section footer-navigation">
                         <h4 class="footer-title"><?php esc_html_e('Navegação', 'tema_aromas'); ?></h4>
                         <?php if (has_nav_menu('footer')) : ?>
@@ -46,7 +42,6 @@
                         <?php endif; ?>
                     </div>
 
-                    <!-- Footer Section 3 - Categories -->
                     <div class="footer-section footer-categories">
                         <h4 class="footer-title"><?php esc_html_e('Categorias', 'tema_aromas'); ?></h4>
                         <ul class="footer-categories-list">
@@ -59,49 +54,40 @@
                         </ul>
                     </div>
 
-                    <!-- Footer Section 4 - Contact -->
                     <div class="footer-section footer-contact">
                         <h4 class="footer-title"><?php esc_html_e('Contato', 'tema_aromas'); ?></h4>
-                        
-                        <!-- Contact Information -->
+
                         <?php tema_aromas_contact_info(); ?>
                     </div>
                 </div>
             </div>
 
-            <!-- Payment Methods & Trust Seals -->
             <div class="footer-payments">
                 <div class="payment-methods">
                     <h5 class="payment-title"><?php esc_html_e('Formas de Pagamento', 'tema_aromas'); ?></h5>
                     <div class="payment-icons">
-                        <!-- PIX -->
                         <div class="payment-icon" title="PIX">
                             <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/pix.png'); ?>" alt="PIX" width="60" height="auto">
                         </div>
-                        
-                        <!-- Visa -->
+
                         <div class="payment-icon" title="Visa">
                             <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/visa.png'); ?>" alt="Visa" width="60" height="auto">
                         </div>
-                        
-                        <!-- Mastercard -->
+
                         <div class="payment-icon" title="Mastercard">
                             <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/mastercard.png'); ?>" alt="Mastercard" width="60" height="auto">
                         </div>
-                        
-                        <!-- American Express -->
+
                         <div class="payment-icon" title="American Express">
                             <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/amex.png'); ?>" alt="American Express" width="60" height="auto">
                         </div>
-                        
-                        <!-- Elo -->
+
                         <div class="payment-icon" title="Elo">
                             <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/elo.png'); ?>" alt="Elo" width="60" height="auto">
                         </div>
                     </div>
                 </div>
 
-                <!-- Trust Seals -->
                 <div class="trust-seals">
                     <div class="trust-seal" title="Site Seguro">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -123,7 +109,6 @@
                 </div>
             </div>
 
-            <!-- Legal Pages -->
             <div class="footer-legal">
                 <nav class="legal-navigation" aria-label="<?php esc_attr_e('Links legais', 'tema_aromas'); ?>">
                     <ul class="legal-menu">
@@ -134,7 +119,6 @@
                 </nav>
             </div>
 
-            <!-- Copyright -->
             <div class="footer-copyright">
                 <div class="copyright-content">
                     <p class="footer-text">
@@ -150,9 +134,7 @@
         </div>
     </footer>
 
-    <!-- Back to Top Button (will be created by JavaScript) -->
-    
-</div><!-- #page -->
+</div>
 
 <?php wp_footer(); ?>
 

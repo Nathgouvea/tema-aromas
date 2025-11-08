@@ -12,8 +12,7 @@ get_header(); ?>
 <div class="luxury-container">
     <main id="main" class="site-main">
         <article id="page-fale-conosco" class="page-content luxury-page">
-            
-            <!-- Simple Page Header -->
+
             <section class="page-header-section luxury-section">
                 <div class="container">
                     <div class="page-header-content text-center animate-fade-in-up">
@@ -25,11 +24,9 @@ get_header(); ?>
                 </div>
             </section>
 
-            <!-- Main Contact Section - Two Columns -->
             <section class="contact-main-section">
                 <div class="contact-two-columns">
-                    
-                    <!-- Left Column - Contact Information -->
+
                     <div class="contact-info-column">
                         <div class="contact-methods-title">
                             <h2>Escolha seu canal favorito</h2>
@@ -78,7 +75,6 @@ get_header(); ?>
                         </div>
                     </div>
 
-                    <!-- Right Column - Contact Form -->
                     <div class="contact-form-column">
                         <div class="contact-form-title">
                             <h2>Envie sua mensagem</h2>
@@ -141,8 +137,7 @@ get_header(); ?>
                     
                             <form action="https://formspree.io/f/xovlkqqz" method="post" class="contact-form-modern" novalidate>
                                 <?php wp_nonce_field('contact_form_action', 'contact_form_nonce'); ?>
-                                
-                                <!-- Hidden fields for Formspree -->
+
                                 <input type="hidden" name="_subject" value="Novo contato do site Zen Secrets">
                                 <input type="hidden" name="_next" value="<?php echo home_url('/fale-conosco?success=1'); ?>">
                                 

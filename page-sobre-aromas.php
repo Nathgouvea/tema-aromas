@@ -12,8 +12,7 @@ get_header(); ?>
 <div class="luxury-container">
     <main id="main" class="site-main">
         <article id="page-sobre-aromas" class="page-content luxury-page">
-            
-            <!-- Simple Page Header -->
+
             <section class="page-header-section luxury-section">
                 <div class="container">
                     <div class="page-header-content text-center animate-fade-in-up">
@@ -25,7 +24,6 @@ get_header(); ?>
                 </div>
             </section>
 
-            <!-- Fragrance Selection Pills -->
             <section class="fragrance-pills-section">
                 <div class="fragrance-pills-container">
                     <button class="fragrance-pill active" data-fragrance="flor-de-figo">Flor de Figo</button>
@@ -36,11 +34,9 @@ get_header(); ?>
                 </div>
             </section>
 
-            <!-- Fragrance Accordion Section -->
             <section class="fragrance-accordion-section">
                 <div class="fragrance-accordion-container">
-                    
-                    <!-- Flor de Figo -->
+
                     <div class="fragrance-accordion-item active" id="flor-de-figo">
                         <button class="fragrance-accordion-header" aria-expanded="true" aria-controls="flor-de-figo-content">
                             <h2>Flor de Figo</h2>
@@ -77,8 +73,7 @@ get_header(); ?>
                             </div>
                         </div>
                 </div>
-                
-                    <!-- Chá Branco -->
+
                     <div class="fragrance-accordion-item" id="cha-branco">
                         <button class="fragrance-accordion-header" aria-expanded="false" aria-controls="cha-branco-content">
                             <h2>Chá Branco</h2>
@@ -115,8 +110,7 @@ get_header(); ?>
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Bamboo -->
+
                     <div class="fragrance-accordion-item" id="bamboo">
                         <button class="fragrance-accordion-header" aria-expanded="false" aria-controls="bamboo-content">
                             <h2>Bamboo</h2>
@@ -149,8 +143,7 @@ get_header(); ?>
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Marinho -->
+
                     <div class="fragrance-accordion-item" id="marinho">
                         <button class="fragrance-accordion-header" aria-expanded="false" aria-controls="marinho-content">
                             <h2>Marinho</h2>
@@ -187,8 +180,7 @@ get_header(); ?>
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Palo Santo -->
+
                     <div class="fragrance-accordion-item" id="palo-santo">
                         <button class="fragrance-accordion-header" aria-expanded="false" aria-controls="palo-santo-content">
                             <h2>Palo Santo</h2>
@@ -220,7 +212,6 @@ get_header(); ?>
                 </div>
             </section>
 
-            <!-- Call to Action -->
             <section class="content-section cta-section">
                 <div class="cta-content">
                     <h2 class="luxury-heading cta-title">

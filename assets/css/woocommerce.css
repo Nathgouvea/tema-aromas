@@ -14,19 +14,16 @@
   padding: 0 var(--espacamento-md);
 }
 
-/* WooCommerce Container */
 .woocommerce .luxury-container {
   padding: var(--espacamento-xl) 0;
 }
 
-/* Hide sidebar on single product pages */
 .single-product .sidebar,
 .single-product #secondary,
 .single-product aside.widget-area {
   display: none !important;
 }
 
-/* Remove any top borders on single product pages */
 .single-product #main,
 .single-product .site-main,
 .single-product main,
@@ -36,7 +33,6 @@ body.single-product {
   border-top: none !important;
 }
 
-/* Remove luxury-card hover effect on single product pages */
 .single-product .luxury-card::before,
 .single-product .luxury-card:hover::before {
   display: none !important;
@@ -47,13 +43,11 @@ body.single-product {
   box-shadow: none !important;
 }
 
-/* Optimal spacing for archive pages */
 .woocommerce .page-header-section {
   padding: var(--espacamento-md) 0 var(--espacamento-sm) !important;
   margin-top: 0 !important;
 }
 
-/* Category Subtitle Styling */
 .category-subtitle {
   font-size: 1rem;
   line-height: 1.6;

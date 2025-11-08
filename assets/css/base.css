@@ -4,22 +4,16 @@
  * Version: 1.0.0
  */
 
-/* ==========================================================================
-   Luxury Typography System
-   ========================================================================== */
-
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap");
 
-/* Compensate for fixed header */
 body {
-  padding-top: 0; /* No padding needed */
+  padding-top: 0;
 }
 
 body.home {
-  padding-top: 0; /* No padding on homepage since hero goes behind header */
+  padding-top: 0;
 }
 
-/* Global Link Styles - Remove all text decoration */
 a:where(:not(.wp-element-button)) {
   color: var(--cor-primaria);
   text-decoration: none;
@@ -33,7 +27,6 @@ a:where(:not(.wp-element-button)):visited {
   text-decoration: none;
 }
 
-/* Typography improvements */
 .luxury-heading {
   font-family: var(--fonte-titulo);
   font-weight: 600;
@@ -60,10 +53,6 @@ a:where(:not(.wp-element-button)):visited {
   text-transform: uppercase;
 }
 
-/* ==========================================================================
-   Layout System - Luxury Grid
-   ========================================================================== */
-
 .luxury-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -82,18 +71,12 @@ a:where(:not(.wp-element-button)):visited {
   }
 }
 
-/* ==========================================================================
-   MANDATORY: Responsive Product Grid System (4-3-2)
-   ========================================================================== */
-
-/* CRITICAL: Use this grid system for ALL product displays - COMPACT VERSION */
 .products-grid {
   display: grid;
   gap: var(--espacamento-md);
   padding: var(--espacamento-md);
 }
 
-/* Mobile: 2 products per row */
 @media (max-width: 767px) {
   .products-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -101,7 +84,6 @@ a:where(:not(.wp-element-button)):visited {
   }
 }
 
-/* Tablet: 3 products per row */
 @media (min-width: 768px) and (max-width: 1023px) {
   .products-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -109,7 +91,6 @@ a:where(:not(.wp-element-button)):visited {
   }
 }
 
-/* Desktop: 4 products per row - COMPACT */
 @media (min-width: 1024px) {
   .products-grid {
     grid-template-columns: repeat(4, 1fr);
@@ -117,7 +98,6 @@ a:where(:not(.wp-element-button)):visited {
   }
 }
 
-/* Large Desktop: 4 products per row with more spacing */
 @media (min-width: 1200px) {
   .products-grid {
     grid-template-columns: repeat(4, 1fr);
@@ -125,7 +105,6 @@ a:where(:not(.wp-element-button)):visited {
   }
 }
 
-/* Legacy Grid System - Keep for non-product content */
 .luxury-grid {
   display: grid;
   gap: var(--espacamento-lg);

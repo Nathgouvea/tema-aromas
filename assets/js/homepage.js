@@ -15,8 +15,6 @@
     initCounters();
     initParallaxEffect();
     initTrustIndicatorSlider();
-
-    console.log("🏠 Homepage functionality initialized");
   }
 
   /**
@@ -51,8 +49,6 @@
       }s, transform 0.6s ease ${index * 0.1}s`;
       observer.observe(element);
     });
-
-    console.log("✨ Scroll animations initialized");
   }
 
   /**
@@ -123,8 +119,6 @@
         });
       }
     });
-
-    console.log("🌊 Parallax effect initialized");
   }
 
   /**
@@ -205,8 +199,6 @@
 
     // Initialize active dot and arrow states
     updateActiveDot();
-
-    console.log("📱 Trust indicator slider initialized");
   }
 
   /**

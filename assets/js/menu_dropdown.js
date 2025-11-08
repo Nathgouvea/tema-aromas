@@ -21,7 +21,6 @@
     );
 
     if (dropdownToggles.length === 0) {
-      console.warn("No dropdown toggles found");
       return;
     }
 
@@ -37,8 +36,6 @@
 
     // Handle window resize to close dropdowns
     window.addEventListener("resize", debounce(closeAllDropdowns, 250));
-
-    console.log("✅ Dropdown menu initialized -", dropdownToggles.length, "dropdowns found");
   }
 
   /**
@@ -65,7 +62,6 @@
     }
 
     if (!dropdown || !dropdown.classList.contains("dropdown-menu")) {
-      console.warn("No dropdown menu found for toggle:", toggle);
       return;
     }
 
@@ -79,7 +75,6 @@
       toggle.parentElement;
 
     if (!dropdownContainer) {
-      console.warn("No dropdown container found for:", toggle);
       return;
     }
 
@@ -234,8 +229,6 @@
 
     // Track active dropdown
     activeDropdown = dropdown;
-
-    console.log("🔽 Dropdown opened:", dropdown.id);
   }
 
   /**
@@ -254,8 +247,6 @@
     if (activeDropdown === dropdown) {
       activeDropdown = null;
     }
-
-    console.log("🔼 Dropdown closed:", dropdown.id);
   }
 
   /**

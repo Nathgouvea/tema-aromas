@@ -18,21 +18,11 @@
     const siteNavigation = document.querySelector('#site-navigation');
     const menuCloseButton = document.querySelector('.menu-close-button');
 
-    console.log('🔍 Menu elements found:', {
-      menuToggle: !!menuToggle,
-      primaryMenuContainer: !!primaryMenuContainer,
-      siteNavigation: !!siteNavigation,
-      mobileMenuOverlay: !!mobileMenuOverlay,
-      menuCloseButton: !!menuCloseButton
-    });
-
     if (!menuToggle) {
-      console.warn('⚠️ Menu toggle button not found');
       return;
     }
 
     if (!primaryMenuContainer && !siteNavigation) {
-      console.warn('⚠️ No menu container found');
       return;
     }
 
@@ -82,8 +72,6 @@
 
     // Handle window resize
     window.addEventListener('resize', debounce(handleResize, 250));
-
-    console.log('📱 Mobile menu initialized');
   }
 
   function toggleMenu(e) {
@@ -135,7 +123,6 @@
       // This ensures dropdown elements are in DOM and can receive events
       setTimeout(() => {
         initMobileSubMenus();
-        console.log('🔄 Dropdowns reinitialized after menu open');
       }, 350);
 
       // Announce to screen readers
@@ -189,26 +176,20 @@
   function initMobileSubMenus() {
     const dropdownToggles = document.querySelectorAll('.menu-item-has-children > a');
 
-    console.log('📋 Found dropdown toggles:', dropdownToggles.length);
-
     dropdownToggles.forEach(toggle => {
       // Skip if already initialized to prevent duplicate event listeners
       if (toggle.dataset.dropdownInitialized === 'true') {
         return;
       }
 
-      console.log('Setting up dropdown for:', toggle.textContent.trim());
-
       // Make the menu link itself handle the dropdown on mobile
       toggle.addEventListener('click', function(e) {
-        console.log('🖱️ Click on:', this.textContent.trim());
         e.preventDefault();
         e.stopPropagation();
         toggleSubMenu(this);
       });
 
       toggle.addEventListener('touchstart', function(e) {
-        console.log('👆 Touch on:', this.textContent.trim());
         e.stopPropagation();
       }, { passive: true });
 
@@ -222,7 +203,6 @@
     const subMenu = parentItem.querySelector('.dropdown-menu, .sub-menu');
 
     if (!subMenu) {
-      console.log('No submenu found for:', link);
       return;
     }
 

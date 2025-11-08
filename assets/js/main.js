@@ -26,8 +26,6 @@
    * Initialize all theme functionality
    */
   function initializeTheme() {
-    console.log("🌸 Tema Aromas - Inicializando tema luxuoso...");
-
     // Initialize components
     initSmoothScrolling();
     // initLazyLoading(); // Disabled - was causing images not to load on first visit
@@ -39,7 +37,6 @@
 
     // Dispatch theme ready event
     document.dispatchEvent(new CustomEvent("themeReady"));
-    console.log("✨ Tema Aromas - Tema inicializado com sucesso!");
   }
 
   /**
@@ -360,28 +357,6 @@
   };
 
   /**
-   * Performance monitoring
-   */
-  function initPerformanceMonitoring() {
-    if ("performance" in window) {
-      window.addEventListener("load", () => {
-        setTimeout(() => {
-          const perf = performance.getEntriesByType("navigation")[0];
-          console.log("📊 Performance metrics:", {
-            "DOM Content Loaded": Math.round(
-              perf.domContentLoadedEventEnd - perf.domContentLoadedEventStart
-            ),
-            "Load Complete": Math.round(
-              perf.loadEventEnd - perf.loadEventStart
-            ),
-            "Total Load Time": Math.round(perf.loadEventEnd - perf.fetchStart),
-          });
-        }, 0);
-      });
-    }
-  }
-
-  /**
    * Initialize automatic copyright year update
    */
   function initCopyrightYear() {
@@ -390,16 +365,7 @@
     if (copyrightYearElement) {
       const currentYear = new Date().getFullYear();
       copyrightYearElement.textContent = currentYear;
-      console.log(`📅 Copyright year updated to: ${currentYear}`);
     }
-  }
-
-  // Initialize performance monitoring in development
-  if (
-    window.location.hostname === "localhost" ||
-    window.location.hostname === "127.0.0.1"
-  ) {
-    initPerformanceMonitoring();
   }
 
   // Start initialization

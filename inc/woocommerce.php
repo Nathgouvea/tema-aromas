@@ -338,7 +338,7 @@ add_action('woocommerce_email_enqueue_styles', 'tema_aromas_woocommerce_email_st
 function tema_aromas_woocommerce_email_header($email_heading, $email) {
     ?>
     <div class="email-header">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-zen.svg" alt="<?php echo get_bloginfo('name'); ?>" class="email-logo">
+        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/logo-zen.svg" alt="<?php echo esc_attr(get_bloginfo('name')); ?>" class="email-logo">
         <h1><?php echo esc_html($email_heading); ?></h1>
         <p><?php echo esc_html__('Obrigado por escolher Zen Secrets!', 'tema_aromas'); ?></p>
     </div>
@@ -387,14 +387,14 @@ function tema_aromas_woocommerce_email_footer() {
         </div>
         
         <div class="payment-methods">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/visa.png" alt="Visa">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/mastercard.png" alt="Mastercard">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/amex.png" alt="American Express">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/elo.png" alt="Elo">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/pix.png" alt="PIX">
+            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/visa.png" alt="Visa">
+            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/mastercard.png" alt="Mastercard">
+            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/amex.png" alt="American Express">
+            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/elo.png" alt="Elo">
+            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/pix.png" alt="PIX">
         </div>
-        
-        <p>&copy; <?php echo date('Y'); ?> <?php echo get_bloginfo('name'); ?>. <?php echo esc_html__('Todos os direitos reservados.', 'tema_aromas'); ?></p>
+
+        <p>&copy; <?php echo date('Y'); ?> <?php echo esc_html(get_bloginfo('name')); ?>. <?php echo esc_html__('Todos os direitos reservados.', 'tema_aromas'); ?></p>
     </div>
     <?php
 }
@@ -523,6 +523,12 @@ add_filter('woocommerce_account_menu_items', 'tema_aromas_remove_my_account_dash
  * @return void
  */
 function tema_aromas_update_cart_item_qty() {
+    // Verify nonce for security
+    if (!isset($_POST['nonce']) || !wp_verify_nonce($_POST['nonce'], 'tema_aromas_cart_nonce')) {
+        wp_send_json_error('Security check failed');
+        return;
+    }
+
     // Check if cart item key and quantity are provided
     if (!isset($_POST['cart_item_key']) || !isset($_POST['qty'])) {
         wp_send_json_error('Missing required parameters');

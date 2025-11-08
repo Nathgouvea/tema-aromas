@@ -64,8 +64,6 @@
         }
       });
     });
-
-    console.log("🔧 FAQ functionality initialized");
   }
 
   /**
@@ -140,7 +138,6 @@
       }
     });
 
-    console.log("📝 Contact form enhancements initialized");
   }
 
   /**
@@ -223,7 +220,6 @@
       observer.observe(element);
     });
 
-    console.log("✨ Scroll animations initialized");
   }
 
   /**

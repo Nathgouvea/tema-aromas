@@ -4,13 +4,7 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
-    <title><?php wp_title('|', true, 'right'); ?>Zen Secrets – Perfumaria de Ambientes</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Simonetta:ital,wght@0,400;0,900;1,400;1,900&display=swap" rel="stylesheet">
-    
+
     <?php wp_head(); ?>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -150,7 +144,7 @@
                                 <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
                             </svg>
                             <?php $cart_count = WC()->cart->get_cart_contents_count(); ?>
-                            <span class="cart-count" <?php echo $cart_count > 0 ? '' : 'style="display: none;"'; ?>>
+                            <span class="cart-count" <?php echo $cart_count > 0 ? '' : 'style="display:none;"'; ?>>
                                 <?php echo esc_html($cart_count); ?>
                             </span>
                             <span class="sr-only"><?php esc_html_e('Carrinho', 'tema_aromas'); ?></span>
@@ -172,7 +166,7 @@
                                    id="woocommerce-product-search-field"
                                    class="search-field luxury-form-input"
                                    placeholder="<?php esc_attr_e('Buscar produtos...', 'tema_aromas'); ?>"
-                                   value="<?php echo get_search_query(); ?>"
+                                   value="<?php echo esc_attr(get_search_query()); ?>"
                                    name="s" />
                             <input type="hidden" name="post_type" value="product" />
                             <button type="submit" class="search-submit btn-luxury" aria-label="<?php esc_attr_e('Buscar', 'tema_aromas'); ?>">

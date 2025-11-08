@@ -88,7 +88,7 @@ get_header(); ?>
                         <div class="contact-form-container-modern">
                     <?php
                     // Check for Formspree success
-                    if (isset($_GET['success']) && $_GET['success'] == '1') {
+                    if (isset($_GET['success']) && '1' === sanitize_text_field($_GET['success'])) {
                         echo '<div class="contact-success"><p>Mensagem enviada com sucesso! Entraremos em contato em breve.</p></div>';
                     }
                     

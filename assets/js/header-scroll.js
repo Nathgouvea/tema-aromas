@@ -20,20 +20,16 @@
 
       if (scrollPosition > scrollThreshold) {
         header.classList.add("scrolled");
-        console.log("Header scrolled - added scrolled class");
       } else {
         header.classList.remove("scrolled");
-        console.log("Header not scrolled - removed scrolled class");
       }
 
       // Update body class for homepage scroll state
       if (isHomepage) {
         if (scrollPosition > scrollThreshold) {
           body.classList.add("homepage-scrolled");
-          console.log("Homepage scrolled - added homepage-scrolled class");
         } else {
           body.classList.remove("homepage-scrolled");
-          console.log("Homepage not scrolled - removed homepage-scrolled class");
         }
       }
     }

@@ -243,6 +243,16 @@ function tema_aromas_scripts() {
             true
         );
 
+        // Localize script for AJAX and nonce
+        wp_localize_script(
+            'tema-aromas-minicart',
+            'temaAromas',
+            [
+                'ajaxurl' => admin_url('admin-ajax.php'),
+                'nonce'   => wp_create_nonce('tema_aromas_cart_nonce')
+            ]
+        );
+
         // Product Accordion JavaScript (single product page)
         if (is_product()) {
             wp_enqueue_script(
@@ -570,4 +580,553 @@ add_action('after_setup_theme', 'tema_aromas_move_product_tabs');
 add_filter('woocommerce_output_related_products_args', function($args) {
     $args['columns'] = 4;
     return $args;
+});
+
+/**
+ * ===========================================================================
+ * Apple-Style WooCommerce Email Customization
+ * ===========================================================================
+ *
+ * Applies clean, minimal Apple design to all WooCommerce transactional emails
+ * - Typography: SF Pro Display inspired fonts
+ * - Colors: Brand purple (#6b4fc4) with subtle gradients
+ * - Layout: Spacious, clean, and mobile-responsive
+ * - Elements: Rounded corners, soft shadows, modern buttons
+ */
+
+/**
+ * Add custom CSS to WooCommerce emails
+ * Using multiple hooks to ensure styles are applied
+ */
+function tema_aromas_email_styles() {
+    ?>
+    <style type="text/css">
+        /* Apple-Style Email Base Reset */
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+            background-color: #f5f5f7 !important;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+            -webkit-font-smoothing: antialiased !important;
+            -moz-osx-font-smoothing: grayscale !important;
+        }
+
+        /* Email Container - Clean White Card */
+        #wrapper {
+            background-color: #f5f5f7 !important;
+            padding: 40px 20px !important;
+        }
+
+        #template_container {
+            background-color: #ffffff !important;
+            border: none !important;
+            border-radius: 16px !important;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08) !important;
+            max-width: 600px !important;
+            margin: 0 auto !important;
+            overflow: hidden !important;
+        }
+
+        /* Header - Apple Gradient Style */
+        #template_header {
+            background: linear-gradient(135deg, #6b4fc4 0%, #8b6fd9 100%) !important;
+            border: none !important;
+            padding: 40px 40px 32px !important;
+            text-align: center !important;
+            border-top-left-radius: 16px !important;
+            border-top-right-radius: 16px !important;
+        }
+
+        #template_header h1 {
+            color: #ffffff !important;
+            font-size: 28px !important;
+            font-weight: 600 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            letter-spacing: -0.015em !important;
+            line-height: 1.2 !important;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+        }
+
+        /* Body Content - Spacious Apple Layout */
+        #template_body {
+            background-color: #ffffff !important;
+            padding: 0 !important;
+        }
+
+        #body_content {
+            background-color: #ffffff !important;
+            padding: 40px !important;
+        }
+
+        #body_content_inner {
+            color: #1d1d1f !important;
+            font-size: 17px !important;
+            line-height: 1.5 !important;
+            text-align: left !important;
+        }
+
+        /* Typography - Apple Style */
+        h2 {
+            color: #1d1d1f !important;
+            font-size: 24px !important;
+            font-weight: 600 !important;
+            margin: 32px 0 16px !important;
+            letter-spacing: -0.015em !important;
+            line-height: 1.2 !important;
+        }
+
+        h3 {
+            color: #1d1d1f !important;
+            font-size: 20px !important;
+            font-weight: 600 !important;
+            margin: 24px 0 12px !important;
+            letter-spacing: -0.01em !important;
+        }
+
+        p {
+            color: #555555 !important;
+            font-size: 17px !important;
+            line-height: 1.5 !important;
+            margin: 0 0 16px !important;
+        }
+
+        /* Links - Purple Brand Color */
+        a {
+            color: #6b4fc4 !important;
+            text-decoration: none !important;
+            font-weight: 500 !important;
+        }
+
+        a:hover {
+            text-decoration: underline !important;
+        }
+
+        /* Order Details Table - Clean Minimal */
+        table.td {
+            border: none !important;
+            width: 100% !important;
+            margin: 24px 0 !important;
+            border-collapse: separate !important;
+            border-spacing: 0 !important;
+        }
+
+        table.td th {
+            background-color: #f5f5f7 !important;
+            color: #1d1d1f !important;
+            font-size: 14px !important;
+            font-weight: 600 !important;
+            text-align: left !important;
+            padding: 16px !important;
+            border: none !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.05em !important;
+        }
+
+        table.td th:first-child {
+            border-top-left-radius: 8px !important;
+        }
+
+        table.td th:last-child {
+            border-top-right-radius: 8px !important;
+        }
+
+        table.td td {
+            background-color: #ffffff !important;
+            color: #555555 !important;
+            font-size: 15px !important;
+            padding: 16px !important;
+            border-bottom: 1px solid #f0f0f0 !important;
+            vertical-align: top !important;
+        }
+
+        table.td tr:last-child td {
+            border-bottom: none !important;
+        }
+
+        table.td tr:last-child td:first-child {
+            border-bottom-left-radius: 8px !important;
+        }
+
+        table.td tr:last-child td:last-child {
+            border-bottom-right-radius: 8px !important;
+        }
+
+        /* Order Total - Highlighted */
+        .order-total {
+            background-color: #f5f5f7 !important;
+            padding: 20px !important;
+            border-radius: 12px !important;
+            margin: 24px 0 !important;
+        }
+
+        .order-total th,
+        .order-total td {
+            font-size: 20px !important;
+            font-weight: 600 !important;
+            color: #1d1d1f !important;
+            padding: 8px 0 !important;
+            border: none !important;
+        }
+
+        /* Addresses Box - Card Style */
+        .addresses {
+            display: table !important;
+            width: 100% !important;
+            margin: 24px 0 !important;
+        }
+
+        .address {
+            display: table-cell !important;
+            width: 50% !important;
+            padding: 24px !important;
+            background-color: #fafafa !important;
+            border-radius: 12px !important;
+            vertical-align: top !important;
+        }
+
+        .address:first-child {
+            padding-right: 12px !important;
+        }
+
+        .address:last-child {
+            padding-left: 12px !important;
+        }
+
+        .address h3 {
+            font-size: 14px !important;
+            font-weight: 600 !important;
+            color: #86868b !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.06em !important;
+            margin: 0 0 12px !important;
+        }
+
+        .address address {
+            font-style: normal !important;
+            font-size: 15px !important;
+            line-height: 1.6 !important;
+            color: #555555 !important;
+        }
+
+        /* Buttons - Apple Pill Style */
+        .btn,
+        a.button,
+        button.button,
+        input.button {
+            background: linear-gradient(135deg, #6b4fc4 0%, #8b6fd9 100%) !important;
+            color: #ffffff !important;
+            padding: 14px 32px !important;
+            border-radius: 980px !important;
+            font-size: 17px !important;
+            font-weight: 500 !important;
+            text-decoration: none !important;
+            display: inline-block !important;
+            border: none !important;
+            box-shadow: 0 4px 12px rgba(107, 79, 196, 0.25) !important;
+            letter-spacing: -0.01em !important;
+            margin: 16px 0 !important;
+        }
+
+        .btn:hover,
+        a.button:hover {
+            box-shadow: 0 6px 20px rgba(107, 79, 196, 0.35) !important;
+            transform: translateY(-1px) !important;
+        }
+
+        /* Footer - Subtle Apple Style */
+        #template_footer {
+            background-color: #ffffff !important;
+            border-top: 1px solid #f0f0f0 !important;
+            padding: 32px 40px !important;
+            text-align: center !important;
+            border-bottom-left-radius: 16px !important;
+            border-bottom-right-radius: 16px !important;
+        }
+
+        #template_footer #credit {
+            color: #86868b !important;
+            font-size: 14px !important;
+            line-height: 1.6 !important;
+            margin: 0 !important;
+            text-align: center !important;
+        }
+
+        #template_footer #credit a {
+            color: #6b4fc4 !important;
+            font-weight: 500 !important;
+        }
+
+        /* Product Images - Rounded */
+        img {
+            border-radius: 8px !important;
+            max-width: 100% !important;
+            height: auto !important;
+        }
+
+        /* Mobile Responsive */
+        @media only screen and (max-width: 600px) {
+            #wrapper {
+                padding: 20px 10px !important;
+            }
+
+            #template_container {
+                border-radius: 12px !important;
+            }
+
+            #template_header,
+            #body_content,
+            #template_footer {
+                padding: 24px 20px !important;
+            }
+
+            #template_header h1 {
+                font-size: 24px !important;
+            }
+
+            h2 {
+                font-size: 20px !important;
+            }
+
+            p,
+            #body_content_inner {
+                font-size: 15px !important;
+            }
+
+            table.td th,
+            table.td td {
+                padding: 12px 8px !important;
+                font-size: 14px !important;
+            }
+
+            .addresses {
+                display: block !important;
+            }
+
+            .address {
+                display: block !important;
+                width: 100% !important;
+                margin-bottom: 16px !important;
+                padding: 16px !important;
+            }
+
+            .address:first-child,
+            .address:last-child {
+                padding: 16px !important;
+            }
+
+            .btn,
+            a.button {
+                padding: 12px 24px !important;
+                font-size: 15px !important;
+            }
+        }
+
+        /* Dark Mode Support (for email clients that support it) */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #000000 !important;
+            }
+
+            #wrapper {
+                background-color: #000000 !important;
+            }
+
+            #template_container {
+                background-color: #1d1d1f !important;
+                box-shadow: 0 4px 24px rgba(255, 255, 255, 0.05) !important;
+            }
+
+            #body_content,
+            #body_content_inner {
+                background-color: #1d1d1f !important;
+            }
+
+            h2, h3 {
+                color: #f5f5f7 !important;
+            }
+
+            p,
+            table.td td,
+            .address address {
+                color: #a1a1a6 !important;
+            }
+
+            table.td th {
+                background-color: #2d2d2f !important;
+                color: #f5f5f7 !important;
+            }
+
+            table.td td {
+                background-color: #1d1d1f !important;
+                border-bottom-color: #2d2d2f !important;
+            }
+
+            .address {
+                background-color: #2d2d2f !important;
+            }
+
+            #template_footer {
+                background-color: #1d1d1f !important;
+                border-top-color: #2d2d2f !important;
+            }
+        }
+    </style>
+    <?php
+}
+add_action('woocommerce_email_header', 'tema_aromas_email_styles');
+
+/**
+ * Alternative method - Add styles via email header styles hook
+ */
+add_filter('woocommerce_email_styles', function($css, $email) {
+    $apple_styles = '
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+            background-color: #f5f5f7 !important;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+        }
+        #wrapper {
+            background-color: #f5f5f7 !important;
+            padding: 40px 20px !important;
+        }
+        #template_container {
+            background-color: #ffffff !important;
+            border: none !important;
+            border-radius: 16px !important;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08) !important;
+            max-width: 600px !important;
+        }
+        #template_header {
+            background: linear-gradient(135deg, #6b4fc4 0%, #8b6fd9 100%) !important;
+            border: none !important;
+            padding: 40px !important;
+            text-align: center !important;
+            border-radius: 16px 16px 0 0 !important;
+        }
+        #template_header h1 {
+            color: #ffffff !important;
+            font-size: 28px !important;
+            font-weight: 600 !important;
+            margin: 0 !important;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+        }
+        #body_content {
+            padding: 40px !important;
+            background-color: #ffffff !important;
+        }
+        h2 {
+            color: #1d1d1f !important;
+            font-size: 24px !important;
+            font-weight: 600 !important;
+        }
+        p {
+            color: #555555 !important;
+            font-size: 17px !important;
+            line-height: 1.5 !important;
+        }
+        a {
+            color: #6b4fc4 !important;
+            font-weight: 500 !important;
+        }
+        table.td th {
+            background-color: #f5f5f7 !important;
+            color: #1d1d1f !important;
+            font-weight: 600 !important;
+            padding: 16px !important;
+        }
+        table.td td {
+            padding: 16px !important;
+            border-bottom: 1px solid #f0f0f0 !important;
+        }
+        .button,
+        a.button {
+            background: linear-gradient(135deg, #6b4fc4 0%, #8b6fd9 100%) !important;
+            color: #ffffff !important;
+            padding: 14px 32px !important;
+            border-radius: 980px !important;
+            text-decoration: none !important;
+            box-shadow: 0 4px 12px rgba(107, 79, 196, 0.25) !important;
+        }
+        #template_footer {
+            background-color: #ffffff !important;
+            border-top: 1px solid #f0f0f0 !important;
+            padding: 32px 40px !important;
+            border-radius: 0 0 16px 16px !important;
+        }
+    ';
+
+    return $css . $apple_styles;
+}, 10, 2);
+
+/**
+ * Customize email "from" name
+ */
+add_filter('woocommerce_email_from_name', function($from_name) {
+    return 'Secrets Zen - Aromas';
+});
+
+/**
+ * Customize email "from" address
+ */
+add_filter('woocommerce_email_from_address', function($from_email) {
+    return TEMA_AROMAS_EMAIL;
+});
+
+/**
+ * Customize email footer text
+ */
+add_filter('woocommerce_email_footer_text', function($footer_text) {
+    return sprintf(
+        '&copy; %s Secrets Zen - Aromas | %s | %s',
+        date('Y'),
+        '<a href="' . TEMA_AROMAS_WHATSAPP_URL . '" style="color: #6b4fc4;">WhatsApp: ' . TEMA_AROMAS_WHATSAPP_DISPLAY . '</a>',
+        '<a href="' . TEMA_AROMAS_INSTAGRAM_URL . '" style="color: #6b4fc4;">Instagram: ' . TEMA_AROMAS_INSTAGRAM . '</a>'
+    );
+});
+
+/**
+ * Customize WooCommerce email settings (colors and styling options)
+ */
+add_filter('woocommerce_email_settings', function($settings) {
+    // Override default WooCommerce email colors
+    foreach ($settings as $key => $setting) {
+        // Base color (header background)
+        if (isset($setting['id']) && $setting['id'] === 'woocommerce_email_base_color') {
+            $settings[$key]['default'] = '#6b4fc4';
+        }
+        // Background color
+        if (isset($setting['id']) && $setting['id'] === 'woocommerce_email_background_color') {
+            $settings[$key]['default'] = '#f5f5f7';
+        }
+        // Body background color
+        if (isset($setting['id']) && $setting['id'] === 'woocommerce_email_body_background_color') {
+            $settings[$key]['default'] = '#ffffff';
+        }
+        // Body text color
+        if (isset($setting['id']) && $setting['id'] === 'woocommerce_email_text_color') {
+            $settings[$key]['default'] = '#555555';
+        }
+    }
+    return $settings;
+});
+
+/**
+ * Override WooCommerce email color options directly
+ */
+add_filter('option_woocommerce_email_base_color', function($value) {
+    return empty($value) ? '#6b4fc4' : $value;
+});
+
+add_filter('option_woocommerce_email_background_color', function($value) {
+    return empty($value) ? '#f5f5f7' : $value;
+});
+
+add_filter('option_woocommerce_email_body_background_color', function($value) {
+    return empty($value) ? '#ffffff' : $value;
+});
+
+add_filter('option_woocommerce_email_text_color', function($value) {
+    return empty($value) ? '#555555' : $value;
 });

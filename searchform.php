@@ -12,11 +12,11 @@
         <?php esc_html_e('Buscar por:', 'tema_aromas'); ?>
     </label>
     <div class="search-input-group">
-        <input type="search" 
+        <input type="search"
                id="search-field"
-               class="search-field luxury-form-input" 
-               placeholder="<?php esc_attr_e('Digite sua busca...', 'tema_aromas'); ?>" 
-               value="<?php echo get_search_query(); ?>" 
+               class="search-field luxury-form-input"
+               placeholder="<?php esc_attr_e('Digite sua busca...', 'tema_aromas'); ?>"
+               value="<?php echo esc_attr(get_search_query()); ?>"
                name="s" />
         <button type="submit" class="search-submit btn-luxury">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">

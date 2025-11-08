@@ -16,8 +16,6 @@
     initKeyboardNavigation();
     initARIAEnhancements();
     initScreenReaderSupport();
-
-    console.log("♿ Acessibilidade inicializada com sucesso");
   }
 
   /**

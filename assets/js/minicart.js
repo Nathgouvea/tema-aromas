@@ -24,8 +24,6 @@
     initCartEvents();
     initCartUpdates();
     initQuantityControls();
-
-    console.log("🛒 Mini cart inicializado");
   }
 
   /**
@@ -168,7 +166,6 @@
     );
 
     if (!cartDrawer) {
-      console.warn("Cart drawer not found");
       return;
     }
 
@@ -514,7 +511,7 @@
 
     // Re-initialize after WooCommerce updates the cart
     jQuery(document.body).on("wc_fragments_refreshed", function () {
-      console.log("🔄 Cart fragments refreshed - quantity controls reinitialized");
+      // Quantity controls reinitialized
     });
   }
 
@@ -523,7 +520,6 @@
    */
   function updateMiniCartQuantity(cartItemKey, quantity) {
     if (typeof jQuery === "undefined" || typeof wc_add_to_cart_params === "undefined") {
-      console.error("jQuery or WooCommerce not loaded");
       return;
     }
 

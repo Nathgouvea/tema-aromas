@@ -70,7 +70,9 @@ function tema_aromas_create_woocommerce_pages() {
                 }
 
                 // Log success
-                error_log("Tema Aromas: Created page '{$page_data['title']}' with ID {$page_id}");
+                if (defined('WP_DEBUG') && WP_DEBUG) {
+                    error_log("Tema Aromas: Created page '{$page_data['title']}' with ID {$page_id}");
+                }
             }
         }
     }
@@ -115,7 +117,9 @@ function tema_aromas_configure_woocommerce_settings() {
     update_option('woocommerce_thumbnail_cropping_custom_height', '5');
 
     // Log configuration
-    error_log("Tema Aromas: WooCommerce settings configured for Brazilian market");
+    if (defined('WP_DEBUG') && WP_DEBUG) {
+        error_log("Tema Aromas: WooCommerce settings configured for Brazilian market");
+    }
 }
 
 /**

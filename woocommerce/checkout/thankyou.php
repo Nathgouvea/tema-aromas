@@ -44,10 +44,7 @@ defined( 'ABSPATH' ) || exit;
     <div class="progress-line completed"></div>
     <div class="progress-step active">
         <div class="step-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M9 11l3 3L22 4"></path>
-                <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"></path>
-            </svg>
+            <span class="step-number">3</span>
         </div>
         <span class="step-label"><?php esc_html_e('Concluído', 'tema_aromas'); ?></span>
     </div>

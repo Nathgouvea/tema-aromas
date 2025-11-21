@@ -108,6 +108,51 @@ function tema_aromas_woocommerce_related_products_args($args) {
 add_filter('woocommerce_output_related_products_args', 'tema_aromas_woocommerce_related_products_args');
 
 /**
+ * Customize Add to Cart button text for product loops
+ *
+ * @param string $text Button text
+ * @param object $product Product object
+ * @return string Modified button text
+ */
+function tema_aromas_custom_add_to_cart_text($text, $product) {
+    // Check if product is out of stock
+    if (!$product->is_in_stock()) {
+        return __('Indisponível', 'tema_aromas');
+    }
+
+    // Check product type and availability
+    if ($product->is_type('simple')) {
+        if ($product->is_purchasable() && $product->is_in_stock()) {
+            $text = __('Comprar Agora', 'tema_aromas');
+        } else {
+            $text = __('Ver Detalhes', 'tema_aromas');
+        }
+    } elseif ($product->is_type('variable')) {
+        $text = __('Ver Opções', 'tema_aromas');
+    } elseif ($product->is_type('grouped')) {
+        $text = __('Ver Produtos', 'tema_aromas');
+    } elseif ($product->is_type('external')) {
+        $text = __('Comprar', 'tema_aromas');
+    } else {
+        $text = __('Comprar Agora', 'tema_aromas');
+    }
+
+    return $text;
+}
+add_filter('woocommerce_product_add_to_cart_text', 'tema_aromas_custom_add_to_cart_text', 10, 2);
+
+/**
+ * Prevent adding out of stock products to cart
+ */
+function tema_aromas_prevent_out_of_stock_add_to_cart($purchasable, $product) {
+    if (!$product->is_in_stock()) {
+        return false;
+    }
+    return $purchasable;
+}
+add_filter('woocommerce_is_purchasable', 'tema_aromas_prevent_out_of_stock_add_to_cart', 10, 2);
+
+/**
  * Remove default WooCommerce wrapper.
  */
 remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
@@ -366,7 +411,14 @@ function tema_aromas_woocommerce_email_footer() {
                     <p><?php echo esc_html__('Cartão, Pix e Boleto', 'tema_aromas'); ?></p>
                 </div>
                 <div class="trust-item">
-                    <div class="trust-icon">🌿</div>
+                    <div class="trust-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 6V12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M12 16V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M8 8C8 8 9 10 12 10C15 10 16 8 16 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
                     <h4><?php echo esc_html__('100% Natural', 'tema_aromas'); ?></h4>
                     <p><?php echo esc_html__('Ingredientes naturais', 'tema_aromas'); ?></p>
                 </div>

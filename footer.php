@@ -124,9 +124,7 @@
                     <p class="footer-text">
                         <?php echo wp_kses_post(get_theme_mod('footer_text', __('© <span id="copyright-year">2025</span> Tema Aromas. Todos os direitos reservados.', 'tema_aromas'))); ?>
                         <span class="footer-divider">|</span>
-                        <?php esc_html_e('Desenvolvido com', 'tema_aromas'); ?>
-                        <span class="heart-spin" aria-label="amor">❤️</span>
-                        <?php esc_html_e('por', 'tema_aromas'); ?>
+                        <?php esc_html_e('Desenvolvido com amor por', 'tema_aromas'); ?>
                         <a href="https://pickypixels.studio" target="_blank" rel="noopener noreferrer" class="developer-link">Picky Pixels Studio</a>
                     </p>
                 </div>

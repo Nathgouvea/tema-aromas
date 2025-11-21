@@ -164,7 +164,7 @@ get_header(); ?>
                     </div>
 
                     <div class="faq-category">
-                        <h2 class="faq-category-title">🌸 Produtos e Aromas</h2>
+                        <h2 class="faq-category-title">Produtos e Aromas</h2>
                         <div class="faq-questions">
                             <div class="faq-item">
                                 <button class="faq-question" aria-expanded="false">
@@ -262,7 +262,7 @@ get_header(); ?>
                     </div>
 
                     <div class="faq-category">
-                        <h2 class="faq-category-title">🎁 Presentes e Personalizações</h2>
+                        <h2 class="faq-category-title">Presentes e Personalizações</h2>
                         <div class="faq-questions">
                             <div class="faq-item">
                                 <button class="faq-question" aria-expanded="false">

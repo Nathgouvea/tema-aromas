@@ -913,6 +913,60 @@ body.single-product {
   text-decoration: none !important;
 }
 
+/* Out of Stock Products - Disabled State */
+.woocommerce ul.products li.product.outofstock {
+  opacity: 0.65;
+  position: relative;
+}
+
+.woocommerce ul.products li.product.outofstock::after {
+  content: "Esgotado";
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  z-index: 2;
+  letter-spacing: 0.5px;
+}
+
+.woocommerce ul.products li.product.outofstock .button,
+.woocommerce ul.products li.product.outofstock .add_to_cart_button {
+  background: var(--cor-primaria) !important;
+  color: transparent !important;
+  border: none !important;
+  border-radius: 100px !important;
+  padding: 10px 20px !important;
+  font-weight: 600 !important;
+  font-size: 0 !important;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+  opacity: 0.5 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: auto !important;
+  margin: 0 auto !important;
+}
+
+.woocommerce ul.products li.product.outofstock .button:hover,
+.woocommerce ul.products li.product.outofstock .add_to_cart_button:hover {
+  opacity: 0.5 !important;
+}
+
+.woocommerce ul.products li.product.outofstock .button::after,
+.woocommerce ul.products li.product.outofstock .add_to_cart_button::after {
+  content: "Indisponível" !important;
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+  color: white !important;
+  display: inline-block !important;
+}
+
 /* Remove WooCommerce default button ::before (if exists) */
 .woocommerce ul.products li.product .button::before {
   display: none !important;

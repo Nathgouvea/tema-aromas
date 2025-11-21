@@ -5,6 +5,18 @@
  */
 
 /* ==========================================================================
+   Clash Display Font
+   ========================================================================== */
+
+@font-face {
+  font-family: "Clash Display";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../clash-display-font-1763524873-0/ClashDisplay-Semibold.otf") format("opentype");
+}
+
+/* ==========================================================================
    CSS Variables - Required for Homepage Components
    ========================================================================== */
 
@@ -27,7 +39,7 @@
   --fonte-principal: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   --fonte-titulo: "Playfair Display", Georgia, serif;
   --fonte-menu: "Quicksand", sans-serif;
-  --fonte-hero: "Simonetta", serif;
+  --fonte-hero: "Clash Display", sans-serif;
 
   /* Transitions */
   --transicao-suave: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -119,7 +131,7 @@
 .hero-content-left {
   position: relative;
   z-index: 3;
-  max-width: 800px;
+  max-width: 1000px;
   padding: var(--espacamento-xxl) 0;
   margin-top: 0; /* Ensure content starts at proper position */
   text-align: center; /* Center the text content */

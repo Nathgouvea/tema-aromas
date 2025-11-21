@@ -268,37 +268,78 @@
                                     <ul id="comprar-dropdown" class="sub-menu dropdown-menu">
                                         <li class="menu-item">
                                             <a href="<?php echo esc_url(get_term_link('aromatizadores', 'product_cat')); ?>" class="menu-link">
-                                                <span class="category-icon">🌸</span>
+                                                <span class="category-icon">
+                                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M12 2C12 2 7 6 7 11C7 13.7614 9.23858 16 12 16C14.7614 16 17 13.7614 17 11C17 6 12 2 12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        <path d="M12 16V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        <path d="M8 19H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg>
+                                                </span>
                                                 <?php esc_html_e('AROMATIZADORES', 'tema_aromas'); ?>
                                             </a>
                                         </li>
                                         <li class="menu-item">
                                             <a href="<?php echo esc_url(get_term_link('home-spray', 'product_cat')); ?>" class="menu-link">
-                                                <span class="category-icon">💨</span>
+                                                <span class="category-icon">
+                                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                                        <path d="M10 3H14V7H10V3Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        <circle cx="12" cy="5" r="1" fill="currentColor"/>
+                                                        <path d="M12 12V21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                                        <path d="M8 17L16 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                                    </svg>
+                                                </span>
                                                 <?php esc_html_e('HOME SPRAY', 'tema_aromas'); ?>
                                             </a>
                                         </li>
                                         <li class="menu-item">
                                             <a href="<?php echo esc_url(get_term_link('velas-aromaticas', 'product_cat')); ?>" class="menu-link">
-                                                <span class="category-icon">🕯️</span>
+                                                <span class="category-icon">
+                                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M12 2V7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                                        <path d="M10 7C10 5.89543 10.8954 5 12 5C13.1046 5 14 5.89543 14 7C14 8.10457 13.1046 9 12 9C10.8954 9 10 8.10457 10 7Z" stroke="currentColor" stroke-width="2"/>
+                                                        <rect x="8" y="9" width="8" height="11" rx="1" stroke="currentColor" stroke-width="2"/>
+                                                        <path d="M8 20H16V21C16 21.5523 15.5523 22 15 22H9C8.44772 22 8 21.5523 8 21V20Z" fill="currentColor"/>
+                                                    </svg>
+                                                </span>
                                                 <?php esc_html_e('VELAS AROMÁTICAS', 'tema_aromas'); ?>
                                             </a>
                                         </li>
                                         <li class="menu-item">
                                             <a href="<?php echo esc_url(get_term_link('kits-especiais', 'product_cat')); ?>" class="menu-link">
-                                                <span class="category-icon">🎁</span>
+                                                <span class="category-icon">
+                                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <rect x="3" y="8" width="18" height="12" rx="2" stroke="currentColor" stroke-width="2"/>
+                                                        <path d="M7 8V6C7 4.89543 7.89543 4 9 4H15C16.1046 4 17 4.89543 17 6V8" stroke="currentColor" stroke-width="2"/>
+                                                        <path d="M12 8V20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                                        <path d="M3 14H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                                    </svg>
+                                                </span>
                                                 <?php esc_html_e('KITS ESPECIAIS', 'tema_aromas'); ?>
                                             </a>
                                         </li>
                                         <li class="menu-item">
                                             <a href="<?php echo esc_url(get_term_link('lembrancinhas', 'product_cat')); ?>" class="menu-link">
-                                                <span class="category-icon">💝</span>
+                                                <span class="category-icon">
+                                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M20 12V22H4V12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        <path d="M22 7H2V12H22V7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        <path d="M12 22V7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                                        <path d="M12 7C10.5 7 10.5 5 9 5C7.5 5 7.5 7 6 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                                        <path d="M12 7C13.5 7 13.5 5 15 5C16.5 5 16.5 7 18 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                                    </svg>
+                                                </span>
                                                 <?php esc_html_e('LEMBRANCINHAS', 'tema_aromas'); ?>
                                             </a>
                                         </li>
                                         <li class="menu-item">
                                             <a href="<?php echo esc_url(get_term_link('acessorios', 'product_cat')); ?>" class="menu-link">
-                                                <span class="category-icon">✨</span>
+                                                <span class="category-icon">
+                                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+                                                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    </svg>
+                                                </span>
                                                 <?php esc_html_e('ACESSÓRIOS', 'tema_aromas'); ?>
                                             </a>
                                         </li>

@@ -1717,6 +1717,11 @@
   color: #666;
 }
 
+.trust-icon-horizontal svg {
+  width: 20px;
+  height: 20px;
+}
+
 .trust-content-horizontal h3 {
   font-size: 0.9rem;
   font-weight: 500;
@@ -1842,6 +1847,11 @@
   .trust-icon-horizontal {
     width: 35px;
     height: 35px;
+  }
+
+  .trust-icon-horizontal svg {
+    width: 22px;
+    height: 22px;
   }
 
   .trust-content-horizontal h3 {
@@ -2115,6 +2125,11 @@
   border-radius: 10px;
   color: var(--cor-primaria);
   box-shadow: none;
+}
+
+.trust-icon-horizontal svg {
+  width: 24px;
+  height: 24px;
 }
 
 .trust-content-horizontal h3 {

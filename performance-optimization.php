@@ -253,10 +253,11 @@ add_action('wp_footer', 'tema_aromas_add_performance_monitoring');
  * Optimize WooCommerce assets
  */
 function tema_aromas_optimize_woocommerce_assets() {
-    if (!is_woocommerce() && !is_cart() && !is_checkout() && !is_account_page()) {
+    if (!is_woocommerce() && !is_cart() && !is_checkout() && !is_account_page() && !is_front_page() && !is_search()) {
         // Dequeue WooCommerce scripts and styles on non-shop pages
         // FIXED: Commented out wc-cart-fragments to fix mini-cart counter
         // wp_dequeue_script('wc-cart-fragments'); // This breaks mini-cart updates
+        // FIXED: Added !is_front_page() and !is_search() to keep WooCommerce scripts on pages with product displays
         wp_dequeue_script('woocommerce');
         wp_dequeue_style('woocommerce-general');
         wp_dequeue_style('woocommerce-layout');

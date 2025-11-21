@@ -218,6 +218,16 @@ if (!function_exists('tema_aromas_woocommerce_cart_link_fragment')) {
         tema_aromas_woocommerce_cart_link();
         $fragments['a.cart-contents'] = ob_get_clean();
 
+        // Also update the cart count span in header
+        $cart_count = WC()->cart->get_cart_contents_count();
+        ob_start();
+        ?>
+        <span class="cart-count" <?php echo $cart_count > 0 ? '' : 'style="display:none;"'; ?>>
+            <?php echo esc_html($cart_count); ?>
+        </span>
+        <?php
+        $fragments['span.cart-count'] = ob_get_clean();
+
         return $fragments;
     }
 }

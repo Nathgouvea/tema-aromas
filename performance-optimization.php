@@ -226,9 +226,9 @@ add_action('init', 'tema_aromas_optimize_queries');
  * Add performance monitoring
  */
 function tema_aromas_add_performance_monitoring() {
-    if (current_user_can('manage_options') && isset($_GET['perf'])) {
+    if (current_user_can('manage_options') && isset($_GET['perf']) && defined('WP_DEBUG') && WP_DEBUG) {
         echo '<script>
-            // Performance monitoring
+            // Performance monitoring (development only)
             window.addEventListener("load", function() {
                 if (performance.timing) {
                     const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
@@ -236,7 +236,7 @@ function tema_aromas_add_performance_monitoring() {
                     console.log("Page Load Time: " + loadTime + "ms");
                     console.log("DOM Ready Time: " + domReady + "ms");
                 }
-                
+
                 if (performance.getEntriesByType) {
                     const paintEntries = performance.getEntriesByType("paint");
                     paintEntries.forEach(function(entry) {

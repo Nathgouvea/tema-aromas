@@ -385,17 +385,14 @@ get_header(); ?>
 // FAQ Accordion Functionality
 document.addEventListener('DOMContentLoaded', function() {
     const faqQuestions = document.querySelectorAll('.faq-question');
-    console.log('FAQ questions found:', faqQuestions.length);
-    
+
     faqQuestions.forEach(question => {
         question.addEventListener('click', function(e) {
             e.preventDefault();
-            console.log('FAQ clicked!');
             const faqItem = this.parentElement;
             const icon = this.querySelector('.faq-icon');
             const isExpanded = this.getAttribute('aria-expanded') === 'true';
-            console.log('isExpanded:', isExpanded);
-            
+
             // Close all other FAQ items
             faqQuestions.forEach(otherQuestion => {
                 if (otherQuestion !== this) {
@@ -404,15 +401,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     otherQuestion.querySelector('.faq-icon').textContent = '+';
                 }
             });
-            
+
             // Toggle current item
             if (isExpanded) {
-                console.log('Closing FAQ item');
                 this.setAttribute('aria-expanded', 'false');
                 faqItem.classList.remove('active');
                 icon.textContent = '+';
             } else {
-                console.log('Opening FAQ item');
                 this.setAttribute('aria-expanded', 'true');
                 faqItem.classList.add('active');
                 icon.textContent = '−';

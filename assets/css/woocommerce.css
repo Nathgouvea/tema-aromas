@@ -909,7 +909,8 @@ body.single-product {
 }
 
 .woocommerce ul.products li.product .button:hover {
-  opacity: 0.85;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 48px rgba(107, 79, 196, 0.4) !important;
   text-decoration: none !important;
 }
 
@@ -1368,7 +1369,8 @@ ul.products .blockUI::before {
 }
 
 .woocommerce div.product form.cart .single_add_to_cart_button:hover {
-  opacity: 0.85;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 48px rgba(107, 79, 196, 0.4);
 }
 
 /* Product Meta - Apple style */
@@ -1923,7 +1925,8 @@ section:has(> h2:contains("Best Quality Plants")) {
 .woocommerce-cart table.cart td.actions .coupon button:hover,
 .woocommerce-cart table.cart td.actions .coupon button[name="apply_coupon"]:hover,
 .woocommerce-cart table.cart td.actions .coupon .button:hover {
-  opacity: 0.85 !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 48px rgba(107, 79, 196, 0.4) !important;
 }
 
 /* Update cart button - Apple style */
@@ -2135,7 +2138,8 @@ section:has(> h2:contains("Best Quality Plants")) {
 .woocommerce-cart .cart_totals .wc-proceed-to-checkout button:hover,
 .woocommerce-cart .cart_totals .wc-proceed-to-checkout a.button:hover,
 .woocommerce-cart .cart_totals .wc-proceed-to-checkout .button:hover {
-  opacity: 0.85 !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 48px rgba(107, 79, 196, 0.4) !important;
 }
 
 /* Responsive adjustments - Apple style */
@@ -2630,7 +2634,8 @@ section:has(> h2:contains("Best Quality Plants")) {
 }
 
 .woocommerce-checkout #payment #place_order:hover {
-  opacity: 0.85;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 48px rgba(107, 79, 196, 0.4);
 }
 
 /* Terms and Conditions */

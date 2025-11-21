@@ -140,15 +140,6 @@ get_header(); ?>
                         <h2 class="aromas-main-title">
                             <?php esc_html_e('Mais que fragrâncias, criamos experiências sensoriais', 'tema_aromas'); ?>
                         </h2>
-                        <div class="aromas-title-decoration">
-                            <div class="decoration-line"></div>
-                            <div class="decoration-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </div>
-                            <div class="decoration-line"></div>
-                        </div>
                         <p class="aromas-description">
                             <?php esc_html_e('Nossos aromas são desenvolvidos cuidadosamente com ingredientes 100% premium, trazendo o melhor da alta perfumaria para transformar ambientes em experiências sensoriais únicas. Cada produto é criado para promover conexão, presença e relaxamento, despertando emoções e trazendo equilíbrio para sua rotina.', 'tema_aromas'); ?>
                         </p>

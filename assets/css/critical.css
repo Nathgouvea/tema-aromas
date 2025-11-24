@@ -69,12 +69,14 @@ body {
   min-height: 80px;
 }
 
-/* Critical navigation styles */
-.main-navigation {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  margin: 0 var(--espacamento-lg);
+/* Critical navigation styles - Desktop only */
+@media (min-width: 1024px) {
+  .main-navigation {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin: 0 var(--espacamento-lg);
+  }
 }
 
 .primary-menu {

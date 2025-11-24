@@ -901,28 +901,26 @@ body.admin-bar .mobile-menu-overlay {
   width: 100%;
 }
 
-/* Apple-style search input container */
+/* Apple-style search input container - Clean minimal design */
 .woocommerce-product-search {
   display: flex;
   align-items: center;
   gap: 0;
-  background: rgba(247, 247, 247, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  border-radius: 12px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
   padding: 0;
   transition: all 0.2s ease;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .woocommerce-product-search:hover {
-  background: rgba(242, 242, 242, 0.9);
-  border-color: rgba(0, 0, 0, 0.08);
+  background: transparent;
 }
 
 .woocommerce-product-search:focus-within {
-  background: var(--cor-fundo);
-  border-color: var(--cor-primaria);
-  box-shadow: 0 0 0 4px rgba(107, 79, 196, 0.08);
+  background: transparent;
+  box-shadow: none;
 }
 
 /* Apple-style search input */

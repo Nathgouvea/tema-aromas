@@ -3959,10 +3959,23 @@ body.woocommerce-cart nav.luxury-breadcrumb {
 .mini-cart-empty {
   text-align: center;
   padding: var(--espacamento-xxl) var(--espacamento-lg);
+  max-width: 400px;
+  width: 100%;
+}
+
+.woocommerce-mini-cart__empty-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espacamento-md);
+  font-size: 1.1rem;
+  color: var(--cor-texto);
+  margin-bottom: var(--espacamento-lg);
 }
 
 .empty-cart-icon {
-  margin-bottom: var(--espacamento-lg);
+  display: block;
+  margin: 0 auto var(--espacamento-md);
   color: var(--cor-borda);
 }
 

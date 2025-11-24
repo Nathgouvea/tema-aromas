@@ -1307,6 +1307,14 @@ body.mobile-menu-open .site-header .cart-count {
   padding: var(--espacamento-lg);
 }
 
+/* Center empty cart message vertically and horizontally */
+.mini-cart-content:has(.mini-cart-empty) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 /* ==========================================================================
    Responsive Design
    ========================================================================== */

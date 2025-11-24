@@ -6,7 +6,7 @@
  * Enhanced with luxury styling for Tema Aromas
  *
  * @package TemaAromas
- * @version 1.0.0
+ * @version 10.0.0
  */
 
 defined('ABSPATH') || exit;

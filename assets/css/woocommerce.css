@@ -3979,6 +3979,56 @@ body.woocommerce-cart nav.luxury-breadcrumb {
   color: var(--cor-borda);
 }
 
+/* Empty cart button styling */
+.mini-cart-empty .button,
+.mini-cart-empty .btn-luxury {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 32px;
+  background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-accent) 100%);
+  color: var(--cor-fundo) !important;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 32px rgba(107, 79, 196, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.mini-cart-empty .button::before,
+.mini-cart-empty .btn-luxury::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.5s;
+}
+
+.mini-cart-empty .button:hover::before,
+.mini-cart-empty .btn-luxury:hover::before {
+  left: 100%;
+}
+
+.mini-cart-empty .button:hover,
+.mini-cart-empty .btn-luxury:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 48px rgba(107, 79, 196, 0.4);
+  color: var(--cor-fundo) !important;
+}
+
 /* ==========================================================================
    My Account Page - Simple & Clean Design
    ========================================================================== */

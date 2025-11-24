@@ -77,28 +77,28 @@ body {
     justify-content: center;
     margin: 0 var(--espacamento-lg);
   }
-}
 
-.primary-menu {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: var(--espacamento-lg);
-  align-items: center;
-}
+  .primary-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: var(--espacamento-lg);
+    align-items: center;
+  }
 
-.menu-link {
-  color: var(--cor-texto);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1rem;
-  padding: var(--espacamento-sm);
-  transition: var(--transicao-rapida);
-}
+  .menu-link {
+    color: var(--cor-texto);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: var(--espacamento-sm);
+    transition: var(--transicao-rapida);
+  }
 
-.menu-link:hover {
-  color: var(--cor-primaria);
+  .menu-link:hover {
+    color: var(--cor-primaria);
+  }
 }
 
 /* Critical homepage hero styles */

@@ -1345,7 +1345,7 @@ select.modern-form-input {
 }
 
 .luxury-form-input {
-  padding: var(--espacamento-xs);
+  padding: var(--espacamento-md);
   border: 2px solid var(--cor-borda);
   border-radius: 100px;
   font-family: inherit;

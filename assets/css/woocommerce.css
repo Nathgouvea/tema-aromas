@@ -4022,13 +4022,6 @@ body.woocommerce-cart nav.luxury-breadcrumb {
   left: 100%;
 }
 
-.mini-cart-empty .button:hover,
-.mini-cart-empty .btn-luxury:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 48px rgba(107, 79, 196, 0.4);
-  color: var(--cor-fundo) !important;
-}
-
 /* ==========================================================================
    My Account Page - Simple & Clean Design
    ========================================================================== */

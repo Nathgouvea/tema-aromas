@@ -961,12 +961,6 @@ body.admin-bar .mobile-menu-overlay {
   flex-shrink: 0;
 }
 
-.search-submit:hover {
-  background: rgba(107, 79, 196, 0.08);
-  color: var(--cor-primaria);
-  transform: none;
-}
-
 .search-submit:active {
   background: rgba(107, 79, 196, 0.12);
   transform: scale(0.95);

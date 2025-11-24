@@ -2835,6 +2835,9 @@ section:has(> h2:contains("Best Quality Plants")) {
   color: var(--cor-primaria);
   min-width: 280px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Smooth Transitions for Form Elements */

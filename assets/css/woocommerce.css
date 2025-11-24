@@ -3604,24 +3604,6 @@ body.woocommerce-cart nav.luxury-breadcrumb {
    Mini Cart Luxury Styles
    ========================================================================== */
 
-.mini-cart-drawer {
-  position: fixed;
-  top: 0;
-  right: -500px;
-  width: 500px;
-  height: 100vh;
-  background: var(--cor-fundo);
-  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
-  z-index: 9999;
-  transition: right 0.3s ease;
-  display: flex;
-  flex-direction: column;
-}
-
-.mini-cart-drawer.open {
-  right: 0;
-}
-
 .mini-cart-header {
   padding: var(--espacamento-lg);
   border-bottom: 1px solid var(--cor-borda);

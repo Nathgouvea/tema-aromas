@@ -228,6 +228,11 @@ if (!function_exists('tema_aromas_woocommerce_cart_link_fragment')) {
         <?php
         $fragments['span.cart-count'] = ob_get_clean();
 
+        // Update mini-cart drawer content
+        ob_start();
+        woocommerce_mini_cart();
+        $fragments['div.mini-cart-content'] = ob_get_clean();
+
         return $fragments;
     }
 }

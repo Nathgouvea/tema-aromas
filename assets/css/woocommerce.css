@@ -2672,69 +2672,68 @@ section:has(> h2:contains("Best Quality Plants")) {
    Shipping Options - Visual Cards
    ========================================================================== */
 
-/* Shipping methods in checkout - Apple style */
+/* Shipping methods in checkout - Plain style */
 .woocommerce-checkout #shipping_method {
   list-style: none;
   padding: 0;
-  margin: var(--espacamento-md) 0;
+  margin: 0;
 }
 
 .woocommerce-checkout #shipping_method li {
-  background: white;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 8px;
-  padding: var(--espacamento-md);
-  margin-bottom: var(--espacamento-sm);
-  transition: all 0.2s ease;
-  cursor: pointer;
-  position: relative;
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  margin: 0;
+  transition: none;
+  cursor: default;
+  position: static;
 }
 
 .woocommerce-checkout #shipping_method li:hover {
-  border-color: var(--cor-primaria);
-  background: rgba(0, 0, 0, 0.02);
+  border-color: transparent;
+  background: none;
 }
 
 .woocommerce-checkout #shipping_method li input[type="radio"] {
-  position: absolute;
-  left: var(--espacamento-md);
-  top: 50%;
-  transform: translateY(-50%);
+  position: static;
+  left: auto;
+  top: auto;
+  transform: none;
   margin: 0;
   cursor: pointer;
-  accent-color: var(--cor-primaria);
 }
 
 .woocommerce-checkout #shipping_method li input[type="radio"]:checked + label {
-  color: var(--cor-texto);
-  font-weight: 600;
+  color: inherit;
+  font-weight: inherit;
 }
 
 .woocommerce-checkout #shipping_method li label {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding-left: 32px;
+  display: inline;
+  justify-content: flex-start;
+  align-items: baseline;
+  width: auto;
+  padding-left: 0;
   cursor: pointer;
   margin: 0;
-  font-weight: 500;
+  font-weight: normal;
 }
 
 .woocommerce-checkout #shipping_method li label .woocommerce-Price-amount {
-  font-weight: 600;
-  color: var(--cor-texto);
-  font-size: 0.95rem;
+  font-weight: normal;
+  color: inherit;
+  font-size: inherit;
 }
 
 /* Selected shipping method */
 .woocommerce-checkout #shipping_method li input[type="radio"]:checked {
-  accent-color: var(--cor-primaria);
+  accent-color: inherit;
 }
 
 .woocommerce-checkout #shipping_method li:has(input[type="radio"]:checked) {
-  border-color: var(--cor-primaria);
-  background: rgba(107, 79, 196, 0.05);
+  border-color: transparent;
+  background: none;
 }
 
 /* Shipping calculator in cart */

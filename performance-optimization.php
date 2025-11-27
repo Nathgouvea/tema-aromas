@@ -267,28 +267,29 @@ function tema_aromas_optimize_woocommerce_assets() {
 add_action('wp_enqueue_scripts', 'tema_aromas_optimize_woocommerce_assets', 99);
 
 /**
- * Cache optimization - DISABLED FOR DEVELOPMENT
- * Uncomment and modify for production use
+ * Cache optimization - Auto-enabled in production (when WP_DEBUG is false)
  */
 function tema_aromas_set_cache_headers() {
-    // DISABLED: Remove aggressive caching during development
-    // Only enable in production with proper cache invalidation
-    
-    /*
-    if (!is_admin() && !is_user_logged_in()) {
-        // Set cache headers for static assets
-        $request_uri = $_SERVER['REQUEST_URI'];
-        
-        if (preg_match('/\.(css|js|png|jpg|jpeg|gif|webp|svg|woff|woff2|ttf|eot)$/i', $request_uri)) {
-            header('Cache-Control: public, max-age=31536000'); // 1 year
-            header('Expires: ' . gmdate('D, d M Y H:i:s', time() + 31536000) . ' GMT');
-        } else {
-            header('Cache-Control: public, max-age=3600'); // 1 hour for HTML
-        }
+    // Only enable caching in production (WP_DEBUG disabled)
+    if (defined('WP_DEBUG') && WP_DEBUG) {
+        return;
     }
-    */
+
+    // Don't cache for logged-in users or admin pages
+    if (is_admin() || is_user_logged_in()) {
+        return;
+    }
+
+    // Don't interfere if headers already sent
+    if (headers_sent()) {
+        return;
+    }
+
+    // Set cache headers for HTML pages
+    header('Cache-Control: public, max-age=3600, stale-while-revalidate=86400'); // 1 hour, stale for 24h
+    header('Vary: Accept-Encoding');
 }
-// add_action('send_headers', 'tema_aromas_set_cache_headers'); // DISABLED
+add_action('send_headers', 'tema_aromas_set_cache_headers');
 
 /**
  * Optimize fonts loading

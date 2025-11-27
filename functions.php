@@ -446,10 +446,11 @@ function tema_aromas_manual_create_categories() {
             wp_die('Você não tem permissão para acessar esta funcionalidade.');
         }
         
-        // Verify nonce for additional security (optional but recommended)
+        // Verify nonce for security (mandatory)
         // To use this, add ?create_categories=yes&_wpnonce=[nonce_value] to URL
-        if (isset($_GET['_wpnonce']) && !wp_verify_nonce($_GET['_wpnonce'], 'create_categories')) {
-            wp_die('Token de segurança inválido.');
+        // Generate nonce with: wp_create_nonce('create_categories')
+        if (!isset($_GET['_wpnonce']) || !wp_verify_nonce($_GET['_wpnonce'], 'create_categories')) {
+            wp_die('Token de segurança inválido. Use um link com nonce válido.');
         }
         
         tema_aromas_create_product_categories();

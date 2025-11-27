@@ -81,34 +81,50 @@ function tema_aromas_create_woocommerce_pages() {
 }
 
 /**
- * Configure WooCommerce settings for Brazilian market
+ * Configure WooCommerce settings for Brazilian market using filters
+ * This approach doesn't persist settings in database after theme switch
  */
-function tema_aromas_configure_woocommerce_settings() {
-    if (!class_exists('WooCommerce')) {
-        return;
-    }
 
-    // Set currency to Brazilian Real
-    update_option('woocommerce_currency', 'BRL');
-    
-    // Set currency position (before with space: R$ 10,00)
-    update_option('woocommerce_currency_pos', 'left_space');
-    
-    // Set decimal separator (comma for Brazilian format)
-    update_option('woocommerce_price_decimal_sep', ',');
-    
-    // Set thousand separator (dot for Brazilian format)
-    update_option('woocommerce_price_thousand_sep', '.');
-    
-    // Set number of decimals
-    update_option('woocommerce_price_num_decimals', '2');
+// Set currency to Brazilian Real
+add_filter('pre_option_woocommerce_currency', function() {
+    return 'BRL';
+});
 
-    // Enable guest checkout
-    update_option('woocommerce_enable_guest_checkout', 'yes');
-    
-    // Enable customer registration on checkout
-    update_option('woocommerce_enable_signup_and_login_from_checkout', 'yes');
+// Set currency position (before with space: R$ 10,00)
+add_filter('pre_option_woocommerce_currency_pos', function() {
+    return 'left_space';
+});
 
+// Set decimal separator (comma for Brazilian format)
+add_filter('pre_option_woocommerce_price_decimal_sep', function() {
+    return ',';
+});
+
+// Set thousand separator (dot for Brazilian format)
+add_filter('pre_option_woocommerce_price_thousand_sep', function() {
+    return '.';
+});
+
+// Set number of decimals
+add_filter('pre_option_woocommerce_price_num_decimals', function() {
+    return '2';
+});
+
+// Enable guest checkout
+add_filter('pre_option_woocommerce_enable_guest_checkout', function() {
+    return 'yes';
+});
+
+// Enable customer registration on checkout
+add_filter('pre_option_woocommerce_enable_signup_and_login_from_checkout', function() {
+    return 'yes';
+});
+
+/**
+ * Configure WooCommerce image sizes on theme activation only
+ * These need to be in database for image regeneration to work
+ */
+function tema_aromas_configure_woocommerce_images() {
     // Configure image sizes for luxury design - Higher quality
     update_option('woocommerce_thumbnail_image_width', '600');
     update_option('woocommerce_single_image_width', '1200');
@@ -118,7 +134,7 @@ function tema_aromas_configure_woocommerce_settings() {
 
     // Log configuration
     if (defined('WP_DEBUG') && WP_DEBUG) {
-        error_log("Tema Aromas: WooCommerce settings configured for Brazilian market");
+        error_log("Tema Aromas: WooCommerce image settings configured");
     }
 }
 
@@ -128,13 +144,13 @@ function tema_aromas_configure_woocommerce_settings() {
 function tema_aromas_theme_activation() {
     // Create WooCommerce pages
     tema_aromas_create_woocommerce_pages();
-    
-    // Configure WooCommerce settings
-    tema_aromas_configure_woocommerce_settings();
-    
+
+    // Configure WooCommerce image settings (only these need database storage)
+    tema_aromas_configure_woocommerce_images();
+
     // Create product categories
     tema_aromas_create_product_categories();
-    
+
     // Flush rewrite rules
     flush_rewrite_rules();
 }

@@ -80,6 +80,19 @@ function tema_aromas_customize_register($wp_customize) {
         'type'    => 'textarea',
     ]);
 
+    // Formspree Endpoint
+    $wp_customize->add_setting('formspree_endpoint', [
+        'default'           => 'https://formspree.io/f/xovlkqqz',
+        'sanitize_callback' => 'esc_url_raw',
+    ]);
+
+    $wp_customize->add_control('formspree_endpoint', [
+        'label'       => __('Formspree Endpoint', 'tema_aromas'),
+        'description' => __('URL do formulário Formspree (ex: https://formspree.io/f/seu-id)', 'tema_aromas'),
+        'section'     => 'tema_aromas_contact_info',
+        'type'        => 'url',
+    ]);
+
     // Social Media Section
     $wp_customize->add_section('tema_aromas_social_media', [
         'title'    => __('Redes Sociais', 'tema_aromas'),

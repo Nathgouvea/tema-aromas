@@ -135,7 +135,7 @@ get_header(); ?>
                     }
                     ?>
                     
-                            <form action="https://formspree.io/f/xovlkqqz" method="post" class="contact-form-modern" novalidate>
+                            <form action="<?php echo esc_url(get_theme_mod('formspree_endpoint', 'https://formspree.io/f/xovlkqqz')); ?>" method="post" class="contact-form-modern" novalidate>
                                 <?php wp_nonce_field('contact_form_action', 'contact_form_nonce'); ?>
 
                                 <input type="hidden" name="_subject" value="Novo contato do site Zen Secrets">

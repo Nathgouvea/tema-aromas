@@ -7,76 +7,86 @@
 
     <?php wp_head(); ?>
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    (function() {
+        'use strict';
+
         function updateLogo() {
-            const header = document.querySelector('.site-header');
-            const logoWhite = document.getElementById('logo-white');
-            const logoBlack = document.getElementById('logo-black');
-            
+            var header = document.querySelector('.site-header') || document.getElementById('masthead');
+            var logoWhite = document.getElementById('logo-white');
+            var logoBlack = document.getElementById('logo-black');
+
             if (!header || !logoWhite || !logoBlack) return;
-            
-            // Check if we're on homepage and not scrolled
-            const isHomepage = document.body.classList.contains('homepage');
-            const isScrolled = header.classList.contains('scrolled') || window.scrollY > 50;
-            
+
+            // Multiple ways to detect homepage for better compatibility
+            var body = document.body;
+            var isHomepage = body.classList.contains('homepage') ||
+                             body.classList.contains('home') ||
+                             body.classList.contains('front-page') ||
+                             window.location.pathname === '/' ||
+                             window.location.pathname === '/index.php';
+
+            var scrollY = window.scrollY || window.pageYOffset || 0;
+            var isScrolled = header.classList.contains('scrolled') || scrollY > 50;
+
             // Determine which logo to show
-            let shouldShowWhiteLogo = false;
-            
-            if (isHomepage && !isScrolled) {
-                // Homepage hero - white logo on transparent/dark background
-                shouldShowWhiteLogo = true;
-            } else {
-                // All other cases - black logo on white background
-                shouldShowWhiteLogo = false;
-            }
-            
-            // Update logo visibility with smooth transition
+            var shouldShowWhiteLogo = isHomepage && !isScrolled;
+
+            // Update logo visibility
             if (shouldShowWhiteLogo) {
                 logoWhite.style.display = 'block';
+                logoWhite.style.opacity = '1';
                 logoBlack.style.display = 'none';
-                // Add small delay for smooth transition
-                setTimeout(() => {
-                    logoWhite.style.opacity = '1';
-                    logoWhite.style.transform = 'scale(1)';
-                }, 50);
+                logoBlack.style.opacity = '0';
             } else {
                 logoWhite.style.display = 'none';
+                logoWhite.style.opacity = '0';
                 logoBlack.style.display = 'block';
-                // Add small delay for smooth transition
-                setTimeout(() => {
-                    logoBlack.style.opacity = '1';
-                    logoBlack.style.transform = 'scale(1)';
-                }, 50);
+                logoBlack.style.opacity = '1';
             }
         }
-        
-        // Initial logo update
-        updateLogo();
-        
-        // Update logo on scroll
-        let scrollTimeout;
-        window.addEventListener('scroll', function() {
-            clearTimeout(scrollTimeout);
-            scrollTimeout = setTimeout(updateLogo, 10);
-        });
-        
+
+        // Run on DOMContentLoaded
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', updateLogo);
+        } else {
+            updateLogo();
+        }
+
+        // Run on window load as fallback
+        window.addEventListener('load', updateLogo);
+
+        // Update logo on scroll - use requestAnimationFrame for performance
+        var ticking = false;
+        function onScroll() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    updateLogo();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }
+        window.addEventListener('scroll', onScroll, { passive: true });
+
         // Update logo on window resize
         window.addEventListener('resize', updateLogo);
-        
-        // Update logo when header classes change (for dynamic header states)
-        const observer = new MutationObserver(function(mutations) {
-            mutations.forEach(function(mutation) {
-                if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-                    updateLogo();
+
+        // Watch for header class changes
+        if (typeof MutationObserver !== 'undefined') {
+            var checkHeader = function() {
+                var header = document.querySelector('.site-header') || document.getElementById('masthead');
+                if (header) {
+                    var observer = new MutationObserver(function() {
+                        updateLogo();
+                    });
+                    observer.observe(header, { attributes: true, attributeFilter: ['class'] });
+                } else {
+                    setTimeout(checkHeader, 100);
                 }
-            });
-        });
-        
-        const header = document.querySelector('.site-header');
-        if (header) {
-            observer.observe(header, { attributes: true });
+            };
+            checkHeader();
         }
-    });
+    })();
     </script>
 </head>
 

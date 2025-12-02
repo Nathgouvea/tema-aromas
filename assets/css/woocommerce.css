@@ -2397,8 +2397,8 @@ section:has(> h2:contains("Best Quality Plants")) {
 /* Checkout 2-Column Layout */
 .woocommerce-checkout form.woocommerce-checkout {
   display: grid;
-  grid-template-columns: 1fr 420px;
-  gap: var(--espacamento-xxl);
+  grid-template-columns: 1fr 480px;
+  gap: var(--espacamento-xl);
   align-items: start;
   max-width: 100%;
 }
@@ -2436,6 +2436,11 @@ section:has(> h2:contains("Best Quality Plants")) {
     grid-column: 1;
     grid-row: auto;
   }
+
+  .woocommerce-checkout #order_review,
+  .woocommerce-checkout .woocommerce-checkout-review-order {
+    padding: var(--espacamento-md);
+  }
 }
 
 /* Enhanced Order Summary Sidebar - Apple style */
@@ -2443,7 +2448,7 @@ section:has(> h2:contains("Best Quality Plants")) {
 .woocommerce-checkout .woocommerce-checkout-review-order {
   background: white;
   border-radius: 12px;
-  padding: var(--espacamento-xl);
+  padding: var(--espacamento-lg);
   border: 1px solid rgba(0, 0, 0, 0.08);
   position: sticky;
   top: var(--espacamento-lg);

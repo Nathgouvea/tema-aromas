@@ -311,7 +311,7 @@
 @media (max-width: 767px) {
   .footer-payments {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .trust-seals {
@@ -507,13 +507,27 @@
 
   .footer-about {
     max-width: none;
+    text-align: center;
   }
 
-  /* Smaller footer logo on mobile */
+  /* Smaller footer logo on mobile - centered */
   .footer-logo img,
   .footer-logo-img {
     max-height: 28px;
     margin: 0 auto var(--espacamento-md);
+  }
+
+  .footer-logo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .footer-site-title {
+    text-align: center;
+  }
+
+  .footer-description {
+    text-align: center;
   }
 
   .social-links {
@@ -540,6 +554,30 @@
 
   .contact-item {
     justify-content: center;
+  }
+
+  /* Payment methods centered on mobile */
+  .footer-payments {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .payment-methods {
+    text-align: center;
+    width: 100%;
+  }
+
+  .payment-title {
+    text-align: center;
+  }
+
+  .payment-icons {
+    justify-content: center;
+  }
+
+  .trust-seals {
+    justify-content: center;
+    gap: var(--espacamento-md);
   }
 }
 

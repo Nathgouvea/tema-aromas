@@ -748,6 +748,7 @@
   max-width: 1200px;
   margin: var(--espacamento-md) auto; /* Text to buttons: 24 */
   padding: 0 var(--espacamento-lg); /* Gap between cards: 32 */
+  overflow: hidden;
 }
 
 .featured-slider-wrapper {
@@ -2033,17 +2034,7 @@
   }
 
   .slider-navigation {
-    padding: 0;
-  }
-
-  .slider-btn {
-    width: 35px;
-    height: 35px;
-  }
-
-  .slider-btn svg {
-    width: 18px;
-    height: 18px;
+    display: none; /* Hide slider buttons on small mobile to prevent overflow */
   }
 }
 

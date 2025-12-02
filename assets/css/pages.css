@@ -384,7 +384,7 @@
 /* Apple-Style Two Column Layout */
 .contact-main-section {
   padding: 40px 0 80px;
-  background: #ffffff;
+  background: var(--cor-fundo);
   width: 100vw;
   margin-left: calc(-50vw + 50%);
 }
@@ -683,70 +683,7 @@ select.modern-form-input {
   border: 1px solid #f5c6cb;
 }
 
-/* Dark Mode Support for Contact Page */
-@media (prefers-color-scheme: dark) {
-  .contact-hero-modern {
-    background: #000000;
-  }
-
-  .contact-hero-title {
-    color: #ffffff;
-  }
-
-  .contact-hero-subtitle {
-    color: rgba(255, 255, 255, 0.9);
-  }
-
-  .contact-main-section {
-    background: #000000;
-  }
-
-  .contact-methods-title h2,
-  .contact-form-title h2 {
-    color: #f5f5f7;
-  }
-
-  .contact-methods-title p,
-  .contact-form-title p {
-    color: #a1a1a6;
-  }
-
-  .contact-method-item {
-    background: #1d1d1f;
-  }
-
-  .contact-method-link:hover .contact-method-item {
-    background: #2d2d2f;
-  }
-
-  .contact-method-content h3,
-  .contact-method-content p {
-    color: #f5f5f7;
-  }
-
-  .contact-method-content small {
-    color: #a1a1a6;
-  }
-
-  .form-group-modern label {
-    color: #f5f5f7;
-  }
-
-  .modern-form-input {
-    background: #1d1d1f;
-    border-color: rgba(255, 255, 255, 0.1);
-    color: #f5f5f7;
-  }
-
-  .modern-form-input::placeholder {
-    color: #a1a1a6;
-  }
-
-  .modern-form-input:focus {
-    background: #2d2d2f;
-    border-color: #0071e3;
-  }
-}
+/* Dark Mode Support for Contact Page - DISABLED to ensure white backgrounds */
 
 /* ==========================================================================
    Aromas Page Design (Nossos Aromas)
@@ -833,9 +770,8 @@ select.modern-form-input {
 /* Apple-Style Fragrance Pills Navigation */
 .fragrance-pills-section {
   padding: 0;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: saturate(180%) blur(20px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background: var(--cor-fundo);
+  border-bottom: 1px solid var(--cor-borda);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -848,17 +784,23 @@ select.modern-form-input {
   display: flex;
   justify-content: center;
   gap: 8px;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   max-width: 1200px;
   margin: 0 auto;
   padding: 12px 20px;
-  overflow-x: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
 }
 
-.fragrance-pills-container::-webkit-scrollbar {
-  display: none;
+/* Mobile: 2 rows layout for better visibility */
+@media (max-width: 480px) {
+  .fragrance-pills-container {
+    gap: 6px;
+    padding: 10px 16px;
+  }
+
+  .fragrance-pill {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
 }
 
 /* Apple-Style Fragrance Pills (Tabs) */
@@ -868,7 +810,7 @@ select.modern-form-input {
   padding: 8px 16px;
   font-size: 14px;
   font-weight: 400;
-  color: #6b4fc4;
+  color: var(--cor-primaria);
   cursor: pointer;
   border-radius: 980px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -883,21 +825,21 @@ select.modern-form-input {
 }
 
 .fragrance-pill.active {
-  background: linear-gradient(135deg, #6b4fc4 0%, #8b6fd9 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-accent) 100%);
+  color: var(--cor-fundo);
   font-weight: 500;
   box-shadow: 0 2px 8px rgba(107, 79, 196, 0.25);
 }
 
 .fragrance-pill:focus {
-  outline: 2px solid #6b4fc4;
+  outline: 2px solid var(--cor-primaria);
   outline-offset: 2px;
 }
 
 /* Apple-Style Fragrance Accordion Section */
 .fragrance-accordion-section {
   padding: 60px 0 80px;
-  background: #ffffff;
+  background: var(--cor-fundo);
 }
 
 .fragrance-accordion-container {
@@ -908,11 +850,11 @@ select.modern-form-input {
 
 .fragrance-accordion-item {
   border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid var(--cor-borda);
   margin-bottom: 0;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  background: white;
+  background: var(--cor-fundo);
 }
 
 .fragrance-accordion-item:last-child {
@@ -924,7 +866,7 @@ select.modern-form-input {
 }
 
 .fragrance-accordion-item.active {
-  background: #ffffff;
+  background: var(--cor-fundo);
 }
 
 .fragrance-accordion-header {
@@ -946,7 +888,7 @@ select.modern-form-input {
 .fragrance-accordion-header h2 {
   font-size: clamp(24px, 3vw, 32px);
   font-weight: 600;
-  color: #333333;
+  color: var(--cor-texto);
   margin: 0;
   text-align: left;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -962,7 +904,7 @@ select.modern-form-input {
 
 .fragrance-accordion-item.active .accordion-icon {
   transform: rotate(180deg);
-  color: #6b4fc4;
+  color: var(--cor-primaria);
 }
 
 .fragrance-accordion-content {
@@ -1063,7 +1005,7 @@ select.modern-form-input {
 
 .note-column p {
   font-size: 17px;
-  color: #555555;
+  color: var(--cor-texto);
   margin: 0;
   line-height: 1.5;
   font-weight: 400;
@@ -1077,7 +1019,7 @@ select.modern-form-input {
   padding: 0;
   border-radius: 0;
   border: none;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-top: 1px solid var(--cor-borda);
   padding-top: 32px;
 }
 
@@ -1093,7 +1035,7 @@ select.modern-form-input {
 
 .fragrance-description p {
   font-size: 17px;
-  color: #555555;
+  color: var(--cor-texto);
   line-height: 1.5;
   margin: 0;
   font-weight: 400;
@@ -1153,102 +1095,8 @@ select.modern-form-input {
   }
 }
 
-/* Dark Mode Support for Apple Design */
-@media (prefers-color-scheme: dark) {
-  .aromas-hero-modern {
-    background: #000000;
-  }
-
-  .aromas-hero-background .hero-overlay {
-    background: linear-gradient(
-      135deg,
-      rgba(0, 0, 0, 0.5) 0%,
-      rgba(0, 0, 0, 0.3) 100%
-    );
-  }
-
-  .aromas-hero-title {
-    color: #ffffff;
-  }
-
-  .aromas-hero-subtitle {
-    color: rgba(255, 255, 255, 0.9);
-  }
-
-  .fragrance-pills-section {
-    background: rgba(29, 29, 31, 0.8);
-    border-bottom-color: rgba(255, 255, 255, 0.1);
-  }
-
-  .fragrance-pill {
-    color: #8b6fd9;
-  }
-
-  .fragrance-pill:hover {
-    background: rgba(139, 111, 217, 0.15);
-    color: #a088e3;
-  }
-
-  .fragrance-pill.active {
-    background: linear-gradient(135deg, #6b4fc4 0%, #8b6fd9 100%);
-    color: #ffffff;
-  }
-
-  .fragrance-accordion-section {
-    background: #000000;
-  }
-
-  .fragrance-accordion-item {
-    border-bottom-color: rgba(255, 255, 255, 0.1);
-    background: #000000;
-  }
-
-  .fragrance-accordion-header h2 {
-    color: #f5f5f7;
-  }
-
-  .accordion-icon {
-    color: #a1a1a6;
-  }
-
-  .fragrance-accordion-item.active .accordion-icon {
-    color: #8b6fd9;
-  }
-
-  .fragrance-image {
-    background: #1d1d1f;
-  }
-
-  .note-column {
-    border-bottom-color: rgba(255, 255, 255, 0.1);
-  }
-
-  .note-column h4,
-  .fragrance-description h4 {
-    color: #a1a1a6;
-  }
-
-  .note-column p,
-  .fragrance-description p {
-    color: #f5f5f7;
-  }
-
-  .fragrance-description {
-    border-top-color: rgba(255, 255, 255, 0.1);
-  }
-
-  .cta-section {
-    background: linear-gradient(180deg, #000000 0%, #1d1d1f 100%);
-  }
-
-  .cta-title {
-    color: #f5f5f7;
-  }
-
-  .cta-subtitle {
-    color: #a1a1a6;
-  }
-}
+/* Dark Mode Support for Apple Design - DISABLED to ensure white backgrounds */
+/* The Aromas page should always use light mode styling for consistency */
 
 /* ==========================================================================
    Original Contact Section Styles (Keep for other pages)

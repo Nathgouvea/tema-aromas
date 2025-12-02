@@ -171,8 +171,8 @@
                                    name="s" />
                             <input type="hidden" name="post_type" value="product" />
                             <button type="submit" class="search-submit btn-luxury" aria-label="<?php esc_attr_e('Buscar', 'tema_aromas'); ?>">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                                    <path d="M21 21l-6.35-6.35M11 6a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"/>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6b4fc4" stroke-width="2" aria-hidden="true">
+                                    <path d="M21 21l-6.35-6.35M11 6a5 5 0 1 1-10 0 5 5 0 0 1 10 0z" stroke="#6b4fc4"/>
                                 </svg>
                             </button>
                         </form>
@@ -181,9 +181,9 @@
                     <?php endif; ?>
 
                     <button class="search-close" aria-label="<?php esc_attr_e('Fechar busca', 'tema_aromas'); ?>">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                            <line x1="18" y1="6" x2="6" y2="18"></line>
-                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#333333" stroke-width="2" aria-hidden="true">
+                            <line x1="18" y1="6" x2="6" y2="18" stroke="#333333"></line>
+                            <line x1="6" y1="6" x2="18" y2="18" stroke="#333333"></line>
                         </svg>
                     </button>
                 </div>

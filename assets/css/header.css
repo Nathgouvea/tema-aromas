@@ -874,18 +874,14 @@ body.admin-bar .mobile-menu-overlay {
   top: 100%;
   left: 50%;
   transform: translateX(-50%) translateY(-10px);
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 20px;
-  padding: var(--espacamento-md);
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0;
   opacity: 0;
   visibility: hidden;
   transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   z-index: 1001;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08),
-              0 2px 8px rgba(0, 0, 0, 0.04);
   min-width: 360px;
   max-width: 500px;
 }
@@ -901,26 +897,29 @@ body.admin-bar .mobile-menu-overlay {
   width: 100%;
 }
 
-/* Apple-style search input container - Clean minimal design */
+/* Apple-style search input container - Pill shape design */
 .woocommerce-product-search {
   display: flex;
   align-items: center;
   gap: 0;
-  background: transparent;
-  border: none;
-  border-radius: 0;
-  padding: 0;
+  background: var(--cor-fundo);
+  border: 2px solid var(--cor-primaria);
+  border-radius: 100px;
+  padding: 4px 8px;
   transition: all 0.2s ease;
   overflow: visible;
+  box-shadow: 0 4px 20px rgba(107, 79, 196, 0.15);
 }
 
 .woocommerce-product-search:hover {
-  background: transparent;
+  background: var(--cor-fundo);
+  border-color: var(--cor-accent);
 }
 
 .woocommerce-product-search:focus-within {
-  background: transparent;
-  box-shadow: none;
+  background: var(--cor-fundo);
+  box-shadow: 0 4px 20px rgba(107, 79, 196, 0.25);
+  border-color: var(--cor-accent);
 }
 
 /* Apple-style search input */
@@ -980,16 +979,15 @@ body.admin-bar .mobile-menu-overlay {
 /* Apple-style close button */
 .search-close {
   position: absolute;
-  top: -12px;
-  right: -12px;
+  top: 50%;
+  right: -40px;
+  transform: translateY(-50%);
   width: 32px;
   height: 32px;
-  border: none;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #ffffff !important;
+  border: 1px solid #e6e6e6 !important;
   border-radius: 50%;
-  color: rgba(0, 0, 0, 0.6);
+  color: #333333 !important;
   cursor: pointer;
   transition: all 0.2s ease;
   display: flex;
@@ -997,14 +995,33 @@ body.admin-bar .mobile-menu-overlay {
   justify-content: center;
   font-size: 16px;
   font-weight: 500;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-close svg {
+  color: #333333 !important;
+  stroke: #333333 !important;
+  fill: none !important;
+  width: 16px;
+  height: 16px;
+}
+
+.search-close svg line {
+  stroke: #333333 !important;
+  stroke-width: 2 !important;
 }
 
 .search-close:hover {
-  background: rgba(255, 255, 255, 1);
+  background: var(--cor-fundo);
   color: var(--cor-primaria);
-  transform: scale(1.05);
+  transform: translateY(-50%) scale(1.05);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.search-close:hover svg,
+.search-close:hover svg line {
+  color: var(--cor-primaria) !important;
+  stroke: var(--cor-primaria) !important;
 }
 
 .search-close:active {
@@ -1025,40 +1042,59 @@ body.search-open .site-header {
 /* Mobile responsive adjustments */
 @media (max-width: 768px) {
   .header-search {
-    left: 20px;
-    right: 20px;
-    transform: translateX(0) translateY(-10px);
+    left: 16px;
+    right: 56px;
+    transform: translateY(-10px);
     min-width: auto;
     max-width: none;
+    width: auto;
+    padding: 0;
   }
 
   .header-search.show {
+    transform: translateY(0);
     animation: searchSlideDownMobile 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   @keyframes searchSlideDownMobile {
     from {
       opacity: 0;
-      transform: translateX(0) translateY(-15px) scale(0.95);
+      transform: translateY(-15px) scale(0.95);
     }
     to {
       opacity: 1;
-      transform: translateX(0) translateY(0) scale(1);
+      transform: translateY(0) scale(1);
     }
   }
 
   /* Ensure mobile search form has proper contrast */
-  .header-search .search-field,
-  .header-search .search-submit {
+  .header-search .search-field {
     color: var(--cor-texto) !important;
+    padding: 10px 12px;
+    font-size: 0.95rem;
+    min-height: 44px;
+  }
+
+  .header-search .search-submit {
+    color: #6b4fc4 !important;
+  }
+
+  .header-search .search-submit svg,
+  .header-search .search-submit svg path,
+  .header-search .search-submit svg circle {
+    stroke: #6b4fc4 !important;
+  }
+
+  .header-search .search-close {
+    top: 50%;
+    right: -44px;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
   }
 }
 
 /* Enhanced search form animations */
-.header-search {
-  backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.98);
-}
 
 .header-search.show {
   animation: searchSlideDown 0.25s cubic-bezier(0.4, 0, 0.2, 1);

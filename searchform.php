@@ -19,9 +19,9 @@
                value="<?php echo esc_attr(get_search_query()); ?>"
                name="s" />
         <button type="submit" class="search-submit btn-luxury">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <circle cx="11" cy="11" r="8"></circle>
-                <path d="21 21l-4.35-4.35"></path>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#6b4fc4" stroke-width="2" aria-hidden="true">
+                <circle cx="11" cy="11" r="8" stroke="#6b4fc4"></circle>
+                <path d="21 21l-4.35-4.35" stroke="#6b4fc4"></path>
             </svg>
             <span class="sr-only"><?php esc_html_e('Buscar', 'tema_aromas'); ?></span>
         </button>

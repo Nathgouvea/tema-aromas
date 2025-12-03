@@ -393,79 +393,9 @@ function tema_aromas_woocommerce_email_styles() {
 add_action('woocommerce_email_enqueue_styles', 'tema_aromas_woocommerce_email_styles');
 
 /**
- * Customize WooCommerce email header
+ * Note: Email header and footer are now customized via template overrides
+ * See: woocommerce/emails/email-header.php and email-footer.php
  */
-function tema_aromas_woocommerce_email_header($email_heading, $email) {
-    ?>
-    <div class="email-header">
-        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/logo-zen.svg" alt="<?php echo esc_attr(get_bloginfo('name')); ?>" class="email-logo">
-        <h1><?php echo esc_html($email_heading); ?></h1>
-        <p><?php echo esc_html__('Obrigado por escolher Zen Secrets!', 'tema_aromas'); ?></p>
-    </div>
-    <?php
-}
-add_action('woocommerce_email_header', 'tema_aromas_woocommerce_email_header', 10, 2);
-
-/**
- * Customize WooCommerce email footer
- */
-function tema_aromas_woocommerce_email_footer() {
-    ?>
-    <div class="email-footer">
-        <div class="trust-indicators">
-            <h3><?php echo esc_html__('Por que escolher Zen Secrets?', 'tema_aromas'); ?></h3>
-            <div class="trust-grid">
-                <div class="trust-item">
-                    <div class="trust-icon">🚚</div>
-                    <h4><?php echo esc_html__('Envio Seguro', 'tema_aromas'); ?></h4>
-                    <p><?php echo esc_html__('Para todo Brasil', 'tema_aromas'); ?></p>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-icon">💳</div>
-                    <h4><?php echo esc_html__('Pagamento Seguro', 'tema_aromas'); ?></h4>
-                    <p><?php echo esc_html__('Cartão, Pix e Boleto', 'tema_aromas'); ?></p>
-                </div>
-                <div class="trust-item">
-                    <div class="trust-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M12 6V12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            <path d="M12 16V17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            <path d="M8 8C8 8 9 10 12 10C15 10 16 8 16 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
-                    </div>
-                    <h4><?php echo esc_html__('100% Natural', 'tema_aromas'); ?></h4>
-                    <p><?php echo esc_html__('Ingredientes naturais', 'tema_aromas'); ?></p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="whatsapp-contact">
-            <h3><?php echo esc_html__('Ficou em dúvida?', 'tema_aromas'); ?></h3>
-            <p><?php echo esc_html__('Entre em contato conosco via WhatsApp', 'tema_aromas'); ?></p>
-            <a href="https://wa.me/5516991626921" class="whatsapp-button">
-                (16) 99162-6921
-            </a>
-        </div>
-        
-        <div class="social-links">
-            <a href="https://www.instagram.com/secretszen" title="Instagram">📱 Instagram</a>
-            <a href="mailto:secretszen888@gmail.com" title="Email">✉️ Email</a>
-        </div>
-        
-        <div class="payment-methods">
-            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/visa.png" alt="Visa">
-            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/mastercard.png" alt="Mastercard">
-            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/amex.png" alt="American Express">
-            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/elo.png" alt="Elo">
-            <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/pix.png" alt="PIX">
-        </div>
-
-        <p>&copy; <?php echo date('Y'); ?> <?php echo esc_html(get_bloginfo('name')); ?>. <?php echo esc_html__('Todos os direitos reservados.', 'tema_aromas'); ?></p>
-    </div>
-    <?php
-}
-add_action('woocommerce_email_footer', 'tema_aromas_woocommerce_email_footer');
 
 /**
  * Customize order status labels in emails

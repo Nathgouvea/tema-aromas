@@ -623,9 +623,29 @@ function tema_aromas_email_styles() {
             border: none !important;
             border-radius: 16px !important;
             box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08) !important;
-            max-width: 600px !important;
+            max-width: 700px !important;
             margin: 0 auto !important;
             overflow: hidden !important;
+        }
+
+        /* Header Image - Logo Styling */
+        #template_header_image {
+            text-align: center !important;
+            padding: 30px 20px 10px !important;
+            background-color: #ffffff !important;
+        }
+
+        #template_header_image p {
+            margin: 0 !important;
+            text-align: center !important;
+        }
+
+        #template_header_image img {
+            max-width: 280px !important;
+            width: auto !important;
+            height: auto !important;
+            margin: 0 auto !important;
+            display: block !important;
         }
 
         /* Header - Apple Gradient Style */
@@ -634,8 +654,8 @@ function tema_aromas_email_styles() {
             border: none !important;
             padding: 40px 40px 32px !important;
             text-align: center !important;
-            border-top-left-radius: 16px !important;
-            border-top-right-radius: 16px !important;
+            border-top-left-radius: 0 !important;
+            border-top-right-radius: 0 !important;
         }
 
         #template_header h1 {
@@ -866,7 +886,7 @@ function tema_aromas_email_styles() {
         }
 
         /* Mobile Responsive */
-        @media only screen and (max-width: 600px) {
+        @media only screen and (max-width: 700px) {
             #wrapper {
                 padding: 20px 10px !important;
             }
@@ -997,7 +1017,7 @@ add_filter('woocommerce_email_styles', function($css, $email) {
             border: none !important;
             border-radius: 16px !important;
             box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08) !important;
-            max-width: 600px !important;
+            max-width: 700px !important;
         }
         #template_header {
             background: linear-gradient(135deg, #6b4fc4 0%, #8b6fd9 100%) !important;

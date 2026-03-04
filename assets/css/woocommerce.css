@@ -3727,6 +3727,51 @@ section:has(> h2:contains("Best Quality Plants")) {
   color: #991b1b;
 }
 
+/* Buttons inside notices (e.g. "Ver carrinho") - must override buttons.css */
+.woocommerce .woocommerce-message a.button,
+.woocommerce .woocommerce-message a.button.wc-forward,
+.woocommerce .woocommerce-info a.button,
+.woocommerce .woocommerce-error a.button,
+.woocommerce-message .button,
+.woocommerce-info .button,
+.woocommerce-error .button {
+  background: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0;
+  font-size: inherit !important;
+  font-weight: 600 !important;
+  color: inherit !important;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  display: inline !important;
+  position: static;
+  overflow: visible;
+}
+
+.woocommerce .woocommerce-message a.button:hover,
+.woocommerce .woocommerce-info a.button:hover,
+.woocommerce .woocommerce-error a.button:hover,
+.woocommerce-message .button:hover,
+.woocommerce-info .button:hover,
+.woocommerce-error .button:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  background: none !important;
+  opacity: 0.7;
+}
+
+.woocommerce .woocommerce-message a.button::before,
+.woocommerce .woocommerce-info a.button::before,
+.woocommerce .woocommerce-error a.button::before,
+.woocommerce-message .button::before,
+.woocommerce-info .button::before,
+.woocommerce-error .button::before {
+  display: none !important;
+}
+
 /* ==========================================================================
    Pagination
    ========================================================================== */

@@ -164,7 +164,7 @@ function tema_aromas_lembrancinhas_configurator() {
     </div>
     <?php
 }
-add_action('woocommerce_before_add_to_cart_form', 'tema_aromas_lembrancinhas_configurator', 10);
+add_action('woocommerce_before_add_to_cart_button', 'tema_aromas_lembrancinhas_configurator', 10);
 
 // ============================================================================
 // Product Page: Replace Default Price with "A partir de"
@@ -419,6 +419,23 @@ function tema_aromas_lembrancinhas_save_order_item_meta($item, $cart_item_key, $
     }
 }
 add_action('woocommerce_checkout_create_order_line_item', 'tema_aromas_lembrancinhas_save_order_item_meta', 10, 4);
+
+// ============================================================================
+// Redirect after Add to Cart (prevent form resubmission on refresh)
+// ============================================================================
+
+/**
+ * Redirect back to the referring page after adding any item to cart
+ * Prevents browser "resend form" popup on page refresh
+ */
+function tema_aromas_add_to_cart_redirect($url) {
+    $referer = wp_get_referer();
+    if ($referer) {
+        return $referer;
+    }
+    return $url;
+}
+add_filter('woocommerce_add_to_cart_redirect', 'tema_aromas_add_to_cart_redirect', 10, 1);
 
 // ============================================================================
 // Scripts: Enqueue JS + Pass Configuration

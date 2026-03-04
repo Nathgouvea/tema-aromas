@@ -5277,8 +5277,9 @@ body.is-lembrancinha .woocommerce div.product form.cart div.quantity {
 
 /* Match the existing .variations select styling */
 .lembrancinhas-field select {
+    max-width: 320px;
     width: 100%;
-    padding: 12px 40px 12px 16px;
+    padding: 10px 36px 10px 14px;
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 8px;
     background: white;
@@ -5334,25 +5335,28 @@ body.is-lembrancinha .woocommerce div.product form.cart div.quantity {
 /* Info notices */
 .lembrancinhas-notice {
     display: flex;
-    gap: var(--espacamento-sm);
+    max-width: 320px;
+    gap: var(--espacamento-xs);
     align-items: flex-start;
-    padding: var(--espacamento-sm) var(--espacamento-md);
-    border-radius: 12px;
-    margin-bottom: var(--espacamento-sm);
-    font-size: 0.875rem;
-    line-height: 1.6;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin-bottom: var(--espacamento-xs);
+    font-size: 0.8rem;
+    line-height: 1.5;
 }
 
 .lembrancinhas-notice svg {
     flex-shrink: 0;
-    margin-top: 2px;
+    margin-top: 1px;
+    width: 14px;
+    height: 14px;
 }
 
 .lembrancinhas-notice p {
     margin: 0;
     font-family: var(--fonte-principal);
     color: var(--cor-texto);
-    opacity: 0.8;
+    opacity: 0.7;
 }
 
 .lembrancinhas-notice a {
@@ -5413,7 +5417,7 @@ body.is-lembrancinha .single_add_to_cart_button.disabled {
     }
 
     .lembrancinhas-notice {
-        padding: var(--espacamento-xs) var(--espacamento-sm);
-        font-size: 0.8125rem;
+        padding: 8px 10px;
+        font-size: 0.75rem;
     }
 }

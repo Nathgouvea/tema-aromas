@@ -2367,7 +2367,7 @@ section:has(> h2:contains("Best Quality Plants")) {
   }
 
   .step-label {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
   }
 
   .progress-line {
@@ -2384,6 +2384,237 @@ section:has(> h2:contains("Best Quality Plants")) {
     font-size: 2rem;
     letter-spacing: -1px;
   }
+}
+
+/* ==========================================================================
+   Thank You Page - Success Hero
+   ========================================================================== */
+
+.order-success-hero {
+  text-align: center;
+  margin-bottom: var(--espacamento-xl);
+}
+
+.order-success-hero .woocommerce-thankyou-order-received {
+  border: none;
+  background: none;
+  padding: var(--espacamento-sm) 0;
+  margin-bottom: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.success-icon-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #10b981;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--espacamento-md);
+  animation: scaleIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.success-icon-circle svg {
+  color: white;
+}
+
+.success-subtitle {
+  font-size: 0.95rem;
+  color: var(--cor-texto);
+  opacity: 0.6;
+  margin: var(--espacamento-xs) 0 0;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ==========================================================================
+   Thank You Page - Next Steps
+   ========================================================================== */
+
+.order-next-steps {
+  margin: var(--espacamento-xl) 0;
+}
+
+.next-steps-title {
+  font-family: var(--fonte-titulo);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--cor-texto);
+  margin-bottom: var(--espacamento-lg);
+  letter-spacing: -0.5px;
+}
+
+.next-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--espacamento-lg);
+}
+
+.next-step {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: var(--espacamento-lg);
+  text-align: center;
+}
+
+.next-step svg {
+  color: var(--cor-primaria);
+  margin-bottom: var(--espacamento-sm);
+}
+
+.next-step p {
+  font-size: 0.9rem;
+  color: var(--cor-texto);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.next-step a {
+  color: var(--cor-primaria);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.next-step a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 767px) {
+  .next-steps-grid {
+    grid-template-columns: 1fr;
+    gap: var(--espacamento-md);
+  }
+
+  .next-step {
+    padding: var(--espacamento-md);
+  }
+}
+
+/* ==========================================================================
+   Thank You Page - Failed Payment State
+   ========================================================================== */
+
+.order-failed-state {
+  text-align: center;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  padding: var(--espacamento-xl);
+  margin-bottom: var(--espacamento-xl);
+}
+
+.failed-icon-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #f59e0b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--espacamento-lg);
+}
+
+.failed-icon-circle svg {
+  color: white;
+}
+
+.failed-message {
+  font-size: 1.05rem;
+  color: var(--cor-texto);
+  margin-bottom: var(--espacamento-xs);
+}
+
+.failed-reassurance {
+  font-size: 0.95rem;
+  color: var(--cor-texto);
+  opacity: 0.6;
+  margin-bottom: var(--espacamento-lg);
+}
+
+.failed-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacamento-sm);
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.failed-actions .btn-checkout {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding: 14px 24px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.failed-actions .btn-view-cart {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding: 14px 24px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   Cart Page - Empty Cart State
+   ========================================================================== */
+
+.cart-empty-state {
+  text-align: center;
+  padding: var(--espacamento-xxl) var(--espacamento-lg);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.cart-empty-icon {
+  color: var(--cor-primaria);
+  opacity: 0.5;
+  margin-bottom: var(--espacamento-lg);
+}
+
+.cart-empty-title {
+  font-family: var(--fonte-titulo);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--cor-texto);
+  margin-bottom: var(--espacamento-md);
+  letter-spacing: -0.5px;
+}
+
+.cart-empty-message {
+  font-size: 1rem;
+  color: var(--cor-texto);
+  opacity: 0.7;
+  line-height: 1.6;
+  margin-bottom: var(--espacamento-xl);
+}
+
+/* ==========================================================================
+   Mini Cart - Empty Subtitle
+   ========================================================================== */
+
+.mini-cart-empty-subtitle {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--cor-texto);
+  opacity: 0.5;
+  margin-bottom: var(--espacamento-lg);
 }
 
 /* Checkout Page Container */
@@ -2471,7 +2702,7 @@ section:has(> h2:contains("Best Quality Plants")) {
 .woocommerce-checkout-review-order-table {
   width: 100%;
   margin-bottom: var(--espacamento-lg);
-  table-layout: fixed;
+  table-layout: auto;
 }
 
 .woocommerce-checkout-review-order-table thead {
@@ -2542,6 +2773,8 @@ section:has(> h2:contains("Best Quality Plants")) {
   font-weight: 400;
   color: var(--cor-texto);
   text-align: left;
+  width: 80px;
+  white-space: nowrap;
 }
 
 .woocommerce-checkout-review-order-table tfoot td {
@@ -2558,11 +2791,87 @@ section:has(> h2:contains("Best Quality Plants")) {
   font-weight: 400;
 }
 
-/* Shipping Row */
-.woocommerce-checkout-review-order-table .woocommerce-shipping-totals th,
+/* Shipping Row - Narrow label, wide options */
+.woocommerce-checkout-review-order-table .woocommerce-shipping-totals th {
+  color: var(--cor-texto);
+  font-weight: 400;
+  vertical-align: top;
+  padding-top: var(--espacamento-lg);
+  width: 80px;
+  white-space: nowrap;
+}
+
 .woocommerce-checkout-review-order-table .woocommerce-shipping-totals td {
   color: var(--cor-texto);
   font-weight: 400;
+  padding: var(--espacamento-sm) var(--espacamento-sm);
+}
+
+/* Shipping methods list inside checkout order review */
+.woocommerce-checkout-review-order-table #shipping_method {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.woocommerce-checkout-review-order-table #shipping_method li {
+  list-style-type: none;
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.woocommerce-checkout-review-order-table #shipping_method li:hover {
+  border-color: var(--cor-primaria);
+}
+
+.woocommerce-checkout-review-order-table #shipping_method li:has(input:checked) {
+  border-color: var(--cor-primaria);
+  background: rgba(107, 79, 196, 0.05);
+}
+
+.woocommerce-checkout-review-order-table #shipping_method li input[type="radio"] {
+  margin-top: 3px;
+  flex-shrink: 0;
+  accent-color: var(--cor-primaria);
+}
+
+.woocommerce-checkout-review-order-table #shipping_method li label {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: var(--cor-texto);
+  cursor: pointer;
+  display: inline;
+}
+
+/* Shipping address in checkout review */
+.woocommerce-checkout-review-order-table .woocommerce-shipping-totals .woocommerce-shipping-destination {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+.woocommerce-checkout-review-order-table .woocommerce-shipping-totals .shipping-calculator-button {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: var(--cor-primaria);
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.woocommerce-checkout-review-order-table .woocommerce-shipping-totals .shipping-calculator-button:hover {
+  text-decoration: underline;
 }
 
 /* Order Total Row */
@@ -2677,68 +2986,50 @@ section:has(> h2:contains("Best Quality Plants")) {
    Shipping Options - Visual Cards
    ========================================================================== */
 
-/* Shipping methods in checkout - Plain style */
-.woocommerce-checkout #shipping_method {
+/* Shipping methods - Clean card style (cart + checkout) */
+.woocommerce-cart #shipping_method {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.woocommerce-checkout #shipping_method li {
-  background: none;
-  border: none;
-  border-radius: 0;
-  padding: 0;
-  margin: 0;
-  transition: none;
-  cursor: default;
-  position: static;
-}
-
-.woocommerce-checkout #shipping_method li:hover {
-  border-color: transparent;
-  background: none;
-}
-
-.woocommerce-checkout #shipping_method li input[type="radio"] {
-  position: static;
-  left: auto;
-  top: auto;
-  transform: none;
-  margin: 0;
+.woocommerce-cart #shipping_method li {
+  list-style-type: none;
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
   cursor: pointer;
+  transition: border-color 0.2s ease;
 }
 
-.woocommerce-checkout #shipping_method li input[type="radio"]:checked + label {
-  color: inherit;
-  font-weight: inherit;
+.woocommerce-cart #shipping_method li:hover {
+  border-color: var(--cor-primaria);
 }
 
-.woocommerce-checkout #shipping_method li label {
+.woocommerce-cart #shipping_method li:has(input:checked) {
+  border-color: var(--cor-primaria);
+  background: rgba(107, 79, 196, 0.05);
+}
+
+.woocommerce-cart #shipping_method li input[type="radio"] {
+  margin-top: 3px;
+  flex-shrink: 0;
+  accent-color: var(--cor-primaria);
+}
+
+.woocommerce-cart #shipping_method li label {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--cor-texto);
+  cursor: pointer;
   display: inline;
-  justify-content: flex-start;
-  align-items: baseline;
-  width: auto;
-  padding-left: 0;
-  cursor: pointer;
-  margin: 0;
-  font-weight: normal;
-}
-
-.woocommerce-checkout #shipping_method li label .woocommerce-Price-amount {
-  font-weight: normal;
-  color: inherit;
-  font-size: inherit;
-}
-
-/* Selected shipping method */
-.woocommerce-checkout #shipping_method li input[type="radio"]:checked {
-  accent-color: inherit;
-}
-
-.woocommerce-checkout #shipping_method li:has(input[type="radio"]:checked) {
-  border-color: transparent;
-  background: none;
 }
 
 /* Shipping calculator in cart */
@@ -4954,3 +5245,175 @@ body.woocommerce-account form h2:first-child,
 /* ==========================================================================
    Luxury Button Enhancements - Now centralized in buttons.css
    ========================================================================== */
+
+/* ==========================================================================
+   Lembrancinhas Product Configurator
+   ========================================================================== */
+
+/* Hide default quantity input for Lembrancinhas */
+body.is-lembrancinha .woocommerce div.product form.cart div.quantity {
+    display: none !important;
+}
+
+/* Configurator container */
+.lembrancinhas-configurator {
+    margin: 0 0 var(--espacamento-lg) 0;
+}
+
+/* Field wrapper */
+.lembrancinhas-field {
+    margin-bottom: var(--espacamento-md);
+}
+
+.lembrancinhas-field label {
+    display: block;
+    font-family: var(--fonte-principal);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--cor-texto);
+    margin-bottom: var(--espacamento-xs);
+    letter-spacing: 0.01em;
+}
+
+/* Match the existing .variations select styling */
+.lembrancinhas-field select {
+    width: 100%;
+    padding: 12px 40px 12px 16px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    background: white;
+    font-size: 1rem;
+    font-family: var(--fonte-principal);
+    color: var(--cor-texto);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+    cursor: pointer;
+}
+
+.lembrancinhas-field select:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px rgba(107, 79, 196, 0.12);
+}
+
+.lembrancinhas-field select:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    background-color: #f5f5f7;
+}
+
+/* Dynamic price display */
+.lembrancinhas-price-display {
+    display: flex;
+    align-items: baseline;
+    gap: var(--espacamento-xs);
+    margin: var(--espacamento-md) 0 var(--espacamento-lg) 0;
+}
+
+.lembrancinhas-price-display .price-label {
+    font-family: var(--fonte-principal);
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--cor-texto);
+    opacity: 0.6;
+}
+
+.lembrancinhas-price-display .price-amount {
+    font-family: var(--fonte-principal);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--cor-texto);
+}
+
+/* Info notices */
+.lembrancinhas-notice {
+    display: flex;
+    gap: var(--espacamento-sm);
+    align-items: flex-start;
+    padding: var(--espacamento-sm) var(--espacamento-md);
+    border-radius: 12px;
+    margin-bottom: var(--espacamento-sm);
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+.lembrancinhas-notice svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.lembrancinhas-notice p {
+    margin: 0;
+    font-family: var(--fonte-principal);
+    color: var(--cor-texto);
+    opacity: 0.8;
+}
+
+.lembrancinhas-notice a {
+    color: var(--cor-primaria);
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.lembrancinhas-notice a:hover {
+    color: var(--cor-accent);
+}
+
+.lembrancinhas-notice--contact {
+    background: rgba(107, 79, 196, 0.06);
+    border: 1px solid rgba(107, 79, 196, 0.15);
+}
+
+.lembrancinhas-notice--contact svg {
+    color: var(--cor-primaria);
+}
+
+.lembrancinhas-notice--production {
+    background: rgba(107, 79, 196, 0.04);
+    border: 1px solid rgba(107, 79, 196, 0.1);
+}
+
+.lembrancinhas-notice--production svg {
+    color: var(--cor-accent);
+}
+
+/* Starting price "A partir de" - matches .woocommerce div.product p.price style */
+.lembrancinhas-starting-price {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--cor-texto);
+    margin: 0 0 var(--espacamento-xl) 0 !important;
+}
+
+.lembrancinhas-starting-price .lembrancinhas-from-label {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--cor-texto);
+    opacity: 0.6;
+}
+
+/* Disabled add-to-cart button for Lembrancinhas */
+body.is-lembrancinha .single_add_to_cart_button.disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .lembrancinhas-price-display .price-amount {
+        font-size: 1.25rem;
+    }
+
+    .lembrancinhas-notice {
+        padding: var(--espacamento-xs) var(--espacamento-sm);
+        font-size: 0.8125rem;
+    }
+}

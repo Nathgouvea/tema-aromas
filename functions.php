@@ -527,6 +527,10 @@ if (file_exists(get_template_directory() . '/inc/woocommerce-setup.php')) {
     require_once get_template_directory() . '/inc/woocommerce-setup.php';
 }
 
+if (class_exists('WooCommerce') && file_exists(get_template_directory() . '/inc/lembrancinhas.php')) {
+    require_once get_template_directory() . '/inc/lembrancinhas.php';
+}
+
 // SEO and Meta optimization
 if (file_exists(get_template_directory() . '/functions-seo.php')) {
     require_once get_template_directory() . '/functions-seo.php';

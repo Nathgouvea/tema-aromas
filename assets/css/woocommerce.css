@@ -1344,11 +1344,12 @@ ul.products .blockUI::before {
   background: white;
 }
 
-/* Single Add to Cart Button - Apple style */
-.woocommerce div.product form.cart .single_add_to_cart_button {
-  background: var(--cor-primaria);
-  color: white;
-  border: none;
+/* Single Add to Cart Button - Primary CTA (override .button.alt secondary style) */
+.woocommerce div.product form.cart .single_add_to_cart_button,
+.woocommerce div.product form.cart .single_add_to_cart_button.button.alt {
+  background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-accent) 100%) !important;
+  color: white !important;
+  border: none !important;
   border-radius: 100px;
   padding: 16px 32px;
   font-size: 1rem;
@@ -1356,21 +1357,22 @@ ul.products .blockUI::before {
   text-transform: none;
   letter-spacing: 0;
   cursor: pointer;
-  transition: opacity 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: var(--espacamento-sm);
   position: relative;
   overflow: hidden;
-  box-shadow: none;
+  box-shadow: 0 8px 32px rgba(107, 79, 196, 0.3) !important;
   width: 100%;
   max-width: 400px;
 }
 
-.woocommerce div.product form.cart .single_add_to_cart_button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 48px rgba(107, 79, 196, 0.4);
+.woocommerce div.product form.cart .single_add_to_cart_button:hover,
+.woocommerce div.product form.cart .single_add_to_cart_button.button.alt:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 48px rgba(107, 79, 196, 0.4) !important;
 }
 
 /* Product Meta - Apple style */

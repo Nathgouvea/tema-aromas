@@ -60,18 +60,36 @@ defined( 'ABSPATH' ) || exit;
 
 		<?php if ( $order->has_status( 'failed' ) ) : ?>
 
-			<p class="woocommerce-notice woocommerce-notice--error woocommerce-thankyou-order-failed"><?php esc_html_e( 'Unfortunately your order cannot be processed as the originating bank/merchant has declined your transaction. Please attempt your purchase again.', 'woocommerce' ); ?></p>
-
-			<p class="woocommerce-notice woocommerce-notice--error woocommerce-thankyou-order-failed-actions">
-				<a href="<?php echo esc_url( $order->get_checkout_payment_url() ); ?>" class="button pay"><?php esc_html_e( 'Pay', 'woocommerce' ); ?></a>
-				<?php if ( is_user_logged_in() ) : ?>
-					<a href="<?php echo esc_url( wc_get_page_permalink( 'myaccount' ) ); ?>" class="button pay"><?php esc_html_e( 'My account', 'woocommerce' ); ?></a>
-				<?php endif; ?>
-			</p>
+			<div class="order-failed-state">
+				<div class="failed-icon-circle">
+					<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+						<circle cx="12" cy="12" r="10"></circle>
+						<line x1="12" y1="8" x2="12" y2="12"></line>
+						<line x1="12" y1="16" x2="12.01" y2="16"></line>
+					</svg>
+				</div>
+				<p class="failed-message"><?php esc_html_e( 'Infelizmente, o pagamento não foi processado. Isso pode acontecer por diversos motivos.', 'tema_aromas' ); ?></p>
+				<p class="failed-reassurance"><?php esc_html_e( 'Não se preocupe, seu pedido foi salvo. Tente novamente.', 'tema_aromas' ); ?></p>
+				<div class="failed-actions">
+					<a href="<?php echo esc_url( $order->get_checkout_payment_url() ); ?>" class="button btn-checkout"><?php esc_html_e( 'Tentar Pagamento Novamente', 'tema_aromas' ); ?></a>
+					<?php if ( is_user_logged_in() ) : ?>
+						<a href="<?php echo esc_url( wc_get_page_permalink( 'myaccount' ) ); ?>" class="button btn-view-cart"><?php esc_html_e( 'Minha Conta', 'tema_aromas' ); ?></a>
+					<?php endif; ?>
+				</div>
+			</div>
 
 		<?php else : ?>
 
-			<?php wc_get_template( 'checkout/order-received.php', array( 'order' => $order ) ); ?>
+			<!-- Success Celebration -->
+			<div class="order-success-hero">
+				<div class="success-icon-circle">
+					<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+						<polyline points="20 6 9 17 4 12"></polyline>
+					</svg>
+				</div>
+				<?php wc_get_template( 'checkout/order-received.php', array( 'order' => $order ) ); ?>
+				<p class="success-subtitle"><?php esc_html_e( 'Enviamos uma confirmação para o seu email', 'tema_aromas' ); ?></p>
+			</div>
 
 			<ul class="woocommerce-order-overview woocommerce-thankyou-order-details order_details">
 
@@ -105,6 +123,51 @@ defined( 'ABSPATH' ) || exit;
 				<?php endif; ?>
 
 			</ul>
+
+			<!-- Next Steps -->
+			<div class="order-next-steps">
+				<h3 class="next-steps-title"><?php esc_html_e( 'Próximos passos', 'tema_aromas' ); ?></h3>
+				<div class="next-steps-grid">
+					<div class="next-step">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+							<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+							<polyline points="22,6 12,13 2,6"></polyline>
+						</svg>
+						<p><?php esc_html_e( 'Verifique seu email para a confirmação do pedido', 'tema_aromas' ); ?></p>
+					</div>
+					<div class="next-step">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+							<rect x="1" y="3" width="15" height="13"></rect>
+							<polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+							<circle cx="5.5" cy="18.5" r="2.5"></circle>
+							<circle cx="18.5" cy="18.5" r="2.5"></circle>
+						</svg>
+						<p><?php
+							printf(
+								wp_kses(
+									__( 'Acompanhe seu pedido na página de <a href="%s">rastreamento</a>', 'tema_aromas' ),
+									array( 'a' => array( 'href' => array() ) )
+								),
+								esc_url( home_url( '/rastreamento/' ) )
+							);
+						?></p>
+					</div>
+					<div class="next-step">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+							<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+						</svg>
+						<p><?php
+							printf(
+								wp_kses(
+									__( 'Dúvidas? <a href="%s">Fale conosco</a>', 'tema_aromas' ),
+									array( 'a' => array( 'href' => array() ) )
+								),
+								esc_url( home_url( '/fale-conosco/' ) )
+							);
+						?></p>
+					</div>
+				</div>
+			</div>
 
 		<?php endif; ?>
 

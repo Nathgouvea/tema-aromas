@@ -136,10 +136,10 @@ do_action('woocommerce_before_mini_cart'); ?>
 
         <div class="woocommerce-mini-cart__buttons buttons">
             <a href="<?php echo esc_url(wc_get_cart_url()); ?>" class="button wc-forward btn-view-cart">
-                <?php esc_html_e('View cart', 'woocommerce'); ?>
+                <?php esc_html_e('Ver Carrinho', 'tema_aromas'); ?>
             </a>
             <a href="<?php echo esc_url(wc_get_checkout_url()); ?>" class="button checkout wc-forward btn-checkout">
-                <?php esc_html_e('Checkout', 'woocommerce'); ?>
+                <?php esc_html_e('Finalizar Compra', 'tema_aromas'); ?>
             </a>
         </div>
     </div>
@@ -148,16 +148,17 @@ do_action('woocommerce_before_mini_cart'); ?>
 
     <div class="mini-cart-empty">
         <p class="woocommerce-mini-cart__empty-message">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="empty-cart-icon">
-                <circle cx="9" cy="21" r="1"></circle>
-                <circle cx="20" cy="21" r="1"></circle>
-                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="empty-cart-icon" aria-hidden="true">
+                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <path d="M16 10a4 4 0 0 1-8 0"></path>
             </svg>
-            <?php esc_html_e('No products in the cart.', 'woocommerce'); ?>
+            <?php esc_html_e('Seu carrinho está vazio', 'tema_aromas'); ?>
         </p>
+        <span class="mini-cart-empty-subtitle"><?php esc_html_e('Explore nossa coleção de aromas premium', 'tema_aromas'); ?></span>
         <p>
             <a href="<?php echo esc_url(wc_get_page_permalink('shop')); ?>" class="button btn-luxury">
-                <?php esc_html_e('Continue shopping', 'tema_aromas'); ?>
+                <?php esc_html_e('Explorar Produtos', 'tema_aromas'); ?>
             </a>
         </p>
     </div>

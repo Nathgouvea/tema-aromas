@@ -5308,113 +5308,119 @@ body.woocommerce-account form h2:first-child,
    Lembrancinhas Product Configurator
    ========================================================================== */
 
-/* Hide default quantity input for Lembrancinhas */
-body.is-lembrancinha .woocommerce div.product form.cart div.quantity {
+/* Hide default quantity input and shipping calculator for Lembrancinhas */
+body.is-lembrancinha .woocommerce div.product form.cart div.quantity,
+body.is-lembrancinha .woocommerce-shipping-calculator,
+body.is-lembrancinha .woocommerce div.product .woocommerce-shipping-calculator {
     display: none !important;
 }
 
 /* Configurator container */
 .lembrancinhas-configurator {
-    margin: 0 0 var(--espacamento-lg) 0;
+    margin: 0 0 var(--espacamento-sm) 0;
 }
 
-/* Field wrapper */
+/* Field wrapper — compact spacing */
 .lembrancinhas-field {
-    margin-bottom: var(--espacamento-md);
+    margin-bottom: var(--espacamento-sm);
 }
 
 .lembrancinhas-field label {
     display: block;
     font-family: var(--fonte-principal);
-    font-weight: 600;
-    font-size: 0.95rem;
+    font-weight: 500;
+    font-size: 0.8rem;
     color: var(--cor-texto);
-    margin-bottom: var(--espacamento-xs);
-    letter-spacing: 0.01em;
+    opacity: 0.5;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
-/* Match the existing .variations select styling */
+/* Select styling */
 .lembrancinhas-field select {
-    max-width: 320px;
+    max-width: 280px;
     width: 100%;
-    padding: 10px 36px 10px 14px;
-    border: 1px solid rgba(0, 0, 0, 0.15);
+    padding: 10px 36px 10px 12px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
     border-radius: 8px;
     background: white;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-family: var(--fonte-principal);
     color: var(--cor-texto);
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
-    background-position: right 12px center;
-    background-size: 16px;
+    background-position: right 10px center;
+    background-size: 14px;
     cursor: pointer;
 }
 
 .lembrancinhas-field select:focus {
     outline: none;
     border-color: var(--cor-primaria);
-    box-shadow: 0 0 0 3px rgba(107, 79, 196, 0.12);
+    box-shadow: 0 0 0 3px rgba(107, 79, 196, 0.08);
 }
 
 .lembrancinhas-field select:disabled {
-    opacity: 0.45;
+    opacity: 0.4;
     cursor: not-allowed;
-    background-color: #f5f5f7;
+    background-color: #fafafa;
 }
 
 /* Dynamic price display */
 .lembrancinhas-price-display {
     display: flex;
     align-items: baseline;
-    gap: var(--espacamento-xs);
-    margin: var(--espacamento-md) 0 var(--espacamento-lg) 0;
+    gap: 6px;
+    margin: var(--espacamento-sm) 0;
 }
 
 .lembrancinhas-price-display .price-label {
     font-family: var(--fonte-principal);
-    font-size: 0.95rem;
+    font-size: 0.8rem;
     font-weight: 400;
     color: var(--cor-texto);
-    opacity: 0.6;
+    opacity: 0.5;
 }
 
 .lembrancinhas-price-display .price-amount {
     font-family: var(--fonte-principal);
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 600;
     color: var(--cor-texto);
 }
 
-/* Info notices */
+/* Info notices — plain text style, no boxes */
 .lembrancinhas-notice {
     display: flex;
-    max-width: 320px;
-    gap: var(--espacamento-xs);
+    gap: 6px;
     align-items: flex-start;
-    padding: 10px 14px;
-    border-radius: 8px;
-    margin-bottom: var(--espacamento-xs);
-    font-size: 0.8rem;
-    line-height: 1.5;
+    padding: 0;
+    margin-bottom: 6px;
+    background: none;
+    border: none;
+    border-radius: 0;
 }
 
 .lembrancinhas-notice svg {
     flex-shrink: 0;
     margin-top: 1px;
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
+    opacity: 0.55;
 }
 
 .lembrancinhas-notice p {
     margin: 0;
     font-family: var(--fonte-principal);
+    font-size: 0.78rem;
+    line-height: 1.5;
     color: var(--cor-texto);
-    opacity: 0.7;
+    opacity: 0.65;
 }
 
 .lembrancinhas-notice a {
@@ -5422,43 +5428,31 @@ body.is-lembrancinha .woocommerce div.product form.cart div.quantity {
     font-weight: 500;
     text-decoration: underline;
     text-underline-offset: 2px;
+    opacity: 1;
 }
 
 .lembrancinhas-notice a:hover {
     color: var(--cor-accent);
 }
 
-.lembrancinhas-notice--contact {
-    background: rgba(107, 79, 196, 0.06);
-    border: 1px solid rgba(107, 79, 196, 0.15);
-}
-
-.lembrancinhas-notice--contact svg {
-    color: var(--cor-primaria);
-}
-
-.lembrancinhas-notice--production {
-    background: rgba(107, 79, 196, 0.04);
-    border: 1px solid rgba(107, 79, 196, 0.1);
-}
-
+.lembrancinhas-notice--contact svg,
 .lembrancinhas-notice--production svg {
-    color: var(--cor-accent);
+    color: var(--cor-texto);
 }
 
-/* Starting price "A partir de" - matches .woocommerce div.product p.price style */
+/* Starting price "A partir de" */
 .lembrancinhas-starting-price {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 600;
     color: var(--cor-texto);
-    margin: 0 0 var(--espacamento-xl) 0 !important;
+    margin: 0 0 var(--espacamento-lg) 0 !important;
 }
 
 .lembrancinhas-starting-price .lembrancinhas-from-label {
-    font-size: 0.875rem;
+    font-size: 0.8rem;
     font-weight: 400;
     color: var(--cor-texto);
-    opacity: 0.6;
+    opacity: 0.5;
 }
 
 /* Disabled add-to-cart button for Lembrancinhas */
@@ -5470,12 +5464,11 @@ body.is-lembrancinha .single_add_to_cart_button.disabled {
 
 /* Responsive */
 @media (max-width: 767px) {
-    .lembrancinhas-price-display .price-amount {
-        font-size: 1.25rem;
+    .lembrancinhas-field select {
+        max-width: 100%;
     }
 
-    .lembrancinhas-notice {
-        padding: 8px 10px;
-        font-size: 0.75rem;
+    .lembrancinhas-price-display .price-amount {
+        font-size: 1.1rem;
     }
 }

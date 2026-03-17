@@ -109,12 +109,24 @@
 
                 <div class="site-branding">
                     <div class="site-logo">
+                        <?php
+                        $logo_white_url = get_theme_mod('logo_white', '');
+                        $logo_black_url = get_theme_mod('logo_black', '');
+
+                        // Fallback to theme directory files if Customizer logos not set
+                        if (empty($logo_white_url)) {
+                            $logo_white_url = get_template_directory_uri() . '/assets/img/logo-nome-branca.png';
+                        }
+                        if (empty($logo_black_url)) {
+                            $logo_black_url = get_template_directory_uri() . '/assets/img/logo-nome-preta.png';
+                        }
+                        ?>
                         <a href="<?php echo esc_url(home_url('/')); ?>" rel="home" class="dynamic-logo-link">
-                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/logo-nome-branca.png'); ?>"
+                            <img src="<?php echo esc_url($logo_white_url); ?>"
                                  alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
                                  class="site-logo-img logo-white"
                                  id="logo-white">
-                            <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/logo-nome-preta.png'); ?>"
+                            <img src="<?php echo esc_url($logo_black_url); ?>"
                                  alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
                                  class="site-logo-img logo-black"
                                  id="logo-black"

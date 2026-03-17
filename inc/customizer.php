@@ -38,6 +38,36 @@ function tema_aromas_customize_register($wp_customize) {
         );
     }
 
+    // Logo Section
+    $wp_customize->add_section('tema_aromas_logos', [
+        'title'    => __('Logos do Site', 'tema_aromas'),
+        'priority' => 20,
+    ]);
+
+    // White Logo (for homepage hero)
+    $wp_customize->add_setting('logo_white', [
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ]);
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'logo_white', [
+        'label'       => __('Logo Branca (Homepage)', 'tema_aromas'),
+        'description' => __('Logo exibida no topo da homepage antes de rolar a página.', 'tema_aromas'),
+        'section'     => 'tema_aromas_logos',
+    ]));
+
+    // Black Logo (for scrolled header and inner pages)
+    $wp_customize->add_setting('logo_black', [
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+    ]);
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'logo_black', [
+        'label'       => __('Logo Preta (Páginas internas)', 'tema_aromas'),
+        'description' => __('Logo exibida ao rolar a página e em páginas internas.', 'tema_aromas'),
+        'section'     => 'tema_aromas_logos',
+    ]));
+
     // Contact Information Section
     $wp_customize->add_section('tema_aromas_contact_info', [
         'title'    => __('Informações de Contato', 'tema_aromas'),

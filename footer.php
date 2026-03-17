@@ -7,8 +7,9 @@
                     <div class="footer-section footer-about">
                         <div class="footer-branding">
                             <div class="footer-logo">
-                                <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/logo-nome-branca.png'); ?>" 
-                                     alt="<?php echo esc_attr(get_bloginfo('name')); ?>" 
+                                <?php $footer_logo_url = get_theme_mod('logo_white', '') ?: get_template_directory_uri() . '/assets/img/logo-nome-branca.png'; ?>
+                                <img src="<?php echo esc_url($footer_logo_url); ?>"
+                                     alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
                                      class="footer-logo-img">
                             </div>
                             

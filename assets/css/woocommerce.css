@@ -2630,7 +2630,7 @@ section:has(> h2:contains("Best Quality Plants")) {
 /* Checkout 2-Column Layout */
 .woocommerce-checkout form.woocommerce-checkout {
   display: grid;
-  grid-template-columns: 1fr 480px;
+  grid-template-columns: 1fr 520px;
   gap: var(--espacamento-xl);
   align-items: start;
   max-width: 100%;
@@ -2676,17 +2676,18 @@ section:has(> h2:contains("Best Quality Plants")) {
   }
 }
 
-/* Enhanced Order Summary Sidebar - Apple style */
+/* Enhanced Order Summary Sidebar */
 .woocommerce-checkout #order_review,
 .woocommerce-checkout .woocommerce-checkout-review-order {
   background: white;
-  border-radius: 12px;
-  padding: var(--espacamento-lg);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  padding: var(--espacamento-lg) var(--espacamento-md);
+  border: 1px solid rgba(0, 0, 0, 0.06);
   position: sticky;
-  top: var(--espacamento-lg);
-  max-height: calc(100vh - var(--espacamento-xxl));
+  top: var(--espacamento-md);
+  max-height: calc(100vh - var(--espacamento-lg));
   overflow-y: auto;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 .woocommerce-checkout .woocommerce-checkout-review-order h3 {
@@ -2760,14 +2761,14 @@ section:has(> h2:contains("Best Quality Plants")) {
   font-size: 0.95rem;
 }
 
-/* Order Totals Section - Apple style */
+/* ── Order Totals: Clear Visual Hierarchy ── */
 .woocommerce-checkout-review-order-table tfoot {
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .woocommerce-checkout-review-order-table tfoot th,
 .woocommerce-checkout-review-order-table tfoot td {
-  padding: var(--espacamento-lg) var(--espacamento-sm);
+  padding: var(--espacamento-sm) var(--espacamento-sm);
   font-size: 0.95rem;
 }
 
@@ -2775,84 +2776,104 @@ section:has(> h2:contains("Best Quality Plants")) {
   font-weight: 400;
   color: var(--cor-texto);
   text-align: left;
-  width: 80px;
-  white-space: nowrap;
+  opacity: 0.7;
 }
 
 .woocommerce-checkout-review-order-table tfoot td {
   text-align: right;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--cor-texto);
 }
 
 /* Subtotal Row */
 .woocommerce-checkout-review-order-table .cart-subtotal th,
 .woocommerce-checkout-review-order-table .cart-subtotal td {
-  padding-top: var(--espacamento-lg);
-  font-size: 1rem;
+  padding-top: var(--espacamento-md);
+  font-size: 0.95rem;
   font-weight: 400;
 }
 
-/* Shipping Row - Narrow label, wide options */
+/* ── Shipping Row: Stacked Layout (label on top, cards below full-width) ── */
+.woocommerce-checkout-review-order-table .woocommerce-shipping-totals {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.woocommerce-checkout-review-order-table .woocommerce-shipping-totals th,
+.woocommerce-checkout-review-order-table .woocommerce-shipping-totals td {
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
 .woocommerce-checkout-review-order-table .woocommerce-shipping-totals th {
   color: var(--cor-texto);
-  font-weight: 400;
-  vertical-align: top;
-  padding-top: var(--espacamento-lg);
-  width: 80px;
-  white-space: nowrap;
+  font-weight: 500;
+  padding-top: var(--espacamento-md);
+  padding-bottom: var(--espacamento-xs);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.6;
 }
 
 .woocommerce-checkout-review-order-table .woocommerce-shipping-totals td {
   color: var(--cor-texto);
   font-weight: 400;
-  padding: var(--espacamento-sm) var(--espacamento-sm);
+  padding: 0 0 var(--espacamento-sm) 0;
 }
 
-/* Shipping methods list inside checkout order review */
+/* ── Shipping Method Cards: Luxury Style ── */
 .woocommerce-checkout-review-order-table #shipping_method {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .woocommerce-checkout-review-order-table #shipping_method li {
   list-style-type: none;
-  background: rgba(0, 0, 0, 0.02);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 8px;
-  padding: 10px 12px;
+  background: #fafafa;
+  border: 1.5px solid rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  padding: 14px 16px;
   display: flex;
   align-items: flex-start;
-  gap: 8px;
+  gap: 12px;
   cursor: pointer;
-  transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 }
 
 .woocommerce-checkout-review-order-table #shipping_method li:hover {
-  border-color: var(--cor-primaria);
+  border-color: rgba(107, 79, 196, 0.4);
+  background: rgba(107, 79, 196, 0.02);
 }
 
 .woocommerce-checkout-review-order-table #shipping_method li:has(input:checked) {
   border-color: var(--cor-primaria);
   background: rgba(107, 79, 196, 0.05);
+  box-shadow: 0 0 0 1px var(--cor-primaria);
 }
 
 .woocommerce-checkout-review-order-table #shipping_method li input[type="radio"] {
-  margin-top: 3px;
+  margin-top: 2px;
   flex-shrink: 0;
   accent-color: var(--cor-primaria);
+  width: 18px;
+  height: 18px;
 }
 
 .woocommerce-checkout-review-order-table #shipping_method li label {
-  font-size: 0.85rem;
-  line-height: 1.4;
+  font-size: 0.9rem;
+  line-height: 1.55;
   color: var(--cor-texto);
   cursor: pointer;
-  display: inline;
+  display: block;
+  word-break: break-word;
+  flex: 1;
+  min-width: 0;
 }
 
 /* Shipping address in checkout review */
@@ -2876,14 +2897,18 @@ section:has(> h2:contains("Best Quality Plants")) {
   text-decoration: underline;
 }
 
-/* Order Total Row */
+/* ── Order Total Row: Prominent ── */
 .woocommerce-checkout-review-order-table .order-total th,
 .woocommerce-checkout-review-order-table .order-total td {
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 1.25rem;
+  font-weight: 700;
   color: var(--cor-texto);
-  padding: var(--espacamento-lg) var(--espacamento-sm);
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding: var(--espacamento-md) var(--espacamento-sm);
+  border-top: 2px solid var(--cor-texto);
+}
+
+.woocommerce-checkout-review-order-table .order-total td {
+  color: var(--cor-primaria);
 }
 
 /* Payment Methods Section - Apple style */
@@ -2988,50 +3013,57 @@ section:has(> h2:contains("Best Quality Plants")) {
    Shipping Options - Visual Cards
    ========================================================================== */
 
-/* Shipping methods - Clean card style (cart + checkout) */
+/* Shipping methods - Luxury card style (cart page) */
 .woocommerce-cart #shipping_method {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .woocommerce-cart #shipping_method li {
   list-style-type: none;
-  background: rgba(0, 0, 0, 0.02);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  border-radius: 8px;
-  padding: 10px 12px;
+  background: #fafafa;
+  border: 1.5px solid rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  padding: 14px 16px;
   display: flex;
   align-items: flex-start;
-  gap: 8px;
+  gap: 12px;
   cursor: pointer;
-  transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
 }
 
 .woocommerce-cart #shipping_method li:hover {
-  border-color: var(--cor-primaria);
+  border-color: rgba(107, 79, 196, 0.4);
+  background: rgba(107, 79, 196, 0.02);
 }
 
 .woocommerce-cart #shipping_method li:has(input:checked) {
   border-color: var(--cor-primaria);
   background: rgba(107, 79, 196, 0.05);
+  box-shadow: 0 0 0 1px var(--cor-primaria);
 }
 
 .woocommerce-cart #shipping_method li input[type="radio"] {
-  margin-top: 3px;
+  margin-top: 2px;
   flex-shrink: 0;
   accent-color: var(--cor-primaria);
+  width: 18px;
+  height: 18px;
 }
 
 .woocommerce-cart #shipping_method li label {
   font-size: 0.9rem;
-  line-height: 1.4;
+  line-height: 1.55;
   color: var(--cor-texto);
   cursor: pointer;
-  display: inline;
+  display: block;
+  word-break: break-word;
+  flex: 1;
+  min-width: 0;
 }
 
 /* Shipping calculator in cart */
@@ -3421,34 +3453,37 @@ section:has(> h2:contains("Best Quality Plants")) {
   position: relative;
 }
 
-/* Reduce form row spacing specifically on checkout page */
+/* ── Checkout Form Fields: CSS Grid Layout ── */
+
+/* Grid layout on billing/shipping field wrappers (replaces floats) */
+.woocommerce-checkout .woocommerce-billing-fields__field-wrapper,
+.woocommerce-checkout .woocommerce-shipping-fields__field-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px var(--espacamento-md);
+}
+
+/* Reset all form rows — no floats needed with grid */
 .woocommerce-checkout form .form-row {
-  margin-bottom: var(--espacamento-sm);
+  margin-bottom: 0;
   display: flex;
   flex-direction: column;
+  float: none !important;
+  width: 100% !important;
 }
 
-/* Override flex for side-by-side fields that use floats */
 .woocommerce-checkout form .form-row-first,
 .woocommerce-checkout form .form-row-last {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  float: none !important;
+  width: 100% !important;
 }
 
-/* Label Styling with Required Indicator */
-.woocommerce form .form-row label {
-  display: block;
-  margin-bottom: var(--espacamento-xs);
-  font-weight: 600;
-  color: var(--cor-texto);
-  font-size: 0.9rem;
-  letter-spacing: 0.02em;
-}
-
-/* Reduce spacing between label and input specifically on checkout billing fields */
-.woocommerce-checkout .woocommerce-billing-fields .form-row label,
-.woocommerce-checkout .woocommerce-shipping-fields .form-row label,
-.woocommerce-checkout .woocommerce-additional-fields .form-row label {
-  margin-bottom: 4px;
+/* Full-width fields span both columns */
+.woocommerce-checkout form .form-row-wide {
+  grid-column: 1 / -1;
+  clear: none;
 }
 
 /* Hide country field since it's always Brazil */
@@ -3457,38 +3492,93 @@ section:has(> h2:contains("Best Quality Plants")) {
   display: none !important;
 }
 
-.woocommerce form .form-row label .required {
-  color: #ff4444;
-  font-weight: 700;
-  margin-left: 2px;
+/* Brazilian field overrides for grid context */
+.woocommerce-checkout #billing_number_field {
+  grid-column: auto;
 }
 
+.woocommerce-checkout #billing_neighborhood_field {
+  grid-column: 1 / -1;
+}
+
+/* ── Visual Section Divider before CEP (address block) ── */
+.woocommerce-checkout #billing_postcode_field {
+  grid-column: 1 / -1;
+  position: relative;
+  padding-top: var(--espacamento-lg);
+  margin-top: var(--espacamento-xs);
+}
+
+.woocommerce-checkout #billing_postcode_field::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.08) 20%,
+    rgba(0, 0, 0, 0.08) 80%,
+    transparent 100%
+  );
+}
+
+/* ── Refined Label Styling ── */
+.woocommerce form .form-row label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: var(--cor-texto);
+  font-size: 0.875rem;
+  letter-spacing: 0.01em;
+  opacity: 0.85;
+}
+
+/* Checkout-specific labels: uppercase, subtle */
+.woocommerce-checkout .woocommerce-billing-fields .form-row label,
+.woocommerce-checkout .woocommerce-shipping-fields .form-row label,
+.woocommerce-checkout .woocommerce-additional-fields .form-row label {
+  margin-bottom: 4px;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+  opacity: 0.55;
+}
+
+/* Softer required indicator — brand purple instead of red */
+.woocommerce form .form-row label .required,
 .woocommerce form .form-row label abbr.required {
-  color: #ff4444;
+  color: var(--cor-primaria);
+  font-weight: 400;
+  margin-left: 2px;
   text-decoration: none;
   border: none;
+  opacity: 0.6;
 }
 
-/* Input Field Styling */
+/* ── Luxury Input Fields ── */
 .woocommerce form .form-row input.input-text,
 .woocommerce form .form-row textarea,
 .woocommerce form .form-row select {
   width: 100%;
-  padding: 10px 14px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
+  padding: 12px 16px;
+  border: 1.5px solid rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
   font-size: 0.95rem;
   font-family: inherit;
   color: var(--cor-texto);
-  background: var(--cor-fundo);
-  transition: border-color 0.2s ease;
+  background: #fafafa;
+  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
   -webkit-appearance: none;
   appearance: none;
 }
 
 /* Textarea specific styling */
 .woocommerce form .form-row textarea {
-  border-radius: 6px;
+  border-radius: 10px;
   min-height: 100px;
   resize: vertical;
   line-height: 1.6;
@@ -3506,13 +3596,14 @@ section:has(> h2:contains("Best Quality Plants")) {
   line-height: normal;
 }
 
-/* Focus State */
+/* Focus State — refined ring */
 .woocommerce form .form-row input.input-text:focus,
 .woocommerce form .form-row textarea:focus,
 .woocommerce form .form-row select:focus {
   border-color: var(--cor-primaria);
   outline: none;
   background: white;
+  box-shadow: 0 0 0 3px rgba(107, 79, 196, 0.1);
 }
 
 /* Placeholder Styling */
@@ -3549,26 +3640,26 @@ section:has(> h2:contains("Best Quality Plants")) {
   display: block;
 }
 
-/* Checkout Billing/Shipping Sections - Apple style */
+/* ── Checkout Section Headings ── */
 .woocommerce-checkout .woocommerce-billing-fields h3,
 .woocommerce-checkout .woocommerce-shipping-fields h3,
 .woocommerce-checkout .woocommerce-additional-fields h3 {
   font-family: var(--fonte-titulo);
-  font-size: 1.5rem;
+  font-size: 1.375rem;
   color: var(--cor-texto);
-  margin-bottom: var(--espacamento-lg);
+  margin-bottom: var(--espacamento-md);
   margin-top: var(--espacamento-xl);
-  padding-bottom: 0;
-  border-bottom: none;
-  font-weight: 700;
-  letter-spacing: -0.5px;
+  padding-bottom: var(--espacamento-sm);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  font-weight: 600;
+  letter-spacing: -0.3px;
 }
 
 .woocommerce-checkout .woocommerce-billing-fields:first-child h3 {
   margin-top: 0;
 }
 
-/* Field Groups for Better Spacing */
+/* Field Groups for non-checkout pages (keep float system) */
 .woocommerce form .form-row-first,
 .woocommerce form .form-row-last {
   width: 48%;
@@ -3583,15 +3674,7 @@ section:has(> h2:contains("Best Quality Plants")) {
   clear: both;
 }
 
-/* Make billing number and neighborhood fields full width on checkout */
-.woocommerce-checkout #billing_number_field,
-.woocommerce-checkout #billing_neighborhood_field {
-  width: 100%;
-  float: none;
-  clear: both;
-}
-
-/* Clearfix for form rows */
+/* Clearfix for form rows (non-checkout pages) */
 .woocommerce form .form-row:after {
   content: "";
   display: table;
@@ -3616,6 +3699,23 @@ section:has(> h2:contains("Best Quality Plants")) {
 
 /* Mobile Responsive Forms */
 @media (max-width: 767px) {
+  /* Stack all checkout fields single-column on mobile */
+  .woocommerce-checkout .woocommerce-billing-fields__field-wrapper,
+  .woocommerce-checkout .woocommerce-shipping-fields__field-wrapper {
+    grid-template-columns: 1fr;
+    gap: var(--espacamento-sm);
+  }
+
+  .woocommerce-checkout form .form-row,
+  .woocommerce-checkout form .form-row-first,
+  .woocommerce-checkout form .form-row-last,
+  .woocommerce-checkout form .form-row-wide {
+    grid-column: 1;
+    width: 100% !important;
+    float: none !important;
+  }
+
+  /* Non-checkout pages */
   .woocommerce form .form-row-first,
   .woocommerce form .form-row-last {
     width: 100%;
@@ -3627,6 +3727,8 @@ section:has(> h2:contains("Best Quality Plants")) {
   .woocommerce form .form-row textarea,
   .woocommerce form .form-row select {
     font-size: 16px; /* Prevents zoom on iOS */
+    padding: 14px 16px;
+    border-radius: 10px;
   }
 }
 
@@ -3994,7 +4096,9 @@ body.woocommerce-cart nav.luxury-breadcrumb {
 
 .mini-cart-content {
   flex: 1;
+  min-height: 0; /* Critical fix: allows flex child to scroll */
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   padding: 0;
 }
 

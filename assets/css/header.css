@@ -204,13 +204,13 @@ header.site-header.scrolled,
 /* Tablet (iPad): Smaller logo for better proportion */
 @media (min-width: 768px) and (max-width: 1023px) {
   .site-logo img {
-    max-height: 40px;
+    max-height: 20px;
   }
 }
 
 @media (min-width: 1024px) {
   .site-logo img {
-    max-height: 50px;
+    max-height: 20px;
   }
 }
 
@@ -238,13 +238,13 @@ header.site-header.scrolled,
 /* Tablet (iPad): Smaller logo for better proportion */
 @media (min-width: 768px) and (max-width: 1023px) {
   .site-logo-img {
-    max-height: 40px;
+    max-height: 20px;
   }
 }
 
 @media (min-width: 1024px) {
   .site-logo-img {
-    max-height: 50px;
+    max-height: 20px;
   }
 }
 

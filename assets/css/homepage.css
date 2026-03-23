@@ -930,7 +930,7 @@
 
 .produtos-queridos-section {
   padding: var(--espacamento-xxl) 0;
-  background: #fafafa;
+  background: #f7f5fb;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
@@ -949,16 +949,16 @@
   background: var(--cor-fundo);
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: var(--sombra-sutil);
-  border: 1px solid var(--cor-borda);
-  transition: var(--transicao-suave);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  border: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  height: 400px;
+  aspect-ratio: 3 / 4;
 }
 
 .produto-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--sombra-luxo);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
 }
 
 .produto-image {
@@ -972,8 +972,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(100%);
-  transition: 0.6s;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   display: block;
   min-height: 200px;
   position: relative;
@@ -981,7 +980,6 @@
 }
 
 .produto-card:hover .produto-image img {
-  filter: grayscale(0%);
   transform: scale(1.05);
 }
 
@@ -1047,7 +1045,7 @@
   }
 
   .produto-card {
-    height: 350px;
+    aspect-ratio: 3 / 4;
   }
 }
 
@@ -2045,9 +2043,9 @@
 
 /* Premium Trust Indicators */
 .trust-indicators-horizontal {
-  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-  padding: var(--espacamento-lg) 0;
-  border-bottom: 1px solid rgba(230, 230, 230, 0.5);
+  background: transparent;
+  padding: var(--espacamento-md) 0;
+  border-bottom: none;
 }
 
 .trust-grid-horizontal {
@@ -2062,53 +2060,39 @@
 .trust-item-horizontal {
   display: flex;
   align-items: center;
-  background: var(--cor-fundo);
+  background: transparent;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-  border: 1px solid rgba(230, 230, 230, 0.3);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: none;
+  border: none;
+  transition: background 0.3s ease;
   position: relative;
   overflow: hidden;
   padding: var(--espacamento-sm) var(--espacamento-md);
 }
 
 .trust-item-horizontal::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--cor-primaria), var(--cor-accent));
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
+  display: none;
 }
 
 .trust-item-horizontal:hover::before {
-  transform: scaleX(1);
+  display: none;
 }
 
 .trust-item-horizontal:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  border-color: rgba(107, 79, 196, 0.15);
+  background: rgba(107, 79, 196, 0.04);
 }
 
 .trust-icon-horizontal {
   flex-shrink: 0;
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(
-    135deg,
-    rgba(107, 79, 196, 0.1) 0%,
-    rgba(115, 82, 199, 0.1) 100%
-  );
-  border-radius: 10px;
+  background: none;
+  border-radius: 0;
   color: var(--cor-primaria);
-  box-shadow: none;
+  opacity: 0.7;
 }
 
 .trust-icon-horizontal svg {
@@ -2672,9 +2656,9 @@ section:nth-child(even) {
 }
 
 .aroma-interactive-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 12px 40px rgba(107, 79, 196, 0.15);
-  border-color: rgba(107, 79, 196, 0.2);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(107, 79, 196, 0.12);
+  border-color: rgba(107, 79, 196, 0.15);
 }
 
 .aroma-card-inner {
@@ -3448,36 +3432,34 @@ img[loading="lazy"].loaded {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
-  filter: grayscale(100%) !important;
-  transition: filter 0.6s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  filter: none !important;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
 .produtos-queridos-section .produto-card:hover .produto-image img {
-  filter: grayscale(0%) !important;
+  transform: scale(1.05) !important;
 }
 
-/* Fix the content positioning with grey overlay */
+/* Content overlay at bottom of card */
 .produtos-queridos-section .produto-content {
-  position: relative !important;
+  position: absolute !important;
   top: auto !important;
-  bottom: auto !important;
-  left: auto !important;
-  right: auto !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
   transform: none !important;
   display: flex !important;
   flex-direction: column !important;
-  justify-content: center !important;
-  align-items: center !important;
-  background: rgba(128, 128, 128, 0.8) !important;
-  height: auto !important;
-  flex: 1 !important;
+  justify-content: flex-end !important;
+  align-items: flex-start !important;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 60%, transparent 100%) !important;
+  height: 60% !important;
   padding: var(--espacamento-lg) !important;
   z-index: 2 !important;
-  margin-top: auto !important;
 }
 
 .produtos-queridos-section .produto-card:hover .produto-content {
-  background: rgba(128, 128, 128, 0.4) !important;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.2) 60%, transparent 100%) !important;
 }
 
 /* Fix text color for better visibility on overlay */

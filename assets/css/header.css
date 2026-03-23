@@ -204,13 +204,13 @@ header.site-header.scrolled,
 /* Tablet (iPad): Smaller logo for better proportion */
 @media (min-width: 768px) and (max-width: 1023px) {
   .site-logo img {
-    max-height: 20px;
+    max-height: 40px;
   }
 }
 
 @media (min-width: 1024px) {
   .site-logo img {
-    max-height: 20px;
+    max-height: 50px;
   }
 }
 
@@ -238,13 +238,13 @@ header.site-header.scrolled,
 /* Tablet (iPad): Smaller logo for better proportion */
 @media (min-width: 768px) and (max-width: 1023px) {
   .site-logo-img {
-    max-height: 20px;
+    max-height: 40px;
   }
 }
 
 @media (min-width: 1024px) {
   .site-logo-img {
-    max-height: 20px;
+    max-height: 50px;
   }
 }
 
@@ -703,7 +703,8 @@ body.admin-bar .mobile-menu-overlay {
 }
 
 .dropdown-menu.show {
-  max-height: 500px;
+  max-height: 60vh;
+  overflow-y: auto;
   opacity: 1;
   padding: var(--espacamento-md) 0 var(--espacamento-md) var(--espacamento-lg);
 }

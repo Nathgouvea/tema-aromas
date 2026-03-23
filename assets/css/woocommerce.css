@@ -663,10 +663,10 @@ body.single-product {
   }
 }
 
-/* Extra Large Desktop (iMac 5K and ultra-wide) */
+/* Extra Large Desktop (Full HD+) */
 @media (min-width: 1920px) {
   .woocommerce ul.products {
-    grid-template-columns: repeat(4, minmax(280px, 320px));
+    grid-template-columns: repeat(5, minmax(260px, 1fr));
     gap: var(--espacamento-xl);
     max-width: 1600px;
     padding: 40px;
@@ -681,6 +681,35 @@ body.single-product {
   .woocommerce .page-header-section {
     max-width: 1600px;
     margin: 0 auto;
+  }
+
+  .woocommerce-active .content-area {
+    max-width: 1600px;
+  }
+
+  .woocommerce-checkout {
+    max-width: 1400px;
+  }
+}
+
+/* iMac 27" / QHD (2560px) */
+@media (min-width: 2560px) {
+  .woocommerce ul.products {
+    grid-template-columns: repeat(5, minmax(300px, 1fr));
+    gap: var(--espacamento-xxl);
+    max-width: 2000px;
+  }
+
+  .woocommerce-active .content-area {
+    max-width: 2000px;
+  }
+
+  .woocommerce div.product {
+    max-width: 2000px;
+  }
+
+  .woocommerce-checkout {
+    max-width: 1600px;
   }
 }
 
@@ -816,6 +845,7 @@ body.single-product {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   transition: opacity 0.2s ease;
+  word-break: break-word;
 }
 
 .woocommerce ul.products li.product h2 a,
@@ -1120,11 +1150,27 @@ ul.products .blockUI::before {
   grid-column: 1;
 }
 
-@media (max-width: 767px) {
+/* Tablet: stack single product vertically */
+@media (max-width: 1023px) {
   .woocommerce div.product {
     grid-template-columns: 1fr;
-    gap: 40px;
-    margin: 20px auto 60px;
+    gap: var(--espacamento-xl);
+    padding: 0 var(--espacamento-md);
+    padding-top: 80px;
+  }
+}
+
+@media (max-width: 767px) {
+  .woocommerce div.product {
+    gap: var(--espacamento-lg);
+    padding: 0 var(--espacamento-sm);
+    padding-top: 60px;
+  }
+
+  /* Reduce gallery thumbnails on mobile */
+  .woocommerce div.product div.images .flex-control-thumbs li {
+    width: 60px;
+    height: 60px;
   }
 }
 
@@ -1566,7 +1612,7 @@ section.related.products > h2 {
 
 /* Shipping Simulation Box - Target only containerCalculator */
 .containerCalculator {
-  max-width: 260px !important;
+  max-width: 100% !important;
   width: 260px !important;
   border-radius: 12px !important;
   background-color: #f8f8f8 !important;
@@ -2655,8 +2701,8 @@ section:has(> h2:contains("Best Quality Plants")) {
   width: 100%;
 }
 
-/* Mobile: Stack vertically */
-@media (max-width: 1024px) {
+/* Tablet + Mobile: Stack vertically */
+@media (max-width: 1023px) {
   .woocommerce-checkout form.woocommerce-checkout {
     grid-template-columns: 1fr;
     gap: var(--espacamento-lg);
@@ -4402,8 +4448,8 @@ body.woocommerce-cart nav.luxury-breadcrumb {
   }
 
   .quantity-selector button {
-    width: 24px;
-    height: 24px;
+    width: 36px;
+    height: 36px;
   }
 
   .mini-cart-item-price {

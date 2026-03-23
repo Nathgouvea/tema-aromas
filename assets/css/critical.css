@@ -67,6 +67,29 @@ body {
   padding: 0 var(--espacamento-md);
 }
 
+@media (min-width: 1440px) {
+  .container,
+  .luxury-container {
+    max-width: 1400px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .container,
+  .luxury-container {
+    max-width: 1600px;
+    padding: 0 var(--espacamento-lg);
+  }
+}
+
+@media (min-width: 2560px) {
+  .container,
+  .luxury-container {
+    max-width: 2000px;
+    padding: 0 var(--espacamento-xl);
+  }
+}
+
 .header-content {
   display: flex;
   align-items: center;

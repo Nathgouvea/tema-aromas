@@ -782,7 +782,6 @@
   min-width: 250px;
   margin: 0;
   padding: 0;
-  max-width: 10px;
 }
 
 /* Slider Navigation */
@@ -916,7 +915,6 @@
   min-width: 250px;
   margin: 0;
   padding: 0;
-  max-width: 10px;
 }
 
 .novidades-cta {
@@ -2243,6 +2241,24 @@ section:nth-child(even) {
   padding: 0 var(--espacamento-lg);
 }
 
+@media (min-width: 1440px) {
+  .produtos-grid {
+    max-width: 1400px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .produtos-grid {
+    max-width: 1600px;
+  }
+}
+
+@media (min-width: 2560px) {
+  .produtos-grid {
+    max-width: 2000px;
+  }
+}
+
 .produto-card {
   position: relative;
   background: var(--cor-fundo);
@@ -3493,4 +3509,44 @@ img[loading="lazy"].loaded {
 /* Category Icons - Hidden */
 .produtos-queridos-section .produto-category-icon {
   display: none;
+}
+
+/* ==========================================================================
+   Large Screen Breakpoints
+   ========================================================================== */
+
+@media (min-width: 1440px) {
+  .hero-content,
+  .featured-products-slider .slider-container,
+  .novidades-products-slider .slider-container,
+  .lembrancinhas-content,
+  .aromas-section-header {
+    max-width: 1400px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .hero-content,
+  .featured-products-slider .slider-container,
+  .novidades-products-slider .slider-container,
+  .lembrancinhas-content,
+  .aromas-section-header {
+    max-width: 1600px;
+  }
+
+  .featured-slider .woocommerce ul.products li.product,
+  .novidades-slider .woocommerce ul.products li.product {
+    flex: 0 0 calc(20% - var(--espacamento-md));
+    min-width: 260px;
+  }
+}
+
+@media (min-width: 2560px) {
+  .hero-content,
+  .featured-products-slider .slider-container,
+  .novidades-products-slider .slider-container,
+  .lembrancinhas-content,
+  .aromas-section-header {
+    max-width: 2000px;
+  }
 }

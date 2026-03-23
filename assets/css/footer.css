@@ -46,6 +46,26 @@
   width: 100%;
 }
 
+@media (min-width: 1440px) {
+  .footer-container {
+    max-width: 1400px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .footer-container {
+    max-width: 1600px;
+    padding: 0 var(--espacamento-lg);
+  }
+}
+
+@media (min-width: 2560px) {
+  .footer-container {
+    max-width: 2000px;
+    padding: 0 var(--espacamento-xl);
+  }
+}
+
 .footer-content {
   margin-bottom: var(--espacamento-xl);
   width: 100%;

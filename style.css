@@ -66,6 +66,7 @@ Tema Aromas is distributed under the terms of the GNU GPL
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
   }
 
 body {
@@ -233,6 +234,27 @@ p {
   margin: 0 auto;
   padding: 0 var(--espacamento-sm);
   }
+
+/* Large screen container scaling */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1400px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1600px;
+    padding: 0 var(--espacamento-lg);
+  }
+}
+
+@media (min-width: 2560px) {
+  .container {
+    max-width: 2000px;
+    padding: 0 var(--espacamento-xl);
+  }
+}
 
 
 

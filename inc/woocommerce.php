@@ -554,3 +554,18 @@ function tema_aromas_update_cart_item_qty() {
 add_action('wc_ajax_update_cart_item_qty', 'tema_aromas_update_cart_item_qty');
 add_action('wp_ajax_update_cart_item_qty', 'tema_aromas_update_cart_item_qty');
 add_action('wp_ajax_nopriv_update_cart_item_qty', 'tema_aromas_update_cart_item_qty');
+
+/**
+ * Add product thumbnail to checkout order review table.
+ */
+function tema_aromas_checkout_thumbnail($name, $cart_item, $cart_item_key) {
+    if (!is_checkout()) {
+        return $name;
+    }
+
+    $_product = $cart_item['data'];
+    $thumbnail = $_product->get_image(array(48, 48), array('class' => 'checkout-product-thumbnail'));
+
+    return '<span class="checkout-item-with-thumb">' . $thumbnail . '<span class="checkout-item-name">' . $name . '</span></span>';
+}
+add_filter('woocommerce_cart_item_name', 'tema_aromas_checkout_thumbnail', 10, 3);

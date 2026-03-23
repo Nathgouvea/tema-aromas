@@ -2747,6 +2747,26 @@ section:has(> h2:contains("Best Quality Plants")) {
   font-size: 0.95rem;
 }
 
+/* Checkout product thumbnail + name layout */
+.checkout-item-with-thumb {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.checkout-product-thumbnail {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.checkout-item-name {
+  flex: 1;
+  min-width: 0;
+}
+
 .woocommerce-checkout-review-order-table .product-name .product-quantity {
   color: var(--cor-texto);
   font-weight: 400;

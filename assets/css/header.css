@@ -420,8 +420,8 @@ header.site-header.scrolled,
 /* WordPress Admin Bar adjustments (when logged in) */
 body.admin-bar .main-navigation,
 body.admin-bar .primary-menu-container {
-  top: 32px;
-  height: calc(100vh - 32px);
+  top: 0;
+  height: 100vh;
   padding-top: 100px;
 }
 
@@ -439,8 +439,8 @@ body.admin-bar .mobile-menu-overlay {
 
   body.admin-bar .main-navigation,
   body.admin-bar .primary-menu-container {
-    top: 32px;
-    height: calc(100vh - 32px);
+    top: 0;
+    height: 100vh;
     padding-top: 100px;
   }
 
@@ -459,8 +459,8 @@ body.admin-bar .mobile-menu-overlay {
 
   body.admin-bar .main-navigation,
   body.admin-bar .primary-menu-container {
-    top: 46px;
-    height: calc(100vh - 46px);
+    top: 0;
+    height: 100vh;
     padding-top: 80px;
   }
 

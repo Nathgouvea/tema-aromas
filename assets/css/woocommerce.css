@@ -5596,3 +5596,194 @@ body.is-lembrancinha .single_add_to_cart_button.disabled {
         font-size: 1.1rem;
     }
 }
+
+/* ==========================================================================
+   Order Tracking Page
+   ========================================================================== */
+
+.page-rastreamento .page-header {
+    text-align: center;
+    margin-bottom: var(--espacamento-lg);
+}
+
+/* 2-column layout: form left, info sidebar right */
+.tracking-page-layout {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: var(--espacamento-xl);
+    align-items: start;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Form Card */
+.tracking-form-card {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 16px;
+    padding: var(--espacamento-xl);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.tracking-form-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: var(--espacamento-sm);
+}
+
+.tracking-form-header svg {
+    color: var(--cor-primaria);
+    flex-shrink: 0;
+}
+
+.tracking-form-header h2 {
+    font-family: var(--fonte-titulo);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--cor-texto);
+    margin: 0;
+    letter-spacing: -0.3px;
+}
+
+.tracking-form-description {
+    font-size: 0.9rem;
+    color: var(--cor-texto);
+    opacity: 0.6;
+    margin: 0 0 var(--espacamento-lg) 0;
+    line-height: 1.5;
+}
+
+/* Style WooCommerce tracking form inside our card */
+.tracking-form-card .woocommerce-form-track-order {
+    margin: 0;
+    padding: 0;
+}
+
+.tracking-form-card .woocommerce-form-track-order > p:first-child {
+    display: none; /* Hide the default WooCommerce description text */
+}
+
+.tracking-form-card .woocommerce-form-track-order .form-row {
+    margin-bottom: var(--espacamento-md);
+}
+
+.tracking-form-card .woocommerce-form-track-order label {
+    display: block;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--cor-texto);
+    opacity: 0.55;
+    margin-bottom: 6px;
+}
+
+.tracking-form-card .woocommerce-form-track-order input[type="text"],
+.tracking-form-card .woocommerce-form-track-order input[type="email"] {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1.5px solid rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    color: var(--cor-texto);
+    background: #fafafa;
+    transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.tracking-form-card .woocommerce-form-track-order input[type="text"]:focus,
+.tracking-form-card .woocommerce-form-track-order input[type="email"]:focus {
+    border-color: var(--cor-primaria);
+    outline: none;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(107, 79, 196, 0.1);
+}
+
+.tracking-form-card .woocommerce-form-track-order .button {
+    width: 100%;
+    background: var(--cor-primaria);
+    color: white;
+    border: none;
+    border-radius: 100px;
+    padding: 14px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-top: var(--espacamento-sm);
+}
+
+.tracking-form-card .woocommerce-form-track-order .button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(107, 79, 196, 0.3);
+}
+
+/* Info Sidebar */
+.tracking-info-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espacamento-md);
+}
+
+.tracking-info-card {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: var(--espacamento-md);
+    background: #fafafa;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.tracking-info-card svg {
+    color: var(--cor-primaria);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.tracking-info-card h3 {
+    font-family: var(--fonte-principal);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--cor-texto);
+    margin: 0 0 4px 0;
+}
+
+.tracking-info-card p {
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    color: var(--cor-texto);
+    opacity: 0.65;
+    margin: 0;
+}
+
+.tracking-info-card a {
+    color: var(--cor-primaria);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    font-weight: 500;
+}
+
+.tracking-info-card a:hover {
+    color: var(--cor-accent);
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    .tracking-page-layout {
+        grid-template-columns: 1fr;
+        gap: var(--espacamento-lg);
+    }
+
+    .tracking-form-card {
+        padding: var(--espacamento-lg);
+    }
+
+    .tracking-form-card .woocommerce-form-track-order input[type="text"],
+    .tracking-form-card .woocommerce-form-track-order input[type="email"] {
+        font-size: 16px; /* Prevent iOS zoom */
+    }
+}

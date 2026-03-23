@@ -2,8 +2,11 @@
 /**
  * Template for Order Tracking Page
  *
+ * Delivery is handled by Correios via Melhor Envio.
+ * This page directs customers to track via Correios website.
+ *
  * @package TemaAromas
- * @version 2.0.0
+ * @version 3.0.0
  */
 
 get_header(); ?>
@@ -15,71 +18,81 @@ get_header(); ?>
                 <h1 class="page-title luxury-heading"><?php the_title(); ?></h1>
             </div>
 
-            <div class="tracking-page-layout">
-                <!-- Tracking Form -->
-                <div class="tracking-form-section">
-                    <div class="tracking-form-card">
-                        <div class="tracking-form-header">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                                <rect x="1" y="3" width="15" height="13"></rect>
-                                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
-                                <circle cx="5.5" cy="18.5" r="2.5"></circle>
-                                <circle cx="18.5" cy="18.5" r="2.5"></circle>
-                            </svg>
-                            <h2><?php esc_html_e('Rastrear pedido', 'tema_aromas'); ?></h2>
-                        </div>
-                        <p class="tracking-form-description">
-                            <?php esc_html_e('Insira o número do pedido e o email usado na compra.', 'tema_aromas'); ?>
-                        </p>
+            <div class="tracking-content">
+                <!-- Main Info -->
+                <div class="tracking-hero">
+                    <div class="tracking-hero-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                            <rect x="1" y="3" width="15" height="13"></rect>
+                            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                            <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                            <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                        </svg>
+                    </div>
+                    <h2><?php esc_html_e('Como rastrear seu pedido', 'tema_aromas'); ?></h2>
+                    <p><?php esc_html_e('As entregas são realizadas pelos Correios através do Melhor Envio. Para rastrear seu pedido, utilize o código de rastreamento enviado por email.', 'tema_aromas'); ?></p>
+                </div>
 
-                        <?php echo do_shortcode('[woocommerce_order_tracking]'); ?>
+                <!-- Steps -->
+                <div class="tracking-steps">
+                    <div class="tracking-step">
+                        <div class="tracking-step-number">1</div>
+                        <div class="tracking-step-content">
+                            <h3><?php esc_html_e('Encontre seu código de rastreamento', 'tema_aromas'); ?></h3>
+                            <p><?php esc_html_e('Após o envio do pedido, você receberá um email com o código de rastreamento dos Correios. Verifique também a pasta de spam.', 'tema_aromas'); ?></p>
+                        </div>
+                    </div>
+                    <div class="tracking-step">
+                        <div class="tracking-step-number">2</div>
+                        <div class="tracking-step-content">
+                            <h3><?php esc_html_e('Acesse o site dos Correios', 'tema_aromas'); ?></h3>
+                            <p><?php esc_html_e('Clique no botão abaixo para acessar o rastreamento oficial dos Correios e insira o código recebido.', 'tema_aromas'); ?></p>
+                        </div>
+                    </div>
+                    <div class="tracking-step">
+                        <div class="tracking-step-number">3</div>
+                        <div class="tracking-step-content">
+                            <h3><?php esc_html_e('Acompanhe a entrega', 'tema_aromas'); ?></h3>
+                            <p><?php esc_html_e('O status será atualizado a cada movimentação do pacote. O prazo varia conforme a modalidade (PAC ou Sedex) e a região.', 'tema_aromas'); ?></p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Info Sidebar -->
-                <div class="tracking-info-sidebar">
-                    <div class="tracking-info-card">
+                <!-- CTA Button -->
+                <div class="tracking-cta">
+                    <a href="https://www.correios.com.br/rastreamento" target="_blank" rel="noopener noreferrer" class="tracking-cta-button">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <line x1="12" y1="16" x2="12" y2="12"></line>
-                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                         </svg>
-                        <div>
-                            <h3><?php esc_html_e('Sobre a entrega', 'tema_aromas'); ?></h3>
-                            <p><?php esc_html_e('As entregas são realizadas pelos Correios (via Melhor Envio). O prazo de entrega pode variar de acordo com a modalidade escolhida e a região de destino.', 'tema_aromas'); ?></p>
-                        </div>
-                    </div>
+                        <?php esc_html_e('Rastrear nos Correios', 'tema_aromas'); ?>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" class="external-icon">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+                </div>
 
-                    <div class="tracking-info-card">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <polyline points="12 6 12 12 16 14"></polyline>
-                        </svg>
-                        <div>
-                            <h3><?php esc_html_e('Onde encontro o número do pedido?', 'tema_aromas'); ?></h3>
-                            <p><?php esc_html_e('O número do pedido foi enviado para o seu email após a confirmação da compra. Verifique também a pasta de spam.', 'tema_aromas'); ?></p>
-                        </div>
-                    </div>
-
-                    <div class="tracking-info-card">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                        </svg>
-                        <div>
-                            <h3><?php esc_html_e('Precisa de ajuda?', 'tema_aromas'); ?></h3>
-                            <p>
-                                <?php
-                                printf(
-                                    wp_kses(
-                                        __('Entre em contato pelo <a href="%s">WhatsApp (16) 99162-6921</a> ou por email <a href="%s">secretszen888@gmail.com</a>.', 'tema_aromas'),
-                                        array('a' => array('href' => array()))
-                                    ),
-                                    esc_url('https://wa.me/5516991626921'),
-                                    esc_url('mailto:secretszen888@gmail.com')
-                                );
-                                ?>
-                            </p>
-                        </div>
+                <!-- Help Card -->
+                <div class="tracking-help-card">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    <div>
+                        <h3><?php esc_html_e('Não recebeu o código de rastreamento?', 'tema_aromas'); ?></h3>
+                        <p>
+                            <?php
+                            printf(
+                                wp_kses(
+                                    __('Entre em contato pelo <a href="%s">WhatsApp (16) 99162-6921</a> ou por email <a href="%s">secretszen888@gmail.com</a> e enviaremos o código para você.', 'tema_aromas'),
+                                    array('a' => array('href' => array()))
+                                ),
+                                esc_url('https://wa.me/5516991626921'),
+                                esc_url('mailto:secretszen888@gmail.com')
+                            );
+                            ?>
+                        </p>
                     </div>
                 </div>
             </div>

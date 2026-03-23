@@ -3451,7 +3451,8 @@ img[loading="lazy"].loaded {
   display: flex !important;
   flex-direction: column !important;
   justify-content: flex-end !important;
-  align-items: flex-start !important;
+  align-items: center !important;
+  text-align: center !important;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 60%, transparent 100%) !important;
   height: 60% !important;
   padding: var(--espacamento-lg) !important;

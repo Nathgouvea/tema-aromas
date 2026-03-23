@@ -170,7 +170,7 @@ get_header(); ?>
                 <div class="aroma-interactive-card" data-aroma="chabranco">
                     <div class="aroma-card-inner">
                         <div class="aroma-image-container">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/aroma-chá-branco.webp"
+                            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/aroma-cha-branco.webp"
                                  alt="<?php esc_attr_e('Chá Branco - Aromas Zen Secrets', 'tema_aromas'); ?>"
                                  loading="lazy">
                             <div class="aroma-image-overlay">

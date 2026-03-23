@@ -84,7 +84,7 @@ get_header(); ?>
                         <div id="cha-branco-content" class="fragrance-accordion-content" aria-hidden="true">
                             <div class="fragrance-content-grid">
                                 <div class="fragrance-image">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/aroma-chá-branco.webp"
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/aroma-cha-branco.webp"
                                          alt="Chá Branco Collection" loading="lazy">
                                 </div>
                                 <div class="fragrance-details">

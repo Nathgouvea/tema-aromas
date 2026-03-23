@@ -769,9 +769,8 @@
 }
 
 .featured-slider .woocommerce ul.products {
-  display: flex !important;
-  grid-template-columns: none !important;
-  gap: var(--espacamento-md); /* Card padding: 24 */
+  display: flex;
+  gap: var(--espacamento-md);
   margin: 0;
   padding: 0;
   list-style: none;
@@ -780,10 +779,10 @@
 
 .featured-slider .woocommerce ul.products li.product {
   flex: 0 0 calc(25% - var(--espacamento-md));
-  min-width: 220px;
-  max-width: calc(25% - var(--espacamento-md));
+  min-width: 250px;
   margin: 0;
   padding: 0;
+  max-width: 10px;
 }
 
 /* Slider Navigation */
@@ -904,8 +903,7 @@
 }
 
 .novidades-slider .woocommerce ul.products {
-  display: flex !important;
-  grid-template-columns: none !important;
+  display: flex;
   gap: var(--espacamento-md);
   margin: 0;
   padding: 0;
@@ -915,10 +913,10 @@
 
 .novidades-slider .woocommerce ul.products li.product {
   flex: 0 0 calc(25% - var(--espacamento-md));
-  min-width: 220px;
-  max-width: calc(25% - var(--espacamento-md));
+  min-width: 250px;
   margin: 0;
   padding: 0;
+  max-width: 10px;
 }
 
 .novidades-cta {

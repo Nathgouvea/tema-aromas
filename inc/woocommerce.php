@@ -569,3 +569,23 @@ function tema_aromas_checkout_thumbnail($name, $cart_item, $cart_item_key) {
     return '<span class="checkout-item-with-thumb">' . $thumbnail . '<span class="checkout-item-name">' . $name . '</span></span>';
 }
 add_filter('woocommerce_cart_item_name', 'tema_aromas_checkout_thumbnail', 10, 3);
+
+/**
+ * Translate shipping-related English strings to PT-BR.
+ */
+function tema_aromas_translate_shipping($translated, $text, $domain) {
+    $translations = array(
+        'Shipment'  => 'Entrega',
+        'shipment'  => 'entrega',
+        'Shipping'  => 'Entrega',
+        'Free shipping' => 'Frete grátis',
+        'Flat rate' => 'Taxa fixa',
+    );
+
+    if (isset($translations[$text])) {
+        return $translations[$text];
+    }
+
+    return $translated;
+}
+add_filter('gettext', 'tema_aromas_translate_shipping', 20, 3);

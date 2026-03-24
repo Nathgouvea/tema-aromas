@@ -739,9 +739,9 @@
 .featured-products-slider {
   padding: var(--espacamento-xxl) 0; /* Section padding: 64 */
   background: var(--cor-fundo);
-  width: 100%;
-  max-width: 100vw;
-  overflow-x: hidden;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
 }
 
 .featured-slider-container {

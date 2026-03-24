@@ -1217,12 +1217,49 @@
   line-height: 1.4;
 }
 
+/* Lembrancinhas options list */
+.lembrancinhas-options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacamento-sm);
+  margin: var(--espacamento-lg) 0;
+}
+
+.lembrancinhas-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.lembrancinhas-option svg {
+  flex-shrink: 0;
+  color: var(--cor-primaria);
+  margin-top: 2px;
+  opacity: 0.7;
+}
+
+.lembrancinhas-option span {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
 .lembrancinhas-cta {
   display: flex;
   gap: var(--espacamento-md);
-  justify-content: flex-start;
+  align-items: center;
   flex-wrap: wrap;
-  margin-top: var(--espacamento-xl);
+  margin-top: var(--espacamento-lg);
+}
+
+.lembrancinhas-cta .btn-luxury-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lembrancinhas-cta .btn-luxury-outline svg {
+  color: currentColor;
 }
 
 /* ==========================================================================

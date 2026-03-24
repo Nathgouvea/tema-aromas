@@ -125,12 +125,13 @@
                             <img src="<?php echo esc_url($logo_white_url); ?>"
                                  alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
                                  class="site-logo-img logo-white"
-                                 id="logo-white">
+                                 id="logo-white"
+                                 style="<?php echo is_front_page() ? 'display:block;' : 'display:none;'; ?>">
                             <img src="<?php echo esc_url($logo_black_url); ?>"
                                  alt="<?php echo esc_attr(get_bloginfo('name')); ?>"
                                  class="site-logo-img logo-black"
                                  id="logo-black"
-                                 style="display: none;">
+                                 style="<?php echo is_front_page() ? 'display:none;' : 'display:block;'; ?>">
                         </a>
                     </div>
                 </div>

@@ -1,7 +1,8 @@
 <?php
 /**
+ * Template Name: Minha Conta
  * Template for My Account Page
- * 
+ *
  * This page uses the official WooCommerce my account shortcode
  * Create a page called "Minha Conta" and assign this template
  * or add [woocommerce_my_account] shortcode to page content

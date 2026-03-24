@@ -1,11 +1,12 @@
 <?php
 /**
+ * Template Name: Carrinho
  * Template for Cart Page
- * 
+ *
  * This page uses the official WooCommerce cart shortcode
  * Create a page called "Carrinho" and assign this template
  * or add [woocommerce_cart] shortcode to page content
- * 
+ *
  * @package TemaAromas
  * @version 1.0.0
  */

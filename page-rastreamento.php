@@ -1,5 +1,6 @@
 <?php
 /**
+ * Template Name: Rastreamento de Pedido
  * Template for Order Tracking Page
  *
  * Delivery is handled by Correios via Melhor Envio.

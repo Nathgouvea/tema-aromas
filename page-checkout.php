@@ -1,11 +1,12 @@
 <?php
 /**
+ * Template Name: Finalizar Compra
  * Template for Checkout Page
- * 
+ *
  * This page uses the official WooCommerce checkout shortcode
  * Create a page called "Finalizar Compra" and assign this template
  * or add [woocommerce_checkout] shortcode to page content
- * 
+ *
  * @package TemaAromas
  * @version 1.0.0
  */

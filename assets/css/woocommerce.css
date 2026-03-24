@@ -3141,6 +3141,21 @@ section:has(> h2:contains("Best Quality Plants")) {
   border: 1px solid var(--cor-borda);
 }
 
+.woocommerce-cart .shipping-calculator-form .form-row {
+  text-align: right;
+}
+
+.woocommerce-cart .shipping-calculator-form select,
+.woocommerce-cart .shipping-calculator-form input[type="text"] {
+  width: 100%;
+  max-width: 100%;
+  text-align: left;
+}
+
+.woocommerce-cart .shipping-calculator-form .button {
+  float: right;
+}
+
 .woocommerce-cart .shipping-calculator-button {
   color: var(--cor-primaria);
   text-decoration: none;

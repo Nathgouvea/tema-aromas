@@ -420,8 +420,7 @@ get_header(); ?>
                     </h2>
                     <p class="section-subtitle">
                         <?php esc_html_e('Torne seu evento ainda mais especial com nossas lembrancinhas personalizadas. Criamos produtos únicos que vão marcar o seu momento e encantar seus convidados.', 'tema_aromas'); ?>
-                    </p>
-                    <p class="lembrancinhas-buying-info">
+                        <br><br>
                         <?php esc_html_e('Compre de 25, 50 ou 100 unidades direto no site. Para pedidos acima de 100 unidades, fale conosco pelo WhatsApp.', 'tema_aromas'); ?>
                     </p>
 

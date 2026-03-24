@@ -3,7 +3,7 @@
  * The template for displaying product archives
  *
  * @package TemaAromas
- * @version 1.0.0
+ * @version 8.6.0
  */
 
 get_header(); ?>

@@ -1217,49 +1217,24 @@
   line-height: 1.4;
 }
 
-/* Lembrancinhas options list */
-.lembrancinhas-options {
-  display: flex;
-  flex-direction: column;
-  gap: var(--espacamento-sm);
-  margin: var(--espacamento-lg) 0;
-}
-
-.lembrancinhas-option {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-}
-
-.lembrancinhas-option svg {
-  flex-shrink: 0;
-  color: var(--cor-primaria);
-  margin-top: 2px;
-  opacity: 0.7;
-}
-
-.lembrancinhas-option span {
-  font-size: 0.95rem;
-  color: #555;
-  line-height: 1.5;
+/* Lembrancinhas buying info */
+.lembrancinhas-buying-info {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.6;
+  margin-top: var(--espacamento-sm);
 }
 
 .lembrancinhas-cta {
   display: flex;
-  gap: var(--espacamento-md);
+  gap: var(--espacamento-sm);
   align-items: center;
-  flex-wrap: wrap;
   margin-top: var(--espacamento-lg);
 }
 
-.lembrancinhas-cta .btn-luxury-outline {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.lembrancinhas-cta .btn-luxury-outline svg {
-  color: currentColor;
+.lembrancinhas-cta .btn {
+  font-size: 0.95rem;
+  padding: 12px 24px;
 }
 
 /* ==========================================================================

@@ -66,11 +66,11 @@ Tema Aromas is distributed under the terms of the GNU GPL
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
   }
 
 body {
   font-family: var(--fonte-principal);
+  overflow-x: clip;
   font-size: 1rem;
   line-height: 1.6;
   color: var(--cor-texto);

@@ -1219,9 +1219,9 @@
 
 /* Lembrancinhas buying info - match section-subtitle style */
 .lembrancinhas-buying-info {
-  font-size: inherit;
-  color: inherit;
-  line-height: inherit;
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
   margin-top: var(--espacamento-sm);
 }
 

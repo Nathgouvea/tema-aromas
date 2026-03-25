@@ -589,6 +589,8 @@ body.single-product {
   .woocommerce ul.products li.product .button {
     padding: 10px 16px;
     width: auto;
+    min-width: 140px;
+    min-height: 40px;
     border-radius: 100px;
     margin: 0 auto;
   }
@@ -908,7 +910,7 @@ body.single-product {
   font-size: 0.8rem;
   text-transform: none;
   letter-spacing: 0;
-  transition: opacity 0.2s ease;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
   text-decoration: none !important;
   display: inline-flex;
@@ -916,10 +918,13 @@ body.single-product {
   justify-content: center;
   gap: 6px;
   width: auto;
+  min-width: 160px;
+  min-height: 42px;
   margin: 0 auto;
   position: relative;
   white-space: nowrap;
   box-shadow: none;
+  box-sizing: border-box;
 }
 
 /* Button with SVG icon - Hide original text and show custom text */
@@ -1003,32 +1008,54 @@ body.single-product {
   display: none !important;
 }
 
-/* Button Loading State - Spinner only for clean, professional feedback */
+/* Button Loading State - Keep same size, show spinner */
 .woocommerce ul.products li.product .button.loading {
-  opacity: 0.7;
+  opacity: 0.85;
   cursor: not-allowed;
   pointer-events: none;
-  min-width: 140px;
+  min-width: 160px;
+  min-height: 42px;
   padding: 10px 24px !important;
   animation: none !important;
   transform: none !important;
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  height: auto !important;
   line-height: normal !important;
   box-sizing: border-box !important;
 }
 
 .woocommerce ul.products li.product .button.loading::after {
-  content: "";
+  content: "" !important;
   display: inline-block;
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-top-color: white;
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
+}
+
+/* Added state - show checkmark, keep button stable */
+.woocommerce ul.products li.product .button.added {
+  min-width: 160px;
+  min-height: 42px;
+  pointer-events: none;
+  background: #4caf50 !important;
+  transition: background 0.3s ease;
+}
+
+.woocommerce ul.products li.product .button.added::after {
+  content: "\2713  Adicionado" !important;
+  font-size: 0.8rem !important;
+  font-weight: 600 !important;
+  color: white !important;
+  display: inline-block !important;
+}
+
+/* Hide the "Ver carrinho" link WooCommerce injects next to the button */
+.woocommerce ul.products li.product a.added_to_cart {
+  display: none !important;
 }
 
 /* AGGRESSIVE: Hide ALL WooCommerce loading overlays and icons */
@@ -3142,10 +3169,35 @@ section:has(> h2:contains("Best Quality Plants")) {
 }
 
 /* Shipping calculator form fields - cart & checkout */
+/* Force all rows to full width (WooCommerce JS can change state field to form-row-first) */
 .shipping-calculator-form .form-row,
 .woocommerce-cart .shipping-calculator-form .form-row,
 .woocommerce-checkout .shipping-calculator-form .form-row {
+  width: 100% !important;
+  float: none !important;
+  clear: both !important;
   text-align: right;
+}
+
+/* ID-based overrides — maximum CSS specificity to beat address-i18n.js class changes */
+#calc_shipping_state_field,
+#calc_shipping_state_field.form-row-first,
+#calc_shipping_state_field.form-row-last {
+  width: 100% !important;
+  float: none !important;
+  clear: both !important;
+}
+
+/* Estado select wrapper — WooCommerce wraps it in a <span> that breaks width */
+#calc_shipping_state_field > span {
+  display: block !important;
+  width: 100% !important;
+}
+
+/* Select2 container inside state field */
+#calc_shipping_state_field .select2-container {
+  width: 100% !important;
+  max-width: 100% !important;
 }
 
 .shipping-calculator-form select,
@@ -3232,38 +3284,63 @@ section:has(> h2:contains("Best Quality Plants")) {
   cursor: not-allowed;
 }
 
-/* Processing Overlay */
-.woocommerce-checkout.processing::before {
-  content: "";
+/* Processing Overlay — handled via JS-injected HTML */
+.woocommerce-checkout.processing::before,
+.woocommerce-checkout.processing::after {
+  display: none !important;
+}
+
+/* Custom Processing Overlay */
+#checkout-processing-overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(255, 255, 255, 0.8);
-  z-index: 9998;
-  backdrop-filter: blur(4px);
-}
-
-.woocommerce-checkout.processing::after {
-  content: "Processando seu pedido...";
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-  background: white;
-  padding: var(--espacamento-xl);
-  border-radius: 16px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--cor-primaria);
-  min-width: 280px;
-  text-align: center;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 99999;
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: fadeIn 0.3s ease-out;
+}
+
+#checkout-processing-overlay .processing-card {
+  background: white;
+  border-radius: 20px;
+  padding: 48px 40px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  max-width: 340px;
+  width: 90%;
+  animation: fadeInUp 0.4s ease-out;
+}
+
+#checkout-processing-overlay .processing-spinner {
+  width: 48px;
+  height: 48px;
+  border: 3px solid rgba(107, 79, 196, 0.12);
+  border-top-color: var(--cor-primaria);
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+  margin: 0 auto 24px;
+}
+
+#checkout-processing-overlay .processing-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin: 0 0 8px;
+  line-height: 1.4;
+}
+
+#checkout-processing-overlay .processing-subtitle {
+  font-size: 0.875rem;
+  color: #888;
+  margin: 0;
+  line-height: 1.4;
 }
 
 /* Smooth Transitions for Form Elements */

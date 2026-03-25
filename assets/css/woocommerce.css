@@ -3141,17 +3141,32 @@ section:has(> h2:contains("Best Quality Plants")) {
   border: 1px solid var(--cor-borda);
 }
 
-.woocommerce-cart .shipping-calculator-form .form-row {
+/* Shipping calculator form fields - cart & checkout */
+.shipping-calculator-form .form-row,
+.woocommerce-cart .shipping-calculator-form .form-row,
+.woocommerce-checkout .shipping-calculator-form .form-row {
   text-align: right;
 }
 
+.shipping-calculator-form select,
+.shipping-calculator-form input[type="text"],
+.shipping-calculator-form .select2-container,
 .woocommerce-cart .shipping-calculator-form select,
-.woocommerce-cart .shipping-calculator-form input[type="text"] {
-  width: 100%;
-  max-width: 100%;
+.woocommerce-cart .shipping-calculator-form input[type="text"],
+.woocommerce-checkout .shipping-calculator-form select,
+.woocommerce-checkout .shipping-calculator-form input[type="text"] {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 100% !important;
   text-align: left;
+  box-sizing: border-box;
 }
 
+.shipping-calculator-form .select2-container .select2-selection {
+  width: 100% !important;
+}
+
+.shipping-calculator-form .button,
 .woocommerce-cart .shipping-calculator-form .button {
   float: right;
 }

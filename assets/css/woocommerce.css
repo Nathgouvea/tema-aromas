@@ -1480,10 +1480,10 @@ ul.products .blockUI::before {
   display: none !important;
 }
 
-/* Product Tabs - Accordion Style Inside Summary Div - Apple style */
+/* Product Tabs - Accordion Style */
 .woocommerce div.product .woocommerce-tabs {
   margin-top: var(--espacamento-xl);
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-top: 1px solid var(--cor-borda);
   padding-top: 0;
   width: 100%;
   overflow: visible;
@@ -1498,51 +1498,94 @@ ul.products .blockUI::before {
 .woocommerce div.product .woocommerce-tabs .panel {
   padding: 0;
   margin-bottom: 0;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid var(--cor-borda);
   display: block !important;
 }
 
 /* Accordion Header */
 .woocommerce div.product .woocommerce-tabs .panel h2 {
-  font-size: 0.875rem;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #000000;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0.01em;
+  color: var(--cor-texto);
   margin: 0;
-  padding: 20px 30px 20px 0;
+  padding: 20px 40px 20px 0;
   cursor: pointer;
   position: relative;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease;
   user-select: none;
 }
 
-/* Accordion Arrow Icon */
-.woocommerce div.product .woocommerce-tabs .panel h2::after {
-  content: '\25BC';
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%) rotate(-90deg);
-  font-size: 0.75rem;
-  transition: transform 0.3s ease;
-  color: #000000;
+.woocommerce div.product .woocommerce-tabs .panel h2:hover {
+  color: var(--cor-primaria);
 }
 
-.woocommerce div.product .woocommerce-tabs .panel.active h2::after {
+/* Accordion +/− Icon */
+.woocommerce div.product .woocommerce-tabs .panel h2::before,
+.woocommerce div.product .woocommerce-tabs .panel h2::after {
+  content: '';
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  width: 14px;
+  height: 2px;
+  background: var(--cor-texto);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Vertical bar of the + */
+.woocommerce div.product .woocommerce-tabs .panel h2::before {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+/* Horizontal bar of the + */
+.woocommerce div.product .woocommerce-tabs .panel h2::after {
+  transform: translateY(-50%);
+}
+
+/* When active: rotate vertical bar to form − */
+.woocommerce div.product .woocommerce-tabs .panel.active h2::before {
   transform: translateY(-50%) rotate(0deg);
+  opacity: 0;
 }
 
 /* Accordion Content */
-.woocommerce div.product .woocommerce-tabs .panel > *:not(h2) {
-  display: none;
-  font-size: 0.875rem;
-  line-height: 1.8;
-  color: #666666;
-  padding: 0 20px 20px 0;
+.woocommerce div.product .woocommerce-tabs .panel .accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  padding: 0;
 }
 
-.woocommerce div.product .woocommerce-tabs .panel.active > *:not(h2) {
+.woocommerce div.product .woocommerce-tabs .panel.active .accordion-content {
+  max-height: 600px;
+  padding: 0 0 24px;
+}
+
+.woocommerce div.product .woocommerce-tabs .panel .accordion-content p,
+.woocommerce div.product .woocommerce-tabs .panel .accordion-content ul,
+.woocommerce div.product .woocommerce-tabs .panel .accordion-content ol,
+.woocommerce div.product .woocommerce-tabs .panel .accordion-content table {
+  font-size: 0.925rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+.woocommerce div.product .woocommerce-tabs .panel .accordion-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Fallback for content not wrapped in .accordion-content */
+.woocommerce div.product .woocommerce-tabs .panel > *:not(h2):not(.accordion-content) {
+  display: none;
+  font-size: 0.925rem;
+  line-height: 1.8;
+  color: #555;
+  padding: 0 0 24px;
+}
+
+.woocommerce div.product .woocommerce-tabs .panel.active > *:not(h2):not(.accordion-content) {
   display: block;
 }
 

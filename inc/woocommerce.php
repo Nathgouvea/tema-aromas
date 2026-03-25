@@ -64,6 +64,101 @@ function tema_aromas_woocommerce_scripts() {
         }';
 
     wp_add_inline_style('tema-aromas-woocommerce-style', $inline_font);
+
+    // Cart page: fix Estado select alignment after WooCommerce address-i18n.js changes classes
+    if (is_cart()) {
+        $cart_state_fix = "
+            jQuery(function($) {
+                function fixStateField() {
+                    var el = document.getElementById('calc_shipping_state_field');
+                    if (!el) return;
+                    el.style.width = '100%';
+                    el.style.cssFloat = 'none';
+                    el.style.clear = 'both';
+                    el.classList.remove('form-row-first', 'form-row-last');
+                    el.classList.add('form-row-wide');
+                    var span = el.querySelector(':scope > span');
+                    if (span) { span.style.display = 'block'; span.style.width = '100%'; }
+                    var s2 = el.querySelector('.select2-container');
+                    if (s2) { s2.style.width = '100%'; }
+                }
+                fixStateField();
+                $(document.body).on('country_to_state_changed country_to_state_changing', function() {
+                    setTimeout(fixStateField, 50);
+                });
+            });
+        ";
+        wp_add_inline_script('wc-country-select', $cart_state_fix);
+    }
+
+    // Checkout page: custom processing overlay + back-button protection
+    if (is_checkout() && !is_order_received_page()) {
+        $cart_url = esc_url(wc_get_cart_url());
+        $inline_js = "
+            (function() {
+                var overlay = null;
+
+                function showOverlay() {
+                    if (overlay) return;
+                    overlay = document.createElement('div');
+                    overlay.id = 'checkout-processing-overlay';
+                    overlay.innerHTML =
+                        '<div class=\"processing-card\">' +
+                            '<div class=\"processing-spinner\"></div>' +
+                            '<p class=\"processing-title\">Processando seu pedido...</p>' +
+                            '<p class=\"processing-subtitle\">Por favor, não feche esta página</p>' +
+                        '</div>';
+                    document.body.appendChild(overlay);
+                }
+
+                function hideOverlay() {
+                    if (overlay) {
+                        overlay.remove();
+                        overlay = null;
+                    }
+                }
+
+                // Watch for .processing class added by WooCommerce
+                var checkoutEl = document.querySelector('form.woocommerce-checkout');
+                if (checkoutEl) {
+                    new MutationObserver(function() {
+                        if (checkoutEl.classList.contains('processing')) {
+                            showOverlay();
+                        } else {
+                            hideOverlay();
+                        }
+                    }).observe(checkoutEl, { attributes: true, attributeFilter: ['class'] });
+
+                    // Clear any stale processing state on fresh load
+                    checkoutEl.classList.remove('processing');
+                }
+
+                // If page restored from bfcache, always redirect to cart
+                window.addEventListener('pageshow', function(e) {
+                    if (e.persisted) {
+                        hideOverlay();
+                        window.location.replace('{$cart_url}');
+                    }
+                });
+            })();
+        ";
+        wp_add_inline_script('wc-checkout', $inline_js);
+    }
+
+    // Thank you page: prevent back button from returning to checkout
+    if (is_order_received_page()) {
+        $thankyou_js = "
+            (function() {
+                if (window.history && window.history.pushState) {
+                    window.history.pushState(null, '', window.location.href);
+                    window.addEventListener('popstate', function() {
+                        window.history.pushState(null, '', window.location.href);
+                    });
+                }
+            })();
+        ";
+        wp_add_inline_script('jquery', $thankyou_js);
+    }
 }
 add_action('wp_enqueue_scripts', 'tema_aromas_woocommerce_scripts');
 

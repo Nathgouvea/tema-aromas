@@ -153,17 +153,26 @@ add_action('wp_head', 'tema_aromas_add_resource_hints', 0);
  */
 function tema_aromas_minify_html($buffer) {
     if (!is_admin() && !is_feed() && !is_robots()) {
+        // Preserve <script> and <style> blocks from minification
+        $preserved = [];
+        $buffer = preg_replace_callback('/<(script|style)\b[^>]*>.*?<\/\1>/is', function($m) use (&$preserved) {
+            $key = '<!--PRESERVE:' . count($preserved) . '-->';
+            $preserved[$key] = $m[0];
+            return $key;
+        }, $buffer);
+
         // Remove HTML comments (except IE conditional comments)
-        $buffer = preg_replace('/<!--(?!\s*(?:\[if [^\]]+]|<!|>))(?:(?!-->).)*-->/s', '', $buffer);
-        
-        // Remove extra whitespace
+        $buffer = preg_replace('/<!--(?!\s*(?:\[if [^\]]+]|<!|>)|PRESERVE:)(?:(?!-->).)*-->/s', '', $buffer);
+
+        // Collapse whitespace and remove space between tags
         $buffer = preg_replace('/\s+/', ' ', $buffer);
         $buffer = preg_replace('/>\s+</', '><', $buffer);
-        
-        // Remove trailing whitespace
         $buffer = trim($buffer);
+
+        // Restore preserved blocks
+        $buffer = str_replace(array_keys($preserved), array_values($preserved), $buffer);
     }
-    
+
     return $buffer;
 }
 

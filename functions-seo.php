@@ -366,3 +366,15 @@ function tema_aromas_add_security_headers() {
     }
 }
 add_action('send_headers', 'tema_aromas_add_security_headers');
+
+/**
+ * Clean robots.txt — remove invalid directives that Lighthouse flags
+ */
+function tema_aromas_clean_robots_txt($output) {
+    // Remove Content-Signal line (not a valid robots.txt directive)
+    $output = preg_replace('/^Content-Signal:.*$/m', '', $output);
+    // Clean up extra blank lines
+    $output = preg_replace('/\n{3,}/', "\n\n", $output);
+    return $output;
+}
+add_filter('robots_txt', 'tema_aromas_clean_robots_txt', 999);

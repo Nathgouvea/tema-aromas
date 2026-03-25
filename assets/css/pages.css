@@ -1,1 +1,1904 @@
-.luxury-page{padding:0;margin:0}.content-section{padding:var(--espacamento-xxl) 0;border-bottom:1px solid rgba(107,79,196,0.05)}.content-section:last-child{border-bottom:none}.section-header{text-align:center;margin-bottom:var(--espacamento-xl);max-width:800px;margin-left:auto;margin-right:auto}.section-title{font-size:2.5rem;font-weight:700;color:var(--cor-primaria);margin-bottom:var(--espacamento-md);position:relative}.section-title::after{content:"";display:block;width:60px;height:4px;background:var(--gradiente-luxo);margin:var(--espacamento-md) auto 0;border-radius:2px}.section-subtitle{font-size:1.2rem;color:var(--cor-texto);opacity:0.8;line-height:1.6}.hero-section{background:linear-gradient( 135deg,rgba(107,79,196,0.05) 0%,rgba(139,95,214,0.05) 100% );padding:var(--espacamento-xxl) 0;position:relative;overflow:hidden;text-align:center}.hero-content{position:relative;z-index:2;max-width:800px;margin:0 auto}.hero-title{font-size:3.5rem;font-weight:800;color:var(--cor-primaria);margin-bottom:var(--espacamento-lg);text-shadow:0 2px 4px rgba(0,0,0,0.1)}.hero-subtitle{font-size:1.3rem;color:var(--cor-texto);opacity:0.9;line-height:1.6;margin-bottom:0}.hero-decoration{position:absolute;bottom:0;left:0;right:0;z-index:1}.aroma-wave{width:100%;height:200px}.content-grid{display:grid;grid-template-columns:1fr;gap:var(--espacamento-xl);align-items:start}.content-text{font-size:1.1rem;line-height:1.8;color:var(--cor-texto)}.content-text p{margin-bottom:var(--espacamento-lg)}.benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--espacamento-lg)}.benefit-card{background:var(--cor-fundo);padding:var(--espacamento-lg);border-radius:16px;box-shadow:var(--sombra-sutil);border:1px solid var(--cor-borda);text-align:center;transition:var(--transicao-suave)}.benefit-card:hover{transform:translateY(-8px);box-shadow:var(--sombra-luxo);border-color:var(--cor-primaria)}.benefit-icon{width:80px;height:80px;background:var(--gradiente-luxo);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto var(--espacamento-md);color:var(--cor-fundo)}.benefit-card h3{font-size:1.3rem;font-weight:600;color:var(--cor-primaria);margin-bottom:var(--espacamento-sm)}.benefit-card p{color:var(--cor-texto);opacity:0.8;font-size:1rem;line-height:1.5}.produtos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:var(--espacamento-xl)}.produto-highlight{background:var(--cor-fundo);padding:var(--espacamento-xl);border-radius:20px;box-shadow:var(--sombra-sutil);border:1px solid var(--cor-borda);text-align:center;transition:var(--transicao-suave)}.produto-highlight:hover{transform:translateY(-12px);box-shadow:var(--sombra-luxo);border-color:var(--cor-accent)}.produto-icon{width:100px;height:100px;background:linear-gradient( 135deg,rgba(107,79,196,0.1) 0%,rgba(139,95,214,0.1) 100% );border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto var(--espacamento-lg);color:var(--cor-primaria)}.produto-highlight h3{font-size:1.5rem;font-weight:600;color:var(--cor-primaria);margin-bottom:var(--espacamento-md)}.produto-highlight p{color:var(--cor-texto);opacity:0.8;line-height:1.6;margin-bottom:var(--espacamento-lg)}.faq-container{max-width:800px;margin:0 auto}.faq-item{border:1px solid var(--cor-borda);border-radius:100px;margin-bottom:var(--espacamento-md);overflow:hidden;transition:var(--transicao-suave)}.faq-item:hover{border-color:var(--cor-primaria);box-shadow:var(--sombra-sutil)}.faq-question{width:100%;padding:var(--espacamento-lg);background:var(--cor-fundo);border:none;text-align:left;font-family:inherit;font-size:1.1rem;font-weight:600;color:var(--cor-primaria);cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:var(--transicao-rapida)}.faq-question:hover{background:rgba(107,79,196,0.05)}.faq-question[aria-expanded="true"]{background:rgba(107,79,196,0.1)}.faq-question[aria-expanded="true"] .faq-icon{transform:rotate(180deg)}.faq-icon{transition:transform 0.3s ease;flex-shrink:0;color:var(--cor-primaria)}.faq-answer{padding:0 var(--espacamento-lg) var(--espacamento-lg);background:var(--cor-fundo);color:var(--cor-texto);line-height:1.6;display:none}.faq-answer[aria-hidden="false"]{display:block;animation:fadeInUp 0.3s ease}.contact-hero-modern{position:relative;min-height:60vh;width:100vw;margin-left:calc(-50vw+50%);display:flex;align-items:center;justify-content:center;overflow:hidden;background:#000000}.contact-hero-background{position:absolute;top:0;left:0;right:0;bottom:0;z-index:1}.hero-bg-image{width:100%;height:100%;object-fit:cover;object-position:center;opacity:1}.hero-overlay{position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient( 135deg,rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.2) 100% )}.contact-hero-content{position:relative;z-index:2;text-align:center;max-width:980px;padding:80px 20px}.contact-hero-title{font-size:clamp(48px,7vw,80px);font-weight:600;margin-bottom:20px;text-shadow:0 2px 20px rgba(0,0,0,0.3);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;letter-spacing:-0.015em;line-height:1.05;color:#ffffff}.contact-hero-subtitle{font-size:clamp(19px,2.5vw,28px);line-height:1.4;opacity:1;text-shadow:0 1px 10px rgba(0,0,0,0.3);font-weight:400;color:rgba(255,255,255,0.95);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;letter-spacing:-0.01em;max-width:700px;margin:0 auto}.contact-main-section{padding:40px 0 80px;background:var(--cor-fundo);width:100vw;margin-left:calc(-50vw+50%)}.contact-two-columns{display:grid;grid-template-columns:1fr;gap:60px;max-width:1200px;margin:0 auto;padding:0 20px}.contact-info-column{background:transparent;padding:0;border-radius:0;box-shadow:none;height:fit-content;border:none}.contact-methods-title h2{font-size:clamp(24px,3vw,32px);color:#1d1d1f;margin-bottom:8px;font-weight:600;letter-spacing:-0.01em;line-height:1.2;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}.contact-methods-title p{color:#86868b;font-size:clamp(15px,1.8vw,19px);margin-bottom:32px;line-height:1.5;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;letter-spacing:-0.01em}.contact-methods-list{display:flex;flex-direction:column;gap:20px}.contact-method-item{display:flex;flex-direction:row;align-items:center;text-align:left;gap:20px;padding:24px;border-radius:16px;border:none;background:#ffffff;box-shadow:0 4px 16px rgba(0,0,0,0.08);transition:all 0.3s cubic-bezier(0.4,0,0.2,1)}.contact-method-link{text-decoration:none;color:inherit}.contact-method-item:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.12)}.contact-method-item:hover .contact-method-icon{transform:scale(1.05)}.contact-method-icon{width:72px;height:72px;border-radius:18px;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 12px rgba(0,0,0,0.15);transition:all 0.3s cubic-bezier(0.4,0,0.2,1)}.email-icon{background:linear-gradient(135deg,#6b4fc4 0%,#8b6fd9 100%);color:white}.whatsapp-icon{background:linear-gradient(135deg,#25d366 0%,#128c7e 100%);color:white}.instagram-icon{background:linear-gradient(135deg,#e4405f 0%,#fd5949 50%,#fccc63 100%);color:white}.contact-method-content h3{font-size:20px;font-weight:600;color:#333333;margin-bottom:6px;letter-spacing:-0.01em;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}.contact-method-content p{font-size:17px;font-weight:500;color:#555555;margin-bottom:6px;letter-spacing:-0.01em;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}.contact-method-content small{font-size:14px;color:#888888;line-height:1.5;display:block;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}.contact-form-column{background:transparent;padding:0;border-radius:0;box-shadow:none;height:fit-content;border:none}.contact-form-title h2{font-size:clamp(24px,3vw,32px);color:#1d1d1f;margin-bottom:8px;font-weight:600;letter-spacing:-0.01em;line-height:1.2;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}.contact-form-title p{color:#86868b;font-size:clamp(15px,1.8vw,19px);margin-bottom:32px;line-height:1.5;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;letter-spacing:-0.01em}.contact-form-modern{display:flex;flex-direction:column;gap:20px}.form-row-modern{display:grid;grid-template-columns:1fr;gap:20px}.form-group-modern{display:flex;flex-direction:column;gap:8px}.form-group-modern label{font-weight:600;color:#333333;font-size:15px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;letter-spacing:-0.01em}.input-with-icon{position:relative;display:flex;align-items:center}.input-with-icon svg{position:absolute;left:16px;color:#86868b;z-index:2;pointer-events:none}.modern-form-input{width:100%;padding:14px 16px 14px 48px;border:1px solid rgba(0,0,0,0.1);border-radius:12px;font-size:17px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:#333333;background:#ffffff;transition:all 0.3s cubic-bezier(0.4,0,0.2,1);letter-spacing:-0.01em}.modern-form-input:focus{outline:none;border-color:#6b4fc4;box-shadow:0 0 0 4px rgba(107,79,196,0.1)}.modern-form-input::placeholder{color:#86868b;opacity:1}textarea.modern-form-input{padding:14px 16px;resize:vertical;min-height:140px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.5}select.modern-form-input{padding:14px 16px;cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%2386868b' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px}.form-actions-modern{margin-top:12px}@media (min-width:734px){.form-row-modern{grid-template-columns:1fr 1fr}.contact-hero-content{padding:100px 40px}}@media (min-width:1068px){.contact-two-columns{grid-template-columns:1fr 1fr;gap:80px}.contact-hero-modern{min-height:70vh}.contact-main-section{padding:100px 0}}.contact-success,.contact-error{margin-bottom:24px;padding:16px 20px;border-radius:12px;font-weight:400;font-size:15px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;letter-spacing:-0.01em}.contact-success{background:#d1f2df;color:#0a5622;border:1px solid #9dd6b8}.contact-error{background:#f8d7da;color:#721c24;border:1px solid #f5c6cb}.aromas-hero-modern{position:relative;min-height:60vh;width:100vw;margin-left:calc(-50vw+50%);display:flex;align-items:center;justify-content:center;overflow:hidden;background:#000000}.aromas-hero-background{position:absolute;top:0;left:0;right:0;bottom:0;z-index:1}.aromas-hero-background .hero-bg-image{width:100%;height:100%;object-fit:cover;object-position:center;opacity:1}.aromas-hero-background .hero-overlay{position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient( 135deg,rgba(0,0,0,0.4) 0%,rgba(0,0,0,0.2) 100% );backdrop-filter:blur(0px)}.aromas-hero-content{position:relative;z-index:2;text-align:center;max-width:980px;padding:80px 20px}.aromas-hero-title{font-size:clamp(48px,7vw,80px);font-weight:600;margin-bottom:20px;text-shadow:0 2px 20px rgba(0,0,0,0.3);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;letter-spacing:-0.015em;line-height:1.05;color:#ffffff}.aromas-hero-subtitle{font-size:clamp(19px,2.5vw,28px);line-height:1.4;opacity:1;text-shadow:0 1px 10px rgba(0,0,0,0.3);font-weight:400;color:rgba(255,255,255,0.95);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;letter-spacing:-0.01em;max-width:700px;margin:0 auto}.fragrance-pills-section{padding:0;background:var(--cor-fundo);border-bottom:1px solid var(--cor-borda);position:sticky;top:0;z-index:100;width:100vw;margin-left:calc(-50vw+50%);margin-top:60px}.fragrance-pills-container{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;max-width:1200px;margin:0 auto;padding:12px 20px}@media (max-width:480px){.fragrance-pills-container{gap:6px;padding:10px 16px}.fragrance-pill{padding:6px 12px;font-size:13px}}.fragrance-pill{background:transparent;border:none;padding:8px 16px;font-size:14px;font-weight:400;color:var(--cor-primaria);cursor:pointer;border-radius:980px;transition:all 0.3s cubic-bezier(0.4,0,0.2,1);white-space:nowrap;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;letter-spacing:-0.01em}.fragrance-pill:hover{background:rgba(107,79,196,0.08);color:#5a3fb0}.fragrance-pill.active{background:linear-gradient(135deg,var(--cor-primaria) 0%,var(--cor-accent) 100%);color:var(--cor-fundo);font-weight:500;box-shadow:0 2px 8px rgba(107,79,196,0.25)}.fragrance-pill:focus{outline:2px solid var(--cor-primaria);outline-offset:2px}.fragrance-accordion-section{padding:60px 0 80px;background:var(--cor-fundo)}.fragrance-accordion-container{max-width:1200px;margin:0 auto;padding:0 20px}.fragrance-accordion-item{border:none;border-bottom:1px solid var(--cor-borda);margin-bottom:0;overflow:hidden;transition:all 0.4s cubic-bezier(0.4,0,0.2,1);background:var(--cor-fundo)}.fragrance-accordion-item:last-child{border-bottom:none}.fragrance-accordion-item:hover{background:rgba(0,0,0,0.01)}.fragrance-accordion-item.active{background:var(--cor-fundo)}.fragrance-accordion-header{width:100%;background:none;border:none;padding:24px 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;transition:all 0.3s cubic-bezier(0.4,0,0.2,1)}.fragrance-accordion-header:hover{opacity:0.7}.fragrance-accordion-header h2{font-size:clamp(24px,3vw,32px);font-weight:600;color:var(--cor-texto);margin:0;text-align:left;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;letter-spacing:-0.015em}.accordion-icon{transition:transform 0.4s cubic-bezier(0.4,0,0.2,1);color:#a8a8b3;flex-shrink:0;stroke-width:1.5}.fragrance-accordion-item.active .accordion-icon{transform:rotate(180deg);color:var(--cor-primaria)}.fragrance-accordion-content{padding:0;max-height:0;overflow:hidden;transition:max-height 0.4s cubic-bezier(0.4,0,0.2,1),padding 0.4s cubic-bezier(0.4,0,0.2,1),opacity 0.4s cubic-bezier(0.4,0,0.2,1);opacity:0}.fragrance-accordion-item.active .fragrance-accordion-content{max-height:2000px;padding-bottom:40px;opacity:1}.fragrance-content-grid{display:grid;grid-template-columns:1fr;gap:40px;align-items:start}.fragrance-image{border-radius:12px;overflow:hidden;box-shadow:none;position:relative;background:#f5f5f7}.fragrance-image img{width:100%;height:500px;object-fit:cover;object-position:center;transition:transform 0.6s cubic-bezier(0.4,0,0.2,1);display:block}.fragrance-accordion-item.active .fragrance-image img{animation:fadeInScale 0.6s cubic-bezier(0.4,0,0.2,1)}@keyframes fadeInScale{from{opacity:0;transform:scale(0.95)}to{opacity:1;transform:scale(1)}}.fragrance-image:hover img{transform:scale(1.03)}.fragrance-details{display:flex;flex-direction:column;gap:32px}.fragrance-notes{display:flex;flex-direction:column;gap:20px}.note-column{background:transparent;padding:0;border-radius:0;border:none;border-bottom:1px solid rgba(0,0,0,0.1);padding-bottom:20px}.note-column:last-child{border-bottom:none;padding-bottom:0}.note-column h4{font-size:12px;font-weight:600;color:#86868b;margin-bottom:8px;letter-spacing:0.06em;text-transform:uppercase;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}.note-column p{font-size:17px;color:var(--cor-texto);margin:0;line-height:1.5;font-weight:400;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;letter-spacing:-0.01em}.fragrance-description{background:transparent;padding:0;border-radius:0;border:none;border-top:1px solid var(--cor-borda);padding-top:32px}.fragrance-description h4{font-size:12px;font-weight:600;color:#86868b;margin-bottom:12px;letter-spacing:0.06em;text-transform:uppercase;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}.fragrance-description p{font-size:17px;color:var(--cor-texto);line-height:1.5;margin:0;font-weight:400;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;letter-spacing:-0.01em}@media (min-width:734px){.fragrance-pills-container{gap:12px;padding:16px 40px}.fragrance-pill{padding:10px 20px;font-size:15px}.fragrance-content-grid{grid-template-columns:1fr 1fr;gap:60px}.fragrance-accordion-header{padding:32px 0}.fragrance-accordion-content{padding:0}.fragrance-accordion-item.active .fragrance-accordion-content{padding-bottom:48px}}@media (min-width:1068px){.fragrance-accordion-section{padding:80px 0 100px}.fragrance-pills-container{padding:16px 60px}.aromas-hero-modern{min-height:70vh}.aromas-hero-content{padding:100px 40px}.cta-section{padding:120px 40px}}.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--espacamento-lg);margin-bottom:var(--espacamento-xl)}.contact-card{background:var(--cor-fundo);padding:var(--espacamento-xl);border-radius:16px;box-shadow:var(--sombra-sutil);border:1px solid var(--cor-borda);text-align:center;transition:var(--transicao-suave)}.contact-card:hover{transform:translateY(-8px);box-shadow:var(--sombra-luxo);border-color:var(--cor-primaria)}.contact-icon{width:80px;height:80px;background:var(--gradiente-luxo);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto var(--espacamento-md);color:var(--cor-fundo)}.contact-card h3{font-size:1.3rem;font-weight:600;color:var(--cor-primaria);margin-bottom:var(--espacamento-sm)}.contact-card p{color:var(--cor-texto);font-weight:500;margin-bottom:var(--espacamento-xs)}.contact-card small{color:var(--cor-texto);opacity:0.7;font-size:0.9rem}.contact-form-container{max-width:800px;margin:0 auto}.contact-form{background:var(--cor-fundo);padding:var(--espacamento-xl);border-radius:20px;box-shadow:var(--sombra-sutil);border:1px solid var(--cor-borda)}.form-row{display:grid;grid-template-columns:1fr;gap:var(--espacamento-lg);margin-bottom:var(--espacamento-lg)}.form-group{display:flex;flex-direction:column}.form-group label{font-weight:600;color:var(--cor-primaria);margin-bottom:var(--espacamento-xs);font-size:1rem}.luxury-form-input{padding:var(--espacamento-xs);border:2px solid var(--cor-borda);border-radius:100px;font-family:inherit;font-size:1rem;color:var(--cor-texto);background:var(--cor-fundo);transition:var(--transicao-rapida)}.luxury-form-input:focus{outline:none;border-color:var(--cor-primaria);box-shadow:0 0 0 4px rgba(107,79,196,0.1)}textarea.luxury-form-input{resize:vertical;min-height:120px}.form-actions{text-align:center;margin-top:var(--espacamento-xl)}.contact-success{background:#d4edda;color:#155724;padding:var(--espacamento-md);border-radius:12px;margin-bottom:var(--espacamento-lg);border:1px solid #c3e6cb}.contact-error{background:#f8d7da;color:#721c24;padding:var(--espacamento-md);border-radius:12px;margin-bottom:var(--espacamento-lg);border:1px solid #f5c6cb}.contact-error ul{margin:0;padding-left:var(--espacamento-md)}.hours-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:var(--espacamento-lg);max-width:800px;margin:0 auto}.hours-card{background:var(--cor-fundo);padding:var(--espacamento-xl);border-radius:16px;box-shadow:var(--sombra-sutil);border:1px solid var(--cor-borda)}.hours-card h3{font-size:1.3rem;font-weight:600;color:var(--cor-primaria);margin-bottom:var(--espacamento-md);text-align:center}.hours-card ul{list-style:none;padding:0;margin:0}.hours-card li{padding:var(--espacamento-sm) 0;border-bottom:1px solid var(--cor-borda);color:var(--cor-texto);display:flex;justify-content:space-between;align-items:center}.hours-card li:last-child{border-bottom:none}.cta-section{background:linear-gradient(180deg,#ffffff 0%,#f5f5f7 100%);color:var(--cor-texto);text-align:center;border-top:none;padding:100px 20px;width:100vw;margin-left:calc(-50vw+50%)}.cta-content{max-width:980px;margin:0 auto}.cta-title{font-size:clamp(36px,5vw,56px);font-weight:600;margin-bottom:16px;color:#1d1d1f;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;letter-spacing:-0.015em;line-height:1.1}.cta-subtitle{font-size:clamp(17px,2vw,21px);font-weight:400;line-height:1.5;margin-bottom:40px;color:#6e6e73;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;letter-spacing:-0.01em}.cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}.cta-buttons .btn-luxury{padding:12px 24px;font-size:17px;min-height:auto;border-radius:980px;font-weight:400;transition:all 0.3s cubic-bezier(0.4,0,0.2,1);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;letter-spacing:-0.01em;min-width:180px}.cta-buttons .btn-luxury.btn-primary{background:linear-gradient(135deg,#6b4fc4 0%,#8b6fd9 100%);border:none;box-shadow:0 4px 12px rgba(107,79,196,0.3)}.cta-buttons .btn-luxury.btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(107,79,196,0.4)}.cta-buttons .btn-luxury.btn-secondary{background:transparent;border:1px solid #6b4fc4;color:#6b4fc4}.cta-buttons .btn-luxury.btn-secondary:hover{background:#6b4fc4;color:#ffffff;transform:translateY(-2px);box-shadow:0 4px 12px rgba(107,79,196,0.2)}@media (min-width:768px){.content-grid{grid-template-columns:1fr 1fr;gap:var(--espacamento-xxl)}.form-row{grid-template-columns:1fr 1fr}.hero-title{font-size:4rem}.section-title{font-size:3rem}}@media (min-width:1024px){.benefits-grid{grid-template-columns:repeat(4,1fr)}.produtos-grid{grid-template-columns:repeat(3,1fr)}.contact-grid{grid-template-columns:repeat(4,1fr)}}@media (min-width:1920px){.aromas-hero-modern,.contact-hero-modern{min-height:65vh;max-height:800px}.aromas-hero-content,.contact-hero-content{padding:120px 60px}.fragrance-accordion-container,.contact-two-columns{max-width:1400px}}.animate-fade-in-up{animation:fadeInUp 0.6s ease-out}.benefit-card:nth-child(1){animation-delay:0.1s}.benefit-card:nth-child(2){animation-delay:0.2s}.benefit-card:nth-child(3){animation-delay:0.3s}.benefit-card:nth-child(4){animation-delay:0.4s}.produto-highlight:nth-child(1){animation-delay:0.1s}.produto-highlight:nth-child(2){animation-delay:0.2s}.produto-highlight:nth-child(3){animation-delay:0.3s}.contact-card:nth-child(1){animation-delay:0.1s}.contact-card:nth-child(2){animation-delay:0.2s}.contact-card:nth-child(3){animation-delay:0.3s}.contact-card:nth-child(4){animation-delay:0.4s}.page-minha-conta .luxury-container{max-width:1400px;margin:0 auto;padding:var(--espacamento-lg) var(--espacamento-md);min-height:auto;overflow:visible}.page-minha-conta .page-content{background:transparent}.page-minha-conta .page-header{text-align:center;margin-bottom:var(--espacamento-xl);padding:var(--espacamento-lg) 0;background:transparent;border-radius:0;position:relative;overflow:visible}.page-minha-conta .page-header::before{content:"";position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:60px;height:3px;background:var(--cor-primaria);border-radius:2px}.page-minha-conta .page-title{font-size:2.5rem;font-weight:700;color:#2c3e50;margin-bottom:var(--espacamento-sm);position:relative;z-index:2;font-family:var(--fonte-titulo)}.page-minha-conta .page-subtitle{font-size:1.1rem;color:#7f8c8d;line-height:1.6;margin:0 auto !important;font-weight:400;text-align:center !important;max-width:600px;display:block !important;width:100%}.page-minha-conta .breadcrumbs{margin-bottom:var(--espacamento-lg);position:relative;z-index:2}.account-welcome{background:var(--cor-fundo);border-radius:16px;padding:var(--espacamento-lg);text-align:center;margin-bottom:var(--espacamento-lg);box-shadow:0 2px 12px rgba(0,0,0,0.08);border:1px solid #ecf0f1;position:relative;overflow:visible}.welcome-title{font-size:2rem;font-weight:600;color:#2c3e50;margin-bottom:var(--espacamento-md)}.welcome-text{font-size:1.1rem;line-height:1.7;color:#7f8c8d;max-width:600px;margin:0 auto}@media (min-width:768px){.woocommerce-account{display:block !important}}.woocommerce-MyAccount-content .woocommerce-info{background:#f8f9fa;border:1px solid #e9ecef;border-radius:12px;padding:var(--espacamento-md);margin-bottom:var(--espacamento-md);color:#495057;font-weight:500;position:relative}.woocommerce-MyAccount-content .woocommerce-info::before{content:"ℹ";position:absolute;left:var(--espacamento-md);top:50%;transform:translateY(-50%);font-size:1.1rem;color:var(--cor-primaria)}.woocommerce-MyAccount-content .woocommerce-info{padding-left:calc(var(--espacamento-md) * 2+1.1rem)}.woocommerce-EditAccountForm{max-width:800px;margin:0 auto}.woocommerce-EditAccountForm .form-row{margin-bottom:var(--espacamento-md)}.woocommerce-EditAccountForm label{display:block;margin-bottom:var(--espacamento-sm);font-weight:600;color:#2c3e50;font-size:0.95rem}.woocommerce-EditAccountForm input[type="text"],.woocommerce-EditAccountForm input[type="email"],.woocommerce-EditAccountForm input[type="password"],.woocommerce-EditAccountForm textarea{width:100%;padding:var(--espacamento-md) var(--espacamento-lg);border:2px solid #ecf0f1;border-radius:12px;font-size:1rem;transition:all 0.2s ease;background:#ffffff;color:#2c3e50}.woocommerce-EditAccountForm input[type="text"]:focus,.woocommerce-EditAccountForm input[type="email"]:focus,.woocommerce-EditAccountForm input[type="password"]:focus,.woocommerce-EditAccountForm textarea:focus{border-color:var(--cor-primaria);box-shadow:0 0 0 3px rgba(107,79,196,0.1);outline:none;background:#ffffff}.woocommerce-EditAccountForm .button{background:var(--cor-primaria);color:#ffffff;border:none;padding:var(--espacamento-md) var(--espacamento-xl);border-radius:100px;font-weight:600;font-size:1rem;cursor:pointer;transition:all 0.2s ease;box-shadow:0 2px 8px rgba(107,79,196,0.2)}.woocommerce-EditAccountForm .button:hover{background:var(--cor-accent);transform:translateY(-1px);box-shadow:0 4px 16px rgba(107,79,196,0.3)}.woocommerce-addresses{display:grid;grid-template-columns:repeat(auto-fit,minmax(400px,1fr));gap:var(--espacamento-lg);margin:var(--espacamento-md) 0}.woocommerce-address{background:#ffffff;padding:var(--espacamento-lg);border-radius:16px;border:1px solid #ecf0f1;box-shadow:0 2px 12px rgba(0,0,0,0.08)}.woocommerce-address h3{color:#2c3e50;margin-bottom:var(--espacamento-md);font-size:1.25rem;font-weight:600}.woocommerce-address address{font-style:normal;line-height:1.6;color:#5a6c7d;margin-bottom:var(--espacamento-md)}.woocommerce-address .edit{background:var(--cor-primaria);color:#ffffff;padding:var(--espacamento-sm) var(--espacamento-md);border-radius:100px;text-decoration:none;font-size:0.9rem;font-weight:500;transition:all 0.2s ease}.woocommerce-address .edit:hover{background:var(--cor-accent);transform:translateY(-1px)}.woocommerce-PaymentMethods{background:#ffffff;padding:var(--espacamento-lg);border-radius:16px;border:1px solid #ecf0f1;margin:var(--espacamento-md) 0;box-shadow:0 2px 12px rgba(0,0,0,0.08)}.woocommerce-PaymentMethods h3{color:#2c3e50;margin-bottom:var(--espacamento-md);font-size:1.25rem;font-weight:600}.account-benefits{background:#f8f9fa;padding:var(--espacamento-xl);border-radius:16px;text-align:center;margin-top:var(--espacamento-lg);border:1px solid #ecf0f1}.benefits-title{font-size:2rem;font-weight:700;color:#2c3e50;margin-bottom:var(--espacamento-lg)}.benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--espacamento-lg);max-width:1000px;margin:0 auto}.benefit-item{background:#ffffff;padding:var(--espacamento-lg);border-radius:16px;box-shadow:0 2px 12px rgba(0,0,0,0.08);border:1px solid #ecf0f1;transition:all 0.2s ease;position:relative;overflow:visible}.benefit-item:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.12)}.benefit-icon{width:48px;height:48px;color:var(--cor-primaria);margin:0 auto var(--espacamento-md);display:block;background:rgba(107,79,196,0.1);padding:var(--espacamento-md);border-radius:12px}.benefit-content h4{font-size:1.25rem;font-weight:600;color:#2c3e50;margin-bottom:var(--espacamento-md)}.benefit-content p{color:#5a6c7d;line-height:1.6;margin:0}@media (max-width:768px){.page-minha-conta .luxury-container{padding:var(--espacamento-md) var(--espacamento-sm)}.page-minha-conta .page-header{padding:var(--espacamento-md) var(--espacamento-md)}.page-minha-conta .page-title{font-size:2.5rem}.account-welcome{padding:var(--espacamento-md)}.welcome-title{font-size:2rem}.welcome-text{font-size:1.1rem}.woocommerce-MyAccount-navigation ul{flex-direction:column;align-items:center}.woocommerce-MyAccount-navigation a{width:100%;text-align:center}.woocommerce-MyAccount-content{padding:var(--espacamento-md)}.benefits-grid{grid-template-columns:1fr;gap:var(--espacamento-md)}.benefit-item{padding:var(--espacamento-md)}.woocommerce-addresses{grid-template-columns:1fr;gap:var(--espacamento-md)}}@media (max-width:480px){.page-minha-conta .page-title{font-size:2rem}.welcome-title{font-size:1.75rem}.benefits-title{font-size:2rem}.woocommerce-MyAccount-navigation{padding:var(--espacamento-sm)}.woocommerce-MyAccount-content{padding:var(--espacamento-sm)}.account-welcome{padding:var(--espacamento-sm)}.account-benefits{padding:var(--espacamento-md)}}@media print{.woocommerce-MyAccount-navigation,.account-benefits{display:none}.woocommerce-MyAccount-content{padding:0}.woocommerce-orders-table{box-shadow:none;border:1px solid #ccc}}
+/*!
+ * Tema Aromas - Static Pages CSS
+ * Luxury styling for content pages (About, Contact, etc.)
+ * Version: 1.0.0
+ */
+
+/* ==========================================================================
+   Page Layout
+   ========================================================================== */
+
+.luxury-page {
+  padding: 0;
+  margin: 0;
+}
+
+.content-section {
+  padding: var(--espacamento-xxl) 0;
+  border-bottom: 1px solid rgba(107, 79, 196, 0.05);
+}
+
+.content-section:last-child {
+  border-bottom: none;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: var(--espacamento-xl);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--cor-primaria);
+  margin-bottom: var(--espacamento-md);
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--gradiente-luxo);
+  margin: var(--espacamento-md) auto 0;
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  font-size: 1.2rem;
+  color: var(--cor-texto);
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   Hero Sections
+   ========================================================================== */
+
+.hero-section {
+  background: linear-gradient(
+    135deg,
+    rgba(107, 79, 196, 0.05) 0%,
+    rgba(139, 95, 214, 0.05) 100%
+  );
+  padding: var(--espacamento-xxl) 0;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--cor-primaria);
+  margin-bottom: var(--espacamento-lg);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  color: var(--cor-texto);
+  opacity: 0.9;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.hero-decoration {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.aroma-wave {
+  width: 100%;
+  height: 200px;
+}
+
+/* ==========================================================================
+   Content Grids
+   ========================================================================== */
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espacamento-xl);
+  align-items: start;
+}
+
+.content-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--cor-texto);
+}
+
+.content-text p {
+  margin-bottom: var(--espacamento-lg);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--espacamento-lg);
+}
+
+.benefit-card {
+  background: var(--cor-fundo);
+  padding: var(--espacamento-lg);
+  border-radius: 16px;
+  box-shadow: var(--sombra-sutil);
+  border: 1px solid var(--cor-borda);
+  text-align: center;
+  transition: var(--transicao-suave);
+}
+
+.benefit-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--sombra-luxo);
+  border-color: var(--cor-primaria);
+}
+
+.benefit-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--gradiente-luxo);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--espacamento-md);
+  color: var(--cor-fundo);
+}
+
+.benefit-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--cor-primaria);
+  margin-bottom: var(--espacamento-sm);
+}
+
+.benefit-card p {
+  color: var(--cor-texto);
+  opacity: 0.8;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   Product Highlights
+   ========================================================================== */
+
+.produtos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--espacamento-xl);
+}
+
+.produto-highlight {
+  background: var(--cor-fundo);
+  padding: var(--espacamento-xl);
+  border-radius: 20px;
+  box-shadow: var(--sombra-sutil);
+  border: 1px solid var(--cor-borda);
+  text-align: center;
+  transition: var(--transicao-suave);
+}
+
+.produto-highlight:hover {
+  transform: translateY(-12px);
+  box-shadow: var(--sombra-luxo);
+  border-color: var(--cor-accent);
+}
+
+.produto-icon {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(
+    135deg,
+    rgba(107, 79, 196, 0.1) 0%,
+    rgba(139, 95, 214, 0.1) 100%
+  );
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--espacamento-lg);
+  color: var(--cor-primaria);
+}
+
+.produto-highlight h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--cor-primaria);
+  margin-bottom: var(--espacamento-md);
+}
+
+.produto-highlight p {
+  color: var(--cor-texto);
+  opacity: 0.8;
+  line-height: 1.6;
+  margin-bottom: var(--espacamento-lg);
+}
+
+/* ==========================================================================
+   FAQ Section
+   ========================================================================== */
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border: 1px solid var(--cor-borda);
+  border-radius: 100px;
+  margin-bottom: var(--espacamento-md);
+  overflow: hidden;
+  transition: var(--transicao-suave);
+}
+
+.faq-item:hover {
+  border-color: var(--cor-primaria);
+  box-shadow: var(--sombra-sutil);
+}
+
+.faq-question {
+  width: 100%;
+  padding: var(--espacamento-lg);
+  background: var(--cor-fundo);
+  border: none;
+  text-align: left;
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--cor-primaria);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: var(--transicao-rapida);
+}
+
+.faq-question:hover {
+  background: rgba(107, 79, 196, 0.05);
+}
+
+.faq-question[aria-expanded="true"] {
+  background: rgba(107, 79, 196, 0.1);
+}
+
+.faq-question[aria-expanded="true"] .faq-icon {
+  transform: rotate(180deg);
+}
+
+.faq-icon {
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  color: var(--cor-primaria);
+}
+
+.faq-answer {
+  padding: 0 var(--espacamento-lg) var(--espacamento-lg);
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
+  display: none;
+}
+
+.faq-answer[aria-hidden="false"] {
+  display: block;
+  animation: fadeInUp 0.3s ease;
+}
+
+/* ==========================================================================
+   Apple-Style Contact Page Design
+   ========================================================================== */
+
+/* Apple-Style Hero Section */
+.contact-hero-modern {
+  position: relative;
+  min-height: 60vh;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #000000;
+}
+
+.contact-hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.hero-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+}
+
+.contact-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 980px;
+  padding: 80px 20px;
+}
+
+.contact-hero-title {
+  font-size: clamp(48px, 7vw, 80px);
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.015em;
+  line-height: 1.05;
+  color: #ffffff;
+}
+
+.contact-hero-subtitle {
+  font-size: clamp(19px, 2.5vw, 28px);
+  line-height: 1.4;
+  opacity: 1;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.95);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.01em;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Apple-Style Two Column Layout */
+.contact-main-section {
+  padding: 40px 0 80px;
+  background: var(--cor-fundo);
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+.contact-two-columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Left Column - Contact Info */
+.contact-info-column {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  height: fit-content;
+  border: none;
+}
+
+.contact-methods-title h2 {
+  font-size: clamp(24px, 3vw, 32px);
+  color: #1d1d1f;
+  margin-bottom: 8px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.contact-methods-title p {
+  color: #86868b;
+  font-size: clamp(15px, 1.8vw, 19px);
+  margin-bottom: 32px;
+  line-height: 1.5;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+/* Apple-Style Contact Methods List */
+.contact-methods-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-method-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  gap: 20px;
+  padding: 24px;
+  border-radius: 16px;
+  border: none;
+  background: #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-method-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.contact-method-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.contact-method-item:hover .contact-method-icon {
+  transform: scale(1.05);
+}
+
+.contact-method-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.email-icon {
+  background: linear-gradient(135deg, #6b4fc4 0%, #8b6fd9 100%);
+  color: white;
+}
+
+.whatsapp-icon {
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: white;
+}
+
+.instagram-icon {
+  background: linear-gradient(135deg, #e4405f 0%, #fd5949 50%, #fccc63 100%);
+  color: white;
+}
+
+.contact-method-content h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.contact-method-content p {
+  font-size: 17px;
+  font-weight: 500;
+  color: #555555;
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.contact-method-content small {
+  font-size: 14px;
+  color: #888888;
+  line-height: 1.5;
+  display: block;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Apple-Style Right Column - Contact Form */
+.contact-form-column {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  height: fit-content;
+  border: none;
+}
+
+.contact-form-title h2 {
+  font-size: clamp(24px, 3vw, 32px);
+  color: #1d1d1f;
+  margin-bottom: 8px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.contact-form-title p {
+  color: #86868b;
+  font-size: clamp(15px, 1.8vw, 19px);
+  margin-bottom: 32px;
+  line-height: 1.5;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+/* Apple-Style Form Styling */
+.contact-form-modern {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row-modern {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.form-group-modern {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group-modern label {
+  font-weight: 600;
+  color: #333333;
+  font-size: 15px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-with-icon svg {
+  position: absolute;
+  left: 16px;
+  color: #86868b;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.modern-form-input {
+  width: 100%;
+  padding: 14px 16px 14px 48px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  font-size: 17px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #333333;
+  background: #ffffff;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: -0.01em;
+}
+
+.modern-form-input:focus {
+  outline: none;
+  border-color: #6b4fc4;
+  box-shadow: 0 0 0 4px rgba(107, 79, 196, 0.1);
+}
+
+.modern-form-input::placeholder {
+  color: #86868b;
+  opacity: 1;
+}
+
+textarea.modern-form-input {
+  padding: 14px 16px;
+  resize: vertical;
+  min-height: 140px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+}
+
+select.modern-form-input {
+  padding: 14px 16px;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%2386868b' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+}
+
+.form-actions-modern {
+  margin-top: 12px;
+}
+
+/* Button styles now centralized in buttons.css */
+
+/* Apple-Style Responsive Design */
+@media (min-width: 734px) {
+  .form-row-modern {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contact-hero-content {
+    padding: 100px 40px;
+  }
+}
+
+@media (min-width: 1068px) {
+  .contact-two-columns {
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+  }
+
+  .contact-hero-modern {
+    min-height: 70vh;
+  }
+
+  .contact-main-section {
+    padding: 100px 0;
+  }
+}
+
+/* Apple-Style Success/Error Messages */
+.contact-success,
+.contact-error {
+  margin-bottom: 24px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  font-weight: 400;
+  font-size: 15px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.contact-success {
+  background: #d1f2df;
+  color: #0a5622;
+  border: 1px solid #9dd6b8;
+}
+
+.contact-error {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Dark Mode Support for Contact Page - DISABLED to ensure white backgrounds */
+
+/* ==========================================================================
+   Aromas Page Design (Nossos Aromas)
+   ========================================================================== */
+
+/* Hero Section for Aromas Page */
+/* Apple-Style Aromas Hero Section with Visible Photo */
+.aromas-hero-modern {
+  position: relative;
+  min-height: 60vh;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #000000;
+}
+
+.aromas-hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.aromas-hero-background .hero-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 1;
+}
+
+.aromas-hero-background .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.4) 0%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  backdrop-filter: blur(0px);
+}
+
+.aromas-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 980px;
+  padding: 80px 20px;
+}
+
+.aromas-hero-title {
+  font-size: clamp(48px, 7vw, 80px);
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.015em;
+  line-height: 1.05;
+  color: #ffffff;
+}
+
+.aromas-hero-subtitle {
+  font-size: clamp(19px, 2.5vw, 28px);
+  line-height: 1.4;
+  opacity: 1;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.95);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.01em;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Fragrance Pills Section */
+/* Apple-Style Fragrance Pills Navigation */
+.fragrance-pills-section {
+  padding: 0;
+  background: var(--cor-fundo);
+  border-bottom: 1px solid var(--cor-borda);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  left: 0;
+  right: 0;
+  width: 100%;
+  margin-top: 60px;
+  overflow-x: auto;
+}
+
+.fragrance-pills-container {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 20px;
+}
+
+/* Mobile: 2 rows layout for better visibility */
+@media (max-width: 480px) {
+  .fragrance-pills-container {
+    gap: 6px;
+    padding: 10px 16px;
+  }
+
+  .fragrance-pill {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}
+
+/* Apple-Style Fragrance Pills (Tabs) */
+.fragrance-pill {
+  background: transparent;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--cor-primaria);
+  cursor: pointer;
+  border-radius: 980px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.fragrance-pill:hover {
+  background: rgba(107, 79, 196, 0.08);
+  color: #5a3fb0;
+}
+
+.fragrance-pill.active {
+  background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-accent) 100%);
+  color: var(--cor-fundo);
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(107, 79, 196, 0.25);
+}
+
+.fragrance-pill:focus {
+  outline: 2px solid var(--cor-primaria);
+  outline-offset: 2px;
+}
+
+/* Apple-Style Fragrance Accordion Section */
+.fragrance-accordion-section {
+  padding: 60px 0 80px;
+  background: var(--cor-fundo);
+}
+
+.fragrance-accordion-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.fragrance-accordion-item {
+  border: none;
+  border-bottom: 1px solid var(--cor-borda);
+  margin-bottom: 0;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--cor-fundo);
+}
+
+.fragrance-accordion-item:last-child {
+  border-bottom: none;
+}
+
+.fragrance-accordion-item:hover {
+  background: rgba(0, 0, 0, 0.01);
+}
+
+.fragrance-accordion-item.active {
+  background: var(--cor-fundo);
+}
+
+.fragrance-accordion-header {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fragrance-accordion-header:hover {
+  opacity: 0.7;
+}
+
+.fragrance-accordion-header h2 {
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 600;
+  color: var(--cor-texto);
+  margin: 0;
+  text-align: left;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.015em;
+}
+
+.accordion-icon {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #a8a8b3;
+  flex-shrink: 0;
+  stroke-width: 1.5;
+}
+
+.fragrance-accordion-item.active .accordion-icon {
+  transform: rotate(180deg);
+  color: var(--cor-primaria);
+}
+
+.fragrance-accordion-content {
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              padding 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+}
+
+.fragrance-accordion-item.active .fragrance-accordion-content {
+  max-height: 2000px;
+  padding-bottom: 40px;
+  opacity: 1;
+}
+
+/* Apple-Style Fragrance Content Grid */
+.fragrance-content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.fragrance-image {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: none;
+  position: relative;
+  background: #f5f5f7;
+}
+
+.fragrance-image img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+}
+
+.fragrance-accordion-item.active .fragrance-image img {
+  animation: fadeInScale 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.fragrance-image:hover img {
+  transform: scale(1.03);
+}
+
+.fragrance-details {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Apple-Style Fragrance Notes */
+.fragrance-notes {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.note-column {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 20px;
+}
+
+.note-column:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.note-column h4 {
+  font-size: 12px;
+  font-weight: 600;
+  color: #86868b;
+  margin-bottom: 8px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.note-column p {
+  font-size: 17px;
+  color: var(--cor-texto);
+  margin: 0;
+  line-height: 1.5;
+  font-weight: 400;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+/* Apple-Style Fragrance Description */
+.fragrance-description {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  border: none;
+  border-top: 1px solid var(--cor-borda);
+  padding-top: 32px;
+}
+
+.fragrance-description h4 {
+  font-size: 12px;
+  font-weight: 600;
+  color: #86868b;
+  margin-bottom: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.fragrance-description p {
+  font-size: 17px;
+  color: var(--cor-texto);
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 400;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+/* Responsive Design for Apple-Style Aromas Page */
+@media (min-width: 734px) {
+  .fragrance-pills-container {
+    gap: 12px;
+    padding: 16px 40px;
+  }
+
+  .fragrance-pill {
+    padding: 10px 20px;
+    font-size: 15px;
+  }
+
+  .fragrance-content-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+
+  .fragrance-accordion-header {
+    padding: 32px 0;
+  }
+
+  .fragrance-accordion-content {
+    padding: 0;
+  }
+
+  .fragrance-accordion-item.active .fragrance-accordion-content {
+    padding-bottom: 48px;
+  }
+}
+
+@media (min-width: 1068px) {
+  .fragrance-accordion-section {
+    padding: 80px 0 100px;
+  }
+
+  .fragrance-pills-container {
+    padding: 16px 60px;
+  }
+
+  .aromas-hero-modern {
+    min-height: 70vh;
+  }
+
+  .aromas-hero-content {
+    padding: 100px 40px;
+  }
+
+  .cta-section {
+    padding: 120px 40px;
+  }
+}
+
+/* Dark Mode Support for Apple Design - DISABLED to ensure white backgrounds */
+/* The Aromas page should always use light mode styling for consistency */
+
+/* ==========================================================================
+   Original Contact Section Styles (Keep for other pages)
+   ========================================================================== */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--espacamento-lg);
+  margin-bottom: var(--espacamento-xl);
+}
+
+.contact-card {
+  background: var(--cor-fundo);
+  padding: var(--espacamento-xl);
+  border-radius: 16px;
+  box-shadow: var(--sombra-sutil);
+  border: 1px solid var(--cor-borda);
+  text-align: center;
+  transition: var(--transicao-suave);
+}
+
+.contact-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--sombra-luxo);
+  border-color: var(--cor-primaria);
+}
+
+.contact-icon {
+  width: 80px;
+  height: 80px;
+  background: var(--gradiente-luxo);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--espacamento-md);
+  color: var(--cor-fundo);
+}
+
+.contact-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--cor-primaria);
+  margin-bottom: var(--espacamento-sm);
+}
+
+.contact-card p {
+  color: var(--cor-texto);
+  font-weight: 500;
+  margin-bottom: var(--espacamento-xs);
+}
+
+.contact-card small {
+  color: var(--cor-texto);
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   Contact Form
+   ========================================================================== */
+
+.contact-form-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.contact-form {
+  background: var(--cor-fundo);
+  padding: var(--espacamento-xl);
+  border-radius: 20px;
+  box-shadow: var(--sombra-sutil);
+  border: 1px solid var(--cor-borda);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--espacamento-lg);
+  margin-bottom: var(--espacamento-lg);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: var(--cor-primaria);
+  margin-bottom: var(--espacamento-xs);
+  font-size: 1rem;
+}
+
+.luxury-form-input {
+  padding: var(--espacamento-xs);
+  border: 2px solid var(--cor-borda);
+  border-radius: 100px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: var(--cor-texto);
+  background: var(--cor-fundo);
+  transition: var(--transicao-rapida);
+}
+
+.luxury-form-input:focus {
+  outline: none;
+  border-color: var(--cor-primaria);
+  box-shadow: 0 0 0 4px rgba(107, 79, 196, 0.1);
+}
+
+textarea.luxury-form-input {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-actions {
+  text-align: center;
+  margin-top: var(--espacamento-xl);
+}
+
+.contact-success {
+  background: #d4edda;
+  color: #155724;
+  padding: var(--espacamento-md);
+  border-radius: 12px;
+  margin-bottom: var(--espacamento-lg);
+  border: 1px solid #c3e6cb;
+}
+
+.contact-error {
+  background: #f8d7da;
+  color: #721c24;
+  padding: var(--espacamento-md);
+  border-radius: 12px;
+  margin-bottom: var(--espacamento-lg);
+  border: 1px solid #f5c6cb;
+}
+
+.contact-error ul {
+  margin: 0;
+  padding-left: var(--espacamento-md);
+}
+
+/* ==========================================================================
+   Business Hours
+   ========================================================================== */
+
+.hours-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--espacamento-lg);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hours-card {
+  background: var(--cor-fundo);
+  padding: var(--espacamento-xl);
+  border-radius: 16px;
+  box-shadow: var(--sombra-sutil);
+  border: 1px solid var(--cor-borda);
+}
+
+.hours-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--cor-primaria);
+  margin-bottom: var(--espacamento-md);
+  text-align: center;
+}
+
+.hours-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hours-card li {
+  padding: var(--espacamento-sm) 0;
+  border-bottom: 1px solid var(--cor-borda);
+  color: var(--cor-texto);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hours-card li:last-child {
+  border-bottom: none;
+}
+
+/* ==========================================================================
+   Call to Action
+   ========================================================================== */
+
+/* Apple-Style CTA Section */
+.cta-section {
+  background: linear-gradient(180deg, #ffffff 0%, #f5f5f7 100%);
+  color: var(--cor-texto);
+  text-align: center;
+  border-top: none;
+  padding: 100px 20px;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+}
+
+.cta-content {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.cta-title {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #1d1d1f;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+}
+
+.cta-subtitle {
+  font-size: clamp(17px, 2vw, 21px);
+  font-weight: 400;
+  line-height: 1.5;
+  margin-bottom: 40px;
+  color: #6e6e73;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Apple-Style CTA Buttons */
+.cta-buttons .btn-luxury {
+  padding: 12px 24px;
+  font-size: 17px;
+  min-height: auto;
+  border-radius: 980px;
+  font-weight: 400;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.01em;
+  min-width: 180px;
+}
+
+.cta-buttons .btn-luxury.btn-primary {
+  background: linear-gradient(135deg, #6b4fc4 0%, #8b6fd9 100%);
+  border: none;
+  box-shadow: 0 4px 12px rgba(107, 79, 196, 0.3);
+}
+
+.cta-buttons .btn-luxury.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(107, 79, 196, 0.4);
+}
+
+.cta-buttons .btn-luxury.btn-secondary {
+  background: transparent;
+  border: 1px solid #6b4fc4;
+  color: #6b4fc4;
+}
+
+.cta-buttons .btn-luxury.btn-secondary:hover {
+  background: #6b4fc4;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(107, 79, 196, 0.2);
+}
+
+/* Secondary button styles now centralized in buttons.css */
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+
+@media (min-width: 768px) {
+  .content-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--espacamento-xxl);
+  }
+
+  .form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-title {
+    font-size: 4rem;
+  }
+
+  .section-title {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .benefits-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .produtos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .contact-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Extra large screens optimization */
+@media (min-width: 1920px) {
+  .aromas-hero-modern,
+  .contact-hero-modern {
+    min-height: 65vh;
+    max-height: 800px;
+  }
+
+  .aromas-hero-content,
+  .contact-hero-content {
+    padding: 120px 60px;
+  }
+
+  .fragrance-accordion-container,
+  .contact-two-columns {
+    max-width: 1400px;
+  }
+}
+
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+
+/* fadeInUp animation moved to base.css to avoid duplication */
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Animation delays for staggered effects */
+.benefit-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.benefit-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.benefit-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.benefit-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.produto-highlight:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.produto-highlight:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.produto-highlight:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.contact-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.contact-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.contact-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.contact-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* ==========================================================================
+   My Account Page - Luxury Styling
+   ========================================================================== */
+
+/* My Account Page Container */
+.page-minha-conta .luxury-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--espacamento-lg) var(--espacamento-md);
+  min-height: auto;
+  overflow: visible;
+}
+
+.page-minha-conta .page-content {
+  background: transparent;
+}
+
+.page-minha-conta .page-header {
+  text-align: center;
+  margin-bottom: var(--espacamento-xl);
+  padding: var(--espacamento-lg) 0;
+  background: transparent;
+  border-radius: 0;
+  position: relative;
+  overflow: visible;
+}
+
+.page-minha-conta .page-header::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--cor-primaria);
+  border-radius: 2px;
+}
+
+.page-minha-conta .page-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: var(--espacamento-sm);
+  position: relative;
+  z-index: 2;
+  font-family: var(--fonte-titulo);
+}
+
+.page-minha-conta .page-subtitle {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  line-height: 1.6;
+  margin: 0 auto !important;
+  font-weight: 400;
+  text-align: center !important;
+  max-width: 600px;
+  display: block !important;
+  width: 100%;
+}
+
+.page-minha-conta .breadcrumbs {
+  margin-bottom: var(--espacamento-lg);
+  position: relative;
+  z-index: 2;
+}
+
+/* Account Welcome Section */
+.account-welcome {
+  background: var(--cor-fundo);
+  border-radius: 16px;
+  padding: var(--espacamento-lg);
+  text-align: center;
+  margin-bottom: var(--espacamento-lg);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #ecf0f1;
+  position: relative;
+  overflow: visible;
+}
+
+.welcome-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: var(--espacamento-md);
+}
+
+.welcome-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #7f8c8d;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* WooCommerce My Account - Override for block layout */
+/* My Account styling is now handled in woocommerce.css */
+@media (min-width: 768px) {
+  .woocommerce-account {
+    display: block !important;
+  }
+}
+
+/* Account Dashboard - Clean Info Styling */
+.woocommerce-MyAccount-content .woocommerce-info {
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  padding: var(--espacamento-md);
+  margin-bottom: var(--espacamento-md);
+  color: #495057;
+  font-weight: 500;
+  position: relative;
+}
+
+.woocommerce-MyAccount-content .woocommerce-info::before {
+  content: "ℹ";
+  position: absolute;
+  left: var(--espacamento-md);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.1rem;
+  color: var(--cor-primaria);
+}
+
+.woocommerce-MyAccount-content .woocommerce-info {
+  padding-left: calc(var(--espacamento-md) * 2 + 1.1rem);
+}
+
+/* Orders styling is now handled in woocommerce.css with card-based responsive design */
+
+/* Account Details Form - Clean Form Design */
+.woocommerce-EditAccountForm {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.woocommerce-EditAccountForm .form-row {
+  margin-bottom: var(--espacamento-md);
+}
+
+.woocommerce-EditAccountForm label {
+  display: block;
+  margin-bottom: var(--espacamento-sm);
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 0.95rem;
+}
+
+.woocommerce-EditAccountForm input[type="text"],
+.woocommerce-EditAccountForm input[type="email"],
+.woocommerce-EditAccountForm input[type="password"],
+.woocommerce-EditAccountForm textarea {
+  width: 100%;
+  padding: var(--espacamento-md) var(--espacamento-lg);
+  border: 2px solid #ecf0f1;
+  border-radius: 12px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  background: #ffffff;
+  color: #2c3e50;
+}
+
+.woocommerce-EditAccountForm input[type="text"]:focus,
+.woocommerce-EditAccountForm input[type="email"]:focus,
+.woocommerce-EditAccountForm input[type="password"]:focus,
+.woocommerce-EditAccountForm textarea:focus {
+  border-color: var(--cor-primaria);
+  box-shadow: 0 0 0 3px rgba(107, 79, 196, 0.1);
+  outline: none;
+  background: #ffffff;
+}
+
+.woocommerce-EditAccountForm .button {
+  background: var(--cor-primaria);
+  color: #ffffff;
+  border: none;
+  padding: var(--espacamento-md) var(--espacamento-xl);
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(107, 79, 196, 0.2);
+}
+
+.woocommerce-EditAccountForm .button:hover {
+  background: var(--cor-accent);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(107, 79, 196, 0.3);
+}
+
+/* Addresses Section - Clean Card Design */
+.woocommerce-addresses {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: var(--espacamento-lg);
+  margin: var(--espacamento-md) 0;
+}
+
+.woocommerce-address {
+  background: #ffffff;
+  padding: var(--espacamento-lg);
+  border-radius: 16px;
+  border: 1px solid #ecf0f1;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.woocommerce-address h3 {
+  color: #2c3e50;
+  margin-bottom: var(--espacamento-md);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.woocommerce-address address {
+  font-style: normal;
+  line-height: 1.6;
+  color: #5a6c7d;
+  margin-bottom: var(--espacamento-md);
+}
+
+.woocommerce-address .edit {
+  background: var(--cor-primaria);
+  color: #ffffff;
+  padding: var(--espacamento-sm) var(--espacamento-md);
+  border-radius: 100px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.woocommerce-address .edit:hover {
+  background: var(--cor-accent);
+  transform: translateY(-1px);
+}
+
+/* Payment Methods - Clean Section */
+.woocommerce-PaymentMethods {
+  background: #ffffff;
+  padding: var(--espacamento-lg);
+  border-radius: 16px;
+  border: 1px solid #ecf0f1;
+  margin: var(--espacamento-md) 0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.woocommerce-PaymentMethods h3 {
+  color: #2c3e50;
+  margin-bottom: var(--espacamento-md);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Account Benefits Section - Clean Benefits */
+.account-benefits {
+  background: #f8f9fa;
+  padding: var(--espacamento-xl);
+  border-radius: 16px;
+  text-align: center;
+  margin-top: var(--espacamento-lg);
+  border: 1px solid #ecf0f1;
+}
+
+.benefits-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: var(--espacamento-lg);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--espacamento-lg);
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.benefit-item {
+  background: #ffffff;
+  padding: var(--espacamento-lg);
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #ecf0f1;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: visible;
+}
+
+.benefit-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.benefit-icon {
+  width: 48px;
+  height: 48px;
+  color: var(--cor-primaria);
+  margin: 0 auto var(--espacamento-md);
+  display: block;
+  background: rgba(107, 79, 196, 0.1);
+  padding: var(--espacamento-md);
+  border-radius: 12px;
+}
+
+.benefit-content h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: var(--espacamento-md);
+}
+
+.benefit-content p {
+  color: #5a6c7d;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .page-minha-conta .luxury-container {
+    padding: var(--espacamento-md) var(--espacamento-sm);
+  }
+
+  .page-minha-conta .page-header {
+    padding: var(--espacamento-md) var(--espacamento-md);
+  }
+
+  .page-minha-conta .page-title {
+    font-size: 2.5rem;
+  }
+
+  .account-welcome {
+    padding: var(--espacamento-md);
+  }
+
+  .welcome-title {
+    font-size: 2rem;
+  }
+
+  .welcome-text {
+    font-size: 1.1rem;
+  }
+
+  .woocommerce-MyAccount-navigation ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .woocommerce-MyAccount-navigation a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .woocommerce-MyAccount-content {
+    padding: var(--espacamento-md);
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: var(--espacamento-md);
+  }
+
+  .benefit-item {
+    padding: var(--espacamento-md);
+  }
+
+  .woocommerce-addresses {
+    grid-template-columns: 1fr;
+    gap: var(--espacamento-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .page-minha-conta .page-title {
+    font-size: 2rem;
+  }
+
+  .welcome-title {
+    font-size: 1.75rem;
+  }
+
+  .benefits-title {
+    font-size: 2rem;
+  }
+
+  .woocommerce-MyAccount-navigation {
+    padding: var(--espacamento-sm);
+  }
+
+  .woocommerce-MyAccount-content {
+    padding: var(--espacamento-sm);
+  }
+
+  .account-welcome {
+    padding: var(--espacamento-sm);
+  }
+
+  .account-benefits {
+    padding: var(--espacamento-md);
+  }
+}
+
+/* Print Styles */
+@media print {
+  .woocommerce-MyAccount-navigation,
+  .account-benefits {
+    display: none;
+  }
+
+  .woocommerce-MyAccount-content {
+    padding: 0;
+  }
+
+  .woocommerce-orders-table {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+}

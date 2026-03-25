@@ -1,108 +1,107 @@
 /*!
  * Tema Aromas - Aromas Page JavaScript
- * Apple-Style Accordion and Tab Navigation
- * Version: 2.0.0
+ * Accordion and Tab Navigation with scroll-sync
+ * Version: 3.0.0
  */
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Select fragrance pills (tabs) and accordion items
-  const fragrancePills = document.querySelectorAll(".fragrance-pill");
-  const accordionItems = document.querySelectorAll(".fragrance-accordion-item");
-  const pillsSection = document.querySelector(".fragrance-pills-section");
+  var fragrancePills = document.querySelectorAll(".fragrance-pill");
+  var accordionItems = document.querySelectorAll(".fragrance-accordion-item");
+  var pillsSection = document.querySelector(".fragrance-pills-section");
+  var isScrollingFromClick = false;
 
-  fragrancePills.forEach((pill) => {
+  // --- Helpers ---
+
+  function closeAllAccordions() {
+    accordionItems.forEach(function (item) {
+      item.classList.remove("active");
+      var content = item.querySelector(".fragrance-accordion-content");
+      var header = item.querySelector(".fragrance-accordion-header");
+      if (content && header) {
+        content.setAttribute("aria-hidden", "true");
+        header.setAttribute("aria-expanded", "false");
+      }
+    });
+    fragrancePills.forEach(function (p) {
+      p.classList.remove("active");
+    });
+  }
+
+  function openAccordion(item) {
+    item.classList.add("active");
+    var content = item.querySelector(".fragrance-accordion-content");
+    var header = item.querySelector(".fragrance-accordion-header");
+    if (content && header) {
+      content.setAttribute("aria-hidden", "false");
+      header.setAttribute("aria-expanded", "true");
+    }
+    // Sync pill
+    var id = item.getAttribute("id");
+    var pill = document.querySelector('[data-fragrance="' + id + '"]');
+    if (pill) {
+      pill.classList.add("active");
+      // Scroll pill into view if container overflows
+      pill.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+    }
+  }
+
+  function smoothScrollTo(element) {
+    var offset = pillsSection ? pillsSection.offsetHeight + 20 : 120;
+    var top = element.getBoundingClientRect().top + window.pageYOffset - offset;
+    window.scrollTo({ top: top, behavior: "smooth" });
+  }
+
+  // --- Pill clicks ---
+
+  fragrancePills.forEach(function (pill) {
     pill.addEventListener("click", function () {
-      const targetFragrance = this.getAttribute("data-fragrance");
+      var targetId = this.getAttribute("data-fragrance");
+      var targetAccordion = document.getElementById(targetId);
+      if (!targetAccordion) return;
 
-      // Remove active class from all pills
-      fragrancePills.forEach((p) => p.classList.remove("active"));
+      closeAllAccordions();
+      openAccordion(targetAccordion);
 
-      // Add active class to clicked pill
-      this.classList.add("active");
+      isScrollingFromClick = true;
+      smoothScrollTo(targetAccordion);
 
-      // Close all accordion items
-      accordionItems.forEach((item) => {
-        item.classList.remove("active");
-        const content = item.querySelector(".fragrance-accordion-content");
-        const header = item.querySelector(".fragrance-accordion-header");
+      // Re-enable scroll sync after animation
+      setTimeout(function () {
+        isScrollingFromClick = false;
+      }, 800);
+    });
 
-        if (content && header) {
-          content.setAttribute("aria-hidden", "true");
-          header.setAttribute("aria-expanded", "false");
-        }
-      });
-
-      // Open corresponding accordion item
-      const targetAccordion = document.getElementById(targetFragrance);
-      if (targetAccordion) {
-        targetAccordion.classList.add("active");
-        const content = targetAccordion.querySelector(
-          ".fragrance-accordion-content"
-        );
-        const header = targetAccordion.querySelector(
-          ".fragrance-accordion-header"
-        );
-
-        if (content && header) {
-          content.setAttribute("aria-hidden", "false");
-          header.setAttribute("aria-expanded", "true");
-        }
-
-        // Smooth scroll to accordion item
-        targetAccordion.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
+    // Arrow key navigation
+    pill.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+        e.preventDefault();
+        var pills = Array.from(fragrancePills);
+        var idx = pills.indexOf(this);
+        var next = e.key === "ArrowRight"
+          ? (idx + 1) % pills.length
+          : (idx - 1 + pills.length) % pills.length;
+        pills[next].focus();
+        pills[next].click();
       }
     });
   });
 
-  // Accordion Headers Functionality
-  const accordionHeaders = document.querySelectorAll(
-    ".fragrance-accordion-header"
-  );
+  // --- Accordion header clicks ---
 
-  accordionHeaders.forEach((header) => {
+  accordionItems.forEach(function (item) {
+    var header = item.querySelector(".fragrance-accordion-header");
+    if (!header) return;
+
     header.addEventListener("click", function () {
-      const accordionItem = this.closest(".fragrance-accordion-item");
-      const content = accordionItem.querySelector(
-        ".fragrance-accordion-content"
-      );
-      const isActive = accordionItem.classList.contains("active");
+      var wasActive = item.classList.contains("active");
 
-      // Close all accordion items
-      accordionItems.forEach((item) => {
-        item.classList.remove("active");
-        const itemContent = item.querySelector(".fragrance-accordion-content");
-        const itemHeader = item.querySelector(".fragrance-accordion-header");
+      closeAllAccordions();
 
-        if (itemContent && itemHeader) {
-          itemContent.setAttribute("aria-hidden", "true");
-          itemHeader.setAttribute("aria-expanded", "false");
-        }
-      });
-
-      // Remove active class from all pills
-      fragrancePills.forEach((pill) => pill.classList.remove("active"));
-
-      // If this item wasn't active, open it
-      if (!isActive) {
-        accordionItem.classList.add("active");
-        content.setAttribute("aria-hidden", "false");
-        this.setAttribute("aria-expanded", "true");
-
-        // Update corresponding pill
-        const fragranceId = accordionItem.getAttribute("id");
-        const correspondingPill = document.querySelector(
-          `[data-fragrance="${fragranceId}"]`
-        );
-        if (correspondingPill) {
-          correspondingPill.classList.add("active");
-        }
+      if (!wasActive) {
+        openAccordion(item);
       }
     });
 
-    // Keyboard accessibility
     header.addEventListener("keydown", function (e) {
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
@@ -111,113 +110,45 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Initialize: Ensure Flor de Figo is open by default
-  const defaultAccordion = document.getElementById("flor-de-figo");
-  const defaultPill = document.querySelector('[data-fragrance="flor-de-figo"]');
+  // --- Scroll sync: activate pill + open accordion when scrolling ---
 
-  if (defaultAccordion && defaultPill) {
-    defaultAccordion.classList.add("active");
-    defaultPill.classList.add("active");
+  if (accordionItems.length > 0 && pillsSection) {
+    var scrollObserver = new IntersectionObserver(
+      function (entries) {
+        if (isScrollingFromClick) return;
 
-    const content = defaultAccordion.querySelector(
-      ".fragrance-accordion-content"
-    );
-    const header = defaultAccordion.querySelector(
-      ".fragrance-accordion-header"
-    );
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.3) {
+            var item = entry.target;
 
-    if (content && header) {
-      content.setAttribute("aria-hidden", "false");
-      header.setAttribute("aria-expanded", "true");
-    }
-  }
-
-  // Apple-style smooth scroll enhancement
-  function smoothScrollToElement(element, offset = 100) {
-    const elementPosition = element.getBoundingClientRect().top;
-    const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth",
-    });
-  }
-
-  // Enhanced pill click with Apple-style scroll behavior
-  fragrancePills.forEach((pill) => {
-    pill.addEventListener("click", function () {
-      setTimeout(() => {
-        const targetFragrance = this.getAttribute("data-fragrance");
-        const targetAccordion = document.getElementById(targetFragrance);
-        if (targetAccordion) {
-          smoothScrollToElement(targetAccordion, 120);
-        }
-      }, 100);
-    });
-
-    // Arrow key navigation for tabs (Apple-style)
-    pill.addEventListener("keydown", function (e) {
-      if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
-        e.preventDefault();
-        const currentIndex = Array.from(fragrancePills).indexOf(this);
-        let nextIndex;
-
-        if (e.key === "ArrowRight") {
-          nextIndex = (currentIndex + 1) % fragrancePills.length;
-        } else {
-          nextIndex =
-            (currentIndex - 1 + fragrancePills.length) % fragrancePills.length;
-        }
-
-        fragrancePills[nextIndex].focus();
-        fragrancePills[nextIndex].click();
+            // Only switch if this item isn't already active
+            if (!item.classList.contains("active")) {
+              closeAllAccordions();
+              openAccordion(item);
+            }
+          }
+        });
+      },
+      {
+        threshold: 0.3,
+        rootMargin: "-" + (pillsSection.offsetHeight + 20) + "px 0px -40% 0px",
       }
+    );
+
+    accordionItems.forEach(function (item) {
+      scrollObserver.observe(item);
     });
-  });
+  }
 
-  // Sticky navigation scroll effect (Apple-style)
+  // --- Sticky pills shadow ---
+
   if (pillsSection) {
-    let lastScrollY = window.scrollY;
-
-    window.addEventListener("scroll", () => {
-      const currentScrollY = window.scrollY;
-
-      if (currentScrollY > 100) {
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 100) {
         pillsSection.style.boxShadow = "0 1px 4px rgba(0, 0, 0, 0.1)";
       } else {
         pillsSection.style.boxShadow = "none";
       }
-
-      lastScrollY = currentScrollY;
     });
   }
-
-  // Preload images for smooth transitions
-  accordionItems.forEach((item) => {
-    const img = item.querySelector(".fragrance-image img");
-    if (img && img.dataset.src) {
-      const tempImg = new Image();
-      tempImg.src = img.dataset.src;
-    }
-  });
-
-  // Intersection Observer for scroll animations (Apple-style)
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px",
-  };
-
-  const accordionObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = "1";
-        entry.target.style.transform = "translateY(0)";
-      }
-    });
-  }, observerOptions);
-
-  // Observe accordion items
-  accordionItems.forEach((item) => {
-    accordionObserver.observe(item);
-  });
 });

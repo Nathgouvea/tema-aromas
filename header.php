@@ -26,7 +26,7 @@
                              window.location.pathname === '/index.php';
 
             var scrollY = window.scrollY || window.pageYOffset || 0;
-            var isScrolled = header.classList.contains('scrolled') || scrollY > 50;
+            var isScrolled = header.classList.contains('scrolled') || scrollY > 10;
 
             // Determine which logo to show
             var shouldShowWhiteLogo = isHomepage && !isScrolled;

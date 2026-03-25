@@ -17,11 +17,15 @@ get_header(); ?>
         <!-- Hero Section - Matching Screenshot Design -->
         <section class="hero-luxury-screenshot">
             <div class="hero-background">
-                <img 
-                    src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Foto-tela-inicial-.webp'); ?>" 
-                    alt="<?php esc_attr_e('Zen Secrets - Aromas Premium', 'tema_aromas'); ?>" 
-                    class="hero-image" 
+                <img
+                    src="<?php echo esc_url(get_template_directory_uri() . '/assets/img/Foto-tela-inicial-.webp'); ?>"
+                    alt="<?php esc_attr_e('Zen Secrets - Aromas Premium', 'tema_aromas'); ?>"
+                    class="hero-image"
+                    width="1920"
+                    height="1155"
                     loading="eager"
+                    fetchpriority="high"
+                    decoding="async"
                 />
                 <div class="hero-overlay-left"></div>
             </div>
@@ -77,7 +81,7 @@ get_header(); ?>
                         </svg>
                     </div>
                     <div class="trust-content-horizontal">
-                        <h3><?php esc_html_e('Pagamento facilitado', 'tema_aromas'); ?></h3>
+                        <strong><?php esc_html_e('Pagamento facilitado', 'tema_aromas'); ?></strong>
                         <p><?php esc_html_e('Cartão, Pix e Boleto Bancário', 'tema_aromas'); ?></p>
                     </div>
                 </div>
@@ -92,7 +96,7 @@ get_header(); ?>
                         </svg>
                     </div>
                     <div class="trust-content-horizontal">
-                        <h3><?php esc_html_e('Envio para todo Brasil', 'tema_aromas'); ?></h3>
+                        <strong><?php esc_html_e('Envio para todo Brasil', 'tema_aromas'); ?></strong>
                         <p><?php esc_html_e('Rastreamento disponível', 'tema_aromas'); ?></p>
                     </div>
                 </div>
@@ -105,7 +109,7 @@ get_header(); ?>
                         </svg>
                     </div>
                     <div class="trust-content-horizontal">
-                        <h3><?php esc_html_e('Compra Segura', 'tema_aromas'); ?></h3>
+                        <strong><?php esc_html_e('Compra Segura', 'tema_aromas'); ?></strong>
                         <p><?php esc_html_e('Seus dados protegidos', 'tema_aromas'); ?></p>
                     </div>
                 </div>
@@ -117,7 +121,7 @@ get_header(); ?>
                         </svg>
                     </div>
                     <div class="trust-content-horizontal">
-                        <h3><?php esc_html_e('Ficou em dúvida?', 'tema_aromas'); ?></h3>
+                        <strong><?php esc_html_e('Ficou em dúvida?', 'tema_aromas'); ?></strong>
                         <p><?php esc_html_e('Chama no WhatsApp', 'tema_aromas'); ?></p>
                     </div>
                 </a>

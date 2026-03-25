@@ -37,7 +37,11 @@ function tema_aromas_defer_css($html, $handle) {
     $defer_handles = [
         'tema-aromas-utilities',
         'tema-aromas-pages',
-        'tema-aromas-footer'
+        'tema-aromas-footer',
+        'tema-aromas-buttons',
+        'tema-aromas-homepage',
+        'tema-aromas-woocommerce',
+        'tema-aromas-legal-pages',
     ];
     
     if (in_array($handle, $defer_handles)) {
@@ -65,12 +69,16 @@ function tema_aromas_optimize_js_loading($tag, $handle) {
     $defer_scripts = [
         'tema-aromas-pages',
         'tema-aromas-accessibility',
-        'tema-aromas-minicart'
+        'tema-aromas-minicart',
+        'tema-aromas-main',
+        'tema-aromas-product-accordion',
     ];
-    
+
     // List of scripts to load async
     $async_scripts = [
-        'tema-aromas-homepage'
+        'tema-aromas-homepage',
+        'tema-aromas-aromas-carousel',
+        'tema-aromas-product-sliders',
     ];
     
     if (in_array($handle, $defer_scripts)) {
@@ -292,16 +300,10 @@ function tema_aromas_set_cache_headers() {
 add_action('send_headers', 'tema_aromas_set_cache_headers');
 
 /**
- * Optimize fonts loading
+ * Optimize fonts loading — preconnect only (fonts enqueued in functions.php)
  */
 function tema_aromas_optimize_fonts() {
-    // Remove default Google Fonts loading if any
-    wp_dequeue_style('google-fonts');
-    
-    // Add optimized font loading
     echo '<link rel="preconnect" href="https://fonts.googleapis.com">' . "\n";
     echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n";
-    echo '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" media="print" onload="this.media=\'all\'">' . "\n";
-    echo '<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>' . "\n";
 }
-add_action('wp_head', 'tema_aromas_optimize_fonts', 1);
+add_action('wp_head', 'tema_aromas_optimize_fonts', 0);

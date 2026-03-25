@@ -24,193 +24,83 @@ get_header(); ?>
                 </div>
             </section>
 
+            <?php
+            $aromas = tema_aromas_get_aromas();
+            if ($aromas) :
+            ?>
             <section class="fragrance-pills-section">
                 <div class="fragrance-pills-container">
-                    <button class="fragrance-pill active" data-fragrance="flor-de-figo">Flor de Figo</button>
-                    <button class="fragrance-pill" data-fragrance="cha-branco">Chá Branco</button>
-                    <button class="fragrance-pill" data-fragrance="bamboo">Bamboo</button>
-                    <button class="fragrance-pill" data-fragrance="marinho">Marinho</button>
-                    <button class="fragrance-pill" data-fragrance="palo-santo">Palo Santo</button>
+                    <?php foreach ($aromas as $i => $aroma) :
+                        $slug = sanitize_title($aroma->post_title);
+                    ?>
+                        <button class="fragrance-pill<?php echo $i === 0 ? ' active' : ''; ?>" data-fragrance="<?php echo esc_attr($slug); ?>">
+                            <?php echo esc_html($aroma->post_title); ?>
+                        </button>
+                    <?php endforeach; ?>
                 </div>
             </section>
 
             <section class="fragrance-accordion-section">
                 <div class="fragrance-accordion-container">
-
-                    <div class="fragrance-accordion-item active" id="flor-de-figo">
-                        <button class="fragrance-accordion-header" aria-expanded="true" aria-controls="flor-de-figo-content">
-                            <h2>Flor de Figo</h2>
+                    <?php foreach ($aromas as $i => $aroma) :
+                        $slug            = sanitize_title($aroma->post_title);
+                        $is_first        = ($i === 0);
+                        $familia         = get_post_meta($aroma->ID, '_aroma_familia_olfativa', true);
+                        $notas           = get_post_meta($aroma->ID, '_aroma_notas', true);
+                        $projecao        = get_post_meta($aroma->ID, '_aroma_projecao', true);
+                        $caracteristicas = get_post_meta($aroma->ID, '_aroma_caracteristicas', true);
+                        $image_url       = get_the_post_thumbnail_url($aroma->ID, 'large');
+                    ?>
+                    <div class="fragrance-accordion-item<?php echo $is_first ? ' active' : ''; ?>" id="<?php echo esc_attr($slug); ?>">
+                        <button class="fragrance-accordion-header" aria-expanded="<?php echo $is_first ? 'true' : 'false'; ?>" aria-controls="<?php echo esc_attr($slug); ?>-content">
+                            <h2><?php echo esc_html($aroma->post_title); ?></h2>
                             <svg class="accordion-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <polyline points="6,9 12,15 18,9"></polyline>
-                                </svg>
+                            </svg>
                         </button>
-                        <div id="flor-de-figo-content" class="fragrance-accordion-content" aria-hidden="false">
+                        <div id="<?php echo esc_attr($slug); ?>-content" class="fragrance-accordion-content" aria-hidden="<?php echo $is_first ? 'false' : 'true'; ?>">
                             <div class="fragrance-content-grid">
+                                <?php if ($image_url) : ?>
                                 <div class="fragrance-image">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/aroma-flor-de-figo.webp"
-                                         alt="Flor de Figo Collection" loading="lazy" decoding="async">
+                                    <img src="<?php echo esc_url($image_url); ?>"
+                                         alt="<?php echo esc_attr($aroma->post_title); ?>" loading="lazy" decoding="async">
                                 </div>
+                                <?php endif; ?>
                                 <div class="fragrance-details">
                                     <div class="fragrance-notes">
+                                        <?php if ($familia) : ?>
                                         <div class="note-column">
                                             <h4>FAMILIA OLFATIVA</h4>
-                                            <p>Frutado Adocicado</p>
+                                            <p><?php echo esc_html($familia); ?></p>
                                         </div>
+                                        <?php endif; ?>
+                                        <?php if ($notas) : ?>
                                         <div class="note-column">
                                             <h4>NOTAS</h4>
-                                            <p>Cassis, Toranja, Baunilha e Caramelo</p>
+                                            <p><?php echo esc_html($notas); ?></p>
                                         </div>
+                                        <?php endif; ?>
+                                        <?php if ($projecao) : ?>
                                         <div class="note-column">
                                             <h4>PROJEÇÃO NO AMBIENTE</h4>
-                                            <p>Forte</p>
+                                            <p><?php echo esc_html($projecao); ?></p>
                                         </div>
+                                        <?php endif; ?>
                                     </div>
+                                    <?php if ($caracteristicas) : ?>
                                     <div class="fragrance-description">
                                         <h4>Características</h4>
-                                        <p>Sofisticado, marcante e acolhedor. Um floral frutado envolvente, que combina a doçura do figo com um toque de elegância.</p>
+                                        <p><?php echo esc_html($caracteristicas); ?></p>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                </div>
-
-                    <div class="fragrance-accordion-item" id="cha-branco">
-                        <button class="fragrance-accordion-header" aria-expanded="false" aria-controls="cha-branco-content">
-                            <h2>Chá Branco</h2>
-                            <svg class="accordion-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6,9 12,15 18,9"></polyline>
-                            </svg>
-                        </button>
-                        <div id="cha-branco-content" class="fragrance-accordion-content" aria-hidden="true">
-                            <div class="fragrance-content-grid">
-                                <div class="fragrance-image">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/aroma-cha-branco.webp"
-                                         alt="Chá Branco Collection" loading="lazy">
-                                </div>
-                                <div class="fragrance-details">
-                                    <div class="fragrance-notes">
-                                        <div class="note-column">
-                                            <h4>FAMILIA OLFATIVA</h4>
-                                            <p>Floral Cítrico</p>
-                                        </div>
-                                        <div class="note-column">
-                                            <h4>NOTAS</h4>
-                                            <p>Lima, Laranja, Chá Branco e Jasmin</p>
-                                        </div>
-                                        <div class="note-column">
-                                            <h4>PROJEÇÃO NO AMBIENTE</h4>
-                                            <p>Suave</p>
-                                        </div>
-                                    </div>
-                                    <div class="fragrance-description">
-                                        <h4>Características</h4>
-                                        <p>Leve, refrescante e delicado. Um aroma que traz clareza, paz e serenidade, ideal para criar uma atmosfera de leveza e de relaxamento.</p>
-                                    </div>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="fragrance-accordion-item" id="bamboo">
-                        <button class="fragrance-accordion-header" aria-expanded="false" aria-controls="bamboo-content">
-                            <h2>Bamboo</h2>
-                            <svg class="accordion-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6,9 12,15 18,9"></polyline>
-                            </svg>
-                        </button>
-                        <div id="bamboo-content" class="fragrance-accordion-content" aria-hidden="true">
-                            <div class="fragrance-content-grid">
-                                <div class="fragrance-image">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/aroma-bamboo.webp"
-                                         alt="Bamboo Collection" loading="lazy">
-                                </div>
-                                <div class="fragrance-details">
-                                    <div class="fragrance-notes">
-                                        <div class="note-column">
-                                            <h4>FAMILIA OLFATIVA</h4>
-                                            <p>Bamboo</p>
-                                        </div>
-                                        <div class="note-column">
-                                            <h4>LIMPEZA ENERGÉTICA</h4>
-                                            <p>Verde, Natural e Reconfortante</p>
-                                        </div>
-                                    </div>
-                                    <div class="fragrance-description">
-                                        <h4>Características</h4>
-                                        <p>Um aroma que remete à natureza viva, trazendo harmonia e equilíbrio para o ambiente.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="fragrance-accordion-item" id="marinho">
-                        <button class="fragrance-accordion-header" aria-expanded="false" aria-controls="marinho-content">
-                            <h2>Marinho</h2>
-                            <svg class="accordion-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6,9 12,15 18,9"></polyline>
-                            </svg>
-                        </button>
-                        <div id="marinho-content" class="fragrance-accordion-content" aria-hidden="true">
-                            <div class="fragrance-content-grid">
-                                <div class="fragrance-image">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/aroma-marinho.webp"
-                                         alt="Marinho Collection" loading="lazy">
-                                </div>
-                                <div class="fragrance-details">
-                                    <div class="fragrance-notes">
-                                        <div class="note-column">
-                                            <h4>FAMILIA OLFATIVA</h4>
-                                            <p>Frescor Aquático</p>
-                                        </div>
-                                        <div class="note-column">
-                                            <h4>NOTAS</h4>
-                                            <p>Lima, Limão, Lavanda, Algas Marinhas</p>
-                                        </div>
-                                        <div class="note-column">
-                                            <h4>PROJEÇÃO NO AMBIENTE</h4>
-                                            <p>Forte</p>
-                                        </div>
-                                    </div>
-                                    <div class="fragrance-description">
-                                        <h4>Características</h4>
-                                        <p>Refrescante como a brisa do mar. Uma combinação que traz notas aquáticas e refrescantes, ideal para quem busca frescor com personalidade.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="fragrance-accordion-item" id="palo-santo">
-                        <button class="fragrance-accordion-header" aria-expanded="false" aria-controls="palo-santo-content">
-                            <h2>Palo Santo</h2>
-                            <svg class="accordion-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6,9 12,15 18,9"></polyline>
-                            </svg>
-                        </button>
-                        <div id="palo-santo-content" class="fragrance-accordion-content" aria-hidden="true">
-                            <div class="fragrance-content-grid">
-                                <div class="fragrance-image">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/aroma-palo-santo.webp"
-                                         alt="Palo Santo Collection" loading="lazy">
-                                </div>
-                                <div class="fragrance-details">
-                                    <div class="fragrance-notes">
-                                        <div class="note-column">
-                                            <h4>FAMILIA OLFATIVA</h4>
-                                            <p>Amadeirado</p>
-                                        </div>
-                                    </div>
-                                    <div class="fragrance-description">
-                                        <h4>Características</h4>
-                                        <p>O Palo Santo é uma madeira utilizada como incenso natural. Perfeito para meditação, alinhamento e purificação.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
             </section>
+            <?php endif; ?>
 
             <section class="content-section cta-section">
                 <div class="cta-content">

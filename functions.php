@@ -101,7 +101,7 @@ function tema_aromas_scripts() {
     // Google Fonts
     wp_enqueue_style(
         'tema-aromas-fonts',
-        'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap',
+        'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;700&display=swap',
         [],
         null
     );
@@ -507,6 +507,10 @@ add_filter('body_class', 'tema_aromas_body_classes');
 /**
  * Include required files
  */
+if (file_exists(get_template_directory() . '/inc/cpt-aromas.php')) {
+    require_once get_template_directory() . '/inc/cpt-aromas.php';
+}
+
 if (file_exists(get_template_directory() . '/inc/template-functions.php')) {
     require_once get_template_directory() . '/inc/template-functions.php';
 }

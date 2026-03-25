@@ -32,7 +32,6 @@
     initAnimationObserver();
     initFormEnhancements();
     initScrollToTop();
-    initHeaderScroll();
     initCopyrightYear();
 
     // Dispatch theme ready event

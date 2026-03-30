@@ -20,7 +20,7 @@ define('TEMA_AROMAS_WHATSAPP_URL', 'https://wa.me/5516991626921');
 define('TEMA_AROMAS_WHATSAPP_DISPLAY', '(16) 99162-6921');
 define('TEMA_AROMAS_INSTAGRAM', '@secretszen');
 define('TEMA_AROMAS_INSTAGRAM_URL', 'https://www.instagram.com/secretszen');
-define('TEMA_AROMAS_EMAIL', 'secretszen888@gmail.com');
+define('TEMA_AROMAS_EMAIL', 'zensecrets.suporte@gmail.com');
 
 /**
  * Theme Setup

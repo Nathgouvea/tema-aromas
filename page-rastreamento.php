@@ -86,11 +86,11 @@ get_header(); ?>
                             <?php
                             printf(
                                 wp_kses(
-                                    __('Entre em contato pelo <a href="%s">WhatsApp (16) 99162-6921</a> ou por email <a href="%s">secretszen888@gmail.com</a> e enviaremos o código para você.', 'tema_aromas'),
+                                    __('Entre em contato pelo <a href="%s">WhatsApp (16) 99162-6921</a> ou por email <a href="%s">zensecrets.suporte@gmail.com</a> e enviaremos o código para você.', 'tema_aromas'),
                                     array('a' => array('href' => array()))
                                 ),
                                 esc_url('https://wa.me/5516991626921'),
-                                esc_url('mailto:secretszen888@gmail.com')
+                                esc_url('mailto:zensecrets.suporte@gmail.com')
                             );
                             ?>
                         </p>

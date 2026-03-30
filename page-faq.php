@@ -319,7 +319,7 @@ get_header(); ?>
                                     <span class="faq-icon">+</span>
                                 </button>
                                 <div class="faq-answer">
-                                    <p>WhatsApp: (16) 99162-6921 | E-mail: secretszen888@gmail.com | 
+                                    <p>WhatsApp: (16) 99162-6921 | E-mail: zensecrets.suporte@gmail.com | 
                                     Instagram: @secretszen | Formulário de contato na página "Fale Conosco"</p>
                                 </div>
                             </div>
@@ -370,7 +370,7 @@ get_header(); ?>
                         <a href="https://wa.me/5516991626921" class="btn-whatsapp" target="_blank">
                             <span>💬</span> WhatsApp
                         </a>
-                        <a href="mailto:secretszen888@gmail.com" class="btn-luxury secondary">
+                        <a href="mailto:zensecrets.suporte@gmail.com" class="btn-luxury secondary">
                             <span>📧</span> E-mail
                         </a>
                     </div>

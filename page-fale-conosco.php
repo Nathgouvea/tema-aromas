@@ -34,7 +34,7 @@ get_header(); ?>
                         </div>
                         
                         <div class="contact-methods-list">
-                            <a href="mailto:secretszen888@gmail.com" class="contact-method-item contact-method-link">
+                            <a href="mailto:zensecrets.suporte@gmail.com" class="contact-method-item contact-method-link">
                                 <div class="contact-method-icon email-icon">
                                     <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
                                         <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
@@ -42,7 +42,7 @@ get_header(); ?>
                                 </div>
                                 <div class="contact-method-content">
                                     <h3>E-mail</h3>
-                                    <p>secretszen888@gmail.com</p>
+                                    <p>zensecrets.suporte@gmail.com</p>
                                     <small>Resposta em até 24h úteis</small>
                                 </div>
                             </a>

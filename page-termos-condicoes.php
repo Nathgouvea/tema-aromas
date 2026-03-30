@@ -34,7 +34,7 @@ get_header(); ?>
                         <h2 class="legal-section-title">1. Sobre a Empresa</h2>
                         <div class="legal-section-content">
                             <p><strong>Razão Social:</strong> Zen Secrets</p>
-                            <p><strong>E-mail:</strong> secretszen888@gmail.com</p>
+                            <p><strong>E-mail:</strong> zensecrets.suporte@gmail.com</p>
                             <p><strong>WhatsApp:</strong> (16) 99162-6921</p>
                             <p><strong>Instagram:</strong> @secretszen</p>
                             <p>Especializada em produtos de aromaterapia, aromatizadores, home spray e velas aromáticas.</p>
@@ -274,7 +274,7 @@ get_header(); ?>
                         <div class="legal-section-content">
                             <p>Para dúvidas sobre estes termos:</p>
                             <div class="contact-info">
-                                <p><strong>E-mail:</strong> secretszen888@gmail.com</p>
+                                <p><strong>E-mail:</strong> zensecrets.suporte@gmail.com</p>
                                 <p><strong>WhatsApp:</strong> (16) 99162-6921</p>
                                 <p><strong>Instagram:</strong> @secretszen</p>
                             </div>

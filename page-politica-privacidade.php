@@ -161,7 +161,7 @@ get_header(); ?>
                         <div class="legal-section-content">
                             <p>Para exercer seus direitos ou esclarecer dúvidas sobre esta política:</p>
                             <div class="contact-info">
-                                <p><strong>E-mail:</strong> secretszen888@gmail.com</p>
+                                <p><strong>E-mail:</strong> zensecrets.suporte@gmail.com</p>
                                 <p><strong>WhatsApp:</strong> (16) 99162-6921</p>
                                 <p><strong>Instagram:</strong> @secretszen</p>
                             </div>

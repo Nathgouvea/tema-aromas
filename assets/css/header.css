@@ -43,3 +43,72 @@
   display: block !important;
   opacity: 1 !important;
 }
+
+/* ==========================================================================
+   Mobile header layout fixes — prevent hamburger clipping & crowding
+   ========================================================================== */
+
+@media (max-width: 767px) {
+  /* Tighten container padding on small phones */
+  .site-header .container {
+    padding: 0 14px;
+  }
+
+  /* Smaller flex gaps to free up space */
+  .header-content {
+    gap: 6px !important;
+  }
+
+  /* Compact the header icon row */
+  .header-icons {
+    gap: 2px !important;
+  }
+  .header-icon {
+    width: 36px !important;
+    height: 36px !important;
+  }
+  .header-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  /* Account icon is reachable from the hamburger drawer — hide on mobile */
+  .header-icons .account-icon {
+    display: none !important;
+  }
+
+  /* Make the hamburger toggle clearly visible and tappable */
+  .menu-toggle {
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    margin-left: 2px;
+    flex: 0 0 auto;
+  }
+  .menu-toggle .menu-icon {
+    width: 22px;
+    height: 16px;
+    gap: 5px;
+  }
+  .menu-toggle .menu-icon span {
+    height: 2px;
+  }
+
+  /* Keep the logo from eating horizontal space */
+  .site-logo img,
+  .site-logo-img {
+    max-height: 16px;
+  }
+}
+
+/* Extra-small phones (iPhone SE etc.) */
+@media (max-width: 360px) {
+  .site-logo img,
+  .site-logo-img {
+    max-height: 14px;
+  }
+  .header-icon {
+    width: 34px !important;
+    height: 34px !important;
+  }
+}

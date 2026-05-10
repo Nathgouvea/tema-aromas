@@ -202,6 +202,55 @@ get_header(); ?>
     flex-wrap: wrap;
 }
 
+/* 404 button styling — matches the site-wide pill buttons.
+   woocommerce.css doesn't load on 404, so we restate the rules here. */
+.error-404 .quick-links .btn-luxury,
+.error-404 .quick-links .btn-luxury-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--espacamento-sm);
+    padding: 12px 28px;
+    min-height: 48px;
+    border-radius: 100px !important;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.error-404 .quick-links .btn-luxury {
+    background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-accent) 100%) !important;
+    color: var(--cor-fundo) !important;
+    border: none !important;
+    box-shadow: 0 8px 32px rgba(107, 79, 196, 0.3);
+}
+
+.error-404 .quick-links .btn-luxury:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 48px rgba(107, 79, 196, 0.4);
+}
+
+.error-404 .quick-links .btn-luxury-outline {
+    background: transparent !important;
+    color: var(--cor-primaria) !important;
+    border: 2px solid var(--cor-primaria) !important;
+}
+
+.error-404 .quick-links .btn-luxury-outline:hover {
+    background: var(--cor-primaria) !important;
+    color: var(--cor-fundo) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(107, 79, 196, 0.3);
+}
+
+.error-404 .quick-links .btn-luxury svg,
+.error-404 .quick-links .btn-luxury-outline svg {
+    flex-shrink: 0;
+}
+
 .category-links {
     display: flex;
     gap: var(--espacamento-sm);

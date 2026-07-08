@@ -1159,3 +1159,59 @@ add_filter('option_woocommerce_email_body_background_color', function($value) {
 add_filter('option_woocommerce_email_text_color', function($value) {
     return empty($value) ? '#555555' : $value;
 });
+
+/**
+ * ============================================================================
+ * Segurança, melhorias de design e ajustes de loja
+ * (bloco autocontido — pode ser adicionado ao final do functions.php)
+ * ============================================================================
+ */
+
+// Carrega o CSS de melhorias por último (fonte da marca em todos os títulos,
+// gradiente do hero, selo "Novo" nas Novidades). Ver assets/css/improvements.css
+add_action('wp_enqueue_scripts', function () {
+    $improvements_path = get_template_directory() . '/assets/css/improvements.css';
+    wp_enqueue_style(
+        'tema-aromas-improvements',
+        get_template_directory_uri() . '/assets/css/improvements.css',
+        [],
+        file_exists($improvements_path) ? filemtime($improvements_path) : '1.0.2'
+    );
+}, 99);
+
+// Desativa XML-RPC (não utilizado; reduz força bruta/DDoS).
+add_filter('xmlrpc_enabled', '__return_false');
+
+// Bloqueia enumeração de usuários via REST API para visitantes anônimos.
+add_filter('rest_endpoints', function ($endpoints) {
+    if (!is_user_logged_in()) {
+        if (isset($endpoints['/wp/v2/users'])) {
+            unset($endpoints['/wp/v2/users']);
+        }
+        if (isset($endpoints['/wp/v2/users/(?P<id>[\d]+)'])) {
+            unset($endpoints['/wp/v2/users/(?P<id>[\d]+)']);
+        }
+    }
+    return $endpoints;
+});
+
+// Bloqueia enumeração de usuários via ?author=N para visitantes anônimos.
+add_action('template_redirect', function () {
+    if (is_author() && !is_user_logged_in()) {
+        wp_safe_redirect(home_url(), 301);
+        exit;
+    }
+});
+
+// Lembrancinhas: na vitrine/arquivo, o botão leva à página do produto
+// (a compra exige escolher tipo/aroma/quantidade), evitando add-to-cart inválido.
+add_filter('woocommerce_loop_add_to_cart_link', function ($html, $product) {
+    if ($product && function_exists('has_term') && has_term('lembrancinhas', 'product_cat', $product->get_id())) {
+        return sprintf(
+            '<a href="%s" class="button product_type_simple">%s</a>',
+            esc_url($product->get_permalink()),
+            esc_html__('Ver opções', 'tema_aromas')
+        );
+    }
+    return $html;
+}, 20, 2);
